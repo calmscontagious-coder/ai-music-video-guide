@@ -27,7 +27,7 @@ h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
 
 /* ambient mesh + grain */
 .mesh{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
-.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.5;will-change:transform}
+.orb{position:absolute;border-radius:50%;filter:blur(72px);opacity:.42;will-change:transform}
 .orb.a{width:44vw;height:44vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-12vw;left:-8vw;animation:drift1 26s var(--e2) infinite alternate}
 .orb.b{width:40vw;height:40vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:8vw;right:-10vw;animation:drift2 30s var(--e2) infinite alternate}
 .orb.c{width:38vw;height:38vw;background:radial-gradient(circle,var(--cyan),transparent 70%);top:120vh;left:30vw;opacity:.32;animation:drift3 34s var(--e2) infinite alternate}
@@ -368,6 +368,7 @@ mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classLi
 // scroll reveals
 const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(el=>el.classList.add('in')),1600);
 </script>
 </body>
 </html>
