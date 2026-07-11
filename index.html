@@ -3,190 +3,371 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seedance 2.0 — Turn Any Song Into a Full AI Music Video (Plus Sora 2, Veo 3 & 30+ Engines)</title>
-<meta name="description" content="Upload a song, get a complete rhythm-synced, lip-synced music video up to 10 minutes long. One platform, one credit pool: Seedance 2.0, Sora 2 Pro, Veo 3, AI images, AI voice. From $9.90/mo with free daily credits.">
+<title>Seedance 2.0 — Turn Any Song Into a Full AI Music Video</title>
+<meta name="description" content="Upload a song, get a complete rhythm-synced, lip-synced music video up to 10 minutes long. One platform, one credit pool: Seedance 2.0, Sora 2 Pro, Veo 3, AI images, AI voice. From $9.90/mo, free daily credits.">
+<meta property="og:title" content="Turn Any Song Into a Full AI Music Video">
+<meta property="og:description" content="Upload your track — get a rhythm-synced, lip-synced music video the exact length of your song. Seedance 2.0, Sora 2 Pro, Veo 3 in one place.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#0a0a12; --cream:#f7f3ea; --pink:#ff2e88; --gold:#ffd23f; --teal:#19d98b; --cyan:#39c6ff;
-    --maxw:1080px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--ink);color:var(--cream);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
-  .halftone{background-image:radial-gradient(rgba(247,243,234,.10) 1.1px, transparent 1.3px);background-size:14px 14px}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .pill{display:inline-block;background:rgba(57,198,255,.14);border:1px solid rgba(57,198,255,.4);color:var(--cyan);font-weight:700;letter-spacing:.1em;font-size:.72rem;padding:7px 16px;border-radius:100px;text-transform:uppercase}
-  .btn{display:inline-block;background:linear-gradient(100deg,var(--pink),#ff5aa2);color:#fff;font-weight:800;font-size:1.18rem;padding:19px 48px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 8px 30px rgba(255,46,136,.5);transition:transform .12s ease, box-shadow .12s ease}
-  .btn:hover{transform:translateY(-2px) scale(1.01);box-shadow:0 12px 40px rgba(255,46,136,.65)}
-  .btn-sub{display:block;font-size:.82rem;font-weight:500;opacity:.85;margin-top:12px}
-  header{padding:96px 0 78px;text-align:center;position:relative}
-  h1{font-size:clamp(2.3rem,6vw,4.2rem);line-height:1.06;font-weight:900;letter-spacing:-.02em;margin:22px 0}
-  h1 .hl{background:linear-gradient(100deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lede{font-size:clamp(1.08rem,2.3vw,1.35rem);opacity:.93;max-width:700px;margin:0 auto 38px}
-  .lede b{color:var(--gold)}
-  .heroproof{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:center;margin-top:30px;font-size:.88rem;opacity:.8}
-  .heroproof span::before{content:"✓ ";color:var(--teal);font-weight:900}
-  section{padding:76px 0;border-top:1px solid rgba(247,243,234,.08)}
-  h2{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:900;line-height:1.12;margin-bottom:14px;text-align:center}
-  .sub{opacity:.85;max-width:640px;margin:0 auto 46px;font-size:1.06rem;text-align:center}
-  .grid{display:grid;gap:20px}
-  .g3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-  .g4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-  .card{background:rgba(247,243,234,.045);border:1px solid rgba(247,243,234,.12);border-radius:16px;padding:28px;transition:transform .15s ease,border-color .15s ease}
-  .card:hover{transform:translateY(-4px);border-color:rgba(255,46,136,.5)}
-  .card .ico{font-size:1.9rem;display:block;margin-bottom:12px}
-  .card h3{font-size:1.13rem;margin-bottom:9px;color:var(--gold)}
-  .card p{font-size:.95rem;opacity:.87}
-  .card.use h3{color:var(--cyan)}
-  .statband{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:8px}
-  .stat{background:rgba(247,243,234,.05);border:1px solid rgba(247,243,234,.12);border-radius:14px;padding:22px 34px;text-align:center;min-width:150px}
-  .stat b{display:block;font-size:2.1rem;font-weight:900;background:linear-gradient(100deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .stat span{font-size:.82rem;opacity:.75}
-  .steps{counter-reset:step}
-  .steps .card{position:relative;padding-top:38px}
-  .steps .card::before{counter-increment:step;content:counter(step);position:absolute;top:-18px;left:24px;background:linear-gradient(100deg,var(--pink),#ff5aa2);color:#fff;font-weight:900;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.05rem;box-shadow:0 4px 14px rgba(0,0,0,.45)}
-  .engines{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px}
-  .engines span{background:rgba(247,243,234,.06);border:1px solid rgba(247,243,234,.14);border-radius:100px;padding:8px 18px;font-size:.88rem;font-weight:600}
-  .engines span.hot{border-color:rgba(255,210,63,.5);color:var(--gold)}
-  .cta-band{background:linear-gradient(135deg, rgba(255,46,136,.16), rgba(255,210,63,.10));border:1px solid rgba(255,46,136,.32);border-radius:20px;padding:56px 40px;text-align:center}
-  .cta-band h2{margin-bottom:12px}
-  .cta-band p{opacity:.88;margin-bottom:30px;max-width:560px;margin-left:auto;margin-right:auto}
-  form.capture{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:560px;margin:0 auto}
-  form.capture input[type=email]{flex:1 1 280px;padding:17px 20px;border-radius:12px;border:1px solid rgba(247,243,234,.25);background:rgba(10,10,18,.72);color:var(--cream);font-size:1rem}
-  form.capture input[type=email]:focus{outline:2px solid var(--gold)}
-  form.capture .btn{font-size:1rem;padding:17px 32px;background:linear-gradient(100deg,var(--gold),#ffe27a);color:var(--ink);box-shadow:0 8px 28px rgba(255,210,63,.35)}
-  .fineprint{font-size:.78rem;opacity:.6;margin-top:16px}
-  details{background:rgba(247,243,234,.04);border:1px solid rgba(247,243,234,.1);border-radius:12px;margin-bottom:12px;padding:18px 22px;max-width:760px;margin-left:auto;margin-right:auto}
-  details summary{font-weight:700;cursor:pointer;font-size:1.02rem}
-  details p{margin-top:12px;opacity:.86;font-size:.96rem}
-  .disclosure{background:rgba(247,243,234,.05);border-radius:10px;padding:16px 20px;font-size:.8rem;opacity:.7;margin-top:38px;max-width:760px;margin-left:auto;margin-right:auto}
-  footer{padding:40px 0 60px;font-size:.8rem;opacity:.55;border-top:1px solid rgba(247,243,234,.08);text-align:center}
-  .glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.24;pointer-events:none}
+:root{
+  --bg:#060609; --bg2:#0b0b12; --cream:#f4f2ee; --dim:#a4a2b0;
+  --pink:#ff2e88; --violet:#a855f7; --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
+  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
+  --e:cubic-bezier(.16,1,.3,1); --e2:cubic-bezier(.32,.72,0,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--pink);color:#fff}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+
+/* ambient mesh + grain */
+.mesh{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.5;will-change:transform}
+.orb.a{width:44vw;height:44vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-12vw;left:-8vw;animation:drift1 26s var(--e2) infinite alternate}
+.orb.b{width:40vw;height:40vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:8vw;right:-10vw;animation:drift2 30s var(--e2) infinite alternate}
+.orb.c{width:38vw;height:38vw;background:radial-gradient(circle,var(--cyan),transparent 70%);top:120vh;left:30vw;opacity:.32;animation:drift3 34s var(--e2) infinite alternate}
+@keyframes drift1{to{transform:translate(6vw,8vh) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-5vw,10vh) scale(1.1)}}
+@keyframes drift3{to{transform:translate(8vw,-6vh) scale(1.2)}}
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+
+/* floating glass nav */
+nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:40;
+  display:flex;align-items:center;gap:26px;
+  padding:11px 12px 11px 24px;border-radius:100px;
+  background:rgba(12,12,20,.55);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border:1px solid var(--line2);box-shadow:0 8px 40px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.06);
+  transition:transform .5s var(--e),box-shadow .5s var(--e)}
+nav.hide{transform:translateX(-50%) translateY(-140%)}
+.brand{font-family:'Space Grotesk';font-weight:600;font-size:1rem;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 14px var(--pink)}
+.nlinks{display:flex;gap:24px;font-size:.9rem;color:var(--dim)}
+.nlinks a{transition:color .3s var(--e)}
+.nlinks a:hover{color:var(--cream)}
+.nav-cta{font-size:.88rem;font-weight:600;padding:9px 18px;border-radius:100px;background:var(--cream);color:#0a0a0f;
+  transition:transform .4s var(--e),box-shadow .4s var(--e)}
+.nav-cta:hover{transform:scale(1.04);box-shadow:0 6px 22px rgba(244,242,238,.25)}
+.burger{display:none}
+
+/* buttons — pill + nested icon */
+.btn{display:inline-flex;align-items:center;gap:14px;font-weight:600;font-size:1.02rem;
+  padding:16px 16px 16px 30px;border-radius:100px;cursor:pointer;border:0;
+  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff;
+  box-shadow:0 10px 34px rgba(255,46,136,.4),inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .45s var(--e),box-shadow .45s var(--e)}
+.btn .ic{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+  transition:transform .45s var(--e),background .45s var(--e)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(.98)}
+.btn:hover .ic{transform:translate(3px,-2px) scale(1.08);background:rgba(255,255,255,.28)}
+.btn.ghost{background:rgba(244,242,238,.04);color:var(--cream);border:1px solid var(--line2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.btn.ghost .ic{background:rgba(244,242,238,.1)}
+.btn.big{font-size:1.12rem;padding:19px 19px 19px 36px}
+.btn.big .ic{width:40px;height:40px}
+
+/* eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.68rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:.22em;color:var(--dim);padding:8px 16px;border-radius:100px;
+  background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:26px}
+.eyebrow .pulse{width:6px;height:6px;border-radius:50%;background:var(--emerald);box-shadow:0 0 10px var(--emerald);animation:blink 2.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+
+section{padding:clamp(80px,12vw,150px) 0}
+.center{text-align:center}
+h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:600;line-height:1.06}
+.lead{color:var(--dim);font-size:clamp(1.05rem,2vw,1.2rem);max-width:600px;margin:20px auto 0}
+
+/* hero */
+.hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding-top:150px;position:relative}
+.hero h1{font-size:clamp(2.9rem,8vw,6.2rem);font-weight:600;line-height:.98;letter-spacing:-.035em}
+.hero h1 .grad{background:linear-gradient(105deg,var(--pink) 10%,var(--violet) 55%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin-left:0;max-width:640px;font-size:clamp(1.1rem,2.1vw,1.35rem)}
+.hero-cta{display:flex;gap:16px;margin-top:44px;flex-wrap:wrap}
+.trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:60px;color:var(--dim);font-size:.9rem}
+.trust span{display:flex;align-items:center;gap:9px}
+.trust .chk{color:var(--emerald);font-weight:700}
+.scrollcue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);color:var(--dim);font-size:.72rem;
+  letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.7}
+.scrollcue .bar{width:1px;height:40px;background:linear-gradient(var(--dim),transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+/* double-bezel card */
+.shell{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:30px;padding:7px;
+  transition:transform .6s var(--e),border-color .6s var(--e)}
+.shell:hover{transform:translateY(-6px);border-color:var(--line2)}
+.core{background:linear-gradient(180deg,rgba(20,20,30,.7),rgba(11,11,18,.6));border-radius:24px;
+  padding:32px;height:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.core .ico{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;margin-bottom:20px;background:rgba(244,242,238,.05);border:1px solid var(--line)}
+.core h3{font-size:1.24rem;font-weight:600;margin-bottom:9px}
+.core p{color:var(--dim);font-size:.97rem}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:56px}
+.bento .shell{grid-column:span 2}
+.bento .wide{grid-column:span 3}
+.bento .feat{grid-column:span 6}
+.feat .core{display:flex;gap:30px;align-items:center;flex-wrap:wrap}
+.feat .ftxt{flex:1;min-width:260px}
+.feat h3{font-size:1.7rem}
+.feat .big-ico{font-size:3.2rem;filter:drop-shadow(0 6px 20px rgba(255,46,136,.4))}
+
+/* engine wall */
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:48px;max-width:900px;margin-left:auto;margin-right:auto}
+.chip{padding:11px 22px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);
+  font-size:.95rem;font-weight:500;color:var(--dim);transition:all .4s var(--e)}
+.chip:hover{color:var(--cream);border-color:var(--line2);transform:translateY(-2px)}
+.chip.hot{color:var(--gold);border-color:rgba(255,210,63,.3);background:rgba(255,210,63,.06)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.step .core{position:relative;padding-top:40px}
+.step .n{position:absolute;top:-14px;left:26px;width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--pink),var(--violet));color:#fff;font-family:'Space Grotesk';font-weight:600;
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 8px 24px rgba(168,85,247,.4)}
+
+/* stats */
+.stats{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:20px}
+.stat{flex:1;min-width:170px}
+.stat .core{text-align:center;padding:34px 24px}
+.stat b{font-family:'Space Grotesk';display:block;font-size:2.6rem;font-weight:600;line-height:1;
+  background:linear-gradient(120deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--dim);font-size:.86rem;margin-top:8px;display:block}
+
+/* CTA band */
+.band .shell{border-radius:36px;padding:9px;background:linear-gradient(135deg,rgba(255,46,136,.14),rgba(168,85,247,.1),rgba(55,214,255,.08))}
+.band .core{border-radius:28px;padding:clamp(40px,7vw,72px);text-align:center;
+  background:linear-gradient(180deg,rgba(16,16,24,.86),rgba(11,11,18,.9))}
+.band h2{margin-bottom:14px}
+.band p{color:var(--dim);max-width:560px;margin:0 auto 34px}
+.giftform{display:flex;gap:12px;max-width:520px;margin:0 auto;flex-wrap:wrap}
+.giftform input{flex:1;min-width:240px;padding:17px 22px;border-radius:100px;background:rgba(6,6,9,.7);
+  border:1px solid var(--line2);color:var(--cream);font-family:inherit;font-size:1rem}
+.giftform input:focus{outline:none;border-color:var(--pink)}
+.mini{font-size:.78rem;color:var(--dim);margin-top:16px}
+
+/* faq */
+.faq{max-width:800px;margin:52px auto 0}
+details{border-bottom:1px solid var(--line);padding:6px 0}
+summary{list-style:none;cursor:pointer;padding:22px 4px;font-family:'Space Grotesk';font-weight:500;font-size:1.12rem;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;transition:color .3s var(--e)}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--pink)}
+summary .plus{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:transform .4s var(--e)}
+details[open] summary .plus{transform:rotate(45deg);border-color:var(--pink);color:var(--pink)}
+details p{color:var(--dim);padding:0 4px 24px;font-size:1rem;max-width:680px}
+
+footer{padding:60px 0 70px;border-top:1px solid var(--line);text-align:center;color:var(--dim);font-size:.86rem}
+.disclosure{max-width:720px;margin:0 auto 26px;font-size:.78rem;color:var(--dim);opacity:.75;line-height:1.7}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);filter:blur(8px);transition:opacity .9s var(--e),transform .9s var(--e),filter .9s var(--e)}
+.rv.in{opacity:1;transform:none;filter:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+@media(max-width:860px){
+  .bento{grid-template-columns:1fr}
+  .bento .shell,.bento .wide,.bento .feat{grid-column:span 1}
+  .steps{grid-template-columns:1fr 1fr}
+  .nlinks{display:none}
+  .burger{display:flex;flex-direction:column;gap:5px;width:38px;height:38px;border-radius:50%;
+    background:rgba(244,242,238,.06);border:1px solid var(--line2);align-items:center;justify-content:center;cursor:pointer}
+  .burger span{width:16px;height:1.5px;background:var(--cream);transition:transform .4s var(--e),opacity .3s var(--e)}
+  nav{gap:12px;padding-left:20px}
+  .nav-cta{display:none}
+}
+@media(max-width:520px){.steps{grid-template-columns:1fr}.hero-cta{flex-direction:column}.btn{width:100%;justify-content:space-between}}
+@media(prefers-reduced-motion:reduce){.orb{animation:none}.rv{transition:none;opacity:1;transform:none;filter:none}}
+
+/* mobile menu overlay */
+.mobmenu{position:fixed;inset:0;z-index:39;background:rgba(6,6,9,.9);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  opacity:0;pointer-events:none;transition:opacity .5s var(--e)}
+.mobmenu.open{opacity:1;pointer-events:auto}
+.mobmenu a{font-family:'Space Grotesk';font-size:1.8rem;font-weight:500;color:var(--cream);
+  transform:translateY(30px);opacity:0;transition:transform .6s var(--e),opacity .6s var(--e)}
+.mobmenu.open a{transform:none;opacity:1}
+.mobmenu.open a:nth-child(1){transition-delay:.1s}.mobmenu.open a:nth-child(2){transition-delay:.16s}
+.mobmenu.open a:nth-child(3){transition-delay:.22s}.mobmenu.open a:nth-child(4){transition-delay:.28s}
 </style>
 </head>
 <body>
+<div class="mesh"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+<div class="grain"></div>
 
-<div class="halftone" style="position:relative">
-<div class="glow" style="width:420px;height:420px;background:var(--pink);top:-120px;left:-120px"></div>
-<div class="glow" style="width:380px;height:380px;background:var(--cyan);top:40px;right:-140px"></div>
-<header class="wrap">
-  <span class="pill">Seedance 2.0 · Sora 2 Pro · Veo 3 — one login, one credit pool</span>
-  <h1>Turn Any Song Into a<br><span class="hl">Full Music Video</span></h1>
-  <p class="lede">Upload your track and the AI stages the whole show — a performer whose <b>lips sync to your actual vocal</b>, scene changes that <b>cut on the beat</b>, camera moves that ride the rhythm. The finished video runs the exact length of your song. <b>Up to 10 minutes, in one render.</b></p>
-  <a class="btn" href="https://bit.ly/seedmv" rel="sponsored noopener">Start Creating Free →</a>
-  <span class="btn-sub">Free daily credits · No card required · Failed renders auto-refunded</span>
-  <div class="heroproof">
-    <span>50,000+ creators</span><span>120+ countries</span><span>Commercial license included</span><span>Renders in minutes, not days</span>
+<nav id="nav">
+  <a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
+  <div class="nlinks">
+    <a href="#features">Features</a>
+    <a href="#make">Make</a>
+    <a href="#how">How</a>
+    <a href="#faq">FAQ</a>
   </div>
+  <a class="nav-cta" href="https://bit.ly/seedmv" rel="sponsored noopener" target="_blank">Try Free</a>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobmenu" id="mobmenu">
+  <a href="#features">Features</a>
+  <a href="#make">Make</a>
+  <a href="#how">How it works</a>
+  <a href="https://bit.ly/seedmv" rel="sponsored noopener" target="_blank">Try Free →</a>
+</div>
+
+<header class="hero wrap">
+  <div class="eyebrow rv"><span class="pulse"></span>Seedance 2.0 · Sora 2 Pro · Veo 3 — one login</div>
+  <h1 class="rv d1">Turn any song<br>into a <span class="grad">full music video</span></h1>
+  <p class="lead rv d2">Upload your track and the AI stages the whole show — a performer whose lips sync to your actual vocal, scene changes that cut on the beat, camera moves that ride the rhythm. The finished video runs the exact length of your song. Up to 10 minutes, in one render.</p>
+  <div class="hero-cta rv d3">
+    <a class="btn big" href="https://bit.ly/seedmv" rel="sponsored noopener" target="_blank">Start creating free<span class="ic">↗</span></a>
+    <a class="btn big ghost" href="#how">See how it works<span class="ic">↓</span></a>
+  </div>
+  <div class="trust rv d4">
+    <span><span class="chk">✓</span> 50,000+ creators</span>
+    <span><span class="chk">✓</span> Free daily credits</span>
+    <span><span class="chk">✓</span> No card to start</span>
+    <span><span class="chk">✓</span> Failed renders refunded</span>
+  </div>
+  <div class="scrollcue"><span>Scroll</span><span class="bar"></span></div>
 </header>
-</div>
 
-<section>
-<div class="wrap">
-  <h2>Everything it does — out of the box</h2>
-  <p class="sub">Not a toy that makes 8-second clips. A full production pipeline.</p>
-  <div class="grid g3">
-    <div class="card"><span class="ico">🎤</span><h3>Real Lip Sync</h3><p>The engine analyzes your vocal track itself — sung words land on the performer's mouth, verse after verse. No manual keyframing.</p></div>
-    <div class="card"><span class="ico">🥁</span><h3>Cuts On the Count</h3><p>Scene changes, camera moves, and pacing lock to your track's rhythm and energy. The visuals hit where the music hits.</p></div>
-    <div class="card"><span class="ico">⏱️</span><h3>Full-Song Renders</h3><p>5 seconds to 10 full minutes — the video matches your audio second-for-second. Whole songs, DJ sets, complete performances.</p></div>
-    <div class="card"><span class="ico">🧬</span><h3>One Performer, Every Scene</h3><p>Drop in up to 3 photos and the same artist stays recognizable from first frame to last. Or let the AI cast a performer matched to the voice.</p></div>
-    <div class="card"><span class="ico">🎬</span><h3>Camera Motion Transfer</h3><p>Feed it any reference reel and it replicates the dolly, whip-pan, and cut rhythm on your own subject. Director-level moves, zero crew.</p></div>
-    <div class="card"><span class="ico">🎛️</span><h3>12-Asset Control</h3><p>Combine 9 images, 3 video clips, and 3 audio files in one prompt with @-tags: "@image1 performs, camera follows @video1, beat-locked to @audio1."</p></div>
-    <div class="card"><span class="ico">🔊</span><h3>Native Sound Design</h3><p>Clips can generate with synced stereo audio — dialogue, ambience, score — in the same pass. No dubbing step.</p></div>
-    <div class="card"><span class="ico">✂️</span><h3>Extend & Edit In Place</h3><p>Lengthen clips, swap a character mid-sequence, paint out unwanted elements — without starting over.</p></div>
-    <div class="card"><span class="ico">💸</span><h3>Zero-Risk Renders</h3><p>The exact credit cost shows before you press Generate, and any failed render refunds automatically. You only pay for finished video.</p></div>
+<section id="features" class="wrap">
+  <div class="center">
+    <div class="eyebrow rv">The whole studio</div>
+    <h2 class="rv d1">Everything it does,<br>out of the box</h2>
+    <p class="lead rv d2">Not a toy that makes eight-second clips. A full production pipeline behind one prompt.</p>
   </div>
-</div>
+  <div class="bento">
+    <div class="shell feat rv">
+      <div class="core">
+        <div class="big-ico">🎤</div>
+        <div class="ftxt">
+          <h3>Real lip sync, from your real vocal</h3>
+          <p>The engine analyzes the vocal track itself — sung words land on the performer's mouth, verse after verse, with zero manual keyframing. This is the difference between a music video and a slideshow.</p>
+        </div>
+      </div>
+    </div>
+    <div class="shell wide rv"><div class="core"><div class="ico">🥁</div><h3>Cuts on the count</h3><p>Scene changes, camera moves, and pacing lock to your track's rhythm and energy. The visuals hit exactly where the music hits.</p></div></div>
+    <div class="shell wide rv d1"><div class="core"><div class="ico">⏱️</div><h3>Full-song renders</h3><p>Five seconds to ten full minutes — the video matches your audio second-for-second. Whole songs, DJ sets, complete performances.</p></div></div>
+    <div class="shell rv"><div class="core"><div class="ico">🧬</div><h3>One performer, every scene</h3><p>Up to three reference photos keep the same artist recognizable start to finish.</p></div></div>
+    <div class="shell rv d1"><div class="core"><div class="ico">🎬</div><h3>Camera motion transfer</h3><p>Feed it a reference reel; it replicates the dolly, whip-pan, and cut rhythm on your subject.</p></div></div>
+    <div class="shell rv d2"><div class="core"><div class="ico">💸</div><h3>Zero-risk renders</h3><p>The exact cost shows before you generate, and failed renders refund automatically.</p></div></div>
+  </div>
 </section>
 
-<section>
-<div class="wrap">
-  <h2>What will you make first?</h2>
-  <p class="sub">One subscription covers every lane.</p>
-  <div class="grid g3">
-    <div class="card use"><span class="ico">🎵</span><h3>Music Videos</h3><p>Full-length, lip-synced, beat-cut performance videos for your releases — YouTube-ready in an afternoon.</p></div>
-    <div class="card use"><span class="ico">📱</span><h3>TikToks, Reels & Shorts</h3><p>Vertical 9:16 clips cut to the drop. Loop-friendly hooks that ride trending audio frame-accurately.</p></div>
-    <div class="card use"><span class="ico">📢</span><h3>Ads & Product Promos</h3><p>Template a winning spot, swap the product, ship regional variants in under an hour — audio baked in.</p></div>
-    <div class="card use"><span class="ico">⛩️</span><h3>Anime & Short Films</h3><p>Storyboard multi-shot sequences with locked characters — Sora 2 Pro Storyboard and Veo 3 are in the same credit pool.</p></div>
-    <div class="card use"><span class="ico">💥</span><h3>VFX & Motion Design</h3><p>Motion control, video effects, style transfer, seamless transitions — the whole effects bay without the render farm.</p></div>
-    <div class="card use"><span class="ico">🎙️</span><h3>Voice & Narration</h3><p>Text-to-speech, multi-voice dialogue, and speech-to-text round out the studio. Explainers with accurate lip sync included.</p></div>
+<section id="make" class="wrap">
+  <div class="center">
+    <div class="eyebrow rv">One subscription, every lane</div>
+    <h2 class="rv d1">What will you make first?</h2>
+    <p class="lead rv d2">The music-video mode is the headline. The platform is a whole creative studio.</p>
   </div>
-  <div style="text-align:center;margin-top:44px">
-    <a class="btn" href="https://bit.ly/seedmv" rel="sponsored noopener">Open the Studio →</a>
-    <span class="btn-sub">Every engine unlocked on every plan</span>
+  <div class="bento">
+    <div class="shell wide rv"><div class="core"><div class="ico">🎵</div><h3>Music videos</h3><p>Full-length, lip-synced, beat-cut performance videos for your releases — YouTube-ready in an afternoon.</p></div></div>
+    <div class="shell wide rv d1"><div class="core"><div class="ico">📱</div><h3>TikToks, Reels & Shorts</h3><p>Vertical clips cut to the drop. Loop-friendly hooks that ride trending audio frame-accurately.</p></div></div>
+    <div class="shell rv"><div class="core"><div class="ico">📢</div><h3>Ads & promos</h3><p>Template a winning spot, swap the product, ship variants in under an hour — audio baked in.</p></div></div>
+    <div class="shell rv d1"><div class="core"><div class="ico">⛩️</div><h3>Anime & short films</h3><p>Multi-shot storyboards with locked characters via Sora 2 Pro and Veo 3 — same credit pool.</p></div></div>
+    <div class="shell rv d2"><div class="core"><div class="ico">💥</div><h3>VFX & motion</h3><p>Motion control, effects, style transfer, seamless transitions — the whole effects bay.</p></div></div>
   </div>
-</div>
 </section>
 
-<section>
-<div class="wrap">
-  <h2>30+ frontier engines. One credit pool.</h2>
-  <p class="sub">Stop juggling five subscriptions. The flagship names live here, behind one login:</p>
-  <div class="engines">
-    <span class="hot">Seedance 2.0</span><span class="hot">Sora 2 Pro</span><span class="hot">Veo 3</span>
-    <span>Sora 2</span><span>Seedance 2.5</span><span>Kling</span><span>Wan</span><span>Grok Imagine</span>
-    <span>Flux Kontext</span><span>SeeDream 4</span><span>Nano Banana</span><span>Suno Music</span><span>AI Voice</span>
+<section class="wrap center">
+  <div class="eyebrow rv">The arsenal</div>
+  <h2 class="rv d1">30+ frontier engines.<br>One credit pool.</h2>
+  <p class="lead rv d2">Stop juggling five subscriptions. The flagship names live here, behind one login.</p>
+  <div class="chips rv d2">
+    <span class="chip hot">Seedance 2.0</span><span class="chip hot">Sora 2 Pro</span><span class="chip hot">Veo 3</span>
+    <span class="chip">Sora 2</span><span class="chip">Seedance 2.5</span><span class="chip">Kling</span><span class="chip">Wan</span>
+    <span class="chip">Grok Imagine</span><span class="chip">Flux Kontext</span><span class="chip">SeeDream 4</span>
+    <span class="chip">Nano Banana</span><span class="chip">Suno Music</span><span class="chip">AI Voice</span>
   </div>
-  <div class="statband" style="margin-top:46px">
-    <div class="stat"><b>10 min</b><span>max single render</span></div>
-    <div class="stat"><b>30+</b><span>engines included</span></div>
-    <div class="stat"><b>$9.90</b><span>entry plan/mo</span></div>
-    <div class="stat"><b>~3 min</b><span>median clip wait</span></div>
-    <div class="stat"><b>100%</b><span>refund on failed runs</span></div>
+  <div class="stats">
+    <div class="stat shell rv"><div class="core"><b>10 min</b><span>max single render</span></div></div>
+    <div class="stat shell rv d1"><div class="core"><b>30+</b><span>engines included</span></div></div>
+    <div class="stat shell rv d2"><div class="core"><b>$9.90</b><span>entry plan / mo</span></div></div>
+    <div class="stat shell rv d3"><div class="core"><b>~3 min</b><span>median clip wait</span></div></div>
   </div>
-</div>
 </section>
 
-<section>
-<div class="wrap">
-  <h2>From song to finished video in four steps</h2>
-  <div class="grid g4 steps" style="margin-top:40px">
-    <div class="card"><h3>Upload your track</h3><p>MP3, WAV, or M4A — up to 10 minutes. The video will match it second-for-second.</p></div>
-    <div class="card"><h3>Cast the performer</h3><p>Three photos lock your artist into every scene. No photos? The AI casts from the voice.</p></div>
-    <div class="card"><h3>Describe the world</h3><p>One scene description sets style, story, and camera. The free Director's Guide below hands you the template.</p></div>
-    <div class="card"><h3>Generate & go</h3><p>Close the tab — the finished video lands in your library. Download and post anywhere.</p></div>
+<section id="how" class="wrap">
+  <div class="center">
+    <div class="eyebrow rv">No timeline editor</div>
+    <h2 class="rv d1">Song to finished video,<br>in four steps</h2>
   </div>
-</div>
+  <div class="steps">
+    <div class="step shell rv"><div class="core"><span class="n">1</span><h3>Upload your track</h3><p>MP3, WAV, or M4A up to 10 minutes. The video matches it second-for-second.</p></div></div>
+    <div class="step shell rv d1"><div class="core"><span class="n">2</span><h3>Cast the performer</h3><p>Three photos lock your artist into every scene — or let the AI cast from the voice.</p></div></div>
+    <div class="step shell rv d2"><div class="core"><span class="n">3</span><h3>Describe the world</h3><p>One scene description sets style, story, and camera. The free guide hands you the template.</p></div></div>
+    <div class="step shell rv d3"><div class="core"><span class="n">4</span><h3>Generate & go</h3><p>Close the tab — the finished video lands in your library. Download and post anywhere.</p></div></div>
+  </div>
 </section>
 
-<section>
-<div class="wrap">
-  <div class="cta-band">
-    <span class="pill" style="margin-bottom:18px">FREE DOWNLOAD</span>
-    <h2>The Director's Guide</h2>
-    <p>The prompt playbook that separates directed renders from generic AI output: the 5-part scene-description template, a credit strategy that protects your budget, camera vocabulary the engine obeys, and the full negative-prompt list. Instant, free.</p>
-    <a class="btn" style="background:linear-gradient(100deg,var(--gold),#ffe27a);color:var(--ink);box-shadow:0 8px 28px rgba(255,210,63,.35)" href="directors-guide.html">Read the Director's Guide Free →</a>
-    <!-- EMAIL CAPTURE (re-enable once marketing ESP account exists — see SEEDANCE_MASTER_PROCESS §6):
-    <form class="capture" action="ESP_FORM_ENDPOINT" method="POST">
-      <input type="email" name="email" placeholder="your@email.com" required>
-      <button class="btn" type="submit">Send Me the Guide →</button>
-    </form> -->
-    <p class="fineprint">No signup required. Email list with instant gift delivery coming soon.</p>
+<section class="wrap band">
+  <div class="shell rv">
+    <div class="core">
+      <div class="eyebrow"><span class="pulse"></span>Free download</div>
+      <h2>The Director's Guide</h2>
+      <p>The prompt playbook that separates directed renders from generic AI output: the five-part scene template, a credit strategy that protects your budget, camera vocabulary the engine obeys, and the full negative-prompt list.</p>
+      <!-- EMAIL CAPTURE: wire MailerLite hosted-form endpoint here (identity separation law — no email in source).
+      <form class="giftform" action="MAILERLITE_ENDPOINT" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <button class="btn" type="submit">Send it<span class="ic">↗</span></button>
+      </form> -->
+      <a class="btn big" href="directors-guide.html">Read the guide free<span class="ic">↗</span></a>
+      <p class="mini">No signup required yet — instant-delivery email list launching soon.</p>
+    </div>
   </div>
-</div>
 </section>
 
-<section>
-<div class="wrap">
-  <h2>Quick answers</h2>
-  <div style="margin-top:32px">
-    <details><summary>What does it cost, exactly?</summary><p>Credits are priced per second of video: 2/second at 480p, 4/second at 720p, more at 1080p/4K — and the precise total displays before you commit. Plans start at $9.90/month, every model included, plus a free credit to claim daily. Smart move: test your idea on a 30-second excerpt at 480p, then render the full song once.</p></details>
-    <details><summary>Can I sell what I make?</summary><p>Yes — every plan includes a commercial license covering social content, YouTube, ads, client work, and paid media. Paid plans export watermark-free.</p></details>
-    <details><summary>What if a render fails?</summary><p>Credits return to your account automatically. You only ever pay for finished videos.</p></details>
-    <details><summary>Do I need editing skills?</summary><p>No timeline editor exists anywhere in the flow. Upload, describe, generate. The craft lives in how you describe the scene — which is exactly what the free Director's Guide teaches.</p></details>
-    <details><summary>How fast is it?</summary><p>Short clips land in about 3 minutes. Full music videos process at roughly 3–6 minutes per minute of audio — start a render, make coffee, come back to a finished video.</p></details>
+<section id="faq" class="wrap">
+  <div class="center">
+    <div class="eyebrow rv">Before you spend a credit</div>
+    <h2 class="rv d1">Straight answers</h2>
   </div>
-  <div style="text-align:center;margin-top:42px">
-    <a class="btn" href="https://bit.ly/seedmv" rel="sponsored noopener">Try Seedance Free →</a>
-    <span class="btn-sub">Your song. One upload. The whole show.</span>
+  <div class="faq rv d1">
+    <details><summary>What does it cost, exactly?<span class="plus">+</span></summary><p>Credits are priced per second of video: two per second at 480p, four at 720p, more at 1080p and 4K — and the precise total displays before you commit. Plans start at $9.90/month with every model included, plus a free credit to claim daily. Smart move: test your idea on a 30-second excerpt at 480p, then render the full song once.</p></details>
+    <details><summary>Can I sell what I make?<span class="plus">+</span></summary><p>Yes — every plan includes a commercial license covering social content, YouTube, ads, client work, and paid media. Paid plans export watermark-free.</p></details>
+    <details><summary>What if a render fails?<span class="plus">+</span></summary><p>Credits return to your account automatically. You only ever pay for finished videos.</p></details>
+    <details><summary>Do I need editing skills?<span class="plus">+</span></summary><p>No timeline editor exists anywhere in the flow. Upload, describe, generate. The craft lives in how you describe the scene — which is exactly what the free Director's Guide teaches.</p></details>
+    <details><summary>How fast is it?<span class="plus">+</span></summary><p>Short clips land in about three minutes. Full music videos process at roughly three to six minutes per minute of audio — start a render, make coffee, come back to a finished video.</p></details>
   </div>
-  <div class="disclosure"><b>Disclosure:</b> This is an independent guide site. Links on this page are affiliate links — if you subscribe through them we earn a commission at no additional cost to you. Not affiliated with or endorsed by seeddance.video or any AI model vendor.</div>
-</div>
+  <div class="center" style="margin-top:56px">
+    <a class="btn big rv" href="https://bit.ly/seedmv" rel="sponsored noopener" target="_blank">Try Seedance free<span class="ic">↗</span></a>
+  </div>
 </section>
 
 <footer>
-<div class="wrap">© 2026 AI Music Video Guide · <a href="directors-guide.html" style="color:inherit">Director's Guide</a></div>
+  <div class="wrap">
+    <div class="disclosure"><b>Disclosure:</b> This is an independent guide site. Links on this page are affiliate links — if you subscribe through them we earn a commission at no additional cost to you. Not affiliated with, endorsed by, or sponsored by seeddance.video or any AI model vendor.</div>
+    © 2026 AI Music Video Guide · <a href="directors-guide.html" style="color:var(--cream)">Director's Guide</a>
+  </div>
 </footer>
 
+<script>
+// nav hide-on-scroll-down
+let lastY=0;const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('hide',y>lastY&&y>300);lastY=y;},{passive:true});
+// mobile menu morph
+const burger=document.getElementById('burger'),mob=document.getElementById('mobmenu');
+burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('x',o);
+  burger.children[0].style.transform=o?'translateY(6.5px) rotate(45deg)':'';
+  burger.children[1].style.opacity=o?'0':'';
+  burger.children[2].style.transform=o?'translateY(-6.5px) rotate(-45deg)':'';});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');
+  burger.children[0].style.transform='';burger.children[1].style.opacity='';burger.children[2].style.transform='';}));
+// scroll reveals
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
