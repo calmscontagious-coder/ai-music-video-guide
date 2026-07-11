@@ -172,8 +172,8 @@ footer{padding:60px 0 70px;border-top:1px solid var(--line);text-align:center;co
 .disclosure{max-width:720px;margin:0 auto 26px;font-size:.78rem;color:var(--dim);opacity:.75;line-height:1.7}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(40px);filter:blur(8px);transition:opacity .9s var(--e),transform .9s var(--e),filter .9s var(--e)}
-.rv.in{opacity:1;transform:none;filter:none}
+body.js .rv{opacity:0;transform:translateY(40px);filter:blur(8px);transition:opacity .9s var(--e),transform .9s var(--e),filter .9s var(--e)}
+body.js .rv.in{opacity:1;transform:none;filter:none}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
 
 @media(max-width:860px){
@@ -203,6 +203,7 @@ footer{padding:60px 0 70px;border-top:1px solid var(--line);text-align:center;co
 </style>
 </head>
 <body>
+<script>document.body.classList.add('js')</script>
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
 <div class="grain"></div>
 
