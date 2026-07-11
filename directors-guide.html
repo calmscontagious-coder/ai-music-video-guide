@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Seedance Director's Guide</title>
+<style>
+  :root{--ink:#0b0a0e;--cream:#f6f1e7;--pink:#ff2e88;--gold:#ffd23f;--teal:#17c37b}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--cream);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
+  .wrap{max-width:760px;margin:0 auto;padding:70px 24px 120px}
+  .tape{display:inline-block;background:var(--gold);color:var(--ink);font-weight:800;letter-spacing:.14em;font-size:.72rem;padding:6px 18px;transform:rotate(-1.6deg)}
+  h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.1;margin:20px 0 10px}
+  .byline{opacity:.7;margin-bottom:46px}
+  h2{font-size:1.5rem;font-weight:900;color:var(--gold);margin:52px 0 14px;padding-top:26px;border-top:1px solid rgba(246,241,231,.12)}
+  h3{font-size:1.1rem;color:var(--pink);margin:26px 0 8px}
+  p{margin-bottom:16px;opacity:.92}
+  ul,ol{margin:0 0 18px 24px}
+  li{margin-bottom:8px;opacity:.92}
+  code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em}
+  pre{background:rgba(246,241,231,.06);border:1px solid rgba(246,241,231,.14);border-radius:10px;padding:20px;overflow-x:auto;margin-bottom:20px;white-space:pre-wrap}
+  .tip{border-left:4px solid var(--teal);padding:10px 0 10px 20px;margin:22px 0;background:rgba(23,195,123,.06)}
+  .warn{border-left:4px solid var(--pink);padding:10px 0 10px 20px;margin:22px 0;background:rgba(255,46,136,.06)}
+  .btn{display:inline-block;background:var(--pink);color:#fff;font-weight:800;padding:14px 34px;border-radius:10px;text-decoration:none;margin-top:8px}
+  .fine{font-size:.8rem;opacity:.6;margin-top:60px;border-top:1px solid rgba(246,241,231,.12);padding-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="tape">FREE DIRECTOR'S GUIDE · v1</span>
+<h1>The Seedance Director's Guide</h1>
+<p class="byline">Field notes from real renders of a real music catalog — a working playbook, not theory.</p>
+
+<p>AI video tools don't reward better wishes; they reward better <b>direction</b>. The difference between generic output and something people rewatch is a scene description that behaves like a shot-listed brief. This guide is the exact system used on a real release catalog.</p>
+
+<h2>1. The credit rule that pays for this guide: probe, then strike</h2>
+<p>Music-video renders are priced per second of audio, and the meter shows the exact total before you commit. So never fire a full song on an untested prompt:</p>
+<ol>
+  <li>Cut a <b>28–30 second excerpt</b> of your song — a chorus plus one clear vocal line.</li>
+  <li>Render it at <b>480p</b> with the exact scene description and reference photos you plan to use. That's a ~60-credit rehearsal instead of a four-figure gamble.</li>
+  <li>Judge three things: does the style hold? does the performer stay on-model? does the lip sync land?</li>
+  <li>Fix the description, re-probe if needed, and only then render the full song at high resolution — <b>once</b>.</li>
+</ol>
+<div class="tip">Failed renders auto-refund, but a <i>successful render of a bad prompt</i> doesn't. The probe protects you from the expensive kind of mistake: the one that technically worked.</div>
+
+<h2>2. The 5-part scene description template</h2>
+<p>The scene box is your director's chair (about 2,500 characters). Order matters — front-load what must never be lost:</p>
+
+<h3>Part 1 — Style lock (~400 chars)</h3>
+<p>Declare a visual religion and forbid everything else. Styles age well when they're judged by their own rules — stylization outlasts realism every time.</p>
+<pre>Flat 2D hand-drawn illustration, [your style: punk zine collage / watercolor
+storybook / neon riso print]. Zero 3D, zero CGI, zero photorealism. Hard ink
+outlines, limited palette: [3-4 named colors]. Flat lighting, no cast shadows.
+Maintain this exact illustrated style in every frame.</pre>
+
+<h3>Part 2 — World and performer (~500 chars)</h3>
+<p>Describe your lead so specifically the engine can't drift: silhouette, costume, one signature feature, the world they live in. If you upload reference photos, this text should agree with them.</p>
+
+<h3>Part 3 — Arc by song sections (~900 chars)</h3>
+<p>The engine maps your song's structure — so direct in its language: "in the verses… when the chorus hits… at the bridge… by the final chorus…". Give the video a journey, not a loop: the world should be visibly further along at the end. One central visual metaphor per song beats five ideas fighting.</p>
+
+<h3>Part 4 — Camera intent (~300 chars)</h3>
+<p>Two or three moves, each tied to a musical moment: "slow dolly-in through the verses; hard cuts on every chorus downbeat; one crane-down from the sky as the bridge opens." Every cut should answer <i>why this frame now</i> — aimless coverage is what reads as slop.</p>
+
+<h3>Part 5 — Negatives (~200 chars)</h3>
+<pre>No photorealism, no 3D render, no lens flare, no watermark, no on-screen text
+or typography, no extra limbs, no close-up realistic hands, no style drift.</pre>
+<div class="warn">Never ask the model to render text or lyrics — AI type warps within seconds and instantly flags the video as machine-made. Add titles and lyrics in an editor afterward, in a font you chose.</div>
+
+<h2>3. Camera vocabulary the engine obeys</h2>
+<ul>
+  <li><b>dolly in / dolly out</b> — slow pushes sell intimacy or reveal scale</li>
+  <li><b>lateral tracking shot</b> — follows a moving subject, keep "lead room"</li>
+  <li><b>crane down / crane up</b> — heaven-to-stage transitions, great for intros</li>
+  <li><b>rack focus</b> — attention handoff between foreground and background</li>
+  <li><b>held / static shot</b> — used deliberately, a held frame makes the NEXT cut hit harder</li>
+  <li><b>cuts land on the beat</b> — say it explicitly; rhythm-locked editing is the mode's superpower</li>
+</ul>
+
+<h2>4. Design around AI's known weaknesses</h2>
+<p>Strong art direction hides what the model can't do:</p>
+<ul>
+  <li>Avoid close-up realistic hands, flowing hair physics, glass and mirror reflections, and long unbroken camera drifts.</li>
+  <li>Prefer "limited animation" grammar: held poses, hard cuts, repeating motifs. Frame-to-frame discontinuity becomes a style choice instead of an artifact.</li>
+  <li>Bake texture into the style (grain, halftone, paper, print misregistration) — intentional imperfection camouflages temporal noise AND reads as human hands.</li>
+  <li>One palette, one lighting logic, the whole video. Lighting drift mid-shot is a top AI tell.</li>
+</ul>
+
+<h2>5. Reference photos: your identity anchor</h2>
+<ul>
+  <li>Up to 3 clear, front-facing portraits keep the same performer in every scene.</li>
+  <li>Skip them and the engine casts a performer that matches the voice — sometimes great, always a gamble. Probe both ways once and pick a lane.</li>
+  <li>Match your text to your photos: if your reference wears a red jacket, say "red jacket" in Part 2 — agreement between channels is what locks identity.</li>
+</ul>
+
+<h2>6. One master, every platform</h2>
+<ul>
+  <li>Render the master <b>16:9 at 1080p</b> — it's YouTube-native and the best source for everything else.</li>
+  <li>For TikTok/Reels/Shorts, don't crop: <b>design a vertical frame</b> (a styled 9:16 canvas holding your 16:9 film) so nothing is lost and the page itself carries your brand.</li>
+  <li>Burn readable lyrics/captions on vertical cuts — caption data consistently shows double-digit watch-time lifts for music content.</li>
+  <li>Cut 25–35s vertical teasers that end where the chorus resolves into the intro — loop-friendly clips earn replay retention above 100%.</li>
+</ul>
+
+<h2>7. The pre-render checklist</h2>
+<ol>
+  <li>Probe excerpt cut (28–30s, the chorus)</li>
+  <li>Scene description complete: style lock → world → arc → camera → negatives</li>
+  <li>Reference photos agree with the text</li>
+  <li>Subtitles OFF (add your own type later) · Lip sync ON for vocal tracks</li>
+  <li>Read the credit meter before pressing Generate</li>
+  <li>Probe at 480p → judge → full render once at 1080p</li>
+</ol>
+
+<p style="margin-top:44px">That's the whole system. It costs about one probe's worth of credits to learn and it compounds on every song you ever render.</p>
+<a class="btn" href="https://bit.ly/seedmv" rel="sponsored noopener">Open Seedance & Direct Your First Render →</a>
+
+<p class="fine">© 2026 AI Music Video Guide. Free to share with attribution. Affiliate disclosure: Seedance links in this guide are affiliate links — subscribing through them supports free resources like this at no extra cost to you. Not affiliated with or endorsed by seeddance.video or any AI model vendor.</p>
+</div>
+</body>
+</html>
