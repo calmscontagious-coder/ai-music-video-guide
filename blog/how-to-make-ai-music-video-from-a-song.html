@@ -10,7 +10,69 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Make an AI Music Video From a Song (2026)">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<style>
+:root{
+  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
+  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
+  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
+  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--pink);color:#fff}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
+.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
+.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
+.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
+  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
+  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
+.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
+.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
+.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
+.nav-cta:hover{text-decoration:none}
+main{padding:60px 0 40px}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
+  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
+article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
+.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
+article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
+article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
+article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
+article p,.page p{margin-bottom:18px}
+article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
+article li,.page li{margin-bottom:9px}
+article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
+article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
+article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
+article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
+article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
+.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
+  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
+.cta:hover{text-decoration:none;transform:translateY(-2px)}
+.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
+.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
+.card:hover{transform:translateY(-4px);border-color:var(--line2)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{padding:0 0 20px;color:var(--dim)}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
+.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
+.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
+@media(max-width:640px){.nlinks{display:none}}
+
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make an AI Music Video From a Song: A Complete Step-by-Step Tutorial", "description": "Turn any song into an AI music video: upload audio, cast a performer, write a scene, lip-sync, beat-cut, and export for every platform. Beginner-friendly guide.", "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-07-11", "dateModified": "2026-07-12", "wordCount": 1693, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/how-to-make-ai-music-video-from-a-song.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I make an AI music video from my own song?", "acceptedAnswer": {"@type": "Answer", "text": "Upload your song file to a Music-to-Video tool like Seedance, cast a performer by describing a character or uploading a reference photo, write a scene description covering subject, setting, camera, lighting, and mood, then render. Run a short low-resolution probe first to confirm the look, then re-render at full quality. Finally, cut to the beat and export the right aspect ratio for your platform."}}, {"@type": "Question", "name": "What is the probe-then-strike credit tip?", "acceptedAnswer": {"@type": "Answer", "text": "Instead of spending credits on a long, high-resolution render from an untested prompt, first render a short 2-5 second low-resolution probe to validate the performer, framing, and motion. Once the probe looks right, re-run the same prompt at full length and quality (the strike). Several cheap probes plus one confident strike almost always costs fewer credits than blind full-resolution renders that miss."}}, {"@type": "Question", "name": "Does the AI automatically lip-sync the singer to my vocals?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Music-to-Video Pro maps mouth movement to your vocal track automatically. You get the most accurate sync by feeding it a clean or isolated vocal, keeping the performer's face in a medium or close frame, and focusing tight sync on the hook line rather than every word in the verses."}}, {"@type": "Question", "name": "What video format should I use for TikTok, YouTube, and Spotify?", "acceptedAnswer": {"@type": "Answer", "text": "Use 9:16 vertical for TikTok, YouTube Shorts, and Instagram Reels; 16:9 horizontal for the full-length YouTube video; and a short 3-8 second 9:16 seamless loop for Spotify Canvas. Render or crop to the correct aspect ratio before uploading so platforms don't crop your subject out of frame."}}, {"@type": "Question", "name": "Do I need editing experience to cut the video to the beat?", "acceptedAnswer": {"@type": "Answer", "text": "No. When you upload your song, the tool detects tempo and downbeats automatically, so Music-to-Video Pro can place cuts on the beat for you. The manual craft is just choosing to cut harder on the drop, hold shots longer in quiet sections, and land edits on the downbeat rather than between beats."}}, {"@type": "Question", "name": "Can I use AI music videos commercially and are they watermark-free?", "acceptedAnswer": {"@type": "Answer", "text": "With Seedance, yes \u2014 exports are watermark-free and include a commercial license, so you can post, monetize, and pin the videos to an official release. Always confirm the license terms of whichever tool you use, since free tiers on some platforms add watermarks or restrict commercial use."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Make an AI Music Video From a Song: A Complete Step-by-Step Tutorial", "item": "https://purposewithpresence.com/blog/how-to-make-ai-music-video-from-a-song.html"}]}</script>
@@ -19,11 +81,28 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+/* premium patch v2 */
+body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
+.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
+article h2,.page h2{position:relative;padding-left:18px}
+article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
+article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
+article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
+blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
+.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
+nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
+@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+::selection{background:#ff2e88;color:#fff}
+</style>
 </head><body>
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://bit.ly/seedmv" rel="sponsored noopener" target="_blank">Try Free</a></nav>
+<a class="nav-cta" href="https://seeddance.video/i/AiVideo" rel="sponsored noopener" target="_blank">Try Free</a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › how to make an AI music video from a song</p>
 <h1>How to Make an AI Music Video From a Song: A Complete Step-by-Step Tutorial</h1>
@@ -32,7 +111,7 @@
 
 <p>You have a finished track and a mental picture of the video it deserves — but no camera, no crew, and no five-figure budget. That gap used to end the conversation. It doesn't anymore. Learning <strong>how to make an AI music video from a song</strong> now takes an afternoon, a text description, and a tool that syncs visuals to your audio automatically. This tutorial walks you through the entire process end to end: uploading your song, casting a performer, writing a scene description that actually renders well, getting the lip-sync right, cutting to the beat, and exporting the correct format for YouTube, TikTok, Reels, and Spotify Canvas.</p>
 
-<p>Everything below is written for a first-timer, but it's complete enough that a working artist can ship a release-ready video from it. We use <a href="https://bit.ly/seedmv" rel="sponsored noopener">Seedance</a> as the reference tool because its Music-to-Video Pro mode is built specifically for this job — it reads your audio and drives cuts and motion off the beat instead of making you hand-time everything. (Heads up: some links on this page are affiliate links, which is how this site stays free. We only recommend tools we'd actually use.)</p>
+<p>Everything below is written for a first-timer, but it's complete enough that a working artist can ship a release-ready video from it. We use <a href="https://seeddance.video/i/AiVideo" rel="sponsored noopener">Seedance</a> as the reference tool because its Music-to-Video Pro mode is built specifically for this job — it reads your audio and drives cuts and motion off the beat instead of making you hand-time everything. (Heads up: some links on this page are affiliate links, which is how this site stays free. We only recommend tools we'd actually use.)</p>
 
 <h2>Before you start: what you need</h2>
 
@@ -87,7 +166,7 @@ Strong: "A woman in a red coat sings on a rain-slicked rooftop at dusk, city lig
 <li><strong>Mood</strong> — the emotional tone the visuals should carry.</li>
 </ol>
 
-<p>Match the scene to the song. A slow ballad wants slow camera moves and warm light; a club track wants fast cuts, strobes, and motion. If you want the tool to generate a polished prompt from a plain idea, <a href="https://bit.ly/seedmv" rel="sponsored noopener">Seedance's scene builder</a> can expand a one-line description into a full production prompt for you.</p>
+<p>Match the scene to the song. A slow ballad wants slow camera moves and warm light; a club track wants fast cuts, strobes, and motion. If you want the tool to generate a polished prompt from a plain idea, <a href="https://seeddance.video/i/AiVideo" rel="sponsored noopener">Seedance's scene builder</a> can expand a one-line description into a full production prompt for you.</p>
 
 <h2>Step 4: Probe first, then strike (the credit-saving move)</h2>
 
@@ -151,7 +230,7 @@ Strong: "A woman in a red coat sings on a rain-slicked rooftop at dusk, city lig
 </tbody>
 </table>
 
-<p>The efficient workflow: build your strongest scene once, render a vertical 9:16 hook for social, and a horizontal 16:9 full version for YouTube. Two renders cover almost every surface. Because <a href="https://bit.ly/seedmv" rel="sponsored noopener">Seedance exports watermark-free with a commercial license</a>, everything you make is cleared to post, monetize, and pin to a release.</p>
+<p>The efficient workflow: build your strongest scene once, render a vertical 9:16 hook for social, and a horizontal 16:9 full version for YouTube. Two renders cover almost every surface. Because <a href="https://seeddance.video/i/AiVideo" rel="sponsored noopener">Seedance exports watermark-free with a commercial license</a>, everything you make is cleared to post, monetize, and pin to a release.</p>
 
 <h2>Common beginner mistakes to avoid</h2>
 
@@ -167,9 +246,9 @@ Strong: "A woman in a red coat sings on a rain-slicked rooftop at dusk, city lig
 
 <p>Here's the whole process in one breath: upload your song, cast a performer (or go performer-free), write a five-part scene description, probe cheap, strike at full quality, tighten the lip-sync on the hook, cut to the beat, and export a vertical and a horizontal version. That's a complete, release-ready AI music video from a single track — no crew, no camera, no wasted budget.</p>
 
-<p>The best way to internalize this is to run it once on a hook you already love. Grab a song section, spend a few free credits on probes, and ship a 15-second vertical clip today. <a href="https://bit.ly/seedmv" rel="sponsored noopener">Start with Seedance's Music-to-Video Pro</a>, use the probe-then-strike habit from your very first render, and you'll have a video worth posting before the afternoon is out.</p>
+<p>The best way to internalize this is to run it once on a hook you already love. Grab a song section, spend a few free credits on probes, and ship a 15-second vertical clip today. <a href="https://seeddance.video/i/AiVideo" rel="sponsored noopener">Start with Seedance's Music-to-Video Pro</a>, use the probe-then-strike habit from your very first render, and you'll have a video worth posting before the afternoon is out.</p>
 
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://bit.ly/seedmv" rel="sponsored noopener" target="_blank">Try Seedance free — daily credits, no card<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/AiVideo" rel="sponsored noopener" target="_blank">Try Seedance free — daily credits, no card<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost first with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <h2>Frequently asked questions</h2>
 <div class="faq"><details><summary>How do I make an AI music video from my own song?<span class="plus" style="float:right">+</span></summary><p>Upload your song file to a Music-to-Video tool like Seedance, cast a performer by describing a character or uploading a reference photo, write a scene description covering subject, setting, camera, lighting, and mood, then render. Run a short low-resolution probe first to confirm the look, then re-render at full quality. Finally, cut to the beat and export the right aspect ratio for your platform.</p></details><details><summary>What is the probe-then-strike credit tip?<span class="plus" style="float:right">+</span></summary><p>Instead of spending credits on a long, high-resolution render from an untested prompt, first render a short 2-5 second low-resolution probe to validate the performer, framing, and motion. Once the probe looks right, re-run the same prompt at full length and quality (the strike). Several cheap probes plus one confident strike almost always costs fewer credits than blind full-resolution renders that miss.</p></details><details><summary>Does the AI automatically lip-sync the singer to my vocals?<span class="plus" style="float:right">+</span></summary><p>Yes. Music-to-Video Pro maps mouth movement to your vocal track automatically. You get the most accurate sync by feeding it a clean or isolated vocal, keeping the performer&#x27;s face in a medium or close frame, and focusing tight sync on the hook line rather than every word in the verses.</p></details><details><summary>What video format should I use for TikTok, YouTube, and Spotify?<span class="plus" style="float:right">+</span></summary><p>Use 9:16 vertical for TikTok, YouTube Shorts, and Instagram Reels; 16:9 horizontal for the full-length YouTube video; and a short 3-8 second 9:16 seamless loop for Spotify Canvas. Render or crop to the correct aspect ratio before uploading so platforms don&#x27;t crop your subject out of frame.</p></details><details><summary>Do I need editing experience to cut the video to the beat?<span class="plus" style="float:right">+</span></summary><p>No. When you upload your song, the tool detects tempo and downbeats automatically, so Music-to-Video Pro can place cuts on the beat for you. The manual craft is just choosing to cut harder on the drop, hold shots longer in quiet sections, and land edits on the downbeat rather than between beats.</p></details><details><summary>Can I use AI music videos commercially and are they watermark-free?<span class="plus" style="float:right">+</span></summary><p>With Seedance, yes — exports are watermark-free and include a commercial license, so you can post, monetize, and pin the videos to an official release. Always confirm the license terms of whichever tool you use, since free tiers on some platforms add watermarks or restrict commercial use.</p></details></div>
