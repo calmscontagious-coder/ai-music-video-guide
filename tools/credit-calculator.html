@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Music Video Credit Calculator — Seedance Cost Estimator</title>
+<meta name="description" content="Free calculator: estimate the credits and cost to render your AI music video on Seedance by song length and resolution. Includes the probe-then-strike money-saving tip.">
+<link rel="canonical" href="https://purposewithpresence.com/tools/credit-calculator.html">
+<meta property="og:title" content="AI Music Video Credit Calculator">
+<meta property="og:description" content="Estimate credits and cost to render your AI music video by song length and resolution.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://purposewithpresence.com/tools/credit-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23060609'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='%23ff2e88' stroke-width='9'/%3E%3Cpath d='M43 38 L65 50 L43 62 Z' fill='%23ffd23f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.calc{background:rgba(244,242,238,.04);border:1px solid var(--line2);border-radius:22px;padding:32px;margin:30px 0;max-width:620px}
+.calc label{display:block;font-family:'Space Grotesk';font-weight:500;margin:20px 0 8px;font-size:.95rem}
+.calc .row{display:flex;gap:12px;flex-wrap:wrap}
+.calc input[type=number]{flex:1;min-width:90px;padding:13px 16px;border-radius:10px;border:1px solid var(--line2);background:rgba(6,6,9,.7);color:var(--cream);font-family:inherit;font-size:1.05rem}
+.calc input:focus{outline:none;border-color:var(--pink)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{padding:12px 18px;border-radius:10px;border:1px solid var(--line2);background:rgba(6,6,9,.5);color:var(--dim);font-family:'Space Grotesk';font-weight:500;cursor:pointer;transition:all .2s var(--e)}
+.seg button.on{background:var(--pink);color:#fff;border-color:var(--pink)}
+.out{margin-top:28px;padding:24px;border-radius:16px;background:linear-gradient(135deg,rgba(255,46,136,.12),rgba(168,85,247,.08));border:1px solid rgba(255,46,136,.28);text-align:center}
+.out .big{font-family:'Space Grotesk';font-size:2.6rem;font-weight:600;background:linear-gradient(120deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.out .sub{color:var(--dim);margin-top:6px;font-size:.95rem}
+.out .cost{font-size:1.3rem;font-weight:600;margin-top:14px;color:var(--cream)}
+.tip{border-left:3px solid var(--emerald);background:rgba(25,224,138,.06);padding:12px 18px;margin:22px 0;border-radius:0 10px 10px 0;font-size:.96rem;color:#cfcdd7}
+</style>
+</head>
+<body>
+<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
+<nav>
+  <a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
+  <div class="nlinks"><a href="/#features">Features</a><a href="/blog/">Blog</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
+  <a class="nav-cta" href="https://bit.ly/seedmv" rel="sponsored noopener" target="_blank">Try Free</a>
+</nav>
+<main class="wrap">
+<div class="page">
+<span class="eyebrow">Free Tool</span>
+<h1>AI Music Video Credit Calculator</h1>
+<p class="lede">Estimate the credits and rough cost to render your music video on Seedance — by song length and resolution. Then use the probe-then-strike trick to spend a fraction of it.</p>
+
+<div class="calc">
+  <label>How long is your song?</label>
+  <div class="row">
+    <input type="number" id="min" min="0" max="10" value="3" aria-label="minutes"> <span style="align-self:center;color:var(--dim)">min</span>
+    <input type="number" id="sec" min="0" max="59" value="30" aria-label="seconds"> <span style="align-self:center;color:var(--dim)">sec</span>
+  </div>
+  <label>Resolution</label>
+  <div class="seg" id="res">
+    <button data-r="2" class="on">480p</button>
+    <button data-r="4">720p</button>
+    <button data-r="8">1080p</button>
+  </div>
+  <div class="out">
+    <div class="big" id="credits">—</div>
+    <div class="sub" id="rate"></div>
+    <div class="cost" id="cost"></div>
+  </div>
+</div>
+
+<div class="tip"><b>Money-saving move:</b> before you render the full song, cut a ~28-second excerpt and render <em>that</em> at 480p first (about 55 credits) to test your prompt. Only fire the full render once it looks right. It's the single biggest way to avoid wasting credits — full details in the free <a href="/directors-guide.html">Director's Guide</a>.</div>
+
+<div style="text-align:center;margin:36px 0"><a class="cta" href="https://bit.ly/seedmv" rel="sponsored noopener" target="_blank">Get free daily credits on Seedance<span class="ic">↗</span></a></div>
+
+<h2>How Seedance pricing works</h2>
+<p>Seedance's Music-to-Video mode charges by the second of your audio: about <b>2 credits/second at 480p</b> and <b>4 credits/second at 720p</b>, with 1080p higher. The exact total always shows before you press Generate, and failed renders are refunded automatically. Credits cost roughly $0.04–$0.07 each depending on your plan (from $9.90/month), and there's a free credit to claim every day. This calculator uses ~$0.05/credit as a mid-plan estimate — check the live meter for your exact cost.</p>
+<p>Want the full playbook for directing renders that don't look like everyone else's? The <a href="/directors-guide.html">free Director's Guide</a> has the scene-description template, camera vocabulary, and the probe-then-strike strategy.</p>
+</div>
+</main>
+<footer><div class="wrap">
+<div class="foot-links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
+<div class="disclosure"><b>Affiliate disclosure:</b> reader-supported; some links are affiliate links (no extra cost to you). Estimates only — verify live pricing on the provider's site. Independent; not affiliated with seeddance.video or any AI vendor.</div>
+<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p>
+</div></footer>
+<script>
+let rate=2;
+const min=document.getElementById('min'),sec=document.getElementById('sec'),
+  creditsEl=document.getElementById('credits'),rateEl=document.getElementById('rate'),costEl=document.getElementById('cost');
+function calc(){
+  let s=(parseInt(min.value)||0)*60+(parseInt(sec.value)||0);
+  s=Math.max(5,Math.min(600,s));
+  const credits=Math.round(s*rate);
+  const cost=(credits*0.05);
+  creditsEl.textContent=credits.toLocaleString()+' credits';
+  const label={2:'480p · 2 credits/sec',4:'720p · 4 credits/sec',8:'1080p · ~8 credits/sec'}[rate];
+  rateEl.textContent=`${s}s of audio · ${label}`;
+  costEl.textContent='≈ $'+cost.toFixed(2)+' at ~$0.05/credit';
+}
+document.querySelectorAll('#res button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#res button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');rate=+b.dataset.r;calc();
+}));
+[min,sec].forEach(i=>i.addEventListener('input',calc));
+calc();
+</script>
+</body></html>

@@ -1,0 +1,20 @@
+# AI Music Video Guide
+
+> Independent guides, honest tool comparisons, and free tools for making AI music videos.
+> We help musicians and creators turn songs into full, lip-synced, beat-cut music videos with AI,
+> and choose the right AI video tool. Reader-supported via affiliate links (disclosed).
+
+## Key pages
+- [Home](https://purposewithpresence.com/): Turn any song into a full AI music video.
+- [Director's Guide](https://purposewithpresence.com/directors-guide.html): Free prompt playbook (scene template, credit strategy, camera vocabulary).
+- [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): Estimate AI music video render cost.
+
+## Guides
+- [How to Make an AI Music Video From a Song](https://purposewithpresence.com/blog/how-to-make-ai-music-video-from-a-song.html)
+- [Sora 2 vs Veo 3 vs Seedance](https://purposewithpresence.com/blog/sora-2-vs-veo-3-vs-seedance.html)
+- [Best AI Video Generators for Musicians](https://purposewithpresence.com/blog/best-ai-video-generators-for-musicians.html)
+- [How to Get Sora 2 & Veo 3 Access](https://purposewithpresence.com/blog/how-to-get-sora-2-veo-3-access.html)
+
+## About
+Recommended tool: Seedance (seeddance.video) — Music-to-Video Pro plus Sora 2 Pro, Veo 3, and 30+ engines in one credit pool; free daily credits; from $9.90/month; commercial license.
+Contact: aivguide@gmail.com
