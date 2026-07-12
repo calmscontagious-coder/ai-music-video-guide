@@ -11,25 +11,30 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://purposewithpresence.com/tools/credit-calculator.html">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23060609'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='%23ff2e88' stroke-width='9'/%3E%3Cpath d='M43 38 L65 50 L43 62 Z' fill='%23ffd23f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
+:root{--bg:#060609;--cream:#f4f2ee;--dim:#a4a2b0;--pink:#ff2e88;--violet:#a855f7;--cyan:#37d6ff;--gold:#ffd23f;--emerald:#19e08a;--line:rgba(244,242,238,.09);--line2:rgba(244,242,238,.14);--e:cubic-bezier(.16,1,.3,1)}
 .calc{background:rgba(244,242,238,.04);border:1px solid var(--line2);border-radius:22px;padding:32px;margin:30px 0;max-width:620px}
 .calc label{display:block;font-family:'Space Grotesk';font-weight:500;margin:20px 0 8px;font-size:.95rem}
 .calc .row{display:flex;gap:12px;flex-wrap:wrap}
-.calc input[type=number]{flex:1;min-width:90px;padding:13px 16px;border-radius:10px;border:1px solid var(--line2);background:rgba(6,6,9,.7);color:var(--cream);font-family:inherit;font-size:1.05rem}
+.calc input[type=number]{flex:1;min-width:90px;padding:13px 16px;border-radius:10px;border:1px solid var(--line2);background:rgba(6,6,9,.7);color:#f4f2ee;font-family:inherit;font-size:1.05rem}
 .calc input:focus{outline:none;border-color:var(--pink)}
 .seg{display:flex;gap:8px;flex-wrap:wrap}
-.seg button{padding:12px 18px;border-radius:10px;border:1px solid var(--line2);background:rgba(6,6,9,.5);color:var(--dim);font-family:'Space Grotesk';font-weight:500;cursor:pointer;transition:all .2s var(--e)}
-.seg button.on{background:var(--pink);color:#fff;border-color:var(--pink)}
+.seg button{padding:12px 18px;border-radius:10px;border:1px solid rgba(244,242,238,.25);background:rgba(6,6,9,.5);color:#e8e6df;font-family:'Space Grotesk';font-weight:500;cursor:pointer;transition:all .2s var(--e)}
+.seg button.on{background:#ff2e88;color:#fff;border-color:#ff2e88;box-shadow:0 4px 16px rgba(255,46,136,.4);font-weight:700}
 .out{margin-top:28px;padding:24px;border-radius:16px;background:linear-gradient(135deg,rgba(255,46,136,.12),rgba(168,85,247,.08));border:1px solid rgba(255,46,136,.28);text-align:center}
 .out .big{font-family:'Space Grotesk';font-size:2.6rem;font-weight:600;background:linear-gradient(120deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
 .out .sub{color:var(--dim);margin-top:6px;font-size:.95rem}
 .out .cost{font-size:1.3rem;font-weight:600;margin-top:14px;color:var(--cream)}
-.tip{border-left:3px solid var(--emerald);background:rgba(25,224,138,.06);padding:12px 18px;margin:22px 0;border-radius:0 10px 10px 0;font-size:.96rem;color:#cfcdd7}
+.tip{border-left:3px solid var(--emerald);background:rgba(25,224,138,.06);padding:12px 18px;margin:22px 0;border-radius:0 10px 10px 0;font-size:.96rem;color:#e8e6df}
 </style>
+<meta property="og:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
@@ -47,8 +52,8 @@
 <div class="calc">
   <label>How long is your song?</label>
   <div class="row">
-    <input type="number" id="min" min="0" max="10" value="3" aria-label="minutes"> <span style="align-self:center;color:var(--dim)">min</span>
-    <input type="number" id="sec" min="0" max="59" value="30" aria-label="seconds"> <span style="align-self:center;color:var(--dim)">sec</span>
+    <input type="number" id="min" min="0" max="10" value="3" aria-label="minutes"> <span style="align-self:center;color:#c9c7d1;white-space:nowrap">min</span>
+    <input type="number" id="sec" min="0" max="59" value="30" aria-label="seconds"> <span style="align-self:center;color:#c9c7d1;white-space:nowrap">sec</span>
   </div>
   <label>Resolution</label>
   <div class="seg" id="res">

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seedance 2.0 — Turn Any Song Into a Full AI Music Video</title>
-<meta name="description" content="Upload a song, get a complete rhythm-synced, lip-synced music video up to 10 minutes long. One platform, one credit pool: Seedance 2.0, Sora 2 Pro, Veo 3, AI images, AI voice. From $9.90/mo, free daily credits.">
+<meta name="description" content="Upload a song, get a rhythm-synced, lip-synced AI music video up to 10 minutes long. Seedance 2.0, Sora 2 Pro & Veo 3 in one login. Free daily credits.">
 <meta property="og:title" content="Turn Any Song Into a Full AI Music Video">
 <meta property="og:description" content="Upload your track — get a rhythm-synced, lip-synced music video the exact length of your song. Seedance 2.0, Sora 2 Pro, Veo 3 in one place.">
 <meta property="og:type" content="website">
@@ -88,7 +88,7 @@ h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:600;line-height:1.06}
 .lead{color:var(--dim);font-size:clamp(1.05rem,2vw,1.2rem);max-width:600px;margin:20px auto 0}
 
 /* hero */
-.hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding-top:150px;position:relative}
+.hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-top:150px;position:relative}
 .hero h1{font-size:clamp(2.9rem,8vw,6.2rem);font-weight:600;line-height:.98;letter-spacing:-.035em}
 .hero h1 .grad{background:linear-gradient(105deg,var(--pink) 10%,var(--violet) 55%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lead{margin-left:0;max-width:640px;font-size:clamp(1.1rem,2.1vw,1.35rem)}
@@ -101,6 +101,9 @@ h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:600;line-height:1.06}
 .scrollcue .bar{width:1px;height:40px;background:linear-gradient(var(--dim),transparent);animation:cue 2s ease-in-out infinite}
 @keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
 
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.sub{opacity:.85;max-width:640px;margin:0 auto 46px;font-size:1.06rem;text-align:center;color:var(--dim)}
 /* double-bezel card */
 .shell{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:30px;padding:7px;
   transition:transform .6s var(--e),border-color .6s var(--e)}
@@ -187,6 +190,7 @@ body.js .rv.in{opacity:1;transform:none;filter:none}
   nav{gap:12px;padding-left:20px}
   .nav-cta{display:none}
 }
+@media(max-width:640px),(max-height:720px){.scrollcue{display:none}}
 @media(max-width:520px){.steps{grid-template-columns:1fr}.hero-cta{flex-direction:column}.btn{width:100%;justify-content:space-between}}
 @media(prefers-reduced-motion:reduce){.orb{animation:none}.rv{transition:none;opacity:1;transform:none;filter:none}}
 
@@ -215,9 +219,14 @@ ml('account', '2504111');
 <meta name="twitter:description" content="Upload your track — get a rhythm-synced, lip-synced music video the exact length of your song. Seedance 2.0, Sora 2 Pro, Veo 3 in one place.">
 <link rel="canonical" href="https://purposewithpresence.com/">
 <meta property="og:url" content="https://purposewithpresence.com/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23060609'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='%23ff2e88' stroke-width='9'/%3E%3Cpath d='M43 38 L65 50 L43 62 Z' fill='%23ffd23f'/%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AI Music Video Guide","url":"https://purposewithpresence.com/","description":"Independent guides and honest comparisons for making AI music videos and choosing AI video tools.","email":"aivguide@gmail.com"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"AI Music Video Guide","url":"https://purposewithpresence.com/","description":"Turn any song into a full AI music video. Guides, tools, and honest comparisons for Seedance 2.0, Sora 2 Pro, Veo 3 and more.","publisher":{"@type":"Organization","name":"AI Music Video Guide"}}</script>
+<meta property="og:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost, exactly?", "acceptedAnswer": {"@type": "Answer", "text": "Credits are priced per second of video: two per second at 480p, four at 720p, more at 1080p and 4K \u2014 the precise total displays before you commit. Plans start at $9.90/month with every model included, plus a free daily credit."}}, {"@type": "Question", "name": "Can I sell what I make?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 every plan includes a commercial license covering social content, YouTube, ads, client work, and paid media. Paid plans export watermark-free."}}, {"@type": "Question", "name": "What if a render fails?", "acceptedAnswer": {"@type": "Answer", "text": "Credits return to your account automatically. You only ever pay for finished videos."}}, {"@type": "Question", "name": "Do I need editing skills?", "acceptedAnswer": {"@type": "Answer", "text": "No timeline editor exists anywhere in the flow. Upload, describe, generate \u2014 the craft lives in how you describe the scene, which the free Director's Guide teaches."}}, {"@type": "Question", "name": "How fast is it?", "acceptedAnswer": {"@type": "Answer", "text": "Short clips land in about three minutes. Full music videos process at roughly three to six minutes per minute of audio."}}]}</script>
 </head>
 <body>
 <script>document.body.classList.add('js')</script>
