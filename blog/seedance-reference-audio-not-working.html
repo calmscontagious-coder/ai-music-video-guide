@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seedance Not Following Reference Audio? 3 Fixes That Work</title>
+<meta name="description" content="Seedance 2.0 generating its own music instead of your track? Why it happens, the @Audio1 prompt fix, and the black-video workaround that actually works.">
+<link rel="canonical" href="https://purposewithpresence.com/blog/seedance-reference-audio-not-working.html">
+<meta property="og:title" content="Seedance Not Following Reference Audio? 3 Fixes That Work"><meta property="og:description" content="Seedance 2.0 generating its own music instead of your track? Why it happens, the @Audio1 prompt fix, and the black-video workaround that actually works.">
+<meta property="og:type" content="article"><meta property="og:url" content="https://purposewithpresence.com/blog/seedance-reference-audio-not-working.html">
+<meta property="og:site_name" content="AI Music Video Guide">
+<meta property="og:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
+  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
+  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
+  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--pink);color:#fff}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
+.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
+.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
+.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
+  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
+  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
+.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
+.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
+.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
+.nav-cta:hover{text-decoration:none}
+main{padding:60px 0 40px}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
+  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
+article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
+.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
+article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
+article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
+article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
+article p,.page p{margin-bottom:18px}
+article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
+article li,.page li{margin-bottom:9px}
+article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
+article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
+article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
+article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
+article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
+.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
+  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
+.cta:hover{text-decoration:none;transform:translateY(-2px)}
+.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
+.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
+.card:hover{transform:translateY(-4px);border-color:var(--line2)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{padding:0 0 20px;color:var(--dim)}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
+.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
+.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
+@media(max-width:640px){.nlinks{display:none}}
+
+/* premium patch v2 */
+body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
+.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
+article h2,.page h2{position:relative;padding-left:18px}
+article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
+article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
+article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
+blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
+.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
+nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
+@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+::selection{background:#ff2e88;color:#fff}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Seedance Reference Audio Not Working? Why It Ignores Your Track (and 3 Fixes)", "description": "Seedance 2.0 generating its own music instead of your track? Why it happens, the @Audio1 prompt fix, and the black-video workaround that actually works.", "wordCount": 1604, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-07-31", "dateModified": "2026-07-31", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/seedance-reference-audio-not-working.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does Seedance 2.0 change my song instead of using it?", "acceptedAnswer": {"@type": "Answer", "text": "By design, Seedance 2.0 generates audio and video together in one pass and treats uploaded audio as a rhythm-and-mood reference, not a soundtrack to preserve. Documentation and community tests confirm the output \"may sound similar, but the rhythm and intervals can be different,\" and vocals can be re-sung with altered lyrics. To get your exact track, reference it explicitly in the prompt (@Audio1) with a clear role, or convert the audio to a black-frame MP4 and upload it as a video reference, which Seedance follows much more literally."}}, {"@type": "Question", "name": "What is the @Audio1 tag in Seedance 2.0 prompts?", "acceptedAnswer": {"@type": "Answer", "text": "Seedance 2.0 uses mention-based references: you can attach up to 12 files (9 images, 3 videos, 3 audio clips) and refer to them in the prompt as @Image1, @Video1, @Audio1, and so on. References that are never mentioned, or mentioned without an assigned role, tend to be ignored. For music, add a sentence like \"@Audio1 is the finished song \u2014 use it as the only soundtrack and match cuts to its rhythm,\" and remove any conflicting music descriptions from the prompt text."}}, {"@type": "Question", "name": "Does the black-video trick actually work for Seedance reference audio?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 it is the most consistently reported community workaround. You convert each audio segment into an MP4 with a black frame (CapCut or one ffmpeg command), then upload it as a video reference instead of an audio reference. Multiple independent guides and workflow tests report the output tracks the input audio far more faithfully this way. Keep segments at 13 seconds or less with whole-second durations, and chain segments with Video Extension for a full song."}}, {"@type": "Question", "name": "What audio format does Seedance 2.0 accept for reference audio?", "acceptedAnswer": {"@type": "Answer", "text": "Host spec pages list MP3 and WAV as accepted audio-reference formats (roughly 15 MB per file, 15 seconds combined duration). One tested guide reports MP3 as the only format that behaved consistently, with WAV, AAC, and FLAC sometimes uploading without error and then being ignored \u2014 so if your reference seems skipped, re-export as MP3 before blaming the model. Also keep clips short: the technical maximum is 15 seconds, but sync quality drops past about 10, so 3\u20138 second references per generation give the best results."}}, {"@type": "Question", "name": "Can Seedance 2.0 lip-sync my vocals from a reference track?", "acceptedAnswer": {"@type": "Answer", "text": "Not reliably from a bare audio reference \u2014 community tests found it sometimes changes the lyrics or ignores the singing entirely. Singing sync is a separate workflow: use the black-video method so the exact vocal is embedded in a video reference, paste the lyrics into the prompt, and keep segments short. Background instrumentation can still confuse the mouth-shape detection, so a clean or vocal-forward mix syncs better than a dense full mix."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Seedance Reference Audio Not Working? Why It Ignores Your Track (and 3 Fixes)", "item": "https://purposewithpresence.com/blog/seedance-reference-audio-not-working.html"}]}</script>
+</head><body>
+<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
+<nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
+<div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
+<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">Try Free</a></nav>
+<main class="wrap"><article>
+<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › seedance not following reference audio</p>
+<h1>Seedance Reference Audio Not Working? Why It Ignores Your Track (and 3 Fixes)</h1>
+<p class="byline">By the AI Music Video Guide team · Updated July 31, 2026 · 7 min read</p>
+<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
+<p><strong>Quick answer:</strong> Seedance 2.0 treats uploaded audio as a style and rhythm reference, not as a soundtrack to preserve — by default it composes new music that only resembles yours, and it can even re-sing your vocals with different lyrics. Three fixes, in order: (1) reference the file explicitly in your prompt with the <strong>@Audio1</strong> tag and assign it a job ("@Audio1 is the finished soundtrack — follow it exactly, do not generate new music"); (2) delete any music description from your prompt text so it can't fight the reference; (3) if it still rewrites your track, use the community <strong>black-video workaround</strong> — convert the audio section to an MP4 with a black frame and upload it as a <em>video</em> reference, which Seedance follows far more faithfully. And if your actual goal is a character singing your exact vocal, that's a lip-sync job, not an audio-reference job — see our <a href="/blog/seedance-lip-sync-song.html">Seedance lip-sync guide</a>.</p>
+
+<h2>Why does Seedance 2.0 generate its own music instead of using my track?</h2>
+
+<p>Because that's closer to how the feature was built than most people expect. Seedance 2.0 generates audio and video together in a single pass rather than laying your file under the picture (<a href="https://www.cutout.pro/learn/blog-seedance-2-0-audio-guide/" rel="noopener" target="_blank">source</a>). An uploaded audio reference influences that generation — rhythm, mood, pacing — but the model composes the actual sound fresh. One audio-reference guide puts it bluntly: using audio directly as a reference "may cause significant differences between the generated audio and the original audio," and with music specifically, "the output may sound similar, but the rhythm and intervals can be different" (<a href="https://seegen.ai/seedance-2-0-audio-guide" rel="noopener" target="_blank">source</a>).</p>
+
+<p>So if you uploaded your finished song expecting Seedance to score the video with it, and instead got a soundalike cover in the wrong key — that's not a bug in your account. It's the default behavior, and community testing backs it up: one detailed music-video workflow from May 2026 found that Seedance "didn't lip-sync my reference image, and sometimes it would change the lyrics" when fed audio directly (<a href="https://abdullahyahya.com/2026/05/make-realistic-lip-sync-music-videos-with-seedance-2-0/" rel="noopener" target="_blank">source</a>). The good news: the behavior is steerable. The fixes below are ordered from cheapest to most involved.</p>
+
+<h2>Fix 1: Did you actually tell it what the audio is for? (@Audio1)</h2>
+
+<p>Seedance 2.0's reference system is mention-based. You can attach up to 12 files — up to 9 images, 3 videos, and 3 audio clips — and you refer to them in the prompt as @Image1, @Video1, @Audio1 and so on. The critical detail: references that are never mentioned in the prompt, or mentioned without a clear role, tend to get ignored or misread. The guidance from prompt-reference documentation is explicit — "Use @Audio1 for rhythm, voice, or atmosphere" — and references without an assigned role are skipped (<a href="https://www.glbgpt.com/hub/seedance-2-0-omni-reference/" rel="noopener" target="_blank">source</a>).</p>
+
+<p>So the single most common cause of "Seedance not following reference audio" is a prompt that never mentions the audio at all. Fix it with one sentence:</p>
+
+<ul>
+<li><em>Weak:</em> "Cinematic music video of a singer on a rooftop at dusk." (Audio uploaded, never referenced — the model invents its own soundtrack.)</li>
+<li><em>Strong:</em> "Cinematic music video of a singer on a rooftop at dusk. <strong>@Audio1 is the finished song — use it as the only soundtrack and match all cuts to its rhythm. Do not generate new music.</strong>"</li>
+</ul>
+
+<p>Second half of this fix: check what else your prompt says about sound. If your text asks for an "epic orchestral score" while @Audio1 is a synthpop track, you've given the model two conflicting music briefs, and the text often wins. Strip every adjective about music, genre, or instrumentation from the prompt and let the reference own that job entirely.</p>
+
+<h2>What else silently breaks reference audio?</h2>
+
+<div style="overflow-x:auto"><table>
+<thead><tr><th>Symptom</th><th>Most likely cause</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Completely different music, wrong genre</td><td>Audio never mentioned in the prompt — unassigned references get ignored</td><td>Add "@Audio1 is the soundtrack — follow it exactly" and remove music descriptions from the text</td></tr>
+<tr><td>Music resembles yours but melody and timing drift</td><td>Default model behavior — audio references guide rhythm and mood, they aren't preserved</td><td>Black-video workaround (below)</td></tr>
+<tr><td>Vocals re-sung with changed lyrics</td><td>Audio-only reference is unreliable for singing</td><td>Black video plus the exact lyrics pasted into the prompt; for a true vocal match, run a <a href="/blog/seedance-lip-sync-song.html">lip-sync pass</a></td></tr>
+<tr><td>Reference seems ignored entirely</td><td>Possible format issue — host spec pages accept MP3 and WAV, but one tested guide reports WAV/AAC/FLAC uploading and then being ignored</td><td>Re-export as MP3 as a cheap first test, and confirm the file is actually listed as an audio reference before generating</td></tr>
+<tr><td>Sync falls apart late in the clip</td><td>Reference too long — sync quality drops past roughly 10 seconds</td><td>Trim the reference to 3–8 seconds per generation</td></tr>
+<tr><td>Wrong section of the song shows up</td><td>Clip-length mismatch — generations run 4–15 seconds, your upload is a full chorus</td><td>Pre-cut the audio to the exact bars you want in that segment</td></tr>
+</tbody></table></div>
+
+<p>The length rows come from tested guidance: the technical ceiling is 15 seconds but sync quality degrades past 10, so trimming references to 3–8 seconds is the working recommendation (<a href="https://www.cutout.pro/learn/blog-seedance-2-0-audio-guide/" rel="noopener" target="_blank">source</a>). The format row deserves more nuance. Host spec pages list MP3 and WAV as officially accepted audio-reference formats, at roughly 15 MB per file and 15 seconds of combined duration (<a href="https://www.atlascloud.ai/models/bytedance/seedance-2.0/reference-to-video" rel="noopener" target="_blank">source</a>), while one tested guide reports MP3 as the only format that behaved consistently in its runs, with WAV, AAC, and FLAC sometimes uploading without error and then being ignored (<a href="https://www.cutout.pro/learn/blog-seedance-2-0-audio-guide/" rel="noopener" target="_blank">source</a>). We can't confirm the silent-failure pattern independently, so treat re-exporting as MP3 as a cheap first test, not a guaranteed diagnosis. On the upload-slot point we'll stay general, because the UI differs between the official app and the many third-party hosts running Seedance 2.0: before you burn a credit, verify the file is actually listed as an audio reference (some third-party front-ends don't expose an audio upload at all), and confirm your generation length matches the audio you trimmed.</p>
+
+<h2>Fix 2: The black-video trick — the community workaround that holds up</h2>
+
+<p>When the prompt fix isn't enough — usually when you need the <em>exact</em> track, not a rhythm-matched imitation — the workaround the community converged on is converting your audio into a video file with a black frame, then uploading it as a video reference. Seedance treats the audio track inside a reference video much more literally than a bare audio file: "A black screen video reference makes the output much more consistent with the input audio" (<a href="https://seegen.ai/seedance-2-0-audio-guide" rel="noopener" target="_blank">source</a>). The workflow post mentioned earlier reached the same conclusion independently after direct audio references kept changing the lyrics (<a href="https://abdullahyahya.com/2026/05/make-realistic-lip-sync-music-videos-with-seedance-2-0/" rel="noopener" target="_blank">source</a>).</p>
+
+<ol>
+<li>Cut your song into segments. Keep each one at 13 seconds or less — Seedance allows 15, but community testing found longer clips cause sync failures — and use whole-second durations, not fractions (<a href="https://abdullahyahya.com/2026/05/make-realistic-lip-sync-music-videos-with-seedance-2-0/" rel="noopener" target="_blank">source</a>).</li>
+<li>Convert each segment to a black-frame MP4. Any editor works (drop the audio on a black canvas in CapCut and export), or one ffmpeg line: <em>ffmpeg -f lavfi -i color=c=black:s=1280x720:r=24 -i clip1.mp3 -shortest -c:v libx264 -c:a aac clip1.mp4</em> (<a href="https://seegen.ai/seedance-2-0-audio-guide" rel="noopener" target="_blank">source</a>).</li>
+<li>Upload the MP4 as a video reference and your character image as an image reference, then tell the prompt exactly what each is: "@Video1 contains the song — use its audio as the soundtrack. @Image1 is the performer."</li>
+<li>If your host exposes an audio or sound toggle, make sure it's switched on, and set the generation length to match your segment before generating — the exact control varies between the official app and third-party hosts.</li>
+<li>Chain the finished segments with Video Extension. Since every generation caps at 15 seconds (as of July 2026), a full song is always a multi-segment build — our guide to <a href="/blog/how-to-make-ai-videos-longer-than-10-seconds.html">making AI videos longer than 10 seconds</a> covers stitching without visible seams.</li>
+</ol>
+
+<h2>When the real answer is a lip-sync pass, not a reference fix</h2>
+
+<p>Be honest with yourself about what you're asking for. If you want your track under the visuals, the fixes above get you there. If you want an on-screen singer mouthing <em>your exact vocal</em>, no amount of reference-prompting makes that reliable — singing sync is its own problem, sensitive to background instrumentation confusing phoneme detection and to fast or slurred delivery (<a href="https://crepal.ai/blog/aivideo/blog-seedance-2-0-lip-sync-voiceover-fix/" rel="noopener" target="_blank">source</a>). That's a dedicated workflow with its own tricks, and we've written it up separately: <a href="/blog/seedance-lip-sync-song.html">how to lip-sync a song in Seedance</a>. If your track came out of Suno, start with our <a href="/blog/suno-song-music-video.html">Suno-to-music-video walkthrough</a> instead, since it covers the audio handoff from the start.</p>
+
+<h2>Is this worth the credits?</h2>
+
+<p>Straight verdict: yes, but budget for retries. Even with the black-video method, expect two to three generations per segment before rhythm and framing both land — community testing suggests capping re-rolls at two per clip before changing your inputs instead of your luck (<a href="https://crepal.ai/blog/aivideo/blog-seedance-2-0-lip-sync-voiceover-fix/" rel="noopener" target="_blank">source</a>). For a three-minute song at 10–13 seconds per segment, that's real credit spend — run your numbers in our <a href="/tools/credit-calculator.html">credit calculator</a> before committing, and see the full cost picture in <a href="/blog/ai-music-video-cost.html">what an AI music video actually costs</a>.</p>
+
+<p>One thing the free tier cannot do for you here: at one watermarked, non-commercial credit per 24 hours (as of July 2026), you can sanity-check a single segment a day and nothing more. If you're troubleshooting a whole song, that's not a workable loop — the <a href="/go/seedance">Basic plan at $9.90/month (as of July 2026)</a> is the realistic floor for iterating, and you can cancel after the project if one video is all you need. If Seedance's 15-second segmenting itself is the dealbreaker for your workflow, it's also fair to look at alternatives with longer native extension — our <a href="/blog/kling-vs-seedance-music-videos.html">Kling vs Seedance comparison</a> covers that tradeoff honestly.</p>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">Try Seedance free — daily credits<span class="ic">↗</span></a></div>
+<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq"><details><summary>Why does Seedance 2.0 change my song instead of using it?<span class="plus" style="float:right">+</span></summary><p>By design, Seedance 2.0 generates audio and video together in one pass and treats uploaded audio as a rhythm-and-mood reference, not a soundtrack to preserve. Documentation and community tests confirm the output &quot;may sound similar, but the rhythm and intervals can be different,&quot; and vocals can be re-sung with altered lyrics. To get your exact track, reference it explicitly in the prompt (@Audio1) with a clear role, or convert the audio to a black-frame MP4 and upload it as a video reference, which Seedance follows much more literally.</p></details><details><summary>What is the @Audio1 tag in Seedance 2.0 prompts?<span class="plus" style="float:right">+</span></summary><p>Seedance 2.0 uses mention-based references: you can attach up to 12 files (9 images, 3 videos, 3 audio clips) and refer to them in the prompt as @Image1, @Video1, @Audio1, and so on. References that are never mentioned, or mentioned without an assigned role, tend to be ignored. For music, add a sentence like &quot;@Audio1 is the finished song — use it as the only soundtrack and match cuts to its rhythm,&quot; and remove any conflicting music descriptions from the prompt text.</p></details><details><summary>Does the black-video trick actually work for Seedance reference audio?<span class="plus" style="float:right">+</span></summary><p>Yes — it is the most consistently reported community workaround. You convert each audio segment into an MP4 with a black frame (CapCut or one ffmpeg command), then upload it as a video reference instead of an audio reference. Multiple independent guides and workflow tests report the output tracks the input audio far more faithfully this way. Keep segments at 13 seconds or less with whole-second durations, and chain segments with Video Extension for a full song.</p></details><details><summary>What audio format does Seedance 2.0 accept for reference audio?<span class="plus" style="float:right">+</span></summary><p>Host spec pages list MP3 and WAV as accepted audio-reference formats (roughly 15 MB per file, 15 seconds combined duration). One tested guide reports MP3 as the only format that behaved consistently, with WAV, AAC, and FLAC sometimes uploading without error and then being ignored — so if your reference seems skipped, re-export as MP3 before blaming the model. Also keep clips short: the technical maximum is 15 seconds, but sync quality drops past about 10, so 3–8 second references per generation give the best results.</p></details><details><summary>Can Seedance 2.0 lip-sync my vocals from a reference track?<span class="plus" style="float:right">+</span></summary><p>Not reliably from a bare audio reference — community tests found it sometimes changes the lyrics or ignores the singing entirely. Singing sync is a separate workflow: use the black-video method so the exact vocal is embedded in a video reference, paste the lyrics into the prompt, and keep segments short. Background instrumentation can still confuse the mouth-shape detection, so a clean or vocal-forward mix syncs better than a dense full mix.</p></details></div>
+</article></main><footer><div class="wrap">
+<div class="foot-links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
+<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. Independent; not affiliated with seeddance.video or any AI vendor.</div>
+<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+<!-- ctabar:start -->
+<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
+<span style="color:#f4f2ee;font-size:.92rem">Ready to try it? <b>Seedance is free to start</b> &mdash; daily credits refresh every day.</span>
+<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">Make a video free &#8599;</a>
+<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+</div></div>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<!-- ctabar:end --></body></html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beat Sync Music Video Editing: CapCut, Premiere, ffmpeg (2026)</title>
+<meta name="description" content="How to cut AI-generated clips to the beat in CapCut, Premiere Pro, or free with ffmpeg + librosa — and why beat-cuts hide the seams between AI generations.">
+<link rel="canonical" href="https://purposewithpresence.com/blog/beat-sync-ai-video-editing.html">
+<meta property="og:title" content="Beat Sync Music Video Editing: CapCut, Premiere, ffmpeg (2026)"><meta property="og:description" content="How to cut AI-generated clips to the beat in CapCut, Premiere Pro, or free with ffmpeg + librosa — and why beat-cuts hide the seams between AI generations.">
+<meta property="og:type" content="article"><meta property="og:url" content="https://purposewithpresence.com/blog/beat-sync-ai-video-editing.html">
+<meta property="og:site_name" content="AI Music Video Guide">
+<meta property="og:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
+  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
+  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
+  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--pink);color:#fff}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
+.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
+.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
+.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
+  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
+  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
+.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
+.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
+.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
+.nav-cta:hover{text-decoration:none}
+main{padding:60px 0 40px}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
+  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
+article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
+.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
+article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
+article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
+article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
+article p,.page p{margin-bottom:18px}
+article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
+article li,.page li{margin-bottom:9px}
+article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
+article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
+article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
+article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
+article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
+.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
+  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
+.cta:hover{text-decoration:none;transform:translateY(-2px)}
+.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
+.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
+.card:hover{transform:translateY(-4px);border-color:var(--line2)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{padding:0 0 20px;color:var(--dim)}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
+.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
+.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
+@media(max-width:640px){.nlinks{display:none}}
+
+/* premium patch v2 */
+body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
+.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
+article h2,.page h2{position:relative;padding-left:18px}
+article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
+article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
+article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
+blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
+.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
+nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
+@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+::selection{background:#ff2e88;color:#fff}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Beat Sync Music Video Editing: How to Cut AI Clips to the Beat", "description": "How to cut AI-generated clips to the beat in CapCut, Premiere Pro, or free with ffmpeg + librosa \u2014 and why beat-cuts hide the seams between AI generations.", "wordCount": 1354, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-07-31", "dateModified": "2026-07-31", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/beat-sync-ai-video-editing.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does CapCut's beat detection cost anything?", "acceptedAnswer": {"@type": "Answer", "text": "Beat marking has historically been part of CapCut's standard editor on both mobile and desktop, not a Pro-gated feature. That said, CapCut moves features between free and Pro tiers over time, so check for a Pro badge on the Beats option in your build before planning around it."}}, {"@type": "Question", "name": "Can Premiere Pro detect beats automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Not natively on desktop as of July 2026. Adobe ships automatic Beat Detection in the Premiere iPhone app, but on desktop the standard workflow is manual markers: play the track and tap M on each beat. Third-party plugins like BeatEdit 2 (paid) add automatic detection to desktop Premiere, and small open-source projects like Beat-Marker aim to do the same for free, though they're less proven."}}, {"@type": "Question", "name": "Do I need to cut on every beat?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 cutting on every beat is exhausting to watch at most tempos. Cutting every 2 or 4 beats (every bar or half-bar) usually feels better, and you can save one-cut-per-beat editing for a drop or chorus where you want maximum energy."}}, {"@type": "Question", "name": "Will beat-cutting fix characters that look different between AI clips?", "acceptedAnswer": {"@type": "Answer", "text": "It hides brief discontinuities \u2014 lighting shifts, texture changes, small motion jumps \u2014 because the viewer's attention goes to the musical cut. It will not hide a character whose face or outfit visibly changed between generations. That's a generation-side problem you solve with reference images and consistent prompting, not in the edit."}}, {"@type": "Question", "name": "Can Seedance sync video to the beat by itself?", "acceptedAnswer": {"@type": "Answer", "text": "Seedance 2.0 accepts your music track as a reference input, which influences the motion and pacing of what it generates, and its extension feature chains segments into longer shots. But frame-accurate cuts on the kick are an editing task \u2014 generate your clips first, then place the cuts in CapCut, Premiere Pro, or an ffmpeg script."}}, {"@type": "Question", "name": "What clip length should I generate for beat-synced editing?", "acceptedAnswer": {"@type": "Answer", "text": "Match musical phrases. At 120 BPM, one bar is 2 seconds and a 4-bar phrase is 8 seconds, so generating 8-second clips means each generation covers exactly one phrase with minimal trimming. Seedance 2.0 generates 4 to 15 seconds per clip as of July 2026, which fits one to two phrases at most pop tempos."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Beat Sync Music Video Editing: How to Cut AI Clips to the Beat", "item": "https://purposewithpresence.com/blog/beat-sync-ai-video-editing.html"}]}</script>
+</head><body>
+<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
+<nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
+<div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
+<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">Try Free</a></nav>
+<main class="wrap"><article>
+<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › beat sync music video editing</p>
+<h1>Beat Sync Music Video Editing: How to Cut AI Clips to the Beat</h1>
+<p class="byline">By the AI Music Video Guide team · Updated July 31, 2026 · 6 min read</p>
+<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
+<p><strong>Quick answer:</strong> To beat-sync AI-generated clips, detect the beats in your song, put a marker on every beat, and land every cut on a marker. CapCut does the detection automatically (select the audio track, then Beats → Auto-Generate), Premiere Pro needs manual M-key markers or a plugin, and the fully free programmatic route is librosa beat detection plus ffmpeg cutting. This matters more for AI footage than normal footage: a hard cut on the kick reads as an intentional music-video edit, so viewers never register that two adjacent shots came from completely separate AI generations.</p>
+
+<p>Almost every AI music video guide stops at "generate your clips." Then you have 20 disconnected MP4s and a song, and the comments under those guides all ask the same thing: how do I actually put this together? This is that missing step. We've covered the generation side in our <a href="/blog/how-to-make-ai-music-video-from-a-song.html">song-to-video walkthrough</a> and the <a href="/blog/seedance-music-video-tutorial.html">Seedance tutorial</a> — this article is purely about the edit.</p>
+
+<h2>Why does cutting on the beat hide the seams between AI clips?</h2>
+<p>AI video generators work in short segments — Seedance 2.0 tops out at 15 seconds per generation (as of July 2026), with an extension feature that chains 4–15 second segments. However you generate, you will eventually join clips that don't perfectly match: lighting shifts a little, the character drifts, motion direction changes. There are two ways to join them. Extension chains keep a shot continuous (covered in <a href="/blog/how-to-make-ai-videos-longer-than-10-seconds.html">our guide to longer AI videos</a>), and hard cuts jump between shots.</p>
+
+<p>A hard cut in the middle of a musical phrase looks like an error — the viewer's brain flags the discontinuity. The same cut landing exactly on a kick drum reads as style. Decades of music videos have trained audiences to expect a visual change on the downbeat, so the cut itself absorbs the attention that would otherwise go to the mismatch between generations. Beat-cutting won't rescue a character who looks visibly different from clip to clip — that's a generation problem, see <a href="/blog/ai-video-character-consistency.html">our character consistency guide</a> — but it reliably hides the smaller lighting, texture, and motion jumps that make stitched AI footage feel off.</p>
+
+<h2>Which beat-sync tool should you use?</h2>
+<p>Honest version: most people should just use CapCut. Here's the landscape as of July 2026:</p>
+<div style="overflow-x:auto"><table>
+<tr><th>Tool</th><th>Beat detection</th><th>Cost</th><th>Best for</th></tr>
+<tr><td>CapCut (mobile + desktop)</td><td>Automatic (Beats → Auto-Generate)</td><td>Included in the standard editor</td><td>Fastest route for most musicians</td></tr>
+<tr><td>Premiere Pro (desktop)</td><td>Manual M-key markers; plugins add auto-detection</td><td>Creative Cloud subscription</td><td>People already in the Adobe ecosystem</td></tr>
+<tr><td>Premiere (iPhone app)</td><td>Automatic (Beat Detection)</td><td>Free app tier available</td><td>Quick phone edits</td></tr>
+<tr><td>ffmpeg + librosa</td><td>Programmatic (beat_track)</td><td>Free, open source</td><td>Batch work, repeatable pipelines, no-GUI workflows</td></tr>
+</table></div>
+
+<h2>How do you beat-sync in CapCut?</h2>
+<p>CapCut has automatic beat detection built into its <a href="https://www.capcut.com/explore/beat-sync" rel="noopener" target="_blank">Beat Sync feature</a>, and it's the shortest path from "folder of AI clips" to a finished video. On mobile <a href="https://www.creativelysquared.com/article/how-to-add-beats-to-music-in-capcut-for-perfect-video-timing" rel="noopener" target="_blank">the workflow</a> is:</p>
+<ol>
+<li>Import your finished song and drop it on the audio track.</li>
+<li>Tap the audio track, then tap <strong>Beats → Auto-Generate</strong>.</li>
+<li>Pick an intensity — <strong>Light</strong> marks fewer beats (calm songs), <strong>Intense</strong> marks more (fast songs). Yellow dots appear on the waveform, one per detected beat.</li>
+<li>Drag your AI clips onto the video track and trim each clip's end to snap onto a yellow dot.</li>
+<li>Play it back at full speed. Delete any dot that landed off-beat and add missing ones manually — auto-detection is a starting point, not gospel.</li>
+</ol>
+<p>On desktop the same beats feature lives on the selected audio track, with two density options (<a href="https://www.creativelysquared.com/article/how-to-add-beats-to-music-in-capcut-for-perfect-video-timing" rel="noopener" target="_blank">Beats 1 and Beats 2</a>), and the markers render as blue ticks on the timeline. CapCut does shuffle features between free and Pro tiers over time, so if you see a Pro badge on it in your build, check before assuming — but beat marking has historically sat in the standard editor.</p>
+
+<h2>How do you cut to the beat in Premiere Pro?</h2>
+<p>Straight talk first: desktop Premiere Pro has no reliable native auto beat detection as of July 2026 — Adobe ships <a href="https://helpx.adobe.com/premiere/mobile/audio-editing/use-beat-detection-for-music-synced-edits.html" rel="noopener" target="_blank">Beat Detection in the iPhone app</a>, but on desktop the canonical workflow is still manual markers. If you're not already paying for Creative Cloud, do not subscribe for this — CapCut covers it. If you are, the <a href="https://www.junoschool.org/article/sync-video-to-music-beat-premiere-pro/" rel="noopener" target="_blank">marker method</a> is fast once you've done it twice:</p>
+<ol>
+<li>Import your song, drop it in the timeline, and drag the track taller so you can see the waveform.</li>
+<li>Put the playhead at the start, press <strong>Spacebar</strong> to play, and tap <strong>M</strong> on every prominent beat. First pass: only downbeats (beat 1 of each bar). Second pass: add subdivisions where you want faster cutting.</li>
+<li>Enable snapping (press <strong>S</strong> or click the magnet icon), then drag clip edges to the markers — they lock into place.</li>
+<li>For clips already in the timeline, press <strong>C</strong> for the Razor tool and slice at a marker, then delete the excess.</li>
+<li>Drag any misplaced marker to fix it; select and Delete to remove.</li>
+</ol>
+<p>If you cut to the beat weekly, a detection plugin pays for itself: <a href="https://aescripts.com/beatedit-for-premiere-pro/" rel="noopener" target="_blank">BeatEdit 2</a> is the established commercial option, and small open-source projects like <a href="https://github.com/GoKenGo/Beat-Marker" rel="noopener" target="_blank">Beat-Marker</a> aim to do the same for free — less proven, so test on a throwaway project first.</p>
+
+<h2>What's the free programmatic route (ffmpeg + librosa)?</h2>
+<p>If you'd rather script it — useful when you're producing videos for a whole album — two open-source tools do the entire job:</p>
+<ol>
+<li>Install Python, then librosa (pip install librosa) and ffmpeg.</li>
+<li>Load your song and run librosa's beat tracker: <a href="https://librosa.org/doc/main/generated/librosa.beat.beat_track.html" rel="noopener" target="_blank">librosa.beat.beat_track</a> with units='time' returns the estimated tempo plus an array of beat timestamps in seconds. That array is your cut list. (librosa also offers onset detection, which fires on every transient — for cuts you usually want the steadier beat grid, thinned to every 2nd or 4th beat.)</li>
+<li>Compute each shot's duration as the gap between chosen beat times, then trim each AI clip to length with ffmpeg's -ss and -t flags.</li>
+<li>Write a text file listing the trimmed clips (one "file clipname.mp4" line each) and join them losslessly with the <a href="https://ffmpeg.org/ffmpeg-formats.html" rel="noopener" target="_blank">concat demuxer</a>: ffmpeg -f concat -i list.txt -c copy silent.mp4. Stream-copy requires all clips to share the same codec and parameters — true if they all came from the same generator at the same settings; otherwise re-encode instead of -c copy.</li>
+<li>Mux the song over the joined video (map the video from the concat output and the audio from your master track) and you're done.</li>
+</ol>
+<p>The payoff is repeatability: change the beat-thinning rule and re-render every video in minutes.</p>
+
+<h2>Where do Seedance clips fit into this workflow?</h2>
+<p>Plan your generations around musical phrases, not arbitrary lengths. At 120 BPM a beat lands every 0.5 seconds, so a 4-bar phrase is exactly 8 seconds — comfortably inside Seedance 2.0's 4–15 second generation range (as of July 2026). Generate one clip per phrase, and you'll trim almost nothing in the edit. Seedance also accepts your music track as a reference input at generation time, which helps the motion feel related to the song — but the precise on-the-kick cut is still an editing job, not a generation setting. If your song came out of Suno, our <a href="/blog/suno-song-music-video.html">Suno-to-video pipeline</a> covers the handoff.</p>
+
+<p>One honest caution: Seedance's free tier is one watermarked credit per 24 hours and isn't commercially licensed (as of July 2026) — fine for testing your beat grid with a placeholder clip, not for anything you publish. If you're budgeting a full video, run your clip count through our <a href="/tools/credit-calculator.html">credit calculator</a> first; a three-minute song at one clip per 8-second phrase is roughly 22 generations before retries. Plans start at $9.90/month (as of July 2026) — details on <a href="/go/seedance">the current Seedance plans page</a>.</p>
+
+<p>Three editing habits that consistently improve stitched AI footage: cut on the kick or the downbeat rather than every transient; don't cut on every single beat — every 2 or 4 beats breathes better, saving one-beat cutting for the drop; and keep motion direction consistent across a cut (left-to-right motion into left-to-right motion) so the beat does the work of hiding the seam instead of fighting a direction flip.</p>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">Try Seedance free — daily credits<span class="ic">↗</span></a></div>
+<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq"><details><summary>Does CapCut&#x27;s beat detection cost anything?<span class="plus" style="float:right">+</span></summary><p>Beat marking has historically been part of CapCut&#x27;s standard editor on both mobile and desktop, not a Pro-gated feature. That said, CapCut moves features between free and Pro tiers over time, so check for a Pro badge on the Beats option in your build before planning around it.</p></details><details><summary>Can Premiere Pro detect beats automatically?<span class="plus" style="float:right">+</span></summary><p>Not natively on desktop as of July 2026. Adobe ships automatic Beat Detection in the Premiere iPhone app, but on desktop the standard workflow is manual markers: play the track and tap M on each beat. Third-party plugins like BeatEdit 2 (paid) add automatic detection to desktop Premiere, and small open-source projects like Beat-Marker aim to do the same for free, though they&#x27;re less proven.</p></details><details><summary>Do I need to cut on every beat?<span class="plus" style="float:right">+</span></summary><p>No — cutting on every beat is exhausting to watch at most tempos. Cutting every 2 or 4 beats (every bar or half-bar) usually feels better, and you can save one-cut-per-beat editing for a drop or chorus where you want maximum energy.</p></details><details><summary>Will beat-cutting fix characters that look different between AI clips?<span class="plus" style="float:right">+</span></summary><p>It hides brief discontinuities — lighting shifts, texture changes, small motion jumps — because the viewer&#x27;s attention goes to the musical cut. It will not hide a character whose face or outfit visibly changed between generations. That&#x27;s a generation-side problem you solve with reference images and consistent prompting, not in the edit.</p></details><details><summary>Can Seedance sync video to the beat by itself?<span class="plus" style="float:right">+</span></summary><p>Seedance 2.0 accepts your music track as a reference input, which influences the motion and pacing of what it generates, and its extension feature chains segments into longer shots. But frame-accurate cuts on the kick are an editing task — generate your clips first, then place the cuts in CapCut, Premiere Pro, or an ffmpeg script.</p></details><details><summary>What clip length should I generate for beat-synced editing?<span class="plus" style="float:right">+</span></summary><p>Match musical phrases. At 120 BPM, one bar is 2 seconds and a 4-bar phrase is 8 seconds, so generating 8-second clips means each generation covers exactly one phrase with minimal trimming. Seedance 2.0 generates 4 to 15 seconds per clip as of July 2026, which fits one to two phrases at most pop tempos.</p></details></div>
+</article></main><footer><div class="wrap">
+<div class="foot-links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
+<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. Independent; not affiliated with seeddance.video or any AI vendor.</div>
+<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+<!-- ctabar:start -->
+<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
+<span style="color:#f4f2ee;font-size:.92rem">Ready to try it? <b>Seedance is free to start</b> &mdash; daily credits refresh every day.</span>
+<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">Make a video free &#8599;</a>
+<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+</div></div>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<!-- ctabar:end --></body></html>
