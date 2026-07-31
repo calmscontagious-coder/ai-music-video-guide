@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Storyboard an AI Music Video: Shot List + Template</title>
+<meta name="description" content="Map song structure to a shot list, write one visual canon, and budget clips per section. A practical storyboard system for AI music videos.">
+<link rel="canonical" href="https://purposewithpresence.com/blog/how-to-storyboard-ai-music-video.html">
+<link rel="alternate" type="application/atom+xml" title="AI Music Video Guide" href="/feed.xml">
+<meta property="og:title" content="How to Storyboard an AI Music Video: Shot List + Template"><meta property="og:description" content="Map song structure to a shot list, write one visual canon, and budget clips per section. A practical storyboard system for AI music videos.">
+<meta property="og:type" content="article"><meta property="og:url" content="https://purposewithpresence.com/blog/how-to-storyboard-ai-music-video.html">
+<meta property="og:site_name" content="AI Music Video Guide">
+<meta property="og:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
+  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
+  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
+  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--pink);color:#fff}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
+.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
+.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
+.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
+  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
+  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
+.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
+.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
+.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
+.nav-cta:hover{text-decoration:none}
+main{padding:60px 0 40px}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
+  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
+article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
+.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
+article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
+article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
+article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
+article p,.page p{margin-bottom:18px}
+article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
+article li,.page li{margin-bottom:9px}
+article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
+article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
+article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
+article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
+article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
+.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
+  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
+.cta:hover{text-decoration:none;transform:translateY(-2px)}
+.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
+.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
+.card:hover{transform:translateY(-4px);border-color:var(--line2)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{padding:0 0 20px;color:var(--dim)}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
+.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
+.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
+@media(max-width:640px){.nlinks{display:none}}
+
+/* premium patch v2 */
+body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
+.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
+article h2,.page h2{position:relative;padding-left:18px}
+article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
+article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
+article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
+blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
+.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
+nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
+@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+::selection{background:#ff2e88;color:#fff}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Storyboard an AI Music Video (Before You Burn a Single Credit)", "description": "Map song structure to a shot list, write one visual canon, and budget clips per section. A practical storyboard system for AI music videos.", "wordCount": 1500, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-07-31", "dateModified": "2026-07-31", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/how-to-storyboard-ai-music-video.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many shots do I need to storyboard for a 3-minute AI music video?", "acceptedAnswer": {"@type": "Answer", "text": "Plan for roughly 15\u201325 unique clips of 4\u201315 seconds each, plus reuse. Chorus shots repeat at every chorus, so a 3-minute song with three choruses might need only 15\u201320 unique generations even though the finished edit contains 25\u201330 cuts. Budget an extra 20\u201330% of your credits for retakes on shots that miss the first time."}}, {"@type": "Question", "name": "Should I storyboard before or after choosing my AI video tool?", "acceptedAnswer": {"@type": "Answer", "text": "Sketch the structure first, but finalize shot lengths after picking the tool, because every shot should use a duration your generator actually offers. Seedance 2.0 generates 4\u201315 second clips, Veo 3.1 works in 4\u20138 second generations with 7-second extensions, and Kling 3.0 can extend a single video to about 3 minutes. A storyboard full of 20-second single shots is unbuildable on a 15-second-max tool without extension chaining."}}, {"@type": "Question", "name": "Do I need to draw my storyboard?", "acceptedAnswer": {"@type": "Answer", "text": "No. A text shot list \u2014 one line per shot with ID, timestamp, length, shot type, camera move, performance-or-atmosphere tag, canon elements, and action notes \u2014 is fully sufficient. Image boards made from Midjourney or FLUX stills are an optional upgrade, and they pay for themselves on Seedance because each approved still can be reused as a first-frame reference image for its video shot."}}, {"@type": "Question", "name": "What is a visual canon and how long should it be?", "acceptedAnswer": {"@type": "Answer", "text": "A canon is a short block of text (roughly 50\u2013100 words) pasted into every prompt: a character sheet with specific repeatable descriptors, one primary location, and one lighting rule that never changes. It exists to stop character and style drift between independently generated clips. On Seedance, back the text canon with actual reference images \u2014 the platform accepts up to 9 per generation."}}, {"@type": "Question", "name": "What ratio of performance shots to atmosphere shots should a music video have?", "acceptedAnswer": {"@type": "Answer", "text": "There's no universal number. Artist-led videos commonly land around 40\u201360% performance shots concentrated in the choruses, while instrumental or ambient tracks can run near zero. Decide the ratio per section before prompting, and remember that performance shots cost more in practice: lip-sync is the most failure-prone AI shot type, and every appearance of your character raises the consistency burden."}}, {"@type": "Question", "name": "Does storyboarding actually save credits?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, primarily by eliminating exploratory generations. Unplanned projects routinely generate two to three clips for every one kept, because prompts are improvised and results don't match. A shot list gives every generation a defined job, chorus reuse cuts the unique-shot count by up to a third, and retries become targeted fixes instead of fresh experiments. Run your shot list through a credit calculator before generating to see the total up front."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Storyboard an AI Music Video (Before You Burn a Single Credit)", "item": "https://purposewithpresence.com/blog/how-to-storyboard-ai-music-video.html"}]}</script>
+</head><body>
+<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
+<nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
+<div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
+<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">Try Free</a></nav>
+<main class="wrap"><article>
+<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › how to storyboard an AI music video</p>
+<h1>How to Storyboard an AI Music Video (Before You Burn a Single Credit)</h1>
+<p class="byline">By the AI Music Video Guide team · Updated July 31, 2026 · 7 min read</p>
+<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
+<p><strong>Quick answer:</strong> Storyboard an AI music video by mapping your song's structure (intro, verses, choruses, bridge, outro) to a numbered shot list before you generate anything. Decide your performance-vs-atmosphere ratio per section, write one short "canon" — a character sheet, a location, and a lighting rule that get pasted into every prompt — and budget clips per section, reusing your chorus shots each time the chorus returns. A plain text shot list is enough. Image boards built from Midjourney or FLUX stills are a bonus, and on Seedance they double as reference inputs. Planning first is the cheapest upgrade available, because every credit you spend gets a predetermined job.</p>
+
+<h2>Why storyboard before generating anything?</h2>
+<p>The default failure mode of AI music videos is prompting by vibes: you generate whatever feels right in the moment, end up with 30–50 clips that don't share a protagonist, a palette, or an arc, and then try to rescue it in the edit. One 2026 workflow guide that tested storyboard-first against prompt-first production reported viewer completion rates of 64% versus 38%, and protagonist consistency of roughly 85% versus 30% — with about 20 minutes of planning saving 2–3 hours of regeneration downstream (<a href="https://suno.bi/en/blog/storyboard-driven-ai-music-video-method-sunomv-2026" rel="noopener" target="_blank">source</a>). Treat those exact numbers as one team's test, not physics, but the direction matches what we see: unplanned videos cost roughly double in credits because half the generations never make the cut.</p>
+<p>The second reason is arithmetic. Seedance 2.0 generates clips of 4–15 seconds each as of July 2026, with longer runs built by chaining extensions (<a href="https://www.glbgpt.com/hub/seedance-2-0-maximum-video-length-how-long-can-it-generate/" rel="noopener" target="_blank">source</a>). A three-minute song therefore takes roughly 18–30 individual generations at typical 6–10 second shot lengths (12 at the absolute minimum, and only if every single clip ran the full 15 seconds). Without a shot list, you won't generate 25 clips — you'll generate 60 and keep 25. Storyboarding is the one step no AI tool does for you, which is exactly why it's where the quality gap opens up.</p>
+
+<h2>How do you map song structure to a shot list?</h2>
+<p>Traditional music-video storyboarding starts from the same discipline regardless of tools: plan the video shot by shot before production, with a frame for every moment — the same plan-first, frame-by-frame breakdown professional storyboard tools teach (<a href="https://boords.com/how-to-storyboard/music-video" rel="noopener" target="_blank">source</a>). Our AI-specific adaptation of that discipline: break the song into its sections, give each section a visual job, and add one constraint — every shot's length must come from your generator's actual duration menu, so the storyboard is directly executable.</p>
+<div style="overflow-x:auto"><table>
+<tr><th>Song section</th><th>Visual job</th><th>Typical shots</th><th>Clip lengths</th><th>Notes</th></tr>
+<tr><td>Intro</td><td>Establish the world</td><td>1 wide, slow push-in</td><td>8–12s</td><td>One unbroken shot; no cuts yet</td></tr>
+<tr><td>Verse 1</td><td>Introduce the character</td><td>2–3 mediums</td><td>5–8s each</td><td>Character canon in every frame</td></tr>
+<tr><td>Chorus</td><td>The "home" image</td><td>3–4 shots, cut on beat</td><td>4–6s each</td><td>Build once, reuse every chorus</td></tr>
+<tr><td>Verse 2</td><td>Develop, don't repeat</td><td>2–3 mediums, new angles</td><td>5–8s each</td><td>Same canon, varied composition</td></tr>
+<tr><td>Bridge</td><td>Break the pattern</td><td>1 contrasting shot</td><td>10–15s</td><td>Slow motion, reversal, or new light</td></tr>
+<tr><td>Final chorus</td><td>Home image, escalated</td><td>Reused chorus shots + 1–2 new</td><td>4–6s each</td><td>Cheapest section if you planned it</td></tr>
+<tr><td>Outro</td><td>Echo the intro</td><td>1 wide</td><td>10–15s</td><td>Bookend the opening frame</td></tr>
+</table></div>
+<p>Timestamp your actual song first — a 22-second intro and an 8-second intro need different plans. If a section demands one continuous shot longer than 15 seconds, that's an extension chain, which has its own planning rules — see our guide to <a href="/blog/how-to-make-ai-videos-longer-than-10-seconds.html">making AI videos longer than 10 seconds</a>.</p>
+
+<h2>What's the right performance-to-atmosphere ratio?</h2>
+<p>Performance shots show your artist or character singing, playing, or moving to the track. Atmosphere shots are everything else: landscapes, textures, narrative b-roll, abstract visuals. There is no universal correct ratio, so decide it per section before you write a single prompt. A reasonable starting point for artist-led videos is 40–60% performance, concentrated in the choruses; instrumental and ambient tracks can run near zero performance and live entirely on atmosphere.</p>
+<p>Two honest warnings. First, performance shots are the hardest to execute — a singing character means lip-sync, and AI lip-sync to a music track is still the most failure-prone shot type (our <a href="/blog/seedance-lip-sync-song.html">Seedance lip-sync guide</a> covers what works and what doesn't). Second, every performance shot multiplies your consistency burden, because the same face has to survive across many generations. If your character drifts between shots, the video reads as broken even when each clip looks good alone — that problem and its fixes are covered in our <a href="/blog/ai-video-character-consistency.html">character consistency guide</a>.</p>
+
+<h2>What goes in the canon — and why write it before generating?</h2>
+<p>The canon is a short block of text, written once, pasted into every single prompt. It has three parts:</p>
+<ul>
+<li><strong>Character sheet:</strong> specific, repeatable descriptors — not "a woman in a jacket" but the kind of concrete anchors ("red plaid shirt with rolled-up sleeves") that measurably reduce character drift across generations (<a href="https://resource.digen.ai/midjourney-ai-video-generator-workflow-2026/" rel="noopener" target="_blank">source</a>).</li>
+<li><strong>Location:</strong> one primary setting, described the same way every time. Two locations maximum for a first project.</li>
+<li><strong>Lighting rule:</strong> one sentence that never changes — "always golden-hour backlight, warm haze" or "always hard neon rim light, teal and magenta." This single rule does more for visual coherence than any editing trick.</li>
+</ul>
+<p>On Seedance the canon isn't just text. The platform accepts up to 9 reference images and up to 3 audio files per generation as of July 2026, addressed with @-mention syntax — "@Image 1 as the first frame, @Audio 1 for background music" (<a href="https://morphic.com/resources/models/seedance-2" rel="noopener" target="_blank">source</a>). So the professional move is: generate your character sheet as stills first, approve them, then reference those exact images in every video generation via <a href="/go/seedance">Seedance</a>. Your canon becomes an actual file, not just a paragraph.</p>
+
+<h2>How do you budget shots per section?</h2>
+<p>Chorus repetition is the biggest budget lever, and it's a creative feature, not a compromise — real music videos return to the same "home" imagery every chorus on purpose. Build 3–4 strong chorus shots once, then reuse them at every chorus with small escalations (a new final shot, a faster cut pattern). On a song with three choruses, that one decision can cut your unique-shot count by a third.</p>
+<p>Concretely: a 3:30 track planned from the table above lands around 15–20 unique clips plus reuse. Assume 20–30% of shots need a second attempt, and budget accordingly before you start — our <a href="/tools/credit-calculator.html">credit calculator</a> turns a shot list into a credit estimate in about a minute. One caution on testing: Seedance's free tier is one watermarked credit per 24 hours and isn't commercially licensed as of July 2026, so it's fine for sanity-checking one storyboard frame, useless for production. The <a href="/blog/seedance-free-vs-paid-worth-it.html">free-vs-paid breakdown</a> covers where the real threshold sits, and <a href="/blog/ai-music-video-cost.html">our cost guide</a> has full-video math across tools.</p>
+
+<h2>What storyboard formats actually work?</h2>
+<h3>The text shot-list template (copy this)</h3>
+<p>You don't need to draw. One line per shot, eight fields:</p>
+<ol>
+<li><strong>Shot ID</strong> — V1-a, CH-1, BR-1</li>
+<li><strong>Section + timestamp</strong> — Chorus 1, 0:52–0:58</li>
+<li><strong>Length</strong> — from your generator's menu (Seedance: 4, 5, 6, 8, 10, 12, or 15s)</li>
+<li><strong>Shot type + one camera move</strong> — close-up, slow push-in</li>
+<li><strong>P or A</strong> — performance or atmosphere</li>
+<li><strong>Canon elements in frame</strong> — singer (canon), rooftop, neon rim light</li>
+<li><strong>Action notes</strong> — belts the hook line, wind moves the jacket</li>
+<li><strong>Reused in</strong> — Chorus 2, Final Chorus</li>
+</ol>
+<p>One camera move per shot, maximum. Stacked moves are the fastest way to get unusable output — our <a href="/blog/camera-movement-prompts-ai-music-videos.html">camera movement prompt guide</a> lists the moves that generate reliably.</p>
+<h3>Image boards from Midjourney or FLUX stills</h3>
+<p>The upgrade path: generate one still per shot in Midjourney or FLUX before any video, arrange them in sequence, and review the whole video as a static board. Keyframe-first workflows — pick key scene moments as images, then animate — are now a standard pipeline (<a href="https://resource.digen.ai/midjourney-ai-video-generator-workflow-2026/" rel="noopener" target="_blank">source</a>). On Seedance this pre-viz work is directly recyclable: each approved still becomes the @Image first-frame reference for its shot, so nothing you made during planning is wasted.</p>
+
+<h2>How does the storyboard survive contact with generation?</h2>
+<p>Generate in priority order, not song order: canon stills first, chorus shots second (they're reused most, so they carry the highest quality bar), then everything else. Expect some shots to miss on the first attempt; because each one has an ID and a spec, a retry is a targeted fix rather than a fresh improvisation. Assembly happens in your editor, cutting on the beat — the <a href="/blog/beat-sync-ai-video-editing.html">beat-sync editing guide</a> covers that stage.</p>
+<p>One tool-fit note. If your storyboard genuinely demands a single unbroken multi-minute shot, Seedance isn't the natural pick: Kling 3.0 extends a continuous video to a maximum of about 3 minutes (<a href="https://www.atlascloud.ai/blog/guides/kling-ai-video-length-limit" rel="noopener" target="_blank">source</a>), while Veo 3.1 tops out around 148 seconds via 7-second extensions (<a href="https://help.apiyi.com/en/veo-3-1-video-extend-guide-en.html" rel="noopener" target="_blank">source</a>). But most music-video storyboards are cut-driven — many short shots, not one long take — and that shape maps naturally onto <a href="/go/seedance">Seedance's</a> 4–15 second segments with extension chaining for the occasional long section. The storyboard tells you which camp you're in before you've spent anything, which is the whole point.</p>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">Try Seedance free — daily credits<span class="ic">↗</span></a></div>
+<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq"><details><summary>How many shots do I need to storyboard for a 3-minute AI music video?<span class="plus" style="float:right">+</span></summary><p>Plan for roughly 15–25 unique clips of 4–15 seconds each, plus reuse. Chorus shots repeat at every chorus, so a 3-minute song with three choruses might need only 15–20 unique generations even though the finished edit contains 25–30 cuts. Budget an extra 20–30% of your credits for retakes on shots that miss the first time.</p></details><details><summary>Should I storyboard before or after choosing my AI video tool?<span class="plus" style="float:right">+</span></summary><p>Sketch the structure first, but finalize shot lengths after picking the tool, because every shot should use a duration your generator actually offers. Seedance 2.0 generates 4–15 second clips, Veo 3.1 works in 4–8 second generations with 7-second extensions, and Kling 3.0 can extend a single video to about 3 minutes. A storyboard full of 20-second single shots is unbuildable on a 15-second-max tool without extension chaining.</p></details><details><summary>Do I need to draw my storyboard?<span class="plus" style="float:right">+</span></summary><p>No. A text shot list — one line per shot with ID, timestamp, length, shot type, camera move, performance-or-atmosphere tag, canon elements, and action notes — is fully sufficient. Image boards made from Midjourney or FLUX stills are an optional upgrade, and they pay for themselves on Seedance because each approved still can be reused as a first-frame reference image for its video shot.</p></details><details><summary>What is a visual canon and how long should it be?<span class="plus" style="float:right">+</span></summary><p>A canon is a short block of text (roughly 50–100 words) pasted into every prompt: a character sheet with specific repeatable descriptors, one primary location, and one lighting rule that never changes. It exists to stop character and style drift between independently generated clips. On Seedance, back the text canon with actual reference images — the platform accepts up to 9 per generation.</p></details><details><summary>What ratio of performance shots to atmosphere shots should a music video have?<span class="plus" style="float:right">+</span></summary><p>There&#x27;s no universal number. Artist-led videos commonly land around 40–60% performance shots concentrated in the choruses, while instrumental or ambient tracks can run near zero. Decide the ratio per section before prompting, and remember that performance shots cost more in practice: lip-sync is the most failure-prone AI shot type, and every appearance of your character raises the consistency burden.</p></details><details><summary>Does storyboarding actually save credits?<span class="plus" style="float:right">+</span></summary><p>Yes, primarily by eliminating exploratory generations. Unplanned projects routinely generate two to three clips for every one kept, because prompts are improvised and results don&#x27;t match. A shot list gives every generation a defined job, chorus reuse cuts the unique-shot count by up to a third, and retries become targeted fixes instead of fresh experiments. Run your shot list through a credit calculator before generating to see the total up front.</p></details></div>
+</article></main><footer><div class="wrap">
+<div class="foot-links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
+<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. Independent; not affiliated with seeddance.video or any AI vendor.</div>
+<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+<!-- ctabar:start -->
+<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
+<span style="color:#f4f2ee;font-size:.92rem">Ready to try it? <b>Seedance is free to start</b> &mdash; daily credits refresh every day.</span>
+<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">Make a video free &#8599;</a>
+<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+</div></div>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<!-- ctabar:end --></body></html>
