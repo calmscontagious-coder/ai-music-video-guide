@@ -115,7 +115,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>Spotify describes a Canvas as "an 8-second visual loop that shows in a vertical format to fill the screen" (Source: <a href="https://support.spotify.com/us/artists/article/canvas-guidelines/" rel="noopener" target="_blank">Spotify for Artists — Canvas guidelines</a>). Here is the full requirement list — and what Spotify does <em>not</em> require.</p>
 
-<table>
+<div style="overflow-x:auto"><table>
 <thead>
 <tr><th>Spec</th><th>Requirement</th></tr>
 </thead>
@@ -127,7 +127,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>File size</td><td>Not published by Spotify</td></tr>
 <tr><td>Bitrate / frame rate</td><td>Not published by Spotify</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>That "not published" row matters. Spotify's Canvas guidelines page lists only duration, ratio, height, and format — it does not state a file-size cap, a bitrate, or a frame-rate minimum (Source: <a href="https://support.spotify.com/us/artists/article/canvas-guidelines/" rel="noopener" target="_blank">Spotify for Artists — Canvas guidelines</a>). So if a tool promises to keep your file "under Spotify's 4MB limit," treat that as the tool's own safety margin, not an official Spotify rule. Keeping the file small is still smart — it uploads faster and avoids edge cases — but it is not a documented threshold.</p>
 
@@ -167,7 +167,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>Several free AI generators are built specifically to output the 9:16 looping MP4 Spotify wants, so the file passes without you touching the specs. From our testing and the tools' own documentation:</p>
 
-<table>
+<div style="overflow-x:auto"><table>
 <thead>
 <tr><th>Tool</th><th>Free tier</th><th>Notes</th></tr>
 </thead>
@@ -177,7 +177,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>LoopCanvas</td><td>Free daily generations</td><td>Dedicated Spotify Canvas preset</td></tr>
 <tr><td>Freebeat / VibeMV / Musid.ai</td><td>Free tiers vary</td><td>Auto-target 9:16 loop format</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>DistroKid offers a free Canvas generator at distrokid.com/canvas that builds a compliant loop, but it is free only for DistroKid members — you need a DistroKid account to use it (Source: <a href="https://distrokid.com/canvas/" rel="noopener" target="_blank">DistroKid — Canvas Generator</a>). ZSky advertises a free, ad-supported tier that outputs a 720x1280 MP4 from a text mood prompt, and LoopCanvas offers a free daily allowance with a Spotify Canvas preset (Sources: <a href="https://zsky.ai/blog/ai-spotify-canvas-generator-free" rel="noopener" target="_blank">ZSky AI</a>, <a href="https://loopcanvas.video/" rel="noopener" target="_blank">LoopCanvas</a>). We'd treat the specific free-tier limits on those two as subject to change — verify on the tool's own page before you build.</p>
 
