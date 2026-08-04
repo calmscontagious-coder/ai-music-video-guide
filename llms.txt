@@ -6,6 +6,9 @@
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ## Guides
+- [One AI Subscription for Video, Music & Voice (2026)](https://purposewithpresence.com/blog/one-subscription-ai-video-music-voice.html): Compare all-in-one AI subscriptions for video, music, and voice in 2026 — Seedance, Krater, OVOV, ImagineArt, 1min.AI — with real monthly cost math.
+- [Veo 3 Limits on Google AI Pro: Real Caps (Aug 2026)](https://purposewithpresence.com/blog/veo-3-daily-limit-google-ai-pro-alternatives.html): Google dropped Veo's fixed daily caps in 2026. AI Pro now gets compute limits + 1,000 Flow credits (~10 clips). Real numbers, resets, and alternatives.
+- [Music to Video AI: 5 Tools Compared (2026)](https://purposewithpresence.com/blog/music-to-video-ai-tools-compared.html): We priced Seedance, Freebeat, Revid, BeatViz, and Pictory on watermarks, licenses, max length, and real cost for a 3-minute song. Honest numbers inside.
 - [How to Animate an Album Cover with AI (Seamless Loops)](https://purposewithpresence.com/blog/animate-album-cover-ai.html): Animate your album cover with AI image-to-video: subtle motion prompts, seamless loops, and where moving covers get used, from Spotify Canvas to socials.
 - [TikTok Music Promotion Strategy 2026: 20–30 Clips Per Song](https://purposewithpresence.com/blog/tiktok-music-promotion-strategy.html): The 2026 consensus: 20–30 clips per song, 3–5 posts a week. How a solo artist sustains that with batch filming, templates, repurposing, and labeled AI filler.
 - [Veo 3.1 Music Video Tutorial: Step-by-Step Guide (2026)](https://purposewithpresence.com/blog/veo-3-1-music-video-tutorial.html): Step-by-step Veo 3.1 music video tutorial: access via Gemini, Flow, or API, reference images, camera-first prompts, the 148-second ceiling, and honest limits.
