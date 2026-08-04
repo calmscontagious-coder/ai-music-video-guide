@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Animate an Album Cover with AI (Seamless Loops)</title>
+<meta name="description" content="Animate your album cover with AI image-to-video: subtle motion prompts, seamless loops, and where moving covers get used, from Spotify Canvas to socials.">
+<link rel="canonical" href="https://purposewithpresence.com/blog/animate-album-cover-ai.html">
+<link rel="alternate" type="application/atom+xml" title="AI Music Video Guide" href="/feed.xml">
+<meta property="og:title" content="How to Animate an Album Cover with AI (Seamless Loops)"><meta property="og:description" content="Animate your album cover with AI image-to-video: subtle motion prompts, seamless loops, and where moving covers get used, from Spotify Canvas to socials.">
+<meta property="og:type" content="article"><meta property="og:url" content="https://purposewithpresence.com/blog/animate-album-cover-ai.html">
+<meta property="og:site_name" content="AI Music Video Guide">
+<meta property="og:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
+  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
+  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
+  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--pink);color:#fff}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
+.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
+.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
+.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
+  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
+  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
+.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
+.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
+.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
+.nav-cta:hover{text-decoration:none}
+main{padding:60px 0 40px}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
+  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
+article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
+.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
+article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
+article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
+article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
+article p,.page p{margin-bottom:18px}
+article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
+article li,.page li{margin-bottom:9px}
+article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
+article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
+article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
+article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
+article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
+.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
+  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
+.cta:hover{text-decoration:none;transform:translateY(-2px)}
+.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
+.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
+.card:hover{transform:translateY(-4px);border-color:var(--line2)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq details p{padding:0 0 20px;color:var(--dim)}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
+.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
+.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
+@media(max-width:640px){.nlinks{display:none}}
+
+/* premium patch v2 */
+body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
+.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
+article h2,.page h2{position:relative;padding-left:18px}
+article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
+article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
+article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
+blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
+.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
+nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
+@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+::selection{background:#ff2e88;color:#fff}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Animate Your Album Cover with AI: Subtle Motion, Seamless Loops", "description": "Animate your album cover with AI image-to-video: subtle motion prompts, seamless loops, and where moving covers get used, from Spotify Canvas to socials.", "wordCount": 1577, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-08-03", "dateModified": "2026-08-03", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/animate-album-cover-ai.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long should an animated album cover be?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the placement. Spotify Canvas requires a 3-8 second loop in vertical 9:16, per Spotify's own guidelines. Apple Music motion artwork needs a longer master: Apple's Album Motion guide specifies an 8-35 second duration (some distributor docs cite 15-35 seconds), looping seamlessly with the first frame matching your static cover. For social teasers, 6-15 seconds is typical. A practical workflow: generate a short loop for Canvas and socials, then extend it \u2014 via extension chaining or repeating the loop \u2014 into a longer master for Apple, rather than trimming down."}}, {"@type": "Question", "name": "Why does the text on my cover warp when I animate it?", "acceptedAnswer": {"@type": "Answer", "text": "AI video models re-synthesize the entire image on every frame, and they approximate letterforms rather than understanding characters \u2014 so type tends to melt, breathe, or garble in motion. The fix: animate a text-free version of the artwork and overlay the title as a static layer in an editor, or explicitly prompt that all text and logos remain perfectly static and reject any take showing letter drift."}}, {"@type": "Question", "name": "Can I animate my album cover with a free AI tool?", "acceptedAnswer": {"@type": "Answer", "text": "You can test the idea for free. Seedance 2.0's free tier gives one credit every 24 hours, but the output is watermarked and not commercially licensed, so it's only useful for previewing whether your cover animates well. For anything you'll actually publish \u2014 a Canvas, a visualizer, an ad \u2014 you need a paid plan (from $9.90/month as of July 2026) or another licensed tool."}}, {"@type": "Question", "name": "Does an animated cover replace my regular album cover?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your static cover is still required everywhere. Animated versions are additive placements: Spotify Canvas appears in the mobile Now Playing view, Apple Music motion artwork plays on album pages across iPhone, iPad, Mac, and smart TVs (with the static cover as its first frame), and YouTube visualizers or social clips live alongside the release. The still cover remains the canonical artwork."}}, {"@type": "Question", "name": "How do I make the animation loop without a visible jump?", "acceptedAnswer": {"@type": "Answer", "text": "Prompt for cyclical motion (\"seamless loop,\" \"returns to starting position\"), then trim the clip at the frame that most closely matches frame one. Hide small mismatches with a half-second cross-dissolve from tail to head. The ping-pong trick \u2014 playing the clip forward then reversed \u2014 works for shimmer and drift, but avoid it for directional motion like falling rain, which visibly reverses."}}, {"@type": "Question", "name": "What resolution should I animate from?", "acceptedAnswer": {"@type": "Answer", "text": "Always start from your highest-resolution cover master, ideally 3000px or larger, never a compressed streaming thumbnail \u2014 motion amplifies any source artifacts. Spotify Canvas output needs to be 720-1080px tall at 9:16 as MP4. Apple Music motion artwork asks for much more: 3840x3840 for the square format and 2048x2732 for the 3:4 iPhone version, so generating from a large, clean source keeps every placement sharp."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Animate Your Album Cover with AI: Subtle Motion, Seamless Loops", "item": "https://purposewithpresence.com/blog/animate-album-cover-ai.html"}]}</script>
+</head><body>
+<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
+<nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
+<div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
+<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">Try Free</a></nav>
+<main class="wrap"><article>
+<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › animate album cover with AI</p>
+<h1>How to Animate Your Album Cover with AI: Subtle Motion, Seamless Loops</h1>
+<p class="byline">By the AI Music Video Guide team · Updated August 3, 2026 · 7 min read</p>
+<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
+<p><strong>Quick answer:</strong> To animate an album cover with AI, upload the finished artwork to an image-to-video generator, prompt for subtle cyclical motion — drifting clouds, shimmering light, rippling water, never scene changes — generate a 4–8 second clip, and trim it so the final frame lands close to the first. That short loop becomes a Spotify Canvas, a YouTube visualizer, or a social teaser — and with a longer master (Apple's motion-artwork guidelines require an 8–35 second duration), it can become an Apple Music motion cover too. The craft rule that separates professional results from obvious AI output: move the atmosphere, keep the typography perfectly still.</p>
+
+<p>Your cover is already your strongest visual asset. It went through revisions, it carries your color palette, and listeners will see it hundreds of times. Animating it is the cheapest way to multiply that investment — no new design work, no video shoot, just motion layered onto art that already works.</p>
+
+<h2>Why animate a still cover instead of making a full video?</h2>
+<p>Because the two jobs are different. A music video tells a story; an animated cover is a living painting. It has to survive being watched on loop dozens of times without demanding attention, which means restraint is the whole discipline. A dramatic camera swoop that feels great once becomes exhausting on the fifteenth repeat. Subtle beats dramatic every single time in this format — the goal is that a listener glances at their phone and the artwork simply feels <em>alive</em>, not that it performs for them.</p>
+
+<h2>Where do animated covers actually get used?</h2>
+<p><strong>Spotify Canvas</strong> is the flagship placement. Spotify's own guidelines specify a <a href="https://support.spotify.com/us/artists/article/canvas-guidelines/" rel="noopener" target="_blank">3–8 second loop in vertical 9:16, between 720px and 1080px tall, delivered as MP4 or JPG</a>, shown in the Now Playing view on mobile. Since your cover is square, you'll need to extend the frame vertically or design a crop — our full <a href="/blog/ai-spotify-canvas-maker.html">Spotify Canvas maker walkthrough</a> covers that step by step.</p>
+<p><strong>Apple Music motion artwork</strong> is the placement most people forget exists. Apple's <a href="https://help.apple.com/itc/albummotionguide/en.lproj/static.html" rel="noopener" target="_blank">Album Motion guidelines</a> require that the first frame of the animation match your static cover exactly, that the loop play with no noticeable transition from end to beginning, and that motion stay focused on the cover art the whole time — no cuts to other imagery. It's delivered through your distributor, and the specs are steeper than Canvas in every direction: an 8–35 second duration per Apple's guide (some distributor documentation cites 15–35 seconds), a 1:1 version at 3840×3840, and a 3:4 iPhone version at 2048×2732. So animate from your highest-resolution master, and plan a longer loop for Apple than the short cut you'd ship as a Canvas.</p>
+<p><strong>YouTube visualizers</strong> are just your loop repeated end-to-end under the full track — a five-minute upload built from an eight-second asset.</p>
+<p><strong>Social teasers</strong> are where one loop quietly becomes ten pieces of content: pre-save announcements, countdown posts, Reels backgrounds. That multiplication logic is the entire premise of our <a href="/blog/one-song-twenty-videos-repurposing.html">one song, twenty videos playbook</a>.</p>
+
+<h2>How does the image-to-video workflow actually work?</h2>
+<ol>
+<li><strong>Start from the master file.</strong> Use your highest-resolution cover export (ideally 3000px+), not a compressed thumbnail pulled from a streaming page. Every artifact in the source gets amplified by motion.</li>
+<li><strong>Upload it as the anchor image.</strong> As of July 2026, <a href="/go/seedance">Seedance 2.0</a> generates 4–15 seconds per clip from an image input and can also take your actual music track as a reference, so the pacing of the motion leans toward the feel of the song — genuinely useful when you want a ballad cover to breathe slowly and a club track to pulse.</li>
+<li><strong>Write a subtle-motion prompt</strong> (examples in the table below), explicitly stating what stays still.</li>
+<li><strong>Review at 100% zoom</strong> on the fragile zones: faces, lettering, hard geometric edges. Reject takes where any of them drift.</li>
+<li><strong>Trim to loop and export</strong> — vertical for Canvas, square for Apple Music and YouTube. For Apple, extend the loop up to its 8–35 second requirement rather than trimming down to the short Canvas cut.</li>
+</ol>
+<p>If you want a longer visualizer — or that longer Apple master — rather than a short loop, extension chaining stitches consecutive generations together — the technique is covered in <a href="/blog/how-to-make-ai-videos-longer-than-10-seconds.html">our guide to AI videos longer than 10 seconds</a>.</p>
+
+<h2>What should move — and what has to stay still?</h2>
+<p><strong>Safe to move:</strong> background atmosphere (clouds, fog, bokeh), light behavior (shimmer, soft flicker, a slow light-leak sweep), and organic textures — hair lifting in a breeze, smoke curling, water rippling, fabric swaying, dust motes drifting. These read as cinemagraph craft, not as AI.</p>
+<p><strong>Keep still:</strong> typography, logos, and the core composition. A blink is fine on a portrait; a changing expression tips into uncanny. And text is the hard rule: AI models re-synthesize every frame and approximate letterforms rather than understanding characters, which is <a href="https://petapixel.com/2024/03/06/why-ai-image-generators-struggle-to-get-text-right/" rel="noopener" target="_blank">why generated text so often comes out warped or garbled</a>. In motion, that weakness shows up as your album title melting or breathing between frames — and warped type is the single fastest way for a viewer to clock the whole thing as an error.</p>
+<p>Three honest workarounds, in order of quality:</p>
+<ul>
+<li><strong>Animate a text-free version.</strong> If you have the layered artwork, export it without type, animate that, then overlay the title as a static layer in any editor (CapCut, DaVinci Resolve, Premiere). This is the professional route.</li>
+<li><strong>Prompt the text to hold.</strong> If you only have the flattened cover, add "title text and logo remain perfectly static" to the prompt — then inspect every take at full zoom and reject any letter drift. It works often, not always.</li>
+<li><strong>Frame the text out.</strong> For a 9:16 Canvas crop, you can sometimes compose so the type sits outside the animated region entirely.</li>
+</ul>
+<p>Faces and hands deserve the same skeptical inspection — our <a href="/blog/fix-ai-video-artifacts-hands-faces.html">artifact-fixing guide</a> covers what to look for and how to rescue a nearly-good take.</p>
+
+<h2>How do you make the loop seamless?</h2>
+<p>End where you began. That's the entire trick, and you engineer it from both directions:</p>
+<ol>
+<li><strong>Prompt for cyclical motion.</strong> Phrases like "seamless loop," "cyclical motion," and "returns to the starting position" push the model toward drift that folds back on itself instead of traveling somewhere.</li>
+<li><strong>Trim on the match.</strong> Scrub the clip and cut at the frame that most closely resembles frame one. With subtle motion there's usually a near-match within the last second.</li>
+<li><strong>Hide the seam in the edit.</strong> A half-second cross-dissolve from the tail into the head covers small mismatches. The ping-pong technique (play forward, then reversed) works beautifully for direction-agnostic motion like shimmer and bokeh — but never for directional motion like falling rain or rising smoke, which visibly reverses.</li>
+</ol>
+<p>The smaller the motion, the easier the seam hides — one more argument for restraint. Apple's guidelines make seamlessness an explicit requirement rather than a nice-to-have, so if you're targeting motion artwork there, build the loop plan before you generate.</p>
+
+<h2>What motion prompts work for different cover styles?</h2>
+<div style="overflow-x:auto"><table>
+<tr><th>Cover style</th><th>Motion prompt (paste and adapt)</th></tr>
+<tr><td>Moody portrait</td><td>Subtle cinemagraph: hair drifts gently as if in a light breeze, background bokeh shimmers softly, subject blinks once, camera locked, all text perfectly static, seamless loop</td></tr>
+<tr><td>Night city / synthwave art</td><td>Neon signs flicker softly, fine rain streaks fall, steam drifts at street level, reflections shimmer on wet asphalt, camera locked, typography static, cyclical motion</td></tr>
+<tr><td>Ocean / landscape photo</td><td>Slow water ripples, clouds drift steadily in one direction, light glints on the surface, grass sways slightly, no camera movement, loop ends on the opening frame</td></tr>
+<tr><td>Abstract ink / smoke</td><td>Ink billows in slow motion and folds back into itself, fine particles float, continuous cyclical swirl, no color shift, seamless loop</td></tr>
+<tr><td>Illustrated / painted cover</td><td>Painterly texture breathes gently, the light source pulses softly, foreground particles drift, barely perceptible background parallax, all line work stays intact, seamless loop</td></tr>
+<tr><td>Band photo</td><td>Film-grain flicker, a light leak sweeps slowly across the frame, dust particles float, subjects hold still, clothing moves faintly, locked camera, seamless loop</td></tr>
+</table></div>
+<p>Notice what every prompt shares: a locked camera. For cover loops, the right camera move is almost always none — though a very slow push-in can work for a one-off teaser. When you're ready to direct real camera language for full videos, start with our <a href="/blog/camera-movement-prompts-ai-music-videos.html">camera movement prompt guide</a>.</p>
+
+<h2>Which tools can animate a cover?</h2>
+<p>As of July 2026, <a href="/go/seedance">Seedance 2.0</a> is the route we use most for this job: image-to-video anchored on your cover, 4–15 second clips with extension chaining, and the music-track reference input that ties motion to the song. Plans run from $9.90 to $59.90 monthly; the free tier is one watermarked generation per 24 hours and isn't commercially licensed, so treat it strictly as a preview lane, not a release pipeline. Our <a href="/tools/credit-calculator.html">credit calculator</a> will tell you how many loop attempts a given plan realistically buys.</p>
+<p>It's not the only capable option. Current <a href="https://ulazai.com/best-ai-image-to-video-generators-2026/" rel="noopener" target="_blank">image-to-video comparisons</a> rate Runway highly for directed camera control, Kling for realism and subject consistency, Luma Dream Machine for fast cinematic clips, and Pika for quick creative drafts — all of them accept a still image and can produce a Canvas-able loop. The honest truth is that for this particular job, the craft matters more than the model: subtle motion, static type, and a planned seam will beat a better generator used carelessly.</p>
+<p>Once your cover breathes, the same artwork can seed something bigger — the full workflow is in <a href="/blog/how-to-make-ai-music-video-from-a-song.html">how to make an AI music video from a song</a>.</p>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">Try Seedance free — daily credits<span class="ic">↗</span></a></div>
+<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<h2>Frequently asked questions</h2>
+<div class="faq"><details><summary>How long should an animated album cover be?<span class="plus" style="float:right">+</span></summary><p>It depends on the placement. Spotify Canvas requires a 3-8 second loop in vertical 9:16, per Spotify&#x27;s own guidelines. Apple Music motion artwork needs a longer master: Apple&#x27;s Album Motion guide specifies an 8-35 second duration (some distributor docs cite 15-35 seconds), looping seamlessly with the first frame matching your static cover. For social teasers, 6-15 seconds is typical. A practical workflow: generate a short loop for Canvas and socials, then extend it — via extension chaining or repeating the loop — into a longer master for Apple, rather than trimming down.</p></details><details><summary>Why does the text on my cover warp when I animate it?<span class="plus" style="float:right">+</span></summary><p>AI video models re-synthesize the entire image on every frame, and they approximate letterforms rather than understanding characters — so type tends to melt, breathe, or garble in motion. The fix: animate a text-free version of the artwork and overlay the title as a static layer in an editor, or explicitly prompt that all text and logos remain perfectly static and reject any take showing letter drift.</p></details><details><summary>Can I animate my album cover with a free AI tool?<span class="plus" style="float:right">+</span></summary><p>You can test the idea for free. Seedance 2.0&#x27;s free tier gives one credit every 24 hours, but the output is watermarked and not commercially licensed, so it&#x27;s only useful for previewing whether your cover animates well. For anything you&#x27;ll actually publish — a Canvas, a visualizer, an ad — you need a paid plan (from $9.90/month as of July 2026) or another licensed tool.</p></details><details><summary>Does an animated cover replace my regular album cover?<span class="plus" style="float:right">+</span></summary><p>No. Your static cover is still required everywhere. Animated versions are additive placements: Spotify Canvas appears in the mobile Now Playing view, Apple Music motion artwork plays on album pages across iPhone, iPad, Mac, and smart TVs (with the static cover as its first frame), and YouTube visualizers or social clips live alongside the release. The still cover remains the canonical artwork.</p></details><details><summary>How do I make the animation loop without a visible jump?<span class="plus" style="float:right">+</span></summary><p>Prompt for cyclical motion (&quot;seamless loop,&quot; &quot;returns to starting position&quot;), then trim the clip at the frame that most closely matches frame one. Hide small mismatches with a half-second cross-dissolve from tail to head. The ping-pong trick — playing the clip forward then reversed — works for shimmer and drift, but avoid it for directional motion like falling rain, which visibly reverses.</p></details><details><summary>What resolution should I animate from?<span class="plus" style="float:right">+</span></summary><p>Always start from your highest-resolution cover master, ideally 3000px or larger, never a compressed streaming thumbnail — motion amplifies any source artifacts. Spotify Canvas output needs to be 720-1080px tall at 9:16 as MP4. Apple Music motion artwork asks for much more: 3840x3840 for the square format and 2048x2732 for the 3:4 iPhone version, so generating from a large, clean source keeps every placement sharp.</p></details></div>
+</article></main><footer><div class="wrap">
+<div class="foot-links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
+<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. Independent; not affiliated with seeddance.video or any AI vendor.</div>
+<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+<!-- ctabar:start -->
+<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
+<span style="color:#f4f2ee;font-size:.92rem">Ready to try it? <b>Seedance is free to start</b> &mdash; daily credits refresh every day.</span>
+<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">Make a video free &#8599;</a>
+<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+</div></div>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<!-- ctabar:end --></body></html>
