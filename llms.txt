@@ -6,6 +6,7 @@
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ## Guides
+- [Pay-As-You-Go AI Video: No Subscription Needed (2026)](https://purposewithpresence.com/blog/pay-as-you-go-ai-video-no-subscription.html): We tested pay-as-you-go AI video generators with no subscription — real per-clip prices, a credit-expiry audit, and break-even math vs a cheap plan.
 - [Is Grok Imagine Still Free? Your Options After the Paywall](https://purposewithpresence.com/blog/grok-imagine-paywall-options.html): Grok Imagine went paid in March 2026. What free users get now, SuperGrok Lite vs SuperGrok vs X Premium prices, and how the Seedance route compares.
 - [One AI Subscription for Video, Music & Voice (2026)](https://purposewithpresence.com/blog/one-subscription-ai-video-music-voice.html): Compare all-in-one AI subscriptions for video, music, and voice in 2026 — Seedance, Krater, OVOV, ImagineArt, 1min.AI — with real monthly cost math.
 - [Veo 3 Limits on Google AI Pro: Real Caps (Aug 2026)](https://purposewithpresence.com/blog/veo-3-daily-limit-google-ai-pro-alternatives.html): Google dropped Veo's fixed daily caps in 2026. AI Pro now gets compute limits + 1,000 Flow credits (~10 clips). Real numbers, resets, and alternatives.
