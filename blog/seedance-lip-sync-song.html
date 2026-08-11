@@ -186,4 +186,35 @@ ml('account', '2504111');
 <button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
 </div></div>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
-<!-- ctabar:end --></body></html>
+<!-- ctabar:end --><!-- geo:exit-modal:start -->
+<div id="pwp-cap" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(8,8,10,.72);align-items:center;justify-content:center;padding:20px">
+  <div style="max-width:460px;width:100%;background:#14141a;border:1px solid rgba(244,242,238,.14);border-radius:18px;padding:26px 24px 18px;position:relative">
+    <button id="pwp-cap-x" aria-label="Close" style="position:absolute;top:10px;right:12px;background:none;border:0;color:#8b8b95;font-size:26px;line-height:1;cursor:pointer">&times;</button>
+    <p style="margin:0 0 6px;font-weight:700;font-size:1.12rem;color:#f4f2ee">Before you go &mdash; the Director&rsquo;s Guide</p>
+    <p style="margin:0 0 14px;font-size:.93rem;color:#a9a9b3">The five-part scene template, the camera vocabulary the engines actually obey, and a note whenever tool pricing changes. One email a month. Unsubscribe anytime.</p>
+    <div class="ml-embedded" data-form="gDc4Ah"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='pwp_cap_v1', el=document.getElementById('pwp-cap');
+  if(!el) return;
+  function seen(){try{return localStorage.getItem(KEY)}catch(e){return '1'}}
+  function mark(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}}
+  function show(){ if(seen())return; el.style.display='flex'; mark(); }
+  function hide(){ el.style.display='none'; }
+  document.getElementById('pwp-cap-x').addEventListener('click',hide);
+  el.addEventListener('click',function(e){ if(e.target===el) hide(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  // desktop: leaving toward the tab bar. mobile: 60% scroll depth (no exit event).
+  document.addEventListener('mouseout',function(e){ if(!e.relatedTarget && e.clientY<8) show(); });
+  var fired=false;
+  window.addEventListener('scroll',function(){
+    if(fired) return;
+    var d=document.documentElement, pct=(window.scrollY+window.innerHeight)/d.scrollHeight;
+    if(pct>0.6){ fired=true; setTimeout(show,400); }
+  },{passive:true});
+})();
+</script>
+<!-- geo:exit-modal:end -->
+</body></html>
