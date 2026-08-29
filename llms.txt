@@ -6,6 +6,7 @@
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ## Guides
+- [Seedance Credit Cost Per Video: Real 2026 Numbers](https://purposewithpresence.com/blog/seedance-credit-cost-per-video.html): Verified 2026 per-second rates, the token formula behind them, and what a finished minute of Seedance video really costs once you count the retakes.
 - [Suno Song to Music Video: Fastest 2026 Workflow](https://purposewithpresence.com/blog/suno-song-to-music-video.html): The fastest way to turn a Suno or Udio track into an AI music video in 2026 - verified plan prices, per-second render costs, and the Udio export blocker.
 - [Nano Banana vs SeeDream 4 vs Flux Kontext (2026)](https://purposewithpresence.com/blog/nano-banana-vs-seedream-vs-flux-kontext.html): Nano Banana, SeeDream 4.5, and Flux Kontext compared on press-shot edits, cover art, and video keyframes — with real credit costs and a per-job verdict.
 - [How to Cancel Udio: Refunds, Downloads & Alternatives](https://purposewithpresence.com/blog/cancel-udio-refund-alternatives.html): Udio disabled downloads after the UMG settlement. How to cancel at udio.com/account, what refunds are realistic, and where to rebuild your workflow.
