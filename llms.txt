@@ -6,6 +6,7 @@
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ## Guides
+- [AI Lyric Video Generator: Tools, Costs & Pitfalls (2026)](https://purposewithpresence.com/blog/lyric-video-ai-generator-guide.html): How to make a lyric video with AI in 2026 - verified pricing for Specterr, Kapwing, Neural Frames and Runway, plus the sync, licensing and watermark traps.
 - [Best AI Video Generator for Musicians (2026)](https://purposewithpresence.com/blog/best-ai-video-generator-for-musicians.html): Real 2026 prices, clip limits and lip-sync notes for Runway, Veo 3.1, Sora 2, Seedance 2.0, Neural Frames and Hedra, compared for music video work.
 - [AI Video With No Subscription: Pay-Per-Use Prices 2026](https://purposewithpresence.com/blog/ai-video-no-subscription-pay-per-use.html): Pay per second instead of per month. Verified 2026 rates for Veo 3.1, Sora 2, Kling and Runway credits, plus what a three-minute music video really costs.
 - [Seedance Credit Cost Per Video: Real 2026 Numbers](https://purposewithpresence.com/blog/seedance-credit-cost-per-video.html): Verified 2026 per-second rates, the token formula behind them, and what a finished minute of Seedance video really costs once you count the retakes.
