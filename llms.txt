@@ -6,6 +6,7 @@
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ## Guides
+- [Seedance vs Veo 3.1: Cost Per Finished Minute (2026)](https://purposewithpresence.com/blog/seedance-vs-veo-3-1-cost-per-finished-minute.html): Which is cheaper per finished minute of music video, Seedance 2.5 or Veo 3.1? Every API, Flow and credit-plan rate read October 21, 2026, arithmetic shown.
 - [Udio Song to Music Video After the Download Lock](https://purposewithpresence.com/blog/udio-song-to-music-video-after-download-lock.html): Udio locked downloads on October 29, 2025. How to make a music video for a Udio track in 2026, with or without the old file, and what it costs.
 - [Sora 2 Alternatives for Music Videos (Oct 2026 Guide)](https://purposewithpresence.com/blog/sora-2-alternatives-music-videos.html): Sora 2 closed April 26 (app) and September 24, 2026 (API). Where music video makers moved: Veo 3.1, Kling 4.0, Wan 3.0 and Seedance, with dated prices.
 - [Kling 4.0 vs Seedance 2.5: 30-Second Music Video Clips](https://purposewithpresence.com/blog/kling-4-vs-seedance-2-5-30-second-clips.html): Kling 4.0 vs Seedance 2.5 for a 30-second music video clip: which follows your song, what one clip costs per plan in October 2026, where each fails.
