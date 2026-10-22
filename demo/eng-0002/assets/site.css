@@ -1,5 +1,5 @@
 /* eng-0002 concept site: shared design system.
-   Tokens follow brain_state/design_assets/clients/eng-0002/tokens.css with one ruling from the operator (2026-10-22):
+   Tokens follow the client token file, with one colour ruling (2026-10-22):
    warm ivory canvas, white surfaces, indigo for type and primary buttons, the logo's red heart as punctuation only. No blush.
    Composition rules live in assets/README.md. */
 :root{
@@ -325,10 +325,32 @@ footer a:hover{text-decoration:underline}
 .bag-note{padding:var(--sp-3);border-radius:var(--radius-sm);background:var(--color-canvas);border:1px solid var(--color-line);font-size:.8125rem;line-height:1.45;color:var(--color-ink)}
 .bag-note b{color:var(--color-brand)}
 
+/* design-director pass, 2026-10-22: shared additions only; nothing above changed */
+h1,h2{text-wrap:balance}
+.lead,.sec-head p,.qa p{text-wrap:pretty}
+/* skip link: first stop for keyboard users on every page */
+.skip{position:absolute;left:16px;top:-64px;z-index:70;padding:10px 16px;border-radius:var(--radius-sm);background:var(--color-brand);color:var(--color-on-brand);font:700 var(--text-sm) var(--font-text);text-decoration:none;transition:transform var(--dur-fast) var(--ease-enter)}
+.skip:focus{transform:translateY(80px)}
+/* the chosen slot wears the vitrine's double hairline */
+.slot .chip[aria-pressed="true"]{box-shadow:0 0 0 2px var(--color-surface),0 0 0 3px var(--color-brand)}
+/* answer-first questions: visible text, no accordion, one per page */
+.faq-wrap{display:grid;gap:var(--sp-6)}
+@media (min-width:900px){.faq-wrap{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:var(--sp-16);align-items:start}.faq-head{position:sticky;top:104px}}
+.faq-head{display:grid;gap:var(--sp-3);max-width:34ch}
+.faq-head h2{font-size:clamp(2rem,5vw,var(--text-2xl));line-height:1.05;font-variation-settings:"opsz" 72,"wght" 600}
+.faq-head p{color:var(--color-muted)}
+.faq-list{display:grid}
+.qa{display:grid;gap:var(--sp-2);padding:var(--sp-6) 0;border-top:1px solid var(--color-line)}
+.qa:first-child{border-top:0;padding-top:0}
+.qa h3{font-size:1.375rem;line-height:1.2;color:var(--color-brand);font-variation-settings:"opsz" 36,"wght" 600}
+.qa p{max-width:62ch;font-size:1.0625rem;color:var(--color-ink)}
+.qa a{color:var(--color-brand);font-weight:700;text-underline-offset:3px}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .rise{opacity:1;transform:none;animation:none}
   .add.pop,.stepper.pop,.badge.bump,.slots .full{animation:none}
   .tile-l:hover img,.item:hover{transform:none}
   .sheet,.scrim{transition:none}
+  .skip{transition:none}
 }

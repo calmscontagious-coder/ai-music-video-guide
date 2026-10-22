@@ -149,6 +149,7 @@
       if (!st || !st.classList.contains('stepper')) return;
       var q = f ? f.qty : 0;
       b.hidden = q > 0; st.hidden = q === 0; st.querySelector('b').textContent = q;
+      var card = b.closest('[data-card]'); if (card) card.classList.toggle('in-bag', q > 0);   /* the frame follows the choice */
     });
   }
 
