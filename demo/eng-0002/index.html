@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ID-éclair, Pâtisserie Française in Pasadena. Concept preview.</title>
+<meta name="description" content="Concept preview of a new site for a French pâtisserie in Pasadena: order for pickup on your phone, book a class, commission a cake.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* tokens: brain_state/design_assets/clients/eng-0002/tokens.css (direction: artisanal, precise, generous, playful-French, expansive) */
+:root{
+  --color-brand:#2b1a13;--color-brand-soft:#746c69;--color-brand-deep:#22110b;--color-accent:#c8102e;--color-on-accent:#fffdfc;
+  --color-ink:#1f130e;--color-muted:#645c58;--color-canvas:#fdf9f8;--color-surface:#fffdfc;--color-line:#e3dcda;--color-focus:#c8102e;
+  --color-cream:#f6efe4;--color-cream-deep:#ead9c6;
+  --font-display:"Fraunces",Georgia,serif;--font-text:"Montserrat",Verdana,sans-serif;
+  --text-sm:.875rem;--text-base:1.1875rem;--text-lg:1.5625rem;--text-xl:2.125rem;--text-2xl:2.8125rem;--text-3xl:3.75rem;--text-display:5.75rem;
+  --leading-display:1.02;--leading-tight:1.2;--leading-body:1.45;--tracking-caps:.08em;--tracking-display:-.015em;--measure-body:62ch;
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-6:24px;--sp-8:32px;--sp-12:48px;--sp-16:64px;--sp-24:96px;
+  --radius-sm:6px;--radius-md:12px;--radius-lg:24px;--radius-pill:999px;
+  --shadow-e1:0 1px 2px rgba(43,26,19,.06);--shadow-e2:0 2px 6px rgba(43,26,19,.08);--shadow-e3:0 6px 16px rgba(43,26,19,.10);--shadow-e4:0 12px 32px rgba(43,26,19,.12);
+  --dur-fast:150ms;--dur-base:250ms;--dur-slow:400ms;--ease-enter:cubic-bezier(.2,0,0,1);--ease-move:cubic-bezier(.3,0,0,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--color-canvas);color:var(--color-ink);font-family:var(--font-text);font-size:var(--text-base);line-height:var(--leading-body);font-feature-settings:"kern" 1,"liga" 1}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;letter-spacing:var(--tracking-display);margin:0}
+p{margin:0}
+.wrap{width:min(100% - 32px,1180px);margin-inline:auto}
+.eyebrow{font-family:var(--font-display);font-style:italic;font-size:1.125rem;font-weight:400;color:var(--color-muted);font-variation-settings:"opsz" 24,"wght" 400,"SOFT" 50}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:var(--radius-pill);font:600 1rem/1 var(--font-text);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform var(--dur-fast) var(--ease-move),background-color var(--dur-fast) var(--ease-move),border-color var(--dur-fast) var(--ease-move)}
+.btn:active{transform:translateY(1px)}
+.btn-accent{background:var(--color-accent);color:var(--color-on-accent)}
+.btn-accent:hover{background:#a90d27}
+.btn-ink{background:var(--color-brand);color:var(--color-cream)}
+.btn-ink:hover{background:var(--color-brand-deep)}
+.btn-ghost{background:transparent;color:var(--color-brand);border-color:var(--color-brand)}
+.btn-ghost:hover{background:var(--color-cream)}
+:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px;border-radius:var(--radius-sm)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* preview notice: honest about what is real and what is example */
+.notice{background:var(--color-brand);color:var(--color-cream);font-size:var(--text-sm);padding:10px 0}
+.notice .wrap{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.notice b{font-weight:600;color:#fff}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(253,249,248,.92);backdrop-filter:none;border-bottom:1px solid var(--color-line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
+.brand{font-family:var(--font-display);font-size:1.75rem;line-height:1;text-decoration:none;color:var(--color-brand);font-variation-settings:"opsz" 72,"wght" 500}
+.brand small{display:block;font-family:var(--font-text);font-size:.6875rem;letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-muted);margin-top:6px;font-weight:600}
+.nav{display:none;gap:28px;font-size:.9375rem;font-weight:500}
+.nav a{text-decoration:none;color:var(--color-brand);padding:12px 0;border-bottom:2px solid transparent;transition:border-color var(--dur-fast) var(--ease-move)}
+.nav a:hover{border-bottom-color:var(--color-brand)}
+.top .btn{display:none}
+.menu-btn{min-width:48px;min-height:48px;border:1px solid var(--color-line);background:var(--color-surface);border-radius:var(--radius-pill);font:600 .875rem var(--font-text);color:var(--color-brand);padding:0 16px}
+@media (min-width:900px){.nav{display:flex}.top .btn{display:inline-flex;min-height:44px}.menu-btn{display:none}}
+.menu{display:none;border-top:1px solid var(--color-line);background:var(--color-surface)}
+.menu[data-open="true"]{display:block}
+.menu a{display:block;padding:18px 0;border-bottom:1px solid var(--color-line);text-decoration:none;font-weight:500;color:var(--color-brand)}
+.menu a:last-child{border-bottom:0}
+
+/* hero: the one memorable element, with the page's single grid break (the photo bleeds past the right edge and under the headline) */
+.hero{position:relative;overflow:hidden;padding:var(--sp-12) 0 var(--sp-16)}
+.hero .wrap{display:grid;gap:var(--sp-8);align-items:center}
+.hero-copy{position:relative;z-index:2}
+.hero h1{font-size:clamp(2.75rem,8.5vw,var(--text-display));line-height:var(--leading-display);font-variation-settings:"opsz" 144,"wght" 350;max-width:12ch}
+.hero h1 em{font-style:italic;font-variation-settings:"opsz" 144,"wght" 400,"SOFT" 60}
+.hero p.lead{font-size:1.125rem;max-width:34ch;color:var(--color-muted);margin-top:var(--sp-6)}
+.hero-actions{display:flex;gap:var(--sp-4);flex-wrap:wrap;align-items:center;margin-top:var(--sp-8)}
+.hero-actions .link{font-weight:600;text-decoration:none;color:var(--color-brand);border-bottom:2px solid var(--color-cream-deep);padding-bottom:2px}
+.hero-media{position:relative}
+.hero-media img{aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-e4)}
+.hero-media figcaption{position:absolute;left:16px;bottom:16px;background:var(--color-surface);color:var(--color-brand);font-size:var(--text-sm);padding:10px 14px;border-radius:var(--radius-pill);box-shadow:var(--shadow-e2)}
+.hero-media figcaption b{font-weight:600}
+@media (min-width:900px){
+  .hero{padding:var(--sp-16) 0 var(--sp-24)}
+  .hero .wrap{grid-template-columns:minmax(0,7fr) minmax(0,6fr);gap:0}
+  .hero-media{margin-right:calc(-1 * (100vw - min(100vw - 32px,1180px)) / 2);margin-left:-72px}
+  .hero-media img{border-radius:var(--radius-lg) 0 0 var(--radius-lg)}
+}
+/* one orchestrated load moment, opacity and transform only, under 400ms each */
+.rise{opacity:0;transform:translateY(12px);animation:rise var(--dur-slow) var(--ease-enter) forwards}
+.rise.d1{animation-delay:80ms}.rise.d2{animation-delay:160ms}.rise.d3{animation-delay:240ms}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}}
+
+/* proof strip: facts the shop already publishes */
+.facts{border-block:1px solid var(--color-line);background:var(--color-surface)}
+.facts .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-6);padding:var(--sp-6) 0}
+.facts div{display:grid;gap:4px}
+.facts strong{font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;font-variant-numeric:tabular-nums}
+.facts span{font-size:var(--text-sm);color:var(--color-muted)}
+@media (min-width:720px){.facts .wrap{grid-template-columns:repeat(4,1fr)}}
+
+section{padding:var(--sp-16) 0}
+@media (min-width:900px){section{padding:var(--sp-24) 0}}
+.sec-head{display:grid;gap:var(--sp-3);max-width:40ch;margin-bottom:var(--sp-8)}
+.sec-head h2{font-size:clamp(2rem,5vw,var(--text-2xl));font-variation-settings:"opsz" 96,"wght" 400}
+.sec-head p{color:var(--color-muted)}
+
+/* order grid: real products and prices from the current shop */
+.grid{display:grid;gap:var(--sp-4)}
+@media (min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.grid{grid-template-columns:repeat(3,1fr);gap:var(--sp-6)}}
+.card{background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-e1);display:grid;grid-template-rows:auto 1fr;transition:box-shadow var(--dur-base) var(--ease-move),transform var(--dur-base) var(--ease-move)}
+.card:hover{box-shadow:var(--shadow-e3);transform:translateY(-2px)}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.card .body{padding:var(--sp-4) var(--sp-4) var(--sp-6);display:grid;gap:var(--sp-2);align-content:start}
+.card h3{font-size:1.375rem;font-variation-settings:"opsz" 48,"wght" 500}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--color-brand);background:var(--color-cream);border-radius:var(--radius-pill);padding:4px 10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-3);margin-top:var(--sp-2)}
+.price{font-variant-numeric:tabular-nums;font-weight:600}
+.add{min-height:40px;min-width:88px;border-radius:var(--radius-pill);border:1px solid var(--color-brand);background:transparent;color:var(--color-brand);font:600 .875rem var(--font-text);padding:0 16px;cursor:pointer;transition:background-color var(--dur-fast) var(--ease-move),color var(--dur-fast) var(--ease-move)}
+.add:hover{background:var(--color-brand);color:var(--color-cream)}
+.more{margin-top:var(--sp-8)}
+
+/* pickup: the mechanism, shown */
+.pickup{background:var(--color-brand);color:var(--color-cream)}
+.pickup .sec-head h2,.pickup .sec-head p{color:inherit}
+.pickup .sec-head p{opacity:.8}
+.steps{display:grid;gap:var(--sp-6);counter-reset:step}
+@media (min-width:900px){.steps{grid-template-columns:1.1fr .9fr;gap:var(--sp-12);align-items:start}}
+.steps ol{list-style:none;margin:0;padding:0;display:grid;gap:var(--sp-6)}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:var(--sp-4);align-items:start}
+.steps li::before{counter-increment:step;content:counter(step);width:44px;height:44px;border-radius:50%;border:1px solid rgba(246,239,228,.35);display:grid;place-items:center;font-family:var(--font-display);font-size:1.25rem}
+.steps h3{font-size:1.375rem;font-variation-settings:"opsz" 48,"wght" 450}
+.steps p{opacity:.8;margin-top:4px;max-width:44ch}
+.slot{background:var(--color-canvas);color:var(--color-ink);border-radius:var(--radius-lg);padding:var(--sp-6);box-shadow:var(--shadow-e4)}
+.slot .eyebrow{margin-bottom:var(--sp-3)}
+.days{display:flex;gap:8px;margin-bottom:var(--sp-4)}
+.chip{flex:1;min-height:56px;border-radius:var(--radius-md);border:1px solid var(--color-line);background:var(--color-surface);display:grid;place-items:center;font-size:var(--text-sm);line-height:1.2;text-align:center;padding:6px}
+.chip b{display:block;font-weight:600;font-size:1rem}
+.chip[aria-pressed="true"]{border-color:var(--color-brand);background:var(--color-brand);color:var(--color-cream)}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.times .chip{min-height:44px;font-variant-numeric:tabular-nums}
+.times .chip[aria-disabled="true"]{color:var(--color-muted);text-decoration:line-through;background:transparent}
+.slot .foot{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-3);margin-top:var(--sp-6);font-size:var(--text-sm);color:var(--color-muted)}
+
+/* signature line: horizontal rhythm, the playful French names carry it */
+.signature .strip{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,320px);gap:var(--sp-4);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--sp-3);scrollbar-width:thin}
+.signature .strip figure{margin:0;scroll-snap-align:start;display:grid;gap:var(--sp-3)}
+.signature img{aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius-md)}
+.signature figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:var(--sp-3)}
+.signature figcaption span{font-family:var(--font-display);font-size:1.375rem;font-style:italic;font-variation-settings:"opsz" 48,"wght" 400}
+@media (min-width:1000px){.signature .strip{grid-auto-columns:1fr;grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible}}
+
+/* two-up: custom cakes and classes */
+.two{display:grid;gap:var(--sp-6)}
+@media (min-width:900px){.two{grid-template-columns:1fr 1fr;gap:var(--sp-8)}}
+.panel{background:var(--color-surface);border-radius:var(--radius-lg);padding:var(--sp-6);box-shadow:var(--shadow-e2);display:grid;gap:var(--sp-4);align-content:start}
+@media (min-width:900px){.panel{padding:var(--sp-8)}}
+.panel h2{font-size:var(--text-xl);font-variation-settings:"opsz" 72,"wght" 450}
+.panel p{color:var(--color-muted);max-width:46ch}
+.field{display:grid;gap:6px;font-size:var(--text-sm)}
+.field label{font-weight:600;color:var(--color-brand)}
+.field .box{min-height:48px;border:1px solid var(--color-line);border-radius:var(--radius-sm);background:var(--color-canvas);display:flex;align-items:center;padding:0 14px;color:var(--color-muted)}
+.fields{display:grid;gap:var(--sp-3)}
+@media (min-width:600px){.fields{grid-template-columns:1fr 1fr}}
+.help{font-size:var(--text-sm);color:var(--color-muted)}
+.classes{list-style:none;margin:0;padding:0;display:grid;gap:var(--sp-3)}
+.classes li{display:grid;grid-template-columns:auto 1fr auto;gap:var(--sp-4);align-items:center;padding:var(--sp-3) 0;border-top:1px solid var(--color-line)}
+.classes .date{font-family:var(--font-display);font-size:1.25rem;font-variant-numeric:tabular-nums;min-width:3.5ch}
+.classes .meta{font-size:var(--text-sm);color:var(--color-muted)}
+.seats{font-size:var(--text-sm);font-weight:600;color:var(--color-brand)}
+
+/* three-up: gifts, La Cave, merchandise */
+.tri{display:grid;gap:var(--sp-4)}
+@media (min-width:900px){.tri{grid-template-columns:repeat(3,1fr);gap:var(--sp-6)}}
+.tile{position:relative;border-radius:var(--radius-md);overflow:hidden;min-height:320px;display:grid;align-items:end;color:var(--color-cream);text-decoration:none;background:var(--color-brand)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform var(--dur-slow) var(--ease-move)}
+.tile:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){.tile:hover img{transform:none}}
+.tile .cap{position:relative;padding:var(--sp-6);background:linear-gradient(to top,rgba(34,17,11,.82),rgba(34,17,11,0));display:grid;gap:6px}
+.tile h3{font-size:var(--text-lg);font-variation-settings:"opsz" 72,"wght" 450}
+.tile p{font-size:var(--text-sm);opacity:.9;max-width:34ch}
+
+/* story */
+.story{background:var(--color-cream)}
+.story .wrap{display:grid;gap:var(--sp-8)}
+@media (min-width:900px){.story .wrap{grid-template-columns:5fr 7fr;align-items:center}}
+.story blockquote{margin:0;font-family:var(--font-display);font-size:clamp(1.75rem,3.5vw,var(--text-2xl));line-height:1.15;font-variation-settings:"opsz" 96,"wght" 350}
+.story blockquote em{font-style:italic;font-variation-settings:"opsz" 96,"wght" 400,"SOFT" 70}
+.story p{color:var(--color-muted);margin-top:var(--sp-4);max-width:52ch}
+.story img{aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius-lg)}
+
+footer{padding:var(--sp-12) 0 calc(var(--sp-12) + 72px);border-top:1px solid var(--color-line);font-size:var(--text-sm);color:var(--color-muted)}
+footer .wrap{display:grid;gap:var(--sp-6)}
+@media (min-width:900px){footer .wrap{grid-template-columns:2fr 1fr 1fr 1fr}footer{padding-bottom:var(--sp-12)}}
+footer h3{font-family:var(--font-text);font-size:var(--text-sm);font-weight:600;text-transform:uppercase;letter-spacing:var(--tracking-caps);color:var(--color-brand);margin-bottom:var(--sp-3)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* sticky order bar on phones, shown only once the hero's own button has scrolled away: one accent per viewport */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(253,249,248,.96);border-top:1px solid var(--color-line);display:none;gap:12px;align-items:center;transform:translateY(100%);transition:transform var(--dur-base) var(--ease-enter)}
+.bar[data-show="true"]{transform:none}
+.bar .btn{flex:1}
+.bar .when{font-size:var(--text-sm);color:var(--color-muted);flex:1}
+@media (max-width:899px){.bar{display:flex}}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="notice" role="note">
+  <div class="wrap"><b>Concept preview</b><span>Prepared for the ID-éclair team. Products and prices are from the current shop; pickup slots, class dates and the cake form are examples of the mechanics, not live data.</span></div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="ID-éclair home">ID-éclair<small>Pâtisserie Française · Pasadena</small></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#order">Order</a><a href="#classes">Classes</a><a href="#cakes">Custom cakes</a><a href="#more">Merch</a><a href="#more">La Cave</a><a href="#story">Our story</a>
+    </nav>
+    <a class="btn btn-ink" href="#order">Order for pickup</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" id="menuBtn">Menu</button>
+  </div>
+  <div class="menu" id="menu" data-open="false">
+    <div class="wrap">
+      <a href="#order">Order for pickup</a><a href="#classes">Classes</a><a href="#cakes">Custom cakes</a><a href="#more">Gifts, La Cave, merch</a><a href="#story">Our story</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow rise">Order ahead, pick up in Pasadena</p>
+      <h1 id="h1" class="rise d1">Pasadena’s French pâtisserie, <em>baked this morning,</em> ready when you are.</h1>
+      <p class="lead rise d2">Chef Romuald Guiot’s cannelés, macarons and cakes, vegan and gluten-free by craft rather than compromise. Choose, pick a day and time, collect at the counter.</p>
+      <div class="hero-actions rise d3">
+        <a class="btn btn-accent" href="#order" id="heroCta">Order for pickup</a>
+        <a class="link" href="#classes">Book a pastry class</a>
+      </div>
+    </div>
+    <figure class="hero-media rise d2" data-grid-break>
+      <img src="img/macarons.jpg" width="1200" height="1200" alt="Assorted macarons from the shop, arranged in rows" fetchpriority="high">
+      <figcaption><b>Macarons, assorted</b> · vegan, gluten-free · $18</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="facts" aria-label="What the shop already does">
+  <div class="wrap">
+    <div><strong>28</strong><span>products in the shop today</span></div>
+    <div><strong>11</strong><span>of them vegan</span></div>
+    <div><strong>10</strong><span>gluten-free</span></div>
+    <div><strong>1</strong><span>chef-founder, Romuald Guiot</span></div>
+  </div>
+</div>
+
+<section id="order" aria-labelledby="h-order">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Order for pickup</p>
+      <h2 id="h-order">The counter, on your phone.</h2>
+      <p>Everything below is for sale in the shop today. Tap, choose a time, and it is boxed when you arrive.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><img src="img/macarons.jpg" width="1200" height="900" alt="Assorted macarons" loading="lazy"><div class="body"><h3>Macarons, assorted</h3><div class="tags"><span class="tag">Vegan</span><span class="tag">Gluten-free</span></div><div class="row"><span class="price">$18.00</span><button class="add" type="button">Add</button></div></div></article>
+      <article class="card"><img src="img/caneles.jpg" width="1200" height="900" alt="Three cannelés with their dark caramelised crust" loading="lazy"><div class="body"><h3>Cannelés, by 3</h3><div class="tags"><span class="tag">Vegan</span><span class="tag">Gluten-free</span></div><div class="row"><span class="price">$9.00</span><button class="add" type="button">Add</button></div></div></article>
+      <article class="card"><img src="img/truffles.jpg" width="1200" height="900" alt="Dark chocolate truffles" loading="lazy"><div class="body"><h3>Dark chocolate truffles</h3><div class="tags"><span class="tag">Chocolate</span></div><div class="row"><span class="price">$15.00</span><button class="add" type="button">Add</button></div></div></article>
+      <article class="card"><img src="img/cake-caramel.jpg" width="1200" height="900" alt="The Caramel je t'aime pastry" loading="lazy"><div class="body"><h3>Caramel je t’aime</h3><div class="tags"><span class="tag">Signature</span></div><div class="row"><span class="price">$8.00</span><button class="add" type="button">Add</button></div></div></article>
+      <article class="card"><img src="img/cake-framboise.jpg" width="1200" height="900" alt="The Framboise chérie pastry" loading="lazy"><div class="body"><h3>Framboise chérie</h3><div class="tags"><span class="tag">Signature</span></div><div class="row"><span class="price">$8.00</span><button class="add" type="button">Add</button></div></div></article>
+      <article class="card"><img src="img/desserts-in-jar.jpg" width="1200" height="900" alt="Four desserts in glass jars" loading="lazy"><div class="body"><h3>4 desserts in a jar</h3><div class="tags"><span class="tag">Dessert to go</span></div><div class="row"><span class="price">$30.00</span><button class="add" type="button">Add</button></div></div></article>
+    </div>
+    <div class="more"><a class="btn btn-ghost" href="#order">See all 28 products</a></div>
+  </div>
+</section>
+
+<section class="pickup" aria-labelledby="h-pickup">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" style="color:var(--color-cream-deep)">Pickup, built into the checkout</p>
+      <h2 id="h-pickup">Pick a day. Pick a time. We box it for then.</h2>
+      <p>The time picker lives inside the Shopify checkout, respects the kitchen’s prep time, and closes slots when the day is full.</p>
+    </div>
+    <div class="steps">
+      <ol>
+        <li><div><h3>Choose from the live counter</h3><p>Stock is the real stock. When the last cannelés go, the button says so instead of taking an order we cannot fill.</p></div></li>
+        <li><div><h3>Choose a pickup day and time</h3><p>Same-day slots open after the chef’s prep window. Cakes and large orders get their own lead time, so a Saturday cake cannot be booked for Saturday morning.</p></div></li>
+        <li><div><h3>Collect at the counter</h3><p>A text when it is boxed, your name on the bag, and the receipt already in your phone. The same order shows on the shop’s point of sale.</p></div></li>
+      </ol>
+      <div class="slot" aria-label="Example of the pickup time picker">
+        <p class="eyebrow">Pickup time · example</p>
+        <div class="days" role="group" aria-label="Day">
+          <div class="chip" aria-pressed="true"><b>Today</b>Thu</div>
+          <div class="chip"><b>Tomorrow</b>Fri</div>
+          <div class="chip"><b>Sat</b>Oct 25</div>
+        </div>
+        <div class="times" role="group" aria-label="Time">
+          <div class="chip" aria-disabled="true">10:30</div>
+          <div class="chip" aria-disabled="true">11:30</div>
+          <div class="chip">12:30</div>
+          <div class="chip" aria-pressed="true">2:30</div>
+          <div class="chip">3:30</div>
+          <div class="chip">4:30</div>
+        </div>
+        <div class="foot"><span>Earlier slots are past the prep window</span><span class="price" style="color:var(--color-ink)">Pickup today, 2:30 pm</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="signature" aria-labelledby="h-sig">
+  <div class="wrap">
+    <div class="sec-head">
+            <h2 id="h-sig">Four names that only this shop could have given.</h2>
+      <p>The playfulness is already in the menu. The new site lets it carry the page instead of hiding it in a product list.</p>
+    </div>
+    <div class="strip">
+      <figure><img src="img/cake-caramel.jpg" width="1200" height="1200" alt="Caramel je t'aime" loading="lazy"><figcaption><span>Caramel je t’aime</span><span class="price">$8</span></figcaption></figure>
+      <figure><img src="img/cake-chocolat.jpg" width="1200" height="1200" alt="Chocolat mon amour" loading="lazy"><figcaption><span>Chocolat mon amour</span><span class="price">$8</span></figcaption></figure>
+      <figure><img src="img/cake-framboise.jpg" width="1200" height="1200" alt="Framboise chérie" loading="lazy"><figcaption><span>Framboise chérie</span><span class="price">$8</span></figcaption></figure>
+      <figure><img src="img/cake-citron.jpg" width="1200" height="1200" alt="Citron ma passion" loading="lazy"><figcaption><span>Citron ma passion</span><span class="price">$8</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="cakes" aria-labelledby="h-cakes">
+  <div class="wrap two">
+    <div class="panel">
+            <h2 id="h-cakes">Tell the chef what you are celebrating.</h2>
+      <p>A short form, a deposit, and a reply from the kitchen with a sketch and a price. Lead time and deposit are set by the chef, not by the website.</p>
+      <div class="fields" aria-label="Example of the custom cake form">
+        <div class="field"><label>Occasion</label><div class="box">Birthday, wedding, corporate…</div></div>
+        <div class="field"><label>Serves</label><div class="box">8 · 12 · 20 · 40+</div></div>
+        <div class="field"><label>Flavours</label><div class="box">From the current menu</div></div>
+        <div class="field"><label>Pickup date</label><div class="box">Earliest date set by lead time</div></div>
+        <div class="field" style="grid-column:1/-1"><label>Inspiration</label><div class="box">Upload up to 3 photos</div></div>
+      </div>
+      <p class="help">Dietary needs are a required question, because this kitchen already bakes vegan and gluten-free as a matter of course.</p>
+      <div><a class="btn btn-ink" href="#cakes">Start a cake request</a></div>
+    </div>
+
+    <div class="panel" id="classes">
+            <h2>Reserve a seat in the kitchen.</h2>
+      <p>A calendar the shop controls: seats, price, what you take home. Reservations are paid at booking, so a full class is a full class.</p>
+      <ul class="classes" aria-label="Example class calendar">
+        <li><span class="date">Sat</span><div><strong>Éclair workshop</strong><div class="meta">Morning · three hours · take home a box of six</div></div><span class="seats">Example</span></li>
+        <li><span class="date">Sun</span><div><strong>Macarons, from shell to filling</strong><div class="meta">Afternoon · small group</div></div><span class="seats">Example</span></li>
+        <li><span class="date">Sat</span><div><strong>Chocolate and truffles</strong><div class="meta">Evening · pairs with La Cave</div></div><span class="seats">Example</span></li>
+      </ul>
+      <p class="help">Waitlists fill cancellations automatically, and the class page is also where corporate and private sessions are requested.</p>
+      <div><a class="btn btn-ghost" href="#classes">See the calendar</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="more" aria-labelledby="h-more">
+  <div class="wrap">
+    <div class="sec-head">
+            <h2 id="h-more">Gifts, La Cave, and the things people ask to buy.</h2>
+    </div>
+    <div class="tri">
+      <a class="tile" href="#more"><img src="img/gift-basket.jpg" alt="Gift basket from the shop" loading="lazy"><div class="cap"><h3>Gift baskets and boxes</h3><p>Small from $45, large from $55, and the holiday box for two. Corporate orders by the dozen.</p></div></a>
+      <a class="tile" href="#more"><img src="img/cheese-board.jpg" alt="Cheese board" loading="lazy"><div class="cap"><h3>La Cave</h3><p>The cheese board ($100), pairings, and evenings that start with chocolate and end with a glass.</p></div></a>
+      <a class="tile" href="#more"><img src="img/golden-ticket.jpg" alt="The Golden Ticket box" loading="lazy"><div class="cap"><h3>Merchandise</h3><p>The cookie spoon, printed cookies with your logo, the Golden Ticket, and whatever the kitchen dreams up next.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story" aria-labelledby="h-story">
+  <div class="wrap">
+    <div>
+            <blockquote id="h-story">Pâtisserie Française <em>by Romuald Guiot.</em></blockquote>
+      <p>The line the shop already uses to describe itself is the whole brief. The new site shows the hands, the technique and the ingredients behind it, with the chef’s own words and photographs, and links the story to what you can order today.</p>
+    </div>
+    <img src="img/caneles.jpg" width="1200" height="800" alt="Cannelés on the counter" loading="lazy">
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top">ID-éclair<small>Pâtisserie Française · Pasadena</small></a>
+      <p style="margin-top:16px;max-width:40ch">Concept preview. Not the live store. Built to show the structure, the ordering flow and the tone of a new site for the shop.</p>
+    </div>
+    <div><h3>Order</h3><ul><li><a href="#order">Pickup</a></li><li><a href="#cakes">Custom cakes</a></li><li><a href="#more">Gift baskets</a></li></ul></div>
+    <div><h3>Visit</h3><ul><li><a href="#classes">Classes</a></li><li><a href="#more">La Cave</a></li><li><a href="#story">Our story</a></li></ul></div>
+    <div><h3>Shop</h3><ul><li><a href="#more">Merchandise</a></li><li><a href="#more">Wholesale</a></li><li><a href="#more">Corporate</a></li></ul></div>
+  </div>
+</footer>
+
+<div class="bar" id="bar" data-show="false" aria-hidden="true">
+  <span class="when">Pickup today from 2:30 pm</span>
+  <a class="btn btn-accent" href="#order" tabindex="-1">Order for pickup</a>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'),menu=document.getElementById('menu');
+  btn.addEventListener('click',function(){var open=menu.getAttribute('data-open')==='true';menu.setAttribute('data-open',String(!open));btn.setAttribute('aria-expanded',String(!open));btn.textContent=open?'Menu':'Close';});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.setAttribute('data-open','false');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
+  var bar=document.getElementById('bar'),cta=document.getElementById('heroCta');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){var vis=es[0].isIntersecting;bar.setAttribute('data-show',String(!vis));bar.setAttribute('aria-hidden',String(vis));bar.querySelector('a').tabIndex=vis?-1:0;},{threshold:0}).observe(cta);
+  }
+  document.querySelectorAll('.add').forEach(function(b){b.addEventListener('click',function(){b.textContent='Added';b.disabled=true;setTimeout(function(){b.textContent='Add';b.disabled=false;},1400);});});
+})();
+</script>
+</body>
+</html>
