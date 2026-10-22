@@ -346,6 +346,81 @@ h1,h2{text-wrap:balance}
 .qa p{max-width:62ch;font-size:1.0625rem;color:var(--color-ink)}
 .qa a{color:var(--color-brand);font-weight:700;text-underline-offset:3px}
 
+/* home blend, 2026-10-22: the order strip from direction 05, as a shared component.
+   Three numbered steps fill in as the bag changes: 1 Pickup (opens the slot picker), 2 Add (count), 3 Pay (total).
+   Phones: fixed above the app bar. Desktop: docked under the header once the hero has scrolled away.
+   app.js adds .is-on, .is-yield (the box-of-six add button is in its band) and .is-open (the slot panel is out). */
+:root{--os-h:58px}
+.ostrip{position:fixed;left:0;right:0;bottom:var(--bar-real,calc(var(--bar-h) + env(safe-area-inset-bottom)));z-index:35;background:var(--color-surface);border-top:1px solid var(--color-line);box-shadow:0 -6px 24px rgb(31 21 107 / .08);transform:translateY(100%);visibility:hidden;transition:transform var(--dur-base) var(--ease-exit),visibility 0s linear var(--dur-base)}
+.ostrip.is-on:not(.is-yield),.ostrip.is-open{transform:none;visibility:visible;transition:transform var(--dur-base) var(--ease-enter),visibility 0s}
+.ostrip-in{position:relative;display:flex;align-items:center;gap:var(--sp-3);min-height:var(--os-h)}
+.os-steps{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:4px;flex:1 1 auto;min-width:0}
+.os-step{display:flex;align-items:center;gap:4px;min-width:0}
+.os-step + .os-step::before{content:"";display:none;flex:0 0 10px;height:1.5px;border-radius:1px;background:var(--color-line)}
+.os-step:first-child{flex:0 1 auto}
+.os-step:last-child{flex:0 0 auto;margin-left:auto}
+.os-go{display:inline-flex;align-items:center;gap:6px;min-width:0;min-height:44px;padding:4px 6px 4px 3px;border:1.5px solid transparent;border-radius:var(--radius-lg);background:none;color:var(--color-brand);font:inherit;text-align:left;text-decoration:none;cursor:pointer;transition:background-color var(--dur-fast) var(--ease-move),transform var(--dur-fast) var(--ease-move)}
+.os-go:hover{background:var(--color-canvas)}
+.os-go:active{transform:scale(.97)}
+.os-n{flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--color-control);background:var(--color-surface);color:var(--color-muted);font:800 .75rem/1 var(--font-text);font-variant-numeric:tabular-nums;transition:background-color var(--dur-fast) var(--ease-move),border-color var(--dur-fast) var(--ease-move),color var(--dur-fast) var(--ease-move)}
+.os-n i{font-style:normal}
+.os-n svg{display:none;width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.is-done .os-n{background:var(--color-brand);border-color:var(--color-brand);color:var(--color-on-brand)}
+.is-done .os-n svg{display:block}
+.is-done .os-n i{display:none}
+.os-t{display:grid;min-width:0;line-height:1.2}
+.os-t small{font:700 .75rem/1.2 var(--font-text);color:var(--color-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.os-t b{font:800 .9375rem/1.2 var(--font-text);color:var(--color-brand);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+.os-where{display:none}
+.os-chev{display:none;width:16px;height:16px;transition:transform var(--dur-fast) var(--ease-move)}
+.os-slot[aria-expanded="true"]{background:var(--color-canvas)}
+.os-slot[aria-expanded="true"] .os-chev{transform:rotate(180deg)}
+.os-pay{border-color:var(--color-brand);padding-right:12px}
+.os-pay.is-ready{background:var(--color-brand);color:var(--color-on-brand);box-shadow:var(--shadow-e2)}
+.os-pay.is-ready:hover{background:var(--color-brand-deep)}
+.os-pay.is-ready .os-t small{color:var(--color-on-brand-muted)}
+.os-pay.is-ready .os-t b{color:var(--color-on-brand)}
+.os-pay.is-ready .os-n{background:var(--color-on-brand);border-color:var(--color-on-brand);color:var(--color-brand)}
+.os-pay.pop{animation:pop var(--dur-base) var(--ease-enter)}
+.os-note{display:none}
+/* the slot panel rises above the strip on phones and drops under it on desktop */
+.os-panel{position:absolute;left:-16px;right:-16px;bottom:100%;display:grid;gap:var(--sp-3);max-height:70vh;max-height:calc(100dvh - var(--bar-real,var(--bar-h)) - var(--os-h) - 96px);overflow-y:auto;padding:var(--sp-4);background:var(--color-surface);border-radius:var(--radius-md) var(--radius-md) 0 0;box-shadow:var(--shadow-e4);animation:os-in var(--dur-base) var(--ease-enter)}
+.os-panel[hidden]{display:none}
+.os-pick-h{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-3)}
+.os-pick-h b{font:800 1rem/1.2 var(--font-text);color:var(--color-brand)}
+.os-pick-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--sp-2) var(--sp-3);margin-top:var(--sp-3);padding-top:var(--sp-3);border-top:1px solid var(--color-line);font-size:var(--text-sm);color:var(--color-muted)}
+.os-pick-foot b{color:var(--color-brand);font-size:1rem}
+.os-panel .chip[aria-pressed="true"]{box-shadow:0 0 0 2px var(--color-surface),0 0 0 3px var(--color-brand)}
+.os-panel .btn{justify-self:stretch}
+@keyframes os-in{from{opacity:0;transform:translateY(var(--os-dir,8px))}}
+@media (min-width:480px){.os-step + .os-step::before{display:block}.os-steps,.os-step{gap:6px}.os-chev{display:block}.os-n{width:24px;height:24px}.os-go{padding-right:8px}.os-pay{padding-right:14px}}
+@media (max-width:359px){.os-step:not(:last-child) .os-n{display:none}}
+@media (max-width:899px){
+  .has-ostrip body{padding-bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 20px + env(safe-area-inset-bottom))}
+  html.has-ostrip{scroll-padding-bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 16px)}
+}
+@media (min-width:900px){
+  .ostrip{top:var(--top-h,69px);bottom:auto;z-index:29;border-top:0;border-bottom:1px solid var(--color-line);background:color-mix(in srgb,var(--color-canvas) 97%,transparent);box-shadow:var(--shadow-e2);transform:translateY(-100%)}
+  .ostrip-in{min-height:60px;gap:var(--sp-6)}
+  .os-steps{flex:0 0 auto;gap:var(--sp-3)}
+  .os-step{gap:var(--sp-3)}
+  .os-step + .os-step::before{flex-basis:40px}
+  .os-step:last-child{margin-left:0}
+  .os-go{gap:10px;padding:6px 14px 6px 6px}
+  .os-n{width:28px;height:28px;font-size:.8125rem}
+  .os-n svg{width:15px;height:15px}
+  .os-t small{font-size:.8125rem}
+  .os-t b{font-size:1rem}
+  .os-pay{padding-right:20px}
+  .os-where{display:inline}
+  .os-note{display:block;flex:1 1 0;min-width:0;margin-left:auto;font-size:var(--text-xs);color:var(--color-muted);text-align:right}
+  .os-panel{--os-dir:-8px;left:0;right:auto;top:100%;bottom:auto;width:min(440px,100%);max-height:calc(100vh - var(--top-h,69px) - 96px);border-radius:0 0 var(--radius-md) var(--radius-md);padding:var(--sp-6)}
+  html.has-ostrip{scroll-padding-top:calc(84px + var(--os-h))}
+  .has-ostrip .faq-head{top:calc(104px + var(--os-h))}
+  html.os-on .cartpill.on{display:none}
+}
+@media (min-width:900px) and (max-width:1099px){.os-note{display:none}}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .rise{opacity:1;transform:none;animation:none}
@@ -353,4 +428,7 @@ h1,h2{text-wrap:balance}
   .tile-l:hover img,.item:hover{transform:none}
   .sheet,.scrim{transition:none}
   .skip{transition:none}
+  .ostrip,.ostrip.is-on:not(.is-yield),.ostrip.is-open,.os-go,.os-n,.os-chev{transition:none}
+  .os-panel,.os-pay.pop{animation:none}
+  .os-go:active{transform:none}
 }

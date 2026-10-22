@@ -47,14 +47,24 @@
   function live() { return state.items.filter(function (i) { return i.variantId; }); }
   function counter() { return state.items.filter(function (i) { return !i.variantId; }); }
 
-  function add(item, qty) {
+  function put(item, qty) {
     var f = find(item.handle);
     if (f) f.qty += qty || 1;
     else state.items.push({ handle: item.handle, title: item.title, price: +item.price, qty: qty || 1,
       variantId: item.variantId ? String(item.variantId) : null, image: item.image || null,
       glyph: item.glyph || null, meta: item.meta || null });
+  }
+  function add(item, qty) {
+    put(item, qty);
     save();
     say('Added ' + item.title + '. ' + plural(count(), 'item') + ' in your bag.');
+    $$('[data-cart-count]').forEach(function (b) { pop(b, 'bump'); });
+  }
+  /* a one-tap set: every item in one save, one announcement */
+  function addSet(items) {
+    items.forEach(function (i) { put(i, 1); });
+    save();
+    say('Added ' + items.map(function (i) { return i.title; }).join(' and ') + '. ' + plural(count(), 'item') + ' in your bag.');
     $$('[data-cart-count]').forEach(function (b) { pop(b, 'bump'); });
   }
   function setQty(h, q) {
@@ -200,6 +210,7 @@
   function focusables() { return $$('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])', $('.sheet', drawer)).filter(function (e) { return e.offsetParent !== null; }); }
   function openBag(e) {
     if (e) e.preventDefault();
+    if (strip) strip.close(false);
     buildDrawer(); renderAll();
     opener = document.activeElement;
     drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); document.body.classList.add('locked');
@@ -313,8 +324,125 @@
     Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
   }
 
+  /* ---------- order strip: Slot, Add, Pay (only on pages that carry [data-ostrip]) ----------
+     Phones: fixed above the app bar. Desktop: docked under the header. Both appear once the element named
+     in data-after has scrolled away, and step aside whenever the box-of-six add button would sit under them.
+     Pay links straight to the Shopify cart permalink when every item is on the live store, and opens the
+     bag (the review sheet) otherwise, so counter items never fall out of an order unannounced. */
+  var strip = null;
+  function initStrip() {
+    var el = $('[data-ostrip]'); if (!el) return;
+    var btn = $('[data-os-slot-btn]', el), panel = $('[data-os-panel]', el), pay = $('[data-os-pay]', el), html = document.documentElement;
+    var desk = window.matchMedia ? matchMedia('(min-width: 900px)') : { matches: false };
+    var head = $('.top'), sel = el.getAttribute('data-after'), after = sel ? $(sel) : null, on = !after, ticking = false;
+    strip = { el: el, btn: btn, panel: panel, pay: pay, seen: null,
+      day: $('[data-os-day]', el), time: $('[data-os-time]', el), count: $('[data-os-count]', el), add: $('[data-os-add]', el), where: $('[data-os-where]', el),
+      step: { slot: $('[data-os-step="slot"]', el), add: $('[data-os-step="add"]', el) } };
+    if (pay) pay.setAttribute('data-href', pay.getAttribute('href') || '#');
+    html.classList.add('has-ostrip');
+    var bar = $('.bar');
+    function measure() {
+      if (head) html.style.setProperty('--top-h', head.offsetHeight + 'px');
+      if (bar && bar.offsetHeight) html.style.setProperty('--bar-real', bar.offsetHeight + 'px');   /* the app bar's true height, labels included */
+    }
+    /* the docked band, read from layout (top and height), so the slide-away transform never skews it */
+    function covered() {
+      var top = parseFloat(getComputedStyle(el).top) || 0, bottom = top + el.offsetHeight, pad = 8;
+      return $$('[data-box-add]').some(function (b) {
+        var r = (b.closest('.foot') || b).getBoundingClientRect();
+        return r.width > 0 && r.bottom > top - pad && r.top < bottom + pad;
+      });
+    }
+    function update() {
+      ticking = false;
+      /* "the hero has scrolled away": what is left of it would fit under the docked strip */
+      if (after) on = after.getBoundingClientRect().bottom <= (head ? head.offsetHeight : 0) + el.offsetHeight + 24;
+      el.classList.toggle('is-on', on);
+      el.classList.toggle('is-yield', on && covered());
+      html.classList.toggle('os-on', on && !el.classList.contains('is-yield'));
+    }
+    function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    strip.update = update;
+    measure();
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', function () { measure(); queue(); });
+    document.addEventListener('ide:bag', queue);
+
+    function outside(e) { if (!panel.contains(e.target) && !btn.contains(e.target)) close(false); }
+    function open() {
+      if (!panel) return false;
+      panel.hidden = false; btn.setAttribute('aria-expanded', 'true'); el.classList.add('is-open');
+      setTimeout(function () { var c = $('.chip[aria-pressed="true"]', panel) || $('.chip:not([aria-disabled="true"])', panel); if (c) c.focus({ preventScroll: true }); }, 30);
+      document.addEventListener('click', outside, true);
+      return true;
+    }
+    function close(back) {
+      if (!panel || panel.hidden) return;
+      panel.hidden = true; btn.setAttribute('aria-expanded', 'false'); el.classList.remove('is-open');
+      document.removeEventListener('click', outside, true);
+      if (back) btn.focus({ preventScroll: true });
+    }
+    strip.open = open; strip.close = close;
+    if (btn) btn.addEventListener('click', function () {
+      if (!panel) { goPicker(); return; }
+      if (panel.hidden) open(); else close(true);
+    });
+    if (panel) {
+      panel.addEventListener('keydown', function (e) { if (e.key === 'Escape') { e.stopPropagation(); close(true); } });
+      var done = $('[data-os-done]', panel);
+      if (done) done.addEventListener('click', function () { close(true); say('Pickup set for ' + slotText(slot()) + '.'); });
+    }
+  }
+  /* with no strip panel: the page's own picker, or the home page's */
+  function goPicker() {
+    var all = $$('[data-slot-picker]').filter(function (x) { return !x.closest('[data-os-panel]'); });
+    var p = all.filter(function (x) { return x.offsetParent !== null; })[0] || all[0];
+    if (p) { p.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); var c = $('.chip[aria-pressed="true"]', p); if (c) setTimeout(function () { c.focus({ preventScroll: true }); }, 300); }
+    else location.href = home + '#pickup';
+  }
+  function renderStrip(s, n, t) {
+    if (!strip) return;
+    var url = checkoutUrl(), liveOnly = !!(n && url && !counter().length), p = strip.pay;
+    if (strip.day) strip.day.textContent = !s.day ? 'Pickup' : 'Pickup ' + (s.day.i === 0 ? 'today' : s.day.top + ' ' + s.day.sub.replace(/^[A-Z][a-z]{2} /, ''));
+    if (strip.time) strip.time.textContent = s.day ? tlabel(s.time) : 'No slot open';
+    if (strip.btn) strip.btn.setAttribute('aria-label', 'Pickup ' + slotText(s) + '. Change the pickup time');
+    if (strip.step.slot) strip.step.slot.classList.toggle('is-done', !!s.day);
+    if (strip.step.add) strip.step.add.classList.toggle('is-done', n > 0);
+    if (strip.count) strip.count.textContent = n ? plural(n, 'item') : 'None yet';
+    if (strip.add) {
+      if (n) strip.add.setAttribute('data-cart-open', ''); else strip.add.removeAttribute('data-cart-open');
+      strip.add.setAttribute('aria-label', n ? plural(n, 'item') + ' in your bag, ' + money(t) + '. Open the bag' : 'Your bag is empty. Go to the case');
+    }
+    if (p) {
+      if (liveOnly) {
+        p.setAttribute('href', url); p.setAttribute('target', '_blank'); p.setAttribute('rel', 'noopener'); p.removeAttribute('data-cart-open');
+        p.setAttribute('aria-label', 'Pay ' + money(t) + ' on id-eclair.com. Opens the live store in a new tab');
+      } else {
+        p.setAttribute('href', p.getAttribute('data-href')); p.removeAttribute('target'); p.removeAttribute('rel'); p.setAttribute('data-cart-open', '');
+        p.setAttribute('aria-label', n ? 'Review your bag and pay, ' + money(t) : 'Open your bag. It is empty');
+      }
+      p.classList.toggle('is-ready', n > 0);
+      if (strip.seen === 0 && n > 0) pop(p, 'pop');
+    }
+    if (strip.where) strip.where.textContent = liveOnly ? ' on id-eclair.com' : n ? ' after review' : '';
+    strip.el.setAttribute('data-mode', liveOnly ? 'live' : 'review');
+    strip.seen = n;
+    strip.update();
+  }
+
+  /* ---------- right now: the one-tap set for the hour you collect ---------- */
+  function renderNow(s) {
+    $$('[data-now]').forEach(function (box) {
+      var sets = $$('[data-part]', box); if (!sets.length) return;
+      var m = s.day ? mins(s.time) : laNow().min, part = m < 660 ? 'matin' : m < 840 ? 'midi' : 'gouter';
+      sets.forEach(function (x) { x.hidden = x.getAttribute('data-part') !== part; });
+      var w = $('[data-now-when]', box);
+      if (w && s.day) w.textContent = 'For pickup ' + (s.day.i === 0 ? 'today' : s.day.top + ' ' + s.day.sub) + ' at ' + tlabel(s.time) + '. One tap adds both, at counter prices.';
+    });
+  }
+
   /* ---------- render everything that shows the bag ---------- */
-  function refocus(sel, fallback) { setTimeout(function () { var el = $(sel) || (fallback && $(fallback)); if (el) el.focus({ preventScroll: true }); }, 0); }
+  function refocus(sel, fallback, root) { setTimeout(function () { var el = $(sel, root) || (fallback && $(fallback)); if (el) el.focus({ preventScroll: true }); }, 0); }
   function renderAll() {
     var s = slot(), n = count(), t = total();
     $$('[data-cart-count]').forEach(function (b) { b.textContent = n; b.classList.toggle('on', n > 0); });
@@ -327,7 +455,7 @@
     });
     $$('[data-next-slot]').forEach(function (el) { el.textContent = s.day ? 'Next pickup ' + slotText(s).replace(/^Today/, 'today') : 'Next pickup tomorrow'; });
     $$('[data-slot-picker]').forEach(function (p) { renderPicker(p, s); });
-    syncAdds(); renderDrawer(s);
+    syncAdds(); renderDrawer(s); renderStrip(s, n, t); renderNow(s);
   }
 
   /* ---------- events ---------- */
@@ -337,6 +465,15 @@
       var had = document.activeElement === t, st = t.nextElementSibling;
       add(itemFrom(t));
       if (st && st.classList.contains('stepper')) { pop(st, 'pop'); if (had) st.querySelector('[data-inc]').focus({ preventScroll: true }); }
+      return;
+    }
+    if (t.hasAttribute('data-set-items')) {   /* option 05 keeps its own data-set buttons; this one carries its items */
+      if (t.getAttribute('aria-disabled') === 'true') return;
+      var items; try { items = JSON.parse(t.getAttribute('data-set-items') || '[]'); } catch (x) { items = []; }
+      if (!items.length) return;
+      addSet(items);
+      var lab = t.textContent; t.textContent = 'Added'; t.setAttribute('aria-disabled', 'true');
+      setTimeout(function () { t.textContent = lab; t.removeAttribute('aria-disabled'); }, 1300);
       return;
     }
     if (t.hasAttribute('data-inc') || t.hasAttribute('data-dec')) {
@@ -352,23 +489,26 @@
     if (t.hasAttribute('data-cart-close')) { var href = t.getAttribute('href'); closeBag(!!href); if (!href) e.preventDefault(); return; }
     if (t.hasAttribute('data-bag-clear')) { clear(); var x = $('.x', drawer); if (x) x.focus(); return; }
     if (t.hasAttribute('data-slot-change')) {
-      var p = $('[data-slot-picker]');
       closeBag(true);
-      if (p) { p.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); var c = $('.chip[aria-pressed="true"]', p); if (c) setTimeout(function () { c.focus({ preventScroll: true }); }, 300); }
-      else location.href = home + '#pickup';
+      if (strip && strip.open()) return;   /* the strip's own picker opens where you are */
+      goPicker();
       return;
     }
     if (t.hasAttribute('data-day')) {
       if (t.getAttribute('aria-disabled') === 'true') return;
       var d = days().filter(function (x) { return x.key === t.dataset.day; })[0]; if (!d) return;
-      var cur = slot().time, keep = d.times.some(function (x) { return x.ok && x.t === cur; });
+      var cur = slot().time, keep = d.times.some(function (x) { return x.ok && x.t === cur; }), dp = t.closest('[data-slot-picker]');
       setSlot(d.key, keep ? cur : d.times.filter(function (x) { return x.ok; })[0].t);
-      refocus('[data-day="' + d.key + '"]'); return;
+      refocus('[data-day="' + d.key + '"]', null, dp); return;
     }
     if (t.hasAttribute('data-time')) {
       if (t.getAttribute('aria-disabled') === 'true') return;
       var sd = slot().day; if (!sd) return;
-      setSlot(sd.key, t.dataset.time); refocus('[data-time="' + t.dataset.time + '"]'); return;
+      var tp = t.closest('[data-slot-picker]'), inStrip = !!t.closest('[data-os-panel]');
+      setSlot(sd.key, t.dataset.time); refocus('[data-time="' + t.dataset.time + '"]', null, tp);
+      /* a time completes the choice: the strip's panel closes itself a beat later */
+      if (inStrip && strip) setTimeout(function () { strip.close(true); say('Pickup set for ' + slotText(slot()) + '.'); }, 280);
+      return;
     }
     if (t.classList.contains('cat') && t.closest('[data-cats]')) { filter(t); return; }
   });
@@ -389,7 +529,8 @@
   $$('[data-box]').forEach(initBox);
   $$('[data-menu-grid][data-src]').forEach(function (g) { if (!g.querySelector('.item')) renderMenu(g); });
   initBar();
+  initStrip();
   renderAll();
 
-  window.IDE = { add: add, setQty: setQty, clear: clear, open: openBag, close: closeBag, state: snapshot, checkoutUrl: checkoutUrl, renderMenu: renderMenu, slot: function () { var s = slot(); return { date: s.day && s.day.key, time: s.time, label: slotText(s) }; } };
+  window.IDE = { add: add, addSet: addSet, setQty: setQty, clear: clear, open: openBag, close: closeBag, state: snapshot, checkoutUrl: checkoutUrl, renderMenu: renderMenu, slot: function () { var s = slot(); return { date: s.day && s.day.key, time: s.time, label: slotText(s) }; } };
 })();

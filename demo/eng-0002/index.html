@@ -384,6 +384,8 @@
    Six chapters: the vitrine, the hands, the ritual, the salon, the evening, the invitation.
    Every colour is a token from assets/site.css: ivory canvas, indigo type, the red heart as the only accent.
    Signature move: the double hairline from the vitrine's price cards, drawn around what the guest is choosing.
+   Home blend (2026-10-22): each chapter closes a sale, and the shared order strip (assets/site.css, app.js) keeps
+   Pickup, Add and Pay in reach; the vitrine adds a one-tap set chosen by the pickup hour.
    One orchestrated load moment (.ix-in), transform and opacity only, every piece finished inside 300ms. */
 
 /* chapter marks: a real sequence, set in italic, never capitals */
@@ -440,6 +442,18 @@
 .vc-mark{position:absolute;top:12px;right:12px;z-index:1;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--color-surface);box-shadow:var(--shadow-e2);opacity:0;transform:scale(.7);transition:opacity var(--dur-base) var(--ease-enter),transform var(--dur-base) var(--ease-enter)}
 .vc-mark .heart{width:16px;height:16px}
 .vc.in-bag .vc-mark{opacity:1;transform:none}
+/* right now: one set, chosen by the pickup hour; the double hairline again, because it is a choice */
+.ix-now{position:relative;display:grid;gap:var(--sp-3);margin-top:var(--sp-4);padding:var(--sp-6);background:var(--color-surface);border-radius:var(--radius-md);box-shadow:var(--shadow-e1)}
+.ix-now::before{content:"";position:absolute;inset:6px;border:1px solid color-mix(in srgb,var(--color-brand) 42%,transparent);border-radius:18px;pointer-events:none}
+.ix-now-head{display:grid;gap:4px}
+.ix-now h3{font-style:italic;font-weight:600;font-size:1.625rem;line-height:1.1;color:var(--color-brand)}
+.nowset{display:grid;gap:4px}
+.nowset-n{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.375rem;line-height:1.15;color:var(--color-brand)}
+.nowset-n small{font:700 var(--text-xs) var(--font-text);font-style:normal;color:var(--color-muted)}
+.nowset .meta{font-size:1rem;color:var(--color-ink)}
+.nowset .row{margin-top:var(--sp-2)}
+.nowset .add[aria-disabled="true"]{background:var(--color-brand);color:var(--color-on-brand);cursor:default}
+@media (min-width:900px){.ix-now{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:var(--sp-8);margin-top:var(--sp-6);padding:var(--sp-6) var(--sp-8)}.nowset{grid-template-columns:minmax(0,1fr) auto;column-gap:var(--sp-6);align-items:center}.nowset .row{grid-column:2;grid-row:1 / span 2;margin-top:0;gap:var(--sp-4)}}
 
 /* chapter II: the hands */
 .ix-chef .wrap{display:grid;gap:var(--sp-8);align-items:center}
@@ -574,13 +588,49 @@
   </div>
 </section>
 
+<div class="ostrip" data-ostrip data-after=".ix-hero" role="region" aria-label="Your order">
+  <div class="wrap ostrip-in">
+    <ol class="os-steps" aria-label="Three steps to pay">
+      <li class="os-step is-done" data-os-step="slot">
+        <button class="os-go os-slot" type="button" data-os-slot-btn aria-expanded="false" aria-controls="os-panel">
+          <span class="os-n" aria-hidden="true"><i>1</i><svg viewBox="0 0 24 24"><path d="M5.5 12.5l4 4 9-9"/></svg></span>
+          <span class="os-t"><small data-os-day>Pickup today</small><b data-os-time>Earliest slot</b></span>
+          <svg class="ico os-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+        </button>
+      </li>
+      <li class="os-step" data-os-step="add">
+        <a class="os-go os-add" href="#menu" data-os-add>
+          <span class="os-n" aria-hidden="true"><i>2</i><svg viewBox="0 0 24 24"><path d="M5.5 12.5l4 4 9-9"/></svg></span>
+          <span class="os-t"><small>Add</small><b data-os-count>None yet</b></span>
+        </a>
+      </li>
+      <li class="os-step" data-os-step="pay">
+        <a class="os-go os-pay" href="#pickup" data-cart-open data-os-pay>
+          <span class="os-n" aria-hidden="true"><i>3</i></span>
+          <span class="os-t"><small>Pay<span class="os-where" data-os-where></span></small><b data-cart-total>$0.00</b></span>
+        </a>
+      </li>
+    </ol>
+    <p class="os-note">Example slots; the kitchen sets the real ones.</p>
+    <div class="os-panel" id="os-panel" data-os-panel hidden>
+      <div class="os-pick" data-slot-picker role="group" aria-label="Pickup day and time, example slots">
+        <p class="os-pick-h"><b>Pickup day and time</b><span class="ex">Example</span></p>
+        <div class="days" role="group" aria-label="Day" data-days></div>
+        <div class="times" role="group" aria-label="Time" data-times></div>
+        <p class="os-pick-foot"><span data-slot-note>Slots close themselves when the kitchen is full</span><b data-slot-out>Earliest slot</b></p>
+      </div>
+      <button class="btn btn-brand btn-sm" type="button" data-os-done>Done</button>
+    </div>
+  </div>
+</div>
+
 <section id="menu" aria-labelledby="h-case">
   <div class="wrap">
     <div class="ix-case-head">
       <div class="sec-head">
         <p class="ix-moment"><b>I</b><span lang="fr">La vitrine</span></p>
         <h2 id="h-case">Today behind the glass.</h2>
-        <p>Six from the counter at the shop’s own prices. Add what tempts you; the pickup time comes a little further down.</p>
+        <p>Six from the counter at the shop’s own prices. Add what tempts you; the earliest pickup time is already chosen.</p>
       </div>
       <a class="link" href="menu.html">The whole menu, with search</a>
     </div>
@@ -617,6 +667,27 @@
         <div class="vc-body"><h3 lang="fr">Macaron</h3><p class="meta">One at a time, or six for $15 in the box below</p><div class="row"><span class="price">$3.00</span><button class="add" type="button" data-add data-handle="macaron" data-title="Macaron" data-price="3" data-image="img/macarons-1-800.jpg">Add</button></div></div>
       </article>
     </div>
+    <div class="ix-now" data-now>
+      <div class="ix-now-head">
+        <h3 id="h-now">Right now</h3>
+        <p class="note-sm" data-now-when>One tap adds both, at counter prices.</p>
+      </div>
+      <article class="nowset" data-part="matin" hidden>
+        <p class="nowset-n"><span lang="fr">Le matin</span><small>Morning, until 11</small></p>
+        <p class="meta">A butter croissant and a latte on plant milk</p>
+        <div class="row"><span class="price">$12.00</span><button class="add" type="button" data-set-items='[{"handle":"butter-croissant","title":"Butter croissant","price":4.5,"glyph":"c"},{"handle":"latte","title":"Latte","price":7.5,"glyph":"L"}]' aria-label="Add the morning set: a butter croissant and a latte, $12.00">Add both</button></div>
+      </article>
+      <article class="nowset" data-part="midi">
+        <p class="nowset-n"><span lang="fr">Le midi</span><small>Lunch, 11 to 2</small></p>
+        <p class="meta">The sandwich of the day and an espresso éclair</p>
+        <div class="row"><span class="price">$19.50</span><button class="add" type="button" data-set-items='[{"handle":"sandwich-of-the-day","title":"Sandwich du jour","price":14,"glyph":"S"},{"handle":"espresso-eclair","title":"Espresso éclair","price":5.5,"glyph":"é"}]' aria-label="Add the lunch set: the sandwich of the day and an espresso éclair, $19.50">Add both</button></div>
+      </article>
+      <article class="nowset" data-part="gouter" hidden>
+        <p class="nowset-n"><span lang="fr">Le goûter</span><small>Afternoon, from 2</small></p>
+        <p class="meta">A chocolate éclair and a Fleur de Geisha tea from Palais des Thés</p>
+        <div class="row"><span class="price">$13.00</span><button class="add" type="button" data-set-items='[{"handle":"chocolate-eclair","title":"Chocolate éclair","price":6.5,"glyph":"é"},{"handle":"fleur-de-geisha","title":"Fleur de Geisha","price":6.5,"glyph":"T"}]' aria-label="Add the afternoon set: a chocolate éclair and a Fleur de Geisha tea, $13.00">Add both</button></div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -637,7 +708,10 @@
         <div><dt>Season 8</dt><dd>Spring Baking Championship finalist</dd></div>
       </dl>
       <p class="ix-sign"><span lang="fr">Pâtisserie Française</span> by Romuald Guiot.</p>
-      <div class="ix-links"><a class="link" href="story.html">Read Chef Romy’s story</a><a class="link" href="menu.html">Order his éclairs for pickup</a></div>
+      <ul class="ix-list">
+        <li><span class="nm"><b lang="fr">Éclair du chef</b><small>The chef’s éclair of the moment, from the counter</small></span><div class="row"><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="chefs-special-eclair" data-title="Chef’s special éclair" data-price="9" data-glyph="é">Add</button></div></li>
+      </ul>
+      <div class="ix-links"><a class="link" href="story.html">Read Chef Romy’s story</a><a class="link" href="menu.html">All his éclairs, for pickup</a></div>
     </div>
   </div>
 </section>
