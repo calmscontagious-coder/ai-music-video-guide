@@ -376,7 +376,7 @@
 <!-- search-layer:end -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
 <style>
@@ -394,8 +394,8 @@
 /* arrival */
 .ix-hero{padding:var(--sp-6) 0 var(--sp-12)}
 .ix-hero .wrap{display:grid;gap:var(--sp-8);align-items:center}
-.ix-hero h1{font-size:clamp(2.4rem,8vw,4.75rem);line-height:var(--leading-display);font-variation-settings:"opsz" 96,"wght" 640;max-width:14ch}
-.ix-hero h1 em{display:block;font-style:italic;font-weight:500}
+.ix-hero h1{font-size:clamp(2.4rem,8vw,4.75rem);line-height:var(--leading-display);font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1;max-width:14ch}
+.ix-hero h1 em{display:block;font-style:italic;font-weight:600}
 .ix-hero .lead{max-width:40ch}
 @media (min-width:900px){
   .ix-hero{padding:var(--sp-12) 0 var(--sp-16)}
@@ -448,7 +448,7 @@
 .ix-chef img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:68% 40%;border-radius:var(--radius-md);box-shadow:var(--shadow-e2)}
 .ix-chef figcaption{margin-top:var(--sp-3);font-size:var(--text-sm);color:var(--color-muted)}
 .ix-copy{display:grid;gap:var(--sp-4);max-width:58ch}
-.ix-copy h2{font-size:clamp(2rem,5vw,var(--text-2xl));line-height:1.05;font-variation-settings:"opsz" 72,"wght" 600}
+.ix-copy h2{font-size:clamp(2rem,5vw,var(--text-2xl));line-height:1.05;font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1}
 .ix-copy p{color:var(--color-muted)}
 .ix-sign{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(1.4rem,3vw,1.875rem);line-height:1.15;color:var(--color-brand)}
 .ix-record{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-4);margin:var(--sp-2) 0 0;padding-top:var(--sp-4);border-top:1px solid var(--color-line)}
@@ -463,11 +463,11 @@
 .ix-steps{list-style:none;margin:var(--sp-6) 0 0;padding:0;display:grid;gap:var(--sp-6);counter-reset:r}
 .ix-steps li{display:grid;grid-template-columns:44px 1fr;gap:var(--sp-4);align-items:start}
 .ix-steps li::before{counter-increment:r;content:counter(r);font-family:var(--font-display);font-style:italic;font-weight:500;font-size:2.25rem;line-height:1;color:var(--color-brand)}
-.ix-steps h3{font-size:1.25rem;line-height:1.2;color:var(--color-ink);font-variation-settings:"opsz" 24,"wght" 600}
+.ix-steps h3{font-size:1.25rem;line-height:1.2;color:var(--color-ink);font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1}
 .ix-steps p{margin-top:4px;max-width:46ch;font-size:1rem;color:var(--color-muted)}
 .ix-boxwrap{margin-top:var(--sp-12);padding:var(--sp-4);background:var(--color-surface);border-radius:var(--radius-md);box-shadow:var(--shadow-e2)}
 @media (min-width:900px){.ix-boxwrap{padding:var(--sp-8)}}
-.ix-boxwrap h3{text-wrap:balance;font-size:var(--text-xl);line-height:1.05;font-variation-settings:"opsz" 48,"wght" 600}
+.ix-boxwrap h3{text-wrap:balance;font-size:var(--text-xl);line-height:1.05;font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1}
 
 /* chapter IV: the salon */
 .ix-salon .wrap{display:grid;gap:var(--sp-8);align-items:center}
@@ -708,13 +708,15 @@
     <div class="ix-copy">
       <p class="ix-moment"><b>IV</b><span lang="fr">Le salon de thé</span></p>
       <h2 id="h-salon">Or stay a while, and take tea.</h2>
-      <p>Afternoon tea is the third service on Green Street: small pastries and savory bites with teas from Palais des Thés, listed as Tea Time for Two. Reviewers single out the décor and the dishes, the outdoor tables, the welcome for dogs, and a staff that commits fully to the French theme.</p>
+      <p>Afternoon tea is the third service on Green Street. The counter board lists thirteen Palais des Thés teas, espresso on plant milk, Romy’s hot chocolate, a French breakfast, the soup and sandwich du jour and four salades, and a tea party for two at $80 with the chef’s sweets and savories. The chalkboard sums the room up in three words of its own: <q>Tasty, Fancy, and Frenchy!</q> Reviewers single out the décor and the dishes, the outdoor tables, the welcome for dogs, and a staff that commits fully to the French theme.</p>
       <ul class="ix-list">
-        <li><span class="nm"><b lang="fr">Thé</b><small>Palais des Thés teas, from the counter</small></span><div class="row"><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="tea" data-title="Tea" data-price="6.5" data-glyph="T">Add</button></div></li>
-        <li><span class="nm"><b>Latte</b><small>Made with plant milk</small></span><div class="row"><span class="price">$7.50</span><button class="add" type="button" data-add data-handle="latte" data-title="Latte" data-price="7.5" data-glyph="L">Add</button></div></li>
+        <li><span class="nm"><b>Palais des Thés</b><small>Thirteen teas, about 20 oz; Fleur de Geisha, Montagne Bleue, the three Herboristes. <a href="menu.html#tea">The tea carte</a></small></span><div class="row"><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="fleur-de-geisha" data-title="Fleur de Geisha" data-price="6.5" data-glyph="T">Add</button></div></li>
+        <li><span class="nm"><b>Romy’s hot chocolate</b><small>The chef’s own chocolate, hot; the chocolat liégeois is $7.50</small></span><div class="row"><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="romys-hot-chocolate" data-title="Romy’s hot chocolate" data-price="6.5" data-glyph="R">Add</button></div></li>
+        <li><span class="nm"><b>French breakfast</b><small>Toasted baguette, plant-based butter, house jam</small></span><div class="row"><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="french-breakfast" data-title="French breakfast" data-price="8" data-glyph="B">Add</button></div></li>
+        <li><span class="nm"><b>Latte</b><small>Plant milk; cold foam $1, a pump of vanilla 50¢</small></span><div class="row"><span class="price">$7.50</span><button class="add" type="button" data-add data-handle="latte" data-title="Latte" data-price="7.5" data-glyph="L">Add</button></div></li>
         <li><span class="nm"><b lang="fr">Confiture framboise</b><small>Raspberry jam for the croissant at home, on the live store</small></span><div class="row"><span class="price">$7.95</span><button class="add" type="button" data-add data-handle="raspberry-jam" data-title="Raspberry jam" data-price="7.95" data-variant="41829477253308" data-image="img/raspberry-jam-800.jpg">Add</button></div></li>
       </ul>
-      <p class="note-sm">Prices from the shop’s menu app and live store, read 21 and 22 October 2026. The salon has no photograph of its own yet; the planned shoot covers the tea service.</p>
+      <p class="note-sm">Prices from the counter board, photographed 22 October 2026, and the live store. Tea party: $80 for two, $40 for each extra guest, while supplies last. The salon has no photograph of its own yet; the planned shoot covers the tea service.</p>
     </div>
     <figure>
       <img src="img/shop-jam-lifestyle-800.jpg" srcset="img/shop-jam-lifestyle-800.jpg 800w, img/shop-jam-lifestyle.jpg 1600w" sizes="(min-width:900px) 38vw, 100vw" width="1600" height="2000" alt="Raspberry jam spilling from a tipped jar onto a silver spoon, two more jars behind it on white marble" loading="lazy">
