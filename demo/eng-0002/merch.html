@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f156b">
+<title>Merchandise. iD Éclair concept preview.</title>
+<meta name="description" content="Concept preview of a planned merchandise line in navy and ivory: an apron, a tote, a tea tin and an enamel pin of the logo’s heart, printed to order. The cookie spoon and the custom printed cookie can be ordered from the live store today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/app.js" defer></script>
+<style>
+/* merch.html only. Every colour is a token from assets/site.css; the goods are navy, ivory and one red heart. */
+.mr-hero h1{max-width:10ch}
+.mr-stack{position:relative;margin:0;width:100%;max-width:540px;aspect-ratio:1/1;justify-self:center}
+.mr-s{position:absolute;display:grid;place-content:center;justify-items:center;text-align:center;border-radius:var(--radius-md);box-shadow:var(--shadow-e4);font-family:var(--font-display);line-height:1.02;transition:transform var(--dur-base) var(--ease-move)}
+.mr-s1{top:2%;left:2%;width:58%;height:64%;background:var(--color-brand);color:var(--color-on-brand);transform:rotate(-5deg);gap:2px;font-size:clamp(1.4rem,5.6vw,2.4rem);font-weight:600}
+.mr-s1 em{font-style:italic;font-weight:500;font-size:.78em}
+.mr-s1 .heart{width:22px;height:22px;margin-bottom:10px}
+.mr-s2{right:1%;bottom:6%;width:54%;height:46%;padding:var(--sp-4);background:var(--color-canvas-deep);color:var(--color-brand);border:1px solid var(--color-line);transform:rotate(4deg);font-size:clamp(1.15rem,4.4vw,1.9rem)}
+.mr-s2 em{font-style:italic;font-weight:500}
+.mr-s2 .heart{width:20px;height:20px;margin-top:12px}
+.mr-s2::before,.mr-s2::after{content:"";position:absolute;top:-30px;width:14%;height:36px;border:5px solid var(--color-control);border-bottom:0;border-radius:40px 40px 0 0}
+.mr-s2::before{left:24%}.mr-s2::after{right:24%}
+.mr-s3{left:8%;bottom:1%;width:28%;aspect-ratio:1/1;place-content:normal;place-items:center;border-radius:50%;background:var(--color-surface);border:1px solid var(--color-line)}
+.mr-s3 svg{width:56%;height:56%}
+.mr-pin{fill:var(--color-accent);stroke:var(--color-brand);stroke-width:1.1;stroke-linejoin:round}
+.mr-pin-hi{fill:none;stroke:var(--color-on-accent);stroke-opacity:.55;stroke-width:1.1;stroke-linecap:round}
+@media (hover:hover){.mr-stack:hover .mr-s1{transform:rotate(-7deg) translateY(-6px)}.mr-stack:hover .mr-s2{transform:rotate(6deg) translateY(-4px)}}
+
+/* planned pieces: typographic product cards */
+.mr-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:min(82%,320px);gap:var(--sp-3);overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:4px 16px var(--sp-4);scrollbar-width:thin}
+@media (min-width:720px){.mr-scroll{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible;margin:0;padding:0;gap:var(--sp-4)}}
+@media (min-width:1000px){.mr-scroll{grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-6)}}
+.mc{scroll-snap-align:start;background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-e1);display:grid;grid-template-rows:auto 1fr}
+.mc-face{position:relative;aspect-ratio:4/3;display:grid;place-content:center;justify-items:center;text-align:center;gap:2px;padding:var(--sp-6);font-family:var(--font-display);line-height:1.02}
+.mc-face small{position:absolute;left:16px;bottom:14px;font:800 .6875rem/1 var(--font-text);letter-spacing:var(--tracking-caps);text-transform:uppercase}
+.mc-face .heart{width:22px;height:22px;margin-bottom:10px}
+.mc-navy{background:var(--color-brand);color:var(--color-on-brand)}
+.mc-navy small{color:var(--color-on-brand-muted)}
+.mc-ivory{background:var(--color-canvas-deep);color:var(--color-brand)}
+.mc-ivory small,.mc-pale small{color:var(--color-brand-quiet)}
+.mc-pale{background:var(--color-canvas);color:var(--color-brand)}
+.mc-big{font-size:1.75rem;font-weight:600}
+.mc-it{font-style:italic;font-weight:500;font-size:1.4rem}
+.mc-tin{display:grid;justify-items:center;gap:4px;padding:var(--sp-3) var(--sp-4);background:var(--color-brand);color:var(--color-on-brand);border-radius:var(--radius-sm);box-shadow:0 0 0 6px var(--color-surface),0 0 0 7px var(--color-line)}
+.mc-tin .heart{margin:0 0 4px}
+.mc-tin b{font-weight:600;font-size:1.3rem}
+.mc-tin i{font:700 .75rem var(--font-text);font-style:normal;color:var(--color-on-brand-muted);letter-spacing:.04em}
+.mc-pinface svg{width:78px;height:78px}
+.mc-pinface span{margin-top:10px;font-style:italic;font-weight:500;font-size:1.15rem}
+.mc-body{padding:var(--sp-4);display:grid;gap:8px;align-content:start}
+.mc-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.mc-price{font-weight:800;color:var(--color-brand);font-variant-numeric:tabular-nums}
+.mc-price small{font-weight:700;color:var(--color-muted);font-size:.75rem}
+.mc h3{font-size:1.375rem;font-style:italic;font-weight:500;line-height:1.15;color:var(--color-brand)}
+.mc-tr{font-size:var(--text-sm);line-height:1.45;color:var(--color-ink);background:var(--color-canvas);border-radius:var(--radius-sm);padding:var(--sp-3)}
+.mc-tr:not([hidden]){animation:mc-in var(--dur-base) var(--ease-enter)}
+@keyframes mc-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.mc-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.mc-btn,.mc-want{min-height:40px;padding:0 14px;border-radius:var(--radius-lg);font:800 .875rem var(--font-text);cursor:pointer;display:inline-flex;align-items:center;gap:6px;background:var(--color-surface);color:var(--color-brand)}
+.mc-btn{border:1.5px solid var(--color-control)}
+.mc-want{border:1.5px solid var(--color-brand)}
+.mc-want svg{width:16px;height:16px;fill:none;stroke:var(--color-accent);stroke-width:2.2}
+.mc-want[aria-pressed="true"]{background:var(--color-brand);color:var(--color-on-brand)}
+.mc-want[aria-pressed="true"] svg{fill:var(--color-accent);animation:pop var(--dur-base) var(--ease-enter)}
+.mr-want{margin-top:var(--sp-4);padding:var(--sp-3) var(--sp-4);border-radius:var(--radius-sm);background:var(--color-surface);border:1px solid var(--color-line);font-size:var(--text-sm);color:var(--color-ink);max-width:70ch}
+.mr-want b{color:var(--color-brand)}
+
+/* on the live store today */
+.mr-today{display:grid;gap:var(--sp-3);grid-template-columns:repeat(2,minmax(0,1fr))}
+.mr-eat{grid-column:1 / -1}
+@media (min-width:900px){.mr-today{grid-template-columns:1fr 1fr 1.25fr;gap:var(--sp-6);align-items:start}.mr-eat{grid-column:auto}}
+.mr-today .price small{font-weight:700;color:var(--color-muted);font-size:.75rem}
+.mr-styles{display:grid;gap:8px}
+.mr-style{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding-top:8px;border-top:1px solid var(--color-line)}
+.mr-style > span:first-child{font-weight:700;font-size:.9375rem;color:var(--color-ink)}
+.mr-eat h3{font-size:var(--text-xl);font-variation-settings:"opsz" 48,"wght" 600;line-height:1.05}
+
+/* the rest of the first run */
+.mr-more{list-style:none;margin:0;padding:0;display:grid;gap:0 var(--sp-8)}
+@media (min-width:900px){.mr-more{grid-template-columns:1fr 1fr}}
+.mr-more li{display:grid;grid-template-columns:1fr auto;gap:2px var(--sp-3);padding:var(--sp-4) 0;border-top:1px solid var(--color-line)}
+.mr-more b{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.5rem;line-height:1.15;color:var(--color-brand)}
+.mr-more span{font-weight:800;font-size:var(--text-sm);color:var(--color-brand);white-space:nowrap;padding-top:6px;font-variant-numeric:tabular-nums}
+.mr-more small{grid-column:1 / -1;font-size:var(--text-sm);color:var(--color-muted)}
+
+/* how the line runs: the numbers table */
+.mr-table{overflow-x:auto}
+.mr-table table{width:100%;border-collapse:collapse;font-size:var(--text-sm);font-variant-numeric:tabular-nums}
+.mr-table th,.mr-table td{text-align:left;padding:10px 6px;border-bottom:1px solid var(--color-line);vertical-align:top}
+.mr-table thead th{font:800 .6875rem/1.2 var(--font-text);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-muted)}
+.mr-table td{text-align:right;font-weight:700;color:var(--color-ink)}
+.mr-table thead th:not(:first-child){text-align:right}
+.mr-table tbody th{font-weight:800;color:var(--color-brand)}
+.mr-table tbody th small{display:block;font-weight:600;color:var(--color-muted);font-size:.75rem}
+.mr-src{margin-top:var(--sp-6);font-size:var(--text-xs);color:var(--color-on-brand-muted);max-width:70ch}
+.mr-src a{color:var(--color-on-brand)}
+
+@media (prefers-reduced-motion:reduce){
+  .mr-s,.mr-stack:hover .mr-s1,.mr-stack:hover .mr-s2{transition:none}
+  .mr-stack:hover .mr-s1{transform:rotate(-5deg)}.mr-stack:hover .mr-s2{transform:rotate(4deg)}
+  .mc-tr:not([hidden]),.mc-want[aria-pressed="true"] svg{animation:none}
+}
+</style>
+</head>
+<body data-home="index.html">
+
+<aside class="notice" aria-label="Concept preview">
+  <div class="wrap"><b>Concept preview</b><span>Cookie spoon and printed cookie from the live store, read 22 October 2026; the other pieces are planned, with proposed prices.</span><span class="more">Base costs from Printful’s catalog and supplier pages, read 22 October 2026.</span></div>
+</aside>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
+    <nav class="nav" aria-label="Primary">
+      <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
+    </nav>
+    <div class="top-actions">
+      <a class="btn btn-brand" href="menu.html">Order for pickup</a>
+      <a class="cartbtn" href="index.html#pickup" data-cart-open aria-label="Your bag, 0 items"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="badge" data-cart-count>0</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero mr-hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <p class="kick rise"><span>Planned line</span><span>Navy and ivory</span></p>
+      <h1 id="h1" class="rise d1">From Green Street, <em>in navy and ivory.</em></h1>
+      <p class="lead rise d2">Four pieces planned and two to order today. The apron, the tote, the tea tin and the pin each carry one French line and the red heart from the logo, printed to order so nothing waits in a stockroom. The cookie spoon and the printed cookie are on the live store now.</p>
+      <div class="hero-actions rise d3">
+        <a class="btn btn-brand" href="#today">Order today’s two</a>
+        <a class="link" href="#line">See the planned line</a>
+      </div>
+    </div>
+    <figure class="mr-stack rise d2" data-grid-break role="img" aria-label="Three planned pieces set as type: the navy apron reading Sans beurre et sans reproche, the ivory tote reading Ceci n’est pas du beurre, and the red heart pin">
+      <div class="mr-s mr-s1"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span>Sans beurre</span><em>et sans</em><span>reproche</span></div>
+      <div class="mr-s mr-s2"><em>Ceci n’est pas<br>du beurre.</em><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></div>
+      <div class="mr-s mr-s3"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="mr-pin" d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/><path class="mr-pin-hi" d="M6.2 9.2a2.6 2.6 0 0 1 2.4-1.6"/></svg></div>
+    </figure>
+  </div>
+</section>
+
+<section id="line" aria-labelledby="h-line">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-line">Four planned pieces, one French line each.</h2>
+      <p>Planned means not for sale yet: the prices are proposed and the shop has not approved the designs. Tap Translate for the English, and tap I’d buy this on the ones you would wear.</p>
+    </div>
+    <div class="mr-scroll" role="region" aria-label="Planned pieces" tabindex="0">
+      <article class="mc">
+        <div class="mc-face mc-navy" aria-hidden="true"><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span class="mc-big">Sans beurre</span><span class="mc-it">et sans</span><span class="mc-big">reproche</span><small>Apron</small></div>
+        <div class="mc-body">
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$46 <small>proposed</small></span></div>
+          <h3 lang="fr">Sans beurre et sans reproche</h3>
+          <p class="meta">Apron in navy organic cotton, the line in ivory across the skirt, the heart alone on the bib.</p>
+          <p class="mc-tr" id="tr-apron" hidden>“Without butter and beyond reproach,” after the old knight’s motto “sans peur et sans reproche.”</p>
+          <div class="mc-actions"><button class="mc-btn" type="button" aria-expanded="false" aria-controls="tr-apron">Translate</button><button class="mc-want" type="button" aria-pressed="false" data-want="apron" data-name="the apron"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>I’d buy this</button></div>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-face mc-ivory" aria-hidden="true"><span class="mc-it">Ceci n’est pas</span><span class="mc-it">du beurre.</span><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><small>Tote</small></div>
+        <div class="mc-body">
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$32 <small>proposed</small></span></div>
+          <h3 lang="fr">Ceci n’est pas du beurre.</h3>
+          <p class="meta">Tote in oyster organic cotton, the line set like a gallery caption in navy italic, one heart under it.</p>
+          <p class="mc-tr" id="tr-tote" hidden>“This is not butter,” after Magritte’s painting “Ceci n’est pas une pipe.”</p>
+          <div class="mc-actions"><button class="mc-btn" type="button" aria-expanded="false" aria-controls="tr-tote">Translate</button><button class="mc-want" type="button" aria-pressed="false" data-want="tote" data-name="the tote"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>I’d buy this</button></div>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-face mc-pale" aria-hidden="true"><span class="mc-tin"><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><b>Thé mon amour</b><i>50 g · loose tea</i></span><small>Tea tin</small></div>
+        <div class="mc-body">
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$22 <small>proposed</small></span></div>
+          <h3 lang="fr">Thé mon amour</h3>
+          <p class="meta">Square tea tin with a navy wrap label, about 50 g of loose tea, filled at the shop.</p>
+          <p class="mc-tr" id="tr-tin" hidden>“Tea, my love.” The salon’s tea, to take home and to refill.</p>
+          <div class="mc-actions"><button class="mc-btn" type="button" aria-expanded="false" aria-controls="tr-tin">Translate</button><button class="mc-want" type="button" aria-pressed="false" data-want="tin" data-name="the tea tin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>I’d buy this</button></div>
+        </div>
+      </article>
+      <article class="mc">
+        <div class="mc-face mc-ivory mc-pinface" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="mr-pin" d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/><path class="mr-pin-hi" d="M6.2 9.2a2.6 2.6 0 0 1 2.4-1.6"/></svg><span>Le cœur sur l’éclair</span><small>Enamel pin</small></div>
+        <div class="mc-body">
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$12 <small>proposed</small></span></div>
+          <h3 lang="fr">Le cœur sur l’éclair</h3>
+          <p class="meta">The logo’s heart as a 1.25 in pin, red enamel with gold-plated edges, on a printed backing card.</p>
+          <p class="mc-tr" id="tr-pin" hidden>“Heart on the éclair,” after “avoir le cœur sur la main,” to be generous: a nod to the daily leftovers the shop gives to Friends In Deed.</p>
+          <div class="mc-actions"><button class="mc-btn" type="button" aria-expanded="false" aria-controls="tr-pin">Translate</button><button class="mc-want" type="button" aria-pressed="false" data-want="pin" data-name="the pin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>I’d buy this</button></div>
+        </div>
+      </article>
+    </div>
+    <p class="mr-want" data-want-count aria-live="polite">Nothing picked yet. Your picks stay on this device; in the build, they tell the shop which piece to print first.</p>
+  </div>
+</section>
+
+<section class="bg-white" id="today" aria-labelledby="h-today">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-today">Two you can order today.</h2>
+      <p>Both are on the live store. Add puts them in the same bag as the rest of the menu, and checkout opens id-eclair.com. Prices read 22 October 2026.</p>
+    </div>
+    <div class="mr-today">
+      <article class="item">
+        <span class="live">On the live store</span>
+        <img src="img/cookie-spoon-800.jpg" srcset="img/cookie-spoon-800.jpg 800w, img/cookie-spoon.jpg 1600w" sizes="(min-width:900px) 28vw, 50vw" width="1600" height="1599" alt="Five cookie spoons on a blue glazed plate" loading="lazy">
+        <div class="body">
+          <h3>Cookie spoons, 5 count</h3>
+          <p class="meta">Gluten free and vegan, to finish your dessert</p>
+          <div class="row"><span class="price">$5.00</span><button class="add" type="button" data-add data-handle="cookie-spoon" data-title="Cookie spoons, 5 count" data-price="5" data-variant="41829520539836" data-image="img/cookie-spoon-800.jpg">Add</button></div>
+        </div>
+      </article>
+      <article class="item">
+        <span class="live">On the live store</span>
+        <img src="img/custom-logo-vegan-cookie-800.jpg" srcset="img/custom-logo-vegan-cookie-800.jpg 800w, img/custom-logo-vegan-cookie.jpg 1600w" sizes="(min-width:900px) 28vw, 50vw" width="1600" height="2133" alt="A fluted cookie with a printed design of pink and cream roses, held between two fingers" loading="lazy">
+        <div class="body">
+          <h3>Custom printed cookie</h3>
+          <p class="meta">6 cm vegan cookie with a printed fondant top; email the design as a JPG for approval</p>
+          <div class="row"><span class="price">$3.75 <small>each</small></span></div>
+          <div class="mr-styles">
+            <div class="mr-style"><span>Round</span><button class="add" type="button" data-add data-handle="custom-printed-cookie-round" data-title="Custom printed cookie, round" data-price="3.75" data-variant="41826180792508" data-image="img/custom-logo-vegan-cookie-800.jpg" data-meta="Design sent by email for approval">Add</button></div>
+            <div class="mr-style"><span>Fluted</span><button class="add" type="button" data-add data-handle="custom-printed-cookie-fluted" data-title="Custom printed cookie, fluted" data-price="3.75" data-variant="41826183807164" data-image="img/custom-logo-vegan-cookie-800.jpg" data-meta="Design sent by email for approval">Add</button></div>
+          </div>
+        </div>
+      </article>
+      <aside class="panel mr-eat" aria-labelledby="h-eat">
+        <h3 id="h-eat">Merch you can eat.</h3>
+        <p>The printed cookie takes any design: a wedding monogram, a company logo, the shop’s own heart. Today the store asks for the design by email as a JPG; the new site adds an upload field right on the product page.</p>
+        <p class="note-sm">Uploads and options run on Globo Product Options, $9.90 a month (plan section 5.3). The live store lists the cookie at $3.75 each, with no minimum listed.</p>
+        <div class="actions"><a class="link" href="https://www.id-eclair.com/products/custom-logo-vegan-cookie" target="_blank" rel="noopener">The cookie on id-eclair.com</a></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="list" aria-labelledby="h-list">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-list">Thirty lines drafted. Six more for the first run.</h2>
+      <p>The first run puts the apron and the tote beside these six. All are printed to order except the engraved La Cave wine key. Proposed prices.</p>
+    </div>
+    <ul class="mr-more">
+      <li><b lang="fr">Éclair de génie</b><span>Tee · $34</span><small>A flash of genius; word for word, an éclair of genius. The shop’s own name, read as a French idiom.</small></li>
+      <li><b lang="fr">Club des lève-tôt</b><span>Crewneck · $64</span><small>The early risers’ club, for the 6 am opening on Green Street.</small></li>
+      <li><b lang="fr">Un thé, deux éclairs.</b><span>Mug · $22</span><small>One tea, two éclairs.</small></li>
+      <li><b lang="fr">Pour les grands soirs et les petits mardis.</b><span>Wine key · $26</span><small>For grand evenings and little Tuesdays. A La Cave piece, engraved.</small></li>
+      <li><b lang="fr">Nuancier des macarons</b><span>Art print · $38</span><small>A macaron colour chart, framboise to pistache, for the salon wall or yours.</small></li>
+      <li><b lang="fr">Mon petit chou</b><span>Toddler tee · $26</span><small>My little cream puff. Chou is a cream puff and a cabbage, and what French parents call their children.</small></li>
+    </ul>
+  </div>
+</section>
+
+<section class="pickup" id="how" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-how">Printed to order, so nothing sits in a stockroom.</h2>
+      <p>How the line runs once the shop says yes. Costs are supplier base prices before shipping, read 22 October 2026.</p>
+    </div>
+    <div class="steps">
+      <ol>
+        <li><div><h3>One master file per line</h3><p>Bodoni Moda with the type turned to outlines and the heart on its own red layer. A native French speaker reads every line and every accent before anything prints.</p></div></li>
+        <li><div><h3>Printful connects to Shopify</h3><p>Free plan, or Growth at $24.99 a month, free once sales pass $12,000 a year, with 21 integrations including Shopify and TikTok Shop. Printify is the alternative: free, Premium at $39 a month, 11 integrations, its TikTok link US only.</p></div></li>
+        <li><div><h3>An order prints itself</h3><p>The guest checks out on id-eclair.com and Printful prints, packs and ships. No stock, no minimums. The tea tin and the pin are small runs the shop keeps behind the counter.</p></div></li>
+        <li><div><h3>TikTok Shop reads from Shopify</h3><p>Printful connects to Shopify only, since a second direct TikTok connector can break order status. Merchandise opens the shop’s TikTok Shop; the plan prices the referral fee at 8% until Seller Center confirms it.</p></div></li>
+      </ol>
+      <div class="slot mr-table" role="group" aria-labelledby="h-table">
+        <div class="slot-head"><h3 id="h-table">The four planned pieces</h3><span class="ex">Proposed</span></div>
+        <table>
+          <caption class="sr">Proposed price, supplier base cost and margin for each planned piece</caption>
+          <thead><tr><th scope="col">Piece</th><th scope="col">Price</th><th scope="col">Base cost</th><th scope="col">Margin</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Apron<small>Printful, catalog price</small></th><td>$46</td><td>$24.95</td><td>46%</td></tr>
+            <tr><th scope="row">Tote<small>Printful, catalog price</small></th><td>$32</td><td>$15.87</td><td>50%</td></tr>
+            <tr><th scope="row">Tea tin<small>stocked, estimate</small></th><td>$22</td><td>$7.20</td><td>67%</td></tr>
+            <tr><th scope="row">Pin<small>first run of about 100, estimate</small></th><td>$12</td><td>$2.00</td><td>83%</td></tr>
+          </tbody>
+        </table>
+        <div class="foot"><span>Margin before shipping, payment and marketplace fees</span><b>22 Oct 2026</b></div>
+      </div>
+    </div>
+    <p class="mr-src">Sources: <a href="https://www.stylefactoryproductions.com/blog/printful-vs-printify" target="_blank" rel="noopener">Style Factory, Printful vs Printify</a> (updated 22 July 2026); Printful’s public catalog for the apron and tote; Specialty Bottle for the tin; a custom pin maker’s quote range for the pin; the agency plan, section 5.3, for the Shopify and TikTok setup.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+    </div>
+    <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
+    <div><h3>Visit</h3><ul><li><a href="classes.html">Masterclass</a></li><li><a href="la-cave.html">La Cave</a></li><li><a href="story.html">Chef Romy</a></li></ul></div>
+    <div><h3>Shop</h3><ul><li><a href="menu.html#ships">Gifts that ship</a></li><li><a href="merch.html" aria-current="page">Merchandise</a></li><li><a href="https://www.id-eclair.com" target="_blank" rel="noopener">The live store</a></li></ul></div>
+  </div>
+  <button class="cartpill" type="button" data-cart-open data-cart-pill><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
+</footer>
+
+<nav class="bar" aria-label="Sections">
+  <a href="menu.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Menu</a>
+  <a href="index.html#box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M3 11h18M8 7V5a4 4 0 0 1 8 0v2"/></svg>Box</a>
+  <a href="index.html#pickup" data-cart-open data-section="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Bag<span class="badge" data-cart-count>0</span></a>
+  <a href="cakes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M5 20v-6a7 7 0 0 1 14 0v6M12 7V4M9 10c1 1 2 1 3 0s2-1 3 0"/></svg>Cakes</a>
+  <a href="classes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Classes</a>
+</nav>
+
+<script>
+/* merch.html only: Translate toggles and the I'd-buy-this picks, kept in this browser. */
+(function () {
+  'use strict';
+  var KEY = 'ide.merch.want.v1', mem = [];
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function load() { try { var v = JSON.parse(localStorage.getItem(KEY) || 'null'); return Array.isArray(v) ? v : mem; } catch (e) { return mem; } }
+  function save(v) { mem = v; try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) { /* private mode: memory only */ } }
+  function list(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1]; }
+  var wants = $$('[data-want]'), out = document.querySelector('[data-want-count]');
+  function paint() {
+    var picked = load();
+    wants.forEach(function (b) { b.setAttribute('aria-pressed', String(picked.indexOf(b.getAttribute('data-want')) >= 0)); });
+    if (!out) return;
+    var names = wants.filter(function (b) { return picked.indexOf(b.getAttribute('data-want')) >= 0; }).map(function (b) { return b.getAttribute('data-name'); });
+    out.innerHTML = names.length
+      ? 'You picked <b>' + names.length + ' of ' + wants.length + '</b>: ' + list(names) + '. The picks stay on this device; in the build, they tell the shop which piece to print first.'
+      : 'Nothing picked yet. Your picks stay on this device; in the build, they tell the shop which piece to print first.';
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.hasAttribute('data-want')) {
+      var id = b.getAttribute('data-want'), picked = load().slice(), i = picked.indexOf(id);
+      if (i >= 0) picked.splice(i, 1); else picked.push(id);
+      save(picked); paint(); return;
+    }
+    if (b.classList.contains('mc-btn')) {
+      var tr = document.getElementById(b.getAttribute('aria-controls')); if (!tr) return;
+      var open = b.getAttribute('aria-expanded') !== 'true';
+      tr.hidden = !open; b.setAttribute('aria-expanded', String(open)); b.textContent = open ? 'Hide' : 'Translate';
+    }
+  });
+  window.addEventListener('storage', function (e) { if (e.key === KEY) paint(); });
+  paint();
+})();
+</script>
+</body>
+</html>

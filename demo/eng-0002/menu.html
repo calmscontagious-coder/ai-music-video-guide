@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f156b">
+<title>Menu and order. iD Éclair concept preview.</title>
+<meta name="description" content="Concept preview: the whole plant-based menu of a French pâtisserie in Old Pasadena on one page, with pickup times, search and one shared bag.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/app.js" defer></script>
+<style>
+/* menu.html only. Tokens come from assets/site.css; no colour literals here. */
+html{scroll-padding-top:136px}
+.pg-menu .top{position:relative}
+.pg-menu .ico-s{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+
+/* page head */
+.mhead{padding:var(--sp-6) 0 var(--sp-8);overflow:hidden}
+.mhead .wrap{display:grid;gap:var(--sp-8);align-items:center}
+.mhead h1{font-size:clamp(2.25rem,9vw,4.5rem);line-height:var(--leading-display);font-variation-settings:"opsz" 96,"wght" 640;max-width:13ch;text-wrap:balance}
+.mhead h1 em{font-style:italic;font-weight:500}
+.mhead .lead{margin-top:var(--sp-4);max-width:44ch}
+.find{margin-top:var(--sp-6);max-width:540px}
+.find label{display:block;font-size:var(--text-sm);font-weight:800;color:var(--color-brand);margin-bottom:6px}
+.find-box{position:relative;display:flex;align-items:center}
+.find-box > .ico{position:absolute;left:16px;color:var(--color-brand-quiet);pointer-events:none}
+.find input{width:100%;min-height:52px;padding:0 56px 0 48px;border-radius:var(--radius-lg);border:1.5px solid var(--color-control);background:var(--color-surface);font:600 1.0625rem var(--font-text);color:var(--color-ink);-webkit-appearance:none;appearance:none;transition:border-color var(--dur-fast) var(--ease-move)}
+.find input::placeholder{color:var(--color-muted);font-weight:500}
+.find input:hover,.find input:focus{border-color:var(--color-brand)}
+.find input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+.q-clear{position:absolute;right:6px;width:40px;height:40px;border-radius:50%;border:0;background:var(--color-canvas-deep);color:var(--color-brand);display:grid;place-items:center;cursor:pointer}
+.q-clear:hover{background:var(--color-line)}
+.try{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:var(--sp-3);font-size:var(--text-sm);color:var(--color-muted)}
+.try button{min-height:36px;padding:0 14px;border-radius:var(--radius-lg);border:1px solid var(--color-line);background:var(--color-surface);color:var(--color-brand);font:700 .875rem var(--font-text);cursor:pointer;transition:border-color var(--dur-fast) var(--ease-move)}
+.try button:hover{border-color:var(--color-brand)}
+.mh-media{display:none;position:relative;margin:0}
+@media (min-width:900px){
+  .mhead{padding:var(--sp-12) 0 var(--sp-16)}
+  .mhead .wrap{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--sp-12)}
+  .mh-media{display:block;margin-right:calc(-1 * (100vw - min(100vw - 32px,1160px)) / 2)}
+  .mh-media .m1{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:var(--radius-md) 0 0 var(--radius-md);box-shadow:var(--shadow-e4)}
+  .mh-media .m2{position:absolute;left:-44px;bottom:-36px;width:36%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius-md);box-shadow:0 0 0 6px var(--color-canvas),var(--shadow-e3)}
+  .mh-media .chip-float{left:auto;right:20px;bottom:20px}
+}
+
+/* sticky order bar: the pickup band, its picker, the section chips */
+.obar{position:sticky;top:0;z-index:25;background:var(--color-canvas);box-shadow:0 1px 0 var(--color-line)}
+.pk-band{background:var(--color-brand);color:var(--color-on-brand)}
+.pk-row{display:flex;align-items:center;gap:12px;min-height:60px}
+.pk-row > .ico{width:22px;height:22px;color:var(--color-on-brand-muted)}
+.pk-txt{display:grid;gap:3px;min-width:0}
+.pk-lab{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:800;line-height:1;color:var(--color-on-brand-muted)}
+.pk-lab .ex{padding:3px 6px;font-size:.625rem;vertical-align:0;color:var(--color-on-brand);border-color:color-mix(in srgb,var(--color-on-brand) 55%,transparent)}
+.pk-row b{font-size:1.0625rem;line-height:1.2;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pk-where{display:none;margin-left:auto;font-size:var(--text-sm);color:var(--color-on-brand-muted);white-space:nowrap}
+.pk-change{margin-left:auto;flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 14px 0 16px;border:0;border-radius:var(--radius-lg);background:var(--color-on-brand);color:var(--color-brand);font:800 .9375rem var(--font-text);cursor:pointer;transition:background-color var(--dur-fast) var(--ease-move)}
+.pk-change:hover{background:var(--color-surface)}
+.pk-change .ico-s{transition:transform var(--dur-fast) var(--ease-move)}
+.pk-change[aria-expanded="true"] .ico-s{transform:rotate(180deg)}
+@media (min-width:720px){.pk-where{display:block}.pk-change{margin-left:8px}}
+.pk-panel{background:var(--color-surface);box-shadow:var(--shadow-e3);border-bottom:1px solid var(--color-line)}
+.pk-panel.on{animation:pk-in var(--dur-base) var(--ease-enter)}
+@keyframes pk-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.pk-in{max-width:560px;padding:var(--sp-4) 0}
+.pk-foot{display:flex;justify-content:space-between;align-items:center;gap:var(--sp-3);margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px solid var(--color-line)}
+.pk-fine{margin-top:var(--sp-3);font-size:.75rem;color:var(--color-muted);max-width:60ch}
+.cats-bar .cats{margin:0 -16px;padding:8px 16px}
+.cats-bar .cat{min-height:40px}
+@media (min-width:1000px){.cats-bar .cats{gap:6px;margin:0;padding:8px 0}.cats-bar .cat{padding:0 12px;font-size:.84375rem}}
+
+/* tools above the grid */
+.menu{padding-top:var(--sp-6)}
+.tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--sp-3) var(--sp-4);margin-bottom:var(--sp-3)}
+.seg{display:inline-flex;gap:2px;padding:4px;border-radius:var(--radius-lg);background:var(--color-surface);border:1px solid var(--color-line)}
+.seg button{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px;border:0;border-radius:var(--radius-lg);background:transparent;color:var(--color-brand-quiet);font:800 .875rem var(--font-text);white-space:nowrap;cursor:pointer;transition:background-color var(--dur-fast) var(--ease-move),color var(--dur-fast) var(--ease-move)}
+.seg button:hover{color:var(--color-brand)}
+.seg button[aria-pressed="true"]{background:var(--color-brand);color:var(--color-on-brand)}
+.tools-r{display:flex;align-items:center;gap:var(--sp-3);flex:1 1 auto;justify-content:space-between}
+@media (min-width:720px){.tools-r{flex:0 0 auto}}
+.count{font-size:var(--text-sm);font-weight:700;color:var(--color-muted);font-variant-numeric:tabular-nums}
+.seg .t-long{display:none}
+@media (min-width:520px){.seg .t-long{display:inline}.seg .t-short{display:none}}
+.legend{font-size:var(--text-xs);line-height:1.5;color:var(--color-muted);max-width:78ch;margin-bottom:var(--sp-6)}
+.legend b{color:var(--color-ink)}
+
+/* the grid: photos (default from 720px) or list rows (default on phones) */
+.mgrid .grp{grid-column:1 / -1;display:grid;gap:4px;padding:var(--sp-12) 0 var(--sp-3);border-bottom:1px solid var(--color-line);margin-bottom:var(--sp-2)}
+.mgrid .grp.lead1{padding-top:var(--sp-2)}
+.grp h2{font-size:clamp(1.75rem,5vw,2.375rem);line-height:1.05;font-variation-settings:"opsz" 72,"wght" 600}
+.grp p{font-size:var(--text-sm);color:var(--color-muted);max-width:60ch}
+.grp .gn{font-weight:800;color:var(--color-brand-quiet);white-space:nowrap}
+.grp a{color:var(--color-brand);font-weight:700}
+.mgrid .item .body{gap:6px}
+.mgrid .item .meta{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mgrid .item img.op-top{object-position:50% 22%}
+.fb{display:inline-flex;align-items:center;gap:5px;justify-self:start;max-width:100%;font:800 .6875rem/1.2 var(--font-text);letter-spacing:.02em;color:var(--color-brand);background:var(--color-surface);padding:6px 9px;border-radius:var(--radius-lg);box-shadow:var(--shadow-e2)}
+.fb .ico-s{width:13px;height:13px}
+.mgrid:not(.is-list) .fb{position:absolute;top:10px;left:10px;z-index:1;max-width:calc(100% - 56px)}
+.fb .fs{display:none}
+@media (max-width:719px){.mgrid:not(.is-list) .item:not(.feat) .fb .fl{display:none}.mgrid:not(.is-list) .item:not(.feat) .fb .fs{display:inline}}
+.pnote{font-size:.8125rem;font-weight:700;color:var(--color-brand)}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:.75rem;font-weight:700;color:var(--color-muted)}
+.tags li{display:inline-flex;align-items:center;gap:4px}
+.tags .ico-s{width:12px;height:12px}
+.tags .t-gf{color:var(--color-brand);border:1px solid var(--color-control);border-radius:var(--radius-lg);padding:2px 8px}
+.when{display:flex;align-items:flex-start;gap:5px;font-size:.75rem;line-height:1.35;color:var(--color-muted)}
+.when .ico-s{width:13px;height:13px;margin-top:1px}
+.later{display:flex;flex-wrap:wrap;align-items:center;gap:0 8px;font-size:.75rem;font-weight:800;line-height:1.35;color:var(--color-brand)}
+.later .ico-s{width:13px;height:13px}
+.later .link{min-height:28px;padding:2px 0;font-size:.75rem}
+.item.is-later .when{display:none}
+.item.is-later > img{filter:grayscale(1);opacity:.72}
+.hrt{position:absolute;top:10px;right:10px;z-index:1;display:none;width:32px;height:32px;padding:8px;border-radius:50%;background:var(--color-surface);box-shadow:var(--shadow-e2)}
+.item.in-bag .hrt{display:block;animation:pop var(--dur-base) var(--ease-enter)}
+.drop{display:grid;gap:6px;padding:10px 12px;border-radius:var(--radius-sm);background:var(--color-canvas);border:1px solid var(--color-line);font-size:.8125rem;font-weight:700;color:var(--color-brand)}
+.drop .ex{margin-right:6px}
+.meter{display:block;height:6px;border-radius:3px;background:var(--color-line);overflow:hidden}
+.meter i{display:block;height:100%;width:58%;border-radius:3px;background:var(--color-brand)}
+.drop-n{font-weight:800;font-variant-numeric:tabular-nums}
+@media (min-width:720px){
+  .mgrid:not(.is-list) .item.feat{grid-column:span 2;grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .mgrid:not(.is-list) .item.feat > .tile{aspect-ratio:auto;height:100%;min-height:260px;font-size:7rem}
+  .mgrid:not(.is-list) .item.feat .body{padding:var(--sp-4)}
+}
+@media (max-width:719px){
+  .mgrid:not(.is-list) .item.feat{grid-column:1 / -1}
+  .mgrid:not(.is-list) .item.feat > .tile{aspect-ratio:2/1}
+}
+.mgrid.is-list{grid-template-columns:minmax(0,1fr);gap:var(--sp-2)}
+@media (min-width:720px){.mgrid.is-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-3) var(--sp-4)}}
+.is-list .item{grid-template-columns:104px minmax(0,1fr);grid-template-rows:auto;gap:var(--sp-3);padding:10px;align-items:start}
+.is-list .item > img,.is-list .item > .tile{width:104px;height:104px;aspect-ratio:1/1;border-radius:14px}
+.is-list .item > .tile{font-size:2.75rem}
+.is-list .item > .tile::after{inset:5px;border-radius:10px}
+.is-list .item > .tile small{display:none}
+.is-list .item .body{padding:2px 2px 0 0;gap:5px}
+.mgrid a.add{text-decoration:none}
+.is-list .item:hover{transform:none}
+.is-list .fb{box-shadow:none;padding:0;background:transparent}
+.is-list .hrt{top:4px;left:86px;right:auto;width:28px;height:28px;padding:7px}
+.sk{border-radius:var(--radius-md);background:var(--color-surface);box-shadow:var(--shadow-e1);aspect-ratio:3/4}
+.is-list .sk{aspect-ratio:auto;height:124px}
+.nomatch,.fail{grid-column:1 / -1;display:grid;gap:var(--sp-3);justify-items:start;padding:var(--sp-8) var(--sp-6);background:var(--color-surface);border-radius:var(--radius-md);box-shadow:var(--shadow-e1);max-width:640px}
+.nomatch .nm-h{font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-brand);line-height:1.15}
+.nomatch p,.fail p{color:var(--color-muted)}
+.fail a{color:var(--color-brand);font-weight:700}
+
+/* by date: a ledger, not three equal boxes */
+.cal .rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--color-line)}
+.cal .rows li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:var(--sp-4);padding:var(--sp-6) 0;border-bottom:1px solid var(--color-line)}
+.cal-when{font-family:var(--font-display);font-size:1.75rem;line-height:1;font-weight:600;color:var(--color-brand)}
+.cal-when small{display:block;margin-top:6px;font:800 .75rem/1.3 var(--font-text);color:var(--color-brand-quiet)}
+.cal h3{font-size:1.5rem;font-variation-settings:"opsz" 36,"wght" 600}
+.cal li p{color:var(--color-muted);max-width:58ch;margin-top:4px;font-size:1rem}
+.cal .go{grid-column:2;justify-self:start;display:inline-flex;align-items:center;gap:6px;margin-top:calc(-1 * var(--sp-2));font-weight:800;font-size:.9375rem;color:var(--color-brand);text-underline-offset:3px;min-height:32px}
+.cal .deliver{margin-top:var(--sp-6);font-size:var(--text-sm);color:var(--color-muted);max-width:70ch}
+.cal .deliver a{color:var(--color-brand);font-weight:700}
+@media (min-width:900px){
+  .cal .rows li{grid-template-columns:200px minmax(0,1fr) auto;align-items:center;gap:var(--sp-8)}
+  .cal .go{grid-column:auto;margin-top:0;white-space:nowrap}
+}
+
+/* how ordering works */
+.how ol{list-style:none;margin:var(--sp-8) 0 0;padding:0;display:grid;gap:var(--sp-6);counter-reset:h}
+.how li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:var(--sp-3);padding-top:var(--sp-6);border-top:1px solid var(--color-line)}
+.how li::before{counter-increment:h;content:counter(h);font-family:var(--font-display);font-style:italic;font-weight:500;font-size:3rem;line-height:.85;color:var(--color-brand)}
+.how h3{font-size:1.5rem;font-variation-settings:"opsz" 36,"wght" 600}
+.how li p{color:var(--color-muted);font-size:1rem;margin-top:6px;max-width:46ch}
+.src{display:block;margin-top:10px;font-size:.75rem;line-height:1.45;color:var(--color-muted)}
+@media (min-width:900px){
+  .how ol{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-8)}
+  .how li{grid-template-columns:1fr;gap:var(--sp-4)}
+}
+
+/* what Shopify adds, for the operator to show the chef */
+.sa{display:grid;gap:var(--sp-8)}
+@media (min-width:1000px){.sa{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--sp-12);align-items:start}.sa-intro{position:sticky;top:96px}}
+.sa-intro h2{font-size:clamp(2rem,5.5vw,var(--text-2xl));line-height:1.05;margin-top:var(--sp-3);font-variation-settings:"opsz" 72,"wght" 600}
+.sa-intro > p:not(.limit){color:var(--color-muted);margin-top:var(--sp-3);max-width:46ch}
+.sum-box{margin-top:var(--sp-6);padding:var(--sp-6);border-radius:var(--radius-md);background:var(--color-brand);color:var(--color-on-brand);box-shadow:var(--shadow-e3)}
+.sum-box strong{display:block;font-family:var(--font-display);font-size:3rem;line-height:1;font-weight:600;font-variant-numeric:tabular-nums}
+.sum-box p{margin-top:var(--sp-2);color:var(--color-on-brand-muted);font-size:1rem}
+.sum-box .src{color:var(--color-on-brand-muted)}
+.limit{margin-top:var(--sp-3);padding:var(--sp-4);border-radius:var(--radius-sm);background:var(--color-surface);border:1px solid var(--color-line);font-size:var(--text-sm);color:var(--color-ink)}
+.limit b{color:var(--color-brand)}
+.adds{list-style:none;margin:0;padding:0;display:grid;background:var(--color-surface);border-radius:var(--radius-md);box-shadow:var(--shadow-e2);overflow:hidden}
+.adds li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:var(--sp-3);align-content:start;padding:var(--sp-6);border-bottom:1px solid var(--color-line)}
+.adds li:last-child{border-bottom:0}
+@media (min-width:720px){
+  .adds{grid-template-columns:1fr 1fr}
+  .adds li:nth-child(odd){border-right:1px solid var(--color-line)}
+  .adds li:nth-last-child(-n+2){border-bottom:0}
+}
+.adds .ic{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--color-brand);display:grid;place-items:center;color:var(--color-brand)}
+.adds .ic .ico{width:20px;height:20px}
+.adds h3{font-size:1.25rem;line-height:1.15;font-variation-settings:"opsz" 24,"wght" 600}
+.adds p{font-size:.9375rem;color:var(--color-muted);margin-top:4px}
+
+/* a French thank-you when something lands in the bag */
+.toast{position:fixed;left:0;right:0;margin-inline:auto;width:max-content;max-width:calc(100% - 32px);bottom:calc(var(--bar-h) + 26px + env(safe-area-inset-bottom));z-index:45;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:var(--radius-lg);background:var(--color-ink);color:var(--color-on-brand);font:700 .9375rem var(--font-text);box-shadow:var(--shadow-e4);pointer-events:none}
+.toast em{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.0625rem}
+.toast .heart{width:15px;height:15px}
+.toast.on{animation:toast-in var(--dur-base) var(--ease-enter)}
+@keyframes toast-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (min-width:900px){.toast{left:32px;right:auto;margin:0;bottom:32px}}
+
+@media (prefers-reduced-motion:reduce){
+  .pk-panel.on,.toast.on,.item.in-bag .hrt{animation:none}
+  .pk-change .ico-s{transition:none}
+}
+</style>
+</head>
+<body class="pg-menu" data-home="index.html">
+
+<aside class="notice" aria-label="Concept preview">
+  <div class="wrap"><b>Concept preview</b><span>Prices from the shop’s menu app (21 October 2026) and its Shopify store (22 October 2026).</span><span class="more">Pickup slots, the Saturday drop and the shipping badges are examples; checkout opens the live store.</span></div>
+</aside>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
+    <nav class="nav" aria-label="Primary">
+      <a href="menu.html" aria-current="page">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
+    </nav>
+    <div class="top-actions">
+      <a class="btn btn-brand" href="#menu">Order for pickup</a>
+      <a class="cartbtn" href="#order" data-cart-open aria-label="Your bag, 0 items"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="badge" data-cart-count>0</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="mhead" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <p class="kick"><span>100% plant-based</span><span>Order ahead</span></p>
+      <h1 id="h1">Today’s case at 169 W Green St, <em>boxed for your time.</em></h1>
+      <p class="lead">Every éclair, croissant, macaron and jar on one page, at the shop’s own prices. Pick a time and it is boxed for then.</p>
+      <form class="find" role="search" data-find>
+        <label for="q">Search the menu</label>
+        <div class="find-box">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg>
+          <input id="q" type="search" name="q" placeholder="Pistachio, jar, croissant…" autocomplete="off" enterkeyhint="search">
+          <button class="q-clear" type="button" data-q-clear aria-label="Clear the search" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </div>
+        <div class="try" role="group" aria-label="Quick searches"><span>Try</span><button type="button" data-try="pistachio">pistachio</button><button type="button" data-try="gluten-free">gluten-free</button><button type="button" data-try="jar">jar</button></div>
+      </form>
+    </div>
+    <figure class="mh-media" data-grid-break>
+      <img class="m1" src="img/macarons-1-800.jpg" srcset="img/macarons-1-800.jpg 800w, img/macarons-1.webp 1600w" sizes="(min-width:900px) 46vw, 1px" width="800" height="800" alt="Macarons on one of the shop’s blue glazed plates" loading="lazy">
+      <img class="m2" src="img/caneles-1-800.jpg" width="800" height="800" alt="Three cannelés on a blue plate" loading="lazy">
+      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="ozone">
+<div class="obar" id="order" role="region" aria-label="Pickup time and menu sections">
+  <div class="pk" data-slot-picker>
+    <div class="pk-band">
+      <div class="wrap pk-row">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span class="pk-txt"><span class="pk-lab">Pickup<span class="ex">Example</span></span><b data-slot-out>Today, 2:30 pm</b></span>
+        <span class="pk-where">169 W Green St, Old Pasadena</span>
+        <button class="pk-change" type="button" data-pk-change aria-expanded="false" aria-controls="pk-panel">Change<svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="pk-panel" id="pk-panel" hidden>
+      <div class="wrap">
+        <div class="pk-in" role="group" aria-label="Pickup day and time, example">
+          <div class="days" role="group" aria-label="Day" data-days>
+            <button class="chip" type="button" aria-pressed="true"><b>Today</b>&nbsp;</button>
+            <button class="chip" type="button" aria-pressed="false"><b>Next</b>&nbsp;</button>
+            <button class="chip" type="button" aria-pressed="false"><b>Then</b>&nbsp;</button>
+            <button class="chip" type="button" aria-pressed="false"><b>After</b>&nbsp;</button>
+          </div>
+          <div class="times" role="group" aria-label="Time" data-times>
+            <button class="chip" type="button" aria-pressed="false">10:00</button>
+            <button class="chip" type="button" aria-pressed="false">11:00</button>
+            <button class="chip" type="button" aria-pressed="false">12:30</button>
+            <button class="chip" type="button" aria-pressed="false">1:30</button>
+            <button class="chip" type="button" aria-pressed="true">2:30</button>
+            <button class="chip" type="button" aria-pressed="false">3:30</button>
+            <button class="chip" type="button" aria-pressed="false">4:30</button>
+            <button class="chip" type="button" aria-pressed="false">5:30</button>
+          </div>
+          <div class="pk-foot"><span class="note-sm" data-slot-note>Slots close themselves when the kitchen is full</span><button class="btn btn-brand btn-sm" type="button" data-pk-done>Done</button></div>
+          <p class="pk-fine">Example slots, Mondays closed. In the new store the kitchen sets the hours, the 15-minute slots and how many orders each one takes (plan, section 4.3).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cats-bar">
+    <div class="wrap">
+      <div class="cats" role="group" aria-label="Menu sections" data-menu-cats>
+        <button class="cat" type="button" aria-pressed="true" data-cat="all">Everything</button>
+        <button class="cat" type="button" aria-pressed="false" data-cat="eclair">Éclairs</button>
+        <button class="cat" type="button" aria-pressed="false" data-cat="vienn">Viennoiserie</button>
+        <button class="cat" type="button" aria-pressed="false" data-cat="macaron">Macarons</button>
+        <button class="cat" type="button" aria-pressed="false" data-cat="cake">Cakes and jars</button>
+        <button class="cat" type="button" aria-pressed="false" data-cat="gift">Chocolate and gifts</button>
+        <button class="cat" type="button" aria-pressed="false" data-cat="drink">Tea and coffee</button>
+        <button class="cat" type="button" aria-pressed="false" data-cat="savory">Savory</button>
+        <button class="cat" type="button" aria-pressed="false" data-cat="occasion">Boards and holidays</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="menu" id="menu" aria-label="The menu">
+  <div class="wrap">
+    <div class="tools">
+      <div class="seg" role="group" aria-label="How you get it" data-ful>
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="pickup" aria-pressed="false"><svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="t-short">Pickup</span><span class="t-long">Order ahead</span></button>
+        <button type="button" data-f="ship" aria-pressed="false"><svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h11v9.5H3zM14 10h3.8l3.2 3.4V16H14"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><span class="t-short">Ships</span><span class="t-long">Ships nationwide</span></button>
+      </div>
+      <div class="tools-r">
+        <p class="count" data-count aria-live="polite">Loading the menu</p>
+        <div class="seg" role="group" aria-label="Layout" data-view>
+          <button type="button" data-v="list" aria-pressed="false"><svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>List</button>
+          <button type="button" data-v="photos" aria-pressed="true"><svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Photos</button>
+        </div>
+      </div>
+    </div>
+    <p class="legend"><b>Ships nationwide</b>: shelf-stable boxes the new store can mail, a plan the chef confirms first; the live store offers pickup today. <b>Gluten-free</b>: as listed on the live store on 22 October 2026, from a kitchen that also bakes with wheat (operations research, finding 7). Counter items: 19 of the menu app’s 113, prices checked 21 October 2026.</p>
+    <div class="grid mgrid" id="menu-grid" data-src="assets/menu.json" data-cats="eclair,vienn,bread,macaron,cake,gift,jam,cookie,class,drink,savory,occasion" aria-busy="true">
+      <div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div>
+      <div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div>
+    </div>
+    <div class="nomatch" data-nomatch hidden>
+      <p class="nm-h" data-nm-h>Nothing on the menu matches that.</p>
+      <p>Try pistachio, jar or chocolate, or clear the filters to see all of it.</p>
+      <button class="btn btn-ghost btn-sm" type="button" data-clear-all>Show the whole menu</button>
+    </div>
+    <noscript><p class="note-sm">This menu loads with JavaScript. Until then the shop takes orders on its menu app and on the live store at id-eclair.com.</p></noscript>
+  </div>
+</section>
+</div>
+
+<section class="cal bg-deep" aria-labelledby="h-cal">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-cal">More from the kitchen, by date.</h2>
+      <p>These run on a calendar rather than from the case, so each has its own page: the class sells seats, cakes start with a request, La Cave opens at 3 pm.</p>
+    </div>
+    <ul class="rows">
+      <li>
+        <div class="cal-when">Tue<small>3:30 to 5:30 pm</small></div>
+        <div><h3>Macaron Masterclass</h3><p>Two hands-on hours with Chef Romy, $125 a seat, 20 to 30 macarons to take home. Very limited seats; booked by DM or in person today.</p></div>
+        <a class="go" href="classes.html">See the class<svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </li>
+      <li>
+        <div class="cal-when">7 days<small>notice</small></div>
+        <div><h3>Custom cakes</h3><p>The shop asks for a week’s notice. The new site turns that rule into a request with servings, flavours, photos and a deposit.</p></div>
+        <a class="go" href="cakes.html">Start a cake request<svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </li>
+      <li>
+        <div class="cal-when">Wed to Sun<small>3 to 9 pm</small></div>
+        <div><h3>La Cave, next door</h3><p>The vegan wine bar at 163 W Green St: organic and biodynamic wines, Rebel Cheese boards, plated desserts with a glass.</p></div>
+        <a class="go" href="la-cave.html">Visit La Cave<svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </li>
+    </ul>
+    <p class="deliver">Delivery today runs through <a href="https://www.ubereats.com/store/id-eclair-169-west-green-street/DZBavqIJUAuR3qdYMA7QNQ" target="_blank" rel="noopener">Uber Eats</a>, <a href="https://www.doordash.com/en/store/id-eclair-pasadena-32543221/" target="_blank" rel="noopener">DoorDash</a> and <a href="https://www.grubhub.com/restaurant/id-eclair-169-w-green-st-pasadena/10198432" target="_blank" rel="noopener">Grubhub</a>. The new site keeps them as one small link and puts pickup first (brand research, finding 9; plan, section 4.5).</p>
+  </div>
+</section>
+
+<section class="how bg-white" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-how">How ordering works in the new store.</h2>
+      <p>Three steps on a phone, one checkout, one pickup time. The bag on this preview already behaves this way, and live-store items check out for real today.</p>
+    </div>
+    <ol>
+      <li><div><h3>Pick a day and a time.</h3><p>The bag opens on the next 14 days and the 15-minute slots that still have room, with the earliest chosen for you. A full slot closes itself, and anything that needs notice says when it can be ready instead of disappearing.</p><span class="src">Plan, sections 4.1 and 4.3; references research, finding 1 (Cedric Grolet’s day-first page); mobile ordering research, finding 41.</span></div></li>
+      <li><div><h3>Fill one bag.</h3><p>Éclairs for Saturday, the love-note jars, a gift that ships and a class seat share one cart and one checkout with Apple Pay, Google Pay or Shop Pay. One order carries one pickup time and takes the longest notice of anything in it. The price on the menu is the price at checkout; no online-ordering fee appears at the end.</p><span class="src">Plan, sections 4.1 and 4.3; operations research, finding 22 (California’s Honest Pricing Law).</span></div></li>
+      <li><div><h3>Say your name at the counter.</h3><p>Staff tap Ready for pickup and you get the message, with orders shelved by slot. In the Shop app the order shows its status and a QR code to scan, so the receipt is already on your phone.</p><span class="src">Shopify research, finding 28; loyalty and messaging addendum, finding 7.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bg-deep" aria-labelledby="h-shopify">
+  <div class="wrap sa">
+    <div class="sa-intro">
+      <span class="ex">For the chef</span>
+      <h2 id="h-shopify">What Shopify adds for iD Éclair.</h2>
+      <p>Today the counter menu lives on a separate ordering app with its own cart, and the Shopify store sells only its 28 packaged products. Moving the menu into Shopify puts the case, the cakes, the classes and the gifts behind one checkout and one customer record.</p>
+      <span class="src">Brand research, findings 2 to 5; Shopify research, finding 2.</span>
+      <div class="sum-box">
+        <strong>About $158</strong>
+        <p>a month in software at launch: the Grow plan, the pickup app, cake options and class booking. Card fees come on top, 2.7% plus 30¢ per online order on Grow.</p>
+        <span class="src">Plan, sections 5.1 and 5.7; Shopify research, finding 29. Prices to confirm in the store’s own admin.</span>
+      </div>
+      <p class="limit"><b>One limit, stated plainly.</b> Below Shopify Plus the time is chosen in the bag and checkout refuses an order with no valid slot; the picker on the checkout page itself needs Plus, from $2,300 a month, which a shop this size does not need. <span class="src">Shopify research, findings 4 and 29; mobile ordering research, finding 36.</span></p>
+    </div>
+    <ul class="adds">
+      <li>
+        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16l-1.2-5H5.2z"/><path d="M5 10v9h14v-9M9.5 19v-5h5v5"/></svg></span>
+        <div><h3>One checkout for the counter and the web</h3><p>With Shopify POS at the counter, walk-in sales and web orders share one list of orders, customers and stock. Staff tap Ready for pickup, the customer is told, and a printed QR slip finds the order.</p><span class="src">Shopify research, findings 27 and 28.</span></div>
+      </li>
+      <li>
+        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></span>
+        <div><h3>Pickup day and time, held at checkout</h3><p>The pickup app (Bird, $49.99 a month) sets prep time per item, caps each slot and closes full and closed days. The customer chooses in the bag, and a checkout validation refuses any order that skips the slot, Shop Pay included.</p><span class="src">Shopify research, finding 6; mobile ordering research, finding 36; plan, section 4.2.</span></div>
+      </li>
+      <li>
+        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2M10 9.5l1.5 1.5 3-3"/></svg></span>
+        <div><h3>Shop Pay and the Shop app</h3><p>Saved details for one-tap checkout, a Buy again button on past orders, and the pickup order in the Shop app with its status and a QR code once staff mark it ready.</p><span class="src">Loyalty and messaging addendum, findings 6, 7 and 10.</span></div>
+      </li>
+      <li>
+        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 16l8 4 8-4"/></svg></span>
+        <div><h3>Stock that matches the case</h3><p>Daily pastries count down as they sell, online and at the counter. At five left the menu says Only a few left; at zero it says Sold out today, so the site never sells a pastry the case no longer has.</p><span class="src">Automation map addendum, item A8.</span></div>
+      </li>
+      <li>
+        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M3 10.5h18M7 14.5h4"/></svg></span>
+        <div><h3>Gift cards</h3><p>Sold online, spent at the counter, and kept in Apple Wallet with the balance and a QR code staff scan. California’s rule is built into the terms: cash back on balances under $15.</p><span class="src">Loyalty and messaging addendum, finding 11; operations research, finding 24.</span></div>
+      </li>
+      <li>
+        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><path d="M7.5 7.5h.01"/></svg></span>
+        <div><h3>Discounts</h3><p>A first-order code, a referral credit, or a discount shared as a link or a QR code on the counter card, each one tracked in Shopify.</p><span class="src">Mobile ordering research, finding 52; merchandise and revenue addendum, finding 16.</span></div>
+      </li>
+      <li>
+        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span>
+        <div><h3>Email and text</h3><p>Ready-for-pickup messages from day one, then flows: the morning-of reminder, a birthday note, a nudge to come back. In Klaviyo’s 2026 data, automated flows were 7.6% of text sends and 45.2% of text revenue.</p><span class="src">Plan, section 5.3; automation map addendum, item A3.</span></div>
+      </li>
+      <li>
+        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h11v9.5H3zM14 10h3.8l3.2 3.4V16H14"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg></span>
+        <div><h3>TikTok Shop for goods that ship</h3><p>The TikTok channel syncs products, stock and orders into Shopify. Merchandise goes first; boxed chocolates and biscuits follow once FDA registration and labels are in place. Fresh pastry stays off TikTok, and the videos send people to pickup.</p><span class="src">Shopify research, findings 15 to 17; plan, section 5.5.</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="toast" data-toast aria-hidden="true" hidden></div>
+<p class="sr" data-sr aria-live="polite"></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+    </div>
+    <div><h3>Order</h3><ul><li><a href="menu.html" aria-current="page">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
+    <div><h3>Visit</h3><ul><li><a href="classes.html">Masterclass</a></li><li><a href="la-cave.html">La Cave</a></li><li><a href="story.html">Chef Romy</a></li></ul></div>
+    <div><h3>Shop</h3><ul><li><a href="menu.html#ships">Gifts that ship</a></li><li><a href="merch.html">Merchandise</a></li><li><a href="https://www.id-eclair.com" target="_blank" rel="noopener">The live store</a></li></ul></div>
+  </div>
+  <button class="cartpill" type="button" data-cart-open data-cart-pill><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
+</footer>
+
+
+<nav class="bar" aria-label="Sections">
+  <a href="#menu" aria-current="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Menu</a>
+  <a href="index.html#box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M3 11h18M8 7V5a4 4 0 0 1 8 0v2"/></svg>Box</a>
+  <a href="#order" data-cart-open data-section="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Bag<span class="badge" data-cart-count>0</span></a>
+  <a href="cakes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M5 20v-6a7 7 0 0 1 14 0v6M12 7V4M9 10c1 1 2 1 3 0s2-1 3 0"/></svg>Cakes</a>
+  <a href="classes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Classes</a>
+</nav>
+
+<script>
+/* menu.html behaviour. Reuses assets/app.js (window.IDE) for the bag, the slot picker and the tiles;
+   adds grouping, search, the fulfilment filter, lead-time notes, the bag heart and a French thank-you. */
+(function () {
+  'use strict';
+  var SLOTS = ['10:00', '11:00', '12:30', '1:30', '2:30', '3:30', '4:30', '5:30']; /* the example slots set in assets/app.js */
+  var TZ = 'America/Los_Angeles';
+  var STORE = 'https://www.id-eclair.com';
+  var MENU_APP = 'https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780';
+  var GROUPS = [
+    { id: 'eclair', slug: 'eclairs', cats: ['eclair'], chip: 'Éclairs', label: 'Éclairs', note: 'The house signature, from the case every morning.', words: 'eclair eclairs choux' },
+    { id: 'vienn', slug: 'viennoiserie', cats: ['vienn', 'bread'], chip: 'Viennoiserie', label: 'Viennoiserie, tarts and bread', note: 'Laminated with plant butter, baked for the morning case.', words: 'viennoiserie pastry pastries croissant tart bread breakfast' },
+    { id: 'macaron', slug: 'macarons', cats: ['macaron'], chip: 'Macarons', label: 'Macarons', note: 'One for $3 or six for $15 at the counter, or the assorted box from the live store.', words: 'macaron macarons box' },
+    { id: 'cake', slug: 'cakes', cats: ['cake'], chip: 'Cakes and jars', label: 'Cakes and dessert jars', note: 'Individual mousse cakes from the case and the love-note jars. Whole and custom cakes start on <a href="cakes.html">the cakes page</a>.', words: 'cake cakes jar jars dessert mousse entremets' },
+    { id: 'gift', slug: 'gifts', cats: ['gift', 'jam', 'cookie', 'class'], chip: 'Chocolate and gifts', label: 'Chocolate, biscuits and gifts', note: 'Boxed, shelf-stable, and the part of the menu that can travel.', words: 'gift gifts chocolate chocolates truffle truffles biscuit biscuits cookie cookies jam jams present' },
+    { id: 'drink', slug: 'tea', cats: ['drink'], chip: 'Tea and coffee', label: 'Tea and coffee', note: 'Palais des Thés teas and plant-milk coffee, for the salon or to go.', words: 'tea coffee latte drink drinks' },
+    { id: 'savory', slug: 'savory', cats: ['savory'], chip: 'Savory', label: 'From the savory menu', note: 'Soup, the sandwich of the day and tartines, served in the salon de thé.', words: 'savory savoury lunch soup sandwich toast' },
+    { id: 'occasion', slug: 'holiday', cats: ['occasion'], chip: 'Boards and holidays', label: 'Boards and holiday boxes', note: 'For a table of ten or a holiday at home. Pickup only.', words: 'board boards holiday thanksgiving party' }
+  ];
+  /* shelf-stable goods the plan lists as able to ship (plan section 3, Shop); fresh items stay pickup only */
+  var SHIPS = set('dubai-chocolate-vegan white-chocolate-truffles dark-chocolate-truffles kushyflakes gift-basket-small gift-basket-large pineapple-vanilla-jam tropical-jam raspberry-jam chocolate-fingers-sables-poches diamants-biscuit-by-6 cookie-spoon custom-logo-vegan-cookie macarons');
+  /* gluten-free in the live store's own title or tags, read 2026-10-22 */
+  var GF = set('white-chocolate-truffles dark-chocolate-truffles kushyflakes gift-basket-large caneles macarons chocolate-fingers-sables-poches cookie-spoon 4-desserts-in-jar caramel-je-taime chocolat-mon-amour framboise-cherie citron-ma-passion');
+  /* upscaled local files listed in img/MANIFEST.json: img/<name>-800.jpg and img/<name>.webp */
+  var LOCAL = {
+    'canele': 'shop-caneles-tray', 'macaron': 'macarons-1',
+    'thanksgiving-box-for-2': 'thanksgiving-box-for-2', 'golden-ticket': 'golden-ticket-3', 'cheese-board': 'cheese-board-1',
+    'dubai-chocolate-vegan': 'dubai-chocolate-vegan', 'white-chocolate-truffles': 'white-chocolate-truffles', 'dark-chocolate-truffles': 'dark-chocolate-truffles',
+    'kushyflakes': 'kushyflakes', 'gift-basket-small': 'gift-basket-small', 'gift-basket-large': 'gift-basket-large',
+    'pineapple-vanilla-jam': 'pineapple-vanilla-jam', 'caneles': 'caneles-1', 'macarons': 'macarons-2',
+    'chocolate-fingers-sables-poches': 'chocolate-fingers-sables-poches', 'diamants-biscuit-by-6': 'diamants-biscuit-by-6', 'cookie-spoon': 'cookie-spoon',
+    'douceur-tropicale': 'douceur-tropicale', 'noisette-toujours': 'noisette-toujours', 'tropical-jam': 'tropical-jam', 'raspberry-jam': 'raspberry-jam',
+    '4-desserts-in-jar': '4-desserts-in-jar', 'custom-logo-vegan-cookie': 'custom-logo-vegan-cookie', 'caramel-je-taime': 'caramel-je-taime',
+    'chocolat-mon-amour': 'chocolat-mon-amour', 'framboise-cherie': 'framboise-cherie', 'citron-ma-passion': 'citron-ma-passion',
+    'dark-truffles-wholesale': 'dark-truffles-wholesale', 'red-velvet-cookie-vegan-gluten-free-wholesale-by-24': 'red-velvet-cookie-vegan-gluten-free-wholesale-by-24'
+  };
+  var PORTRAIT = set('golden-ticket custom-logo-vegan-cookie');
+  var SIZES = '(min-width:1000px) 280px, (min-width:720px) 31vw, 46vw';
+  var FUL = {
+    pickup: { label: 'Order ahead for pickup', short: 'Order ahead', words: 'pickup pick up order ahead', icon: '<path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>' },
+    ship: { label: 'Ships nationwide', short: 'Ships', words: 'ships ship shipping nationwide mail delivery', icon: '<path d="M3 6.5h11v9.5H3zM14 10h3.8l3.2 3.4V16H14"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/>' },
+    pass: { label: 'Class pass', short: 'Class pass', words: 'class pass ticket masterclass', icon: '<path d="M4 7h16v3a2 2 0 0 0 0 4v3H4v-3a2 2 0 0 0 0-4z"/><path d="M14.5 7v10"/>' }
+  };
+  var ICON = {
+    leaf: '<svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14M5 19l7-7"/></svg>',
+    clock: '<svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+    heart: '<svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>'
+  };
+  var JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+  var VIEW_KEY = 'ide.menu.view';
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function set(s) { var o = {}; s.split(' ').forEach(function (k) { o[k] = 1; }); return o; }
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return '&#' + c.charCodeAt(0) + ';'; }); }
+  function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’'`]/g, '').replace(/[^a-z0-9$%\s-]/g, ' ').replace(/\s+/g, ' ').trim(); }
+  function plural(n, w) { return n + ' ' + w + (n === 1 ? '' : 's'); }
+  function laNow() {
+    var o = {};
+    new Intl.DateTimeFormat('en-US', { timeZone: TZ, year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' })
+      .formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; });
+    return { y: +o.year, m: +o.month, d: +o.day, min: (+o.hour % 24) * 60 + (+o.minute) };
+  }
+  function isoOf(n) { return new Date(Date.UTC(n.y, n.m - 1, n.d)).toISOString().slice(0, 10); }
+  function dayDiff(a, b) { return Math.round((Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 864e5); }
+  function mins(t) { var p = t.split(':'), h = +p[0]; if (h < 9) h += 12; return h * 60 + (+p[1]); }
+  function tlabel(t) { return t + (mins(t) >= 720 ? ' pm' : ' am'); }
+  function frTime(t) { var m = mins(t), h = Math.floor(m / 60), mm = m % 60; return h + ' h' + (mm ? ' ' + (mm < 10 ? '0' : '') + mm : ''); }
+  function svg(paths) { return '<svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true">' + paths + '</svg>'; }
+  function groupOf(it) { for (var i = 0; i < GROUPS.length; i++) if (GROUPS[i].cats.indexOf(it.category) >= 0) return GROUPS[i]; return null; }
+  function fulOf(it) { return it.handle === 'golden-ticket' ? 'pass' : SHIPS[it.handle] ? 'ship' : 'pickup'; }
+  function noteOf(it) {
+    var n = it.price_note; if (!n) return '';
+    var m = n.match(/\$\d+/);
+    return m && (it.desc || '').indexOf(m[0]) >= 0 ? '' : n;
+  }
+  /* lead time per item: cafe items come from the case; live-store items say "usually ready in 24 hours" today */
+  function leadOf(it) {
+    var h = it.handle;
+    if (h === 'thanksgiving-box-for-2') return { h: 0, text: 'Pickup only, 11 to 26 Nov at 3 pm; order 48 hours ahead' };
+    if (h === 'golden-ticket') return { h: 0, text: 'Class date arranged with the shop' };
+    if (h === 'custom-logo-vegan-cookie') return { h: 0, text: 'Your design goes to the shop by email for approval first' };
+    if (h === 'macaron-box-6') return { h: 0, text: 'Same day; the flavours follow the day’s bake' };
+    if (h === 'mousse-cake') return { h: 0, text: 'From the case; whole cakes 48 hours ahead (proposed)' };
+    if (it.channel === 'cafe') return { h: 0, text: it.category === 'drink' ? 'From the salon de thé' : it.category === 'savory' ? 'From the salon’s savory menu' : 'Same day from the case' };
+    if (h === 'cheese-board') return { h: 24, text: 'Pickup only; about 24 hours on the live store' };
+    return { h: 24, text: 'Live store today: ready for pickup in about 24 hours' };
+  }
+
+  function init() {
+    var IDE = window.IDE; if (!IDE) return;
+    var grid = $('#menu-grid'), pk = $('.pk'), panel = $('#pk-panel'), change = $('[data-pk-change]');
+    var chipsEl = $('[data-menu-cats]'), segEl = $('[data-ful]'), viewEl = $('[data-view]');
+    var q = $('#q'), qClear = $('[data-q-clear]'), countEl = $('[data-count]'), empty = $('[data-nomatch]'), srEl = $('[data-sr]'), toast = $('[data-toast]');
+    var items = [], heads = [], st = { cat: 'all', ful: 'all', q: '' }, prevCount = bagCount(), sayT, toastT;
+
+    function bagCount() { return IDE.state().items.reduce(function (a, i) { return a + i.qty; }, 0); }
+    function say(t) { clearTimeout(sayT); srEl.textContent = ''; sayT = setTimeout(function () { srEl.textContent = t; }, 60); }
+
+    /* ---------- layout toggle ---------- */
+    function setView(v, keep) {
+      grid.classList.toggle('is-list', v === 'list');
+      $$('button', viewEl).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-v') === v)); });
+      if (keep) { try { localStorage.setItem(VIEW_KEY, v); } catch (e) { /* private mode */ } }
+    }
+    var pref = null; try { pref = localStorage.getItem(VIEW_KEY); } catch (e) { /* private mode */ }
+    setView(pref === 'list' || pref === 'photos' ? pref : (matchMedia('(min-width:720px)').matches ? 'photos' : 'list'));
+    viewEl.addEventListener('click', function (e) { var b = e.target.closest('[data-v]'); if (b) setView(b.getAttribute('data-v'), true); });
+
+    /* ---------- pickup band and picker ---------- */
+    function openPanel(focus) {
+      if (panel.hidden) { panel.hidden = false; panel.classList.remove('on'); void panel.offsetWidth; panel.classList.add('on'); }
+      change.setAttribute('aria-expanded', 'true');
+      if (focus) { var c = $('.chip[aria-pressed="true"]', panel) || $('.chip', panel); if (c) c.focus({ preventScroll: true }); }
+    }
+    function closePanel(back) {
+      if (panel.hidden) return;
+      panel.hidden = true; change.setAttribute('aria-expanded', 'false');
+      if (back) change.focus({ preventScroll: true });
+    }
+    change.addEventListener('click', function () { if (panel.hidden) openPanel(true); else closePanel(false); });
+    $('[data-pk-done]').addEventListener('click', function () { closePanel(true); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !panel.hidden && !document.body.classList.contains('locked')) closePanel(true);
+    });
+    /* capture phase: runs before app.js re-renders the chips, so the clicked chip is still inside the panel */
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-slot-change]')) { openPanel(false); return; }
+      if (!panel.hidden && !pk.contains(e.target) && !e.target.closest('.drawer, [data-later-go]')) closePanel(false);
+    }, true);
+
+    /* ---------- tiles from menu.json through app.js, then grouped and labelled here ---------- */
+    IDE.renderMenu(grid).then(function (list) {
+      grid.setAttribute('aria-busy', 'false');
+      if (!list || !list.length) { failed(); return; }
+      build(list);
+      var linked = readHash(); apply(); refresh();
+      if (linked) toMenuTop(true, true);
+    });
+
+    function failed() {
+      grid.innerHTML = '<div class="fail"><p><b>The menu did not load.</b> Refresh the page, or order today on the <a href="' + STORE + '" target="_blank" rel="noopener">live store</a> or the shop’s <a href="' + MENU_APP + '" target="_blank" rel="noopener">menu app</a>.</p></div>';
+      countEl.textContent = 'The menu did not load';
+    }
+
+    function decorate(el, it, g) {
+      var ful = fulOf(it), lead = leadOf(it), body = $('.body', el), h3 = $('h3', body), meta = $('.meta', body), row = $('.row', body);
+      el.setAttribute('data-cat', g.id); el.setAttribute('data-handle', it.handle); el.setAttribute('data-ful', ful);
+      var live = $('.live', el); if (live) live.remove();
+      var img = $('img', el), base = LOCAL[it.handle];
+      if (img && base) {
+        var src = 'img/' + base + '-800.jpg';
+        img.sizes = SIZES; img.srcset = src + ' 800w, img/' + base + '.webp 1600w';
+        img.src = src; img.width = 800; img.height = 800; img.decoding = 'async'; img.alt = it.title;
+        if (PORTRAIT[it.handle]) img.classList.add('op-top');
+        var add = $('[data-add]', el); if (add) add.setAttribute('data-image', src);
+      }
+      meta.textContent = it.desc || '';
+      var html = '', pn = noteOf(it);
+      if (pn) html += '<p class="pnote">' + esc(pn) + '</p>';
+      html += '<ul class="tags" aria-label="Dietary"><li>' + ICON.leaf + 'Plant-based</li>' + (GF[it.handle] ? '<li class="t-gf">Gluten-free</li>' : '') + '</ul>';
+      html += '<p class="when">' + ICON.clock + '<span>' + esc(lead.text) + '</span></p>';
+      html += '<p class="later" hidden>' + ICON.clock + '<span data-later-txt></span><button class="link" type="button" data-later-go>Switch</button></p>';
+      if (it.handle === 'chefs-special-eclair') {
+        el.classList.add('feat');
+        html += '<div class="drop"><p><span class="ex">Example</span>A Saturday drop: 12 made, 2 per guest</p><span class="meter" aria-hidden="true"><i></i></span><p class="drop-n">7 left for Saturday</p></div>';
+      }
+      meta.insertAdjacentHTML('afterend', html);
+      h3.insertAdjacentHTML('beforebegin', '<span class="fb">' + svg(FUL[ful].icon) + '<span class="fl">' + FUL[ful].label + '</span><span class="fs">' + FUL[ful].short + '</span></span>');
+      el.insertAdjacentHTML('beforeend', '<svg class="heart hrt" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>');
+      if (it.handle === 'macaron-box-6') {
+        if (img) img.outerHTML = '<div class="tile" aria-hidden="true">6<small>la boîte</small></div>';
+        $$('[data-add], .stepper', row).forEach(function (n) { n.remove(); });
+        row.insertAdjacentHTML('beforeend', '<a class="add" href="index.html#box">Build<span class="sr"> your box of six</span></a>');
+      }
+      var opt = $('a.add[target]', row);
+      if (opt) opt.innerHTML = 'Options<span class="sr"> on the live store, opens in a new tab</span>';
+      el._q = norm([it.title, it.store_title, it.desc, it.label, it.price_note, g.label, g.words, FUL[ful].words, GF[it.handle] ? 'gluten-free gluten free gf' : '', 'plant-based plant based vegan'].join(' '));
+      el._lead = lead;
+    }
+
+    function build(list) {
+      var arts = $$('.item', grid), pairs = [];
+      arts.forEach(function (el, i) {
+        var it = list[i]; if (!it) return;
+        var g = groupOf(it);
+        if (it.channel === 'booking' || !g) { el.remove(); return; } /* the class books on its own page */
+        decorate(el, it, g);
+        pairs.push({ el: el, it: it, g: g.id, i: i });
+      });
+      var frag = document.createDocumentFragment();
+      GROUPS.forEach(function (g) {
+        var mine = pairs.filter(function (p) { return p.g === g.id; });
+        if (!mine.length) return;
+        function rank(p) { return p.it.handle === 'chefs-special-eclair' ? 0 : p.it.channel === 'cafe' ? 1 : 2; }
+        mine.sort(function (a, b) { return rank(a) - rank(b) || a.i - b.i; });
+        var head = document.createElement('div');
+        head.className = 'grp'; head.setAttribute('data-grp', g.id);
+        head.innerHTML = '<h2 id="g-' + g.id + '">' + g.label + '</h2><p>' + g.note + ' <span class="gn">' + plural(mine.length, 'item') + '</span></p>';
+        frag.appendChild(head); heads.push(head);
+        mine.forEach(function (p) { frag.appendChild(p.el); items.push(p); });
+      });
+      grid.appendChild(frag);
+      $$('.cat', chipsEl).forEach(function (c) {
+        var id = c.getAttribute('data-cat'), n = id === 'all' ? items.length : items.filter(function (x) { return x.g === id; }).length;
+        c.insertAdjacentHTML('beforeend', ' <span class="n">' + n + '</span>');
+        if (!n && id !== 'all') c.hidden = true;
+      });
+    }
+
+    /* ---------- filters: section, fulfilment, search ---------- */
+    function chipLabel(id) { var g = GROUPS.filter(function (x) { return x.id === id; })[0]; return g ? g.chip : ''; }
+    function countText(n) {
+      var how = st.ful === 'ship' ? ' that ship' : st.ful === 'pickup' ? ' to order ahead' : st.ful === 'pass' ? '' : '';
+      var where = st.cat === 'all' ? '' : ' in ' + chipLabel(st.cat);
+      return plural(n, 'item') + how + where + (st.q ? ' matching “' + q.value.trim() + '”' : '');
+    }
+    function apply(announce) {
+      var tokens = st.q ? st.q.split(' ') : [], n = 0, seen = {}, first = true;
+      items.forEach(function (x) {
+        var ok = (st.cat === 'all' || x.g === st.cat) && (st.ful === 'all' || x.el.getAttribute('data-ful') === st.ful) &&
+          tokens.every(function (t) { return x.el._q.indexOf(t) >= 0; });
+        x.el.hidden = !ok;
+        if (ok) { n++; seen[x.g] = (seen[x.g] || 0) + 1; }
+      });
+      heads.forEach(function (h) {
+        var k = seen[h.getAttribute('data-grp')] || 0, show = k > 0;
+        h.hidden = !show; h.classList.toggle('lead1', show && first); if (show) first = false;
+        $('.gn', h).textContent = plural(k, 'item');
+      });
+      empty.hidden = n > 0 || !items.length;
+      if (!n) $('[data-nm-h]', empty).textContent = st.q ? 'Nothing on the menu matches “' + q.value.trim() + '”.' : 'Nothing in this view yet.';
+      countEl.textContent = items.length ? countText(n) : countEl.textContent;
+      $$('.cat', chipsEl).forEach(function (c) { c.setAttribute('aria-pressed', String(c.getAttribute('data-cat') === st.cat)); });
+      $$('button', segEl).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-f') === st.ful)); });
+      qClear.hidden = !q.value;
+      if (announce) say(countEl.textContent);
+    }
+    function toMenuTop(force, instant) {
+      var bar = $('.obar'), top = $('#menu').getBoundingClientRect().top, h = bar.offsetHeight;
+      if (force || top < h - 2) window.scrollTo({ top: Math.max(0, window.pageYOffset + top - h), behavior: instant ? 'instant' : reduce ? 'auto' : 'smooth' });
+    }
+    function writeHash() {
+      var g = GROUPS.filter(function (x) { return x.id === st.cat; })[0];
+      var h = st.cat !== 'all' && g ? '#' + g.slug : st.ful === 'ship' ? '#ships' : '';
+      try { history.replaceState(null, '', location.pathname + location.search + h); } catch (e) { /* file:// */ }
+    }
+    function readHash() {
+      var h = decodeURIComponent((location.hash || '').slice(1));
+      if (h === 'ships') { st.ful = 'ship'; st.cat = 'all'; return true; }
+      var g = GROUPS.filter(function (x) { return x.slug === h; })[0];
+      if (g) { st.cat = g.id; return true; }
+      return false;
+    }
+    window.addEventListener('hashchange', function () { if (readHash()) { apply(true); toMenuTop(true); } });
+
+    chipsEl.addEventListener('click', function (e) {
+      var c = e.target.closest('.cat'); if (!c) return;
+      st.cat = c.getAttribute('data-cat'); apply(true); writeHash(); toMenuTop(false);
+      var l = c.offsetLeft - 16, r = c.offsetLeft + c.offsetWidth + 16 - chipsEl.clientWidth;
+      if (chipsEl.scrollLeft > l) chipsEl.scrollTo({ left: l, behavior: reduce ? 'auto' : 'smooth' });
+      else if (chipsEl.scrollLeft < r) chipsEl.scrollTo({ left: r, behavior: reduce ? 'auto' : 'smooth' });
+    });
+    segEl.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-f]'); if (!b) return;
+      st.ful = b.getAttribute('data-f'); apply(true); writeHash(); toMenuTop(false);
+    });
+    var typeT;
+    q.addEventListener('input', function () {
+      st.q = norm(q.value); apply(false);
+      clearTimeout(typeT); typeT = setTimeout(function () { say(countEl.textContent); }, 500);
+    });
+    $('[data-find]').addEventListener('submit', function (e) { e.preventDefault(); q.blur(); toMenuTop(true); });
+    qClear.addEventListener('click', function () { q.value = ''; st.q = ''; apply(true); q.focus(); });
+    $$('[data-try]').forEach(function (b) {
+      b.addEventListener('click', function () { q.value = b.getAttribute('data-try'); st.q = norm(q.value); apply(true); toMenuTop(true); });
+    });
+    $('[data-clear-all]').addEventListener('click', function () {
+      q.value = ''; st = { cat: 'all', ful: 'all', q: '' }; apply(true); writeHash();
+      var c = $('.cat[data-cat="all"]', chipsEl); if (c) c.focus({ preventScroll: true });
+    });
+
+    /* ---------- lead time against the chosen slot: grey the tile, say when it can be ready ---------- */
+    function earliest(need, chips, today) {
+      for (var i = 0; i < chips.length; i++) {
+        var c = chips[i], idx = dayDiff(today, c.getAttribute('data-day'));
+        for (var j = 0; j < SLOTS.length; j++) {
+          if (idx * 1440 + mins(SLOTS[j]) >= need) {
+            var top = ($('b', c) || c).textContent;
+            return { date: c.getAttribute('data-day'), time: SLOTS[j], label: (idx === 0 ? 'today' : top) + ', ' + tlabel(SLOTS[j]) };
+          }
+        }
+      }
+      return null;
+    }
+    function refreshLater() {
+      var s = IDE.slot(), n = laNow(), today = isoOf(n), memo = {};
+      var chips = $$('[data-day]', pk).filter(function (c) { return c.getAttribute('aria-disabled') !== 'true'; });
+      items.forEach(function (x) {
+        var L = x.el._lead, note = $('.later', x.el), late = false, info = null;
+        if (L && L.h > 0 && s.date) {
+          var need = n.min + L.h * 60;
+          if (dayDiff(today, s.date) * 1440 + mins(s.time) < need) { late = true; info = memo[L.h] || (memo[L.h] = earliest(need, chips, today)); }
+        }
+        x.el.classList.toggle('is-later', late);
+        note.hidden = !late;
+        if (!late) return;
+        $('[data-later-txt]', note).textContent = info ? L.h + ' hours’ notice: ready ' + info.label : L.h + ' hours’ notice: choose a later day';
+        var go = $('[data-later-go]', note);
+        go.hidden = !info;
+        if (info) { go.setAttribute('aria-label', 'Switch pickup to ' + info.label); go.setAttribute('data-date', info.date); go.setAttribute('data-time', info.time); }
+      });
+    }
+    document.addEventListener('click', function (e) {
+      var go = e.target.closest('[data-later-go]'); if (!go) return;
+      var art = go.closest('.item'), d = $('[data-day="' + go.getAttribute('data-date') + '"]', pk);
+      if (d) d.click();
+      var t = $('[data-time="' + go.getAttribute('data-time') + '"]', pk);
+      if (t) t.click();
+      say('Pickup moved to ' + IDE.slot().label + '.');
+      setTimeout(function () {
+        var b = art && ($('[data-add]:not([hidden])', art) || $('.stepper:not([hidden]) [data-inc]', art) || $('a.add', art));
+        if (b) b.focus({ preventScroll: true });
+      }, 40);
+    });
+
+    /* ---------- the heart marks what is in the bag; a French thank-you on each add ---------- */
+    function merci() {
+      var s = IDE.slot(); if (!s.date) return '';
+      var idx = dayDiff(isoOf(laNow()), s.date), dow = new Date(s.date + 'T12:00:00Z').getUTCDay();
+      return 'À ' + (idx === 0 ? 'tout à l’heure' : idx === 1 ? 'demain' : JOURS[dow]) + ', ' + frTime(s.time) + '.';
+    }
+    function showToast() {
+      toast.innerHTML = ICON.heart + '<em>Merci.</em><span>' + esc(merci()) + '</span>';
+      toast.hidden = false; toast.classList.remove('on'); void toast.offsetWidth; toast.classList.add('on');
+      clearTimeout(toastT); toastT = setTimeout(function () { toast.hidden = true; }, 1900);
+    }
+    function refresh() {
+      var inBag = {}, c = 0;
+      IDE.state().items.forEach(function (i) { inBag[i.handle.indexOf('macaron-box-6:') === 0 ? 'macaron-box-6' : i.handle] = 1; c += i.qty; });
+      items.forEach(function (x) { x.el.classList.toggle('in-bag', !!inBag[x.el.getAttribute('data-handle')]); });
+      refreshLater();
+      if (c > prevCount && !document.body.classList.contains('locked')) showToast();
+      prevCount = c;
+    }
+    document.addEventListener('ide:bag', refresh);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>

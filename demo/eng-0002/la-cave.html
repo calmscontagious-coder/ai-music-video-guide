@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#120052">
+<title>La Cave, vegan wine bar at 163 W Green St. iD Éclair concept preview.</title>
+<meta name="description" content="Concept preview of La Cave’s page: the vegan wine bar next to the pâtisserie in Old Pasadena, Wednesday to Sunday, 3 to 9 pm. Cheese board for pickup, table booking and pairing evenings shown as examples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/app.js" defer></script>
+<style>
+/* la-cave.html only. The evening variant of the same system (plan 6.11): deep indigo ground, ivory type,
+   the same type and frame. Every colour is a token from assets/site.css. */
+.soir{background:var(--color-brand-deep);color:var(--color-on-brand)}
+.soir h1{color:var(--color-on-brand);max-width:12ch;font-size:clamp(2.75rem,8.6vw,5.25rem)}
+.soir .kick{color:var(--color-on-brand-muted)}
+.soir .lead{color:var(--color-on-brand-muted)}
+.soir .hero-media img{box-shadow:none}
+.btn-line{background:transparent;color:var(--color-on-brand);border-color:var(--color-on-brand-muted)}
+.btn-line:hover{border-color:var(--color-on-brand)}
+
+/* la carte: a framed list, the double hairline borrowed from the vitrine's price cards */
+.lc-two{display:grid;gap:var(--sp-8)}
+@media (min-width:900px){.lc-two{grid-template-columns:7fr 5fr;gap:var(--sp-12);align-items:start}}
+.lc-carte{background:var(--color-surface);border-radius:var(--radius-md);padding:var(--sp-8) var(--sp-6);border:1px solid color-mix(in srgb,var(--color-brand) 22%,transparent);outline:1px solid color-mix(in srgb,var(--color-brand) 14%,transparent);outline-offset:-9px}
+@media (min-width:900px){.lc-carte{padding:var(--sp-12)}}
+.lc-carte h2{font-size:clamp(2rem,5.5vw,var(--text-2xl));font-variation-settings:"opsz" 72,"wght" 600;line-height:1.05}
+.lc-carte > .note-sm{margin-top:var(--sp-3);max-width:52ch}
+.lc-menu{margin:var(--sp-6) 0 0}
+.lc-menu div{display:grid;gap:4px;padding:var(--sp-4) 0;border-top:1px solid var(--color-line)}
+.lc-menu dt{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.5rem;line-height:1.1;color:var(--color-brand)}
+.lc-menu dd{margin:0;color:var(--color-muted);font-size:1rem;max-width:52ch}
+@media (min-width:720px){.lc-menu div{grid-template-columns:12rem 1fr;gap:var(--sp-6);align-items:baseline}}
+.lc-board h3{font-size:var(--text-xl);font-variation-settings:"opsz" 48,"wght" 600;line-height:1.05}
+.lc-board .price{font-family:var(--font-display);font-size:var(--text-xl);font-weight:600}
+.lc-tag{justify-self:start;font:800 .6875rem/1 var(--font-text);letter-spacing:.04em;padding:7px 10px;border-radius:var(--radius-lg);background:var(--color-canvas);color:var(--color-brand);border:1px solid var(--color-line)}
+.lc-thumb{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius-sm)}
+@media (min-width:900px){.lc-board{position:sticky;top:100px}}
+
+/* reserve: the example picker on the indigo band */
+.slot p{max-width:none}
+@media (max-width:899px){#reserve .slot{order:-1}}
+.slot .lc-lab{font:800 .75rem/1 var(--font-text);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-muted);margin:0 0 8px}
+.lc-sizes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:var(--sp-3)}
+.lc-sizes .chip{font-weight:800;font-size:1rem;font-variant-numeric:tabular-nums}
+.lc-times{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lc-hold{margin-top:var(--sp-3)}
+.slot .lc-msg{margin-top:var(--sp-3);padding:var(--sp-3);border-radius:var(--radius-sm);background:var(--color-canvas);border:1px solid var(--color-line);color:var(--color-ink);font-size:var(--text-sm)}
+
+/* pairing evenings */
+.lc-pair{display:grid;gap:var(--sp-8)}
+@media (min-width:900px){.lc-pair{grid-template-columns:5fr 7fr;gap:var(--sp-12);align-items:start}}
+.lc-pair-media{position:relative;margin:0}
+.lc-pair-media img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-md);box-shadow:var(--shadow-e3)}
+@media (min-width:900px){.lc-pair-media img{aspect-ratio:4/5}}
+.lc-ticket{position:absolute;left:14px;right:14px;bottom:14px;display:grid;grid-template-columns:1fr auto;gap:6px var(--sp-3);align-items:center;background:var(--color-surface);border-radius:var(--radius-sm);padding:var(--sp-4);box-shadow:var(--shadow-e3);border-left:4px dashed var(--color-line)}
+.lc-ticket b{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.5rem;color:var(--color-brand);line-height:1}
+.lc-ticket .meta,.lc-ticket .seats{grid-column:1 / -1}
+.lc-ticket .seats{margin-top:0}
+.lc-pair .alt{margin-top:var(--sp-3)}
+.lc-form{display:grid;gap:var(--sp-4);background:var(--color-surface);border-radius:var(--radius-md);padding:var(--sp-6);box-shadow:var(--shadow-e2);margin-top:var(--sp-6)}
+.lc-form h3,.lc-done h3{font-size:var(--text-lg);font-variation-settings:"opsz" 48,"wght" 600}
+.lc-field{display:grid;gap:6px}
+.lc-field label,.lc-group-l{font-weight:800;font-size:var(--text-sm);color:var(--color-brand)}
+.lc-field input,.lc-field select{min-height:48px;width:100%;border:1px solid var(--color-control);border-radius:var(--radius-sm);padding:0 14px;font:inherit;font-size:1rem;background:var(--color-surface);color:var(--color-ink)}
+.lc-nights{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.lc-nights input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.lc-nights label{display:inline-grid;place-items:center;min-height:44px;padding:0 6px;border-radius:var(--radius-lg);border:1.5px solid var(--color-brand);background:var(--color-surface);color:var(--color-brand);font-weight:700;font-size:.9375rem;cursor:pointer;transition:transform var(--dur-fast) var(--ease-move)}
+.lc-nights label:active{transform:scale(.96)}
+.lc-nights input:checked + label{background:var(--color-brand);color:var(--color-on-brand)}
+.lc-nights input:focus-visible + label{outline:3px solid var(--color-focus);outline-offset:3px}
+.lc-row{display:grid;gap:var(--sp-4)}
+@media (min-width:560px){.lc-row{grid-template-columns:1fr 1fr;align-items:end}}
+.lc-check{display:flex;gap:10px;align-items:center;min-height:48px}
+.lc-check input{width:24px;height:24px;margin:0;accent-color:var(--color-brand)}
+.lc-check label{font-weight:700;font-size:1rem}
+.lc-form .lc-msg{color:var(--color-ink);font-weight:700;font-size:var(--text-sm)}
+.lc-done{display:grid;gap:var(--sp-3);justify-items:start;background:var(--color-surface);border-radius:var(--radius-md);padding:var(--sp-6);box-shadow:var(--shadow-e2);margin-top:var(--sp-6)}
+.lc-done p{color:var(--color-ink)}
+
+/* visit */
+.lc-visit{display:grid;gap:var(--sp-8)}
+@media (min-width:900px){.lc-visit{grid-template-columns:7fr 5fr;gap:var(--sp-12);align-items:start}}
+.lc-visit h2{font-size:clamp(2rem,5.5vw,var(--text-2xl));font-variation-settings:"opsz" 72,"wght" 600;line-height:1.05}
+.lc-visit > div > p{color:var(--color-muted);margin-top:var(--sp-3);max-width:52ch}
+.lc-facts{margin:var(--sp-6) 0}
+.lc-facts div{display:grid;grid-template-columns:6.5rem 1fr;gap:var(--sp-3);padding:var(--sp-3) 0;border-top:1px solid var(--color-line)}
+.lc-facts dt{font-weight:800;font-size:var(--text-sm);color:var(--color-brand);padding-top:2px}
+.lc-facts dd{margin:0;font-size:1rem}
+.lc-visit .note-sm{margin-top:var(--sp-4);max-width:58ch}
+.lc-visit .panel h3{font-size:var(--text-lg);font-variation-settings:"opsz" 48,"wght" 600;line-height:1.1}
+
+@media (prefers-reduced-motion:reduce){.lc-nights label,.lc-nights label:active{transition:none;transform:none}}
+</style>
+</head>
+<body data-home="index.html">
+
+<aside class="notice" aria-label="Concept preview">
+  <div class="wrap"><b>Concept preview</b><span>La Cave’s hours and offer from its own site and the Old Pasadena directory, read 21 October 2026; cheese board price from the live store, 22 October 2026.</span><span class="more">Table booking and the pairing evening are examples; nothing is held or sent.</span></div>
+</aside>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
+    <nav class="nav" aria-label="Primary">
+      <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html" aria-current="page">La Cave</a><a href="story.html">Chef Romy</a>
+    </nav>
+    <div class="top-actions">
+      <a class="btn btn-brand" href="menu.html">Order for pickup</a>
+      <a class="cartbtn" href="index.html#pickup" data-cart-open aria-label="Your bag, 0 items"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="badge" data-cart-count>0</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero soir" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <p class="kick rise"><span>Vegan wine bar</span><span>Old Pasadena</span></p>
+      <h1 id="h1" class="rise d1">La Cave, next door at 163. <em>Un verre, un éclair.</em></h1>
+      <p class="lead rise d2">One glass, one éclair. La Cave is the pâtisserie’s evening, one door down: organic, biodynamic and vegan wines, mostly French varietals from California and abroad, Rebel Cheese boards, and plated desserts from the kitchen next door with a glass poured to match.</p>
+      <div class="hero-actions rise d3">
+        <a class="btn btn-ivory" href="#reserve">Reserve a table</a>
+        <a class="btn btn-line" href="#board">The cheese board, $100</a>
+      </div>
+    </div>
+    <figure class="hero-media rise d2" data-grid-break>
+      <img src="img/cheese-board-1-800.jpg" srcset="img/cheese-board-1-800.jpg 800w, img/cheese-board-1.jpg 1600w" sizes="(min-width:900px) 46vw, 100vw" width="1600" height="1066" alt="The cheese board on a wine-barrel table: vegan cheeses, baguette toasts, dried apricots, dates, grapes and strawberries" fetchpriority="high">
+      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cave-open>Wed to Sun, 3 to 9 pm</span><small>published hours</small></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="facts" role="region" aria-label="La Cave at a glance">
+  <div class="wrap">
+    <div><strong>163</strong><span>W Green St, next to the pâtisserie at 169</span></div>
+    <div><strong>3 to 9 pm</strong><span>Wednesday to Sunday</span></div>
+    <div><strong>$100</strong><span>cheese board for ten, on the live store</span></div>
+    <div><strong>10.6K</strong><span>following La Cave on Instagram, 21 Oct 2026</span></div>
+  </div>
+</div>
+
+<section id="carte" aria-labelledby="h-carte">
+  <div class="wrap lc-two">
+    <div class="lc-carte">
+      <h2 id="h-carte">What La Cave pours and plates.</h2>
+      <p class="note-sm">From La Cave’s own site and the Old Pasadena directory, read 21 October 2026. The wine list itself goes on this page with the build, kept up to date by the bar.</p>
+      <dl class="lc-menu">
+        <div><dt>Les vins</dt><dd>Organic, biodynamic and vegan wines, mostly French varietals, from California and abroad.</dd></div>
+        <div><dt>Les plateaux</dt><dd>Boards built on Rebel Cheese, with baguette, dried fruit and nuts.</dd></div>
+        <div><dt>Les petits plats</dt><dd>Small plates and savory French classics.</dd></div>
+        <div><dt>Le dessert</dt><dd>Plated desserts from the pâtisserie next door, paired with wine.</dd></div>
+        <div><dt>Les soirées</dt><dd>Happy hour, Saturday nights and events, announced on La Cave’s Instagram.</dd></div>
+      </dl>
+    </div>
+    <aside class="panel lc-board" id="board" aria-labelledby="h-board">
+      <span class="lc-tag">On the live store</span>
+      <h3 id="h-board">The cheese board, for ten.</h3>
+      <img class="lc-thumb" src="img/cheese-board-1-800.jpg" width="800" height="533" alt="The cheese board for ten, on a wine-barrel table" loading="lazy">
+      <p>Rebel Cheese, French baguette, dried fruit and nuts. A charcuterie version on request. Pickup only, at 169 W Green St.</p>
+      <div class="row"><span class="price">$100</span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board, serves 10" data-price="100" data-variant="45433279971516" data-image="img/cheese-board-1-800.jpg" data-meta="Pickup only">Add the board</button></div>
+      <p class="note-sm">Price and details from the store listing, read 22 October 2026. It checks out on id-eclair.com, where pickup is usually ready in 24 hours. <a href="https://www.id-eclair.com/products/cheese-board" target="_blank" rel="noopener">See the listing</a>.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="pickup" id="reserve" aria-labelledby="h-reserve">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-reserve">Reserve a table in three taps.</h2>
+      <p>How booking works if La Cave takes reservations, which it has not said yet. Try it: nothing is held and nothing is sent. If the bar stays walk-in only, this block becomes a note on how to find the door.</p>
+    </div>
+    <div class="steps">
+      <ol>
+        <li><div><h3>Choose the party and the night</h3><p>Only the nights La Cave opens appear, Wednesday to Sunday, and only the times still ahead of you tonight.</p></div></li>
+        <li><div><h3>The calendar holds the table</h3><p>In the build this runs on Sesami, the booking app the plan already prices for the masterclass: $19 a month for five calendars, with the confirmation sent by email.</p></div></li>
+        <li><div><h3>One Reserve button on every map</h3><p>Google and Apple Maps both take a Reserve link, so a search for a wine bar in Old Pasadena ends at this page instead of a phone call.</p></div></li>
+      </ol>
+      <div class="slot" role="group" aria-labelledby="res-h" data-res>
+        <div class="slot-head"><h3 id="res-h">Your table</h3><span class="ex">Example</span></div>
+        <p class="lc-lab" id="res-size-l">Guests</p>
+        <div class="lc-sizes" role="group" aria-labelledby="res-size-l" data-res-sizes>
+          <button class="chip" type="button" data-rsize="2" aria-pressed="true">2</button>
+          <button class="chip" type="button" data-rsize="3" aria-pressed="false">3</button>
+          <button class="chip" type="button" data-rsize="4" aria-pressed="false">4</button>
+          <button class="chip" type="button" data-rsize="5" aria-pressed="false">5</button>
+          <button class="chip" type="button" data-rsize="6" aria-pressed="false">6</button>
+        </div>
+        <p class="lc-lab" id="res-day-l">Night</p>
+        <div class="days" role="group" aria-labelledby="res-day-l" data-res-days>
+          <button class="chip" type="button" aria-pressed="true"><b>Wed</b>&nbsp;</button>
+          <button class="chip" type="button" aria-pressed="false"><b>Thu</b>&nbsp;</button>
+          <button class="chip" type="button" aria-pressed="false"><b>Fri</b>&nbsp;</button>
+          <button class="chip" type="button" aria-pressed="false"><b>Sat</b>&nbsp;</button>
+        </div>
+        <p class="lc-lab" id="res-time-l">Time</p>
+        <div class="times lc-times" role="group" aria-labelledby="res-time-l" data-res-times>
+          <button class="chip" type="button" aria-pressed="false">3:00</button>
+          <button class="chip" type="button" aria-pressed="false">4:00</button>
+          <button class="chip" type="button" aria-pressed="false">5:00</button>
+          <button class="chip" type="button" aria-pressed="false">6:00</button>
+          <button class="chip" type="button" aria-pressed="true">7:00</button>
+          <button class="chip" type="button" aria-pressed="false">8:00</button>
+        </div>
+        <div class="foot"><span>Example times inside the published 3 to 9 pm</span><b data-res-out>Table for 2</b></div>
+        <div class="actions lc-hold"><button class="btn btn-brand btn-sm" type="button" data-res-hold>Hold this table</button></div>
+        <p class="lc-msg" data-res-msg role="status" hidden></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="soirees" aria-labelledby="h-soirees">
+  <div class="wrap lc-pair">
+    <figure class="lc-pair-media">
+      <img src="img/shop-truffle-box-800.jpg" srcset="img/shop-truffle-box-800.jpg 800w, img/shop-truffle-box.jpg 1600w" sizes="(min-width:900px) 40vw, 100vw" width="1600" height="1601" alt="A white iD Éclair box of cocoa-dusted truffles on a dark, glossy table" loading="lazy">
+      <figcaption class="lc-ticket"><b>Soirée accords</b><span class="ex">Example</span><span class="meta">Plated dessert course · paired pours · 21 and over</span><span class="seats" role="img" aria-label="Example seat map, two seats left"><i></i><i></i><i></i><i></i><i></i><i></i><i class="open"></i><i class="open"></i></span></figcaption>
+    </figure>
+    <div>
+      <div class="sec-head tight">
+        <h2 id="h-soirees">Soirée accords: the dessert first, then the glass.</h2>
+        <p><span class="ex">Concept</span> A dated evening at La Cave: a plated dessert course from the pastry kitchen, with pours La Cave chooses for each plate. Seats are capped and sold as tickets on this site, 21 and over confirmed at checkout and ID checked at the door. La Cave sets the nights, the menu and the price.</p>
+      </div>
+      <p class="note-sm">Weeknight events sell best when they are announced three to four weeks ahead (SevenRooms, October 2026), so the first date goes to this list before anywhere else.</p>
+      <form class="lc-form" data-wait novalidate aria-labelledby="wait-h">
+        <h3 id="wait-h">Join the waitlist</h3>
+        <div class="lc-field"><label for="w-email">Email</label><input id="w-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+        <div class="lc-field">
+          <span class="lc-group-l" id="w-nights-l">Nights that suit you</span>
+          <div class="lc-nights" role="group" aria-labelledby="w-nights-l">
+            <input type="checkbox" id="n-wed" name="night" value="Wednesday"><label for="n-wed">Wed</label>
+            <input type="checkbox" id="n-thu" name="night" value="Thursday"><label for="n-thu">Thu</label>
+            <input type="checkbox" id="n-fri" name="night" value="Friday"><label for="n-fri">Fri</label>
+            <input type="checkbox" id="n-sat" name="night" value="Saturday"><label for="n-sat">Sat</label>
+            <input type="checkbox" id="n-sun" name="night" value="Sunday"><label for="n-sun">Sun</label>
+          </div>
+        </div>
+        <div class="lc-row">
+          <div class="lc-field"><label for="w-seats">Seats</label><select id="w-seats" name="seats"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div>
+          <div class="lc-check"><input id="w-21" name="adult" type="checkbox" required><label for="w-21">I am 21 or over</label></div>
+        </div>
+        <p class="lc-msg" data-wait-msg role="alert" hidden></p>
+        <div class="actions"><button class="btn btn-brand" type="submit">Save my place</button></div>
+        <p class="note-sm">Saved on this device only; nothing is sent. In the build, the list feeds one email to guests who opted in and are 21 or over.</p>
+      </form>
+      <div class="lc-done" data-wait-done tabindex="-1" hidden>
+        <h3>You are on the list.</h3>
+        <p data-wait-sum>Saved on this device.</p>
+        <button class="link" type="button" data-wait-remove>Remove me from this device</button>
+      </div>
+      <div class="alt"><span>Take the chocolate home: dark chocolate truffles, 200 g with an orange note, $15 on the live store.</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15" data-variant="43134021828796" data-image="img/dark-chocolate-truffles-800.jpg">Add</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-deep" id="visit" aria-labelledby="h-visit">
+  <div class="wrap lc-visit">
+    <div>
+      <h2 id="h-visit">Find the door at 163.</h2>
+      <p>One door down from the pâtisserie, on the tree-shaded stretch of Green Street in Old Pasadena. Come for an éclair at 169 in the morning, and for the glass at 163 after three.</p>
+      <dl class="lc-facts">
+        <div><dt>Address</dt><dd>163 W Green St, Pasadena, CA 91105</dd></div>
+        <div><dt>Hours</dt><dd>Wednesday to Sunday, 3 to 9 pm</dd></div>
+        <div><dt>Wine</dt><dd>Served to guests 21 and over</dd></div>
+        <div><dt>Online</dt><dd><a href="https://www.instagram.com/lacavepasadena/" target="_blank" rel="noopener">@lacavepasadena</a> on Instagram · <a href="https://www.lacave.la" target="_blank" rel="noopener">lacave.la</a></dd></div>
+      </dl>
+      <div class="actions"><a class="btn btn-brand" href="https://maps.apple.com/?q=163+W+Green+St,+Pasadena,+CA+91105" target="_blank" rel="noopener">Open in Maps</a><a class="btn btn-ghost" href="#reserve">Reserve a table</a></div>
+      <p class="note-sm">La Cave’s own site gives 169 W Green St and ZIP 91015; Yelp, HappyCow and the Old Pasadena directory give 163 W Green St, 91105. One address goes on every listing at launch, once the bar confirms it.</p>
+    </div>
+    <div class="panel">
+      <h3 class="lc-side-h">Before the wine, the pâtisserie.</h3>
+      <p>The chef behind both doors trained at a three-Michelin-star kitchen and makes every pastry from plants. Order éclairs for pickup at 169, or read how he got to Green Street.</p>
+      <div class="actions"><a class="btn btn-brand btn-sm" href="menu.html">Order for pickup</a><a class="link" href="story.html">Chef Romy’s story</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+    </div>
+    <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
+    <div><h3>Visit</h3><ul><li><a href="classes.html">Masterclass</a></li><li><a href="la-cave.html" aria-current="page">La Cave</a></li><li><a href="story.html">Chef Romy</a></li></ul></div>
+    <div><h3>Shop</h3><ul><li><a href="menu.html#ships">Gifts that ship</a></li><li><a href="merch.html">Merchandise</a></li><li><a href="https://www.id-eclair.com" target="_blank" rel="noopener">The live store</a></li></ul></div>
+  </div>
+  <button class="cartpill" type="button" data-cart-open data-cart-pill><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
+</footer>
+
+<nav class="bar" aria-label="Sections">
+  <a href="menu.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Menu</a>
+  <a href="index.html#box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M3 11h18M8 7V5a4 4 0 0 1 8 0v2"/></svg>Box</a>
+  <a href="index.html#pickup" data-cart-open data-section="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Bag<span class="badge" data-cart-count>0</span></a>
+  <a href="cakes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M5 20v-6a7 7 0 0 1 14 0v6M12 7V4M9 10c1 1 2 1 3 0s2-1 3 0"/></svg>Cakes</a>
+  <a href="classes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Classes</a>
+</nav>
+
+<script>
+/* la-cave.html only: open-now line from the published hours, the example table picker, the local waitlist. */
+(function () {
+  'use strict';
+  var TZ = 'America/Los_Angeles', OPEN = [3, 4, 5, 6, 0], FROM = 15 * 60, TO = 21 * 60;
+  var TIMES = ['3:00', '4:00', '5:00', '6:00', '7:00', '8:00']; /* example seatings inside 3 to 9 pm */
+  var DOW = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var SH = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  var n = (function () {
+    var o = {};
+    new Intl.DateTimeFormat('en-US', { timeZone: TZ, year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' })
+      .formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; });
+    return { y: +o.year, m: +o.month, d: +o.day, min: (+o.hour % 24) * 60 + (+o.minute) };
+  })();
+  function day(i) { var dt = new Date(Date.UTC(n.y, n.m - 1, n.d + i)); return { i: i, dt: dt, dow: dt.getUTCDay(), key: dt.toISOString().slice(0, 10) }; }
+  function isOpen(d) { return OPEN.indexOf(d.dow) >= 0; }
+
+  /* open-now chip */
+  var st = $('[data-cave-open]');
+  if (st) {
+    var t0 = day(0), txt = '';
+    if (isOpen(t0) && n.min < FROM) txt = 'Opens today at 3 pm';
+    else if (isOpen(t0) && n.min < TO) txt = 'Open now, until 9 pm';
+    else for (var k = 1; k < 8; k++) { var dk = day(k); if (isOpen(dk)) { txt = 'Opens ' + (k === 1 ? 'tomorrow' : DOW[dk.dow]) + ' at 3 pm'; break; } }
+    if (txt) st.textContent = txt;
+  }
+
+  /* example table picker */
+  var R = $('[data-res]');
+  if (R) {
+    var mins = function (t) { var p = t.split(':'); return (+p[0] + 12) * 60 + (+p[1]); };
+    var nights = [];
+    for (var j = 0; nights.length < 4 && j < 12; j++) {
+      var d = day(j); if (!isOpen(d)) continue;
+      var times = TIMES.map(function (x) { return { t: x, ok: j > 0 || mins(x) >= n.min + 30 }; });
+      if (!times.some(function (x) { return x.ok; })) continue;
+      nights.push({ key: d.key, top: j === 0 ? 'Tonight' : SH[d.dow], sub: MON[d.dt.getUTCMonth()] + ' ' + d.dt.getUTCDate(),
+        long: j === 0 ? 'tonight' : DOW[d.dow] + ' ' + MON[d.dt.getUTCMonth()] + ' ' + d.dt.getUTCDate(), times: times });
+    }
+    var size = 2, night = nights[0], time = null;
+    var pickTime = function () {
+      var ok = night.times.filter(function (x) { return x.ok; });
+      var keep = ok.filter(function (x) { return x.t === time; })[0];
+      var seven = ok.filter(function (x) { return x.t === '7:00'; })[0];
+      time = keep ? keep.t : seven ? seven.t : ok[0].t;
+    };
+    var paint = function (focusSel) {
+      $('[data-res-sizes]', R).innerHTML = [2, 3, 4, 5, 6].map(function (s) {
+        return '<button class="chip" type="button" data-rsize="' + s + '" aria-pressed="' + (s === size) + '" aria-label="' + s + ' guests">' + s + '</button>';
+      }).join('');
+      $('[data-res-days]', R).innerHTML = nights.map(function (x) {
+        return '<button class="chip" type="button" data-rday="' + x.key + '" aria-pressed="' + (x === night) + '"><b>' + x.top + '</b>' + x.sub + '</button>';
+      }).join('');
+      $('[data-res-times]', R).innerHTML = night.times.map(function (x) {
+        return '<button class="chip" type="button" data-rtime="' + x.t + '" aria-pressed="' + (x.t === time) + '"' + (x.ok ? '' : ' aria-disabled="true" tabindex="-1"') + ' aria-label="' + x.t + ' pm' + (x.ok ? '' : ', past') + '">' + x.t + '</button>';
+      }).join('');
+      $('[data-res-out]', R).textContent = 'Table for ' + size + ', ' + (night.top === 'Tonight' ? 'tonight' : night.top + ' ' + night.sub) + ', ' + time + ' pm';
+      if (focusSel) { var f = $(focusSel, R); if (f) f.focus(); }
+    };
+    if (night) {
+      pickTime(); paint();
+      R.addEventListener('click', function (e) {
+        var b = e.target.closest('button'); if (!b || !R.contains(b)) return;
+        var msg = $('[data-res-msg]', R);
+        if (b.hasAttribute('data-rsize')) { size = +b.getAttribute('data-rsize'); paint('[data-rsize="' + size + '"]'); msg.hidden = true; }
+        else if (b.hasAttribute('data-rday')) { night = nights.filter(function (x) { return x.key === b.getAttribute('data-rday'); })[0] || night; pickTime(); paint('[data-rday="' + night.key + '"]'); msg.hidden = true; }
+        else if (b.hasAttribute('data-rtime')) { if (b.getAttribute('aria-disabled') === 'true') return; time = b.getAttribute('data-rtime'); paint('[data-rtime="' + time + '"]'); msg.hidden = true; }
+        else if (b.hasAttribute('data-res-hold')) {
+          msg.hidden = false;
+          msg.textContent = 'Example only: no table is held and nothing was sent. In the build, La Cave’s calendar confirms a table for ' + size + ', ' + night.long + ' at ' + time + ' pm, by email.';
+        }
+      });
+    }
+  }
+
+  /* pairing-evening waitlist, kept in this browser only */
+  var F = $('[data-wait]'), done = $('[data-wait-done]'), KEY = 'ide.lacave.waitlist.v1', mem = null;
+  if (F && done) {
+    var get = function () { try { return JSON.parse(localStorage.getItem(KEY) || 'null') || mem; } catch (e) { return mem; } };
+    var list = function (a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' or ' + a[a.length - 1]; };
+    var show = function (w, focus) {
+      F.hidden = !!w; done.hidden = !w;
+      if (w) {
+        $('[data-wait-sum]', done).textContent = 'Saved on this device: ' + w.seats + (w.seats === 1 ? ' seat' : ' seats') + (w.nights.length ? ', ' + list(w.nights) : ', any night') + '. In the build, the first date goes to ' + w.email + ' before anywhere else.';
+        if (focus) done.focus();
+      }
+    };
+    show(get());
+    F.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = F.elements.email, adult = F.elements.adult, msg = $('[data-wait-msg]', F);
+      var say = function (t, el) { msg.hidden = false; msg.textContent = t; el.focus(); };
+      if (!email.value.trim() || !email.checkValidity()) return say('Add an email address, such as name@domain.com, so the shop can send the date.', email);
+      if (!adult.checked) return say('Tick the box to confirm you are 21 or over; wine is part of the evening.', adult);
+      msg.hidden = true;
+      var w = { email: email.value.trim(), nights: $$('input[name="night"]:checked', F).map(function (i) { return i.value; }), seats: +F.elements.seats.value, saved: new Date().toISOString() };
+      mem = w;
+      try { localStorage.setItem(KEY, JSON.stringify(w)); } catch (err) { /* private mode: memory only */ }
+      show(w, true);
+    });
+    done.addEventListener('click', function (e) {
+      if (!e.target.closest('[data-wait-remove]')) return;
+      mem = null;
+      try { localStorage.removeItem(KEY); } catch (err) { /* nothing stored */ }
+      F.reset(); show(null); F.elements.email.focus();
+    });
+  }
+})();
+</script>
+</body>
+</html>

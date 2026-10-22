@@ -1,0 +1,1829 @@
+{
+ "generated": "2026-10-22T00:59:26",
+ "engagement": "eng-0002",
+ "sizes": {
+  "jpg": "1600 wide (or source width if smaller), quality 82, progressive",
+  "jpg_800": "800 wide, quality 82",
+  "webp": "1600 wide, quality 80"
+ },
+ "color": "sources carry compact sRGB profiles (c2ci/uRGB), so no gamut shift; EXIF orientation applied, metadata stripped",
+ "upscaler": {
+  "tool": "Upscayl.app bundled upscayl-bin (Real-ESRGAN ncnn-vulkan fork, Apple M5 GPU)",
+  "model": "upscayl-standard-4x",
+  "applied_to": "sources narrower than 1600 px",
+  "others": "Lanczos downscale from 2048 px CDN render"
+ },
+ "pre_existing_files_kept": [
+  "cake-caramel.jpg",
+  "cake-chocolat.jpg",
+  "cake-citron.jpg",
+  "cake-framboise.jpg",
+  "caneles.jpg",
+  "cheese-board.jpg",
+  "desserts-in-jar.jpg",
+  "gift-basket.jpg",
+  "golden-ticket.jpg",
+  "logo.png",
+  "macarons.jpg",
+  "truffles.jpg"
+ ],
+ "naming": "<handle>.jpg/-800.jpg/.webp = primary image; <handle>-<n> = image n of that product. Where a demo v2 file already used <handle>.jpg (caneles, cheese-board, golden-ticket, macarons) the new primary set is <handle>-<n> so the v2 files stay as they were.",
+ "images": [
+  {
+   "name": "thanksgiving-box-for-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/thanksgiving-box-for-2-1.jpg",
+   "source_size": [
+    2048,
+    1366
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/MG_0620.jpg?v=1762453346&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "thanksgiving-box-for-2.jpg",
+     "width": 1600,
+     "height": 1067,
+     "bytes": 244762
+    },
+    "jpg_800": {
+     "file": "thanksgiving-box-for-2-800.jpg",
+     "width": 800,
+     "height": 534,
+     "bytes": 67526
+    },
+    "webp": {
+     "file": "thanksgiving-box-for-2.webp",
+     "width": 1600,
+     "height": 1067,
+     "bytes": 146298
+    }
+   },
+   "primary": true,
+   "handle": "thanksgiving-box-for-2",
+   "n": 1,
+   "title": "Thanksgiving box for 2",
+   "note": "seasonal; date-bound product"
+  },
+  {
+   "name": "thanksgiving-box-for-2-3",
+   "kind": "product",
+   "source_file": "site_audit/images_full/thanksgiving-box-for-2-3.jpg",
+   "source_size": [
+    2048,
+    1366
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/MG_0663.jpg?v=1762453346&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "thanksgiving-box-for-2-3.jpg",
+     "width": 1600,
+     "height": 1067,
+     "bytes": 193070
+    },
+    "jpg_800": {
+     "file": "thanksgiving-box-for-2-3-800.jpg",
+     "width": 800,
+     "height": 534,
+     "bytes": 62779
+    },
+    "webp": {
+     "file": "thanksgiving-box-for-2-3.webp",
+     "width": 1600,
+     "height": 1067,
+     "bytes": 97818
+    }
+   },
+   "primary": false,
+   "handle": "thanksgiving-box-for-2",
+   "n": 3,
+   "title": "Thanksgiving box for 2",
+   "note": "seasonal; date-bound product"
+  },
+  {
+   "name": "thanksgiving-box-for-2-4",
+   "kind": "product",
+   "source_file": "site_audit/images_full/thanksgiving-box-for-2-4.jpg",
+   "source_size": [
+    2048,
+    1366
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/MG_0683.jpg?v=1762453349&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "thanksgiving-box-for-2-4.jpg",
+     "width": 1600,
+     "height": 1067,
+     "bytes": 235979
+    },
+    "jpg_800": {
+     "file": "thanksgiving-box-for-2-4-800.jpg",
+     "width": 800,
+     "height": 534,
+     "bytes": 75293
+    },
+    "webp": {
+     "file": "thanksgiving-box-for-2-4.webp",
+     "width": 1600,
+     "height": 1067,
+     "bytes": 135616
+    }
+   },
+   "primary": false,
+   "handle": "thanksgiving-box-for-2",
+   "n": 4,
+   "title": "Thanksgiving box for 2",
+   "note": "seasonal; date-bound product"
+  },
+  {
+   "name": "golden-ticket-3",
+   "kind": "product",
+   "source_file": "site_audit/images_full/golden-ticket-3.jpg",
+   "source_size": [
+    2048,
+    2731
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/IMG_7476.jpg?v=1765664036&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "golden-ticket-3.jpg",
+     "width": 1600,
+     "height": 2134,
+     "bytes": 355691
+    },
+    "jpg_800": {
+     "file": "golden-ticket-3-800.jpg",
+     "width": 800,
+     "height": 1067,
+     "bytes": 118603
+    },
+    "webp": {
+     "file": "golden-ticket-3.webp",
+     "width": 1600,
+     "height": 2134,
+     "bytes": 163370
+    }
+   },
+   "primary": true,
+   "handle": "golden-ticket",
+   "n": 3,
+   "title": "Golden Ticket",
+   "note": "primary is the chef-at-work photo (also the About page photo); doubles as the story photo"
+  },
+  {
+   "name": "cheese-board-1",
+   "kind": "product",
+   "source_file": "site_audit/images_full/cheese-board-1.jpg",
+   "source_size": [
+    2048,
+    1365
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/MG_9470.jpg?v=1763150409&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "cheese-board-1.jpg",
+     "width": 1600,
+     "height": 1066,
+     "bytes": 283031
+    },
+    "jpg_800": {
+     "file": "cheese-board-1-800.jpg",
+     "width": 800,
+     "height": 533,
+     "bytes": 89446
+    },
+    "webp": {
+     "file": "cheese-board-1.webp",
+     "width": 1600,
+     "height": 1066,
+     "bytes": 177654
+    }
+   },
+   "primary": true,
+   "handle": "cheese-board",
+   "n": 1,
+   "title": "Cheese Board",
+   "note": "phone photo on a counter, not the studio set"
+  },
+  {
+   "name": "dubai-chocolate-vegan",
+   "kind": "product",
+   "source_file": "site_audit/images_full/dubai-chocolate-vegan-1.jpg",
+   "source_size": [
+    2048,
+    1152
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/IMG_2420.jpg?v=1746148626&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "dubai-chocolate-vegan.jpg",
+     "width": 1600,
+     "height": 900,
+     "bytes": 184496
+    },
+    "jpg_800": {
+     "file": "dubai-chocolate-vegan-800.jpg",
+     "width": 800,
+     "height": 450,
+     "bytes": 60825
+    },
+    "webp": {
+     "file": "dubai-chocolate-vegan.webp",
+     "width": 1600,
+     "height": 900,
+     "bytes": 97588
+    }
+   },
+   "primary": true,
+   "handle": "dubai-chocolate-vegan",
+   "n": 1,
+   "title": "Dubai chocolate vegan!",
+   "note": "phone photo on a counter, not the studio set"
+  },
+  {
+   "name": "dark-truffles-wholesale",
+   "kind": "product",
+   "source_file": "site_audit/images_full/dark-truffles-wholesale-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2057.jpg?v=1740688925&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "dark-truffles-wholesale.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 256516
+    },
+    "jpg_800": {
+     "file": "dark-truffles-wholesale-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 70575
+    },
+    "webp": {
+     "file": "dark-truffles-wholesale.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 158680
+    }
+   },
+   "primary": true,
+   "handle": "dark-truffles-wholesale",
+   "n": 1,
+   "title": "Dark truffles wholesale 600g box",
+   "note": "same photograph as dark-chocolate-truffles (identical bytes upstream)"
+  },
+  {
+   "name": "white-chocolate-truffles",
+   "kind": "product",
+   "source_file": "site_audit/images_full/white-chocolate-truffles-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2016.jpg?v=1740688683&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "white-chocolate-truffles.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 249280
+    },
+    "jpg_800": {
+     "file": "white-chocolate-truffles-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 72741
+    },
+    "webp": {
+     "file": "white-chocolate-truffles.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 136234
+    }
+   },
+   "primary": true,
+   "handle": "white-chocolate-truffles",
+   "n": 1,
+   "title": "White chocolate truffles"
+  },
+  {
+   "name": "white-chocolate-truffles-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/white-chocolate-truffles-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2011.jpg?v=1740688705&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "white-chocolate-truffles-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 180241
+    },
+    "jpg_800": {
+     "file": "white-chocolate-truffles-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 44063
+    },
+    "webp": {
+     "file": "white-chocolate-truffles-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 77852
+    }
+   },
+   "primary": false,
+   "handle": "white-chocolate-truffles",
+   "n": 2,
+   "title": "White chocolate truffles"
+  },
+  {
+   "name": "dark-chocolate-truffles",
+   "kind": "product",
+   "source_file": "site_audit/images_full/dark-chocolate-truffles-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2057.jpg?v=1740688925&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "dark-chocolate-truffles.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 256516
+    },
+    "jpg_800": {
+     "file": "dark-chocolate-truffles-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 70575
+    },
+    "webp": {
+     "file": "dark-chocolate-truffles.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 158680
+    }
+   },
+   "primary": true,
+   "handle": "dark-chocolate-truffles",
+   "n": 1,
+   "title": "Dark chocolate truffles"
+  },
+  {
+   "name": "kushyflakes",
+   "kind": "product",
+   "source_file": "site_audit/images_full/kushyflakes-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2372.jpg?v=1740688133&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "kushyflakes.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 380828
+    },
+    "jpg_800": {
+     "file": "kushyflakes-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 110123
+    },
+    "webp": {
+     "file": "kushyflakes.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 278036
+    }
+   },
+   "primary": true,
+   "handle": "kushyflakes",
+   "n": 1,
+   "title": "Kushyflakes"
+  },
+  {
+   "name": "kushyflakes-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/kushyflakes-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2367.jpg?v=1740688155&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "kushyflakes-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 192487
+    },
+    "jpg_800": {
+     "file": "kushyflakes-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 54009
+    },
+    "webp": {
+     "file": "kushyflakes-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 99514
+    }
+   },
+   "primary": false,
+   "handle": "kushyflakes",
+   "n": 2,
+   "title": "Kushyflakes"
+  },
+  {
+   "name": "gift-basket-small",
+   "kind": "product",
+   "source_file": "site_audit/images_full/gift-basket-small-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/96E62574-9899-48F3-ADFD-2A350EAEA6D6.jpg?v=1738252115&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "gift-basket-small.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 243913
+    },
+    "jpg_800": {
+     "file": "gift-basket-small-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 79398
+    },
+    "webp": {
+     "file": "gift-basket-small.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 109082
+    }
+   },
+   "primary": true,
+   "handle": "gift-basket-small",
+   "n": 1,
+   "title": "Gift basket small"
+  },
+  {
+   "name": "gift-basket-large",
+   "kind": "product",
+   "source_file": "site_audit/images_full/gift-basket-large-1.jpg",
+   "source_size": [
+    2048,
+    2049
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/4AF15104-1E10-4C5D-883B-B754E9A8E955.jpg?v=1738252061&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "gift-basket-large.jpg",
+     "width": 1600,
+     "height": 1601,
+     "bytes": 504842
+    },
+    "jpg_800": {
+     "file": "gift-basket-large-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 146789
+    },
+    "webp": {
+     "file": "gift-basket-large.webp",
+     "width": 1600,
+     "height": 1601,
+     "bytes": 353806
+    }
+   },
+   "primary": true,
+   "handle": "gift-basket-large",
+   "n": 1,
+   "title": "Gift basket large"
+  },
+  {
+   "name": "pineapple-vanilla-jam",
+   "kind": "product",
+   "source_file": "site_audit/images_full/pineapple-vanilla-jam-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2389.jpg?v=1740688390&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "pineapple-vanilla-jam.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 142690
+    },
+    "jpg_800": {
+     "file": "pineapple-vanilla-jam-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 45208
+    },
+    "webp": {
+     "file": "pineapple-vanilla-jam.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 61166
+    }
+   },
+   "primary": true,
+   "handle": "pineapple-vanilla-jam",
+   "n": 1,
+   "title": "Pineapple Vanilla Jam"
+  },
+  {
+   "name": "caneles-1",
+   "kind": "product",
+   "source_file": "site_audit/images_full/caneles-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_1880.jpg?v=1740687776&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "caneles-1.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 336408
+    },
+    "jpg_800": {
+     "file": "caneles-1-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 86035
+    },
+    "webp": {
+     "file": "caneles-1.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 232914
+    }
+   },
+   "primary": true,
+   "handle": "caneles",
+   "n": 1,
+   "title": "Cannelés by 3, Vegan Gluten Free"
+  },
+  {
+   "name": "macarons-1",
+   "kind": "product",
+   "source_file": "site_audit/images_full/macarons-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2085.jpg?v=1740687892&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "macarons-1.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 268222
+    },
+    "jpg_800": {
+     "file": "macarons-1-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 74659
+    },
+    "webp": {
+     "file": "macarons-1.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 160622
+    }
+   },
+   "primary": true,
+   "handle": "macarons",
+   "n": 1,
+   "title": "Macarons Assorted Vegan Gluten Free"
+  },
+  {
+   "name": "macarons-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/macarons-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2072.jpg?v=1740687915&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "macarons-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 244184
+    },
+    "jpg_800": {
+     "file": "macarons-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 67945
+    },
+    "webp": {
+     "file": "macarons-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 129892
+    }
+   },
+   "primary": false,
+   "handle": "macarons",
+   "n": 2,
+   "title": "Macarons Assorted Vegan Gluten Free"
+  },
+  {
+   "name": "red-velvet-cookie-vegan-gluten-free-wholesale-by-24",
+   "kind": "product",
+   "source_file": "site_audit/images_full/red-velvet-cookie-vegan-gluten-free-wholesale-by-24-1.png",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/IMG_2062.heic?v=1738252466&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "red-velvet-cookie-vegan-gluten-free-wholesale-by-24.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 379797
+    },
+    "jpg_800": {
+     "file": "red-velvet-cookie-vegan-gluten-free-wholesale-by-24-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 123894
+    },
+    "webp": {
+     "file": "red-velvet-cookie-vegan-gluten-free-wholesale-by-24.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 265972
+    }
+   },
+   "primary": true,
+   "handle": "red-velvet-cookie-vegan-gluten-free-wholesale-by-24",
+   "n": 1,
+   "title": "Red Velvet Cookie Vegan Gluten Free Wholesale by 22/24"
+  },
+  {
+   "name": "chocolate-fingers-sables-poches",
+   "kind": "product",
+   "source_file": "site_audit/images_full/chocolate-fingers-sables-poches-1.jpg",
+   "source_size": [
+    2048,
+    2047
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2332.jpg?v=1740687669&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "chocolate-fingers-sables-poches.jpg",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 388424
+    },
+    "jpg_800": {
+     "file": "chocolate-fingers-sables-poches-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 101901
+    },
+    "webp": {
+     "file": "chocolate-fingers-sables-poches.webp",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 279202
+    }
+   },
+   "primary": true,
+   "handle": "chocolate-fingers-sables-poches",
+   "n": 1,
+   "title": "Chocolate fingers sablés pochés"
+  },
+  {
+   "name": "chocolate-fingers-sables-poches-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/chocolate-fingers-sables-poches-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2328.jpg?v=1740687684&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "chocolate-fingers-sables-poches-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 116664
+    },
+    "jpg_800": {
+     "file": "chocolate-fingers-sables-poches-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 36945
+    },
+    "webp": {
+     "file": "chocolate-fingers-sables-poches-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 47384
+    }
+   },
+   "primary": false,
+   "handle": "chocolate-fingers-sables-poches",
+   "n": 2,
+   "title": "Chocolate fingers sablés pochés"
+  },
+  {
+   "name": "diamants-biscuit-by-6",
+   "kind": "product",
+   "source_file": "site_audit/images_full/diamants-biscuit-by-6-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2260.jpg?v=1740688502&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "diamants-biscuit-by-6.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 144469
+    },
+    "jpg_800": {
+     "file": "diamants-biscuit-by-6-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 38813
+    },
+    "webp": {
+     "file": "diamants-biscuit-by-6.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 55392
+    }
+   },
+   "primary": true,
+   "handle": "diamants-biscuit-by-6",
+   "n": 1,
+   "title": "Diamants biscuit by 5"
+  },
+  {
+   "name": "cookie-spoon",
+   "kind": "product",
+   "source_file": "site_audit/images_full/cookie-spoon-1.jpg",
+   "source_size": [
+    2048,
+    2047
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2277.jpg?v=1740687198&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "cookie-spoon.jpg",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 332624
+    },
+    "jpg_800": {
+     "file": "cookie-spoon-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 85407
+    },
+    "webp": {
+     "file": "cookie-spoon.webp",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 217754
+    }
+   },
+   "primary": true,
+   "handle": "cookie-spoon",
+   "n": 1,
+   "title": "Cookie Spoon"
+  },
+  {
+   "name": "cookie-spoon-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/cookie-spoon-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2274.jpg?v=1740687390&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "cookie-spoon-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 98868
+    },
+    "jpg_800": {
+     "file": "cookie-spoon-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 30964
+    },
+    "webp": {
+     "file": "cookie-spoon-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 32576
+    }
+   },
+   "primary": false,
+   "handle": "cookie-spoon",
+   "n": 2,
+   "title": "Cookie Spoon"
+  },
+  {
+   "name": "douceur-tropicale",
+   "kind": "product",
+   "source_file": "site_audit/images_full/douceur-tropicale-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2511.jpg?v=1740689000&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "douceur-tropicale.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 112786
+    },
+    "jpg_800": {
+     "file": "douceur-tropicale-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 33845
+    },
+    "webp": {
+     "file": "douceur-tropicale.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 44614
+    }
+   },
+   "primary": true,
+   "handle": "douceur-tropicale",
+   "n": 1,
+   "title": "Douceur Tropicale"
+  },
+  {
+   "name": "douceur-tropicale-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/douceur-tropicale-2.jpg",
+   "source_size": [
+    2048,
+    2047
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2509.jpg?v=1740689012&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "douceur-tropicale-2.jpg",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 120848
+    },
+    "jpg_800": {
+     "file": "douceur-tropicale-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 37412
+    },
+    "webp": {
+     "file": "douceur-tropicale-2.webp",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 47482
+    }
+   },
+   "primary": false,
+   "handle": "douceur-tropicale",
+   "n": 2,
+   "title": "Douceur Tropicale"
+  },
+  {
+   "name": "noisette-toujours",
+   "kind": "product",
+   "source_file": "site_audit/images_full/noisette-toujours-1.jpg",
+   "source_size": [
+    2048,
+    2047
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2503.jpg?v=1740689082&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "noisette-toujours.jpg",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 134327
+    },
+    "jpg_800": {
+     "file": "noisette-toujours-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 35868
+    },
+    "webp": {
+     "file": "noisette-toujours.webp",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 57882
+    }
+   },
+   "primary": true,
+   "handle": "noisette-toujours",
+   "n": 1,
+   "title": "Noisette Toujours"
+  },
+  {
+   "name": "noisette-toujours-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/noisette-toujours-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2501.jpg?v=1740689095&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "noisette-toujours-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 135144
+    },
+    "jpg_800": {
+     "file": "noisette-toujours-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 40372
+    },
+    "webp": {
+     "file": "noisette-toujours-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 52422
+    }
+   },
+   "primary": false,
+   "handle": "noisette-toujours",
+   "n": 2,
+   "title": "Noisette Toujours"
+  },
+  {
+   "name": "tropical-jam",
+   "kind": "product",
+   "source_file": "site_audit/images_full/tropical-jam-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2387.jpg?v=1740688345&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "tropical-jam.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 133569
+    },
+    "jpg_800": {
+     "file": "tropical-jam-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 44722
+    },
+    "webp": {
+     "file": "tropical-jam.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 54854
+    }
+   },
+   "primary": true,
+   "handle": "tropical-jam",
+   "n": 1,
+   "title": "Tropical Jam"
+  },
+  {
+   "name": "raspberry-jam",
+   "kind": "product",
+   "source_file": "site_audit/images_full/raspberry-jam-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2392.jpg?v=1740688292&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "raspberry-jam.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 184115
+    },
+    "jpg_800": {
+     "file": "raspberry-jam-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 48740
+    },
+    "webp": {
+     "file": "raspberry-jam.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 89716
+    }
+   },
+   "primary": true,
+   "handle": "raspberry-jam",
+   "n": 1,
+   "title": "Raspberry Jam"
+  },
+  {
+   "name": "4-desserts-in-jar",
+   "kind": "product",
+   "source_file": "site_audit/images_full/4-desserts-in-jar-1.jpg",
+   "source_size": [
+    1080,
+    1080
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/products/284150068_5518376904839322_6477465182101753079_n_ad716c75-35d9-41ac-b488-57932e0e6170.jpg?v=1738251479",
+   "upscale": {
+    "tool": "Upscayl upscayl-bin (Real-ESRGAN ncnn, Metal)",
+    "model": "upscayl-standard-4x",
+    "scale": 2,
+    "upscaled_size": [
+     2160,
+     2160
+    ]
+   },
+   "files": {
+    "jpg": {
+     "file": "4-desserts-in-jar.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 262856
+    },
+    "jpg_800": {
+     "file": "4-desserts-in-jar-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 87727
+    },
+    "webp": {
+     "file": "4-desserts-in-jar.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 142494
+    }
+   },
+   "primary": true,
+   "handle": "4-desserts-in-jar",
+   "n": 1,
+   "title": "4 Desserts in Jar"
+  },
+  {
+   "name": "4-desserts-in-jar-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/4-desserts-in-jar-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/products/DSC_0360.jpg?v=1738251538&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "4-desserts-in-jar-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 210044
+    },
+    "jpg_800": {
+     "file": "4-desserts-in-jar-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 68254
+    },
+    "webp": {
+     "file": "4-desserts-in-jar-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 93650
+    }
+   },
+   "primary": false,
+   "handle": "4-desserts-in-jar",
+   "n": 2,
+   "title": "4 Desserts in Jar"
+  },
+  {
+   "name": "custom-logo-vegan-cookie",
+   "kind": "product",
+   "source_file": "site_audit/images_full/custom-logo-vegan-cookie-3.jpg",
+   "source_size": [
+    1140,
+    1520
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/products/il_1140xN.3000908966_8kua.webp?v=1655969437",
+   "upscale": {
+    "tool": "Upscayl upscayl-bin (Real-ESRGAN ncnn, Metal)",
+    "model": "upscayl-standard-4x",
+    "scale": 2,
+    "upscaled_size": [
+     2280,
+     3040
+    ]
+   },
+   "files": {
+    "jpg": {
+     "file": "custom-logo-vegan-cookie.jpg",
+     "width": 1600,
+     "height": 2133,
+     "bytes": 268008
+    },
+    "jpg_800": {
+     "file": "custom-logo-vegan-cookie-800.jpg",
+     "width": 800,
+     "height": 1067,
+     "bytes": 95352
+    },
+    "webp": {
+     "file": "custom-logo-vegan-cookie.webp",
+     "width": 1600,
+     "height": 2133,
+     "bytes": 121260
+    }
+   },
+   "primary": true,
+   "handle": "custom-logo-vegan-cookie",
+   "n": 3,
+   "title": "Custom Printed Cookie"
+  },
+  {
+   "name": "caramel-je-taime",
+   "kind": "product",
+   "source_file": "site_audit/images_full/caramel-je-taime-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2516.jpg?v=1740689190&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "caramel-je-taime.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 142877
+    },
+    "jpg_800": {
+     "file": "caramel-je-taime-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 37212
+    },
+    "webp": {
+     "file": "caramel-je-taime.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 66918
+    }
+   },
+   "primary": true,
+   "handle": "caramel-je-taime",
+   "n": 1,
+   "title": "Caramel je t'aime"
+  },
+  {
+   "name": "caramel-je-taime-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/caramel-je-taime-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2514.jpg?v=1740689209&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "caramel-je-taime-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 149199
+    },
+    "jpg_800": {
+     "file": "caramel-je-taime-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 44769
+    },
+    "webp": {
+     "file": "caramel-je-taime-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 63784
+    }
+   },
+   "primary": false,
+   "handle": "caramel-je-taime",
+   "n": 2,
+   "title": "Caramel je t'aime"
+  },
+  {
+   "name": "chocolat-mon-amour",
+   "kind": "product",
+   "source_file": "site_audit/images_full/chocolat-mon-amour-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2498.jpg?v=1740689280&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "chocolat-mon-amour.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 146443
+    },
+    "jpg_800": {
+     "file": "chocolat-mon-amour-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 40197
+    },
+    "webp": {
+     "file": "chocolat-mon-amour.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 65946
+    }
+   },
+   "primary": true,
+   "handle": "chocolat-mon-amour",
+   "n": 1,
+   "title": "Chocolat mon amour"
+  },
+  {
+   "name": "chocolat-mon-amour-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/chocolat-mon-amour-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2496.jpg?v=1740689299&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "chocolat-mon-amour-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 149539
+    },
+    "jpg_800": {
+     "file": "chocolat-mon-amour-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 43299
+    },
+    "webp": {
+     "file": "chocolat-mon-amour-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 63772
+    }
+   },
+   "primary": false,
+   "handle": "chocolat-mon-amour",
+   "n": 2,
+   "title": "Chocolat mon amour"
+  },
+  {
+   "name": "framboise-cherie",
+   "kind": "product",
+   "source_file": "site_audit/images_full/framboise-cherie-1.jpg",
+   "source_size": [
+    2048,
+    2047
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2493.jpg?v=1740689132&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "framboise-cherie.jpg",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 142185
+    },
+    "jpg_800": {
+     "file": "framboise-cherie-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 36917
+    },
+    "webp": {
+     "file": "framboise-cherie.webp",
+     "width": 1600,
+     "height": 1599,
+     "bytes": 61164
+    }
+   },
+   "primary": true,
+   "handle": "framboise-cherie",
+   "n": 1,
+   "title": "Framboise chérie"
+  },
+  {
+   "name": "framboise-cherie-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/framboise-cherie-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2490.jpg?v=1740689142&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "framboise-cherie-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 132447
+    },
+    "jpg_800": {
+     "file": "framboise-cherie-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 41654
+    },
+    "webp": {
+     "file": "framboise-cherie-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 52398
+    }
+   },
+   "primary": false,
+   "handle": "framboise-cherie",
+   "n": 2,
+   "title": "Framboise chérie"
+  },
+  {
+   "name": "citron-ma-passion",
+   "kind": "product",
+   "source_file": "site_audit/images_full/citron-ma-passion-1.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2507.jpg?v=1740689345&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "citron-ma-passion.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 106389
+    },
+    "jpg_800": {
+     "file": "citron-ma-passion-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 31427
+    },
+    "webp": {
+     "file": "citron-ma-passion.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 39704
+    }
+   },
+   "primary": true,
+   "handle": "citron-ma-passion",
+   "n": 1,
+   "title": "Citron ma passion"
+  },
+  {
+   "name": "citron-ma-passion-2",
+   "kind": "product",
+   "source_file": "site_audit/images_full/citron-ma-passion-2.jpg",
+   "source_size": [
+    2048,
+    2048
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2505.jpg?v=1740689362&width=2048",
+   "upscale": "none (source >= 1600 px, Lanczos downscale + light unsharp)",
+   "files": {
+    "jpg": {
+     "file": "citron-ma-passion-2.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 106064
+    },
+    "jpg_800": {
+     "file": "citron-ma-passion-2-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 32360
+    },
+    "webp": {
+     "file": "citron-ma-passion-2.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 35900
+    }
+   },
+   "primary": false,
+   "handle": "citron-ma-passion",
+   "n": 2,
+   "title": "Citron ma passion"
+  },
+  {
+   "name": "story-chef-competition",
+   "kind": "site_photo",
+   "source_file": "site_audit/images_full/site/blog-competition2017.jpg",
+   "source_size": [
+    1500,
+    1000
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/articles/0-340-PG_28th_Pastry_Competition_2017_0053.jpg?width=2048",
+   "upscale": {
+    "tool": "Upscayl upscayl-bin (Real-ESRGAN ncnn, Metal)",
+    "model": "upscayl-standard-4x",
+    "scale": 2,
+    "upscaled_size": [
+     3000,
+     2000
+    ]
+   },
+   "files": {
+    "jpg": {
+     "file": "story-chef-competition.jpg",
+     "width": 1600,
+     "height": 1067,
+     "bytes": 175595
+    },
+    "jpg_800": {
+     "file": "story-chef-competition-800.jpg",
+     "width": 800,
+     "height": 533,
+     "bytes": 63788
+    },
+    "webp": {
+     "file": "story-chef-competition.webp",
+     "width": 1600,
+     "height": 1067,
+     "bytes": 96222
+    }
+   },
+   "role": "story: the chef at a pastry competition in 2017, chocolate showpiece (blog post 'training')",
+   "where": "Blog: training"
+  },
+  {
+   "name": "story-chef-childhood",
+   "kind": "site_photo",
+   "source_file": "site_audit/images_full/site/blog-img6461.jpg",
+   "source_size": [
+    308,
+    230
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/articles/0-308-IMG_6461.jpg?width=2048",
+   "upscale": {
+    "tool": "Upscayl upscayl-bin (Real-ESRGAN ncnn, Metal)",
+    "model": "remacri-4x",
+    "scale": 4,
+    "upscaled_size": [
+     1232,
+     920
+    ]
+   },
+   "files": {
+    "jpg": {
+     "file": "story-chef-childhood.jpg",
+     "width": 1232,
+     "height": 920,
+     "bytes": 61001
+    },
+    "jpg_800": {
+     "file": "story-chef-childhood-800.jpg",
+     "width": 800,
+     "height": 597,
+     "bytes": 35197
+    },
+    "webp": {
+     "file": "story-chef-childhood.webp",
+     "width": 1232,
+     "height": 920,
+     "bytes": 23598
+    }
+   },
+   "role": "story: childhood kitchen photo (blog post 'where it all began'); source only 308 px, use small",
+   "where": "Blog: where it all began"
+  },
+  {
+   "name": "shop-truffle-box",
+   "kind": "site_photo",
+   "source_file": "site_audit/images_full/site/coll-img2980.jpg",
+   "source_size": [
+    1576,
+    1577
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/collections/IMG_2980.jpg?width=2048",
+   "upscale": {
+    "tool": "Upscayl upscayl-bin (Real-ESRGAN ncnn, Metal)",
+    "model": "upscayl-standard-4x",
+    "scale": 2,
+    "upscaled_size": [
+     3152,
+     3154
+    ]
+   },
+   "files": {
+    "jpg": {
+     "file": "shop-truffle-box.jpg",
+     "width": 1600,
+     "height": 1601,
+     "bytes": 143898
+    },
+    "jpg_800": {
+     "file": "shop-truffle-box-800.jpg",
+     "width": 800,
+     "height": 801,
+     "bytes": 54133
+    },
+    "webp": {
+     "file": "shop-truffle-box.webp",
+     "width": 1600,
+     "height": 1601,
+     "bytes": 71396
+    }
+   },
+   "role": "shop: truffles in the branded box on black (collection image)",
+   "where": "Collection image"
+  },
+  {
+   "name": "shop-caneles-tray",
+   "kind": "site_photo",
+   "source_file": "site_audit/images_full/site/coll-img2050.png",
+   "source_size": [
+    1419,
+    1419
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/collections/IMG_2050.png?width=2048",
+   "upscale": {
+    "tool": "Upscayl upscayl-bin (Real-ESRGAN ncnn, Metal)",
+    "model": "upscayl-standard-4x",
+    "scale": 2,
+    "upscaled_size": [
+     2838,
+     2838
+    ]
+   },
+   "files": {
+    "jpg": {
+     "file": "shop-caneles-tray.jpg",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 341974
+    },
+    "jpg_800": {
+     "file": "shop-caneles-tray-800.jpg",
+     "width": 800,
+     "height": 800,
+     "bytes": 121542
+    },
+    "webp": {
+     "file": "shop-caneles-tray.webp",
+     "width": 1600,
+     "height": 1600,
+     "bytes": 227636
+    }
+   },
+   "role": "shop/vitrine-adjacent: tray of canneles with the shop's table sign (collection image)",
+   "where": "Collection image"
+  },
+  {
+   "name": "shop-jam-lifestyle",
+   "kind": "site_photo",
+   "source_file": "site_audit/images_full/site/home-fb-283860638.jpg",
+   "source_size": [
+    1440,
+    1800
+   ],
+   "cdn_src": "https://cdn.shopify.com/s/files/1/0617/7937/8364/files/283860638_5515311078479238_6997341669026093095_n.jpg?width=2048",
+   "upscale": {
+    "tool": "Upscayl upscayl-bin (Real-ESRGAN ncnn, Metal)",
+    "model": "upscayl-standard-4x",
+    "scale": 2,
+    "upscaled_size": [
+     2880,
+     3600
+    ]
+   },
+   "files": {
+    "jpg": {
+     "file": "shop-jam-lifestyle.jpg",
+     "width": 1600,
+     "height": 2000,
+     "bytes": 234420
+    },
+    "jpg_800": {
+     "file": "shop-jam-lifestyle-800.jpg",
+     "width": 800,
+     "height": 1000,
+     "bytes": 87281
+    },
+    "webp": {
+     "file": "shop-jam-lifestyle.webp",
+     "width": 1600,
+     "height": 2000,
+     "bytes": 118888
+    }
+   },
+   "role": "shop: raspberry jam jars, lifestyle angle (home page section)",
+   "where": "Home section"
+  }
+ ],
+ "aliases": [
+  {
+   "name": "story-chef-kitchen",
+   "use": "golden-ticket-3.jpg / golden-ticket-3-800.jpg / golden-ticket-3.webp",
+   "why": "the About page chef photo is the same file as the Golden Ticket primary image"
+  }
+ ],
+ "excluded_from_web_set": [
+  {
+   "handle": "custom-logo-vegan-cookie",
+   "n": 1,
+   "reason": "shows licensed film characters (plan: drop)",
+   "full_res": "site_audit/images_full/custom-logo-vegan-cookie-1.jpg"
+  },
+  {
+   "handle": "custom-logo-vegan-cookie",
+   "n": 2,
+   "reason": "shows personal names and a date on the cookies; client to confirm before use",
+   "full_res": "site_audit/images_full/custom-logo-vegan-cookie-2.jpg"
+  },
+  {
+   "handle": "golden-ticket",
+   "n": 1,
+   "reason": "mockup graphic with ticket text baked in (plan: replace baked-text graphics)",
+   "full_res": "site_audit/images_full/golden-ticket-1.jpg"
+  },
+  {
+   "handle": "golden-ticket",
+   "n": 2,
+   "reason": "mockup graphic with ticket text baked in (plan: replace baked-text graphics)",
+   "full_res": "site_audit/images_full/golden-ticket-2.jpg"
+  },
+  {
+   "handle": "golden-ticket",
+   "n": 4,
+   "reason": "identifiable people (group photo); needs their consent before reuse",
+   "full_res": "site_audit/images_full/golden-ticket-4.jpg"
+  },
+  {
+   "handle": "store-pickup-app",
+   "n": 1,
+   "reason": "flat icon, not photography; the demo draws its own pickup UI",
+   "full_res": "site_audit/images_full/store-pickup-app-1.jpg"
+  },
+  {
+   "handle": "thanksgiving-box-for-2",
+   "n": 2,
+   "reason": "seasonal set trimmed to 3 angles for the size budget",
+   "full_res": "site_audit/images_full/thanksgiving-box-for-2-2.jpg"
+  },
+  {
+   "handle": "thanksgiving-box-for-2",
+   "n": 5,
+   "reason": "seasonal set trimmed to 3 angles for the size budget",
+   "full_res": "site_audit/images_full/thanksgiving-box-for-2-5.jpg"
+  },
+  {
+   "handle": "thanksgiving-box-for-2",
+   "n": 6,
+   "reason": "seasonal set trimmed to 3 angles for the size budget",
+   "full_res": "site_audit/images_full/thanksgiving-box-for-2-6.jpg"
+  },
+  {
+   "handle": "thanksgiving-box-for-2",
+   "n": 7,
+   "reason": "seasonal set trimmed to 3 angles for the size budget",
+   "full_res": "site_audit/images_full/thanksgiving-box-for-2-7.jpg"
+  },
+  {
+   "handle": "thanksgiving-box-for-2",
+   "n": 8,
+   "reason": "seasonal set trimmed to 3 angles for the size budget",
+   "full_res": "site_audit/images_full/thanksgiving-box-for-2-8.jpg"
+  }
+ ],
+ "logos": [
+  {
+   "file": "logo.png",
+   "width": 600,
+   "height": 436,
+   "bytes": 91458,
+   "role": "demo v2 header logo (600 px), kept untouched"
+  },
+  {
+   "file": "logo-full.png",
+   "width": 904,
+   "height": 658,
+   "bytes": 90916,
+   "role": "largest transparent master the site serves (904 px, files/0-452-x2-ID_ECLAIR.png); includes the blush ghost D and the tagline"
+  },
+  {
+   "file": "logo-wordmark.png",
+   "width": 904,
+   "height": 658,
+   "bytes": 49998,
+   "role": "CONCEPT VARIANT, client approval needed: same artwork with the blush ghost D removed (navy wordmark, red heart, tagline) for the no-pink ivory canvas"
+  },
+  {
+   "file": "logo-wordmark-ivory.png",
+   "width": 904,
+   "height": 658,
+   "bytes": 46529,
+   "role": "CONCEPT VARIANT, client approval needed: reversed for navy grounds (ivory wordmark, red heart and red 'By' kept)"
+  }
+ ],
+ "logo_notes": "The PNG's navy measures #273B87; the brand token #1F156B is deeper. Largest file anywhere on the site is ID_ECLAIR.jpg at 1208 px on white (site_audit/images_full/site/logo-jpg.jpg). No vector exists on the site; ask the client for the SVG/AI file.",
+ "site_candidates_not_used": [
+  {
+   "file": "site_audit/images_full/site/home-artboard*.jpg",
+   "why": "1920x800 slideshow banners: cut-outs on flat peach/green grounds (peach reads pink)"
+  },
+  {
+   "file": "site_audit/images_full/site/video1-poster.jpg, video2-poster.jpg",
+   "why": "Golden Ticket promo frames with text baked in"
+  },
+  {
+   "file": "site_audit/images_full/site/coll-96e62574.jpg",
+   "why": "gift box, near-duplicate of gift-basket-small"
+  },
+  {
+   "file": "site_audit/images_full/site/coll-f7c69a66.png",
+   "why": "sugar cookies in a bag, weak light"
+  },
+  {
+   "file": "site_audit/images_full/site/home-gg2375.jpg",
+   "why": "third angle of kushyflakes from the product shoot"
+  },
+  {
+   "file": "Gemini_Generated_Image_* and il_1140xN.* (Etsy)",
+   "why": "AI-generated and Etsy-era images; the plan says drop them; not fetched"
+  }
+ ],
+ "no_vitrine_photography": "The live site has no photo of the vitrine, the salon, La Cave, the eclairs or the class. Those exist only as customer phone shots on review sites (not ours to use) and the client's Instagram."
+}
