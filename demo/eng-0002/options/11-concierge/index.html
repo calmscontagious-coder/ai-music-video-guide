@@ -18,9 +18,9 @@
 <meta property="og:image:alt" content="Six macarons lined up inside a white iD Éclair box">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&amp;display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
 <script src="../../assets/app.js" defer></script>
 <script src="concierge-core.js" defer></script>
@@ -63,9 +63,9 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Is Le Concierge a chatbot?", "acceptedAnswer": { "@type": "Answer", "text": "On this preview it is a rule engine: it matches your question to the shop’s menu file and a short facts file and answers only from them. In the real store, questions the rules miss go to a language model through a Cloudflare Worker, which may use only the matching rows and is checked before you see the answer." } },
+        { "@type": "Question", "name": "Is Le Concierge a chatbot?", "acceptedAnswer": { "@type": "Answer", "text": "It is the shop’s menu, answering: it matches your question to the menu and the shop’s published facts, answers only from them and shows where each answer came from." } },
         { "@type": "Question", "name": "Does it keep what I type?", "acceptedAnswer": { "@type": "Answer", "text": "No. On this preview your words stay in the browser tab. A usual you save sits in this browser’s local storage, and one tap forgets it. Voice input uses your browser’s speech service; in Chrome that sends the audio to Google." } },
-        { "@type": "Question", "name": "How much notice does a custom cake need?", "acceptedAnswer": { "@type": "Answer", "text": "One week, the shop’s own rule. Whole menu cakes need 48 hours and wedding cakes four weeks (both proposed)." } },
+        { "@type": "Question", "name": "How much notice does a custom cake need?", "acceptedAnswer": { "@type": "Answer", "text": "One week, the shop’s own rule. For a whole menu cake or a wedding, ask the shop for its dates." } },
         { "@type": "Question", "name": "Is anything gluten-free?", "acceptedAnswer": { "@type": "Answer", "text": "The counter board marks the soup du jour, and the endive and grandmother beet salades without their crostini. The live store labels the assorted macarons, cannelés by 3, the four dessert jars and several chocolates gluten free. Ask the counter about cross-contact if it is for coeliac disease." } },
         { "@type": "Question", "name": "Can I pay here?", "acceptedAnswer": { "@type": "Answer", "text": "Live-store items check out on id-eclair.com through a Shopify cart link, as real orders. Counter items and cake requests wait in the bag for the new pickup checkout." } }
       ]
@@ -79,7 +79,7 @@
 <a class="sr skip" href="#cz-ask">Skip to Le Concierge</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>Direction 11, Concierge. Prices read 21 and 22 October 2026.</span><span class="more">From the shop’s menu app and live store. The concierge runs on rules in this browser; slots, cake sizes and the cake estimate are examples. Checkout opens the live store.</span></div>
+  <div class="wrap"><p><b>Concept preview.</b> Prices checked 21–22 Oct 2026; slots are examples.<span class="more"> Direction 11, Concierge. Prices from the shop’s menu app and live store; cake sizes and the cake estimate are examples too. Checkout opens the live store.</span></p></div>
 </aside>
 
 <header class="top">
@@ -105,9 +105,10 @@
     </div>
 
     <div class="cz-desk" data-grid-break data-cz id="cz-ask" tabindex="-1" aria-labelledby="cz-desk-h">
+      <figure class="cz-photo"><img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.jpg 1600w" sizes="(min-width: 900px) 640px, 100vw" width="1600" height="1600" alt="Six macarons lined up inside a white iD Éclair box" fetchpriority="high"></figure>
       <div class="cz-desk-h">
         <h2 id="cz-desk-h"><span lang="fr">Le Concierge</span></h2>
-        <p class="cz-mode"><i aria-hidden="true"></i><span data-cz-mode>Rules over menu.json<span class="cz-wide">, in your browser</span></span></p>
+        <p class="cz-mode"><i aria-hidden="true"></i><span data-cz-mode>Answers from the menu<span class="cz-wide">, in this tab</span></span></p>
       </div>
       <div class="cz-slotline">
         <svg class="ico cz-wide" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
@@ -123,9 +124,9 @@
 
       <div class="cz-log" data-cz-log role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation with Le Concierge">
         <div class="cz-msg bot">
-          <p><span lang="fr">Bonjour.</span> Ask me anything about the shop. Three from the case today:</p>
+          <p><span lang="fr">Bonjour.</span> Three from the case today:</p>
           <ul class="cz-three" data-cz-three aria-label="Three from the case today"></ul>
-          <p class="cz-src" data-cz-three-src>From menu.json, turning daily on this preview; the kitchen sets the real case.</p>
+          <p class="cz-src" data-cz-three-src>From the shop’s menu; the kitchen sets the real case each day.</p>
         </div>
       </div>
 
@@ -149,7 +150,7 @@
     </div>
 
     <div class="cz-more">
-      <p class="lead">Prices, gluten-free marks, a cake’s notice, Tuesday’s $125 class, La Cave’s hours: Le Concierge answers in the shop’s voice from its own menu and published facts, names the file behind every answer, and puts what you choose in the bag. It runs in this browser, so what you type stays on this page.</p>
+      <p class="lead">Prices, gluten-free marks, a cake’s notice, Tuesday’s $125 class, La Cave’s hours: Le Concierge answers in the shop’s voice from its own menu and published facts, names the source of every answer, and puts what you choose in the bag. It runs in this browser, so what you type stays on this page.</p>
       <ul class="cz-proof" aria-label="What it reads">
         <li><b>82</b><span>menu rows, with price, channel and gluten mark</span></li>
         <li><b>29</b><span>facts, each naming its source file</span></li>
@@ -397,7 +398,7 @@
           <p class="cz-note-from" data-cz-note-from>Jules</p>
           <p class="cz-note-foot">iD Éclair · 169 W Green St</p>
         </div>
-        <p class="fine">In the build the note rides on the order as a Shopify cart note; on this preview it stays on your screen. Gift cards ($25 to $150, never expiring) arrive with the new store.</p>
+        <p class="fine">Add the note as the gift note at checkout; on this preview it stays on your screen. Gift cards ($25 to $150, never expiring) arrive with the new store.</p>
         <button class="btn btn-brand" type="button" data-cz-gift-add>Add the basket</button>
         <p class="fine" data-cz-gift-out role="status"></p>
       </div>
@@ -432,31 +433,27 @@
 <section class="cz-sec cz-howsec" id="how" aria-labelledby="h-how">
   <div class="wrap">
     <div class="sec-head">
-      <p class="cz-no"><b>VII</b><span>How this works</span></p>
-      <h2 id="h-how">What runs in your browser today, and what the real store adds.</h2>
-      <p>The concierge is built so the honest version and the clever version give the same answers. The rules come first everywhere; a language model only ever fills the gaps, and only from the same two files.</p>
+      <p class="cz-no"><b>VII</b><span>How it answers</span></p>
+      <h2 id="h-how">From the shop’s own menu, with the source under every reply.</h2>
+      <p>Le Concierge answers only from what the shop has published. When it does not know, it says the shop can tell you.</p>
     </div>
     <div class="cz-how">
       <div class="cz-lane">
-        <h3>In your browser, today</h3>
+        <h3>How it answers</h3>
         <ol class="cz-flow">
-          <li><b>Two files load.</b> menu.json, 82 rows with prices, gluten marks and lead notes, and facts.json, 29 facts that each name the research file they came from.</li>
-          <li><b>Rules read your question.</b> Words such as gluten, class or cake pick the answer; item names pick the row. Voice, where the browser has it, only types the words for you.</li>
-          <li><b>The answer shows its source.</b> Under every reply: the file, the row, the date it was read, and whether a fact is proposed or an example. No match means “the shop can tell you”.</li>
-          <li><b>Actions write to the one bag.</b> Add, the box of six, the slot picker and the cake request share the bag every page of the preview uses.</li>
-          <li><b>Pay is a Shopify cart link.</b> Live-store items open id-eclair.com/cart with their variant ids, as real orders.</li>
+          <li><b>It reads the menu.</b> Prices, gluten-free marks and lead times come from the shop’s menu and its published facts.</li>
+          <li><b>It shows its source.</b> Under every reply: where the answer came from and the date it was read, and whether a detail is an example.</li>
+          <li><b>It fills one bag.</b> Add, the box of six, the pickup time and the cake request share the bag every page uses.</li>
+          <li><b>Pay opens the live store.</b> Live-store items check out on id-eclair.com, as real orders.</li>
         </ol>
       </div>
       <div class="cz-lane cz-lane-ink">
-        <h3>In the real store, through the worker</h3>
+        <h3>What it keeps</h3>
         <ol class="cz-flow">
-          <li><b>Same address, signed.</b> The page posts to /apps/concierge on the shop’s domain; Shopify’s app proxy signs it and passes it to a Cloudflare Worker.</li>
-          <li><b>Rules first, again.</b> The worker runs this same engine. Most questions end here and cost nothing.</li>
-          <li><b>The model fills gaps only.</b> For the rest it sends the matching rows, never the whole menu, to a language model through the VAEL gateway or Claude, with orders to quote nothing else.</li>
-          <li><b>Every reply is checked.</b> Each price, time and item in the reply must appear in those rows, or the visitor gets “the shop can tell you” instead.</li>
-          <li><b>Counts, not words.</b> The worker logs how many questions, which kind and how fast, never the question, and allows 20 a minute from one visitor.</li>
+          <li><b>Your words stay here.</b> What you type stays in this browser tab.</li>
+          <li><b>A usual stays on this device.</b> Save one and it is here next time, and nowhere else.</li>
+          <li><b>No guessing.</b> A question with no answer in the menu gets “the shop can tell you”.</li>
         </ol>
-        <p class="cz-status">Written and tested, not deployed: deploying needs the shop’s Cloudflare login.</p>
       </div>
     </div>
   </div>
@@ -470,9 +467,9 @@
       <p>Answered here in full, the way the concierge answers: from what the shop has said.</p>
     </div>
     <div class="faq-list">
-      <div class="qa"><h3>Is Le Concierge a chatbot?</h3><p>On this preview it is a rule engine: it matches your question to the shop’s menu file and a short facts file and answers only from them. In the real store, questions the rules miss go to a language model through a Cloudflare Worker, which may use only the matching rows and is checked before you see the answer.</p></div>
+      <div class="qa"><h3>Is Le Concierge a chatbot?</h3><p>It is the shop’s menu, answering: it matches your question to the menu and the shop’s published facts, answers only from them and shows where each answer came from.</p></div>
       <div class="qa"><h3>Does it keep what I type?</h3><p>No. On this preview your words stay in the browser tab. A usual you save sits in this browser’s local storage, and one tap forgets it. Voice input uses your browser’s speech service; in Chrome that sends the audio to Google.</p></div>
-      <div class="qa"><h3>How much notice does a custom cake need?</h3><p>One week, the shop’s own rule. Whole menu cakes need 48 hours and wedding cakes four weeks (both proposed). The composer counts the date for you.</p></div>
+      <div class="qa"><h3>How much notice does a custom cake need?</h3><p>One week, the shop’s own rule. For a whole menu cake or a wedding, ask the shop for its dates. The composer counts the date for you.</p></div>
       <div class="qa"><h3>Is anything gluten-free?</h3><p>The counter board marks the soup du jour, and the endive and grandmother beet salades without their crostini. The live store labels the assorted macarons, cannelés by 3, the four dessert jars and several chocolates gluten free. Ask the counter about cross-contact if it is for coeliac disease.</p></div>
       <div class="qa"><h3>Can I pay here?</h3><p>Live-store items check out on id-eclair.com through a Shopify cart link, as real orders. Counter items and cake requests wait in the bag for the new pickup checkout.</p></div>
     </div>
@@ -502,5 +499,24 @@
   <a href="#box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M3 11h18M8 7V5a4 4 0 0 1 8 0v2"/></svg>Box</a>
 </nav>
 
+<script>
+/* wave C, 25 Oct 2026: the app bar steps aside while the box's add button or the pickup picker sits in its
+   strip, so it never covers them (the same rule the shared order strip follows) */
+(function () {
+  var bar = document.querySelector('nav.bar'); if (!bar || !('IntersectionObserver' in window)) return;
+  var on = new Set(), io;
+  function build() {
+    if (io) io.disconnect(); on.clear();
+    var band = Math.round(bar.getBoundingClientRect().height || 64) + 12;
+    io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) on.add(e.target); else on.delete(e.target); });
+      bar.classList.toggle('aside', on.size > 0);
+    }, { rootMargin: '-' + Math.max(0, window.innerHeight - band) + 'px 0px 0px 0px' });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-box-add], [data-slot-picker]'), function (el) { io.observe(el); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+  window.addEventListener('resize', build);
+})();
+</script>
 </body>
 </html>

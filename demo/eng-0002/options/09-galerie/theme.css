@@ -1,3 +1,54 @@
+/* SIGNATURE DISPLAY FAMILY (wave C, 25 October 2026, ruling 1 of 25 Oct): Newsreader.
+   Galerie's one declared signature face, the editorial serif the catalogue argument rests on
+   (named in the ruling). Self-hosted in options/09-galerie/fonts/ (latin and latin-ext, roman and
+   italic, wght 400-600 range requested, opsz 6-72, as Google's css2 API served them on 25 Oct 2026,
+   SIL OFL 1.1), font-display swap. Text is Nunito Sans from ../../assets/fonts.css; Fraunces is not
+   used on this page. No request goes to fonts.googleapis.com or fonts.gstatic.com. */
+/* Newsreader italic, latin-ext, 95 KB */
+@font-face{
+  font-family:"Newsreader";
+  font-style:italic;
+  font-weight:400 600;
+  font-display:swap;
+  src:url(fonts/newsreader-italic-latin-ext.woff2) format("woff2");
+  ascent-override:73.5%;descent-override:26.5%;line-gap-override:0.0%;
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Newsreader italic, latin, 147 KB */
+@font-face{
+  font-family:"Newsreader";
+  font-style:italic;
+  font-weight:400 600;
+  font-display:swap;
+  src:url(fonts/newsreader-italic-latin.woff2) format("woff2");
+  ascent-override:73.5%;descent-override:26.5%;line-gap-override:0.0%;
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Newsreader normal, latin-ext, 86 KB */
+@font-face{
+  font-family:"Newsreader";
+  font-style:normal;
+  font-weight:400 600;
+  font-display:swap;
+  src:url(fonts/newsreader-roman-latin-ext.woff2) format("woff2");
+  ascent-override:73.5%;descent-override:26.5%;line-gap-override:0.0%;
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Newsreader normal, latin, 131 KB */
+@font-face{
+  font-family:"Newsreader";
+  font-style:normal;
+  font-weight:400 600;
+  font-display:swap;
+  src:url(fonts/newsreader-roman-latin.woff2) format("woff2");
+  ascent-override:73.5%;descent-override:26.5%;line-gap-override:0.0%;
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
 /* ==========================================================================
    iD Éclair concept preview, direction 09: GALERIE
    The editorial direction. The home page is a museum catalogue of the case:
@@ -24,8 +75,8 @@
    TYPE: Newsreader (display), an editorial text-face with optical sizes;
    at 64 to 112 px its contrast stays moderate, so the French names read on
    a phone where a Didone's hairlines would break. Weight 500, italic for the
-   names. Nunito Sans (text) at 17 px for captions, prices and controls.
-   Scale in px: 13 · 15 · 17 · 20 · 26 · 34 · 52 to 112 (names, H1).
+   names. Nunito Sans (text) at 19 px for captions, prices and controls.
+   Scale in px (wave C, the tokens.css steps): 14 · 19 · 25 · 34 · 36 to 92 (names, H1).
 
    SPACING: 4 px base; 8 label · 16 block · 24 group · 48 break · 72 plate
    padding · 112 between chapters on desktop. Generous by design: the page is
@@ -53,22 +104,23 @@
   --line: #e2dacb;
   --line-2: #cbbfa8;
   --gold: #a9843f;
+  --gold-text: #7a5c22;
   --gold-night: #c9a961;
   --color-accent: #e02030;
   --heart: var(--color-accent);
   --on-heart: #ffffff;
 
   --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
-  --font-text: "Nunito Sans", "Avenir Next", "Segoe UI", sans-serif;
+  --font-text: "Nunito Sans", Arial, "Segoe UI", sans-serif;
 
-  --t-micro: .8125rem;
-  --t-meta: .9375rem;
-  --t-body: 1.0625rem;
-  --t-name: 1.25rem;
-  --t-h3: 1.625rem;
+  --t-micro: .875rem;
+  --t-meta: .875rem;
+  --t-body: 1.1875rem;
+  --t-name: 1.1875rem;
+  --t-h3: 1.5625rem;
   --t-h2: 2.125rem;
-  --t-plate: clamp(3.25rem, 1.6rem + 8vw, 7rem);
-  --t-h1: clamp(2.75rem, 1.4rem + 6.4vw, 6.5rem);
+  --t-plate: clamp(2.25rem, 1.2rem + 5vw, 4.5rem);
+  --t-h1: clamp(2.75rem, 1.4rem + 6.4vw, 5.75rem);
   --measure-body: 58ch;
 
   --s-1: 4px;
@@ -109,7 +161,7 @@ fieldset { border: 0; padding: 0; min-width: 0; }
 a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 button, input, select { font: inherit; color: inherit; }
 button { cursor: pointer; }
-:focus-visible { outline: 3px solid var(--heart); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--heart); outline-offset: 2px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .skip:focus { position: fixed; left: var(--s-3); top: var(--s-3); z-index: 90; width: auto; height: auto; clip: auto; padding: var(--s-3) var(--s-4); background: var(--surface); color: var(--brand); border-radius: var(--r-row); box-shadow: var(--e-3); font-weight: 700; }
 .wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter); }
@@ -129,11 +181,11 @@ main { overflow-x: clip; }
 .logo { display: block; flex: none; }
 .logo img { height: 42px; width: auto; }
 .nav { display: none; gap: var(--s-6); font-weight: 600; font-size: var(--t-meta); }
-.nav a { text-decoration: none; padding: var(--s-2) 0; }
-.nav a:hover { text-decoration: underline; }
+.nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; text-decoration: none; padding: 0 var(--s-1); }
+@media (hover: hover){.nav a:hover{ text-decoration: underline; }}
 @media (min-width: 960px) { .nav { display: flex; } }
 .cartbtn { position: relative; margin-left: auto; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--brand); display: grid; place-items: center; }
-.cartbtn:hover { border-color: var(--brand); }
+@media (hover: hover){.cartbtn:hover{ border-color: var(--brand); }}
 .badge { position: absolute; top: -4px; right: -4px; min-width: 20px; height: 20px; padding: 0 6px; border-radius: var(--r-pill); background: var(--heart); color: var(--on-heart); font: 700 .75rem/20px var(--font-text); text-align: center; font-variant-numeric: tabular-nums; display: none; }
 .badge.on { display: block; }
 .badge.bump { animation: pop var(--dur-sheet) var(--ease-enter); }
@@ -147,8 +199,8 @@ main { overflow-x: clip; }
 .chip { min-height: 44px; border-radius: var(--r-row); border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 var(--t-meta)/1.15 var(--font-text); font-variant-numeric: tabular-nums; padding: 6px 4px; transition: transform var(--dur-tap) var(--ease-exit); }
 .days .chip { display: grid; gap: 2px; min-height: 52px; font-size: var(--t-micro); color: var(--muted); }
 .days .chip b { font-size: var(--t-meta); color: var(--ink); }
-.chip:hover { border-color: var(--brand); }
-.chip:active { transform: scale(.96); }
+@media (hover: hover){.chip:hover{ border-color: var(--brand); }}
+.chip:active { transform: scale(.98); }
 .chip[aria-pressed="true"], .chip[aria-pressed="true"] b { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
 .chip[aria-disabled="true"] { background: var(--canvas-2); border-color: var(--canvas-2); color: var(--muted); text-decoration: line-through; cursor: not-allowed; }
 .chip[aria-disabled="true"] b { color: var(--muted); }
@@ -157,26 +209,26 @@ main { overflow-x: clip; }
 
 /* ---------- Add and the stepper app.js swaps in ---------- */
 .add { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; min-width: 44px; padding: 0 16px; border: 1.5px solid var(--brand); border-radius: var(--r-pill); background: var(--surface); color: var(--brand); font: 700 var(--t-meta)/1 var(--font-text); white-space: nowrap; transition: transform var(--dur-tap) var(--ease-exit); }
-.add:hover { background: var(--brand); color: var(--on-brand); }
-.add:active { transform: scale(.95); }
+@media (hover: hover){.add:hover{ background: var(--brand); color: var(--on-brand); }}
+.add:active { transform: scale(.98); }
 .add[hidden] { display: none; }
 .add svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
 .stepper { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; border-radius: var(--r-pill); background: var(--brand); color: var(--on-brand); }
 .stepper[hidden] { display: none; }
 .stepper button { width: 38px; height: 44px; border: 0; border-radius: var(--r-pill); background: transparent; color: inherit; font: 700 1.125rem/1 var(--font-text); }
-.stepper button:hover { background: rgb(255 255 255 / .14); }
+@media (hover: hover){.stepper button:hover{ background: rgb(255 255 255 / .14); }}
 .stepper b { min-width: 18px; text-align: center; font-size: var(--t-meta); font-variant-numeric: tabular-nums; }
 .add.pop, .stepper.pop { animation: pop var(--dur-sheet) var(--ease-enter); }
 
 /* ---------- box of six (app.js builds the six cells) ---------- */
 .boxslots { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--s-2); max-width: 420px; }
-.boxslots button { aspect-ratio: 1; min-height: 40px; border-radius: 50%; border: 1.5px dashed var(--line-2); background: var(--canvas); color: var(--muted); font: 700 .75rem/1 var(--font-text); padding: 0; cursor: default; }
+.boxslots button { aspect-ratio: 1; min-height: 44px; border-radius: 50%; border: 1.5px dashed var(--line-2); background: var(--canvas); color: var(--muted); font: 700 .75rem/1 var(--font-text); padding: 0; cursor: default; }
 .boxslots .full { border: 0; background: var(--f); color: #faf7f2; cursor: pointer; animation: pop var(--dur-sheet) var(--ease-enter); }
 .boxslots .full.light { color: var(--ink); box-shadow: inset 0 0 0 1px var(--line-2); }
 .flav { display: flex; flex-wrap: wrap; gap: var(--s-2); }
 .flav button { display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 14px 0 10px; border-radius: var(--r-pill); border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 var(--t-meta)/1 var(--font-text); transition: transform var(--dur-tap) var(--ease-exit); }
-.flav button:hover { border-color: var(--brand); }
-.flav button:active { transform: scale(.95); }
+@media (hover: hover){.flav button:hover{ border-color: var(--brand); }}
+.flav button:active { transform: scale(.98); }
 .flav button[disabled] { opacity: .5; cursor: not-allowed; }
 .flav i { width: 16px; height: 16px; border-radius: 50%; background: var(--f); flex: none; }
 .f-raspberry { --f: #a51c2a; }
@@ -186,7 +238,7 @@ main { overflow-x: clip; }
 .f-coconut { --f: #f3eee5; }
 .flav i.f-coconut { box-shadow: inset 0 0 0 1px var(--line-2); }
 .link { border: 0; padding: 0; background: none; color: var(--brand); font: 700 var(--t-meta)/1.3 var(--font-text); text-decoration: underline; text-underline-offset: 3px; min-height: 44px; }
-.link:hover { text-decoration-thickness: 2px; }
+@media (hover: hover){.link:hover{ text-decoration-thickness: 2px; }}
 
 /* ---------- the bag sheet (built by app.js) ---------- */
 .drawer { position: fixed; inset: 0; z-index: 80; display: flex; align-items: flex-end; justify-content: center; visibility: hidden; pointer-events: none; }
@@ -200,7 +252,7 @@ main { overflow-x: clip; }
 .sheet-head h2 { font: 600 var(--t-h3)/1.1 var(--font-display); color: var(--brand); }
 .sheet-head h2 span { margin-left: var(--s-2); font: 700 var(--t-micro) var(--font-text); color: var(--muted); }
 .x { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--brand); display: grid; place-items: center; }
-.x:hover { border-color: var(--brand); }
+@media (hover: hover){.x:hover{ border-color: var(--brand); }}
 .sheet-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
 .pick { margin: 0 var(--s-4); padding: var(--s-3) var(--s-4); display: grid; grid-template-columns: auto 1fr auto; gap: 4px var(--s-3); align-items: center; background: var(--canvas); border: 1px solid var(--line); border-radius: var(--r-row); font-size: var(--t-meta); }
 .pick .ico { color: var(--brand); }
@@ -218,8 +270,8 @@ main { overflow-x: clip; }
 .line .src.on { color: var(--brand); }
 .line .end { display: grid; justify-items: end; gap: 6px; }
 .line .price { font-weight: 700; color: var(--brand); }
-.line .stepper { min-height: 36px; }
-.line .stepper button { width: 32px; height: 36px; }
+.line .stepper { min-height: 44px; }
+.line .stepper button { width: 44px; height: 44px; }
 .empty { padding: var(--s-8) var(--s-4); display: grid; gap: var(--s-3); justify-items: center; text-align: center; color: var(--muted); }
 .empty h3 { font: 600 var(--t-name) var(--font-display); color: var(--brand); }
 .sheet-notes { padding: 0 var(--s-4) var(--s-4); display: grid; gap: var(--s-3); justify-items: start; }
@@ -229,7 +281,7 @@ main { overflow-x: clip; }
 .sum { display: flex; justify-content: space-between; align-items: baseline; font-weight: 700; color: var(--brand); }
 .sum b { font-size: var(--t-name); font-variant-numeric: tabular-nums; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); min-height: 48px; padding: 0 var(--s-6); border: 0; border-radius: var(--r-pill); background: var(--brand); color: var(--on-brand); font: 700 var(--t-meta)/1.25 var(--font-text); text-decoration: none; text-align: center; }
-.btn:hover { background: var(--brand-press); }
+@media (hover: hover){.btn:hover{ background: var(--brand-press); }}
 .btn[disabled] { background: var(--canvas-2); color: var(--muted); cursor: not-allowed; }
 .btn-sm { min-height: 44px; padding: 0 var(--s-4); }
 .checkout { width: 100%; padding-block: 10px; }
@@ -239,7 +291,7 @@ main { overflow-x: clip; }
 .field { display: grid; gap: 6px; }
 .field label { font: 700 var(--t-micro)/1.2 var(--font-text); color: var(--muted); }
 .field input, .field select { min-height: 48px; padding: 0 var(--s-3); border: 1px solid var(--line-2); border-radius: var(--r-row); background: var(--surface); color: var(--ink); font-size: 1rem; }
-.field input:focus-visible, .field select:focus-visible { outline: 3px solid var(--heart); outline-offset: 1px; border-color: var(--brand); }
+.field input:focus-visible, .field select:focus-visible { outline: 2px solid var(--heart); outline-offset: 2px; border-color: var(--brand); }
 .status { min-height: 1.4em; font-size: var(--t-micro); color: var(--brand); font-weight: 700; }
 
 /* ---------- motion ---------- */
@@ -278,8 +330,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--br
 @media (min-width: 760px) { .somm ol { columns: 2; } }
 .somm li { break-inside: avoid; }
 .somm a { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr) auto; gap: var(--s-3); align-items: baseline; min-height: 48px; padding: var(--s-3) 0; border-bottom: 1px solid var(--line-2); text-decoration: none; }
-.somm a:hover .sn { text-decoration: underline; }
-.somm .sr-n { font: 500 var(--t-meta)/1 var(--font-display); color: var(--gold); font-variant-numeric: lining-nums; }
+@media (hover: hover){.somm a:hover .sn{ text-decoration: underline; }}
+.somm .sr-n { font: 500 var(--t-meta)/1 var(--font-display); color: var(--gold-text); font-variant-numeric: lining-nums; }
 .somm .sn { font: italic 500 var(--t-name)/1.15 var(--font-display); color: var(--brand); }
 .somm .price { font-size: var(--t-meta); font-weight: 700; color: var(--ink); }
 
@@ -306,7 +358,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--br
 .dark .pt-rule { border-color: var(--gold-night); }
 
 .pl-label { display: grid; gap: var(--s-3); align-content: center; }
-.pl-no { font: 500 var(--t-meta)/1 var(--font-display); color: var(--gold); letter-spacing: .04em; display: flex; align-items: center; gap: var(--s-3); }
+.pl-no { font: 500 var(--t-meta)/1 var(--font-display); color: var(--gold-text); letter-spacing: .04em; display: flex; align-items: center; gap: var(--s-3); }
 .pl-no::after { content: ""; flex: 0 0 48px; border-top: 1px solid currentColor; }
 .dark .pl-no { color: var(--gold-night); }
 .pl-label h2 { font-size: var(--t-plate); line-height: 1; padding-top: .12em; font-style: italic; letter-spacing: -.02em; color: inherit; overflow-wrap: anywhere; hyphens: auto; }
@@ -322,9 +374,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--br
 
 /* controls on night plates */
 .dark .add { background: transparent; border-color: var(--on-night); color: var(--on-night); }
-.dark .add:hover { background: var(--on-night); color: var(--night); }
+@media (hover: hover){.dark .add:hover{ background: var(--on-night); color: var(--night); }}
 .dark .stepper { background: var(--on-night); color: var(--night); }
-.dark .stepper button:hover { background: rgb(23 16 79 / .1); }
+@media (hover: hover){.dark .stepper button:hover{ background: rgb(23 16 79 / .1); }}
 .dark .link { color: var(--on-night); }
 .dark .chip { background: transparent; border-color: rgb(246 241 231 / .32); color: var(--on-night); }
 .dark .days .chip, .dark .days .chip b { color: var(--on-night); }
@@ -340,8 +392,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--br
 .box-ui { display: grid; gap: var(--s-3); margin-top: var(--s-2); }
 .box-ui .boxslots button { background: var(--surface); }
 .go { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 var(--s-6); border: 0; border-radius: var(--r-pill); background: var(--brand); color: var(--on-brand); font: 700 var(--t-meta)/1 var(--font-text); transition: transform var(--dur-tap) var(--ease-exit); }
-.go:hover { background: var(--brand-press); }
-.go:active { transform: scale(.97); }
+@media (hover: hover){.go:hover{ background: var(--brand-press); }}
+.go:active { transform: scale(.98); }
 .go[disabled] { background: var(--canvas-2); color: var(--muted); cursor: not-allowed; }
 .box-foot { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); align-items: center; }
 
@@ -351,7 +403,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--br
 .ret-sum { display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-6); align-items: center; margin-top: var(--s-4); padding-top: var(--s-4); border-top: 1px solid var(--gold-night); }
 .ret-sum b { font: 500 var(--t-h3)/1 var(--font-display); }
 .ret-sum .btn { background: var(--on-night); color: var(--night); }
-.ret-sum .btn:hover { background: var(--surface); }
+@media (hover: hover){.ret-sum .btn:hover{ background: var(--surface); }}
 .ret-links { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); margin-top: var(--s-4); font-size: var(--t-meta); }
 
 /* FAQ, set like the catalogue's notes */
@@ -369,7 +421,7 @@ footer { background: var(--canvas-2); border-top: 1px solid var(--gold); padding
 @media (min-width: 760px) { .foot { grid-template-columns: 1.3fr 1fr 1fr 1fr; } }
 footer h2 { font: 700 var(--t-meta)/1.2 var(--font-text); color: var(--brand); margin-bottom: var(--s-2); }
 footer li a { display: inline-flex; align-items: center; min-height: 32px; text-decoration: none; }
-footer li a:hover { text-decoration: underline; }
+@media (hover: hover){footer li a:hover{ text-decoration: underline; }}
 footer address { font-style: normal; display: grid; gap: var(--s-2); }
 .foot p + p { margin-top: var(--s-3); }
 .foot-logo { height: 52px; width: auto; margin-bottom: var(--s-3); }
@@ -382,15 +434,52 @@ footer address { font-style: normal; display: grid; gap: var(--s-2); }
 .gs.rise { animation: rise var(--dur-sheet) var(--ease-enter); }
 .gs-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 4px; padding: 6px; border-radius: var(--r-pill); background: var(--brand); color: var(--on-brand); box-shadow: var(--e-3); outline: 1px solid var(--gold-night); outline-offset: -4px; }
 .gs-slot { display: flex; align-items: center; gap: var(--s-2); min-width: 0; min-height: 52px; padding: 0 var(--s-3); border: 0; border-radius: var(--r-pill); background: transparent; color: inherit; text-align: left; }
-.gs-slot:hover { background: rgb(246 241 231 / .1); }
+@media (hover: hover){.gs-slot:hover{ background: rgb(246 241 231 / .1); }}
 .gs-slot span { display: grid; min-width: 0; }
 .gs-slot small { font: 700 .75rem/1.2 var(--font-text); color: var(--on-night-soft); }
 .gs-slot b { font: 600 var(--t-meta)/1.2 var(--font-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .gs-bag { min-height: 52px; padding: 0 var(--s-3); border: 0; border-radius: var(--r-pill); background: transparent; color: inherit; font: 600 var(--t-micro)/1.2 var(--font-text); display: grid; text-align: right; }
 .gs-bag b { font: 500 var(--t-name)/1 var(--font-display); font-variant-numeric: lining-nums tabular-nums; }
 .gs-pay { display: inline-flex; align-items: center; min-height: 52px; padding: 0 var(--s-6); border-radius: var(--r-pill); background: var(--on-night); color: var(--night); font: 700 var(--t-meta)/1 var(--font-text); text-decoration: none; }
-.gs-pay:hover { background: var(--surface); }
+@media (hover: hover){.gs-pay:hover{ background: var(--surface); }}
 @media (max-width: 389px) { .gs-bag span { display: none; } .gs-pay { padding: 0 var(--s-4); } }
 .gs-panel { padding: var(--s-4); border-radius: var(--r-slip); background: var(--surface); color: var(--ink); box-shadow: var(--e-3); display: grid; gap: var(--s-3); animation: rise var(--dur-sheet) var(--ease-enter); max-height: calc(100vh - 120px); overflow-y: auto; }
 .gs-panel[hidden] { display: none; }
 .gs-panel .row { display: flex; justify-content: space-between; align-items: center; gap: var(--s-3); font-size: var(--t-micro); color: var(--muted); }
+
+
+/* ==========================================================================
+   WAVE C, 25 October 2026 (director pass fixes 1, 2, 7, 8, 10, 15; Gemini A3, C2, D2)
+   ========================================================================== */
+/* the notice: one dated line at 375 */
+.notice { line-height: 1.35; }
+.notice .wrap { padding-block: 6px; }
+/* gold as text is the darker gilt (#7a5c22, 5.0:1 on ivory 2); the light gilt stays on hairlines */
+/* inputs: the 2 px ring; inline French inside English in the display italic */
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--heart); outline-offset: 2px; }
+:is(p, li, dd, figcaption, label) > span[lang="fr"] { font-family: var(--font-display); font-style: italic; }
+/* the frontispiece: headline, plate, one action, then the lead */
+.front-act { margin-top: var(--s-4); }
+@media (max-width: 999px) {
+  .front { padding-top: var(--s-4); }
+  .front .wrap { display: flex; flex-direction: column; }
+  .front .wrap > div { display: contents; }
+  .front h1 { order: 1; }
+  .front figure { order: 2; margin-top: var(--s-4); }
+  .front-act { order: 3; }
+  .front .lede { order: 4; }
+  /* the grid break: the plate bleeds off the right edge */
+  .front figure[data-grid-break] { margin-right: calc(var(--gutter) * -1); }
+  .front figure[data-grid-break] img { aspect-ratio: 3 / 2; }
+  .front figure[data-grid-break] figcaption { padding-right: var(--gutter); }
+}
+@media (min-width: 1000px) {
+  .front figure[data-grid-break] { margin-right: calc(var(--gutter) * -1); }
+}
+@media (min-width: 1000px) {
+  .front .wrap { align-items: center; }
+  .front .wrap > div { display: flex; flex-direction: column; }
+  .front-act { order: 2; margin-top: var(--s-6); }
+  .front .lede { order: 3; margin-top: var(--s-6); }
+  .front figure img { aspect-ratio: 1 / 1; }
+}

@@ -15,9 +15,9 @@
 <meta property="og:image:alt" content="Six macarons on one of the shop’s blue glazed plates">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&amp;display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/newsreader-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">
@@ -289,7 +289,7 @@
 <a class="sr skip" href="#sommaire">Skip to the sommaire</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>Prices from the shop’s own listings, checked 21 and 22 October 2026. Pickup slots are examples.</span><span class="more">Direction 09, Galerie: one piece to a page. Checkout opens the live store.</span></div>
+  <div class="wrap"><p><b>Concept preview.</b> Prices checked 21–22 Oct 2026; slots are examples.<span class="more"> Prices are from the shop’s own listings. Direction 09, Galerie: one piece to a page. Checkout opens the live store.</span></p></div>
 </aside>
 
 <header class="top">
@@ -308,11 +308,12 @@
   <div class="wrap">
     <div>
       <h1 id="h1"><em lang="fr">La Galerie.</em> Thirteen pieces from 169 W Green St, one to a page.</h1>
-      <p class="lede">A catalogue of the case at the plant-based French pâtisserie in Old Pasadena. Each plate carries its price and its Add; the pickup time and the bag appear once you choose something.</p>
+      <p class="lede">A catalogue of the case at the plant-based French <span lang="fr">pâtisserie</span> in Old Pasadena. Each plate carries its price and its Add.</p>
+      <p class="front-act"><a class="btn" href="#p-coffret">Fill a box of six, $15</a></p>
     </div>
     <figure data-grid-break>
       <img src="../../img/macarons-1-800.jpg" srcset="../../img/macarons-1-800.jpg 800w, ../../img/macarons-1.jpg 1600w" sizes="(min-width: 1000px) 40vw, 100vw" width="1600" height="1600" alt="Six macarons on one of the shop’s blue glazed plates: raspberry, pistachio, lemon and violet" fetchpriority="high">
-      <figcaption><span lang="fr">Frontispice.</span> Macarons on a blue glazed plate; six of your choice are $15.00 (planche III).</figcaption>
+      <figcaption><span lang="fr">Frontispice.</span> Macarons on a blue glazed plate; six of your choice are $15.00 (<span lang="fr">planche</span> III).</figcaption>
     </figure>
   </div>
 </section>
@@ -345,7 +346,7 @@
     <div class="pl-label">
       <p class="pl-no">Planche I</p>
       <h2 id="h-caneles" lang="fr">Cannelés</h2>
-      <p class="pl-en">Cannelés, by three. Caramelised crust, soft centre.</p>
+      <p class="pl-en"><span lang="fr">Cannelés</span>, by three. Caramelised crust, soft centre.</p>
       <div class="pl-buy"><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="caneles" data-title="Cannelés, by 3" data-price="9.0" data-variant="42881176993980" data-image="img/caneles.jpg" aria-label="Add Cannelés, by 3, $9.00">Add</button></div>
       <p class="pl-note">On the live store today: pickup at 169 W Green St, usually ready in 24 hours.</p>
     </div>
@@ -359,7 +360,7 @@
       <h2 id="h-eclair" lang="fr">Éclair au chocolat</h2>
       <p class="pl-en">Chocolate éclair. Glossy chocolate glaze, gold leaf.</p>
       <div class="pl-buy"><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="chocolate-eclair" data-title="Chocolate éclair" data-price="6.5" data-glyph="é" aria-label="Add Chocolate éclair, $6.50">Add</button></div>
-      <p class="pl-note">From the morning case, the same day. The éclair is the shop’s top seller on Grubhub; this plate waits for the photo shoot.</p>
+      <p class="pl-note">From the morning case, the same day.</p>
     </div>
   </div>
 </section>
@@ -466,7 +467,7 @@
     <div class="pl-label">
       <p class="pl-no">Planche X</p>
       <h2 id="h-panier" lang="fr">Le petit panier</h2>
-      <p class="pl-en">Gift basket, small. Seasonal jam, diamants, two poché cookies, a meringue.</p>
+      <p class="pl-en">Gift basket, small. Seasonal jam, diamants, two <span lang="fr">poché</span> cookies, a meringue.</p>
       <div class="pl-buy"><span class="price">$45.00</span><button class="add" type="button" data-add data-handle="gift-basket-small" data-title="Gift basket, small" data-price="45.0" data-variant="43094183837884" data-image="img/gift-basket.jpg" aria-label="Add Gift basket, small, $45.00">Add</button></div>
       <p class="pl-note">Live store: pickup at 169 W Green St, usually ready in 24 hours.</p>
     </div>
@@ -546,7 +547,7 @@
       </div>
       <div>
         <h2>Hours</h2>
-        <p>Pâtisserie: doors open at 6 am. Closing times differ between listings, so the shop confirms one set before launch. Closed Mondays, to confirm.</p>
+        <p><span lang="fr">Pâtisserie</span>: doors open at 6 am.</p>
         <p>La Cave: Wednesday to Sunday, 3 to 9 pm.</p>
         <p class="muted">Park at the De Lacey garage, 45 S. De Lacey Ave: $1 for the first two hours.</p>
       </div>
@@ -559,7 +560,7 @@
         <ul><li><a href="https://www.instagram.com/ideclairlosangeles/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@ideclairlosangeles" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.instagram.com/lacavepasadena/" target="_blank" rel="noopener">La Cave on Instagram</a></li><li><a href="https://www.id-eclair.com" target="_blank" rel="noopener">The live store</a></li><li><a href="../index.html">All design directions</a></li></ul>
       </div>
     </div>
-    <p class="foot-note">Concept preview, direction 09 (Galerie), 24 October 2026. Not the live store. Prices from the shop’s menu app (21 October) and live store (22 October); pickup slots, class dates, the club and gift cards are examples or proposals.</p>
+    <p class="foot-note">Concept preview, direction 09 (Galerie), 24 October 2026. Not the live store. Prices from the shop’s menu app (21 October) and live store (22 October); pickup slots, class dates, the club and gift cards are examples.</p>
   </div>
   <div class="gs" data-gs hidden>
     <div class="gs-panel" id="gs-panel" hidden role="dialog" aria-label="Pickup time">

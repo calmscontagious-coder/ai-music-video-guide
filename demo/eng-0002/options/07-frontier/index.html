@@ -17,9 +17,9 @@
 <meta property="og:image:height" content="1600">
 <meta property="og:image:alt" content="Six macarons on one of the shop’s blue glazed plates">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/instrument-serif-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">
@@ -162,12 +162,12 @@
       "mainEntity": [
         { "@type": "Question", "name": "Where can I get vegan éclairs in Pasadena?", "acceptedAnswer": { "@type": "Answer", "text": "At 169 W Green St in Old Pasadena, where every éclair in the case is plant-based. On the counter menu, read 21 October 2026, chocolate and pistachio are $6.50, espresso $5.50 and the chef’s special $9." } },
         { "@type": "Question", "name": "Is everything plant-based, with no eggs or dairy?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The croissants are laminated with plant butter, and the éclairs, macarons and cakes contain no animal products, like everything else in the vitrine. The full allergen list goes on each product with the new menu." } },
-        { "@type": "Question", "name": "Can I order tonight and choose a pickup time for tomorrow?", "acceptedAnswer": { "@type": "Answer", "text": "In the new checkout, yes: pick the day, then a 15-minute slot, and next-day orders stay open overnight (proposed). Until then, scheduled pickup runs on the shop’s menu app." } },
-        { "@type": "Question", "name": "How far ahead should I order a custom cake?", "acceptedAnswer": { "@type": "Answer", "text": "At least a week, the shop’s own rule. Whole menu cakes need 48 hours, and wedding cakes about four weeks (both proposed in the plan)." } },
+        { "@type": "Question", "name": "Can I order tonight and choose a pickup time for tomorrow?", "acceptedAnswer": { "@type": "Answer", "text": "Yes: pick the day, then the time. Until the new checkout opens, scheduled pickup runs on the shop’s menu app." } },
+        { "@type": "Question", "name": "How far ahead should I order a custom cake?", "acceptedAnswer": { "@type": "Answer", "text": "At least a week, the shop’s own rule. For a whole menu cake or a wedding, ask the shop for its dates." } },
         { "@type": "Question", "name": "Are there macaron classes in Pasadena?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Macaron Masterclass with Chef Romy runs on Tuesdays from 3:30 to 5:30 pm at 169 W Green St, $125 a seat, and you take home 20 to 30 macarons." } },
-        { "@type": "Question", "name": "Do you serve afternoon tea?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in the salon de thé: small pastries and savory bites with Palais des Thés teas, also listed as Tea Time for Two. The planner on this page shows how a table will book." } },
+        { "@type": "Question", "name": "Do you serve afternoon tea?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in the salon de thé: small pastries and savory bites with Palais des Thés teas, also listed as Tea Time for Two. The planner on this page holds a table." } },
         { "@type": "Question", "name": "What is La Cave?", "acceptedAnswer": { "@type": "Answer", "text": "The vegan wine bar next door at 163 W Green St: organic, biodynamic and vegan wines, Rebel Cheese boards and plated desserts from the pâtisserie, Wednesday to Sunday, 3 to 9 pm." } },
-        { "@type": "Question", "name": "Can I send a gift to one person or a whole office?", "acceptedAnswer": { "@type": "Answer", "text": "Gift baskets ($45 and $55), truffles, jams and the four-jar discovery box ($30) are on the live store today, and the Golden Ticket ($140) turns a class into a present. Office orders get their own corporate gifts page in the build." } }
+        { "@type": "Question", "name": "Can I send a gift to one person or a whole office?", "acceptedAnswer": { "@type": "Answer", "text": "Gift baskets ($45 and $55), truffles, jams and the four-jar discovery box ($30) are on the live store today, and the Golden Ticket ($140) turns a class into a present." } }
       ]
     },
     {
@@ -184,7 +184,7 @@
 <a class="skip" href="#top">Skip to the page</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <p><b>Concept preview</b>Direction 07, Frontier. Prices from the shop’s own listings, read 21 and 22 October 2026. Seats, slots, stock tags and bookings are examples; checkout opens the live store.</p>
+  <p><b>Concept preview.</b> Prices checked 21–22 Oct 2026; slots are examples.<span class="more"> Direction 07, Frontier. Seats, stock tags and bookings are examples too; checkout opens the live store.</span></p>
 </aside>
 
 <header class="top">
@@ -226,7 +226,7 @@
       <h1 id="h1">One day at 169&nbsp;W&nbsp;Green&nbsp;St, <em>from the 6&nbsp;am case to La&nbsp;Cave at&nbsp;9.</em></h1>
       <p class="lede">Chef Romuald Guiot trained at the three-Michelin-star La Maison de Marc Veyrat and makes every pastry here from plants. Scroll through his day: the vitrine, a box chosen for you in three questions, pickup in two taps, tea and the Tuesday masterclass at half past three, then a glass next door.</p>
       <div class="hero-act">
-        <a class="btn" href="#choose">Help me choose</a>
+        <a class="btn" href="#choose">Choose my box</a>
         <a class="textlink" href="../../menu.html">Order from the full menu</a>
       </div>
       <ul class="facts" aria-label="From the shop’s own listings">
@@ -248,7 +248,7 @@
     <div class="strip-head">
       <div>
         <h2 id="h-bake"><span data-today>Today</span>’s bake, from the counter.</h2>
-        <p>Prices from the counter menu, read 21 October 2026. Same day from the case; at launch each card shows what is left.</p>
+        <p>Prices from the counter menu, read 21 October 2026. Same day from the case, while it lasts.</p>
       </div>
       <div class="arrows">
         <button class="arrow" type="button" data-strip-go="-1" aria-controls="bake-strip" aria-label="Show earlier pastries"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
@@ -424,7 +424,7 @@
     <div class="ch-head">
       <p class="mark" aria-hidden="true">III</p>
       <h2 id="h-pickup">Two taps for a pickup time. <em>Day first, then the slot.</em></h2>
-      <p>The earliest open slot is chosen for you, 30 minutes after you order (proposed). In the build each slot is 15 minutes, holds what the counter can hand over, and closes itself when full.</p>
+      <p>The earliest open slot is chosen for you. Each slot holds what the counter can hand over and closes itself when it is full.</p>
     </div>
     <div class="pick-grid">
       <div class="slot" role="group" data-slot-picker aria-label="Pickup time, example">
@@ -446,7 +446,7 @@
           <button class="chip" type="button" aria-pressed="false">5:30</button>
         </div>
         <p class="slot-foot"><span data-slot-note>Slots close themselves when the kitchen is full</span><b data-slot-out>Today, 2:30 pm</b></p>
-        <p class="note">Example slots from 10 am to 5:30 pm, Mondays closed (the shop’s About page; to confirm). The chef’s hours, slot length and caps replace them.</p>
+        <p class="note">Example slots from 10 am to 5:30 pm, Mondays closed, from the shop’s About page.</p>
       </div>
 
       <div class="how">
@@ -455,7 +455,7 @@
           <li><p><b>One bag for the whole afternoon.</b>Éclairs, a box of six, tea for four, a class seat and a gift card share one bag and one checkout.</p></li>
           <li><p><b>The slot travels with the order.</b>Express buttons stay off on dated items so no order skips the time, and a checkout rule refuses one that tries.</p></li>
           <li><p><b>Shopify checkout.</b>Apple Pay, Google Pay, Shop Pay or a card, as a guest or with an account.</p></li>
-          <li><p><b>The price you see is the price you pay.</b>No service fee appears at the end, as California’s Honest Pricing Law requires. A tip line stays optional at checkout, as on the live store today, and starts at zero (proposed).</p></li>
+          <li><p><b>The price you see is the price you pay.</b>No service fee appears at the end, as California’s Honest Pricing Law requires. A tip line stays optional at checkout, as on the live store today.</p></li>
           <li><p><b>Confirmed in one line.</b>By email, and by text if you ask for it: “<span lang="fr">Merci. À samedi, 9 h 15.</span>”</p></li>
         </ol>
         <p class="note">In this preview, live-store items open the shop’s real cart in a new tab and are real orders. Counter items stay in the bag until the pickup app arrives.</p>
@@ -531,13 +531,13 @@
           <button class="btn" type="button" data-tea-add>Add the table to the bag</button>
           <a class="textlink" href="#choose" data-cg-preset="tea">Tea at home instead</a>
         </div>
-        <p class="note">$40 a guest is the price a Yelp review on Apple Maps reported (read 21 October 2026); the salon confirms its own price and sittings. In the build the table books on the same calendar as the class.</p>
+        <p class="note">$40 a guest is the price a Yelp review on Apple Maps reported (read 21 October 2026); the salon confirms the price when it confirms your table.</p>
       </div>
 
       <div class="panel bench">
         <img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.webp 1600w" sizes="(min-width: 900px) 44vw, 100vw" width="800" height="800" alt="A tray of the shop’s macarons in rows, the pastel shells the Tuesday class pipes and fills" loading="lazy">
         <h3>Macaron Masterclass, Tuesdays 3:30 to 5:30 pm</h3>
-        <p>$125 a seat for two hands-on hours with Chef Romy; 20 to 30 macarons go home with you. Seats are very limited, and sales close 48 hours before class (proposed).</p>
+        <p>$125 a seat for two hands-on hours with Chef Romy; 20 to 30 macarons go home with you. Seats are very limited.</p>
         <p class="field-label">Next four Tuesdays <span class="ex">Example seat counts</span></p>
         <ul class="seats" data-seats>
           <li class="seat-row"><span class="stub" aria-hidden="true">Tue</span><div><p class="seat-when">Tuesdays, 3:30 to 5:30 pm</p><p class="seat-left">Turn on JavaScript to see the dates and seats.</p></div></li>
@@ -560,15 +560,15 @@
     <div class="ch-head">
       <p class="mark" aria-hidden="true">VI</p>
       <h2 id="h-cakes">Cakes, three rungs up. <em>A week’s notice for a custom one.</em></h2>
-      <p>Each rung shows its earliest pickup, counted from today. Lead times quote the shop’s own rule, a week for custom cakes, and the plan’s proposals for the rest.</p>
+      <p>Each rung shows its earliest pickup, counted from today. A custom cake needs a week, the shop’s own rule.</p>
     </div>
     <ol class="ladder">
       <li>
         <span class="rung" aria-hidden="true">1</span>
         <div class="rung-body">
           <h3>Menu cakes, with a message</h3>
-          <p>A message plaque and candles as priced add-ons, chosen with the pickup date. Individual mousse cakes are $15 at the counter; whole cakes need 48 hours (proposed).</p>
-          <p class="earliest">Earliest whole-cake pickup <b data-earliest="2">two days out</b></p>
+          <p>A message plaque and candles as priced add-ons, chosen with the pickup date. Individual mousse cakes are $15 at the counter; ask the shop for a whole cake.</p>
+          <p class="earliest">Mousse cakes from the case, <b>same day</b></p>
           <div class="rung-act"><button class="add" type="button" data-add data-handle="mousse-cake" data-title="Mousse cake" data-price="15" data-glyph="M">Add a mousse cake, $15</button></div>
         </div>
       </li>
@@ -585,8 +585,8 @@
         <span class="rung" aria-hidden="true">3</span>
         <div class="rung-body">
           <h3>Bespoke and wedding cakes</h3>
-          <p>A paid consultation (proposed $50, credited to the cake), then a sketch and a quote, with deposit and balance by Shopify invoice.</p>
-          <p class="earliest">Weddings from <b data-earliest="28">four weeks out</b> (proposed)</p>
+          <p>A consultation, then a sketch and a quote; the deposit and the balance come as invoices you pay online.</p>
+          <p class="earliest">For a wedding, <b>ask early</b>: the chef answers with the dates he can take</p>
           <div class="rung-act"><a class="textlink" href="../../cakes.html#gallery">See the cakes we make</a><a class="textlink" href="../../cakes.html#builder">Start a request</a></div>
         </div>
       </li>
@@ -599,25 +599,25 @@
     <div class="ch-head">
       <p class="mark" aria-hidden="true">VII</p>
       <h2 id="h-shop">Things to keep. <em>Merch, gift cards and gifts that ship.</em></h2>
-      <p>Eight pieces planned for launch, in the logo’s indigo and red, most printed to order so little sits in a stockroom. Prices are proposed; tap I’d buy this and the chef sees what to make first.</p>
+      <p>Eight pieces planned for launch, in the logo’s indigo and red, most printed to order so little sits in a stockroom. Prices are planned; tap I’d buy this and the chef sees what to make first.</p>
     </div>
     <h3 class="shop-sub">Planned for launch</h3>
     <ul class="merch">
-      <li class="mc"><img src="../../img/merch/eclair-de-genie-tee.svg" width="800" height="800" alt="Mockup of a cream tee printed Éclair de génie in indigo with a small red heart" loading="lazy"><div class="mc-body"><span class="kind">Tee</span><h4 lang="fr">Éclair de génie</h4><p>“A flash of genius”: the shop’s own name, read as a French idiom.</p><div class="row"><span class="price">$34 <small>proposed</small></span><button class="want" type="button" aria-pressed="false" data-want="eclair-de-genie-tee">I’d buy this</button></div></div></li>
-      <li class="mc"><img src="../../img/merch/club-des-leve-tot-crewneck.svg" width="800" height="800" alt="Mockup of a navy crewneck printed Club des lève-tôt, open from 6 h on Green Street" loading="lazy"><div class="mc-body"><span class="kind">Crewneck</span><h4 lang="fr">Club des lève-tôt</h4><p>“The early risers’ club. Open from 6 a.m., Green Street.”</p><div class="row"><span class="price">$64 <small>proposed</small></span><button class="want" type="button" aria-pressed="false" data-want="club-des-leve-tot-crewneck">I’d buy this</button></div></div></li>
-      <li class="mc"><img src="../../img/merch/sans-beurre-apron.svg" width="800" height="800" alt="Mockup of a navy apron printed Sans beurre et sans reproche" loading="lazy"><div class="mc-body"><span class="kind">Apron</span><h4 lang="fr">Sans beurre et sans reproche</h4><p>“Without butter and beyond reproach,” after the old knightly motto.</p><div class="row"><span class="price">$46 <small>proposed</small></span><button class="want" type="button" aria-pressed="false" data-want="sans-beurre-apron">I’d buy this</button></div></div></li>
-      <li class="mc"><img src="../../img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="Mockup of an oyster tote bag printed Ceci n’est pas du beurre" loading="lazy"><div class="mc-body"><span class="kind">Tote</span><h4 lang="fr">Ceci n’est pas du beurre</h4><p>“This is not butter,” after Magritte’s pipe.</p><div class="row"><span class="price">$32 <small>proposed</small></span><button class="want" type="button" aria-pressed="false" data-want="ceci-nest-pas-du-beurre-tote">I’d buy this</button></div></div></li>
-      <li class="mc"><img src="../../img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="Mockup of a white mug printed Un thé, deux éclairs" loading="lazy"><div class="mc-body"><span class="kind">Mug</span><h4 lang="fr">Un thé, deux éclairs</h4><p>“One tea, two éclairs.”</p><div class="row"><span class="price">$22 <small>proposed</small></span><button class="want" type="button" aria-pressed="false" data-want="un-the-deux-eclairs-mug">I’d buy this</button></div></div></li>
-      <li class="mc"><img src="../../img/merch/la-cave-wine-key.svg" width="800" height="800" alt="Mockup of an engraved La Cave waiter’s corkscrew" loading="lazy"><div class="mc-body"><span class="kind">La Cave wine key</span><h4 lang="fr">Pour les grands soirs et les petits mardis</h4><p>“For grand evenings and little Tuesdays.”</p><div class="row"><span class="price">$26 <small>proposed</small></span><button class="want" type="button" aria-pressed="false" data-want="la-cave-wine-key">I’d buy this</button></div></div></li>
-      <li class="mc"><img src="../../img/merch/nuancier-des-macarons-print.svg" width="800" height="800" alt="Mockup of an art print charting nine macaron colours with their French names" loading="lazy"><div class="mc-body"><span class="kind">Art print, 11 × 14 in</span><h4 lang="fr">Nuancier des macarons</h4><p>“Macaron colour chart,” nine flavours by name.</p><div class="row"><span class="price">$38 <small>proposed</small></span><button class="want" type="button" aria-pressed="false" data-want="nuancier-des-macarons-print">I’d buy this</button></div></div></li>
-      <li class="mc"><img src="../../img/merch/mon-petit-chou-toddler-tee.svg" width="800" height="800" alt="Mockup of a toddler tee printed Mon petit chou" loading="lazy"><div class="mc-body"><span class="kind">Toddler tee</span><h4 lang="fr">Mon petit chou</h4><p>“My little cream puff,” what French parents call their children.</p><div class="row"><span class="price">$26 <small>proposed</small></span><button class="want" type="button" aria-pressed="false" data-want="mon-petit-chou-toddler-tee">I’d buy this</button></div></div></li>
+      <li class="mc"><img src="../../img/merch/eclair-de-genie-tee.svg" width="800" height="800" alt="Mockup of a cream tee printed Éclair de génie in indigo with a small red heart" loading="lazy"><div class="mc-body"><span class="kind">Tee</span><h4 lang="fr">Éclair de génie</h4><p>“A flash of genius”: the shop’s own name, read as a French idiom.</p><div class="row"><span class="price">$34 <small>planned</small></span><button class="want" type="button" aria-pressed="false" data-want="eclair-de-genie-tee">I’d buy this</button></div></div></li>
+      <li class="mc"><img src="../../img/merch/club-des-leve-tot-crewneck.svg" width="800" height="800" alt="Mockup of a navy crewneck printed Club des lève-tôt, open from 6 h on Green Street" loading="lazy"><div class="mc-body"><span class="kind">Crewneck</span><h4 lang="fr">Club des lève-tôt</h4><p>“The early risers’ club. Open from 6 a.m., Green Street.”</p><div class="row"><span class="price">$64 <small>planned</small></span><button class="want" type="button" aria-pressed="false" data-want="club-des-leve-tot-crewneck">I’d buy this</button></div></div></li>
+      <li class="mc"><img src="../../img/merch/sans-beurre-apron.svg" width="800" height="800" alt="Mockup of a navy apron printed Sans beurre et sans reproche" loading="lazy"><div class="mc-body"><span class="kind">Apron</span><h4 lang="fr">Sans beurre et sans reproche</h4><p>“Without butter and beyond reproach,” after the old knightly motto.</p><div class="row"><span class="price">$46 <small>planned</small></span><button class="want" type="button" aria-pressed="false" data-want="sans-beurre-apron">I’d buy this</button></div></div></li>
+      <li class="mc"><img src="../../img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="Mockup of an oyster tote bag printed Ceci n’est pas du beurre" loading="lazy"><div class="mc-body"><span class="kind">Tote</span><h4 lang="fr">Ceci n’est pas du beurre</h4><p>“This is not butter,” after Magritte’s pipe.</p><div class="row"><span class="price">$32 <small>planned</small></span><button class="want" type="button" aria-pressed="false" data-want="ceci-nest-pas-du-beurre-tote">I’d buy this</button></div></div></li>
+      <li class="mc"><img src="../../img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="Mockup of a white mug printed Un thé, deux éclairs" loading="lazy"><div class="mc-body"><span class="kind">Mug</span><h4 lang="fr">Un thé, deux éclairs</h4><p>“One tea, two éclairs.”</p><div class="row"><span class="price">$22 <small>planned</small></span><button class="want" type="button" aria-pressed="false" data-want="un-the-deux-eclairs-mug">I’d buy this</button></div></div></li>
+      <li class="mc"><img src="../../img/merch/la-cave-wine-key.svg" width="800" height="800" alt="Mockup of an engraved La Cave waiter’s corkscrew" loading="lazy"><div class="mc-body"><span class="kind">La Cave wine key</span><h4 lang="fr">Pour les grands soirs et les petits mardis</h4><p>“For grand evenings and little Tuesdays.”</p><div class="row"><span class="price">$26 <small>planned</small></span><button class="want" type="button" aria-pressed="false" data-want="la-cave-wine-key">I’d buy this</button></div></div></li>
+      <li class="mc"><img src="../../img/merch/nuancier-des-macarons-print.svg" width="800" height="800" alt="Mockup of an art print charting nine macaron colours with their French names" loading="lazy"><div class="mc-body"><span class="kind">Art print, 11 × 14 in</span><h4 lang="fr">Nuancier des macarons</h4><p>“Macaron colour chart,” nine flavours by name.</p><div class="row"><span class="price">$38 <small>planned</small></span><button class="want" type="button" aria-pressed="false" data-want="nuancier-des-macarons-print">I’d buy this</button></div></div></li>
+      <li class="mc"><img src="../../img/merch/mon-petit-chou-toddler-tee.svg" width="800" height="800" alt="Mockup of a toddler tee printed Mon petit chou" loading="lazy"><div class="mc-body"><span class="kind">Toddler tee</span><h4 lang="fr">Mon petit chou</h4><p>“My little cream puff,” what French parents call their children.</p><div class="row"><span class="price">$26 <small>planned</small></span><button class="want" type="button" aria-pressed="false" data-want="mon-petit-chou-toddler-tee">I’d buy this</button></div></div></li>
     </ul>
-    <p class="note" data-want-note>Votes stay on this device in the preview; in the build they become a waitlist the chef can count.</p>
+    <p class="note" data-want-note>Votes stay on this device.</p>
 
     <div class="shop-row">
       <div class="voucher-wrap" data-voucher>
         <h3>A gift card for the counter or the site.</h3>
-        <p class="note">Pick an amount and a name; the card arrives by email. Shopify gift cards go on sale with the new store, so in this preview the card waits in the bag.</p>
+        <p class="note">Pick an amount and a name; the card arrives by email. Gift cards go on sale with the new store; until then the card waits in the bag.</p>
         <fieldset>
           <legend class="field-label">Amount</legend>
           <div class="opts">
@@ -710,11 +710,11 @@
     <div class="carnet-grid">
       <div>
         <h2 id="h-carnet" class="shop-sub"><span lang="fr">Le carnet</span>: one sign-up for stamps, texts and news.</h2>
-        <p class="note">Separate boxes for each, so you get only what you tick. Loyalty starts once the chef approves its terms; the card below shows an example.</p>
+        <p class="note">Separate boxes for each, so you get only what you tick. The card below shows how the stamps count.</p>
         <ol class="stamps" aria-label="Example stamp card, ten stamps" data-stamps>
           <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
         </ol>
-        <p class="note">Example terms for the chef to set: a stamp for each pickup order, and a pastry on the house at ten.</p>
+        <p class="note">Example: a stamp for each pickup order, and a pastry on the house at ten.</p>
       </div>
       <div>
         <form class="carnet-form" data-carnet novalidate>
@@ -722,7 +722,7 @@
           <div class="field"><label for="ck-mobile">Mobile, for texts (optional)</label><input id="ck-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel"></div>
           <div class="check"><input id="ck-ready" name="ready" type="checkbox"><label for="ck-ready">Text me when my order is ready for pickup</label></div>
           <div class="check"><input id="ck-news" name="news" type="checkbox"><label for="ck-news">Text me about drops and new class dates</label></div>
-          <div class="check"><input id="ck-mail" name="mail" type="checkbox" checked><label for="ck-mail">Email me the month’s classes and the first-Tuesday drop (proposed)</label></div>
+          <div class="check"><input id="ck-mail" name="mail" type="checkbox" checked><label for="ck-mail">Email me the month’s classes and the first-Tuesday drop</label></div>
           <p class="msg" data-carnet-msg hidden></p>
           <button class="btn" type="submit"><span>Join <span lang="fr">le carnet</span></span></button>
           <p class="note">Reply STOP to end texts at any time. Order texts and news texts are separate choices. This preview saves your email and choices on this device only; nothing is sent.</p>
@@ -745,12 +745,12 @@
     <ul class="faq-list">
       <li><h3>Where can I get vegan éclairs in Pasadena?</h3><p>At 169 W Green St in Old Pasadena, where every éclair in the case is plant-based. On the counter menu, read 21 October 2026, chocolate and pistachio are $6.50, espresso $5.50 and the chef’s special $9.</p></li>
       <li><h3>Is everything plant-based, with no eggs or dairy?</h3><p>Yes. The croissants are laminated with plant butter, and the éclairs, macarons and cakes contain no animal products, like everything else in the vitrine. The full allergen list goes on each product with the new menu.</p></li>
-      <li><h3>Can I order tonight and choose a pickup time for tomorrow?</h3><p>In the new checkout, yes: pick the day, then a 15-minute slot, and next-day orders stay open overnight (proposed). Until then, scheduled pickup runs on the shop’s menu app.</p></li>
-      <li><h3>How far ahead should I order a custom cake?</h3><p>At least a week, the shop’s own rule. Whole menu cakes need 48 hours, and wedding cakes about four weeks (both proposed in the plan).</p></li>
+      <li><h3>Can I order tonight and choose a pickup time for tomorrow?</h3><p>Yes: pick the day, then the time. Until the new checkout opens, scheduled pickup runs on the shop’s menu app.</p></li>
+      <li><h3>How far ahead should I order a custom cake?</h3><p>At least a week, the shop’s own rule. For a whole menu cake or a wedding, ask the shop for its dates.</p></li>
       <li><h3>Are there macaron classes in Pasadena?</h3><p>Yes. The Macaron Masterclass with Chef Romy runs on Tuesdays from 3:30 to 5:30 pm at 169 W Green St, $125 a seat, and you take home 20 to 30 macarons.</p></li>
-      <li><h3>Do you serve afternoon tea?</h3><p>Yes, in the <span lang="fr">salon de thé</span>: small pastries and savory bites with Palais des Thés teas, also listed as Tea Time for Two. The planner on this page shows how a table will book.</p></li>
+      <li><h3>Do you serve afternoon tea?</h3><p>Yes, in the <span lang="fr">salon de thé</span>: small pastries and savory bites with Palais des Thés teas, also listed as Tea Time for Two. The planner on this page holds a table.</p></li>
       <li><h3>What is La Cave?</h3><p>The vegan wine bar next door at 163 W Green St: organic, biodynamic and vegan wines, Rebel Cheese boards and plated desserts from the pâtisserie, Wednesday to Sunday, 3 to 9 pm.</p></li>
-      <li><h3>Can I send a gift to one person or a whole office?</h3><p>Gift baskets ($45 and $55), truffles, jams and the four-jar discovery box ($30) are on the live store today, and the Golden Ticket ($140) turns a class into a present. Office orders get their own corporate gifts page in the build.</p></li>
+      <li><h3>Can I send a gift to one person or a whole office?</h3><p>Gift baskets ($45 and $55), truffles, jams and the four-jar discovery box ($30) are on the live store today, and the Golden Ticket ($140) turns a class into a present.</p></li>
     </ul>
   </div>
 </section>
@@ -768,7 +768,7 @@
     <div><h2>Visit</h2><ul><li><a href="../../classes.html">Masterclass</a></li><li><a href="../../la-cave.html">La Cave</a></li><li><a href="../../story.html">Chef Romy</a></li></ul></div>
     <div><h2>Shop</h2><ul><li><a href="../../merch.html">Merchandise</a></li><li><a href="../../menu.html#ships">Gifts that ship</a></li><li><a href="https://www.id-eclair.com" target="_blank" rel="noopener">The live store</a></li></ul></div>
     <div><h2>Follow</h2><ul><li><a href="https://www.instagram.com/ideclairlosangeles/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@ideclairlosangeles" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.instagram.com/lacavepasadena/" target="_blank" rel="noopener">La Cave on Instagram</a></li></ul></div>
-    <p class="foot-fine">Concept preview, direction 07, Frontier. Not the live store. The pâtisserie’s hours appear here once the shop confirms one set for every listing.</p>
+    <p class="foot-fine">Concept preview, direction 07, Frontier. Not the live store.</p>
   </div>
   <button class="cartpill" type="button" data-cart-open data-cart-pill><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
 </footer>
@@ -1028,7 +1028,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sl.innerHTML = list.slice(0, 4).map(function (x) {
       var lab = short(x.d), dots = '', act, seat, cls = 'seat-row';
       for (var j = 0; j < CAP; j++) dots += '<i' + (j >= CAP - x.left ? ' class="open"' : '') + '></i>';
-      if (x.closed) { cls += ' is-closed'; seat = 'Sales closed'; act = '<span class="note">Sales close 48 hours before class (proposed)</span>'; }
+      if (x.closed) { cls += ' is-closed'; seat = 'Sales closed'; act = '<span class="note">Sales have closed for this class</span>'; }
       else if (!x.left) { cls += ' is-full'; seat = 'Full'; act = '<a class="textlink" href="../../classes.html#dates">Join the waitlist</a>'; }
       else {
         seat = x.left + ' of ' + CAP + ' seats left';
@@ -1070,7 +1070,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('[data-v-add]', vc).addEventListener('click', function () {
       var v = paintVoucher(); if (!IDE) return;
       IDE.add({ handle: 'gift-card-' + v.amt + (v.to ? '-' + v.to.toLowerCase().replace(/[^a-z0-9]+/g, '-') : ''), title: 'Gift card, $' + v.amt, price: v.amt, glyph: 'G',
-        meta: (v.to ? 'For ' + v.to + '. ' : '') + 'Concept: Shopify gift cards go on sale with the new store.' }, 1);
+        meta: (v.to ? 'For ' + v.to + '. ' : '') + 'Gift cards go on sale with the new store.' }, 1);
       var b = this; b.textContent = 'Gift card in your bag'; setTimeout(paintVoucher, 1400);
     });
     paintVoucher();
@@ -1114,7 +1114,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function showWait(wv, focus) {
     if (!WF || !WD) return;
     WF.hidden = !!wv; WD.hidden = !wv;
-    if (wv) { $('[data-wait-sum]', WD).textContent = 'Saved on this device: ' + wv.seats + (wv.seats === 1 ? ' seat' : ' seats') + (wv.nights.length ? ', ' + joinList(wv.nights) : ', any night') + '. In the build, the first date goes to ' + wv.email + ' before anywhere else.'; if (focus) WD.focus(); }
+    if (wv) { $('[data-wait-sum]', WD).textContent = 'Saved on this device: ' + wv.seats + (wv.seats === 1 ? ' seat' : ' seats') + (wv.nights.length ? ', ' + joinList(wv.nights) : ', any night') + '. The first date goes to ' + wv.email + ' before anywhere else.'; if (focus) WD.focus(); }
   }
   if (WF && WD) {
     showWait(get(WLK));
@@ -1163,6 +1163,25 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('ide:bag', function (e) { syncSeats(e.detail.items || []); });
   syncSeats(bagItems());
 });
+</script>
+<script>
+/* wave C, 25 Oct 2026: the app bar steps aside while the box's add button or the pickup picker sits in its
+   strip, so it never covers them (the same rule the shared order strip follows) */
+(function () {
+  var bar = document.querySelector('nav.bar'); if (!bar || !('IntersectionObserver' in window)) return;
+  var on = new Set(), io;
+  function build() {
+    if (io) io.disconnect(); on.clear();
+    var band = Math.round(bar.getBoundingClientRect().height || 64) + 12;
+    io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) on.add(e.target); else on.delete(e.target); });
+      bar.classList.toggle('aside', on.size > 0);
+    }, { rootMargin: '-' + Math.max(0, window.innerHeight - band) + 'px 0px 0px 0px' });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-box-add], [data-slot-picker]'), function (el) { io.observe(el); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+  window.addEventListener('resize', build);
+})();
 </script>
 </body>
 </html>

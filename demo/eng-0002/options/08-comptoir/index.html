@@ -15,9 +15,9 @@
 <meta property="og:image:alt" content="Three cannelés on one of the shop’s blue glazed plates">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&amp;display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">
@@ -331,7 +331,7 @@
      "name": "Can I order tonight and pick up tomorrow?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Choose tomorrow in the pickup picker and a time; same-day slots start 30 minutes after you order (proposed)."
+      "text": "Yes. Choose tomorrow in the pickup picker and a time; same-day slots start soon after you order."
      }
     },
     {
@@ -385,7 +385,7 @@
 <a class="sr skip" href="#order">Skip to the order</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>Shop prices, checked 21 and 22 Oct 2026. Slots and gift cards are examples.</span><span class="more">Direction 08, Comptoir: the order comes first. Checkout opens the live store.</span></div>
+  <div class="wrap"><p><b>Concept preview.</b> Prices checked 21–22 Oct 2026; slots are examples.<span class="more"> Gift cards are examples too. Direction 08, Comptoir: the order comes first. Checkout opens the live store.</span></p></div>
 </aside>
 
 <header class="top">
@@ -404,14 +404,14 @@
   <div class="wrap og">
     <div class="og-h">
       <h1 id="h1">Order for pickup at 169 W Green St</h1>
-      <p class="lede">The éclair is the shop’s top seller on Grubhub. The earliest pickup is already chosen, and <b>all of it is plant-based.</b></p>
+      <p class="lede">The earliest pickup is already chosen, and <b>all of it is plant-based.</b></p>
     </div>
     <div class="og-three">
       <div class="three-h"><h2>Three to start</h2><span>Counter and live-store prices</span></div>
       <ol class="lineup" aria-label="Three to start">
+        <li class="lu lu-lead" data-card><span class="lu-pic"><img src="../../img/caneles-1-800.jpg" srcset="../../img/caneles-1-800.jpg 800w, ../../img/caneles-1.jpg 1600w" sizes="(min-width: 1000px) 640px, calc(100vw - 32px)" width="1600" height="1600" alt="Three cannelés with dark, caramelised crusts" fetchpriority="high"></span><div class="lu-txt"><h3><span lang="fr">Cannelés</span>, by 3</h3><p>Three, with a caramelised crust and a soft centre</p><p class="lu-p"><span class="price">$9.00</span><span class="tag">Live store</span></p></div><div class="lu-buy"><button class="add" type="button" data-add data-handle="caneles" data-title="Cannelés, by 3" data-price="9.0" data-variant="42881176993980" data-image="img/caneles.jpg" aria-label="Add Cannelés, by 3, $9.00">Add</button></div></li>
         <li class="lu" data-card><span class="lu-pic lu-type" aria-hidden="true"><i>é</i></span><div class="lu-txt"><h3>Chocolate éclair</h3><p>Glossy chocolate glaze, gold leaf</p><p class="lu-p"><span class="price">$6.50</span></p></div><div class="lu-buy"><button class="add" type="button" data-add data-handle="chocolate-eclair" data-title="Chocolate éclair" data-price="6.5" data-glyph="é" aria-label="Add Chocolate éclair, $6.50">Add</button></div></li>
         <li class="lu" data-card><span class="lu-pic lu-type" aria-hidden="true"><i>c</i></span><div class="lu-txt"><h3>Butter croissant</h3><p>Laminated with plant butter</p><p class="lu-p"><span class="price">$4.50</span></p></div><div class="lu-buy"><button class="add" type="button" data-add data-handle="butter-croissant" data-title="Butter croissant" data-price="4.5" data-glyph="c" aria-label="Add Butter croissant, $4.50">Add</button></div></li>
-        <li class="lu" data-card><span class="lu-pic"><img src="../../img/caneles-1-800.jpg" srcset="../../img/caneles-1-800.jpg 800w, ../../img/caneles-1.jpg 1600w" sizes="64px" width="1600" height="1600" alt="" role="presentation"></span><div class="lu-txt"><h3>Cannelés, by 3</h3><p>Three, with a caramelised crust and a soft centre</p><p class="lu-p"><span class="price">$9.00</span><span class="tag">Live store</span></p></div><div class="lu-buy"><button class="add" type="button" data-add data-handle="caneles" data-title="Cannelés, by 3" data-price="9.0" data-variant="42881176993980" data-image="img/caneles.jpg" aria-label="Add Cannelés, by 3, $9.00">Add</button></div></li>
       </ol>
 
     </div>
@@ -458,26 +458,26 @@
         <li class="mr" data-card><div class="mr-txt"><h4>Chocolate éclair</h4><p>Glossy chocolate glaze, gold leaf</p></div><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="chocolate-eclair" data-title="Chocolate éclair" data-price="6.5" data-glyph="é" aria-label="Add Chocolate éclair, $6.50">Add</button></li>
       </ul></div>
       <div class="grp" id="g-vienn"><h3>Viennoiserie and tarts <span>7 · $3.25 to $9.00</span></h3><ul>
-        <li class="mr" data-card><div class="mr-txt"><h4>Suisse</h4><p>Pain suisse</p></div><span class="price">$5.50</span><button class="add" type="button" data-add data-handle="suisse" data-title="Suisse" data-price="5.5" data-glyph="s" aria-label="Add Suisse, $5.50">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Cruffin du jour</h4><p>Croissant dough baked as a muffin, flavour of the day</p></div><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="cruffin-du-jour" data-title="Cruffin du jour" data-price="9.0" data-glyph="c" aria-label="Add Cruffin du jour, $9.00">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4>Suisse</h4><p><span lang="fr">Pain suisse</span></p></div><span class="price">$5.50</span><button class="add" type="button" data-add data-handle="suisse" data-title="Suisse" data-price="5.5" data-glyph="s" aria-label="Add Suisse, $5.50">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4>Cruffin <span lang="fr">du jour</span></h4><p>Croissant dough baked as a muffin, flavour of the day</p></div><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="cruffin-du-jour" data-title="Cruffin du jour" data-price="9.0" data-glyph="c" aria-label="Add Cruffin du jour, $9.00">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Cannelé</h4><p>Caramelised crust, soft centre</p></div><span class="price">$3.25</span><button class="add" type="button" data-add data-handle="canele" data-title="Cannelé" data-price="3.25" data-image="img/caneles.jpg" aria-label="Add Cannelé, $3.25">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Mille-feuille</h4><p>Feathered icing, set on a gold board</p></div><span class="price">$6.75</span><button class="add" type="button" data-add data-handle="mille-feuille" data-title="Mille-feuille" data-price="6.75" data-glyph="m" aria-label="Add Mille-feuille, $6.75">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4 lang="fr">Mille-feuille</h4><p>Feathered icing, set on a gold board</p></div><span class="price">$6.75</span><button class="add" type="button" data-add data-handle="mille-feuille" data-title="Mille-feuille" data-price="6.75" data-glyph="m" aria-label="Add Mille-feuille, $6.75">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Fruit tart</h4><p>Fresh fruit tart</p></div><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="fruit-tart" data-title="Fruit tart" data-price="6.5" data-glyph="t" aria-label="Add Fruit tart, $6.50">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Baguette</h4><p>French baguette</p></div><span class="price">$5.50</span><button class="add" type="button" data-add data-handle="baguette" data-title="Baguette" data-price="5.5" data-glyph="b" aria-label="Add Baguette, $5.50">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Macaron</h4><p>One, or six for $15</p></div><span class="price">$3.00</span><button class="add" type="button" data-add data-handle="macaron" data-title="Macaron" data-price="3.0" data-image="img/macarons.jpg" aria-label="Add Macaron, $3.00">Add</button></li>
       </ul></div>
       <div class="grp" id="g-jars"><h3>Love-note jars <span>7 · $8.00 to $30.00</span></h3><ul>
-        <li class="mr" data-card><div class="mr-txt"><h4>Chocolat mon amour</h4><p>Chocolate crumble, ganache and mousse; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="chocolat-mon-amour" data-title="Chocolat mon amour" data-price="8.0" data-variant="41826123317436" data-image="img/cake-chocolat.jpg" aria-label="Add Chocolat mon amour, $8.00">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Caramel je t’aime</h4><p>Caramel, almond crumble, caramel mousse, vanilla chantilly; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="caramel-je-taime" data-title="Caramel je t’aime" data-price="8.0" data-variant="41826128265404" data-image="img/cake-caramel.jpg" aria-label="Add Caramel je t’aime, $8.00">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Framboise chérie</h4><p>Raspberry mousse, raspberry jam, almond streusel; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="framboise-cherie" data-title="Framboise chérie" data-price="8.0" data-variant="41826118205628" data-image="img/cake-framboise.jpg" aria-label="Add Framboise chérie, $8.00">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Citron ma passion</h4><p>Lemon curd, meringue, almond streusel; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="citron-ma-passion" data-title="Citron ma passion" data-price="8.0" data-variant="41826113618108" data-image="img/cake-citron.jpg" aria-label="Add Citron ma passion, $8.00">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Douceur tropicale</h4><p>Passion fruit and mango mousse, jam, coconut crumble; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="douceur-tropicale" data-title="Douceur tropicale" data-price="8.0" data-variant="41829515428028" data-glyph="d" aria-label="Add Douceur tropicale, $8.00">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Noisette toujours</h4><p>Hazelnut crisp, hazelnut cream; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="noisette-toujours" data-title="Noisette toujours" data-price="8.0" data-variant="41829487280316" data-glyph="n" aria-label="Add Noisette toujours, $8.00">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4 lang="fr">Chocolat mon amour</h4><p>Chocolate crumble, ganache and mousse; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="chocolat-mon-amour" data-title="Chocolat mon amour" data-price="8.0" data-variant="41826123317436" data-image="img/cake-chocolat.jpg" aria-label="Add Chocolat mon amour, $8.00">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4 lang="fr">Caramel je t’aime</h4><p>Caramel, almond crumble, caramel mousse, vanilla chantilly; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="caramel-je-taime" data-title="Caramel je t’aime" data-price="8.0" data-variant="41826128265404" data-image="img/cake-caramel.jpg" aria-label="Add Caramel je t’aime, $8.00">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4 lang="fr">Framboise chérie</h4><p>Raspberry mousse, raspberry jam, almond streusel; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="framboise-cherie" data-title="Framboise chérie" data-price="8.0" data-variant="41826118205628" data-image="img/cake-framboise.jpg" aria-label="Add Framboise chérie, $8.00">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4 lang="fr">Citron ma passion</h4><p>Lemon curd, meringue, almond streusel; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="citron-ma-passion" data-title="Citron ma passion" data-price="8.0" data-variant="41826113618108" data-image="img/cake-citron.jpg" aria-label="Add Citron ma passion, $8.00">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4 lang="fr">Douceur tropicale</h4><p>Passion fruit and mango mousse, jam, coconut crumble; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="douceur-tropicale" data-title="Douceur tropicale" data-price="8.0" data-variant="41829515428028" data-glyph="d" aria-label="Add Douceur tropicale, $8.00">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4 lang="fr">Noisette toujours</h4><p>Hazelnut crisp, hazelnut cream; in a jar <span class="tag">Live store</span></p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="noisette-toujours" data-title="Noisette toujours" data-price="8.0" data-variant="41829487280316" data-glyph="n" aria-label="Add Noisette toujours, $8.00">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Four desserts in a jar</h4><p>The discovery box: all four love-note jars <span class="tag">Live store</span></p></div><span class="price">$30.00</span><button class="add" type="button" data-add data-handle="4-desserts-in-jar" data-title="Four desserts in a jar" data-price="30.0" data-variant="41826161557692" data-image="img/desserts-in-jar.jpg" aria-label="Add Four desserts in a jar, $30.00">Add</button></li>
       </ul></div>
       <div class="grp" id="g-lunch"><h3>Lunch <span>5 · $9.50 to $15.50</span></h3><ul>
-        <li class="mr" data-card><div class="mr-txt"><h4>Sandwich du jour</h4><p>Today’s sandwich on house bread</p></div><span class="price">$14.00</span><button class="add" type="button" data-add data-handle="sandwich-of-the-day" data-title="Sandwich du jour" data-price="14.0" data-glyph="S" aria-label="Add Sandwich du jour, $14.00">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Soup du jour</h4><p>Gluten-free; ask for today’s</p></div><span class="price">$9.50</span><button class="add" type="button" data-add data-handle="soup" data-title="Soup du jour" data-price="9.5" data-glyph="S" aria-label="Add Soup du jour, $9.50">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4>Sandwich <span lang="fr">du jour</span></h4><p>Today’s sandwich on house bread</p></div><span class="price">$14.00</span><button class="add" type="button" data-add data-handle="sandwich-of-the-day" data-title="Sandwich du jour" data-price="14.0" data-glyph="S" aria-label="Add Sandwich du jour, $14.00">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4>Soup <span lang="fr">du jour</span></h4><p>Gluten-free; ask for today’s</p></div><span class="price">$9.50</span><button class="add" type="button" data-add data-handle="soup" data-title="Soup du jour" data-price="9.5" data-glyph="S" aria-label="Add Soup du jour, $9.50">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Grilled cheese</h4><p>Plant-based cheese, with a side salad</p></div><span class="price">$14.50</span><button class="add" type="button" data-add data-handle="grilled-cheese" data-title="Grilled cheese" data-price="14.5" data-glyph="G" aria-label="Add Grilled cheese, $14.50">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Avocado toast</h4><p>On country bread</p></div><span class="price">$13.50</span><button class="add" type="button" data-add data-handle="avocado-toast" data-title="Avocado toast" data-price="13.5" data-glyph="A" aria-label="Add Avocado toast, $13.50">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Garden salade</h4><p>Mixed greens, pine nuts, seasonal fruit and vegetables, crostini</p></div><span class="price">$15.50</span><button class="add" type="button" data-add data-handle="garden-salade" data-title="Garden salade" data-price="15.5" data-glyph="G" aria-label="Add Garden salade, $15.50">Add</button></li>
@@ -488,8 +488,8 @@
         <li class="mr" data-card><div class="mr-txt"><h4>Cold brew</h4><p>Over ice</p></div><span class="price">$6.00</span><button class="add" type="button" data-add data-handle="cold-brew" data-title="Cold brew" data-price="6.0" data-glyph="C" aria-label="Add Cold brew, $6.00">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Matcha</h4><p>Whisked matcha with plant milk</p></div><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="matcha" data-title="Matcha" data-price="8.0" data-glyph="M" aria-label="Add Matcha, $8.00">Add</button></li>
         <li class="mr" data-card><div class="mr-txt"><h4>Chai latte</h4><p>Chai Impérial with steamed plant milk</p></div><span class="price">$7.50</span><button class="add" type="button" data-add data-handle="chai-latte" data-title="Chai latte" data-price="7.5" data-glyph="T" aria-label="Add Chai latte, $7.50">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Fleur de Geisha</h4><p>Green tea; cherry blossom</p></div><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="fleur-de-geisha" data-title="Fleur de Geisha" data-price="6.5" data-glyph="T" aria-label="Add Fleur de Geisha, $6.50">Add</button></li>
-        <li class="mr" data-card><div class="mr-txt"><h4>Chocolat liégeois</h4><p>Cold chocolate with chantilly, the Liège way</p></div><span class="price">$7.50</span><button class="add" type="button" data-add data-handle="chocolat-liegeois" data-title="Chocolat liégeois" data-price="7.5" data-glyph="L" aria-label="Add Chocolat liégeois, $7.50">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4 lang="fr">Fleur de Geisha</h4><p>Green tea; cherry blossom</p></div><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="fleur-de-geisha" data-title="Fleur de Geisha" data-price="6.5" data-glyph="T" aria-label="Add Fleur de Geisha, $6.50">Add</button></li>
+        <li class="mr" data-card><div class="mr-txt"><h4 lang="fr">Chocolat liégeois</h4><p>Cold chocolate with chantilly, the Liège way</p></div><span class="price">$7.50</span><button class="add" type="button" data-add data-handle="chocolat-liegeois" data-title="Chocolat liégeois" data-price="7.5" data-glyph="L" aria-label="Add Chocolat liégeois, $7.50">Add</button></li>
       </ul></div>
       <div class="grp" id="g-gifts"><h3>Gifts that keep <span>10 · $5.00 to $55.00</span></h3><ul>
         <li class="mr" data-card><div class="mr-txt"><h4>Assorted macaron box</h4><p>Raspberry, pistachio, chocolate, coffee, coconut <span class="tag">Live store</span></p></div><span class="price">$18.00</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18.0" data-variant="42881210810556" data-image="img/macarons.jpg" aria-label="Add Assorted macaron box, $18.00">Add</button></li>
@@ -519,7 +519,7 @@
           <input type="radio" name="gift" id="gift-50" value="50" checked><label for="gift-50">$50</label>
           <input type="radio" name="gift" id="gift-100" value="100"><label for="gift-100">$100</label>
         </fieldset>
-        <p>Proposed for the new store: sent by email, never expiring, with small balances paid out in cash as California law requires.</p>
+        <p>Sent by email when the new store opens, with small balances paid out in cash as California law requires.</p>
         <div class="row"><span class="price" data-gift-price>$50.00</span><button class="add" type="button" data-gift-add aria-label="Add a $50 gift card">Add</button></div>
       </div>
       <div class="tile">
@@ -544,7 +544,7 @@
 
     <div class="club" id="club">
       <h2><span lang="fr">Le club</span>: one field to join</h2>
-      <p>A point for every dollar, at the counter and here. Proposed rules for the chef to approve; your email stays on this device in the concept.</p>
+      <p>A point for every dollar, at the counter and here. Your email stays on this device.</p>
       <form data-join novalidate>
         <label for="club-email">Your email</label>
         <input id="club-email" type="email" name="email" autocomplete="email" inputmode="email" required>
@@ -558,7 +558,7 @@
 <section class="faq" id="faq" aria-labelledby="h-faq">
   <div class="wrap">
     <h2 id="h-faq">Answers first</h2>
-    <div class="qa-list"><div class="qa"><h3>Is everything plant-based?</h3><p>Yes. Every pastry, cake, jar and drink in the shop is 100% plant-based, croissants included.</p></div><div class="qa"><h3>Can I order tonight and pick up tomorrow?</h3><p>Yes. Choose tomorrow in the pickup picker and a time; same-day slots start 30 minutes after you order (proposed).</p></div><div class="qa"><h3>What checks out on id-eclair.com today?</h3><p>Items tagged Live store, such as the cannelés by three, the love-note jars, truffles and the Golden Ticket, go through the shop’s own Shopify checkout. Counter items join that checkout when the pickup app arrives; today they are ordered at the counter or on the menu app.</p></div><div class="qa"><h3>How far ahead do I order a custom cake?</h3><p>Seven days, which is the shop’s own rule.</p></div><div class="qa"><h3>Where do I park?</h3><p>The De Lacey garage at 45 S. De Lacey Ave is a two-minute walk; the first two hours cost $1.</p></div></div>
+    <div class="qa-list"><div class="qa"><h3>Is everything plant-based?</h3><p>Yes. Every pastry, cake, jar and drink in the shop is 100% plant-based, croissants included.</p></div><div class="qa"><h3>Can I order tonight and pick up tomorrow?</h3><p>Yes. Choose tomorrow in the pickup picker and a time; same-day slots start soon after you order.</p></div><div class="qa"><h3>What checks out on id-eclair.com today?</h3><p>Items tagged Live store, such as the cannelés by three, the love-note jars, truffles and the Golden Ticket, go through the shop’s own Shopify checkout. Counter items join that checkout when the pickup app arrives; today they are ordered at the counter or on the menu app.</p></div><div class="qa"><h3>How far ahead do I order a custom cake?</h3><p>Seven days, which is the shop’s own rule.</p></div><div class="qa"><h3>Where do I park?</h3><p>The De Lacey garage at 45 S. De Lacey Ave is a two-minute walk; the first two hours cost $1.</p></div></div>
   </div>
 </section>
 </main>
@@ -572,7 +572,7 @@
       </div>
       <div>
         <h2>Hours</h2>
-        <p>Pâtisserie: doors open at 6 am. Closing times differ between listings, so the shop confirms one set before launch. Closed Mondays, to confirm.</p>
+        <p><span lang="fr">Pâtisserie</span>: doors open at 6 am.</p>
         <p>La Cave: Wednesday to Sunday, 3 to 9 pm.</p>
         <p class="muted">Park at the De Lacey garage, 45 S. De Lacey Ave: $1 for the first two hours.</p>
       </div>
@@ -585,7 +585,7 @@
         <ul><li><a href="https://www.instagram.com/ideclairlosangeles/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@ideclairlosangeles" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.instagram.com/lacavepasadena/" target="_blank" rel="noopener">La Cave on Instagram</a></li><li><a href="https://www.id-eclair.com" target="_blank" rel="noopener">The live store</a></li><li><a href="../index.html">All design directions</a></li></ul>
       </div>
     </div>
-    <p class="foot-note">Concept preview, direction 08 (Comptoir), 24 October 2026. Not the live store. Prices from the shop’s menu app (21 October) and live store (22 October); pickup slots, class dates, the club and gift cards are examples or proposals.</p>
+    <p class="foot-note">Concept preview, direction 08 (Comptoir), 24 October 2026. Not the live store. Prices from the shop’s menu app (21 October) and live store (22 October); pickup slots, class dates, the club and gift cards are examples.</p>
   </div>
   <div class="dock" data-dock data-n="0">
     <div class="dock-sheet" id="dock-sheet" hidden role="dialog" aria-label="Pickup time">
@@ -656,11 +656,33 @@
     document.addEventListener('ide:bag', render);
     render();
 
+    /* the dock steps aside while the inline pickup card or the box's add row is on screen,
+       so it never covers them (wave C, 25 Oct 2026) */
+    if ('IntersectionObserver' in window) {
+      var onScreen = new Set();
+      var io, watch = ['#pickup', '#box .box6-foot'];
+      var build = function () {
+        if (io) io.disconnect();
+        onScreen.clear();
+        /* the root is the strip the dock sits on: the bottom dock height plus 32 px of the viewport */
+        var band = Math.round(dock.getBoundingClientRect().height || 72) + 32;
+        io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) onScreen.add(e.target); else onScreen.delete(e.target); });
+          var aside = onScreen.size > 0 && sheet.hidden;
+          dock.classList.toggle('aside', aside);
+          if (aside) dock.setAttribute('inert', ''); else dock.removeAttribute('inert');
+        }, { rootMargin: '-' + Math.max(0, window.innerHeight - band) + 'px 0px 0px 0px' });
+        watch.forEach(function (s) { var el = $(s); if (el) io.observe(el); });
+      };
+      build();
+      window.addEventListener('resize', build);
+    }
+
     /* gift card: the amount follows the chips */
     var amt = 50, face = $('[data-gift-face]'), gp = $('[data-gift-price]'), gb = $('[data-gift-add]');
     $$('input[name="gift"]').forEach(function (r) { r.addEventListener('change', function () { amt = +r.value; face.textContent = '$' + amt; gp.textContent = money(amt); gb.setAttribute('aria-label', 'Add a $' + amt + ' gift card'); }); });
     gb.addEventListener('click', function () {
-      IDE.add({ handle: 'gift-card-' + amt, title: 'Gift card, $' + amt, price: amt, glyph: 'G', meta: 'Proposed: sent by email' });
+      IDE.add({ handle: 'gift-card-' + amt, title: 'Gift card, $' + amt, price: amt, glyph: 'G', meta: 'Sent by email' });
       gb.textContent = 'Added'; setTimeout(function () { gb.textContent = 'Add'; }, 1300);
     });
 
@@ -671,7 +693,7 @@
       var v = form.email.value.trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { status.textContent = 'That email needs an @ and a domain.'; form.email.focus(); return; }
       try { localStorage.setItem('ide.comptoir.club.v1', JSON.stringify({ joined: Date.now() })); } catch (x) { /* private mode */ }
-      status.textContent = 'You are in. Points start with the new store; nothing was sent from this concept.';
+      status.textContent = 'You are in. Points start with the new store; nothing was sent.';
       form.reset();
     });
   }
