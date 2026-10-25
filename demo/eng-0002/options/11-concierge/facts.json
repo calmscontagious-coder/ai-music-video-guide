@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "written": "2026-10-24",
+  "about": "Facts Le Concierge may state, beside menu.json. Each fact carries the file it came from and its status: published (the shop says so today), disputed (listings disagree), proposed (in the plan, the shop has not confirmed it) or example (a stand-in for the concept until the shop sends the real value). Paths are relative to the vault root. Owner names are left out on purpose.",
+  "facts": {
+    "address": {
+      "text": "169 W Green St, Old Pasadena, CA 91105.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/brand.md, answer line 1",
+      "checked": "2026-10-21"
+    },
+    "plant_based": {
+      "text": "Everything at iD Éclair is made from plants: no butter, milk or eggs. La Cave next door is a vegan wine bar.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/brand.md, answer line 1 and finding 15",
+      "checked": "2026-10-21"
+    },
+    "hours_bakery": {
+      "text": "The shop’s About page lists Monday closed, Tuesday 6 am to 3 pm, and Wednesday to Sunday 6 am to 8 pm. Yelp and the website footer give Sunday until 7 pm, so the shop confirms one set before launch.",
+      "status": "disputed",
+      "source": "agency/clients/id-eclair/research/operations.md, finding 1; brand.md, finding 20",
+      "checked": "2026-10-21"
+    },
+    "closed_mondays": {
+      "text": "Closed on Mondays.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/operations.md, finding 1",
+      "checked": "2026-10-21"
+    },
+    "la_cave": {
+      "text": "La Cave is the same kitchen’s vegan wine bar next door at 163 W Green St: French, organic, biodynamic and vegan wines, small plates, Rebel Cheese boards and plated desserts paired with a glass. Open Wednesday to Sunday, 3 to 9 pm, as published on its own site (which gives 169 as the address; the shop confirms one).",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/brand.md, findings 20 and 21; operations.md, finding 2",
+      "checked": "2026-10-21"
+    },
+    "masterclass": {
+      "text": "The Macaron Masterclass is hands-on, Tuesdays 3:30 to 5:30 pm, $125 a seat, with 20 to 30 macarons to take home. Seats are very limited; today the shop books them by DM or in person.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/brand.md, finding 11",
+      "checked": "2026-10-21"
+    },
+    "class_cutoff": {
+      "text": "In the new store, seat sales close 48 hours before class.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, slots table",
+      "checked": "2026-10-22"
+    },
+    "golden_ticket": {
+      "text": "The Golden Ticket is a class pass with an organic chocolate tablet, $140 on the live store; the person who receives it arranges the date with the shop.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/brand.md, finding 11; demo/assets/menu.json, golden-ticket",
+      "checked": "2026-10-22"
+    },
+    "custom_cake_notice": {
+      "text": "Custom cakes need one week’s notice, the shop’s own rule. Today a request starts with a call, a visit or an email.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/brand.md, finding 10",
+      "checked": "2026-10-21"
+    },
+    "menu_cake_notice": {
+      "text": "Whole menu cakes need 48 hours.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, slots table",
+      "checked": "2026-10-22"
+    },
+    "wedding_cake_notice": {
+      "text": "Wedding cakes book four weeks out, by consultation.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, slots table",
+      "checked": "2026-10-22"
+    },
+    "bespoke_consult": {
+      "text": "Bespoke and wedding cakes start with a paid consultation, $50, credited to the cake, then a sketch and a quote, with the deposit and balance by Shopify invoice.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, the custom cake ladder",
+      "checked": "2026-10-22"
+    },
+    "cake_addons": {
+      "text": "A message plaque and candles are priced add-ons on menu cakes.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, the custom cake ladder",
+      "checked": "2026-10-22"
+    },
+    "cake_estimate_rule": {
+      "text": "Price-from estimate for the concept: the smallest guest count for the size, at $15 a guest, the counter’s price for one individual mousse cake. The kitchen’s own price grid replaces it; the playbook lists that grid among the owners’ items.",
+      "status": "example",
+      "per_guest": 15,
+      "source": "demo/assets/menu.json, mousse-cake ($15, menu app 2026-10-21); agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 10 and owners’ checklist (cake sizes, flavours, price grid)",
+      "checked": "2026-10-22"
+    },
+    "cake_sizes": {
+      "text": "Example sizes for the concept, matching the shared cakes page: 6-inch for 4 to 6, 8-inch for 7 to 12, 10-inch for 13 to 20, two tiers for 21 to 40, three tiers planned with the chef.",
+      "status": "example",
+      "sizes": [
+        {
+          "id": "6",
+          "label": "6-inch",
+          "tiers": 1,
+          "min": 4,
+          "max": 6
+        },
+        {
+          "id": "8",
+          "label": "8-inch",
+          "tiers": 1,
+          "min": 7,
+          "max": 12
+        },
+        {
+          "id": "10",
+          "label": "10-inch",
+          "tiers": 1,
+          "min": 13,
+          "max": 20
+        },
+        {
+          "id": "2t",
+          "label": "Two tiers",
+          "tiers": 2,
+          "min": 21,
+          "max": 40
+        },
+        {
+          "id": "3t",
+          "label": "Three tiers",
+          "tiers": 3,
+          "min": 41,
+          "max": 80
+        }
+      ],
+      "source": "demo/cakes.html, size step (example sizes); agency/clients/id-eclair/research/client_references.md, findings 13 and 19",
+      "checked": "2026-10-22"
+    },
+    "pickup_lead": {
+      "text": "In the new checkout, same-day pickup opens 30 minutes after you order. The live store today says orders are usually ready in 24 hours.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3; demo/assets/menu.json, lead notes on live-store items",
+      "checked": "2026-10-22"
+    },
+    "box_of_six": {
+      "text": "Six macarons are $15 at the counter, and you choose the six. The assorted box on the live store is $18. Flavours on the shop’s listing: raspberry, pistachio, chocolate, coffee and coconut; the day’s bake decides what is in the case.",
+      "status": "published",
+      "source": "demo/assets/menu.json, macaron-box-6 and macarons; demo/assets/README.md, colour rules",
+      "checked": "2026-10-22"
+    },
+    "afternoon_tea": {
+      "text": "Tea party for two is $80 at the salon, with the chef’s selection of sweets and savouries; each extra guest is $40, while supplies last. It is booked ahead.",
+      "status": "published",
+      "source": "demo/assets/menu.json, tea-party-for-two (counter board, read 2026-10-22)",
+      "checked": "2026-10-22"
+    },
+    "gluten_board": {
+      "text": "The counter board marks the soup du jour as gluten-free, and the endive and grandmother beet salades as gluten-free without their crostini.",
+      "status": "published",
+      "source": "demo/assets/menu.json, gf flags and notes",
+      "checked": "2026-10-22"
+    },
+    "gluten_store": {
+      "text": "The live store labels these gluten free in a product title or tag: the assorted macarons, cannelés by 3, the four dessert jars and their discovery box, the chocolate fingers, the cookie spoons, both truffle boxes, the Kushyflakes and the large gift basket.",
+      "status": "published",
+      "handles": [
+        "macarons",
+        "caneles",
+        "chocolat-mon-amour",
+        "framboise-cherie",
+        "citron-ma-passion",
+        "caramel-je-taime",
+        "4-desserts-in-jar",
+        "chocolate-fingers-sables-poches",
+        "cookie-spoon",
+        "dark-chocolate-truffles",
+        "white-chocolate-truffles",
+        "kushyflakes",
+        "gift-basket-large"
+      ],
+      "source": "brain_state/clients/eng-0002/site_audit/products.json (the live store’s products.json, read 2026-10-22): store titles and tags",
+      "checked": "2026-10-22"
+    },
+    "gluten_caution": {
+      "text": "Gluten-free on a label means under 20 parts per million. The menu also has croissants and baguettes, and the shop has not published how it keeps gluten apart, so ask the counter if it is for coeliac disease.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/operations.md, finding 7 and the menu checklist (cross-contact practices not yet supplied)",
+      "checked": "2026-10-21"
+    },
+    "allergens": {
+      "text": "The shop has not published an allergen chart yet; the nine major allergens per item are on the list the plan asks the shop for. Almond is named in Framboise chérie, Citron ma passion and Caramel je t’aime, hazelnut in Noisette toujours, pistachio in the pistachio éclair and the Dubai bar (which also names tahini, made from sesame), and coconut in Douceur tropicale.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/operations.md, findings 3 to 5 and the menu checklist; demo/assets/menu.json, item descriptions",
+      "checked": "2026-10-22"
+    },
+    "fees": {
+      "text": "The price on the menu is the price at checkout. The one extra line in the new checkout is an optional tip, and every tip goes to the bakers and the counter team.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/research/operations.md, finding 22 and implications; agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 11",
+      "checked": "2026-10-22"
+    },
+    "payment": {
+      "text": "The new checkout takes Apple Pay, Google Pay and Shop Pay, with guest checkout.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, the phone flow, step 6",
+      "checked": "2026-10-22"
+    },
+    "delivery": {
+      "text": "Today the shop delivers through Uber Eats, DoorDash and Grubhub. The new store is built for pickup at 169 W Green St.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/brand.md, finding 9; agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3",
+      "checked": "2026-10-21"
+    },
+    "gift_cards": {
+      "text": "Gift cards in the new store never expire: $25, $50, $100 and $150. Under California law a balance under $15 is paid in cash on request.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, setup step 9 and section 12; agency/clients/id-eclair/research/operations.md, finding 24",
+      "checked": "2026-10-22"
+    },
+    "gift_note": {
+      "text": "In the build the gift note rides on the order as a Shopify cart note. In this preview it stays on your screen.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3 (a gift note previewed as a card, with a send date)",
+      "checked": "2026-10-22"
+    },
+    "carnet": {
+      "text": "Le carnet, the proposed loyalty programme: 1 point per $1, 50 points take $3 off, a pastry or drink in your birthday month.",
+      "status": "proposed",
+      "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 12",
+      "checked": "2026-10-22"
+    },
+    "parking": {
+      "text": "Street parking around Green Street is paid, and reviewers mention it. Reviewers also mention the outdoor tables and that dogs are welcome.",
+      "status": "published",
+      "source": "agency/clients/id-eclair/research/brand.md, findings 18 and 19",
+      "checked": "2026-10-21"
+    }
+  }
+}
