@@ -147,7 +147,7 @@
 .st-lead cite,.st-q cite{font:700 var(--text-sm)/1.4 var(--font-text);font-style:normal}
 .st-lead cite{color:var(--color-on-brand-muted)}
 .st-quotes{display:grid;gap:0;margin-top:var(--sp-4)}
-.st-q{margin:0;padding:var(--sp-4) 0;border-top:1px solid var(--color-line);display:grid;gap:6px}
+.st-q{margin:0;padding:var(--sp-4) 0;border-top:1px solid var(--color-line);display:grid;gap:8px}
 .st-q p{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.5rem;line-height:1.15;color:var(--color-brand)}
 .st-q cite{color:var(--color-muted)}
 
@@ -156,13 +156,13 @@
 @media (min-width:900px){.st-path{grid-template-columns:4fr 8fr;gap:var(--sp-12)}.st-path .sec-head{position:sticky;top:110px;align-self:start}}
 .tl{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:var(--sp-8)}
 .tl::before{content:"";position:absolute;left:11px;top:10px;bottom:10px;width:2px;background:var(--color-line)}
-.tl li{position:relative;padding-left:48px;display:grid;gap:6px;align-content:start}
+.tl li{position:relative;padding-left:48px;display:grid;gap:8px;align-content:start}
 .tl li::before{content:"";position:absolute;left:3px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--color-surface);box-shadow:inset 0 0 0 3px var(--color-brand)}
 .tl li.now::before{background:var(--color-accent);box-shadow:0 0 0 4px var(--color-canvas)}
 .tl-when{font:800 .75rem/1.2 var(--font-text);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-brand-quiet);font-variant-numeric:tabular-nums}
 .tl h3{font-size:1.625rem;font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1;line-height:1.1}
 .tl p{color:var(--color-muted);max-width:54ch;font-size:1.0625rem}
-.tl figure{margin:var(--sp-3) 0 0;max-width:440px;display:grid;gap:6px}
+.tl figure{margin:var(--sp-3) 0 0;max-width:440px;display:grid;gap:8px}
 .tl figure img{border-radius:var(--radius-sm);aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow-e2)}
 .tl figcaption,.tl-src{font-size:var(--text-xs);color:var(--color-muted)}
 .tl-src a{color:var(--color-brand);font-weight:700}
@@ -187,14 +187,14 @@
 .st-press li:last-child{border-bottom:1px solid var(--color-line)}
 .st-press b{font:800 var(--text-sm)/1.3 var(--font-text);color:var(--color-brand)}
 .st-press a{font-family:var(--font-display);font-size:1.375rem;line-height:1.2;color:var(--color-ink);text-underline-offset:4px;text-decoration-thickness:1px}
-.st-press a:hover{color:var(--color-brand)}
+@media (hover: hover){.st-press a:hover{color:var(--color-brand)}}
 .st-press span{font-size:var(--text-sm);color:var(--color-muted);font-variant-numeric:tabular-nums}
 @media (min-width:900px){.st-press li{grid-template-columns:11rem 1fr 11rem;gap:var(--sp-6);align-items:baseline}.st-press span{text-align:right}}
 .st-follow{display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-6);margin-top:var(--sp-6)}
 .st-follow a{display:inline-flex;align-items:center;min-height:44px;font-weight:800;color:var(--color-brand);text-underline-offset:4px}
 .st-close .sec-head{max-width:46ch}
 .btn-line{background:transparent;color:var(--color-on-brand);border-color:var(--color-on-brand-muted)}
-.btn-line:hover{border-color:var(--color-on-brand)}
+@media (hover: hover){.btn-line:hover{border-color:var(--color-on-brand)}}
 /* order strip (home blend): the chapter heading docks below the strip */
 @media (min-width:900px){.has-ostrip .st-path .sec-head{top:calc(110px + var(--os-h))}}
 </style>
@@ -465,7 +465,8 @@
   <div class="wrap">
     <div>
       <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
-      <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+      <p class="foot-about foot-addr"><a href="https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105" target="_blank" rel="noopener">169 W Green St, Pasadena, CA 91105</a>, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+      <ul class="foot-meta" aria-label="Contact and policies"><li><a href="tel:+16263651161">626-365-1161</a></li><li><a href="https://www.id-eclair.com/pages/contact" target="_blank" rel="noopener">Hours and contact</a></li><li><a href="https://www.id-eclair.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a></li></ul>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
     <div><h3>Visit</h3><ul><li><a href="classes.html">Masterclass</a></li><li><a href="la-cave.html">La Cave</a></li><li><a href="story.html" aria-current="page">Chef Romy</a></li></ul></div>

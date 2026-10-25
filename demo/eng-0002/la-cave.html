@@ -198,7 +198,7 @@
 .soir .lead{color:var(--color-on-brand-muted)}
 .soir .hero-media img{box-shadow:none}
 .btn-line{background:transparent;color:var(--color-on-brand);border-color:var(--color-on-brand-muted)}
-.btn-line:hover{border-color:var(--color-on-brand)}
+@media (hover: hover){.btn-line:hover{border-color:var(--color-on-brand)}}
 .soir .link{color:var(--color-on-brand)}
 
 /* la carte: a framed list, the double hairline borrowed from the vitrine's price cards */
@@ -215,9 +215,15 @@
 @media (min-width:720px){.lc-menu div{grid-template-columns:12rem 1fr;gap:var(--sp-6);align-items:baseline}}
 .lc-board h3{font-size:var(--text-xl);font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1;line-height:1.05}
 .lc-board .price{font-family:var(--font-display);font-size:var(--text-xl);font-weight:600}
-.lc-tag{justify-self:start;font:800 .6875rem/1 var(--font-text);letter-spacing:.04em;padding:7px 10px;border-radius:var(--radius-lg);background:var(--color-canvas);color:var(--color-brand);border:1px solid var(--color-line)}
+.lc-tag{justify-self:start;font:800 .875rem/1 var(--font-text);letter-spacing:.04em;padding:8px 8px;border-radius:var(--radius-lg);background:var(--color-canvas);color:var(--color-brand);border:1px solid var(--color-line)}
 .lc-thumb{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius-sm)}
 @media (min-width:900px){.lc-board{position:sticky;top:100px}}
+/* wave E (standard 5.4): on phones the board, the page's one live-store item, leads the section and its
+   Add sits under the name, so the first Add is inside the first one and a half screens */
+@media (max-width:899px){
+  .lc-board{order:-1}
+  .lc-board .lc-tag{order:-3}.lc-board h3{order:-2}.lc-board .row{order:-1;margin-top:0}
+}
 
 /* reserve: the example picker on the indigo band */
 .slot p{max-width:none}
@@ -235,25 +241,25 @@
 .lc-pair-media{position:relative;margin:0}
 .lc-pair-media img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-md);box-shadow:var(--shadow-e3)}
 @media (min-width:900px){.lc-pair-media img{aspect-ratio:4/5}}
-.lc-ticket{position:absolute;left:14px;right:14px;bottom:14px;display:grid;grid-template-columns:1fr auto;gap:6px var(--sp-3);align-items:center;background:var(--color-surface);border-radius:var(--radius-sm);padding:var(--sp-4);box-shadow:var(--shadow-e3);border-left:4px dashed var(--color-line)}
+.lc-ticket{position:absolute;left:14px;right:14px;bottom:14px;display:grid;grid-template-columns:1fr auto;gap:8px var(--sp-3);align-items:center;background:var(--color-surface);border-radius:var(--radius-sm);padding:var(--sp-4);box-shadow:var(--shadow-e3);border-left:4px dashed var(--color-line)}
 .lc-ticket b{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.5rem;color:var(--color-brand);line-height:1}
 .lc-ticket .meta,.lc-ticket .seats{grid-column:1 / -1}
 .lc-ticket .seats{margin-top:0}
 .lc-pair .alt{margin-top:var(--sp-3)}
 .lc-form{display:grid;gap:var(--sp-4);background:var(--color-surface);border-radius:var(--radius-md);padding:var(--sp-6);box-shadow:var(--shadow-e2);margin-top:var(--sp-6)}
 .lc-form h3,.lc-done h3{font-size:var(--text-lg);font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1}
-.lc-field{display:grid;gap:6px}
+.lc-field{display:grid;gap:8px}
 .lc-field label,.lc-group-l{font-weight:800;font-size:var(--text-sm);color:var(--color-brand)}
-.lc-field input,.lc-field select{min-height:48px;width:100%;border:1px solid var(--color-control);border-radius:var(--radius-sm);padding:0 14px;font:inherit;font-size:1rem;background:var(--color-surface);color:var(--color-ink)}
+.lc-field input,.lc-field select{min-height:48px;width:100%;border:1px solid var(--color-control);border-radius:var(--radius-sm);padding:0 16px;font:inherit;font-size:1rem;background:var(--color-surface);color:var(--color-ink)}
 .lc-nights{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
 .lc-nights input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
-.lc-nights label{display:inline-grid;place-items:center;min-height:44px;padding:0 6px;border-radius:var(--radius-lg);border:1.5px solid var(--color-brand);background:var(--color-surface);color:var(--color-brand);font-weight:700;font-size:.9375rem;cursor:pointer;transition:transform var(--dur-fast) var(--ease-move)}
+.lc-nights label{display:inline-grid;place-items:center;min-height:44px;padding:0 8px;border-radius:var(--radius-lg);border:1.5px solid var(--color-brand);background:var(--color-surface);color:var(--color-brand);font-weight:700;font-size:.9375rem;cursor:pointer;transition:transform var(--dur-fast) var(--ease-move);}
 .lc-nights label:active{transform:scale(.96)}
 .lc-nights input:checked + label{background:var(--color-brand);color:var(--color-on-brand)}
 .lc-nights input:focus-visible + label{outline:3px solid var(--color-focus);outline-offset:3px}
 .lc-row{display:grid;gap:var(--sp-4)}
 @media (min-width:560px){.lc-row{grid-template-columns:1fr 1fr;align-items:end}}
-.lc-check{display:flex;gap:10px;align-items:center;min-height:48px}
+.lc-check{display:flex;gap:8px;align-items:center;min-height:48px}
 .lc-check input{width:24px;height:24px;margin:0;accent-color:var(--color-brand)}
 .lc-check label{font-weight:700;font-size:1rem}
 .lc-form .lc-msg{color:var(--color-ink);font-weight:700;font-size:var(--text-sm)}
@@ -267,7 +273,7 @@
 .lc-visit > div > p{color:var(--color-muted);margin-top:var(--sp-3);max-width:52ch}
 .lc-facts{margin:var(--sp-6) 0}
 .lc-facts div{display:grid;grid-template-columns:6.5rem 1fr;gap:var(--sp-3);padding:var(--sp-3) 0;border-top:1px solid var(--color-line)}
-.lc-facts dt{font-weight:800;font-size:var(--text-sm);color:var(--color-brand);padding-top:2px}
+.lc-facts dt{font-weight:800;font-size:var(--text-sm);color:var(--color-brand);padding-top:4px}
 .lc-facts dd{margin:0;font-size:1rem}
 .lc-visit .note-sm{margin-top:var(--sp-4);max-width:58ch}
 .lc-visit .panel h3{font-size:var(--text-lg);font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1;line-height:1.1}
@@ -358,14 +364,6 @@
 </div>
 
 
-<div class="facts" role="region" aria-label="La Cave at a glance">
-  <div class="wrap">
-    <div><strong>163</strong><span>W Green St, next to the pâtisserie at 169</span></div>
-    <div><strong>3 to 9 pm</strong><span>Wednesday to Sunday</span></div>
-    <div><strong>$100</strong><span>cheese board for ten, on the live store</span></div>
-    <div><strong>10.6K</strong><span>following La Cave on Instagram, 21 Oct 2026</span></div>
-  </div>
-</div>
 
 <section id="carte" aria-labelledby="h-carte">
   <div class="wrap lc-two">
@@ -385,11 +383,20 @@
       <h3 id="h-board">The cheese board, for ten.</h3>
       <img class="lc-thumb" src="img/cheese-board-1-800.jpg" width="800" height="533" alt="The cheese board for ten, on a wine-barrel table" loading="lazy">
       <p>Rebel Cheese, French baguette, dried fruit and nuts. A charcuterie version on request. Pickup only, at 169 W Green St.</p>
-      <div class="row"><span class="price">$100</span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board, serves 10" data-price="100" data-variant="45433279971516" data-image="img/cheese-board-1-800.jpg" data-meta="Pickup only">Add the board</button></div>
+      <div class="row"><span class="price">$100.00</span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board, serves 10" data-price="100" data-variant="45433279971516" data-image="img/cheese-board-1-800.jpg" data-meta="Pickup only">Add the board</button></div>
       <p class="note-sm">Price and details from the store listing, read 22 October 2026. It checks out on id-eclair.com, where pickup is usually ready in 24 hours. <a href="https://www.id-eclair.com/products/cheese-board" target="_blank" rel="noopener">See the listing</a>.</p>
     </aside>
   </div>
 </section>
+
+<div class="facts" role="region" aria-label="La Cave at a glance">
+  <div class="wrap">
+    <div><strong>163</strong><span>W Green St, next to the pâtisserie at 169</span></div>
+    <div><strong>3 to 9 pm</strong><span>Wednesday to Sunday</span></div>
+    <div><strong>$100.00</strong><span>cheese board for ten, on the live store</span></div>
+    <div><strong>10.6K</strong><span>following La Cave on Instagram, 21 Oct 2026</span></div>
+  </div>
+</div>
 
 <section class="pickup" id="reserve" aria-labelledby="h-reserve">
   <div class="wrap">
@@ -535,7 +542,8 @@
   <div class="wrap">
     <div>
       <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
-      <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+      <p class="foot-about foot-addr"><a href="https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105" target="_blank" rel="noopener">169 W Green St, Pasadena, CA 91105</a>, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+      <ul class="foot-meta" aria-label="Contact and policies"><li><a href="tel:+16263651161">626-365-1161</a></li><li><a href="https://www.id-eclair.com/pages/contact" target="_blank" rel="noopener">Hours and contact</a></li><li><a href="https://www.id-eclair.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a></li></ul>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
     <div><h3>Visit</h3><ul><li><a href="classes.html">Masterclass</a></li><li><a href="la-cave.html" aria-current="page">La Cave</a></li><li><a href="story.html">Chef Romy</a></li></ul></div>

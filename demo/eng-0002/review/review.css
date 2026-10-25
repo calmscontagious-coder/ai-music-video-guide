@@ -160,7 +160,7 @@ footer .wrap { display: grid; gap: var(--sp-4); }
 @media (min-width: 720px) { footer .wrap { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: var(--sp-12); } }
 footer p { margin: 0; max-width: var(--measure-body); }
 footer ul { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); margin: 0; padding: 0; list-style: none; }
-footer a { display: inline-block; min-height: 24px; padding: 2px 0; }
+footer a { display: inline-block; min-height: 24px; padding: 4px 0; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 
@@ -168,8 +168,8 @@ footer a { display: inline-block; min-height: 24px; padding: 2px 0; }
    first screen holds the letter and one action (the notice is one dated sentence, the nav one
    scrolling row of 44 px links) */
 :where(p, li, dd, figcaption, blockquote, small) span:lang(fr) { font-family: var(--font-display); font-style: italic; font-weight: 500; }
-.notice { padding: 6px 0; line-height: 1.35; }
-.notice .more { display: none; margin-left: 6px; }
+.notice { padding: 8px 0; line-height: 1.35; }
+.notice .more { display: none; margin-left: 8px; }
 @media (min-width: 720px) { .notice .more { display: inline; } }
 .intro-go { margin-top: var(--sp-6); }
 @media (max-width: 719px) {

@@ -11,6 +11,11 @@
   var SLOTS = ['10:00', '11:00', '12:30', '1:30', '2:30', '3:30', '4:30', '5:30'];
   var LEAD_MIN = 30;   /* proposed: earliest pickup 30 minutes after ordering (plan 4.3) */
   var CLOSED = [1];    /* Monday, per the shop's About page (plan 4.3); to confirm */
+  /* wave E, 25 Oct 2026 (standard 5.8): slots the kitchen has filled. Empty in the concept; in the build the
+     pickup app's availability feed fills it. Entries: "10:00" (that time every day), "2026-10-27 10:00" (one
+     slot) or "2026-10-27" (the whole day). A page or a demo copy can also list them on <html data-slots-full>. */
+  var FULL = [].concat((document.documentElement.getAttribute('data-slots-full') || '').split(/\s*,\s*/).filter(Boolean));
+  function isFull(key, t) { return FULL.indexOf(t) >= 0 || FULL.indexOf(key) >= 0 || FULL.indexOf(key + ' ' + t) >= 0; }
   var DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -55,9 +60,13 @@
     if (f) f.qty += qty || 1;
     else state.items.push({ handle: item.handle, title: item.title, price: +item.price, qty: qty || 1,
       variantId: item.variantId ? String(item.variantId) : null, image: item.image || null,
-      glyph: item.glyph || null, meta: item.meta || null });
+      glyph: item.glyph || null, meta: item.meta || null, stock: item.stock || null });
   }
+  /* stock caps the quantity when the kitchen counts it (menu.json stock, or data-stock on the button) */
+  function capped(h, n) { var f = find(h); return f && f.stock && (f.qty + (n || 1)) > f.stock ? f : null; }
   function add(item, qty) {
+    var c = find(item.handle); if (c && item.stock) c.stock = item.stock;
+    if (capped(item.handle, qty)) { say('Only ' + c.stock + ' ' + item.title + ' left today; all of them are in your bag.'); return; }
     put(item, qty);
     save();
     say('Added ' + item.title + '. ' + plural(count(), 'item') + ' in your bag.');
@@ -72,6 +81,7 @@
   }
   function setQty(h, q) {
     var f = find(h); if (!f) return;
+    if (f.stock && q > f.stock) { say('Only ' + f.stock + ' ' + f.title + ' left today; all of them are in your bag.'); return; }
     if (q <= 0) { state.items = state.items.filter(function (i) { return i.handle !== h; }); say(f.title + ' removed.'); }
     else f.qty = q;
     save();
@@ -123,9 +133,10 @@
     for (var i = 0; out.length < 4 && i < 10; i++) {
       var dt = new Date(Date.UTC(n.y, n.m - 1, n.d + i)), dow = dt.getUTCDay(), open = CLOSED.indexOf(dow) < 0;
       if (i > 0 && !open) continue;
-      var times = SLOTS.map(function (t) { return { t: t, ok: open && (i > 0 || mins(t) >= n.min + LEAD_MIN) }; });
-      out.push({ key: dt.toISOString().slice(0, 10), i: i, top: i === 0 ? 'Today' : DOW[dow], sub: MON[dt.getUTCMonth()] + ' ' + dt.getUTCDate(),
-        open: open, times: times, any: times.some(function (x) { return x.ok; }) });
+      var key = dt.toISOString().slice(0, 10);
+      var times = SLOTS.map(function (t) { var past = !(i > 0 || mins(t) >= n.min + LEAD_MIN), full = open && !past && isFull(key, t); return { t: t, ok: open && !past && !full, full: full }; });
+      out.push({ key: key, i: i, top: i === 0 ? 'Today' : DOW[dow], sub: MON[dt.getUTCMonth()] + ' ' + dt.getUTCDate(),
+        open: open, times: times, any: times.some(function (x) { return x.ok; }), full: times.some(function (x) { return x.full; }) });
     }
     return out;
   }
@@ -142,33 +153,53 @@
     if (!s.day) return 'No slot open';
     return (s.day.i === 0 ? 'Today' : s.day.top + ' ' + s.day.sub) + ', ' + tlabel(s.time);
   }
+  /* the picker's one line under the chips: a full day or slot says when the next pickup opens (5.8) */
+  function slotNote(s) {
+    var d0 = s.days[0], out = [];
+    if (d0 && d0.open && !d0.any && d0.full && s.day.key !== d0.key) out.push('Today is full; the next pickup is ' + slotText({ day: s.day, time: s.day.times.filter(function (y) { return y.ok; })[0].t }) + '.');
+    if (s.day.full) {   /* the chosen day has a full slot: name it and the next open time after it */
+      var fl = s.day.times.filter(function (y) { return y.full; }), last = fl[fl.length - 1].t;
+      var after = s.day.times.filter(function (y) { return y.ok && mins(y.t) > mins(last); })[0];
+      out.push((fl.length === 1 ? tlabel(fl[0].t) + ' is full' : fl.length + ' times are full') + (s.day.i === 0 ? ' today' : ' that day') + '; ' +
+        (after ? 'the next open time is ' + tlabel(after.t) + '.' : 'earlier times are still open.'));
+    }
+    if (out.length) return out.join(' ');
+    return s.day.i === 0 && s.day.times.some(function (x) { return !x.ok; }) ? 'Earlier times are inside today’s bake' : 'Slots close themselves when the kitchen is full';
+  }
   function setSlot(date, time) { state.slot = { date: date, time: time }; save(); }
 
   function renderPicker(root, s) {
     var dEl = $('[data-days]', root), tEl = $('[data-times]', root), out = $('[data-slot-out]', root), note = $('[data-slot-note]', root);
     if (dEl) dEl.innerHTML = s.days.map(function (d) {
       var on = s.day && d.key === s.day.key, dis = !d.any;
-      return '<button class="chip" type="button" data-day="' + d.key + '" aria-pressed="' + on + '"' + (dis ? ' aria-disabled="true" tabindex="-1"' : '') + '><b>' + d.top + '</b>' + (d.open ? (dis ? 'Full' : d.sub) : 'Closed') + '</button>';
+      return '<button class="chip" type="button" data-day="' + d.key + '" aria-pressed="' + on + '"' + (dis ? ' aria-disabled="true" tabindex="-1"' : '') + '><b>' + d.top + '</b>' + (d.open ? (dis ? (d.full ? 'Full' : 'No slots') : d.sub) : 'Closed') + '</button>';
     }).join('');
     if (tEl && s.day) tEl.innerHTML = s.day.times.map(function (x) {
       var on = x.t === s.time;
-      return '<button class="chip" type="button" data-time="' + x.t + '" aria-pressed="' + on + '"' + (x.ok ? '' : ' aria-disabled="true" tabindex="-1"') + ' aria-label="' + tlabel(x.t) + (x.ok ? '' : ', unavailable') + '">' + x.t + '</button>';
+      return '<button class="chip' + (x.full ? ' is-full' : '') + '" type="button" data-time="' + x.t + '" aria-pressed="' + on + '"' + (x.ok ? '' : ' aria-disabled="true" tabindex="-1"') + ' aria-label="' + tlabel(x.t) + (x.full ? ', full' : x.ok ? '' : ', unavailable') + '">' + x.t + (x.full ? '<small>Full</small>' : '') + '</button>';
     }).join('');
     if (out) out.textContent = slotText(s);
-    if (note && s.day) note.textContent = s.day.i === 0 && s.day.times.some(function (x) { return !x.ok; }) ? 'Earlier times are inside today’s bake' : 'Slots close themselves when the kitchen is full';
+    if (note && s.day) note.textContent = slotNote(s);
   }
 
   /* ---------- add buttons and steppers ---------- */
   function itemFrom(el) {
     var d = el.dataset;
-    return { handle: d.handle, title: d.title, price: parseFloat(d.price), variantId: d.variant || null, image: d.image || null, glyph: d.glyph || null, meta: d.meta || null };
+    return { handle: d.handle, title: d.title, price: parseFloat(d.price), variantId: d.variant || null, image: d.image || null, glyph: d.glyph || null, meta: d.meta || null, stock: d.stock ? +d.stock : null };
   }
   function stepperHTML(h, title, q) {
     return '<button type="button" data-dec aria-label="One less ' + esc(title) + '">−</button><b aria-live="off">' + q + '</b><button type="button" data-inc aria-label="One more ' + esc(title) + '">+</button>';
   }
+  function soldOut(d) { return d.available === 'false' || d.stock === '0'; }
   function enhanceAdds(root) {
     $$('[data-add]', root).forEach(function (b) {
       if (b._ide) return; b._ide = 1;
+      if (soldOut(b.dataset)) {   /* 5.8: sold out says so on the card, and the button cannot add */
+        b.disabled = true; b.classList.add('is-sold'); b.textContent = 'Sold out';
+        b.setAttribute('aria-label', b.dataset.title + ', sold out today');
+        var sc = b.closest('[data-card], .item, article, li'); if (sc) sc.classList.add('is-sold');
+        return;
+      }
       if (!b.querySelector('svg')) b.insertAdjacentHTML('afterbegin', ICON.plus);
       var st = document.createElement('span');
       st.className = 'stepper'; st.hidden = true; st.setAttribute('data-handle', b.dataset.handle);
@@ -180,7 +211,7 @@
   function syncAdds() {
     $$('[data-add]').forEach(function (b) {
       var f = find(b.dataset.handle), st = b.nextElementSibling;
-      if (!st || !st.classList.contains('stepper')) return;
+      if (!st || !st.classList.contains('stepper') || b.classList.contains('is-sold')) return;
       var q = f ? f.qty : 0;
       b.hidden = q > 0; st.hidden = q === 0; st.querySelector('b').textContent = q;
       var card = b.closest('[data-card]'); if (card) card.classList.toggle('in-bag', q > 0);   /* the frame follows the choice */
@@ -274,7 +305,8 @@
     if (i.needs_choice && i.price_note) act = '<a class="add" href="' + esc(i.url) + '" target="_blank" rel="noopener">Options</a>';
     else {
       if (i.needs_choice && i.variants) title += ' (' + i.variants[0].title + ')';
-      act = '<button class="add" type="button" data-add data-handle="' + esc(i.handle) + '" data-title="' + esc(title) + '" data-price="' + i.price + '"' + (i.variantId ? ' data-variant="' + esc(i.variantId) + '"' : '') + (i.image ? ' data-image="' + esc(i.image) + '"' : ' data-glyph="' + esc(i.glyph || '') + '"') + '>Add</button>';
+      act = '<button class="add" type="button" data-add data-handle="' + esc(i.handle) + '" data-title="' + esc(title) + '" data-price="' + i.price + '"' + (i.variantId ? ' data-variant="' + esc(i.variantId) + '"' : '') + (i.image ? ' data-image="' + esc(i.image) + '"' : ' data-glyph="' + esc(i.glyph || '') + '"') +
+        (i.available === false ? ' data-available="false"' : '') + (i.stock != null ? ' data-stock="' + (+i.stock) + '"' : '') + '>Add</button>';
     }
     return '<article class="item" data-cat="' + esc(i.category) + '">' + (i.variantId ? '<span class="live">On the live store</span>' : '') + pic +
       '<div class="body"><h3>' + esc(i.title) + '</h3><p class="meta">' + esc(i.desc || '') + (i.price_note ? ' · ' + esc(i.price_note) : '') + '</p><div class="row"><span class="price">' + money(i.price) + '</span>' + act + '</div></div></article>';
@@ -371,9 +403,10 @@
     }
     /* the docked band, read from layout (top and height), so the slide-away transform never skews it */
     function covered() {
-      var top = parseFloat(getComputedStyle(el).top) || 0, bottom = top + el.offsetHeight, pad = 8;
-      return $$('[data-box-add]').some(function (b) {
-        var r = (b.closest('.foot') || b).getBoundingClientRect();
+      var top = parseFloat(getComputedStyle(el).top) || 0, bottom = top + el.offsetHeight, pad = 96;   /* yield a step early, so the slide never passes over a control */
+      return $$('[data-box-add], [data-day], [data-time]').some(function (b) {
+        if (b.closest('[data-os-panel], #bag, .top, .obar')) return false;
+        var r = (b.hasAttribute('data-box-add') && b.closest('.foot') || b).getBoundingClientRect();
         return r.width > 0 && r.bottom > top - pad && r.top < bottom + pad;
       });
     }
@@ -546,6 +579,28 @@
     else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
   });
   window.addEventListener('storage', function (e) { if (e.key === KEY) { state = load(); renderAll(); } });
+  /* 7.3, wave E: a keyboard focus stop never sits under the sticky header, the app bar or the order strip.
+     scroll-padding covers anchor jumps; this covers Tab, which Chrome scrolls only when the stop is fully off screen. */
+  document.addEventListener('focusin', function (e) {
+    var el = e.target;
+    if (!el || !el.getBoundingClientRect || (drawer && drawer.classList.contains('open'))) return;
+    if (el.closest('.top, .bar, [data-ostrip], .cartpill, .notice, .drawer')) return;
+    try { if (!el.matches(':focus-visible')) return; } catch (x) { /* old engines: keep going */ }
+    var r = el.getBoundingClientRect(), topLim = 0, botLim = innerHeight, gap = 12;
+    $$('.top').forEach(function (h) { var hr = h.getBoundingClientRect(); if (hr.height && hr.bottom > topLim && hr.top <= 0) topLim = hr.bottom; });
+    $$('.bar').forEach(function (b) {
+      var br = b.getBoundingClientRect();
+      if (br.height && getComputedStyle(b).display !== 'none') botLim = Math.min(botLim, br.top);
+    });
+    /* the order strip slides in once the hero has passed, often because of this very scroll: keep its band
+       clear whether or not it is showing yet (above the app bar on phones, under the header on desktop) */
+    if (strip && !strip.el.classList.contains('is-open')) {
+      var sh = strip.el.offsetHeight || 58;
+      if (window.matchMedia && matchMedia('(min-width: 900px)').matches) topLim += sh; else botLim -= sh;
+    }
+    var dy = r.top < topLim + gap ? r.top - topLim - gap : r.bottom > botLim - gap ? r.bottom - botLim + gap : 0;
+    if (dy) window.scrollBy({ top: dy, behavior: 'instant' });
+  });
 
   /* ---------- boot ---------- */
   buildDrawer();

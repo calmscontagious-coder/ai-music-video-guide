@@ -9,7 +9,8 @@
   "channel 'booking' items are booked by DM or in person today; Sesami or similar takes them in the build (plan section 5.3).",
   "image paths starting with img/ resolve from the demo root; image_cdn keeps the store's original file for re-export.",
   "lead notes quote the store listing or the plan; 'proposed' means the chef has not confirmed it yet.",
-  "gf: true marks items the counter board lists as gluten-free (the two salades without their crostini)."
+  "gf: true marks items the counter board lists as gluten-free (the two salades without their crostini).",
+  "available and stock (wave E, 25 Oct 2026): available false or stock 0 draws a disabled 'Sold out' button on the card; stock null means the kitchen does not cap it. Every item is available today; in the build both come from Shopify inventory per variant and the counter's own count."
  ],
  "categories": [
   {
@@ -91,7 +92,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "pistachio-eclair",
@@ -106,7 +109,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "espresso-eclair",
@@ -121,7 +126,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "chefs-special-eclair",
@@ -136,7 +143,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "paris-brest",
@@ -151,7 +160,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "butter-croissant",
@@ -166,7 +177,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "suisse",
@@ -181,7 +194,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "cruffin-du-jour",
@@ -196,7 +211,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "canele",
@@ -212,7 +229,9 @@
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
    "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
-   "price_note": "or 3 for $9 (also on the live store)"
+   "price_note": "or 3 for $9 (also on the live store)",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "mille-feuille",
@@ -227,7 +246,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "fruit-tart",
@@ -242,7 +263,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "macaron",
@@ -258,7 +281,9 @@
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
    "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
-   "price_note": "6 for $15"
+   "price_note": "6 for $15",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "macaron-box-6",
@@ -273,7 +298,9 @@
    "variantId": null,
    "lead": "Same day from the case; flavours follow the day’s bake.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "mousse-cake",
@@ -288,7 +315,9 @@
    "variantId": null,
    "lead": "Same day from the case. Whole cakes: 48 hours ahead (proposed in the plan).",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "baguette",
@@ -303,7 +332,9 @@
    "variantId": null,
    "lead": "Same day from the case. Today: ordered at the counter or on the menu app.",
    "checked": "2026-10-21",
-   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21"
+   "source": "cafe menu app (id-eclair.curated.menu), read 2026-10-21",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "macaron-masterclass",
@@ -318,7 +349,9 @@
    "variantId": null,
    "lead": "Tuesdays 3:30 to 5:30 pm, very limited seats. Today: booked by DM or in person.",
    "checked": "2026-10-21",
-   "source": "the shop’s Instagram posts, read 2026-10-21 (research/brand.md finding 11)"
+   "source": "the shop’s Instagram posts, read 2026-10-21 (research/brand.md finding 11)",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "thanksgiving-box-for-2",
@@ -573,7 +606,9 @@
      "available": true
     }
    ],
-   "price_note": "$100 to $185 by option"
+   "price_note": "$100 to $185 by option",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "golden-ticket",
@@ -615,7 +650,9 @@
      "price": 140.0,
      "available": true
     }
-   ]
+   ],
+   "available": true,
+   "stock": null
   },
   {
    "handle": "cheese-board",
@@ -633,7 +670,9 @@
    "lead": "Pickup only (store listing).",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/cheese-board"
+   "url": "https://www.id-eclair.com/products/cheese-board",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "store-pickup-app",
@@ -652,7 +691,9 @@
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
    "url": "https://www.id-eclair.com/products/store-pickup-app",
-   "hidden": true
+   "hidden": true,
+   "available": true,
+   "stock": null
   },
   {
    "handle": "dubai-chocolate-vegan",
@@ -670,7 +711,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/dubai-chocolate-vegan"
+   "url": "https://www.id-eclair.com/products/dubai-chocolate-vegan",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "dark-truffles-wholesale",
@@ -688,7 +731,9 @@
    "lead": "Wholesale pack; terms with the shop.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/dark-truffles-wholesale"
+   "url": "https://www.id-eclair.com/products/dark-truffles-wholesale",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "white-chocolate-truffles",
@@ -706,7 +751,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/white-chocolate-truffles"
+   "url": "https://www.id-eclair.com/products/white-chocolate-truffles",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "dark-chocolate-truffles",
@@ -724,7 +771,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/dark-chocolate-truffles"
+   "url": "https://www.id-eclair.com/products/dark-chocolate-truffles",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "kushyflakes",
@@ -742,7 +791,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/kushyflakes"
+   "url": "https://www.id-eclair.com/products/kushyflakes",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "gift-basket-small",
@@ -760,7 +811,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/gift-basket-small"
+   "url": "https://www.id-eclair.com/products/gift-basket-small",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "gift-basket-large",
@@ -778,7 +831,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/gift-basket-large"
+   "url": "https://www.id-eclair.com/products/gift-basket-large",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "pineapple-vanilla-jam",
@@ -796,7 +851,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/pineapple-vanilla-jam"
+   "url": "https://www.id-eclair.com/products/pineapple-vanilla-jam",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "caneles",
@@ -814,7 +871,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/caneles"
+   "url": "https://www.id-eclair.com/products/caneles",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "macarons",
@@ -832,7 +891,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/macarons"
+   "url": "https://www.id-eclair.com/products/macarons",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "red-velvet-cookie-vegan-gluten-free-wholesale-by-24",
@@ -850,7 +911,9 @@
    "lead": "Wholesale pack; terms with the shop.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/red-velvet-cookie-vegan-gluten-free-wholesale-by-24"
+   "url": "https://www.id-eclair.com/products/red-velvet-cookie-vegan-gluten-free-wholesale-by-24",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "chocolate-fingers-sables-poches",
@@ -868,7 +931,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/chocolate-fingers-sables-poches"
+   "url": "https://www.id-eclair.com/products/chocolate-fingers-sables-poches",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "diamants-biscuit-by-6",
@@ -886,7 +951,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/diamants-biscuit-by-6"
+   "url": "https://www.id-eclair.com/products/diamants-biscuit-by-6",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "cookie-spoon",
@@ -904,7 +971,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/cookie-spoon"
+   "url": "https://www.id-eclair.com/products/cookie-spoon",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "douceur-tropicale",
@@ -922,7 +991,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/douceur-tropicale"
+   "url": "https://www.id-eclair.com/products/douceur-tropicale",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "noisette-toujours",
@@ -940,7 +1011,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/noisette-toujours"
+   "url": "https://www.id-eclair.com/products/noisette-toujours",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "tropical-jam",
@@ -958,7 +1031,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/tropical-jam"
+   "url": "https://www.id-eclair.com/products/tropical-jam",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "raspberry-jam",
@@ -976,7 +1051,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/raspberry-jam"
+   "url": "https://www.id-eclair.com/products/raspberry-jam",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "4-desserts-in-jar",
@@ -994,7 +1071,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/4-desserts-in-jar"
+   "url": "https://www.id-eclair.com/products/4-desserts-in-jar",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "custom-logo-vegan-cookie",
@@ -1030,7 +1109,9 @@
      "price": 3.75,
      "available": true
     }
-   ]
+   ],
+   "available": true,
+   "stock": null
   },
   {
    "handle": "caramel-je-taime",
@@ -1048,7 +1129,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/caramel-je-taime"
+   "url": "https://www.id-eclair.com/products/caramel-je-taime",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "chocolat-mon-amour",
@@ -1066,7 +1149,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/chocolat-mon-amour"
+   "url": "https://www.id-eclair.com/products/chocolat-mon-amour",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "framboise-cherie",
@@ -1084,7 +1169,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/framboise-cherie"
+   "url": "https://www.id-eclair.com/products/framboise-cherie",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "citron-ma-passion",
@@ -1102,7 +1189,9 @@
    "lead": "Live store: pickup at 169 W Green St, usually ready in 24 hours.",
    "checked": "2026-10-22",
    "source": "www.id-eclair.com/products.json, read 2026-10-22",
-   "url": "https://www.id-eclair.com/products/citron-ma-passion"
+   "url": "https://www.id-eclair.com/products/citron-ma-passion",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "ristretto",
@@ -1117,7 +1206,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "doppio",
@@ -1132,7 +1223,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "french-roast-drip",
@@ -1147,7 +1240,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "gourmet-blend-drip",
@@ -1162,7 +1257,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "americano",
@@ -1177,7 +1274,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "cold-brew",
@@ -1192,7 +1291,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "cortadito",
@@ -1207,7 +1308,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "cappuccino",
@@ -1222,7 +1325,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "latte",
@@ -1237,7 +1342,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "mocha",
@@ -1252,7 +1359,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "matcha",
@@ -1267,7 +1376,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "romys-hot-chocolate",
@@ -1282,7 +1393,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "chocolat-liegeois",
@@ -1297,7 +1410,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "seven-citrus-russian",
@@ -1312,7 +1427,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "chai-imperial",
@@ -1327,7 +1444,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "chai-latte",
@@ -1342,7 +1461,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "montagne-bleue",
@@ -1357,7 +1478,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "the-du-louvre",
@@ -1372,7 +1495,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "fleur-de-geisha",
@@ -1387,7 +1512,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "milky-oolong",
@@ -1402,7 +1529,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "detox-south-africa",
@@ -1417,7 +1546,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "french-garden",
@@ -1432,7 +1563,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "tropical-garden",
@@ -1447,7 +1580,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "herboriste-46-relaxation",
@@ -1462,7 +1597,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "herboriste-52-digestion",
@@ -1477,7 +1614,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "herboriste-63-immune",
@@ -1492,7 +1631,9 @@
    "variantId": null,
    "lead": "Brewed to order, about 20 oz. Ask for it iced where marked.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "tea-party-for-two",
@@ -1507,7 +1648,9 @@
    "variantId": null,
    "lead": "Booked ahead for the salon; the kitchen sets the day’s selection.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "french-breakfast",
@@ -1522,7 +1665,9 @@
    "variantId": null,
    "lead": "Served in the salon de thé or packed for pickup.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "avocado-toast",
@@ -1537,7 +1682,9 @@
    "variantId": null,
    "lead": "Served in the salon de thé or packed for pickup.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "grilled-cheese",
@@ -1552,7 +1699,9 @@
    "variantId": null,
    "lead": "Served in the salon de thé or packed for pickup.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "soup",
@@ -1568,7 +1717,9 @@
    "lead": "Served in the salon de thé or packed for pickup.",
    "checked": "2026-10-22",
    "source": "in-store menu board, photographed by the owner 2026-10-22",
-   "gf": true
+   "gf": true,
+   "available": true,
+   "stock": null
   },
   {
    "handle": "sandwich-of-the-day",
@@ -1583,7 +1734,9 @@
    "variantId": null,
    "lead": "Served in the salon de thé or packed for pickup.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "combo-du-jour",
@@ -1598,7 +1751,9 @@
    "variantId": null,
    "lead": "Weekdays, at a table in the salon.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "endive-salade",
@@ -1614,7 +1769,9 @@
    "lead": "Served in the salon de thé or packed for pickup.",
    "checked": "2026-10-22",
    "source": "in-store menu board, photographed by the owner 2026-10-22",
-   "gf": true
+   "gf": true,
+   "available": true,
+   "stock": null
   },
   {
    "handle": "garden-salade",
@@ -1629,7 +1786,9 @@
    "variantId": null,
    "lead": "Served in the salon de thé or packed for pickup.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "grandmother-beet-salade",
@@ -1645,7 +1804,9 @@
    "lead": "Served in the salon de thé or packed for pickup.",
    "checked": "2026-10-22",
    "source": "in-store menu board, photographed by the owner 2026-10-22",
-   "gf": true
+   "gf": true,
+   "available": true,
+   "stock": null
   },
   {
    "handle": "tomato-salade-focaccia",
@@ -1660,7 +1821,9 @@
    "variantId": null,
    "lead": "Served in the salon de thé or packed for pickup.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "orange-juice",
@@ -1675,7 +1838,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   },
   {
    "handle": "alain-milliat-juice",
@@ -1690,7 +1855,9 @@
    "variantId": null,
    "lead": "Made at the counter when you arrive, or timed to your pickup slot.",
    "checked": "2026-10-22",
-   "source": "in-store menu board, photographed by the owner 2026-10-22"
+   "source": "in-store menu board, photographed by the owner 2026-10-22",
+   "available": true,
+   "stock": null
   }
  ]
 }

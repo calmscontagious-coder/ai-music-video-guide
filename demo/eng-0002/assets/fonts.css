@@ -6,8 +6,17 @@
                   for SOFT or WONK other than 100 / 1 has no effect with these files.
      Nunito Sans  text. Variable: opsz 6-12, wght 400-800.
 
-   Files (assets/fonts/), latin and latin-ext only; the browser fetches a latin-ext file only when a
-   page uses a character in its unicode-range, and an italic file only when italic text renders:
+   Wave E, 25 October 2026 (standard 3.1, two font files per page): four faces are declared, and an
+   English or French page fetches exactly two files, fraunces-roman-latin and nunito-sans-roman-latin.
+     - Italic: no italic face is declared. Italic text (h1 em, .fr, inline French) is the roman face
+       slanted by the browser (font-synthesis: style, the default), so no third file is fetched. The
+       two italic files stay on disk; declare them again only if the operator rules the drawn italic
+       is worth the third request (77 KB at VeryHigh priority, measured in the director pass v2).
+     - latin-ext: declared with a unicode-range that no longer shares code points with the latin
+       subset (U+0131, U+0152-0153, the combining marks U+0304, U+0308, U+0329, U+2020, U+2113 and
+       the phonetic block were in both lists, which is how merch fetched latin-ext). It loads only
+       when a page draws a letter outside Latin-1 and the latin file, such as a Polish or Czech name.
+   Files (assets/fonts/), all kept on disk:
      fraunces-italic-latin-ext.woff2      Fraunces italic, latin-ext, 69 KB
      fraunces-italic-latin.woff2          Fraunces italic, latin, 79 KB
      fraunces-roman-latin-ext.woff2       Fraunces normal, latin-ext, 54 KB
@@ -20,7 +29,8 @@
    Source: the files Google Fonts' css2 API served on 25 October 2026 to a Chrome 130 user agent for
      css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1
           &family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap
-   (Fraunces v38, Nunito Sans v19; both SIL Open Font License 1.1). unicode-range values are Google's.
+   (Fraunces v38, Nunito Sans v19; both SIL Open Font License 1.1). unicode-range values are Google's;
+   the latin-ext ones are narrowed as described above.
 
    Metric overrides: Google's CSS carries none. ascent-override, descent-override and line-gap-override
    below are read from each file's own hhea table (Fraunces 1956 / -510 / 0 on 2000 upm; Nunito Sans
@@ -54,7 +64,7 @@
   unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Fraunces normal, latin-ext */
+/* Fraunces normal, latin-ext, only for letters outside Latin-1 (never on an English or French page) */
 @font-face{
   font-family:"Fraunces";
   font-style:normal;
@@ -62,29 +72,7 @@
   font-display:swap;
   src:url(fonts/fraunces-roman-latin-ext.woff2) format("woff2");
   ascent-override:97.8%;descent-override:25.5%;line-gap-override:0%;
-  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* Fraunces italic, latin */
-@font-face{
-  font-family:"Fraunces";
-  font-style:italic;
-  font-weight:400 800;
-  font-display:swap;
-  src:url(fonts/fraunces-italic-latin.woff2) format("woff2");
-  ascent-override:97.8%;descent-override:25.5%;line-gap-override:0%;
-  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Fraunces italic, latin-ext */
-@font-face{
-  font-family:"Fraunces";
-  font-style:italic;
-  font-weight:400 800;
-  font-display:swap;
-  src:url(fonts/fraunces-italic-latin-ext.woff2) format("woff2");
-  ascent-override:97.8%;descent-override:25.5%;line-gap-override:0%;
-  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range:U+0100-0130, U+0132-0151, U+0154-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+20A0-20AB, U+20AD-20C4, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* Nunito Sans normal, latin */
@@ -99,7 +87,7 @@
   unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Nunito Sans normal, latin-ext */
+/* Nunito Sans normal, latin-ext, only for letters outside Latin-1 (never on an English or French page) */
 @font-face{
   font-family:"Nunito Sans";
   font-style:normal;
@@ -108,29 +96,5 @@
   font-display:swap;
   src:url(fonts/nunito-sans-roman-latin-ext.woff2) format("woff2");
   ascent-override:101.1%;descent-override:35.3%;line-gap-override:0%;
-  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* Nunito Sans italic, latin */
-@font-face{
-  font-family:"Nunito Sans";
-  font-style:italic;
-  font-weight:400 800;
-  font-stretch:100%;
-  font-display:swap;
-  src:url(fonts/nunito-sans-italic-latin.woff2) format("woff2");
-  ascent-override:101.1%;descent-override:35.3%;line-gap-override:0%;
-  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Nunito Sans italic, latin-ext */
-@font-face{
-  font-family:"Nunito Sans";
-  font-style:italic;
-  font-weight:400 800;
-  font-stretch:100%;
-  font-display:swap;
-  src:url(fonts/nunito-sans-italic-latin-ext.woff2) format("woff2");
-  ascent-override:101.1%;descent-override:35.3%;line-gap-override:0%;
-  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range:U+0100-0130, U+0132-0151, U+0154-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+20A0-20AB, U+20AD-20C4, U+2C60-2C7F, U+A720-A7FF;
 }

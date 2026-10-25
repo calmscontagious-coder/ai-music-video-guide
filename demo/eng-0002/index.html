@@ -389,7 +389,7 @@
    One orchestrated load moment (.ix-in), transform and opacity only, every piece finished inside 300ms. */
 
 /* chapter marks: a real sequence, set in italic, never capitals */
-.ix-moment{display:flex;align-items:baseline;gap:10px;margin-bottom:var(--sp-3);font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.125rem;line-height:1.2;color:var(--color-brand-quiet)}
+.ix-moment{display:flex;align-items:baseline;gap:8px;margin-bottom:var(--sp-3);font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.125rem;line-height:1.2;color:var(--color-brand-quiet)}
 .ix-moment b{font-style:normal;font-weight:600;font-size:.9375rem;color:var(--color-brand);min-width:1.4em}
 .ix-moment::after{content:"";flex:0 0 40px;height:1px;background:currentColor;opacity:.5;align-self:center}
 
@@ -409,7 +409,7 @@
 .ix-vitrine::after{inset:5px;border:1px solid color-mix(in srgb,var(--color-brand) 20%,transparent);border-radius:31px}
 .ix-vitrine img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-md);box-shadow:var(--shadow-e3)}
 .ix-vitrine .chip-float{left:28px;bottom:auto;top:28px;max-width:calc(100% - 56px)}
-.ix-price{position:absolute;left:24px;bottom:30px;z-index:1;display:grid;gap:2px;min-width:176px;padding:14px 18px 12px;background:var(--color-surface);border-radius:var(--radius-sm);box-shadow:var(--shadow-e3)}
+.ix-price{position:absolute;left:24px;bottom:30px;z-index:1;display:grid;gap:4px;min-width:176px;padding:16px 16px 12px;background:var(--color-surface);border-radius:var(--radius-sm);box-shadow:var(--shadow-e3)}
 .ix-price::before{content:"";position:absolute;inset:4px;border:1px solid color-mix(in srgb,var(--color-brand) 30%,transparent);border-radius:8px;pointer-events:none}
 .ix-price span{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.375rem;line-height:1.1;color:var(--color-brand)}
 .ix-price b{font-weight:800;color:var(--color-brand);font-variant-numeric:tabular-nums}
@@ -446,9 +446,9 @@
   .ix-hero .wrap{gap:var(--sp-3)}
   .ix-vitrine img{aspect-ratio:17/10;border-radius:0;box-shadow:none}
   .ix-vitrine .chip-float{display:none}
-  .ix-price{position:static;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;min-width:0;padding:6px 16px 0;line-height:1.2;background:none;border-radius:0;box-shadow:none}
+  .ix-price{position:static;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;min-width:0;padding:8px 16px 0;line-height:1.2;background:none;border-radius:0;box-shadow:none}
   .ix-price::before{display:none}
-  .ix-price span{font-size:1.125rem}
+  .ix-price span{font-size:var(--text-base)}
   .ix-price small{display:none}
 }
 
@@ -466,7 +466,7 @@
 .ix-case{display:grid;grid-auto-flow:column;grid-auto-columns:min(70%,270px);gap:var(--sp-3);overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:4px 16px var(--sp-4);scrollbar-width:thin}
 @media (min-width:900px){.ix-case{grid-auto-flow:row dense;grid-auto-columns:auto;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-6);overflow:visible;margin:0;padding:0}.vc.wide{grid-column:span 2}.vc > img,.vc > .tile{aspect-ratio:auto;height:240px}}
 .vc{position:relative;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-e1)}
-.vc::after{content:"";position:absolute;inset:6px;border:1px solid color-mix(in srgb,var(--color-brand) 42%,transparent);border-radius:18px;opacity:0;pointer-events:none;transition:opacity var(--dur-base) var(--ease-enter)}
+.vc::after{content:"";position:absolute;inset:6px;border:1px solid color-mix(in srgb,var(--color-brand) 42%,transparent);border-radius:18px;opacity:0;pointer-events:none;transition:opacity var(--dur-base) var(--ease-enter);}
 .vc.in-bag{box-shadow:var(--shadow-e3)}
 .vc.in-bag::after{opacity:1}
 .vc > img,.vc > .tile{width:100%;aspect-ratio:5/4;object-fit:cover}
@@ -475,7 +475,7 @@
 .vc > .tile small{color:var(--color-brand-quiet)}
 .vc-body{display:grid;gap:4px;align-content:start;padding:var(--sp-4)}
 .vc h3{font-style:italic;font-weight:500;font-size:1.375rem;line-height:1.15;color:var(--color-brand)}
-.vc-mark{position:absolute;top:12px;right:12px;z-index:1;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--color-surface);box-shadow:var(--shadow-e2);opacity:0;transform:scale(.7);transition:opacity var(--dur-base) var(--ease-enter),transform var(--dur-base) var(--ease-enter)}
+.vc-mark{position:absolute;top:12px;right:12px;z-index:1;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--color-surface);box-shadow:var(--shadow-e2);opacity:0;transform:scale(.7);transition:opacity var(--dur-base) var(--ease-enter),transform var(--dur-base) var(--ease-enter);}
 .vc-mark .heart{width:16px;height:16px}
 .vc.in-bag .vc-mark{opacity:1;transform:none}
 /* right now: one set, chosen by the pickup hour; the double hairline again, because it is a choice */
@@ -484,7 +484,7 @@
 .ix-now-head{display:grid;gap:4px}
 .ix-now h3{font-style:italic;font-weight:600;font-size:1.625rem;line-height:1.1;color:var(--color-brand)}
 .nowset{display:grid;gap:4px}
-.nowset-n{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.375rem;line-height:1.15;color:var(--color-brand)}
+.nowset-n{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.375rem;line-height:1.15;color:var(--color-brand)}
 .nowset-n small{font:700 var(--text-xs) var(--font-text);font-style:normal;color:var(--color-muted)}
 .nowset .meta{font-size:1rem;color:var(--color-ink)}
 .nowset .row{margin-top:var(--sp-2)}
@@ -502,7 +502,7 @@
 .ix-copy p{color:var(--color-muted)}
 .ix-sign{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(1.4rem,3vw,1.875rem);line-height:1.15;color:var(--color-brand)}
 .ix-record{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-4);margin:var(--sp-2) 0 0;padding-top:var(--sp-4);border-top:1px solid var(--color-line)}
-.ix-record div{display:grid;gap:2px;align-content:start}
+.ix-record div{display:grid;gap:4px;align-content:start}
 .ix-record dt{font-family:var(--font-display);font-size:var(--text-lg);font-weight:600;line-height:1.1;color:var(--color-brand);font-variant-numeric:tabular-nums}
 .ix-record dd{margin:0;font-size:var(--text-sm);line-height:1.4;color:var(--color-muted)}
 .ix-links{display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-6);align-items:center}
@@ -527,7 +527,7 @@
 .ix-list{list-style:none;margin:0;padding:0;display:grid}
 .ix-list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px var(--sp-3);align-items:center;padding:var(--sp-3) 0;border-top:1px solid var(--color-line)}
 .ix-list li:last-child{border-bottom:1px solid var(--color-line)}
-.ix-list .nm{display:grid;gap:2px}
+.ix-list .nm{display:grid;gap:4px}
 .ix-list b{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.3125rem;line-height:1.15;color:var(--color-brand)}
 .ix-list small{font-size:var(--text-sm);color:var(--color-muted)}
 .ix-list .row{margin:0;min-height:0;justify-content:flex-end}
@@ -558,13 +558,13 @@
 .ix-doors{display:grid;gap:var(--sp-3);margin-top:var(--sp-12)}
 @media (min-width:720px){.ix-doors{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1000px){.ix-doors{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:var(--sp-4)}}
-.door{position:relative;display:grid;gap:6px;align-content:start;min-height:184px;padding:var(--sp-6);padding-right:72px;border-radius:var(--radius-md);background:var(--color-surface);color:var(--color-ink);text-decoration:none;box-shadow:var(--shadow-e1);transition:transform var(--dur-fast) var(--ease-move)}
+.door{position:relative;display:grid;gap:8px;align-content:start;min-height:184px;padding:var(--sp-6);padding-right:72px;border-radius:var(--radius-md);background:var(--color-surface);color:var(--color-ink);text-decoration:none;box-shadow:var(--shadow-e1);transition:transform var(--dur-fast) var(--ease-move);}
 @media (hover:hover){.door:hover{transform:translateY(-2px);box-shadow:var(--shadow-e3)}}
 .door:active{transform:translateY(1px)}
 .door-fr{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1rem;color:var(--color-brand-quiet)}
 .door-t{font-family:var(--font-display);font-weight:600;font-size:1.5rem;line-height:1.1;color:var(--color-brand)}
 .door-d{font-size:var(--text-sm);line-height:1.45;color:var(--color-muted)}
-.door-go{position:absolute;right:20px;bottom:20px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-canvas-deep);color:var(--color-brand);transition:transform var(--dur-fast) var(--ease-move)}
+.door-go{position:absolute;right:20px;bottom:20px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-canvas-deep);color:var(--color-brand);transition:transform var(--dur-fast) var(--ease-move);}
 .door-go svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 @media (hover:hover){.door:hover .door-go{transform:translate(2px,-1px)}}
 .door.main{background:var(--color-brand);color:var(--color-on-brand)}
@@ -576,7 +576,7 @@
 
 @media (prefers-reduced-motion:reduce){
   .ix-in,.ix-vitrine.ix-in{animation:none}
-  .vc,.vc::after,.vc-mark,.door,.door-go{transition:none}
+  .vc,.vc::after,.vc-mark,.door,.door-go{transition:none;}
   .door:hover,.door:hover .door-go{transform:none}
 }
 </style>
@@ -916,7 +916,8 @@
   <div class="wrap">
     <div>
       <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
-      <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+      <p class="foot-about foot-addr"><a href="https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105" target="_blank" rel="noopener">169 W Green St, Pasadena, CA 91105</a>, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+      <ul class="foot-meta" aria-label="Contact and policies"><li><a href="tel:+16263651161">626-365-1161</a></li><li><a href="https://www.id-eclair.com/pages/contact" target="_blank" rel="noopener">Hours and contact</a></li><li><a href="https://www.id-eclair.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a></li></ul>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
     <div><h3>Visit</h3><ul><li><a href="classes.html">Masterclass</a></li><li><a href="la-cave.html">La Cave</a></li><li><a href="story.html">Chef Romy</a></li></ul></div>

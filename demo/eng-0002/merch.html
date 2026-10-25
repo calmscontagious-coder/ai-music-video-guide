@@ -191,7 +191,7 @@
 .mr-hero h1{max-width:10ch}
 @media (max-width:899px){.mr-hero h1{max-width:none}.mr-stack{max-width:300px}}
 .mr-stack{position:relative;width:100%;max-width:560px;aspect-ratio:1/1;margin:0;justify-self:center}
-.mr-s{position:absolute;margin:0;overflow:hidden;background:var(--color-canvas-deep);border-radius:var(--radius-md);box-shadow:var(--shadow-e4);transition:transform var(--dur-base) var(--ease-move)}
+.mr-s{position:absolute;margin:0;overflow:hidden;background:var(--color-canvas-deep);border-radius:var(--radius-md);box-shadow:var(--shadow-e4);transition:transform var(--dur-base) var(--ease-move);}
 .mr-s img{width:100%;height:100%;object-fit:cover}
 .mr-s1{top:0;left:0;width:58%;aspect-ratio:1/1}
 .mr-s2{top:16%;right:0;width:50%;aspect-ratio:1/1}
@@ -208,7 +208,7 @@
 .mc{scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-e1)}
 .mc-face{position:relative;margin:0;background:var(--color-canvas-deep)}
 .mc-face img{width:100%;aspect-ratio:1/1;object-fit:cover}
-.mc-face small{position:absolute;left:16px;bottom:14px;font:800 .6875rem/1 var(--font-text);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-brand-quiet)}
+.mc-face small{position:absolute;left:16px;bottom:16px;font:800 .875rem/1 var(--font-text);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-brand-quiet)}
 .mc-body{display:grid;gap:8px;align-content:start;padding:var(--sp-4)}
 .mc-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .mc-price{font-weight:800;color:var(--color-brand);font-variant-numeric:tabular-nums}
@@ -218,7 +218,7 @@
 .mc-tr:not([hidden]){animation:mc-in var(--dur-base) var(--ease-enter)}
 @keyframes mc-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .mc-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.mc-btn,.mc-want{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:var(--radius-lg);background:var(--color-surface);color:var(--color-brand);font:800 .875rem var(--font-text);cursor:pointer}
+.mc-btn,.mc-want{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;border-radius:var(--radius-lg);background:var(--color-surface);color:var(--color-brand);font:800 .875rem var(--font-text);cursor:pointer}
 .mc-btn{border:1.5px solid var(--color-control)}
 .mc-want{border:1.5px solid var(--color-brand)}
 .mc-want svg{width:16px;height:16px;fill:none;stroke:var(--color-accent);stroke-width:2.2}
@@ -232,7 +232,7 @@
 @media (min-width:900px){.mr-fams{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-8) var(--sp-16)}}
 .mr-fam h3{padding-bottom:var(--sp-2);font-family:var(--font-text);font-size:var(--text-sm);font-weight:800;letter-spacing:.02em;color:var(--color-brand-quiet)}
 .mr-rows{list-style:none;margin:0;padding:0;display:grid}
-.mr-rows li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px var(--sp-3);padding:var(--sp-3) 0;border-top:1px solid var(--color-line)}
+.mr-rows li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px var(--sp-3);padding:var(--sp-3) 0;border-top:1px solid var(--color-line)}
 .mr-rows b{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1.3125rem;line-height:1.2;color:var(--color-brand)}
 .mr-rows span{padding-top:4px;white-space:nowrap;font-weight:800;font-size:var(--text-sm);color:var(--color-brand);font-variant-numeric:tabular-nums}
 .mr-rows small{grid-column:1 / -1;font-size:var(--text-sm);line-height:1.45;color:var(--color-muted)}
@@ -252,13 +252,13 @@
 @media (min-width:900px){.mr-made{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:var(--sp-16)}}
 .mr-made h2{font-size:clamp(2rem,5vw,var(--text-2xl));line-height:1.05;font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1}
 .mr-made-line{max-width:60ch;font-family:var(--font-display);font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.35;color:var(--color-brand)}
-.mr-made-line .heart{width:.7em;height:.7em;margin-left:6px}
+.mr-made-line .heart{width:.7em;height:.7em;margin-left:8px}
 
 /* how the line runs */
 .mr-table{overflow-x:auto}
 .mr-table table{width:100%;border-collapse:collapse;font-size:var(--text-sm);font-variant-numeric:tabular-nums}
-.mr-table th,.mr-table td{padding:10px 6px;text-align:left;vertical-align:top;border-bottom:1px solid var(--color-line)}
-.mr-table thead th{font:800 .6875rem/1.2 var(--font-text);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-muted)}
+.mr-table th,.mr-table td{padding:8px 8px;text-align:left;vertical-align:top;border-bottom:1px solid var(--color-line)}
+.mr-table thead th{font:800 .875rem/1.2 var(--font-text);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-muted)}
 .mr-table thead th:not(:first-child),.mr-table td{text-align:right}
 .mr-table td{font-weight:700;color:var(--color-ink)}
 .mr-table tbody th{font-weight:800;color:var(--color-brand)}
@@ -267,13 +267,26 @@
 .mr-src a{color:var(--color-on-brand)}
 
 @media (prefers-reduced-motion:reduce){
-  .mr-s{transition:none}
+  .mr-s{transition:none;}
   .mr-stack:hover .mr-s1{transform:rotate(-4deg)}.mr-stack:hover .mr-s2{transform:rotate(3deg)}
   .mc-tr:not([hidden]),.mc-want[aria-pressed="true"] svg{animation:none}
 }
 /* wave A, 25 Oct 2026: Translate and "I’d buy this" reach 44 px */
 .mc-btn,.mc-want{min-height:44px}
 @media (max-width:899px){.mr-stack{max-width:250px}}
+/* wave E (standard 1.3, 5.4): the hero carries a photograph of a piece on sale today. Desktop keeps the
+   stack, the cookie spoons standing in for the mug; on phones the photograph runs edge to edge with its
+   name, price and Add under it, so the shop's own work fills the first screen and the first Add sits on it */
+.mr-cap{display:none}
+@media (max-width:899px){
+  .mr-stack{max-width:none;width:auto;aspect-ratio:auto;margin-inline:-16px;justify-self:stretch}
+  .mr-stack .mr-s1,.mr-stack .mr-s2{display:none}
+  .mr-photo{position:static;width:100%;aspect-ratio:auto;overflow:visible;border-radius:0;box-shadow:none;background:none;transform:none}
+  .mr-photo img{height:auto;aspect-ratio:3/2}
+  .mr-cap{display:flex;flex-wrap:nowrap;align-items:center;gap:12px;padding:8px 16px 0}
+  .mr-cap > span:first-child{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:var(--text-base);line-height:1.2;color:var(--color-brand)}
+  .mr-cap .add{margin-left:auto}
+}
 </style>
 </head>
 <body data-home="index.html" data-hero-cta>
@@ -312,9 +325,12 @@
       </div>
     </div>
     <div class="mr-stack" data-grid-break data-hero-visual>
-      <figure class="mr-s mr-s1"><img src="img/merch/sans-beurre-apron.svg" width="800" height="800" alt="Mockup drawing of the apron, printed Sans beurre et sans reproche with the red heart on the bib" fetchpriority="high"></figure>
+      <figure class="mr-s mr-s1"><img src="img/merch/sans-beurre-apron.svg" width="800" height="800" alt="Mockup drawing of the apron, printed Sans beurre et sans reproche with the red heart on the bib"></figure>
       <figure class="mr-s mr-s2"><img src="img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="Mockup drawing of the tote, printed Ceci n’est pas du beurre"></figure>
-      <figure class="mr-s mr-s3"><img src="img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="Mockup drawing of the mug, printed Un thé, deux éclairs"></figure>
+      <figure class="mr-s mr-s3 mr-photo">
+        <picture><source media="(max-width:899px)" srcset="img/cookie-spoon-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/cookie-spoon-800.jpg"><img src="img/cookie-spoon-800.jpg" srcset="img/cookie-spoon-800.jpg 800w, img/cookie-spoon.webp 1600w" sizes="(min-width:900px) 18vw, 100vw" width="1600" height="1599" alt="Five cookie spoons on a blue glazed plate, one of the three pieces on the live store today" fetchpriority="high"></picture>
+        <figcaption class="mr-cap"><span>Cookie spoons</span><span class="price">$5.00</span><button class="add" type="button" data-add data-handle="cookie-spoon" data-title="Cookie spoons, 5 count" data-price="5" data-variant="41829520539836" data-image="img/cookie-spoon-800.jpg">Add</button></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -366,7 +382,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/sans-beurre-apron.svg" width="800" height="800" alt="Mockup drawing of the apron, printed Sans beurre et sans reproche" loading="lazy"><small>Apron</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$46 <small>planned</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$46.00 <small>planned</small></span></div>
           <h3 lang="fr">Sans beurre et sans reproche</h3>
           <p class="meta">Organic cotton apron in navy, the line across the skirt, printed to order.</p>
           <p class="mc-tr" id="tr-apron" hidden>Without butter and beyond reproach, after the old knight’s motto “sans peur et sans reproche.”</p>
@@ -376,7 +392,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="Mockup drawing of the tote, printed Ceci n’est pas du beurre" loading="lazy"><small>Tote</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$32 <small>planned</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$32.00 <small>planned</small></span></div>
           <h3 lang="fr">Ceci n’est pas du beurre.</h3>
           <p class="meta">Organic cotton tote in oyster, the line set like a gallery caption, printed to order.</p>
           <p class="mc-tr" id="tr-tote" hidden>This is not butter, after Magritte’s painting “<span lang="fr">Ceci n’est pas une pipe</span>.”</p>
@@ -386,7 +402,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/eclair-de-genie-tee.svg" width="800" height="800" alt="Mockup drawing of the tee, printed Éclair de génie over the words Pâtisserie française" loading="lazy"><small>Tee</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$34 <small>planned</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$34.00 <small>planned</small></span></div>
           <h3 lang="fr">Éclair de génie</h3>
           <p class="meta">Unisex tee in soft cream, printed to order.</p>
           <p class="mc-tr" id="tr-tee" hidden>A flash of genius; word for word, an éclair of genius. The shop’s own name, read as a French idiom.</p>
@@ -396,7 +412,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/club-des-leve-tot-crewneck.svg" width="800" height="800" alt="Mockup drawing of the crewneck, printed Club des lève-tôt over Green Street, Old Pasadena" loading="lazy"><small>Crewneck</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$64 <small>planned</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$64.00 <small>planned</small></span></div>
           <h3 lang="fr">Club des lève-tôt</h3>
           <p class="meta">Garment-dyed crewneck in true navy, printed to order.</p>
           <p class="mc-tr" id="tr-crew" hidden>The early risers’ club, for whoever is waiting when the first croissants come out on Green Street.</p>
@@ -406,7 +422,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="Mockup drawing of the mug, printed Un thé, deux éclairs" loading="lazy"><small>Mug</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$22 <small>planned</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$22.00 <small>planned</small></span></div>
           <h3 lang="fr">Un thé, deux éclairs.</h3>
           <p class="meta">11 oz white ceramic mug, dark blue inside.</p>
           <p class="mc-tr" id="tr-mug" hidden>One tea, two éclairs, the salon’s order in four words.</p>
@@ -416,7 +432,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/la-cave-wine-key.svg" width="800" height="800" alt="Mockup drawing of the La Cave wine key, engraved Pour les grands soirs et les petits mardis" loading="lazy"><small>Wine key · La Cave</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$26 <small>planned</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$26.00 <small>planned</small></span></div>
           <h3 lang="fr">Pour les grands soirs et les petits mardis.</h3>
           <p class="meta">Two-step waiter’s corkscrew, engraved; a small run kept at the bar next door.</p>
           <p class="mc-tr" id="tr-key" hidden>For grand evenings and little Tuesdays.</p>
@@ -426,7 +442,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/nuancier-des-macarons-print.svg" width="800" height="800" alt="Mockup drawing of the art print: nine macaron colours as paint swatches, Framboise to Mon amour" loading="lazy"><small>Art print</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$38 <small>planned</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$38.00 <small>planned</small></span></div>
           <h3 lang="fr">Nuancier des macarons</h3>
           <p class="meta">11 x 14 in matte print, printed to order.</p>
           <p class="mc-tr" id="tr-print" hidden>A macaron colour chart, framboise to myrtille, with the heart as the last swatch: <span lang="fr">mon amour</span>.</p>
@@ -436,7 +452,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/mon-petit-chou-toddler-tee.svg" width="800" height="800" alt="Mockup drawing of the toddler tee, printed Mon petit chou" loading="lazy"><small>Toddler tee</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$26 <small>planned</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$26.00 <small>planned</small></span></div>
           <h3 lang="fr">Mon petit chou</h3>
           <p class="meta">Toddler tee in white, printed to order.</p>
           <p class="mc-tr" id="tr-chou" hidden>My little cream puff. Chou is a cream puff and a cabbage, and what French parents call their children.</p>
@@ -501,47 +517,47 @@
       <div class="mr-fam">
         <h3>Collectible tins</h3>
         <ul class="mr-rows">
-          <li><b lang="fr">La Boîte Cœur, Noël 2026</b><span>$42</span><small>Twelve macarons in a navy tin with the red heart, hand-numbered on the base, edition of 150. Bring the tin back and the refill is $28. <i>At the counter</i></small></li>
-          <li><b lang="fr">La Boîte Cœur, Saint-Valentin 2027</b><span>$42</span><small>The Valentine’s lid, edition of 100, on sale from Monday 1 February 2027. <i>At the counter</i></small></li>
-          <li><b>The empty collector tin</b><span>$16</span><small>The season’s tin on its own, for the shelf or the next refill. <i>Ships from the shop</i></small></li>
+          <li><b lang="fr">La Boîte Cœur, Noël 2026</b><span>$42.00</span><small>Twelve macarons in a navy tin with the red heart, hand-numbered on the base, edition of 150. Bring the tin back and the refill is $28. <i>At the counter</i></small></li>
+          <li><b lang="fr">La Boîte Cœur, Saint-Valentin 2027</b><span>$42.00</span><small>The Valentine’s lid, edition of 100, on sale from Monday 1 February 2027. <i>At the counter</i></small></li>
+          <li><b>The empty collector tin</b><span>$16.00</span><small>The season’s tin on its own, for the shelf or the next refill. <i>Ships from the shop</i></small></li>
         </ul>
       </div>
       <div class="mr-fam">
         <h3>Les Mots Doux totes</h3>
         <ul class="mr-rows">
-          <li><b lang="fr">Framboise chérie</b><span>$28</span><small>The jar’s name and the small red heart on natural canvas; on the back, <span lang="fr">Un éclair, s’il vous plaît. Ou deux.</span> <i>At the counter</i></small></li>
-          <li><b lang="fr">Caramel je t’aime</b><span>$28</span><small>The second name of the set, in indigo ink on natural canvas. <i>At the counter</i></small></li>
+          <li><b lang="fr">Framboise chérie</b><span>$28.00</span><small>The jar’s name and the small red heart on natural canvas; on the back, <span lang="fr">Un éclair, s’il vous plaît. Ou deux.</span> <i>At the counter</i></small></li>
+          <li><b lang="fr">Caramel je t’aime</b><span>$28.00</span><small>The second name of the set, in indigo ink on natural canvas. <i>At the counter</i></small></li>
         </ul>
       </div>
       <div class="mr-fam">
         <h3>Gifts and the blind box</h3>
         <ul class="mr-rows">
-          <li><b>Golden Ticket gift box</b><span>$140</span><small>A gilded, numbered ticket to the Tuesday Masterclass, a heart pin and the chocolate tablet in a navy box, around the class pass the store already sells. <i>At the counter</i></small></li>
-          <li><b lang="fr">Le Cœur Mystère</b><span>$14</span><small>Six pastry hearts and one rare <span lang="fr">Cœur d’Or</span> in sealed navy boxes; first drop Saturday 6 February 2027, three per guest. <i>At the counter</i></small></li>
+          <li><b>Golden Ticket gift box</b><span>$140.00</span><small>A gilded, numbered ticket to the Tuesday Masterclass, a heart pin and the chocolate tablet in a navy box, around the class pass the store already sells. <i>At the counter</i></small></li>
+          <li><b lang="fr">Le Cœur Mystère</b><span>$14.00</span><small>Six pastry hearts and one rare <span lang="fr">Cœur d’Or</span> in sealed navy boxes; first drop Saturday 6 February 2027, three per guest. <i>At the counter</i></small></li>
         </ul>
       </div>
       <div class="mr-fam">
         <h3>Ceramics and paper</h3>
         <ul class="mr-rows">
-          <li><b lang="fr">Mug Cœur</b><span>$24 · $26</span><small>White, red inside like the heart: 11 oz at the counter, or 15 oz printed to order online, two for $46.</small></li>
-          <li><b lang="fr">Le Nuancier des Macarons, Hiver 2026</b><span>$38</span><small>The season’s macaron colours with their French names, numbered and signed, edition of 100; an open 8 x 10 edition is $28 online.</small></li>
-          <li><b lang="fr">Cartes de la Vitrine</b><span>$18</span><small>Six postcards of the pastry case, one new card each month, $4 each. <i>At the counter</i></small></li>
+          <li><b lang="fr">Mug Cœur</b><span>$24.00 · $26.00</span><small>White, red inside like the heart: 11 oz at the counter, or 15 oz printed to order online, two for $46.</small></li>
+          <li><b lang="fr">Le Nuancier des Macarons, Hiver 2026</b><span>$38.00</span><small>The season’s macaron colours with their French names, numbered and signed, edition of 100; an open 8 x 10 edition is $28 online.</small></li>
+          <li><b lang="fr">Cartes de la Vitrine</b><span>$18.00</span><small>Six postcards of the pastry case, one new card each month, $4 each. <i>At the counter</i></small></li>
           <li><b lang="fr">Le Carnet</b><span>Free</span><small>A stamp card printed with the postcards: six visits, and the seventh brings a box of six macarons. <i>With any purchase</i></small></li>
         </ul>
       </div>
       <div class="mr-fam">
         <h3>For the class and its alumni</h3>
         <ul class="mr-rows">
-          <li><b lang="fr">Le Tablier de la Promo</b><span>$48</span><small>The Masterclass apron, indigo with the red heart at the pocket; with a seat, $160. <i>At the counter</i></small></li>
-          <li><b lang="fr">Pin de la Promo</b><span>$12</span><small>A numbered cohort pin only Masterclass alumni can buy. <i>At the counter</i></small></li>
+          <li><b lang="fr">Le Tablier de la Promo</b><span>$48.00</span><small>The Masterclass apron, indigo with the red heart at the pocket; with a seat, $160. <i>At the counter</i></small></li>
+          <li><b lang="fr">Pin de la Promo</b><span>$12.00</span><small>A numbered cohort pin only Masterclass alumni can buy. <i>At the counter</i></small></li>
         </ul>
       </div>
       <div class="mr-fam">
         <h3>To wear, and for La Cave</h3>
         <ul class="mr-rows">
-          <li><b lang="fr">Casquette Pâtisserie Française</b><span>$34</span><small>The words embroidered in indigo with the small red heart. <i>Printed to order</i></small></li>
-          <li><b lang="fr">Salon de thé, Old Pasadena</b><span>$58</span><small>Heavyweight crewneck, the line small on the chest. <i>Printed to order</i></small></li>
-          <li><b lang="fr">Le Verre de La Cave</b><span>$18</span><small>A stemless glass with the heart, sold with a glass of wine on Saturday nights next door. <i>At the bar, never shipped</i></small></li>
+          <li><b lang="fr">Casquette Pâtisserie Française</b><span>$34.00</span><small>The words embroidered in indigo with the small red heart. <i>Printed to order</i></small></li>
+          <li><b lang="fr">Salon de thé, Old Pasadena</b><span>$58.00</span><small>Heavyweight crewneck, the line small on the chest. <i>Printed to order</i></small></li>
+          <li><b lang="fr">Le Verre de La Cave</b><span>$18.00</span><small>A stemless glass with the heart, sold with a glass of wine on Saturday nights next door. <i>At the bar, never shipped</i></small></li>
         </ul>
       </div>
     </div>
@@ -585,7 +601,8 @@
   <div class="wrap">
     <div>
       <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
-      <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+      <p class="foot-about foot-addr"><a href="https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105" target="_blank" rel="noopener">169 W Green St, Pasadena, CA 91105</a>, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
+      <ul class="foot-meta" aria-label="Contact and policies"><li><a href="tel:+16263651161">626-365-1161</a></li><li><a href="https://www.id-eclair.com/pages/contact" target="_blank" rel="noopener">Hours and contact</a></li><li><a href="https://www.id-eclair.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a></li></ul>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
     <div><h3>Visit</h3><ul><li><a href="classes.html">Masterclass</a></li><li><a href="la-cave.html">La Cave</a></li><li><a href="story.html">Chef Romy</a></li></ul></div>
