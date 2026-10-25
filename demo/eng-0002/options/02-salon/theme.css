@@ -20,12 +20,13 @@
      Flavour swatches are data, not palette: raspberry #9e1b32, pistachio #9fbf8c,
      chocolate #5b3a2e, coffee #8a5f3e, coconut #f4f0e8. No pink anywhere, by the operator's ruling.
 
-   TYPE (two families, Google Fonts)
-     display  Noto Serif Display, weights 200 to 600 with italics: headlines, chapter
+   TYPE (two families, self-hosted from ../../assets/fonts.css since wave B,
+   25 Oct 2026; no signature family: the salon uses the brand pair only)
+     display  Fraunces at its large optical sizes, roman and italic: headlines, chapter
               numerals, French names, prices on the carte
-     text     Jost, a geometric sans in the Futura line: body, labels, buttons; 16 px floor
-     Scale, hand-picked: 13 fine, 16 ui, 18 body, 24 lede, 30 h3, 44 to 68 h2,
-     64 to 136 chapter numerals, 44 to 132 cover
+     text     Nunito Sans: body, labels, buttons; 14 px floor for labels
+     Scale on the tokens.css steps: 14 fine, 16 ui, 19 body and lede, 25 h3,
+     45 to 60 h2, 64 to 136 chapter numerals, 45 to 60 cover
 
    SPACE (base 4, named jumps)
      8 label, 12 tight, 16 base, 24 block, 32 pair, 48 group, 64 wide, 96 section,
@@ -111,11 +112,11 @@ q{quotes:"\201C" "\201D" "\2018" "\2019"}
 .logo img{height:52px;width:auto}
 .nav{order:3;flex:1 1 100%;display:grid;grid-template-columns:repeat(3,max-content);gap:0 24px;font-size:.9375rem;letter-spacing:.02em}
 .nav a{display:inline-flex;align-items:center;min-height:36px;text-decoration:none;text-underline-offset:6px}
-.nav a:hover{text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px}
+@media (hover: hover){.nav a:hover{text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px}}
 .mast-act{margin-left:auto;display:flex;align-items:center;gap:var(--sp-tight)}
 .mast-order{display:none !important}
 .cartbtn{position:relative;display:grid;place-items:center;width:48px;height:48px;color:var(--color-ink);text-decoration:none;border:1px solid var(--color-control);border-radius:var(--radius-control)}
-.cartbtn:hover{border-color:var(--color-ink)}
+@media (hover: hover){.cartbtn:hover{border-color:var(--color-ink)}}
 .cartbtn svg,.bar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
 .badge{position:absolute;top:-8px;right:-8px;min-width:22px;height:22px;padding:0 6px;border-radius:var(--radius-count);background:var(--color-ink);color:var(--color-on-ink);box-shadow:0 0 0 2px var(--color-paper);font:600 .75rem/22px var(--font-text);text-align:center;font-variant-numeric:tabular-nums;display:none}
 .badge.on{display:block}
@@ -131,26 +132,26 @@ q{quotes:"\201C" "\201D" "\2018" "\2019"}
 
 /* ---------- buttons and links ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 26px;border:1px solid var(--color-ink);border-radius:var(--radius-control);background:var(--color-ink);color:var(--color-on-ink);font:500 1rem/1.2 var(--font-text);letter-spacing:.05em;text-decoration:none;text-align:center;cursor:pointer}
-.btn:hover{background:var(--color-ink-deep);border-color:var(--color-ink-deep)}
+@media (hover: hover){.btn:hover{background:var(--color-ink-deep);border-color:var(--color-ink-deep)}}
 .btn[disabled]{background:transparent;color:var(--color-muted);border-color:var(--color-control);cursor:not-allowed}
 .btn-sm{min-height:44px;padding:10px 18px;font-size:.9375rem}
 .btn-ivory{background:var(--color-on-ink);color:var(--color-ink);border-color:var(--color-on-ink)}
-.btn-ivory:hover{background:var(--color-paper-deep);border-color:var(--color-paper-deep)}
+@media (hover: hover){.btn-ivory:hover{background:var(--color-paper-deep);border-color:var(--color-paper-deep)}}
 .link-arrow{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:var(--t-ui);letter-spacing:.02em;text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px;text-underline-offset:7px}
 .link-arrow::after{content:"\2192";content:"\2192" / "";display:inline-block;transition:transform var(--dur-tap) var(--ease-out)}
-.link-arrow:hover::after{transform:translateX(4px)}
+@media (hover: hover){.link-arrow:hover::after{transform:translateX(4px)}}
 .link{min-height:44px;padding:0 2px;border:0;background:none;font-size:var(--t-ui);letter-spacing:.02em;text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px;text-underline-offset:6px;cursor:pointer}
 .links{display:flex;flex-wrap:wrap;gap:0 var(--sp-block);margin-top:var(--sp-base)}
 
 /* add buttons and the quantity stepper app.js puts beside them */
 .buy{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px}
 .add{display:inline-flex;align-items:center;gap:8px;min-height:44px;min-width:44px;padding:0 16px;border:1px solid var(--color-ink);border-radius:var(--radius-control);background:transparent;color:var(--color-ink);font:500 .9375rem/1 var(--font-text);letter-spacing:.04em;white-space:nowrap;cursor:pointer}
-.add:hover{background:var(--color-ink);color:var(--color-on-ink)}
+@media (hover: hover){.add:hover{background:var(--color-ink);color:var(--color-on-ink)}}
 .add svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
 .add.pop,.stepper.pop{animation:bump var(--dur-sheet) var(--ease-out)}
 .stepper{display:inline-flex;align-items:center;min-height:44px;background:var(--color-ink);color:var(--color-on-ink);border-radius:var(--radius-control)}
 .stepper button{width:40px;height:44px;border:0;background:transparent;color:inherit;font:500 1.125rem/1 var(--font-text);cursor:pointer;border-radius:var(--radius-control)}
-.stepper button:hover{background:var(--color-ink-deep)}
+@media (hover: hover){.stepper button:hover{background:var(--color-ink-deep)}}
 .stepper b{min-width:20px;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}
 
 /* ---------- cover ---------- */
@@ -187,7 +188,7 @@ q{quotes:"\201C" "\201D" "\2018" "\2019"}
 .sommaire .no{grid-row:span 2;font-family:var(--font-display);font-style:italic;font-size:1.5rem;line-height:1}
 .sommaire .t{font-family:var(--font-display);font-size:1.375rem;line-height:1.2}
 .sommaire .d{grid-column:2;font-size:var(--t-ui);line-height:1.4;color:var(--color-muted)}
-.sommaire a:hover .t{text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px;text-underline-offset:6px}
+@media (hover: hover){.sommaire a:hover .t{text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px;text-underline-offset:6px}}
 @media (min-width:960px){
   .sommaire ol{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:var(--sp-block);border-top:0}
   .sommaire li{border-bottom:0;border-top:1px solid var(--color-accent)}
@@ -249,7 +250,7 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .slots button[disabled]{cursor:default}
 .flav{display:flex;flex-wrap:wrap;gap:8px}
 .flav button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--color-control);border-radius:var(--radius-control);background:var(--color-paper);font-size:var(--t-ui);cursor:pointer}
-.flav button:hover{border-color:var(--color-ink)}
+@media (hover: hover){.flav button:hover{border-color:var(--color-ink)}}
 .flav button[disabled]{opacity:.45;cursor:not-allowed}
 .flav i{width:14px;height:14px;border-radius:var(--radius-round);background:var(--f)}
 .flav i.f-coconut{box-shadow:inset 0 0 0 1px var(--color-control)}
@@ -273,7 +274,7 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .chip{display:grid;place-items:center;min-height:44px;padding:6px 4px;border:1px solid var(--color-control);border-radius:var(--radius-control);background:var(--color-paper);font-size:var(--t-ui);line-height:1.2;text-align:center;font-variant-numeric:tabular-nums;cursor:pointer}
 .days .chip{min-height:60px;font-size:var(--t-fine)}
 .days .chip b{display:block;font-family:var(--font-display);font-size:1.125rem;font-weight:400}
-.chip:hover{border-color:var(--color-ink)}
+@media (hover: hover){.chip:hover{border-color:var(--color-ink)}}
 .chip[aria-pressed="true"]{background:var(--color-ink);border-color:var(--color-ink);color:var(--color-on-ink)}
 .chip[aria-disabled="true"]{background:transparent;border-color:var(--color-line);color:var(--color-muted);cursor:not-allowed}
 .times .chip[aria-disabled="true"]{text-decoration:line-through}
@@ -357,7 +358,7 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .picks{position:relative;display:flex;flex-wrap:wrap;gap:8px}
 .picks input{position:absolute;width:1px;height:1px;margin:0;opacity:0}
 .picks label{display:inline-grid;place-items:center;min-width:48px;min-height:44px;padding:6px 14px;border:1px solid var(--color-control);border-radius:var(--radius-control);font-size:var(--t-ui);line-height:1.2;text-align:center;cursor:pointer}
-.picks label:hover{border-color:var(--color-ink)}
+@media (hover: hover){.picks label:hover{border-color:var(--color-ink)}}
 .picks input:checked + label{background:var(--color-ink);border-color:var(--color-ink);color:var(--color-on-ink)}
 .picks input:focus-visible + label{outline:2px solid var(--color-ink);outline-offset:3px}
 .form-out{padding:var(--sp-tight) var(--sp-base);border-left:1px solid var(--color-accent);background:var(--color-paper-deep);font-size:var(--t-ui);line-height:1.5}
@@ -370,9 +371,9 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .soir .merch-note{border-top-color:var(--color-on-ink-line)}
 .soir .tag{color:var(--color-on-ink-soft)}
 .soir .add{border-color:var(--color-on-ink);color:var(--color-on-ink)}
-.soir .add:hover{background:var(--color-on-ink);color:var(--color-ink)}
+@media (hover: hover){.soir .add:hover{background:var(--color-on-ink);color:var(--color-ink)}}
 .soir .stepper{background:var(--color-on-ink);color:var(--color-ink)}
-.soir .stepper button:hover{background:var(--color-paper-deep)}
+@media (hover: hover){.soir .stepper button:hover{background:var(--color-paper-deep)}}
 .facts > div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:var(--sp-base);padding:var(--sp-base) 0;border-bottom:1px solid var(--color-on-ink-line)}
 .facts dt{font-family:var(--font-display);font-style:italic;font-size:1.25rem;line-height:1.3}
 .facts dd{font-size:var(--t-ui);line-height:1.5}
@@ -429,7 +430,7 @@ input[aria-invalid="true"]{border-color:var(--flav-raspberry);border-width:2px}
 .foot-brand p{max-width:40ch;margin-top:var(--sp-tight);font-size:var(--t-ui)}
 .colophon h3{margin-bottom:var(--sp-label);font-size:1.25rem}
 .colophon ul a{display:inline-flex;align-items:center;min-height:32px;font-size:var(--t-ui);text-decoration:none}
-.colophon ul a:hover{text-decoration:underline;text-decoration-color:var(--color-accent);text-underline-offset:5px}
+@media (hover: hover){.colophon ul a:hover{text-decoration:underline;text-decoration-color:var(--color-accent);text-underline-offset:5px}}
 @media (min-width:900px){.foot-grid{grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr))}.foot-brand{grid-column:auto}}
 .cartpill{position:fixed;right:var(--sp-block);bottom:var(--sp-block);z-index:40;display:none;align-items:center;gap:var(--sp-base);min-height:52px;padding:0 22px;border:0;border-radius:var(--radius-control);background:var(--color-ink);color:var(--color-on-ink);box-shadow:0 0 0 1px var(--color-accent);font:500 1rem var(--font-text);letter-spacing:.03em;cursor:pointer}
 .cartpill b{font-weight:600;font-variant-numeric:tabular-nums}
@@ -456,7 +457,7 @@ input[aria-invalid="true"]{border-color:var(--flav-raspberry);border-width:2px}
 .sheet-head h2{font-size:1.875rem;font-weight:300}
 .sheet-head h2 span{margin-left:8px;font:400 var(--t-ui) var(--font-text);color:var(--color-muted)}
 .x{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--color-control);border-radius:var(--radius-control);background:transparent;color:var(--color-ink);cursor:pointer}
-.x:hover{border-color:var(--color-ink)}
+@media (hover: hover){.x:hover{border-color:var(--color-ink)}}
 .ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .sheet-body{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .pick{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px var(--sp-tight);align-items:center;margin:0 var(--sp-block);padding:var(--sp-tight) var(--sp-base);border:1px solid var(--color-accent);font-size:var(--t-ui)}
@@ -494,3 +495,57 @@ input[aria-invalid="true"]{border-color:var(--flav-raspberry);border-width:2px}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none !important;transition:none !important}
 }
+
+/* ======================================================================
+   Wave B, 25 October 2026 (director pass fixes; notes in
+   options/OPTIONS_2026-10-22.md)
+   ====================================================================== */
+:root{
+  --font-display:"Fraunces",Georgia,serif;
+  --font-text:"Nunito Sans",Arial,sans-serif;
+  --t-fine:.875rem;--t-body:1.1875rem;--t-lede:clamp(1.1875rem,.9vw + 1rem,1.5625rem);--t-h3:1.5625rem;
+  --t-h2:clamp(2.8125rem,3vw + 1.6rem,3.75rem);
+  --t-cover:clamp(2.8125rem,2.6vw + 1.9rem,3.75rem);
+}
+@media (min-width:960px){.cover{padding-top:var(--sp-pair)}.gilt{margin:var(--sp-block) 0}}
+/* French inside English: italic, in the display face */
+:where(p,li,dd,dt,figcaption,td,small,label,legend,h3,h4,.d,.tea-en) [lang|="fr"]{font-family:var(--font-display);font-style:italic}
+.tea-list .tea-en{font-family:var(--font-display);font-size:1.5625rem;line-height:1.25}
+/* the notice: one dated line on a phone */
+.notice .wrap{display:block}
+.notice .more{display:none;margin-left:6px}
+@media (min-width:720px){.notice .more{display:inline}}
+/* masthead: one row of 44 px links on a phone; the bag lives in the bottom bar there */
+.nav a{min-height:44px;min-width:44px;justify-content:center}
+@media (max-width:899px){
+  .nav{display:flex;gap:0 20px;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{flex:0 0 auto}
+  .mast-act .cartbtn{display:none}
+  .logo img{height:44px}
+}
+.check{min-height:44px;align-items:center}
+.check label{display:flex;align-items:center;min-height:44px}
+.dateline,.next{font-size:var(--t-fine)}
+.btn{font-size:.875rem}
+/* the first phone screen: dateline, headline, the cannelés, one action, then the lede */
+@media (max-width:959px){
+  .cover{padding-top:var(--sp-block)}
+  .cover-grid{row-gap:0}
+  .cover-text,.cover-photo{display:contents}
+  .cover-grid > * > *{grid-column:2}
+  .dateline{order:1}
+  .cover h1{order:2;margin-top:var(--sp-tight)}
+  .gilt{order:3;margin:var(--sp-base) 0}
+  .frame{order:4;margin:12px 0 0 12px}
+  .frame img{aspect-ratio:4/3}
+  .cover-act{order:5;margin-top:var(--sp-base)}
+  .lede{order:6;margin-top:var(--sp-block)}
+  .next{order:7}
+  .cover-photo figcaption{order:8;margin-top:var(--sp-base)}
+}
+/* the bottom bar steps aside while the box add row or the pickup card sits under it */
+.bar{transition:transform 150ms var(--ease-out),visibility 0s}
+.bar.is-yield{transform:translateY(calc(100% + 8px));visibility:hidden;transition:transform 150ms var(--ease-out),visibility 0s 150ms}
+html{scroll-padding-bottom:calc(var(--bar-h) + 16px)}
+@media (min-width:900px){html{scroll-padding-bottom:16px}}

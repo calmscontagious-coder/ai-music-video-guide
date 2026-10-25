@@ -19,9 +19,10 @@
      Macaron swatches     raspberry #9e2235 (hue 18, red, not pink), pistachio #8c9a52,
                           chocolate #55331f, coffee #8a6142, coconut #f3eee4
 
-   Type (two families, Google Fonts)
+   Type (two families, self-hosted from ../../assets/fonts.css since wave B, 25 Oct 2026;
+   no signature family: this direction uses the brand pair only)
      Display  Fraunces, a Didone that answers the wordmark; italic for every French name
-     Text     Instrument Sans, prices, rules and buttons, 17 px body, tabular figures on prices
+     Text     Nunito Sans, prices, rules and buttons, 19 px body, tabular figures on prices
 
    Spacing scale (4 px base, named jumps)
      4 hair, 8 label, 12 tight, 16 base, 24 block, 32 group, 48 section-inner,
@@ -128,20 +129,20 @@ em { font-style: italic; }
 
 /* ---------- buttons ---------- */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2); min-height: 48px; padding: 0 var(--sp-5); border: 1px solid var(--color-brand); border-radius: var(--radius-hair); background: var(--color-brand); color: var(--color-on-brand); font: 600 1rem/1.2 var(--font-text); letter-spacing: 0.01em; text-decoration: none; text-align: center; }
-.btn:hover { background: var(--color-brand-press); border-color: var(--color-brand-press); }
+@media (hover: hover){.btn:hover{ background: var(--color-brand-press); border-color: var(--color-brand-press); }}
 .btn[disabled] { background: var(--color-canvas-deep); border-color: var(--color-line); color: var(--color-ink-quiet); cursor: not-allowed; }
 .btn-sm { min-height: 40px; padding: 0 var(--sp-4); font-size: var(--text-sm); }
 .btn-light { background: var(--color-on-brand); color: var(--color-brand); border-color: var(--color-on-brand); }
-.btn-light:hover { background: var(--color-surface); border-color: var(--color-surface); color: var(--color-brand-press); }
+@media (hover: hover){.btn-light:hover{ background: var(--color-surface); border-color: var(--color-surface); color: var(--color-brand-press); }}
 .textlink { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; color: var(--color-brand); }
-.textlink:hover { text-decoration-thickness: 2px; }
+@media (hover: hover){.textlink:hover{ text-decoration-thickness: 2px; }}
 .link { background: none; border: 0; padding: 0; min-height: 32px; font-weight: 600; font-size: var(--text-sm); color: var(--color-brand); text-decoration: underline; text-underline-offset: 3px; }
 .add { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; min-width: 40px; padding: 0 var(--sp-3); border: 1px solid var(--color-brand); border-radius: var(--radius-hair); background: var(--color-surface); color: var(--color-brand); font: 600 var(--text-sm)/1 var(--font-text); text-decoration: none; white-space: nowrap; }
-.add:hover { background: var(--color-brand); color: var(--color-on-brand); }
+@media (hover: hover){.add:hover{ background: var(--color-brand); color: var(--color-on-brand); }}
 .add svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
 .stepper { display: inline-flex; align-items: center; min-height: 40px; padding: 0 2px; border-radius: var(--radius-hair); background: var(--color-brand); color: var(--color-on-brand); }
 .stepper button { width: 32px; height: 38px; border: 0; background: transparent; color: inherit; font: 600 1.125rem/1 var(--font-text); border-radius: var(--radius-hair); }
-.stepper button:hover { background: rgb(250 247 242 / 0.16); }
+@media (hover: hover){.stepper button:hover{ background: rgb(250 247 242 / 0.16); }}
 .stepper b { min-width: 20px; text-align: center; font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
 .add.pop, .stepper.pop { animation: pop var(--dur-tap) var(--ease-enter); }
 @keyframes pop { 40% { transform: scale(1.1); } 100% { transform: none; } }
@@ -162,10 +163,10 @@ em { font-style: italic; }
 .nav { grid-row: 2; grid-column: 1 / -1; display: flex; gap: var(--sp-1); overflow-x: auto; scrollbar-width: none; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
 .nav::-webkit-scrollbar { display: none; }
 .nav a { flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--sp-3); font-weight: 600; font-size: var(--text-sm); text-decoration: none; color: var(--color-brand); border-bottom: 2px solid transparent; }
-.nav a:hover { border-bottom-color: var(--color-brand); }
+@media (hover: hover){.nav a:hover{ border-bottom-color: var(--color-brand); }}
 .tagline { display: none; font: italic 400 var(--text-sm)/1.3 var(--font-display); color: var(--color-ink-quiet); }
 .cartbtn { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--color-brand); border-radius: var(--radius-hair); color: var(--color-brand); text-decoration: none; background: var(--color-surface); }
-.cartbtn:hover { background: var(--color-canvas-deep); }
+@media (hover: hover){.cartbtn:hover{ background: var(--color-canvas-deep); }}
 .ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .badge { position: absolute; top: -7px; right: -7px; min-width: 22px; height: 22px; padding: 0 6px; border-radius: var(--radius-round); background: var(--color-accent); color: var(--color-surface); font: 700 0.75rem/22px var(--font-text); text-align: center; font-variant-numeric: tabular-nums; display: none; }
 .badge.on { display: block; }
@@ -214,7 +215,7 @@ em { font-style: italic; }
 .index a:nth-child(even) { padding-left: var(--sp-4); }
 .index b { font: italic 500 1.25rem/1.15 var(--font-display); }
 .index span { font-size: var(--text-xs); color: var(--color-ink-quiet); font-variant-numeric: tabular-nums; }
-.index a:hover b { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+@media (hover: hover){.index a:hover b{ text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }}
 @media (min-width: 960px) {
   .index { grid-template-columns: repeat(4, 1fr); }
   .index a, .index a:nth-child(odd), .index a:nth-child(even) { padding: var(--sp-4) var(--sp-4) var(--sp-5); border-right: 1px solid var(--color-line); }
@@ -240,7 +241,7 @@ em { font-style: italic; }
 .rail .wrap { display: flex; align-items: center; gap: var(--sp-2); height: var(--rail-h); overflow-x: auto; scrollbar-width: none; }
 .rail .wrap::-webkit-scrollbar { display: none; }
 .rail a { flex: 0 0 auto; display: inline-flex; align-items: center; gap: var(--sp-2); min-height: 40px; padding: 0 var(--sp-3); border: 1px solid var(--color-line); border-radius: var(--radius-hair); background: var(--color-surface); font-size: var(--text-sm); font-weight: 600; text-decoration: none; color: var(--color-brand); }
-.rail a:hover { border-color: var(--color-brand); }
+@media (hover: hover){.rail a:hover{ border-color: var(--color-brand); }}
 .rail a span { font-weight: 500; color: var(--color-ink-quiet); font-variant-numeric: tabular-nums; }
 .rail .rail-slot { margin-left: auto; padding-left: var(--sp-3); font-size: var(--text-xs); color: var(--color-ink-quiet); white-space: nowrap; display: none; }
 @media (min-width: 1024px) { .rail .rail-slot { display: block; } }
@@ -256,7 +257,7 @@ em { font-style: italic; }
 .shelf-head p { font-size: var(--text-xs); color: var(--color-ink-quiet); margin-top: var(--sp-1); font-variant-numeric: tabular-nums; }
 .nudges { display: flex; gap: var(--sp-2); flex: 0 0 auto; }
 .nudge { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--color-line); border-radius: var(--radius-hair); background: var(--color-surface); color: var(--color-brand); padding: 0; }
-.nudge:hover { border-color: var(--color-brand); }
+@media (hover: hover){.nudge:hover{ border-color: var(--color-brand); }}
 .nudge[aria-disabled="true"] { color: var(--color-control); border-color: var(--color-line); cursor: default; }
 .nudge svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
@@ -294,7 +295,7 @@ em { font-style: italic; }
 .days .chip { min-height: 54px; }
 .chip b { display: block; font-size: var(--text-sm); font-weight: 600; }
 .times .chip { font-weight: 600; font-size: var(--text-sm); }
-.chip:hover { border-color: var(--color-brand); }
+@media (hover: hover){.chip:hover{ border-color: var(--color-brand); }}
 .chip[aria-pressed="true"] { background: var(--color-brand); border-color: var(--color-brand); color: var(--color-on-brand); }
 .chip[aria-disabled="true"] { background: var(--color-canvas); border-color: var(--color-line); color: var(--color-ink-quiet); cursor: not-allowed; }
 .times .chip[aria-disabled="true"] { text-decoration: line-through; }
@@ -323,7 +324,7 @@ em { font-style: italic; }
 .slots .full.light { color: var(--color-brand); box-shadow: inset 0 0 0 1px var(--color-line), inset 0 -3px 0 rgb(0 0 0 / 0.06); }
 .flav { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
 .flav button { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: 44px; padding: 0 var(--sp-4); border: 1px solid var(--color-brand); border-radius: var(--radius-hair); background: var(--color-surface); color: var(--color-brand); font-weight: 600; font-size: var(--text-sm); }
-.flav button:hover { background: var(--color-canvas-deep); }
+@media (hover: hover){.flav button:hover{ background: var(--color-canvas-deep); }}
 .flav button[disabled] { opacity: 0.45; cursor: not-allowed; }
 .flav i { width: 14px; height: 14px; border-radius: var(--radius-round); background: var(--f); }
 .flav i.f-coconut { box-shadow: inset 0 0 0 1px var(--color-control); }
@@ -395,9 +396,9 @@ em { font-style: italic; }
 .soir .board { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sp-3); margin-top: var(--sp-5); padding: var(--sp-3) var(--sp-4); border: 1px solid rgb(250 247 242 / 0.3); border-radius: var(--radius-panel); font-size: var(--text-sm); }
 .soir .board .price { color: var(--color-on-brand); }
 .soir .add { background: transparent; color: var(--color-on-brand); border-color: var(--color-on-brand); }
-.soir .add:hover { background: var(--color-on-brand); color: var(--color-brand); }
+@media (hover: hover){.soir .add:hover{ background: var(--color-on-brand); color: var(--color-brand); }}
 .soir .stepper { background: var(--color-on-brand); color: var(--color-brand); }
-.soir .stepper button:hover { background: rgb(31 21 107 / 0.1); }
+@media (hover: hover){.soir .stepper button:hover{ background: rgb(31 21 107 / 0.1); }}
 .soir .fine { color: var(--color-on-brand-quiet); margin-top: var(--sp-3); }
 .soir :focus-visible { outline-color: var(--color-on-brand); }
 
@@ -490,7 +491,7 @@ footer { background: var(--color-canvas-deep); border-top: 1px solid var(--color
 .foot address { font-style: normal; margin-top: var(--sp-3); color: var(--color-ink-quiet); line-height: 1.55; }
 .foot h2 { font: 600 var(--text-sm)/1.2 var(--font-text); margin-bottom: var(--sp-2); }
 .foot ul a { display: inline-flex; align-items: center; min-height: 32px; text-decoration: none; color: var(--color-brand); }
-.foot ul a:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media (hover: hover){.foot ul a:hover{ text-decoration: underline; text-underline-offset: 3px; }}
 .foot-note { margin-top: var(--sp-6); padding-top: var(--sp-4); border-top: 1px solid var(--color-line); font-size: var(--text-xs); color: var(--color-ink-quiet); }
 
 /* ---------- phone order bar: the pinned slot on small screens ---------- */
@@ -518,7 +519,7 @@ footer { background: var(--color-canvas-deep); border-top: 1px solid var(--color
 .sheet-head h2 { font-size: var(--text-lg); }
 .sheet-head h2 span { margin-left: var(--sp-2); font: 600 var(--text-xs) var(--font-text); color: var(--color-ink-quiet); }
 .x { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--color-line); border-radius: var(--radius-hair); background: var(--color-surface); color: var(--color-brand); }
-.x:hover { background: var(--color-canvas); }
+@media (hover: hover){.x:hover{ background: var(--color-canvas); }}
 .sheet-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding-top: var(--sp-3); }
 .pick { margin: 0 var(--sp-4); padding: var(--sp-3) var(--sp-4); display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 4px var(--sp-3); align-items: center; background: var(--color-canvas); border: 1px solid var(--color-line); border-radius: var(--radius-hair); font-size: var(--text-xs); }
 .pick b { display: block; font-size: 1rem; color: var(--color-brand); font-variant-numeric: tabular-nums; }
@@ -549,3 +550,66 @@ footer { background: var(--color-canvas-deep); border-top: 1px solid var(--color
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ==========================================================================
+   Wave B, 25 October 2026 (director pass fixes 1 to 11; notes in
+   options/OPTIONS_2026-10-22.md). Type is now self-hosted from
+   ../../assets/fonts.css: Fraunces display, Nunito Sans text, no third family.
+   Sizes sit on the tokens.css steps: 14 labels, 19 body, 25 and 34 to 45
+   heads, H1 36 px at 375; 16 px stays for compact tile and button copy.
+   ========================================================================== */
+:root {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-text: "Nunito Sans", Arial, sans-serif;
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-md: 1.1875rem;
+  --text-lg: 1.5625rem;
+  --text-xl: clamp(2.125rem, 1.8rem + 1vw, 2.8125rem);
+  --text-hero: clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem);
+}
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.amounts input:focus-visible + label { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.soir :focus-visible, .orderbar :focus-visible { outline-color: var(--color-on-brand); }
+/* French inside English: italic, in the display face already on the page */
+p [lang|="fr"], li [lang|="fr"], .kicker [lang|="fr"], .tagline [lang|="fr"], td [lang|="fr"], figcaption [lang|="fr"], .fine [lang|="fr"] { font-family: var(--font-display); font-style: italic; }
+/* the notice: one dated line on a phone, the rest from 720 px */
+.notice .wrap { display: block; }
+.notice .more { display: none; margin-left: 6px; }
+@media (min-width: 720px) { .notice .more { display: inline; } }
+/* touch targets, 44 px */
+.add, .nudge { min-height: 44px; min-width: 44px; }
+.nudge { width: 44px; height: 44px; }
+.rail a, .btn-sm { min-height: 44px; }
+.link { display: inline-flex; align-items: center; min-height: 44px; }
+.nav a { min-width: 44px; justify-content: center; }
+.stepper button { width: 44px; height: 44px; }
+.check { min-height: 44px; align-items: center; }
+.btn { font-size: 0.875rem; }
+.next, .next small { font-size: var(--text-xs); }
+/* the hero's LCP element paints at once: no entrance on the plates */
+.plates img { animation: none; }
+/* the first phone screen: kicker, headline, the macarons, one action, then the lead */
+@media (max-width: 959px) {
+  .hero { padding-top: var(--sp-5); }
+  .hero-grid { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .hero-grid > div:first-child { display: contents; }
+  .hero .kicker { order: 1; margin-bottom: var(--sp-3); }
+  .hero h1 { order: 2; max-width: none; }
+  .plates { order: 3; margin-top: var(--sp-5); }
+  .hero-actions { order: 4; margin-top: var(--sp-4); }
+  .lead { order: 5; }
+}
+@media (max-width: 599px) {
+  .plates { grid-template-columns: 1fr; }
+  .plates img:first-child { aspect-ratio: 4 / 3; }
+  .plates img:nth-child(n+2), .plates figcaption { display: none; }
+  .next { top: auto; bottom: var(--sp-3); }
+}
+.facts a { display: inline-block; min-height: 24px; }
+/* the order bar steps aside while the box add row or the pickup card sits under it */
+.orderbar { transition: transform 150ms var(--ease-enter), visibility 0s; }
+.orderbar.is-yield { transform: translateY(calc(100% + 12px)); visibility: hidden; transition: transform 150ms var(--ease-exit), visibility 0s 150ms; }
+@media (prefers-reduced-motion: reduce) { .orderbar, .orderbar.is-yield { transition: none; } }
+/* one bag target per phone screen: the order bar carries it below 1024 px */
+@media (max-width: 1023px) { .top-actions .cartbtn { display: none; } }

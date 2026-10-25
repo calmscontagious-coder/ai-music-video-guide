@@ -16,10 +16,11 @@
      --coeur     #E02030  the logo's heart: badge, seal heart, one mark per screen; never a button fill
      No blush, no pink: the operator ruled it out. Macaron swatches carry the only flavour colours.
 
-   TYPE (two families, Google Fonts)
-     --font-display  Fraunces (soft 50, no wonk): a Didone descendant whose ball terminals answer the wordmark, with hairlines that hold on a phone; italic for every French name
-     --font-text     Jost: the geometric house sans; tracked capitals on buttons and small labels only
-     Scale, hand-picked (px): 13 · 15 · 17 · 21 · 28 · 40 · 56 · 76
+   TYPE (two families, self-hosted since wave B)
+     --font-display  Fraunces, self-hosted from ../../assets/fonts.css (wave B, 25 Oct 2026; the files pin SOFT 100 and
+                     WONK 1, so the soft-50 classical cut is approximated): ball terminals that answer the wordmark; italic for every French name
+     --font-text     Nunito Sans, self-hosted the same way: tracked capitals on buttons and small labels only. No signature family.
+     Scale on the tokens.css steps since wave B (px): 14 · 16 · 19 · 25 · 34 · 45 · 60
 
    SPACING (base 4)
      4 · 8 · 12 · 16 · 24 · 32 · 48 · 72 · 112
@@ -112,7 +113,7 @@ body.locked{overflow:hidden}
 .mast-nav ul::-webkit-scrollbar{display:none}
 .mast-nav a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap;text-decoration:none;font:500 var(--t-15)/1 var(--font-text);letter-spacing:.06em;position:relative}
 .mast-nav a::after{content:"";position:absolute;left:0;right:0;bottom:10px;height:1px;background:var(--or);transform:scaleX(0);transition:transform var(--dur-frame) var(--ease-out)}
-.mast-nav a:hover::after,.mast-nav a:focus-visible::after{transform:scaleX(1)}
+@media (hover: hover){.mast-nav a:hover::after,.mast-nav a:focus-visible::after{transform:scaleX(1)}}
 @media (min-width:760px){
   .mast-side .mast-addr{display:inline-flex}
   .mast-order{display:none !important}
@@ -122,22 +123,22 @@ body.locked{overflow:hidden}
 
 /* ---------- buttons ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);min-height:52px;padding:0 var(--sp-6);border:1px solid var(--encre);border-radius:var(--radius-hair);background:var(--encre);color:var(--ivoire);font:500 var(--t-15)/1.2 var(--font-text);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform var(--dur-tap) var(--ease-out)}
-.btn:hover{background:var(--nuit);border-color:var(--nuit)}
+@media (hover: hover){.btn:hover{background:var(--nuit);border-color:var(--nuit)}}
 .btn:active{transform:translateY(1px)}
 .btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
 .btn--ivoire{background:var(--ivoire);color:var(--nuit);border-color:var(--ivoire)}
-.btn--ivoire:hover{background:var(--papier);border-color:var(--papier)}
+@media (hover: hover){.btn--ivoire:hover{background:var(--papier);border-color:var(--papier)}}
 .btn-sm{min-height:44px;padding:0 var(--sp-5)}
 .lnk{display:inline-flex;align-items:center;gap:var(--sp-2);min-height:44px;padding:0 2px;background:none;border:0;color:var(--encre);font:500 var(--t-15)/1.2 var(--font-text);letter-spacing:.12em;text-transform:uppercase;text-decoration:underline;text-decoration-color:var(--or);text-decoration-thickness:1px;text-underline-offset:7px;cursor:pointer}
-.lnk:hover{text-decoration-color:currentColor}
+@media (hover: hover){.lnk:hover{text-decoration-color:currentColor}}
 .band--nuit .lnk{color:var(--ivoire);text-decoration-color:var(--or-nuit)}
 .add{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;min-width:88px;padding:0 var(--sp-4);border:1px solid var(--encre);border-radius:var(--radius-hair);background:transparent;color:var(--encre);font:500 var(--t-13)/1 var(--font-text);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform var(--dur-tap) var(--ease-out)}
-.add:hover{background:var(--encre);color:var(--ivoire)}
+@media (hover: hover){.add:hover{background:var(--encre);color:var(--ivoire)}}
 .add:active{transform:translateY(1px)}
 .add svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
 .add[aria-pressed="true"]{background:var(--encre);color:var(--ivoire)}
 .band--nuit .add{border-color:var(--ivoire);color:var(--ivoire)}
-.band--nuit .add:hover{background:var(--ivoire);color:var(--nuit)}
+@media (hover: hover){.band--nuit .add:hover{background:var(--ivoire);color:var(--nuit)}}
 .stepper{display:inline-flex;align-items:center;min-height:40px;border:1px solid var(--encre);border-radius:var(--radius-hair);background:var(--encre);color:var(--ivoire)}
 .stepper button{width:40px;height:38px;border:0;background:transparent;color:inherit;font:400 1.25rem/1 var(--font-text);cursor:pointer}
 .stepper b{min-width:22px;text-align:center;font-weight:500;font-size:var(--t-15);font-variant-numeric:tabular-nums}
@@ -212,12 +213,12 @@ body.locked{overflow:hidden}
 .chip{position:relative;display:inline-grid;place-items:center;align-content:center;gap:2px;min-width:64px;min-height:44px;padding:var(--sp-2) var(--sp-3);border:1px solid var(--filet);border-radius:var(--radius-hair);background:var(--ivoire);color:var(--encre);font:500 var(--t-15)/1.15 var(--font-text);font-variant-numeric:tabular-nums;cursor:pointer}
 .days .chip{min-width:76px;min-height:60px}
 .chip b{font:500 var(--t-13)/1 var(--font-text);letter-spacing:.12em;text-transform:uppercase}
-.chip:hover{border-color:var(--encre)}
+@media (hover: hover){.chip:hover{border-color:var(--encre)}}
 .chip[aria-pressed="true"]{background:var(--encre);border-color:var(--encre);color:var(--ivoire)}
 .chip[aria-disabled="true"]{opacity:.4;cursor:not-allowed;text-decoration:line-through;text-decoration-thickness:1px}
-.chip[aria-disabled="true"]:hover{border-color:var(--filet)}
+@media (hover: hover){.chip[aria-disabled="true"]:hover{border-color:var(--filet)}}
 .band--nuit .chip{background:transparent;border-color:rgba(250,247,242,.35);color:var(--ivoire)}
-.band--nuit .chip:hover{border-color:var(--ivoire)}
+@media (hover: hover){.band--nuit .chip:hover{border-color:var(--ivoire)}}
 .band--nuit .chip[aria-pressed="true"]{background:var(--ivoire);color:var(--nuit);border-color:var(--ivoire)}
 .picker-foot{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-1) var(--sp-4);margin-top:var(--sp-5);padding-top:var(--sp-4);border-top:1px solid var(--filet);font-size:var(--t-15);color:var(--doux)}
 .picker-foot b{font:italic 500 var(--t-21)/1.2 var(--font-display);color:var(--encre)}
@@ -232,7 +233,7 @@ body.locked{overflow:hidden}
 .index .num{margin:var(--sp-3) 0 0}
 .idx-name{font:italic 500 var(--t-28)/1.1 var(--font-display)}
 .idx-note{font-size:var(--t-15);color:var(--doux)}
-.index a:hover .idx-name{text-decoration:underline;text-decoration-color:var(--or);text-decoration-thickness:1px;text-underline-offset:6px}
+@media (hover: hover){.index a:hover .idx-name{text-decoration:underline;text-decoration-color:var(--or);text-decoration-thickness:1px;text-underline-offset:6px}}
 @media (min-width:900px){.index{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 /* ---------- les classiques: the carte ---------- */
@@ -268,7 +269,7 @@ body.locked{overflow:hidden}
 .coffret-copy > p{max-width:48ch;margin:0 auto var(--sp-5);color:var(--doux)}
 .flav{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--sp-2);margin-bottom:var(--sp-3)}
 .flav button{display:inline-flex;align-items:center;gap:var(--sp-2);min-height:44px;padding:0 var(--sp-4) 0 var(--sp-3);border:1px solid var(--filet);border-radius:var(--radius-hair);background:var(--papier);cursor:pointer;font:italic 500 var(--t-17)/1 var(--font-display)}
-.flav button:hover{border-color:var(--encre)}
+@media (hover: hover){.flav button:hover{border-color:var(--encre)}}
 .flav button[disabled]{opacity:.45;cursor:not-allowed}
 .flav i{width:18px;height:18px;border-radius:var(--radius-round);flex:none;box-shadow:inset 0 0 0 1px rgba(19,12,69,.18)}
 .coffret-act{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:var(--sp-3) var(--sp-5);margin-top:var(--sp-5)}
@@ -283,8 +284,8 @@ body.locked{overflow:hidden}
 .band--ecrin .ecrin{background:var(--papier)}
 .ecrin img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;transition:transform var(--dur-frame) var(--ease-out)}
 .ecrin::after{content:"";position:absolute;inset:8px;border:3px double var(--or);opacity:0;transition:opacity var(--dur-frame) var(--ease-out);pointer-events:none}
-.piece:hover .ecrin::after,.piece:focus-within .ecrin::after{opacity:1}
-.piece:hover .ecrin img{transform:scale(1.025)}
+@media (hover: hover){.piece:hover .ecrin::after,.piece:focus-within .ecrin::after{opacity:1}}
+@media (hover: hover){.piece:hover .ecrin img{transform:scale(1.025)}}
 .ecrin--svg img{object-fit:contain;padding:var(--sp-4);mix-blend-mode:normal}
 .piece-name{font:italic 500 var(--t-21)/1.15 var(--font-display)}
 .piece-line{font-size:var(--t-15);line-height:1.4;color:var(--doux);max-width:30ch}
@@ -345,7 +346,7 @@ body.locked{overflow:hidden}
 .field small{font-size:var(--t-13);color:var(--doux);text-transform:none;letter-spacing:0}
 input[type="text"],input[type="email"],input[type="tel"],input[type="date"],input[type="number"],select,textarea{width:100%;min-height:48px;padding:var(--sp-3);border:1px solid var(--filet);border-bottom-color:var(--doux);border-radius:var(--radius-hair);background:var(--papier);color:var(--encre);font-size:1rem}
 textarea{min-height:96px;resize:vertical;line-height:1.45}
-input:hover,select:hover,textarea:hover{border-color:var(--doux)}
+@media (hover: hover){input:hover,select:hover,textarea:hover{border-color:var(--doux)}}
 .note-card{margin-top:var(--sp-5);padding:var(--sp-6) var(--sp-5);background:var(--papier);border:1px solid var(--or);outline:1px solid var(--or);outline-offset:-7px;text-align:center}
 .note-card .to{font:italic 500 var(--t-21)/1.2 var(--font-display)}
 .note-card .msg{margin:var(--sp-3) auto;max-width:34ch;font:italic 500 var(--t-17)/1.45 var(--font-display);color:var(--doux);overflow-wrap:anywhere}
@@ -523,7 +524,7 @@ input:hover,select:hover,textarea:hover{border-color:var(--doux)}
 .sheet-head h2{font:italic 500 var(--t-28)/1.1 var(--font-display)}
 .sheet-head h2 span{font:500 var(--t-15) var(--font-text);font-style:normal;color:var(--doux);margin-left:var(--sp-2)}
 .x{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--filet);border-radius:var(--radius-hair);background:var(--papier);color:var(--encre);cursor:pointer}
-.x:hover{border-color:var(--encre)}
+@media (hover: hover){.x:hover{border-color:var(--encre)}}
 .sheet-body{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .pick{margin:var(--sp-4) var(--sp-5) 0;padding:var(--sp-3) var(--sp-4);display:grid;grid-template-columns:auto 1fr auto;gap:4px var(--sp-3);align-items:center;background:var(--papier);border:1px solid var(--or);font-size:var(--t-13)}
 .pick .ico{color:var(--or-texte)}
@@ -573,3 +574,59 @@ input:hover,select:hover,textarea:hover{border-color:var(--doux)}
 .atelier-copy .rule,.maison .rule{margin-left:0}
 .maison h2{font-size:var(--t-40)}
 @media (min-width:900px){.atelier-copy h2,.maison h2{font-size:var(--t-56)}}
+
+/* ==========================================================================
+   Wave B, 25 October 2026 (director pass fixes; notes in options/OPTIONS_2026-10-22.md)
+   ========================================================================== */
+:root{
+  --font-display:"Fraunces",Georgia,serif;
+  --font-text:"Nunito Sans",Arial,sans-serif;
+  --t-13:.875rem; --t-15:1rem; --t-17:1.1875rem; --t-21:1.5625rem; --t-28:2.125rem; --t-40:2.8125rem; --t-56:3.75rem; --t-76:3.75rem;
+}
+:focus-visible{outline:2px solid var(--coeur);outline-offset:2px}
+.band--nuit .num{color:var(--or-nuit)}
+/* French inside English: italic, in the display face */
+:where(p,li,dd,figcaption,td,small,label,legend) [lang|="fr"]{font-family:var(--font-display);font-style:italic}
+/* sentence case for headings and long links; tracked capitals stay on short labels */
+.pied h2{text-transform:none;letter-spacing:.02em;font-size:var(--t-15)}
+.lnk{text-transform:none;letter-spacing:.01em}
+/* the notice: one dated line */
+.notice .wrap{display:block;padding-top:6px;padding-bottom:6px}
+.notice b{letter-spacing:.04em}
+.notice .more{display:none;margin-left:6px}
+@media (min-width:720px){.notice .more{display:inline}}
+/* touch targets, 44 px */
+.add,.link{min-height:44px}
+.mast-nav a{min-width:44px;justify-content:center}
+.stepper button{min-width:44px;min-height:44px}
+.check,.consent{min-height:44px;align-items:center}
+/* the LCP image paints at once: no entrance on the niches */
+.vitrine .niche{animation:none}
+/* phones: the bag and the order links live in the bottom bar */
+@media (max-width:899px){
+  .mast-side .cartbtn,.mast-side .mast-order{display:none !important}
+}
+/* the first phone screen: kicker, headline, the macarons, one action, then the lead */
+@media (max-width:759px){
+  .fronton{padding:var(--sp-5) 0 var(--sp-7)}
+  .fronton .wrap{display:flex;flex-direction:column;align-items:center}
+  .fronton .kicker{order:1}
+  .fronton h1{order:2;font-size:2.25rem;margin:var(--sp-3) auto var(--sp-4)}
+  .vitrine{order:3;margin-top:0;grid-template-columns:1fr;width:100%;padding-bottom:0;border-bottom:0}
+  .vitrine::after{display:none}
+  .vitrine .niche--side{display:none}
+  .vitrine .arch{aspect-ratio:4/3}
+  .vitrine .niche figcaption{display:none}
+  .acts{order:4;margin-top:var(--sp-4)}
+  .slotline{order:5}
+  .fronton .lead{order:6;margin-top:var(--sp-5)}
+}
+/* the bottom bar steps aside while the box add row or the pickup card sits under it */
+.bar{transition:transform 150ms var(--ease-out),visibility 0s}
+.bar.is-yield{transform:translateY(calc(100% + 8px));visibility:hidden;transition:transform 150ms var(--ease-out),visibility 0s 150ms}
+@media (prefers-reduced-motion:reduce){.bar,.bar.is-yield{transition:none}}
+html{scroll-padding-bottom:84px}
+@media (min-width:900px){html{scroll-padding-bottom:16px}}
+.kicker [lang|="fr"]{font-family:inherit;font-style:normal}
+.slotline small{font-size:var(--t-13)}
+label:has(> input[type="checkbox"]){min-height:44px;display:flex;align-items:center}

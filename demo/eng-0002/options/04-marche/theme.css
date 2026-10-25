@@ -19,11 +19,12 @@
      a red, no pink), pistachio #93a35a, chocolate #4a2c20, coffee
      #8b6440, coconut #f4efe4. No blush or pink anywhere (operator ruling).
 
-   TYPE (two families, Google Fonts)
+   TYPE (two families, self-hosted from ../../assets/fonts.css since
+   wave B, 25 Oct 2026; no signature family on this direction)
      --font-display  Fraunces, SOFT 100: answers the ball terminals of
                      the wordmark; headlines, prices on tags, and every
-                     French name in italic
-     --font-text     Figtree: body, buttons, labels, tabular prices; 16px+
+                     French name in italic (the files pin WONK 1)
+     --font-text     Nunito Sans: body, buttons, labels, tabular prices; 19 px body
 
    SPACING (4px base, named jumps)
      4 · 8 · 12 · 16 · 24 · 32 · 48 · 72 · 112
@@ -135,7 +136,7 @@ section { padding-block: var(--space-section); }
   background: var(--ink); color: var(--paper); font-weight: 700; font-size: 1rem; text-decoration: none;
   cursor: pointer; transition: transform var(--t-tap) var(--ease-out), opacity var(--t-tap) var(--ease-out);
 }
-.btn:hover { opacity: .92; }
+@media (hover: hover){.btn:hover{ opacity: .92; }}
 .btn:active { transform: scale(.96); }
 .btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; }
 .btn-sm { min-height: 40px; padding: 0 16px; font-size: .94rem; }
@@ -191,7 +192,7 @@ section { padding-block: var(--space-section); }
 .logo img { width: auto; height: 54px; }
 .nav { display: none; gap: var(--sp-1); margin-left: var(--sp-4); }
 .nav a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; border-radius: var(--radius-pill); font-weight: 600; text-decoration: none; }
-.nav a:hover { background: var(--oat); }
+@media (hover: hover){.nav a:hover{ background: var(--oat); }}
 .top-actions { margin-left: auto; display: flex; align-items: center; gap: var(--sp-2); }
 .top-actions .btn { min-height: 44px; padding: 0 18px; font-size: .95rem; }
 .cartbtn { position: relative; display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--paper); border: var(--hair); color: var(--ink); text-decoration: none; }
@@ -598,7 +599,7 @@ footer { background: var(--oat); padding-block: var(--sp-8) var(--sp-7); border-
 footer h2 { font-size: 1.15rem; font-weight: 650; margin-bottom: var(--sp-2); max-width: none; letter-spacing: 0; }
 footer p, footer li { font-size: .94rem; color: var(--ink-2); }
 footer li a { display: inline-flex; align-items: center; min-height: 32px; text-decoration: none; color: var(--ink); font-weight: 600; }
-footer li a:hover { text-decoration: underline; }
+@media (hover: hover){footer li a:hover{ text-decoration: underline; }}
 .addr { display: grid; gap: var(--sp-3); }
 .addr p b { color: var(--ink); display: block; }
 .foot-fine { margin-top: var(--sp-6); padding-top: var(--sp-4); border-top: var(--hair); font-size: .84rem; color: var(--ink-2); }
@@ -677,3 +678,56 @@ footer li a:hover { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* =====================================================================
+   Wave B, 25 October 2026 (director pass fixes; notes in
+   options/OPTIONS_2026-10-22.md)
+   ===================================================================== */
+:root {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-text: "Nunito Sans", Arial, sans-serif;
+}
+body { font-size: 1.1875rem; }
+.lead, .sec-copy, .overture .lead { font-size: 1.1875rem; }
+.overture h1 { font-size: clamp(2.8125rem, 11vw, 3.75rem); }
+.notice { font-size: .875rem; }
+.notice .wrap { padding-block: 6px; }
+.hint, .nextchip { font-size: .875rem; }
+.boite-name { font-size: 1.5625rem; }
+.flavours small, .wells button, .cat .n { font-size: .875rem; }
+:focus-visible { outline: 2px solid var(--heart); outline-offset: 2px; }
+/* French inside English: italic, in the display face */
+:where(p, li, dd, figcaption, td, small, label, legend, .en) [lang|="fr"] { font-family: var(--font-display); font-style: italic; }
+/* touch targets, 44 px */
+.stalls a, .nav a, .btn-sm, .add, .textbtn, .link, .cat { min-height: 44px; }
+.nav a, .cat { min-width: 44px; justify-content: center; }
+.wells { grid-template-columns: repeat(6, minmax(44px, 60px)); }
+.wells button { min-width: 44px; min-height: 44px; }
+.stepper button { min-width: 44px; min-height: 44px; }
+.check { min-height: 44px; align-items: center; }
+/* phones: one primary action (the box) and one bag target (the bottom bar) */
+@media (max-width: 899px) {
+  .top-actions { display: none; }
+}
+/* the first phone screen: headline, the box photograph, the builder, then the lead */
+@media (max-width: 999px) {
+  .overture { padding-top: var(--sp-4); }
+  .open-grid { grid-template-areas: "copy" "stage" "lead" "family"; }
+  .open-copy { display: contents; }
+  .open-copy h1 { grid-area: copy; }
+  .overture .lead { grid-area: lead; }
+  .open-photo { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 719px) {
+  .boite { margin-inline: 0; }
+  .wells { padding: 8px; gap: 6px; }
+}
+/* the app bar steps aside while the box add row or the pickup card sits under it */
+.bar { transition: transform 150ms var(--ease-out), visibility 0s; }
+.bar.is-yield { transform: translateY(calc(100% + 8px)); visibility: hidden; transition: transform 150ms var(--ease-out), visibility 0s 150ms; }
+@media (prefers-reduced-motion: reduce) { .bar, .bar.is-yield { transition: none; } }
+html { scroll-padding-bottom: 80px; }
+@media (min-width: 900px) { html { scroll-padding-bottom: 16px; } }
+.nextchip small { font-size: .875rem; }
+.flavours span { font-size: 1.1875rem; }
+.press a { min-height: 44px; }

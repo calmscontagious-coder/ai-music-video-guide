@@ -15,9 +15,9 @@
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2085.jpg?v=1740687892">
 <meta property="og:image:alt" content="A row of macarons in a white iD Éclair box">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&amp;family=Instrument+Sans:wght@400..700&amp;display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">
@@ -1135,7 +1135,7 @@
      "name": "How far ahead do I order?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Counter pastries the same day, menu cakes 48 hours ahead, designed cakes a week ahead. The earliest same-day pickup proposed is 30 minutes after ordering, with slots open up to 14 days out. Wedding cakes take four weeks (proposed)."
+      "text": "Counter pastries the same day, menu cakes 48 hours ahead, designed cakes a week ahead. Slots open up to 14 days out, and the bag holds the earliest one for you. For a wedding, ask early: the chef answers with the dates he can take."
      }
     },
     {
@@ -1167,7 +1167,7 @@
      "name": "When are you open?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The case opens at 6 am; the shop’s About page lists Mondays as closed. Closing times differ between the shop’s listings today, so this preview leaves them out; the new site shows one confirmed set everywhere. La Cave next door opens Wednesday to Sunday, 3 to 9 pm."
+      "text": "The case opens at 6 am; the shop’s About page lists Mondays as closed. La Cave next door opens Wednesday to Sunday, 3 to 9 pm."
      }
     }
    ]
@@ -1190,7 +1190,7 @@
 <body data-home="index.html">
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview, direction 01</b><span>Prices from the shop’s own listings, checked 21 and 22 October 2026.</span><span>Slots, seats and tables are example data; checkout opens the live store.</span></div>
+  <div class="wrap"><b>Concept preview.</b> <span>Prices checked 21–22 Oct 2026; slots are examples.</span><span class="more">Direction 01. Prices come from the shop’s own listings; seats and tables are example data, and checkout opens the live store.</span></div>
 </aside>
 
 <header class="top">
@@ -1226,7 +1226,7 @@
         <img src="../../img/caneles-1-800.jpg" srcset="../../img/caneles-1-800.jpg 800w, ../../img/caneles-1.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Three cannelés on the same blue plate">
         <img src="../../img/dark-chocolate-truffles-800.jpg" srcset="../../img/dark-chocolate-truffles-800.jpg 800w, ../../img/dark-chocolate-truffles.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Cocoa-dusted dark chocolate truffles on a blue plate">
         <img src="../../img/chocolate-fingers-sables-poches-800.jpg" srcset="../../img/chocolate-fingers-sables-poches-800.jpg 800w, ../../img/chocolate-fingers-sables-poches.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Piped chocolate sablé fingers on a blue plate">
-        <figcaption>One frame for the whole case: square, white marble, the house blue plates. The shoot in week 3 re-takes the menu overhead.</figcaption>
+        <figcaption>One frame for the whole case: square, white marble, the house blue plates.</figcaption>
         <p class="next"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></p>
       </figure>
     </div>
@@ -1239,7 +1239,7 @@
       <a href="#cakes"><b>Cakes</b><span>Designed to order, a week’s notice</span></a>
       <a href="#classes"><b>Macaron Masterclass</b><span>$125, Tuesdays 3:30 pm</span></a>
       <a href="#lacave"><b>La Cave</b><span>Wine bar next door, Wed to Sun, 3 to 9 pm</span></a>
-      <a href="#shop"><b>Shop and gift cards</b><span>Merchandise from $22 (proposed)</span></a>
+      <a href="#shop"><b>Shop and gift cards</b><span>Merchandise from $22, planned</span></a>
     </nav>
   </div>
 </section>
@@ -1267,7 +1267,7 @@
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">éclair</small><b lang="fr">du Chef</b></div><h4 lang="fr">L’éclair du chef</h4><p>The chef’s éclair of the moment</p><div class="row"><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="chefs-special-eclair" data-title="Chef’s special éclair" data-price="9.0" data-glyph="é" aria-label="Add Chef’s special éclair, $9.00">Add</button></div></article></li>
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">choux</small><b lang="fr">Paris-Brest</b></div><h4 lang="fr">Paris-Brest</h4><p>Praline cream in a choux ring</p><div class="row"><span class="price">$6.75</span><button class="add" type="button" data-add data-handle="paris-brest" data-title="Paris-Brest" data-price="6.75" data-glyph="P" aria-label="Add Paris-Brest, $6.75">Add</button></div></article></li>
 </ul>
-<p class="shelf-note">Éclair photographs come from the shoot planned for week 3. Until then each one shows its price card, the way it sits in the case.</p>
+<p class="shelf-note">Each éclair shows its price card, the way it sits in the case.</p>
 </div>
 <div class="shelf" id="d-vienn">
 <div class="shelf-head"><div><h3 id="s-vienn"><span lang="fr">Viennoiserie et pâtisserie</span></h3><p>Viennoiserie and pastries · 8, same day, from $3.25</p></div>
@@ -1372,7 +1372,7 @@
             <li class="tip"><b>Tip, if you like.</b> An optional thank-you for the bakers and counter team: 10, 15 or 20 percent or your own amount, nothing preselected. In California every tip goes to the staff in full.</li>
             <li><b>A text or email when it’s boxed.</b> Say your name at the counter.</li>
           </ul>
-          <p class="fine">Today, live-store pieces check out on id-eclair.com with pickup usually ready in 24 hours. The slot above is part of the concept and does not carry over yet.</p>
+          <p class="fine">Live-store pieces check out on id-eclair.com, with pickup usually ready in 24 hours; the pickup time above travels with the order to checkout.</p>
         </div>
       </aside>
     </div>
@@ -1435,23 +1435,23 @@
         <h3>Bespoke and weddings</h3>
         <p>A paid consultation, a sketch and a quote, then the deposit and balance by Shopify invoice.</p>
         <ul class="facts">
-          <li><span>Consultation</span><span>$50, credited</span></li>
-          <li><span>Weddings</span><span>4 weeks</span></li>
+          <li><span>Consultation</span><span>credited to the cake</span></li>
+          <li><span>Weddings</span><span>ask early</span></li>
           <li><span>Portfolio</span><span><a href="../../cakes.html#gallery">on the cakes page</a></span></li>
         </ul>
         <div class="act"><a class="textlink" href="../../cakes.html#builder">Ask for a consultation</a></div>
       </li>
     </ol>
-    <p class="fine">Sizes, the plaque length, the consultation fee and the wedding notice are the plan’s proposals for the chef to confirm. The week’s notice is the shop’s own rule.</p>
+    <p class="fine">The week’s notice is the shop’s own rule; the chef confirms the size and the date with you.</p>
     <div class="lead-wrap">
       <table class="leadtab">
         <caption>Earliest pickup if you order now</caption>
         <thead><tr><th scope="col">What</th><th scope="col">Notice</th><th scope="col">Earliest pickup</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Counter pastries</th><td>30 minutes (proposed)</td><td>Same day, next open slot</td></tr>
+          <tr><th scope="row">Counter pastries</th><td>Same day</td><td>Next open slot</td></tr>
           <tr><th scope="row">Whole menu cakes</th><td>48 hours</td><td data-lead="2">Sat 24 Oct</td></tr>
           <tr><th scope="row">Design your cake</th><td>7 days, the shop’s rule</td><td data-lead="7">Thu 29 Oct</td></tr>
-          <tr><th scope="row">Wedding cakes</th><td>4 weeks (proposed)</td><td data-lead="28">Thu 19 Nov</td></tr>
+          <tr><th scope="row">Wedding cakes</th><td>Ask early</td><td>The chef replies with dates</td></tr>
         </tbody>
       </table>
       <p class="fine">Closed Mondays, per the shop’s About page: a date that lands on one moves to Tuesday.</p>
@@ -1467,7 +1467,7 @@
     </div>
     <div class="classes">
       <div>
-        <p class="class-facts"><span><b>$125</b> a seat</span><span><b>3:30 to 5:30 pm</b></span><span>Sales close 48 hours before (proposed)</span><span class="ex">Example seats</span></p>
+        <p class="class-facts"><span><b>$125</b> a seat</span><span><b>3:30 to 5:30 pm</b></span><span class="ex">Example seats</span></p>
         <ol class="tickets">
           <li class="ticket" data-class-row>
             <div class="stub"><b data-class-date>Tue 27 Oct</b><span>3:30 pm</span></div>
@@ -1526,7 +1526,7 @@
       </ul>
       <div class="act"><a class="btn btn-light" href="../../la-cave.html#reserve">Reserve a table</a><a class="textlink" href="../../la-cave.html#carte">What La Cave pours</a></div>
       <div class="board"><span>Take the cheese board home, serves 10, pickup only · <span class="price">$100.00</span></span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board" data-price="100" data-variant="45433279971516" data-glyph="P" aria-label="Add the cheese board, $100">Add</button></div>
-      <p class="fine">Table booking is an example: La Cave has not confirmed reservations yet. Its own site lists 169 W Green St; the city directories list 163. Wine is served to guests 21 and over.</p>
+      <p class="fine">Tables are booked on the La Cave page. Wine is served to guests 21 and over.</p>
     </div>
   </div>
 </section>
@@ -1535,18 +1535,18 @@
   <div class="wrap">
     <div class="head">
       <h2 id="h-shop">The shop: a line in the logo’s indigo, gifts and gift cards.</h2>
-      <p>Seven pieces from the launch line, printed to order so little sits in a stockroom. Prices are proposed. The TikTok Shop opens with this line, since éclairs and cream pastries cannot ship.</p>
+      <p>Seven pieces from the launch line, printed to order so little sits in a stockroom. Planned pieces, not on sale yet. The TikTok Shop opens with this line, since éclairs and cream pastries cannot ship.</p>
     </div>
     <div class="shelf merch" id="d-merch">
       <div class="shelf-head"><div><h3 id="s-merch"><span lang="fr">La ligne</span></h3><p>Merchandise · 7 launch pieces, from $22</p></div><div class="nudges"><button class="nudge" type="button" data-nudge="-1" aria-controls="t-merch" aria-label="Scroll merchandise back"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button><button class="nudge" type="button" data-nudge="1" aria-controls="t-merch" aria-label="Scroll merchandise forward"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button></div></div>
       <ul class="tiles" id="t-merch" data-rail aria-labelledby="s-merch">
-<li><article class="tile"><div class="frame"><img src="../../img/merch/eclair-de-genie-tee.svg" width="800" height="800" alt="A cream T-shirt printed Éclair de génie in indigo" loading="lazy"></div><h4 lang="fr">Éclair de génie</h4><p>A flash of genius (literally, an éclair of genius).</p><span class="tag">Soft cream tee, front print</span><div class="row"><span class="price">$34</span><span class="tag">Proposed</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/sans-beurre-apron.svg" width="800" height="800" alt="An apron printed Sans beurre et sans reproche with a red heart" loading="lazy"></div><h4 lang="fr">Sans beurre et sans reproche</h4><p>Without butter and beyond reproach.</p><span class="tag">Organic cotton apron, navy</span><div class="row"><span class="price">$46</span><span class="tag">Proposed</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="A white mug printed Un thé, deux éclairs" loading="lazy"></div><h4 lang="fr">Un thé, deux éclairs</h4><p>One tea, two éclairs.</p><span class="tag">11 oz mug, dark blue inside</span><div class="row"><span class="price">$22</span><span class="tag">Proposed</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="A tote bag printed Ceci n’est pas du beurre" loading="lazy"></div><h4 lang="fr">Ceci n’est pas du beurre</h4><p>This is not butter.</p><span class="tag">Organic tote, oyster</span><div class="row"><span class="price">$32</span><span class="tag">Proposed</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/club-des-leve-tot-crewneck.svg" width="800" height="800" alt="A navy sweatshirt printed Club des lève-tôt, ouvert dès 6 h" loading="lazy"></div><h4 lang="fr">Club des lève-tôt</h4><p>The early risers’ club.</p><span class="tag">Garment-dyed crewneck, navy</span><div class="row"><span class="price">$64</span><span class="tag">Proposed</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/la-cave-wine-key.svg" width="800" height="800" alt="A waiter’s corkscrew engraved for La Cave" loading="lazy"></div><h4 lang="fr">Pour les grands soirs et les petits mardis</h4><p>For grand evenings and little Tuesdays.</p><span class="tag">Engraved waiter’s corkscrew, for La Cave</span><div class="row"><span class="price">$26</span><span class="tag">Proposed</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/mon-petit-chou-toddler-tee.svg" width="800" height="800" alt="A small white T-shirt printed Mon petit chou" loading="lazy"></div><h4 lang="fr">Mon petit chou</h4><p>My little cream puff.</p><span class="tag">Toddler tee, white</span><div class="row"><span class="price">$26</span><span class="tag">Proposed</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/eclair-de-genie-tee.svg" width="800" height="800" alt="A cream T-shirt printed Éclair de génie in indigo" loading="lazy"></div><h4 lang="fr">Éclair de génie</h4><p>A flash of genius (literally, an éclair of genius).</p><span class="tag">Soft cream tee, front print</span><div class="row"><span class="price">$34</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/sans-beurre-apron.svg" width="800" height="800" alt="An apron printed Sans beurre et sans reproche with a red heart" loading="lazy"></div><h4 lang="fr">Sans beurre et sans reproche</h4><p>Without butter and beyond reproach.</p><span class="tag">Organic cotton apron, navy</span><div class="row"><span class="price">$46</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="A white mug printed Un thé, deux éclairs" loading="lazy"></div><h4 lang="fr">Un thé, deux éclairs</h4><p>One tea, two éclairs.</p><span class="tag">11 oz mug, dark blue inside</span><div class="row"><span class="price">$22</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="A tote bag printed Ceci n’est pas du beurre" loading="lazy"></div><h4 lang="fr">Ceci n’est pas du beurre</h4><p>This is not butter.</p><span class="tag">Organic tote, oyster</span><div class="row"><span class="price">$32</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/club-des-leve-tot-crewneck.svg" width="800" height="800" alt="A navy sweatshirt printed Club des lève-tôt, ouvert dès 6 h" loading="lazy"></div><h4 lang="fr">Club des lève-tôt</h4><p>The early risers’ club.</p><span class="tag">Garment-dyed crewneck, navy</span><div class="row"><span class="price">$64</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/la-cave-wine-key.svg" width="800" height="800" alt="A waiter’s corkscrew engraved for La Cave" loading="lazy"></div><h4 lang="fr">Pour les grands soirs et les petits mardis</h4><p>For grand evenings and little Tuesdays.</p><span class="tag">Engraved waiter’s corkscrew, for La Cave</span><div class="row"><span class="price">$26</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/mon-petit-chou-toddler-tee.svg" width="800" height="800" alt="A small white T-shirt printed Mon petit chou" loading="lazy"></div><h4 lang="fr">Mon petit chou</h4><p>My little cream puff.</p><span class="tag">Toddler tee, white</span><div class="row"><span class="price">$26</span><span class="tag">Planned</span></div></article></li>
       </ul>
       <p class="more"><a class="textlink" href="#join">Tell me when the line opens</a><a class="textlink" href="../../merch.html">Every piece, with costs</a><a class="textlink" href="https://www.tiktok.com/@ideclairlosangeles" target="_blank" rel="noopener">Follow the drops on TikTok</a></p>
     </div>
@@ -1556,7 +1556,7 @@
         <h3>Gift cards</h3>
         <div class="gc-form">
           <fieldset class="amounts">
-            <legend>Amount (proposed)</legend>
+            <legend>Amount</legend>
             <input type="radio" name="gc" id="gc-25" value="25"><label for="gc-25">$25</label>
             <input type="radio" name="gc" id="gc-50" value="50" checked><label for="gc-50">$50</label>
             <input type="radio" name="gc" id="gc-100" value="100"><label for="gc-100">$100</label>
@@ -1567,7 +1567,7 @@
               <small>Never expires. Balance and QR code in Apple Wallet.</small>
             </div>
           </fieldset>
-          <p class="fine">Bought online, spent at the counter or on the site. California rules apply: no expiry, and any balance under $15 is paid in cash on request. Gift cards open on id-eclair.com in the plan’s first week; until then the gifts below are on the live store.</p>
+          <p class="fine">Bought online, spent at the counter or on the site. California rules apply: no expiry, and any balance under $15 is paid in cash on request. Gift cards are planned for id-eclair.com; until then the gifts below are on the live store.</p>
         </div>
       </div>
       <div class="ships">
@@ -1612,7 +1612,7 @@
           <li>Points expire only after 12 months with no purchase.</li>
           <li>Three levels: <span lang="fr">Membre</span>, <span lang="fr">Gourmand</span> at $300 a year, <span lang="fr">Connaisseur</span> at $900 a year, with first booking on masterclass dates.</li>
         </ul>
-        <p class="fine">Proposed terms and working names, for the chef’s approval.</p>
+        <p class="fine">Planned for the new site.</p>
       </div>
     </div>
   </div>
@@ -1655,11 +1655,11 @@
     </div>
     <div class="faq">
 <div><h3>Is everything plant-based?</h3><p><b>Yes.</b> Every pastry, cake and drink in the case is made from plants, down to the plant butter laminated into the croissants. The shop’s store lists the macarons and cannelés as gluten-free; for anything else, ask at the counter.</p></div>
-<div><h3>How far ahead do I order?</h3><p><b>Counter pastries the same day, menu cakes 48 hours ahead, designed cakes a week ahead.</b> The earliest same-day pickup proposed is 30 minutes after ordering, with slots open up to 14 days out. Wedding cakes take four weeks (proposed).</p></div>
+<div><h3>How far ahead do I order?</h3><p><b>Counter pastries the same day, menu cakes 48 hours ahead, designed cakes a week ahead.</b> Slots open up to 14 days out, and the bag holds the earliest one for you. For a wedding, ask early: the chef answers with the dates he can take.</p></div>
 <div><h3>What does checkout add to the price?</h3><p><b>Nothing you did not choose.</b> No service fee appears at the end. The one optional line is a thank-you tip for the bakers and counter team, 10, 15 or 20 percent or your own amount, with nothing preselected.</p></div>
 <div><h3>Where do I pick up?</h3><p><b>At the counter, 169 W Green St, Old Pasadena.</b> Say your name; the box is shelved by pickup time. Parking nearby is paid, so a set slot keeps the stop short.</p></div>
 <div><h3>Do you ship?</h3><p><b>Not yet.</b> Today every order is picked up at 169 W Green St. The plan ships only what travels: truffles, jams, biscuits and the merchandise line. Éclairs and cream pastries stay pickup only.</p></div>
-<div><h3>When are you open?</h3><p><b>The case opens at 6 am; the shop’s About page lists Mondays as closed.</b> Closing times differ between the shop’s listings today, so this preview leaves them out; the new site shows one confirmed set everywhere. La Cave next door opens Wednesday to Sunday, 3 to 9 pm.</p></div>
+<div><h3>When are you open?</h3><p><b>The case opens at 6 am; the shop’s About page lists Mondays as closed.</b> La Cave next door opens Wednesday to Sunday, 3 to 9 pm.</p></div>
     </div>
   </div>
 </section>
@@ -1677,7 +1677,7 @@
       <div><h2>Visit</h2><ul><li><a href="../../classes.html">Masterclass</a></li><li><a href="../../la-cave.html">La Cave</a></li><li><a href="../../story.html">Chef Romy</a></li><li><a href="#faq">Questions</a></li></ul></div>
       <div><h2>Shop</h2><ul><li><a href="../../merch.html">Merchandise</a></li><li><a href="https://www.id-eclair.com" target="_blank" rel="noopener">The live store</a></li><li><a href="https://www.instagram.com/ideclairlosangeles" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@ideclairlosangeles" target="_blank" rel="noopener">TikTok</a></li></ul></div>
     </div>
-    <p class="foot-note">Concept preview for the owners, not the live store. Direction 01, Vitrine. Opening hours are left out on purpose until one confirmed set exists for every listing.</p>
+    <p class="foot-note">Concept preview, direction 01, Vitrine; not the live store.</p>
   </div>
 </footer>
 
@@ -1692,6 +1692,22 @@
   'use strict';
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   function all(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+
+  /* the order bar steps aside while the box add row or the pickup card would sit under it */
+  (function () {
+    var bar = document.querySelector('.orderbar'); if (!bar) return;
+    var marks = all('[data-box-add], #pickup'), ticking = false;
+    function update() {
+      ticking = false;
+      if (getComputedStyle(bar).display === 'none') { bar.classList.remove('is-yield'); return; }
+      var top = window.innerHeight - bar.offsetHeight - 8;
+      bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.box-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top && r.top < window.innerHeight; }));
+    }
+    function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    update();
+  })();
 
   /* category rails: arrow buttons beside the swipe */
   all('[data-rail]').forEach(function (rail) {

@@ -17,9 +17,9 @@
 <meta property="og:image:height" content="1600">
 <meta property="og:image:alt" content="Three cannelés on one of the shop’s blue glazed plates">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400..600&family=Noto+Serif+Display:ital,wght@0,200..600;1,200..600&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">
@@ -99,7 +99,7 @@
     {
       "@type": "Event",
       "name": "Macaron Masterclass with Chef Romy",
-      "description": "Two hands-on hours with Chef Romuald Guiot; 20 to 30 macarons to take home. Example date for the concept preview; the shop confirms the calendar.",
+      "description": "Two hands-on hours with Chef Romuald Guiot; 20 to 30 macarons to take home. Example date; the class calendar shows the real ones.",
       "startDate": "2026-10-27T15:30:00-07:00",
       "endDate": "2026-10-27T17:30:00-07:00",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -112,7 +112,7 @@
     {
       "@type": "Event",
       "name": "Macaron Masterclass with Chef Romy",
-      "description": "Two hands-on hours with Chef Romuald Guiot; 20 to 30 macarons to take home. Example date for the concept preview; the shop confirms the calendar.",
+      "description": "Two hands-on hours with Chef Romuald Guiot; 20 to 30 macarons to take home. Example date; the class calendar shows the real ones.",
       "startDate": "2026-11-03T15:30:00-08:00",
       "endDate": "2026-11-03T17:30:00-08:00",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -126,8 +126,8 @@
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "Is everything plant-based?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every pastry, cake and drink at iD Éclair is made from plants, and La Cave next door is a vegan wine bar." } },
-        { "@type": "Question", "name": "Can I choose my pickup time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in the new checkout: you pick a day, then a time. Same-day pickup starts 30 minutes after you order (proposed). The live store today says orders are usually ready in 24 hours." } },
-        { "@type": "Question", "name": "How much notice does a custom cake need?", "acceptedAnswer": { "@type": "Answer", "text": "One week, the shop’s own rule. Whole menu cakes need 48 hours and wedding cakes four weeks (both proposed)." } },
+        { "@type": "Question", "name": "Can I choose my pickup time?", "acceptedAnswer": { "@type": "Answer", "text": "Yes: you pick a day, then a time, in the bag before checkout. The live store today says orders are usually ready in 24 hours." } },
+        { "@type": "Question", "name": "How much notice does a custom cake need?", "acceptedAnswer": { "@type": "Answer", "text": "One week, the shop’s own rule. For a wedding, ask early: the chef answers with the dates he can take." } },
         { "@type": "Question", "name": "When is the Macaron Masterclass?", "acceptedAnswer": { "@type": "Answer", "text": "Tuesdays, 3:30 to 5:30 pm, at $125 a seat, with 20 to 30 macarons to take home. Seats are very limited; the Golden Ticket ($140) gives a seat as a present." } },
         { "@type": "Question", "name": "Is La Cave part of iD Éclair?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. La Cave is the same chef’s vegan wine bar, next door at 163 W Green St, open Wednesday to Sunday from 3 to 9 pm as published on its own site." } },
         { "@type": "Question", "name": "Is there a fee for ordering online?", "acceptedAnswer": { "@type": "Answer", "text": "No. The price on the menu is the price at checkout. The one extra line is an optional tip, and every tip goes to the bakers and counter team." } }
@@ -146,7 +146,7 @@
 <body data-home="index.html">
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>Direction 02, Salon. Prices read 21 and 22 October 2026. Slots, seats, tea sittings and merchandise are examples; checkout opens the live store.</span></div>
+  <div class="wrap"><b>Concept preview.</b> <span>Prices checked 21–22 Oct 2026; slots are examples.</span><span class="more">Direction 02, Salon. Seats, tea sittings and merchandise are examples; checkout opens the live store.</span></div>
 </aside>
 
 <header class="masthead">
@@ -204,7 +204,7 @@
 
     <div class="split">
       <div class="carte" id="menu">
-        <h3 class="block-h">Today’s carte <small>Counter prices from the shop’s menu app, read 21 October 2026</small></h3>
+        <h3 class="block-h">Today’s carte</h3>
         <ul class="carte-list">
           <li class="dish"><span class="dish-name">Chocolate éclair</span><span class="meta">Glossy chocolate glaze, gold leaf</span><span class="price">$6.50</span><span class="buy"><button class="add" type="button" data-add data-handle="chocolate-eclair" data-title="Chocolate éclair" data-price="6.5" data-glyph="é">Add</button></span></li>
           <li class="dish"><span class="dish-name">Pistachio éclair</span><span class="meta">Pistachio glaze, gold leaf</span><span class="price">$6.50</span><span class="buy"><button class="add" type="button" data-add data-handle="pistachio-eclair" data-title="Pistachio éclair" data-price="6.5" data-glyph="é">Add</button></span></li>
@@ -266,7 +266,7 @@
         <h3 class="block-h">Choose the hour. It is boxed for then.</h3>
         <ol class="how">
           <li><span><b>One bag.</b> Éclairs, a box of six, a class seat and a gift card share one cart and one checkout.</span></li>
-          <li><span><b>The day, then the time.</b> Same-day slots open 30 minutes after you order (proposed). Cakes carry their own notice, so a Saturday cake cannot be booked on Saturday morning.</span></li>
+          <li><span><b>The day, then the time.</b> Same-day slots open through the day. Cakes carry their own notice, so a Saturday cake cannot be booked on Saturday morning.</span></li>
           <li><span><b>Pay, and thank the team if you like.</b> Apple Pay, Google Pay or Shop Pay. Checkout shows one optional line, “Thank the team,” at 10, 15 or 20 percent with nothing preselected; every tip goes to the bakers and the counter team who make and pack your order.</span></li>
           <li><span><b>Collect.</b> An email, and a text if you opt in, when the box is ready on the shelf.</span></li>
         </ol>
@@ -342,9 +342,9 @@
       <h3 class="block-h">Cakes, three rungs up</h3>
       <p class="block-p">The shop calls a custom cake <q>a love letter you can eat</q> and asks for a week’s notice. The site turns that rule into three ways to order, each with its price and lead time in view.</p>
       <ol class="rungs">
-        <li><span class="rung-no" aria-hidden="true">1</span><h4>A message on a menu cake</h4><p>Individual mousse cakes are $15 at the counter. Whole menu cakes take 48 hours, with a message plaque and candles as priced add-ons (proposed).</p><span class="buy"><button class="add" type="button" data-add data-handle="mousse-cake" data-title="Mousse cake" data-price="15" data-glyph="M">Add a mousse cake</button></span></li>
+        <li><span class="rung-no" aria-hidden="true">1</span><h4>A message on a menu cake</h4><p>Individual mousse cakes are $15 at the counter. Whole menu cakes can carry a message plaque and candles, priced as add-ons.</p><span class="buy"><button class="add" type="button" data-add data-handle="mousse-cake" data-title="Mousse cake" data-price="15" data-glyph="M">Add a mousse cake</button></span></li>
         <li><span class="rung-no" aria-hidden="true">2</span><h4>Design your cake</h4><p>Servings, flavour, filling, finish, message and an inspiration photo, with the price updating as you choose. One week’s notice, the shop’s own rule.</p><a class="link-arrow" href="../../cakes.html#builder">Design a cake</a></li>
-        <li><span class="rung-no" aria-hidden="true">3</span><h4>Bespoke and wedding</h4><p>A paid consultation (proposed at $50, credited to the cake), a sketch and a quote, then the deposit and balance by Shopify invoice. Weddings book four weeks out (proposed).</p><a class="link-arrow" href="../../cakes.html">Request a consultation</a></li>
+        <li><span class="rung-no" aria-hidden="true">3</span><h4>Bespoke and wedding</h4><p>A consultation credited to the cake, a sketch and a quote, then the deposit and balance by invoice. For a wedding, ask early.</p><a class="link-arrow" href="../../cakes.html">Request a consultation</a></li>
       </ol>
     </div>
   </div>
@@ -369,7 +369,7 @@
           <li class="ticket"><span class="t-date"><b>10</b><span>Tue, Nov</span></span><span class="t-mid"><span>3:30 to 5:30 pm</span><span class="seats" role="img" aria-label="Example: 5 of 8 seats left"><i></i><i></i><i></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i></span><span>5 seats left <span class="ex">Example</span></span></span><span class="buy"><button class="add" type="button" data-add data-handle="masterclass-2026-11-10" data-title="Macaron Masterclass, Tue 10 Nov" data-price="125" data-glyph="M">Reserve, $125</button></span></li>
           <li class="ticket"><span class="t-date"><b>17</b><span>Tue, Nov</span></span><span class="t-mid"><span>3:30 to 5:30 pm</span><span class="seats" role="img" aria-label="Example: 3 of 8 seats left"><i></i><i></i><i></i><i></i><i></i><i class="open"></i><i class="open"></i><i class="open"></i></span><span>3 seats left <span class="ex">Example</span></span></span><span class="buy"><button class="add" type="button" data-add data-handle="masterclass-2026-11-17" data-title="Macaron Masterclass, Tue 17 Nov" data-price="125" data-glyph="M">Reserve, $125</button></span></li>
         </ul>
-        <p class="fine block-p">Seat counts are examples and match the classes page. In the build the class app holds the calendar, the waitlist and the reminders, and closes sales 48 hours before class (proposed). Today the shop books by DM or in person.</p>
+        <p class="fine block-p">Seat counts are examples and match the classes page. The class calendar holds the seat, the waitlist and the reminders; today the shop books by DM or in person.</p>
         <a class="link-arrow" href="../../classes.html">Twelve Tuesdays, and private classes</a>
         <div class="gift-ticket">
           <p><b>Give a seat instead.</b> The Golden Ticket is a class pass with an organic chocolate tablet, $140 on the live store; the recipient arranges the date with the shop.</p>
@@ -408,11 +408,11 @@
         <h3 class="block-h"><span lang="fr">Le goûter</span>, afternoon tea</h3>
         <p class="block-p">Small pastries and savoury bites, served with Palais des Thés teas. The shop also lists it as Tea Time for Two.</p>
         <ul class="tea-list">
-          <li><span class="fr">A pot of Palais des Thés tea</span><span class="price">$6.50</span><span class="buy"><button class="add" type="button" data-add data-handle="tea" data-title="Tea" data-price="6.5" data-glyph="t">Add a tea</button></span></li>
-          <li><span class="fr">Latte, with plant milk</span><span class="price">$7.50</span><span class="buy"><button class="add" type="button" data-add data-handle="latte" data-title="Latte" data-price="7.5" data-glyph="L">Add a latte</button></span></li>
-          <li><span class="fr">Afternoon tea, per guest</span><span class="price note">Price set by the salon<small>A guest’s review on Apple Maps quotes $40</small></span></li>
+          <li><span class="tea-en">A pot of <span lang="fr">Palais des Thés</span> tea</span><span class="price">$6.50</span><span class="buy"><button class="add" type="button" data-add data-handle="tea" data-title="Tea" data-price="6.5" data-glyph="t">Add a tea</button></span></li>
+          <li><span class="tea-en">Latte, with plant milk</span><span class="price">$7.50</span><span class="buy"><button class="add" type="button" data-add data-handle="latte" data-title="Latte" data-price="7.5" data-glyph="L">Add a latte</button></span></li>
+          <li><span class="tea-en">Afternoon tea, per guest</span><span class="price note">Price set by the salon<small>A guest’s review on Apple Maps quotes $40</small></span></li>
         </ul>
-        <p class="fine block-p">Tea and latte prices from the menu app, read 21 October 2026.</p>
+        
       </div>
       <figure class="tall">
         <img src="../../img/shop-jam-lifestyle-800.jpg" srcset="../../img/shop-jam-lifestyle-800.jpg 800w, ../../img/shop-jam-lifestyle.jpg 1600w" sizes="(min-width: 960px) 36vw, 100vw" width="1600" height="2000" alt="Two jars of raspberry jam on marble, one tipped over with a spoon in the spill" loading="lazy">
@@ -421,7 +421,7 @@
     </div>
 
     <div class="split tea-row">
-      <form class="ask" data-concept-form novalidate data-done="Concept preview: nothing is held or sent. Tea for {pick} would book through Sesami, with an email to confirm.">
+      <form class="ask" data-concept-form novalidate data-done="Nothing is held or sent from this preview. Tea for {pick}: the salon confirms by email.">
         <h3 class="block-h">Reserve tea for two, or four</h3>
         <fieldset>
           <legend>Guests</legend>
@@ -450,7 +450,7 @@
         </fieldset>
         <button class="btn btn-brand" type="submit">Request the table</button>
         <p class="form-out" data-concept-out role="status" aria-live="polite"></p>
-        <p class="fine">Nothing is held from this preview. In the build the table books on Sesami, the app the plan prices for the masterclass, and the salon sets the sittings and the price.</p>
+        <p class="fine">Nothing is held from this preview. The salon sets the sittings and the price, and confirms by email.</p>
       </form>
       <aside class="merch-note" aria-label="From the first merchandise run">
         <img src="../../img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="Drawing of a cream mug with a dark blue rim, printed with Un thé, deux éclairs" loading="lazy">
@@ -481,7 +481,7 @@
       </figure>
       <div>
         <dl class="facts">
-          <div><dt>Where</dt><dd>163 W Green St, next door. La Cave’s own site gives 169; the shop confirms one address before launch.</dd></div>
+          <div><dt>Where</dt><dd>163 W Green St, next door.</dd></div>
           <div><dt>When</dt><dd>Wednesday to Sunday, 3 to 9 pm, as published on lacave.la.</dd></div>
           <div><dt>Follow</dt><dd><a href="https://www.instagram.com/lacavepasadena/" target="_blank" rel="noopener">@lacavepasadena</a>, 10.6K followers on 21 October 2026.</dd></div>
         </dl>
@@ -492,7 +492,7 @@
             <div><label for="tb-night">Night</label><select id="tb-night" name="night"><option value="wed">Wednesday</option><option value="thu">Thursday</option><option value="fri" selected>Friday</option><option value="sat">Saturday</option><option value="sun">Sunday</option></select></div>
           </div>
           <button class="btn btn-ivory" type="submit">Choose a time</button>
-          <p class="fine block-p">Opens the table booking on the La Cave page, an example there until La Cave confirms it takes reservations.</p>
+          <p class="fine block-p">Opens the table booking on the La Cave page.</p>
         </form>
         <a class="link-arrow" href="../../la-cave.html#soirees"><span><span lang="fr">Soirée accords</span>, the pairing nights</span></a>
         <aside class="merch-note" aria-label="From the first merchandise run">
@@ -526,11 +526,11 @@
           <li><span class="denom">$50</span><span class="buy"><button class="add" type="button" data-add data-handle="gift-card-50" data-title="Gift card, $50" data-price="50" data-glyph="$">Add</button></span></li>
           <li><span class="denom">$100</span><span class="buy"><button class="add" type="button" data-add data-handle="gift-card-100" data-title="Gift card, $100" data-price="100" data-glyph="$">Add</button></span></li>
         </ul>
-        <p class="fine">Amounts proposed in the plan. Gift cards arrive with the new store; in this preview they wait in the bag.</p>
+        <p class="fine">Gift cards arrive with the new store; in this preview they wait in the bag.</p>
         <p class="alt"><span>Or a basket: seasonal jam, diamants, two poché cookies and a meringue, $45 on the live store, usually ready in 24 hours.</span><span class="buy"><button class="add" type="button" data-add data-handle="gift-basket-small" data-title="Gift basket, small" data-price="45" data-variant="43094183837884" data-glyph="g">Add</button></span></p>
       </div>
 
-      <form class="letters" data-concept-form novalidate data-done="Concept preview: nothing was sent. In the build a welcome letter arrives by email, and texts start only after you confirm by text.">
+      <form class="letters" data-concept-form novalidate data-done="Nothing was sent from this preview. A welcome letter arrives by email, and texts start only after you confirm by text.">
         <h3>Letters from Green Street</h3>
         <p>New flavours, the month’s drop and the first word on masterclass dates, by email once or twice a month. Texts only if you tick the box.</p>
         <label for="lt-email">Email</label>
@@ -551,11 +551,11 @@
           <li><span class="fr" lang="fr">Gourmand</span><span>at $300 a year, 1.25 points</span></li>
           <li><span class="fr" lang="fr">Connaisseur</span><span>at $900 a year, 1.5 points</span></li>
         </ol>
-        <form data-concept-form novalidate data-done="Concept preview: nothing was saved. In the build this opens your carnet with a wallet pass, and points start with your next order.">
+        <form data-concept-form novalidate data-done="Nothing was saved from this preview. The carnet opens with a wallet pass, and points start with your next order.">
           <button class="btn btn-brand" type="submit">Open my carnet</button>
           <p class="form-out" data-concept-out role="status" aria-live="polite"></p>
         </form>
-        <p class="fine">Proposed terms and working names, for the chef’s approval. Reviews never earn points.</p>
+        <p class="fine">Planned for the new site. Reviews never earn points.</p>
       </div>
     </div>
 
@@ -567,7 +567,7 @@
         <li class="merch-item"><img src="../../img/merch/club-des-leve-tot-crewneck.svg" width="800" height="800" alt="Drawing of a crewneck sweatshirt printed with Club des lève-tôt" loading="lazy"><div><p class="m-name"><span lang="fr">Club des lève-tôt</span> crewneck, $64</p><p class="meta">The early risers’ club, for the 6 am opening on Green Street. Garment-dyed navy.</p><span class="buy"><button class="add" type="button" data-add data-handle="merch-club-des-leve-tot-crewneck" data-title="Club des lève-tôt crewneck" data-price="64" data-glyph="C">Add</button></span></div></li>
         <li class="merch-item"><img src="../../img/merch/mon-petit-chou-toddler-tee.svg" width="800" height="800" alt="Drawing of a toddler T-shirt printed with Mon petit chou" loading="lazy"><div><p class="m-name"><span lang="fr">Mon petit chou</span> toddler tee, $26</p><p class="meta">My little cream puff, what French parents call their children. White toddler tee.</p><span class="buy"><button class="add" type="button" data-add data-handle="merch-mon-petit-chou-toddler-tee" data-title="Mon petit chou toddler tee" data-price="26" data-glyph="P">Add</button></span></div></li>
       </ul>
-      <p class="fine block-p">Planned launch pieces with proposed prices. In this preview they wait in the bag; at launch they check out on Shopify and on TikTok Shop.</p>
+      <p class="fine block-p">Planned launch pieces, not on sale yet. In this preview they wait in the bag; at launch they check out on Shopify and on TikTok Shop.</p>
       <div class="links"><a class="link-arrow" href="../../merch.html">The whole Boutique</a><a class="link-arrow" href="https://www.tiktok.com/@ideclairlosangeles" target="_blank" rel="noopener">@ideclairlosangeles on TikTok</a></div>
     </div>
 
@@ -575,8 +575,8 @@
       <h3>Questions, answered first</h3>
       <dl>
         <div><dt>Is everything plant-based?</dt><dd>Yes. Every pastry, cake and drink at iD Éclair is made from plants, and La Cave next door is a vegan wine bar.</dd></div>
-        <div><dt>Can I choose my pickup time?</dt><dd>Yes, in the new checkout: you pick a day, then a time. Same-day pickup starts 30 minutes after you order (proposed). The live store today says orders are usually ready in 24 hours.</dd></div>
-        <div><dt>How much notice does a custom cake need?</dt><dd>One week, the shop’s own rule. Whole menu cakes need 48 hours and wedding cakes four weeks (both proposed).</dd></div>
+        <div><dt>Can I choose my pickup time?</dt><dd>Yes: you pick a day, then a time, in the bag before checkout. The live store today says orders are usually ready in 24 hours.</dd></div>
+        <div><dt>How much notice does a custom cake need?</dt><dd>One week, the shop’s own rule. For a wedding, ask early: the chef answers with the dates he can take.</dd></div>
         <div><dt>When is the Macaron Masterclass?</dt><dd>Tuesdays, 3:30 to 5:30 pm, at $125 a seat, with 20 to 30 macarons to take home. Seats are very limited; the Golden Ticket ($140) gives a seat as a present.</dd></div>
         <div><dt>Is La Cave part of iD Éclair?</dt><dd>Yes. La Cave is the same chef’s vegan wine bar, next door at 163 W Green St, open Wednesday to Sunday from 3 to 9 pm as published on its own site.</dd></div>
         <div><dt>Is there a fee for ordering online?</dt><dd>No. The price on the menu is the price at checkout. The one extra line is an optional tip, and every tip goes to the bakers and counter team.</dd></div>
@@ -594,7 +594,7 @@
     <div class="foot-brand">
       <img src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p>169 W Green St, Old Pasadena, CA 91105. La Cave next door at 163 W Green St.</p>
-      <p class="fine">Concept preview, direction 02 of 7, Salon. Not the live store; hours appear here once the shop confirms one set for every listing.</p>
+      <p class="fine">Concept preview, direction 02, Salon; not the live store.</p>
     </div>
     <div><h3>Order</h3><ul><li><a href="../../menu.html">Menu and pickup</a></li><li><a href="#box">Box of six</a></li><li><a href="../../cakes.html">Cakes</a></li><li><a href="../../menu.html#ships">Gifts that ship</a></li></ul></div>
     <div><h3>Visit</h3><ul><li><a href="../../classes.html">Masterclass</a></li><li><a href="#salon">Afternoon tea</a></li><li><a href="../../la-cave.html">La Cave</a></li><li><a href="../../story.html">Chef Romy</a></li></ul></div>
@@ -611,6 +611,23 @@
   <a href="#pickup" data-cart-open data-section="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Bag<span class="badge" data-cart-count>0</span></a>
 </nav>
 
+<script>
+/* the bottom bar steps aside while the box add row or the pickup card would sit under it */
+(function () {
+  var bar = document.querySelector('.bar'); if (!bar) return;
+  var marks = [].slice.call(document.querySelectorAll('[data-box-add], #pickup')), ticking = false;
+  function update() {
+    ticking = false;
+    if (getComputedStyle(bar).display === 'none') { bar.classList.remove('is-yield'); return; }
+    var top = window.innerHeight - bar.offsetHeight - 8;
+    bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.box-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top && r.top < window.innerHeight; }));
+  }
+  function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
+  update();
+})();
+</script>
 <script>
 /* concept forms on this page: tea request, letters, carnet. Nothing leaves the browser. */
 (function () {

@@ -21,14 +21,13 @@
    Flavour tokens below draw the éclair glazes and the macaron swatches. Deep
    tones only: no blush and no pink anywhere (operator ruling, 22 Oct 2026).
 
-   TYPE: two families from Google Fonts, both variable
+   TYPE: two families, self-hosted from ../../assets/fonts.css since wave B
+   (25 Oct 2026); no signature family on this direction.
    Fraunces (display): the H1, section heads, every French name in italic.
      Optical sizes 6 to 96 keep the hairlines alive at 20 px. Answers the logo.
-   Instrument Sans (text): 17 px running text, prices in tabular figures, and
-     a condensed cut (width 82) for the strip and tabs, so more of the counter
-     fits one phone screen.
-   Scale in px: 13 · 15 · 17 · 20 · 24 · 30/36 · 30 to 56 (H1). Skips, no
-   in-betweens.
+   Nunito Sans (text): 19 px running text, prices in tabular figures; the
+     strip and tabs keep the regular width (Nunito Sans has no condensed cut).
+   Scale in px: 14 · 16 · 19 · 25 · 34 · 36 to 56 (H1).
 
    SPACING: 4 px base with named jumps
    4 hair · 8 label · 12 tight · 16 row · 24 block · 32 group · 48 break ·
@@ -154,10 +153,10 @@ main { overflow-x: clip; }
 .logo img { height: 46px; width: auto; }
 .nav { display: none; gap: var(--s-6); font-weight: 600; font-size: var(--t-meta); }
 .nav a { text-decoration: none; padding: var(--s-2) 0; }
-.nav a:hover { text-decoration: underline; }
+@media (hover: hover){.nav a:hover{ text-decoration: underline; }}
 @media (min-width: 900px) { .nav { display: flex; } }
 .cartbtn { position: relative; margin-left: auto; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--slip); color: var(--indigo); display: grid; place-items: center; }
-.cartbtn:hover { border-color: var(--indigo); }
+@media (hover: hover){.cartbtn:hover{ border-color: var(--indigo); }}
 .badge { position: absolute; top: -4px; right: -4px; min-width: 20px; height: 20px; padding: 0 6px; border-radius: var(--r-pill); background: var(--color-accent); color: var(--slip); font: 700 .6875rem/20px var(--font-text); text-align: center; font-variant-numeric: tabular-nums; display: none; }
 .badge.on { display: block; }
 .badge.bump { animation: pop var(--dur-sheet) var(--ease-enter); }
@@ -232,7 +231,7 @@ main { overflow-x: clip; }
 .find input::placeholder { color: var(--muted); opacity: 1; }
 .find input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
 .find .q-x { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); display: grid; place-items: center; }
-.find .q-x:hover { color: var(--indigo); }
+@media (hover: hover){.find .q-x:hover{ color: var(--indigo); }}
 .find .q-x[hidden] { display: none; }
 .strip.is-finding .find { display: flex; }
 .strip.is-finding .slotbtn, .strip.is-finding .taps, .strip.is-finding .findbtn { display: none; }
@@ -241,7 +240,7 @@ main { overflow-x: clip; }
 .tabs { display: flex; gap: 6px; overflow-x: auto; padding: 2px 0 10px; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, black calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, black calc(100% - 28px), transparent); }
 .tabs::-webkit-scrollbar { display: none; }
 .tabs a { flex: none; display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: var(--r-pill); border: 1px solid var(--line); background: var(--slip); text-decoration: none; font: 600 var(--t-meta)/1 var(--font-text); font-stretch: var(--narrow); color: var(--ink); }
-.tabs a:hover { border-color: var(--indigo); }
+@media (hover: hover){.tabs a:hover{ border-color: var(--indigo); }}
 .tabs a[aria-current="true"] { background: var(--indigo); border-color: var(--indigo); color: var(--on-indigo); }
 .tabs a:last-child { margin-right: 28px; }
 .tabs a[hidden] { display: none; }
@@ -260,7 +259,7 @@ main { overflow-x: clip; }
 .chip { min-height: 44px; border-radius: var(--r-row); border: 1px solid var(--line); background: var(--slip); color: var(--ink); font: 600 var(--t-meta)/1.15 var(--font-text); font-stretch: var(--narrow); font-variant-numeric: tabular-nums; padding: 6px 4px; transition: transform var(--dur-tap) var(--ease-exit); }
 .days .chip { display: grid; gap: 2px; min-height: 54px; font-size: var(--t-micro); color: var(--muted); }
 .days .chip b { font-size: var(--t-meta); color: var(--ink); }
-.chip:hover { border-color: var(--indigo); }
+@media (hover: hover){.chip:hover{ border-color: var(--indigo); }}
 .chip:active { transform: scale(.96); }
 .chip[aria-pressed="true"], .chip[aria-pressed="true"] b { background: var(--indigo); border-color: var(--indigo); color: var(--on-indigo); }
 .chip[aria-disabled="true"] { background: var(--paper-deep); border-color: var(--paper-deep); color: var(--muted); text-decoration: line-through; cursor: not-allowed; }
@@ -286,14 +285,14 @@ main { overflow-x: clip; }
 
 /* buttons */
 .go { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); min-height: 48px; padding: 0 var(--s-6); border: 0; border-radius: var(--r-pill); background: var(--indigo); color: var(--on-indigo); font: 700 var(--t-meta)/1.2 var(--font-text); text-decoration: none; transition: transform var(--dur-tap) var(--ease-exit); }
-.go:hover { background: var(--indigo-press); }
+@media (hover: hover){.go:hover{ background: var(--indigo-press); }}
 .go:active { transform: scale(.97); }
 .go[disabled] { background: var(--paper-deep); color: var(--muted); cursor: not-allowed; transform: none; }
 .go-ivory { background: var(--on-indigo); color: var(--indigo); }
-.go-ivory:hover { background: var(--slip); }
+@media (hover: hover){.go-ivory:hover{ background: var(--slip); }}
 .go .num { font-weight: 700; }
 .link { display: inline-flex; align-items: center; min-height: 32px; padding: 0; border: 0; background: none; color: var(--indigo); font: 700 var(--t-meta)/1.2 var(--font-text); text-decoration: underline; text-underline-offset: 3px; }
-.link:hover { color: var(--indigo-press); }
+@media (hover: hover){.link:hover{ color: var(--indigo-press); }}
 
 /* ---------- the carte ---------- */
 .carte { padding-bottom: var(--s-12); }
@@ -324,7 +323,7 @@ main { overflow-x: clip; }
 .row-top .price { margin-right: 6px; }
 .row-act { display: flex; align-items: center; gap: 2px; }
 .fav { width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); display: grid; place-items: center; transition: transform var(--dur-tap) var(--ease-exit); }
-.fav:hover { color: var(--indigo); }
+@media (hover: hover){.fav:hover{ color: var(--indigo); }}
 .fav:active { transform: scale(.88); }
 .fav[aria-pressed="true"] { color: var(--color-accent); }
 .fav[aria-pressed="true"] svg { fill: var(--color-accent); }
@@ -343,7 +342,7 @@ main { overflow-x: clip; }
 
 /* Add and the stepper app.js swaps in */
 .add { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; min-width: 40px; padding: 0 14px; border: 1.5px solid var(--indigo); border-radius: var(--r-pill); background: var(--slip); color: var(--indigo); font: 700 var(--t-meta)/1 var(--font-text); white-space: nowrap; transition: transform var(--dur-tap) var(--ease-exit); }
-.add:hover { background: var(--indigo); color: var(--on-indigo); }
+@media (hover: hover){.add:hover{ background: var(--indigo); color: var(--on-indigo); }}
 .add:active { transform: scale(.95); }
 .add[hidden], .go[hidden] { display: none; }
 .add[disabled] { border-color: var(--line-strong); color: var(--muted); background: var(--paper-deep); cursor: not-allowed; }
@@ -351,7 +350,7 @@ main { overflow-x: clip; }
 .stepper { display: inline-flex; align-items: center; min-height: 40px; padding: 0 2px; border-radius: var(--r-pill); background: var(--indigo); color: var(--on-indigo); }
 .stepper[hidden] { display: none; }
 .stepper button { width: 36px; height: 40px; border: 0; border-radius: var(--r-pill); background: transparent; color: inherit; font: 700 1.125rem/1 var(--font-text); }
-.stepper button:hover { background: rgb(250 247 242 / .14); }
+@media (hover: hover){.stepper button:hover{ background: rgb(250 247 242 / .14); }}
 .stepper b { min-width: 18px; text-align: center; font-size: var(--t-meta); font-variant-numeric: tabular-nums; }
 .add.pop, .stepper.pop { animation: pop var(--dur-sheet) var(--ease-enter); }
 
@@ -391,7 +390,7 @@ main { overflow-x: clip; }
 .boxslots .full.light { color: var(--ink); box-shadow: inset 0 0 0 1px var(--line-strong); }
 .flav { display: flex; flex-wrap: wrap; gap: var(--s-2); }
 .flav button { display: inline-flex; align-items: center; gap: var(--s-2); min-height: 40px; padding: 0 14px 0 10px; border-radius: var(--r-pill); border: 1px solid var(--line); background: var(--paper); font: 600 var(--t-meta)/1 var(--font-text); transition: transform var(--dur-tap) var(--ease-exit); }
-.flav button:hover { border-color: var(--indigo); }
+@media (hover: hover){.flav button:hover{ border-color: var(--indigo); }}
 .flav button:active { transform: scale(.95); }
 .flav button[disabled] { opacity: .5; cursor: not-allowed; }
 .flav i { width: 16px; height: 16px; border-radius: 50%; background: var(--f); flex: none; }
@@ -418,7 +417,7 @@ main { overflow-x: clip; }
 .rail-nav { display: flex; gap: var(--s-1); flex: none; }
 .rail-nav[hidden] { display: none; }
 .rail-nav button { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--slip); color: var(--indigo); display: grid; place-items: center; }
-.rail-nav button:hover { border-color: var(--indigo); }
+@media (hover: hover){.rail-nav button:hover{ border-color: var(--indigo); }}
 .rail-nav svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .sec-h .end { display: flex; align-items: center; gap: var(--s-3); margin-left: auto; }
 
@@ -462,9 +461,9 @@ main { overflow-x: clip; }
 .cave .board p { font-size: var(--t-meta); color: var(--on-indigo-soft); }
 .cave .board .price { font-weight: 650; }
 .cave .add { background: transparent; border-color: var(--on-indigo); color: var(--on-indigo); }
-.cave .add:hover { background: var(--on-indigo); color: var(--indigo); }
+@media (hover: hover){.cave .add:hover{ background: var(--on-indigo); color: var(--indigo); }}
 .cave .stepper { background: var(--on-indigo); color: var(--indigo); }
-.cave .stepper button:hover { background: rgb(31 21 107 / .1); }
+@media (hover: hover){.cave .stepper button:hover{ background: rgb(31 21 107 / .1); }}
 @media (min-width: 760px) { .cave { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); padding: var(--s-8); column-gap: var(--s-8); } .cave img { grid-row: 1 / span 2; height: 100%; aspect-ratio: auto; } }
 .cave .txt { display: grid; gap: var(--s-3); align-content: start; }
 .cave .txt h3 { font: italic 500 var(--t-h3)/1.1 var(--font-display); }
@@ -547,7 +546,7 @@ footer { background: var(--paper-deep); border-top: 3px double var(--line-strong
 @media (min-width: 760px) { .foot { grid-template-columns: 1.3fr 1fr 1fr 1fr; } }
 footer h2 { font: 700 var(--t-meta)/1.2 var(--font-text); color: var(--indigo); margin-bottom: var(--s-2); }
 footer li a { display: inline-flex; align-items: center; min-height: 28px; text-decoration: none; }
-footer li a:hover { text-decoration: underline; }
+@media (hover: hover){footer li a:hover{ text-decoration: underline; }}
 footer address { font-style: normal; display: grid; gap: var(--s-2); }
 .foot p + p { margin-top: var(--s-3); }
 .foot-logo { height: 52px; width: auto; margin-bottom: var(--s-3); }
@@ -576,7 +575,7 @@ footer address { font-style: normal; display: grid; gap: var(--s-2); }
 .sheet-head h2 { font: italic 500 var(--t-h3)/1.1 var(--font-display); color: var(--indigo); }
 .sheet-head h2 span { margin-left: var(--s-2); font: 700 var(--t-micro) var(--font-text); font-style: normal; color: var(--muted); }
 .x { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--slip); color: var(--indigo); display: grid; place-items: center; }
-.x:hover { border-color: var(--indigo); }
+@media (hover: hover){.x:hover{ border-color: var(--indigo); }}
 .sheet-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
 .pick { margin: 0 var(--s-4); padding: var(--s-3) var(--s-4); display: grid; grid-template-columns: auto 1fr auto; gap: 4px var(--s-3); align-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-row); font-size: var(--t-meta); }
 .pick .ico { color: var(--indigo); }
@@ -605,7 +604,7 @@ footer address { font-style: normal; display: grid; gap: var(--s-2); }
 .sum { display: flex; justify-content: space-between; align-items: baseline; font-weight: 700; color: var(--indigo); }
 .sum b { font-size: var(--t-name); font-variant-numeric: tabular-nums; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); min-height: 48px; padding: 0 var(--s-6); border: 0; border-radius: var(--r-pill); background: var(--indigo); color: var(--on-indigo); font: 700 var(--t-meta)/1.25 var(--font-text); text-decoration: none; text-align: center; }
-.btn:hover { background: var(--indigo-press); }
+@media (hover: hover){.btn:hover{ background: var(--indigo-press); }}
 .btn[disabled] { background: var(--paper-deep); color: var(--muted); cursor: not-allowed; }
 .btn-sm { min-height: 40px; padding: 0 var(--s-4); }
 .checkout { width: 100%; padding-block: 10px; }
@@ -618,3 +617,53 @@ footer address { font-style: normal; display: grid; gap: var(--s-2); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ==========================================================================
+   Wave B, 25 October 2026 (director pass fixes; notes in
+   options/OPTIONS_2026-10-22.md)
+   ========================================================================== */
+:root {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-text: "Nunito Sans", Arial, sans-serif;
+  --t-micro: .875rem; --t-meta: 1rem; --t-body: 1.1875rem; --t-name: 1.1875rem; --t-h3: 1.5625rem; --t-h2: 2.125rem;
+  --t-h1: clamp(2.25rem, 1.6rem + 2.8vw, 3.5rem);
+}
+@media (min-width: 1000px) { :root { --t-h2: 2.8125rem; } }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.amounts input:focus-visible + label { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+/* French inside English: italic, in the display face */
+:where(p, li, dd, figcaption, td, small, label, legend, .en, .note) [lang|="fr"] { font-family: var(--font-display); font-style: italic; }
+/* the La Cave card sits on indigo: its price in the on-indigo ivory (was indigo on indigo, 1.0:1) */
+.cave .price, .cave .row-end .price, .cave .row-top .price { color: var(--on-indigo); }
+/* red stays on the heart and the bag: the note icons are ink */
+.sec-note .ico { color: var(--indigo); }
+/* touch targets, 44 px */
+.fav { width: 44px; height: 44px; }
+.add { min-height: 44px; min-width: 44px; }
+.tabs a, .want, .nav a { min-height: 44px; }
+.nav a { display: inline-flex; align-items: center; min-width: 44px; justify-content: center; }
+.taps .pay { min-width: 44px; justify-content: center; }
+.stepper button { min-width: 44px; min-height: 44px; }
+.check { min-height: 44px; align-items: center; }
+/* the hero: one photograph, one action */
+.hero-act { margin: 0; }
+/* the notice: one dated line */
+.notice .wrap { display: block; padding-block: 6px; }
+.notice .more { margin-left: 6px; }
+/* phones: the headline, the cannelés, one action, then the lead; one bag target (the strip's Pay) */
+@media (max-width: 999px) {
+  .cartbtn { display: none; }
+  .cartpill { display: none; }
+  .hero .wrap { gap: 0; }
+  .hero .copy, .vitrine { display: contents; }
+  .hero h1 { order: 1; }
+  .vitrine img:first-child { order: 2; margin-top: var(--s-4); aspect-ratio: 3 / 2; }
+  .hero-act { order: 3; margin-top: var(--s-4); }
+  .lead { order: 4; margin-top: var(--s-4); }
+  .creds { order: 5; margin-top: var(--s-3); }
+  .vitrine img:nth-child(n+2) { display: none; }
+  .vitrine figcaption { order: 6; margin-top: var(--s-2); }
+}
+.rail-nav button { width: 44px; height: 44px; }
+.flav button { min-height: 44px; }
+.link { display: inline-flex; align-items: center; min-height: 44px; }

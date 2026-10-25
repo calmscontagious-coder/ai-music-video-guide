@@ -25,13 +25,18 @@
      coffee #a47551; coconut #f4f0e8.
      No blush, no pink anywhere in the interface (operator ruling 2026-10-22).
 
-   TYPE (two families, Google Fonts)
-     Newsreader (Production Type), optical sizes 6 to 72: display at large
-       optical size, French names in italic, and the reading text.
-     DM Mono (Colophon): technique captions, prices, times, buttons, labels.
-       Serif for the artistry, mono for the precision: the shop's own claim.
-     Scale (px): 13 caption · 15 interface · 18 body · 22 lead · 30 h3 ·
-       44 h2 · 64 to 96 display. Sentence case everywhere; no tracked capitals.
+   TYPE (wave B, 25 Oct 2026: the brand pair plus ONE signature family)
+     Fraunces, display at large optical size, French names in italic, from
+       ../../assets/fonts.css.
+     Nunito Sans, the reading text, from ../../assets/fonts.css.
+     SIGNATURE DISPLAY FAMILY: DM Mono (Colophon, SIL OFL 1.1), 400 and 500,
+       self-hosted in options/03-atelier/fonts/ (latin and latin-ext woff2 as
+       Google's css2 API served them on 25 Oct 2026, 6 to 9 KB each, declared
+       below with font-display: swap): technique captions, prices, times,
+       buttons, labels. Serif for the artistry, mono for the precision: the
+       shop's own claim, and this direction's argument (decision log, 25 Oct).
+     Scale (px): 12 and 14 mono labels · 16 interface · 19 body and lead ·
+       25 h3 · 45 h2 · 36 to 60 display. Sentence case everywhere; no tracked capitals.
 
    SPACING (4 px base, cinematic jumps)
      hair 4 · label 8 · tight 12 · base 16 · block 24 · group 40 ·
@@ -50,6 +55,12 @@
      ease-in on exit. Transform and opacity only. The gold frame settles in
      220 ms around whatever was just chosen. prefers-reduced-motion: instant.
    ========================================================================== */
+
+/* signature family, self-hosted: DM Mono 400 and 500, latin and latin-ext */
+@font-face{font-family:"DM Mono";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-mono-400-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"DM Mono";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-mono-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"DM Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/dm-mono-500-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"DM Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/dm-mono-500-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
 
 :root{
   --c-indigo:#1f156b;--c-night:#140d4a;--c-lift:#2b2180;
@@ -96,7 +107,7 @@ h3{font-size:1.375rem;font-variation-settings:"opsz" 36;line-height:1.2}
 p{margin:0}
 em,i{font-style:italic}
 a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
-a:hover{text-decoration-color:var(--c-gold)}
+@media (hover: hover){a:hover{text-decoration-color:var(--c-gold)}}
 button,input,select,textarea{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--c-focus);outline-offset:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -112,29 +123,29 @@ button,input,select,textarea{font:inherit;color:inherit}
 
 /* ---------- buttons and links ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-label);min-height:48px;padding:0 22px;border-radius:var(--radius-hair);border:1px solid var(--c-ivory);background:var(--c-ivory);color:var(--c-indigo);font:500 var(--t-ui)/1.1 var(--font-ui);text-decoration:none;cursor:pointer;transition:transform var(--dur-tap) var(--ease-enter)}
-.btn:hover{background:var(--c-gold-bright);border-color:var(--c-gold-bright)}
+@media (hover: hover){.btn:hover{background:var(--c-gold-bright);border-color:var(--c-gold-bright)}}
 .btn:active{transform:scale(.97)}
 .btn[disabled]{background:transparent;color:var(--c-ivory-dim);border-color:var(--c-line);cursor:not-allowed}
 .btn-brand{background:var(--c-ivory);color:var(--c-indigo)}
 .btn-sm{min-height:40px;padding:0 16px;font-size:.875rem}
 .paper .btn,.sheet .btn{background:var(--c-indigo);border-color:var(--c-indigo);color:var(--c-ivory)}
-.paper .btn:hover,.sheet .btn:hover{background:var(--c-night);border-color:var(--c-night)}
+@media (hover: hover){.paper .btn:hover,.sheet .btn:hover{background:var(--c-night);border-color:var(--c-night)}}
 .paper .btn[disabled],.sheet .btn[disabled]{background:transparent;color:var(--c-ink-muted);border-color:var(--c-ink-muted)}
 .link{background:none;border:0;padding:0;min-height:24px;cursor:pointer;font:500 var(--t-ui)/1.4 var(--font-ui);color:inherit;text-decoration:underline;text-underline-offset:.25em;text-decoration-color:var(--c-gold)}
 .textlink{display:inline-flex;align-items:center;gap:var(--sp-label);min-height:48px;font:500 var(--t-ui)/1.2 var(--font-ui);color:var(--c-ivory);text-decoration:underline;text-decoration-color:var(--c-gold);text-underline-offset:.3em}
 .add{position:relative;display:inline-flex;align-items:center;gap:6px;min-height:40px;min-width:44px;padding:0 14px;border-radius:var(--radius-hair);border:1px solid var(--c-gold);background:transparent;color:var(--c-ivory);font:500 .875rem/1 var(--font-ui);cursor:pointer;text-decoration:none;transition:transform var(--dur-tap) var(--ease-enter)}
-.add:hover{background:var(--c-ivory);color:var(--c-indigo);border-color:var(--c-ivory)}
+@media (hover: hover){.add:hover{background:var(--c-ivory);color:var(--c-indigo);border-color:var(--c-ivory)}}
 .add:active{transform:scale(.96)}
 .add svg{width:12px;height:12px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round}
 .paper .add{border-color:var(--c-indigo);color:var(--c-indigo)}
-.paper .add:hover{background:var(--c-indigo);color:var(--c-ivory)}
+@media (hover: hover){.paper .add:hover{background:var(--c-indigo);color:var(--c-ivory)}}
 .stepper{display:inline-flex;align-items:center;background:var(--c-ivory);color:var(--c-indigo);border-radius:var(--radius-hair);min-height:40px;padding:0 2px}
 .stepper[hidden]{display:none}
 .stepper button{width:36px;height:38px;border:0;background:transparent;color:inherit;font:500 1.125rem/1 var(--font-ui);cursor:pointer;border-radius:var(--radius-hair)}
-.stepper button:hover{background:var(--c-gold-bright)}
+@media (hover: hover){.stepper button:hover{background:var(--c-gold-bright)}}
 .stepper b{min-width:20px;text-align:center;font:500 .9375rem/1 var(--font-ui);font-variant-numeric:tabular-nums}
 .paper .stepper,.sheet .stepper{background:var(--c-indigo);color:var(--c-ivory)}
-.paper .stepper button:hover,.sheet .stepper button:hover{background:var(--c-night)}
+@media (hover: hover){.paper .stepper button:hover,.sheet .stepper button:hover{background:var(--c-night)}}
 .price{font:500 1rem/1 var(--font-ui);font-variant-numeric:tabular-nums;color:var(--c-ivory)}
 .paper .price{color:var(--c-ink)}
 
@@ -149,11 +160,11 @@ button,input,select,textarea{font:inherit;color:inherit}
 .nav{grid-column:1 / -1;grid-row:2;display:flex;gap:var(--sp-block);overflow-x:auto;scrollbar-width:none;margin:0 calc(-1 * var(--gutter));padding:0 var(--gutter) 4px;font:400 .875rem/1 var(--font-ui)}
 .nav::-webkit-scrollbar{display:none}
 .nav a{display:inline-flex;align-items:center;min-height:36px;white-space:nowrap;text-decoration:none;color:var(--c-ivory-dim)}
-.nav a:hover,.nav a[aria-current]{color:var(--c-ivory);text-decoration:underline;text-decoration-color:var(--c-gold)}
+@media (hover: hover){.nav a:hover,.nav a[aria-current]{color:var(--c-ivory);text-decoration:underline;text-decoration-color:var(--c-gold)}}
 .top-actions{grid-column:3;display:flex;align-items:center;gap:var(--sp-tight)}
 .top-actions .btn{display:none}
 .cartbtn{position:relative;display:grid;place-items:center;width:48px;height:48px;border-radius:var(--radius-hair);border:1px solid var(--c-line);color:var(--c-ivory)}
-.cartbtn:hover{border-color:var(--c-gold)}
+@media (hover: hover){.cartbtn:hover{border-color:var(--c-gold)}}
 .badge{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:var(--radius-ring);background:var(--c-heart);color:var(--c-on-heart);font:500 .75rem/20px var(--font-ui);text-align:center;font-variant-numeric:tabular-nums;opacity:0;transform:scale(.6);transition:opacity var(--dur-tap) var(--ease-enter),transform var(--dur-tap) var(--ease-enter)}
 .badge.on{opacity:1;transform:none}
 .badge.bump{animation:pop var(--dur-sheet) var(--ease-enter)}
@@ -209,7 +220,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .cats{display:flex;flex-wrap:wrap;gap:var(--sp-label);margin-bottom:var(--sp-block)}
 .cat{min-height:44px;padding:0 14px;border-radius:var(--radius-hair);border:1px solid var(--c-line);background:transparent;color:var(--c-ivory-dim);font:400 .875rem/1 var(--font-ui);cursor:pointer;transition:transform var(--dur-tap) var(--ease-enter)}
 .cat:active{transform:scale(.97)}
-.cat:hover{border-color:var(--c-gold);color:var(--c-ivory)}
+@media (hover: hover){.cat:hover{border-color:var(--c-gold);color:var(--c-ivory)}}
 .cat[aria-pressed="true"]{background:var(--c-ivory);border-color:var(--c-ivory);color:var(--c-indigo)}
 .cat .n{color:inherit;opacity:.7;margin-left:4px}
 .lines-menu{list-style:none;margin:0;padding:0;border-top:1px solid var(--c-rule)}
@@ -234,7 +245,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .chip{position:relative;min-height:48px;border-radius:var(--radius-hair);border:1px solid var(--c-line);background:transparent;color:var(--c-ivory);font:400 .875rem/1.2 var(--font-ui);font-variant-numeric:tabular-nums;display:grid;place-items:center;text-align:center;padding:6px 2px;cursor:pointer}
 .days .chip{min-height:60px}
 .chip b{display:block;font:400 1.0625rem/1.1 var(--font-display);font-style:italic}
-.chip:hover{border-color:var(--c-gold)}
+@media (hover: hover){.chip:hover{border-color:var(--c-gold)}}
 .chip[aria-pressed="true"]{background:var(--c-ivory);border-color:var(--c-ivory);color:var(--c-indigo)}
 .chip[aria-pressed="true"]::after{content:"";position:absolute;inset:-5px;border:1px solid var(--c-gold);border-radius:var(--radius-hair);pointer-events:none}
 .chip[aria-pressed="true"]:focus::after{animation:settle var(--dur-sheet) var(--ease-enter)}
@@ -259,7 +270,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .reel-head .scene-head{margin-bottom:0}
 .reel-ctrl{display:flex;gap:var(--sp-label)}
 .reel-ctrl button{width:48px;height:48px;border-radius:var(--radius-hair);border:1px solid var(--c-line);background:transparent;color:var(--c-ivory);display:grid;place-items:center;cursor:pointer;transition:transform var(--dur-tap) var(--ease-enter)}
-.reel-ctrl button:hover{border-color:var(--c-gold)}
+@media (hover: hover){.reel-ctrl button:hover{border-color:var(--c-gold)}}
 .reel-ctrl button:active{transform:scale(.95)}
 .reel-ctrl button[disabled]{opacity:.4;cursor:default}
 .reel{list-style:none;margin:0;padding:0 var(--gutter);display:grid;grid-auto-flow:column;grid-auto-columns:min(80vw,380px);gap:var(--sp-block);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);scrollbar-width:thin;scrollbar-color:var(--c-rule) transparent;padding-bottom:var(--sp-base)}
@@ -285,7 +296,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .slots .full.f-pistachio,.slots .full.f-coffee,.slots .full.light{color:var(--c-ink)}
 .flav{display:flex;flex-wrap:wrap;gap:var(--sp-label)}
 .flav button{min-height:44px;padding:0 14px;border-radius:var(--radius-hair);border:1px solid var(--c-line);background:transparent;color:var(--c-ivory);font:400 .875rem/1 var(--font-ui);cursor:pointer;display:inline-flex;gap:var(--sp-label);align-items:center;transition:transform var(--dur-tap) var(--ease-enter)}
-.flav button:hover{border-color:var(--c-gold)}
+@media (hover: hover){.flav button:hover{border-color:var(--c-gold)}}
 .flav button:active{transform:scale(.97)}
 .flav button[disabled]{opacity:.45;cursor:not-allowed}
 .flav i{width:14px;height:14px;border-radius:var(--radius-ring);display:inline-block;background:var(--f);box-shadow:0 0 0 1px var(--c-ivory-dim)}
@@ -467,7 +478,7 @@ fieldset.field{border:0;margin:0;padding:0;min-width:0}
 .foot h2{font:400 var(--t-caption)/1 var(--font-ui);color:var(--c-gold);margin-bottom:var(--sp-tight);letter-spacing:0}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
 .foot li a{display:inline-flex;align-items:center;min-height:32px;font-size:1rem;text-decoration:none;color:var(--c-ivory-dim)}
-.foot li a:hover{color:var(--c-ivory);text-decoration:underline;text-decoration-color:var(--c-gold)}
+@media (hover: hover){.foot li a:hover{color:var(--c-ivory);text-decoration:underline;text-decoration-color:var(--c-gold)}}
 .foot address{font-style:normal;font-size:1rem;line-height:1.55;color:var(--c-ivory-dim);margin-top:var(--sp-base)}
 .foot address b{font-weight:500;color:var(--c-ivory)}
 .foot .fine-print{grid-column:1 / -1;font:400 .75rem/1.5 var(--font-ui);color:var(--c-ivory-dim);border-top:1px solid var(--c-rule);padding-top:var(--sp-block)}
@@ -480,7 +491,7 @@ fieldset.field{border:0;margin:0;padding:0;min-width:0}
 .dock-slot small{flex:none;font-size:.6875rem;color:var(--c-ivory-dim)}
 .dock-bag{flex:none;display:inline-flex;align-items:center;gap:var(--sp-label);min-height:44px;padding:0 16px;border-radius:var(--radius-ring);border:0;background:var(--c-ivory);color:var(--c-indigo);font:500 .875rem/1 var(--font-ui);font-variant-numeric:tabular-nums;cursor:pointer;transition:transform var(--dur-tap) var(--ease-enter)}
 .dock-bag:active{transform:scale(.97)}
-.dock-bag:hover{background:var(--c-gold-bright)}
+@media (hover: hover){.dock-bag:hover{background:var(--c-gold-bright)}}
 .dock-bag .heart{opacity:.25;transition:opacity var(--dur-tap) var(--ease-enter)}
 .dock-bag.on .heart{opacity:1}
 .dock .dock-n{min-width:1ch}
@@ -504,7 +515,7 @@ fieldset.field{border:0;margin:0;padding:0;min-width:0}
 .sheet-head h2{font:400 1.625rem/1.1 var(--font-display);color:var(--c-ink)}
 .sheet-head h2 span{font:400 .8125rem var(--font-ui);color:var(--c-ink-muted);margin-left:8px}
 .x{width:44px;height:44px;border-radius:var(--radius-hair);border:1px solid var(--c-ink-muted);background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--c-ink)}
-.x:hover{border-color:var(--c-ink)}
+@media (hover: hover){.x:hover{border-color:var(--c-ink)}}
 .sheet-body{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .pick{margin:var(--sp-base) var(--sp-block) 0;padding:var(--sp-tight) var(--sp-base);border:1px solid var(--c-gold-deep);display:grid;grid-template-columns:auto 1fr auto;gap:4px var(--sp-tight);align-items:center;font:400 .8125rem/1.3 var(--font-ui)}
 .pick .ico{color:var(--c-gold-deep)}
@@ -548,3 +559,49 @@ fieldset.field{border:0;margin:0;padding:0;min-width:0}
   *,*::before,*::after{animation:none !important;transition:none !important}
   .arrive{opacity:1;transform:none}
 }
+
+/* ==========================================================================
+   Wave B, 25 October 2026 (director pass fixes; notes in
+   options/OPTIONS_2026-10-22.md)
+   ========================================================================== */
+:root{
+  --font-display:"Fraunces",Georgia,serif;
+  --font-text:"Nunito Sans",Arial,sans-serif;
+  --t-caption:.875rem;--t-ui:1rem;--t-body:1.1875rem;--t-lead:1.1875rem;--t-h3:1.5625rem;--t-h2:2.8125rem;
+  --t-display:clamp(2.25rem,1.6rem + 2.8vw,3.75rem);
+}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--c-focus);outline-offset:2px}
+.paper input:focus-visible,.paper select:focus-visible,.paper textarea:focus-visible{outline-color:var(--c-indigo)}
+/* French inside English: italic, in the display face */
+:where(p,li,dd,dt,figcaption,td,small,label,legend,.note) [lang|="fr"]{font-family:var(--font-display);font-style:italic}
+/* the notice: one dated line on a phone */
+.notice{font-size:.875rem}
+.notice .wrap{display:block}
+.notice .more{display:none;margin-left:6px}
+@media (min-width:720px){.notice .more{display:inline}}
+/* touch targets, 44 px */
+.nav a{min-height:44px;min-width:44px;justify-content:center}
+.add,.btn-sm{min-height:44px}
+.link{display:inline-flex;align-items:center;min-height:44px}
+.stepper button{min-width:44px;min-height:44px}
+.check{min-height:44px;align-items:center}
+/* one bag target on screen: the dock carries it, the header keeps the order link on desktop */
+.top-actions .cartbtn{display:none}
+/* the first phone screen: the macarons, the headline, one action, then the lead */
+@media (max-width:899px){
+  .hero-media img{aspect-ratio:4/3}
+  .hero-media figcaption{display:none}
+  .hero-copy{padding-top:var(--sp-block);gap:var(--sp-base)}
+  .hero h1{order:1}
+  .hero-actions{order:2}
+  .hero .lead{order:3}
+  .credits{order:4}
+}
+/* the dock steps aside while the box add row or the pickup card sits under it */
+.dock{transition:transform 150ms var(--ease-enter),visibility 0s}
+.dock.is-yield{transform:translateY(calc(100% + 24px));visibility:hidden;transition:transform 150ms var(--ease-exit),visibility 0s 150ms}
+html{scroll-padding-bottom:calc(var(--dock-h) + 32px)}
+.notice .wrap{padding:6px 0}
+.dock-slot small{font-size:.75rem}
+.credits dd{font-size:var(--t-body)}
+dd > a{display:inline-block;min-height:24px}
