@@ -1,0 +1,1603 @@
+{
+ "generated": "2026-10-24",
+ "engagement": "eng-0002",
+ "time_zone": "America/Los_Angeles",
+ "how_it_picks": "With ?skin=<id> in the URL the page previews that skin. Otherwise it takes the skin whose window contains the current Pasadena date and time; when windows overlap, the shortest window wins, then the earlier entry in this list. With no window open it is La maison.",
+ "how_owners_switch": "One theme setting (Theme settings > Skin: Auto, or a named skin). Auto follows this calendar and reverts by itself when a window closes.",
+ "what_a_skin_may_change": "CSS variables only (accent, canvas, hairline, display weight, motif; Halloween also the cobweb rule, ghost macarons and scalloped cards) plus at most one decorative pseudo-element rule. Markup, mechanics, prices and checkout never change.",
+ "dates_verified_by": "Sources opened on 2026-10-24; each entry lists its own.",
+ "skins": [
+  {
+   "id": "maison",
+   "name": {
+    "fr": "La maison",
+    "en": "Everyday"
+   },
+   "windows": {},
+   "rule": "The default whenever no other window is open.",
+   "concept": "The everyday brand: ivory, indigo, a gold hairline and the red heart.",
+   "moves": {
+    "accent": "#e02030",
+    "canvas": "#faf7f2",
+    "hairline": "#a8833f",
+    "display_weight": 600,
+    "motif": "heart"
+   },
+   "hero_line": "Plant-based French pâtisserie at 169 W Green St, from 6 am.",
+   "tie_in": {
+    "handle": "chocolate-eclair",
+    "title": "Chocolate éclair",
+    "price": 6.5,
+    "variantId": null,
+    "image": null,
+    "glyph": "é",
+    "desc": "Glossy chocolate glaze, gold leaf",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/core/2026-10-22_1220_heart.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin = Auto (or La maison). The default; nothing to schedule.",
+   "date_sources": [],
+   "dates_verified": true
+  },
+  {
+   "id": "halloween",
+   "name": {
+    "fr": "Halloween",
+    "en": "Halloween"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-10-17",
+      "end": "2026-10-31"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-10-17",
+      "end": "2027-10-31"
+     }
+    ]
+   },
+   "rule": "The two weeks up to 31 October.",
+   "concept": "Cute, never gory: a black cat on the case, pumpkin orange where the heart sits, ghost-shaped macarons and cobweb hairlines.",
+   "moves": {
+    "accent": "#b4460b",
+    "canvas": "#f7f0e4",
+    "hairline": "#6f6253",
+    "display_weight": 700,
+    "motif": "black_cat",
+    "also": [
+     "--card-mask",
+     "--card-radius",
+     "--mac-mask",
+     "--rule-image",
+     "--rule-repeat",
+     "--rule-size"
+    ]
+   },
+   "hero_line": "Boo-langerie hours at 169 W Green St: treats only, all plant-based.",
+   "tie_in": {
+    "handle": "dark-chocolate-truffles",
+    "title": "Dark chocolate truffles",
+    "price": 15.0,
+    "variantId": "43134021828796",
+    "image": "img/truffles.jpg",
+    "glyph": "t",
+    "desc": "200 g box, an orange note",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/halloween/2026-10-22_1220_black_cat.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/halloween/2026-10-22_1220_ghost_bow.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/halloween/2026-10-22_1220_pumpkin.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “halloween” between its dates in Pasadena time; choose “Halloween” to force it. The “Du moment” section features Dark chocolate truffles through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Oct 31 | Saturday | Halloween | Observance"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Oct 31 | Sunday | Halloween | Observance"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "muertos",
+   "name": {
+    "fr": "Día de los Muertos",
+    "en": "Day of the Dead"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-11-01",
+      "end": "2026-11-02"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-11-01",
+      "end": "2027-11-02"
+     }
+    ]
+   },
+   "rule": "1 and 2 November. World Vegan Day takes 1 November, the shorter window.",
+   "concept": "Marigold and papel picado colour for two days of remembering, set with care: warm, bright, respectful.",
+   "moves": {
+    "accent": "#b45309",
+    "canvas": "#fbf5e9",
+    "hairline": "#9a3412",
+    "display_weight": 600,
+    "motif": "sugar_skull"
+   },
+   "hero_line": "Día de los Muertos: chocolat liégeois and marigold gold, 1 and 2 November.",
+   "tie_in": {
+    "handle": "chocolat-liegeois",
+    "title": "Chocolat liégeois",
+    "price": 7.5,
+    "variantId": null,
+    "image": null,
+    "glyph": "L",
+    "desc": "Cold chocolate with chantilly, the Liège way",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/day_of_the_dead/2026-10-22_1220_sugar_skull.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “muertos” between its dates in Pasadena time; choose “Día de los Muertos” to force it. The “Du moment” section features Chocolat liégeois through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.britannica.com/topic/Day-of-the-Dead",
+     "opened": "2026-10-24",
+     "quote": "It is typically observed on November 1 and 2."
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Nov 2 | Monday | All Souls' Day | Christian"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Nov 2 | Tuesday | All Souls' Day | Christian"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "vegan-day",
+   "name": {
+    "fr": "Journée mondiale végane",
+    "en": "World Vegan Day"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-11-01",
+      "end": "2026-11-01"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-11-01",
+      "end": "2027-11-01"
+     }
+    ]
+   },
+   "rule": "1 November each year.",
+   "concept": "Green for the day the rest of the world celebrates what the shop does every day.",
+   "moves": {
+    "accent": "#2f7d32",
+    "canvas": "#f6f7ef",
+    "hairline": "#7c9a5e",
+    "display_weight": 600,
+    "motif": "heart"
+   },
+   "hero_line": "World Vegan Day, at a shop that is plant-based every day.",
+   "tie_in": {
+    "handle": "4-desserts-in-jar",
+    "title": "Four desserts in a jar",
+    "price": 30.0,
+    "variantId": "41826161557692",
+    "image": "img/desserts-in-jar.jpg",
+    "glyph": "4",
+    "desc": "The discovery box: all four love-note jars",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/core/2026-10-22_1220_heart.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “vegan-day” between its dates in Pasadena time; choose “Journée mondiale végane” to force it. The “Du moment” section features Four desserts in a jar through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.vegansociety.com/news/blog/celebrate-world-vegan-month-november",
+     "opened": "2026-10-24",
+     "quote": "takes place annually on 1 November"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "thanksgiving",
+   "name": {
+    "fr": "Thanksgiving",
+    "en": "Thanksgiving"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-11-11",
+      "end": "2026-11-26"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-11-10",
+      "end": "2027-11-25"
+     }
+    ]
+   },
+   "rule": "From the Wednesday two weeks before through Thanksgiving Day, the live store’s box pickup window.",
+   "concept": "Rust, amber and a falling leaf, with the plant-based box for two up front.",
+   "moves": {
+    "accent": "#a4461a",
+    "canvas": "#faf3e8",
+    "hairline": "#b07a3a",
+    "display_weight": 600,
+    "motif": "leaf"
+   },
+   "hero_line": "A plant-based Thanksgiving box for two, collected at 3 pm.",
+   "tie_in": {
+    "handle": "thanksgiving-box-for-2",
+    "title": "Thanksgiving box for two",
+    "price": 160.0,
+    "variantId": "45401284968636",
+    "image": null,
+    "glyph": "T",
+    "desc": "Plant-based “turkey”, stuffing, mash, gravy, cranberry; rolls or baguette; tart and wine options",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/thanksgiving/2026-10-22_1220_leaf.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/thanksgiving/2026-10-22_1220_turkey.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “thanksgiving” between its dates in Pasadena time; choose “Thanksgiving” to force it. The “Du moment” section features Thanksgiving box for two through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. The box itself is limited by the product’s own availability on the live store (pickup 11 to 26 November in 2026). On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+     "opened": "2026-10-24",
+     "quote": "Thursday, November 26 | Thanksgiving Day (2026 schedule)"
+    },
+    {
+     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+     "opened": "2026-10-24",
+     "quote": "Thursday, November 25 | Thanksgiving Day (2027 schedule)"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/thanksgiving-day",
+     "opened": "2026-10-24",
+     "quote": "This year: Thu, 26 Nov 2026 | Next year: Thu, 25 Nov 2027"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "noel",
+   "name": {
+    "fr": "Noël et les fêtes d’hiver",
+    "en": "Winter holidays"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-12-01",
+      "end": "2026-12-30"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-12-01",
+      "end": "2027-12-30"
+     }
+    ]
+   },
+   "rule": "1 to 30 December. One skin for every winter celebration: Hanukkah (4 to 12 December 2026, 24 December 2027 to 1 January 2028), Christmas and the start of Kwanzaa all fall inside it.",
+   "concept": "Snow white and pine green with a gold hairline; snowflake, star, dreidel and mitten, so every guest finds their winter.",
+   "moves": {
+    "accent": "#1e6b47",
+    "canvas": "#f7f8f4",
+    "hairline": "#b49a4c",
+    "display_weight": 600,
+    "motif": "snowflake"
+   },
+   "hero_line": "Winter at the vitrine: snowflakes, stars and gifts that keep.",
+   "tie_in": {
+    "handle": "gift-basket-large",
+    "title": "Gift basket, large",
+    "price": 55.0,
+    "variantId": "43094168993980",
+    "image": null,
+    "glyph": "g",
+    "desc": "The small basket plus a red velvet cookie",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/winter_holidays/2026-10-22_1220_snowflake.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/winter_holidays/2026-10-22_1220_winter_star.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/winter_holidays/2026-10-22_1220_dreidel.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/winter_holidays/2026-10-22_1220_mitten.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/winter_holidays/2026-10-22_1220_pine_tree.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/winter_holidays/2026-10-22_1220_gingerbread.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “noel” between its dates in Pasadena time; choose “Noël et les fêtes d’hiver” to force it. The “Du moment” section features Gift basket, large through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.hebcal.com/hebcal?v=1&cfg=json&year=2026&maj=on&min=on&geo=none",
+     "opened": "2026-10-24",
+     "quote": "2026-12-04 Chanukah: 1 Candle ... 2026-12-12 Chanukah: 8th Day"
+    },
+    {
+     "url": "https://www.hebcal.com/hebcal?v=1&cfg=json&year=2027&maj=on&min=on&geo=none",
+     "opened": "2026-10-24",
+     "quote": "2027-12-24 Chanukah: 1 Candle"
+    },
+    {
+     "url": "https://www.hebcal.com/hebcal?v=1&cfg=json&year=2028&maj=on&min=on&geo=none",
+     "opened": "2026-10-24",
+     "quote": "2028-01-01 Chanukah: 8th Day"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Dec 5 | Saturday | Chanukah/Hanukkah (first day)"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Dec 12 | Saturday | Last Day of Chanukah"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Dec 25 | Saturday | Chanukah/Hanukkah (first day)"
+    },
+    {
+     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+     "opened": "2026-10-24",
+     "quote": "Friday, December 25 | Christmas Day (2026 schedule)"
+    },
+    {
+     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+     "opened": "2026-10-24",
+     "quote": "Friday, December 24 | Christmas Day (2027 schedule, observed)"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Dec 25 | Saturday | Christmas Day | Federal Holiday"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Dec 26 | Saturday | Kwanzaa (first day)"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Dec 26 | Sunday | Kwanzaa (first day)"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Dec 21 | Monday | December Solstice | Season"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Dec 21 | Tuesday | December Solstice | Season"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "Start = first night (candle 1, evening). timeanddate lists the first full day (5 Dec 2026, 25 Dec 2027). The 2027 festival ends 1 Jan 2028, so the 2027 window crosses into 2028. The hebcal.com holiday pages render dates by script, so the Hebcal JSON API was used instead. In 2027, 25 Dec is a Saturday, so the federal day off is observed Friday 24 Dec 2027 (OPM). Start dates confirmed on timeanddate. The 1 January end date comes from the standard seven-day rule; no opened source states the end date."
+  },
+  {
+   "id": "reveillon",
+   "name": {
+    "fr": "Le réveillon",
+    "en": "New Year’s Eve"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-12-31",
+      "end": "2026-12-31"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-12-31",
+      "end": "2027-12-31"
+     }
+    ]
+   },
+   "rule": "31 December.",
+   "concept": "Champagne gold on ivory, a flute where the heart goes, a board for midnight.",
+   "moves": {
+    "accent": "#7a5c12",
+    "canvas": "#f7f4ec",
+    "hairline": "#c3a250",
+    "display_weight": 700,
+    "motif": "champagne_flute"
+   },
+   "hero_line": "A cheese board for midnight, and a glass at La Cave next door.",
+   "tie_in": {
+    "handle": "cheese-board",
+    "title": "Cheese board",
+    "price": 100.0,
+    "variantId": "45433279971516",
+    "image": "img/cheese-board.jpg",
+    "glyph": "B",
+    "desc": "Rebel Cheese, baguette, dried fruit and nuts; serves 10; charcuterie version on request",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/new_year/2026-10-22_1220_champagne_flute.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “reveillon” between its dates in Pasadena time; choose “Le réveillon” to force it. The “Du moment” section features Cheese board through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Dec 31 | Thursday | New Year's Eve | Observance"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Dec 31 | Friday | New Year's Eve | Observance"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "31 Dec 2027 is also the federal observed day off for New Year's Day 2028, which falls on a Saturday (OPM)."
+  },
+  {
+   "id": "rose-parade",
+   "name": {
+    "fr": "Le défilé des roses",
+    "en": "Rose Parade morning"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-01-01",
+      "end": "2026-01-01",
+      "until": "11:59"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-01-01",
+      "end": "2027-01-01",
+      "until": "11:59"
+     }
+    ]
+   },
+   "rule": "1 January until noon (the parade steps off at 8 am; never on a Sunday, when it moves to 2 January).",
+   "concept": "Rose red and stem green for the morning Pasadena is on every screen.",
+   "moves": {
+    "accent": "#b3122e",
+    "canvas": "#fbf6f0",
+    "hairline": "#2f6b3a",
+    "display_weight": 600,
+    "motif": "rose"
+   },
+   "hero_line": "Parade morning on Colorado Boulevard: cannelés for the curb.",
+   "tie_in": {
+    "handle": "caneles",
+    "title": "Cannelés, by 3",
+    "price": 9.0,
+    "variantId": "42881176993980",
+    "image": "img/caneles.jpg",
+    "glyph": "c",
+    "desc": "Caramelised crust, soft centre",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/pasadena/2026-10-22_1220_rose.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “rose-parade” between its dates in Pasadena time; choose “Le défilé des roses” to force it. The “Du moment” section features Cannelés, by 3 through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. Both skins share 1 January; the metaobject’s from/until times split the day at noon. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://tournamentofroses.com/event/rose-parade",
+     "opened": "2026-10-24",
+     "quote": "The Rose Parade presented by Honda begins at 8 a.m. on January 1, 2027."
+    },
+    {
+     "url": "https://www.visitpasadena.com/events/annual-events/rose-parade-guide",
+     "opened": "2026-10-24",
+     "quote": "If January 1st occurs on a Sunday ... the day after New Year's Day"
+    },
+    {
+     "url": "https://www.nbcnews.com/news/us-news/live-blog/rose-parade-2026-live-updates-rcna251803",
+     "opened": "2026-10-24",
+     "quote": "The 137th Rose Parade started at 8 a.m. PT/11 a.m. ET."
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "2026 = 137th parade, held Thursday 1 Jan 2026 (theme 'The Magic in Teamwork', rain). NBC's live blog is dated January 01, 2026. 2027 = 138th parade, Friday 1 Jan 2027. The next Sunday 1 January is in 2034, so the never-on-Sunday rule does not apply to either year."
+  },
+  {
+   "id": "rose-bowl",
+   "name": {
+    "fr": "Le Rose Bowl",
+    "en": "Rose Bowl game day"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-01-01",
+      "end": "2026-01-01",
+      "from": "12:00"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-01-01",
+      "end": "2027-01-01",
+      "from": "12:00"
+     }
+    ]
+   },
+   "rule": "1 January from noon: the Rose Bowl Game, a College Football Playoff quarterfinal in 2026 and 2027.",
+   "concept": "Turf green and trophy gold for the afternoon game a few miles up Arroyo Seco.",
+   "moves": {
+    "accent": "#1b5e3b",
+    "canvas": "#f8f5ec",
+    "hairline": "#b8892f",
+    "display_weight": 700,
+    "motif": "rose"
+   },
+   "hero_line": "Game day at the Rose Bowl: lunch to go from Green Street.",
+   "tie_in": {
+    "handle": "sandwich-of-the-day",
+    "title": "Sandwich du jour",
+    "price": 14.0,
+    "variantId": null,
+    "image": null,
+    "glyph": "S",
+    "desc": "Today’s sandwich on house bread",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/pasadena/2026-10-22_1220_rose.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “rose-bowl” between its dates in Pasadena time; choose “Le Rose Bowl” to force it. The “Du moment” section features Sandwich du jour through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. Both skins share 1 January; the metaobject’s from/until times split the day at noon. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://collegefootballplayoff.com/sports/2026/1/2/QF-Rose-recap",
+     "opened": "2026-10-24",
+     "quote": "Thursday, January 1, 2026 | 4 p.m. ET"
+    },
+    {
+     "url": "https://collegefootballplayoff.com/sports/2026/1/2/QF-Rose-recap",
+     "opened": "2026-10-24",
+     "quote": "Rose Bowl Game presented by Prudential ... January 1, 2027 ·TBD"
+    },
+    {
+     "url": "https://rosebowlgame.com/news/2026/6/1/general-2026-27-cfp-broadcast-schedule-revealed.aspx",
+     "opened": "2026-10-24",
+     "quote": "Friday, January 1 | Noon | CFP Quarterfinal TBD"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/2027_Rose_Bowl",
+     "opened": "2026-10-24",
+     "quote": "College Football Playoff Quarterfinal 113th Rose Bowl Game | Date | January 1, 2027"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/2026_Rose_Bowl",
+     "opened": "2026-10-24",
+     "quote": "College Football Playoff Quarterfinal 112th Rose Bowl Game | Date | January 1, 2026"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "Jan 2026 (112th) was a CFP quarterfinal: No. 1 Indiana beat Alabama 38-3, 4 p.m. ET. Jan 2027 (113th) is set as a CFP quarterfinal on Friday 1 Jan 2027; teams and kickoff time are TBD. Wikipedia gives three possible start times. The broadcast table lists three quarterfinals that day without saying which slot is the Rose Bowl."
+  },
+  {
+   "id": "veganuary",
+   "name": {
+    "fr": "Veganuary",
+    "en": "Veganuary"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-01-01",
+      "end": "2026-01-31"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-01-01",
+      "end": "2027-01-31"
+     }
+    ]
+   },
+   "rule": "All of January; shorter windows inside it (the parade, the galette, Croissant Day) take their own days.",
+   "concept": "A fresh green start for the month people try plant-based, with a star for the new year.",
+   "moves": {
+    "accent": "#4d7c0f",
+    "canvas": "#f7f9f1",
+    "hairline": "#8aa05a",
+    "display_weight": 600,
+    "motif": "star"
+   },
+   "hero_line": "Veganuary at a shop where every month is plant-based.",
+   "tie_in": {
+    "handle": "garden-salade",
+    "title": "Garden salade",
+    "price": 15.5,
+    "variantId": null,
+    "image": null,
+    "glyph": "G",
+    "desc": "Mixed greens, pine nuts, seasonal fruit and vegetables, crostini",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/core/2026-10-22_1220_star.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “veganuary” between its dates in Pasadena time; choose “Veganuary” to force it. The “Du moment” section features Garden salade through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://veganuary.com/en-us",
+     "opened": "2026-10-24",
+     "quote": "inspires and supports people all over the world to try vegan for January"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "Month-long by definition. The opened page refers to the 2026 campaign. A 2027 Workplace Challenge page shows up in search but was not opened; January 2027 comes from the rule."
+  },
+  {
+   "id": "galette",
+   "name": {
+    "fr": "La fête des Rois",
+    "en": "Epiphany and the galette"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-01-04",
+      "end": "2026-01-06"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-01-03",
+      "end": "2027-01-06"
+     }
+    ]
+   },
+   "rule": "From the Sunday France keeps Epiphany through 6 January.",
+   "concept": "Crown gold and the star the Magi followed; the galette des rois joins when the shop lists it.",
+   "moves": {
+    "accent": "#9a6b12",
+    "canvas": "#faf6ec",
+    "hairline": "#c8a24a",
+    "display_weight": 700,
+    "motif": "winter_star"
+   },
+   "hero_line": "La fête des Rois: puff pastry season, through 6 January.",
+   "tie_in": {
+    "handle": "mille-feuille",
+    "title": "Mille-feuille",
+    "price": 6.75,
+    "variantId": null,
+    "image": null,
+    "glyph": "m",
+    "desc": "Feathered icing, set on a gold board",
+    "source": "assets/menu.json",
+    "note": "No galette des rois in menu.json yet (growth.md plans a preorder page for 6 January); the mille-feuille stands in as the puff pastry on the counter."
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/winter_holidays/2026-10-22_1220_winter_star.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “galette” between its dates in Pasadena time; choose “La fête des Rois” to force it. The “Du moment” section features Mille-feuille through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Jan 6 | Tuesday | Epiphany | Christian"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Jan 6 | Wednesday | Epiphany | Christian"
+    },
+    {
+     "url": "https://kalendrier.ouest-france.fr/fetes-chretiennes/epiphanie.html",
+     "opened": "2026-10-24",
+     "quote": "Dimanche 3 janvier 2027 ... en France"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "France's Sunday observance: 3 Jan 2027 (confirmed on Ouest-France). 4 Jan 2026 comes from the rule and a search snippet only; no opened page confirms it."
+  },
+  {
+   "id": "croissant-day",
+   "name": {
+    "fr": "La journée du croissant",
+    "en": "National Croissant Day"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-01-30",
+      "end": "2026-01-30"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-01-30",
+      "end": "2027-01-30"
+     }
+    ]
+   },
+   "rule": "30 January.",
+   "concept": "Golden brown and butter yellow, a croissant where the heart sits.",
+   "moves": {
+    "accent": "#a15c12",
+    "canvas": "#fbf5ea",
+    "hairline": "#c79a55",
+    "display_weight": 700,
+    "motif": "croissant"
+   },
+   "hero_line": "National Croissant Day: laminated with plant butter, $4.50.",
+   "tie_in": {
+    "handle": "butter-croissant",
+    "title": "Butter croissant",
+    "price": 4.5,
+    "variantId": null,
+    "image": null,
+    "glyph": "c",
+    "desc": "Laminated with plant butter",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/core/2026-10-22_1220_croissant.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/paris/2026-10-22_1220_croissant_moon.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “croissant-day” between its dates in Pasadena time; choose “La journée du croissant” to force it. The “Du moment” section features Butter croissant through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://nationaldaycalendar.com/national-croissant-day-january-30/",
+     "opened": "2026-10-24",
+     "quote": "NATIONAL CROISSANT DAY ... January 30"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "Fixed date. 2026 falls on a Friday, 2027 on a Saturday."
+  },
+  {
+   "id": "lunar-new-year",
+   "name": {
+    "fr": "Le Nouvel An lunaire",
+    "en": "Lunar New Year"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-02-16",
+      "end": "2026-02-19"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-02-05",
+      "end": "2027-02-08"
+     }
+    ]
+   },
+   "rule": "The eve through the third day of the new year.",
+   "concept": "Lucky red and lantern gold, citrus for a sweet start.",
+   "moves": {
+    "accent": "#b91c1c",
+    "canvas": "#fbf5ec",
+    "hairline": "#c9a227",
+    "display_weight": 600,
+    "motif": "lantern"
+   },
+   "hero_line": "Lunar New Year: lanterns, citrus tea and a sweet start.",
+   "tie_in": {
+    "handle": "seven-citrus-russian",
+    "title": "7 Citrus Russian",
+    "price": 6.5,
+    "variantId": null,
+    "image": null,
+    "glyph": "T",
+    "desc": "Black tea; lemon, orange, grapefruit, bergamot. Iced on request",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/lunar_new_year/2026-10-22_1220_lantern.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “lunar-new-year” between its dates in Pasadena time; choose “Le Nouvel An lunaire” to force it. The “Du moment” section features 7 Citrus Russian through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/calendar/chinese-zodiac-signs.html",
+     "opened": "2026-10-24",
+     "quote": "February 17, 2026 was the Lunar New Year"
+    },
+    {
+     "url": "https://www.si.edu/spotlight/lunar-year-goat",
+     "opened": "2026-10-24",
+     "quote": "The Chinese Lunar New Year begins February 6, 2027"
+    },
+    {
+     "url": "https://www.farmersalmanac.com/when-chinese-new-year",
+     "opened": "2026-10-24",
+     "quote": "Next year (2027): Saturday, February 6, 2027, the Year of the Goat"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Feb 17 | Tuesday | Lunar New Year | Observance"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Feb 6 | Saturday | Lunar New Year | Observance"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "The 15-day festival ends with the Lantern Festival: 3 Mar 2026 and 20 Feb 2027 (Farmers' Almanac)."
+  },
+  {
+   "id": "valentine",
+   "name": {
+    "fr": "La Saint-Valentin",
+    "en": "Valentine’s Day"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-02-07",
+      "end": "2026-02-14"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-02-07",
+      "end": "2027-02-14"
+     }
+    ]
+   },
+   "rule": "The week up to 14 February.",
+   "concept": "Heart red and claret on ivory, a heart with a bite out of it. No pink.",
+   "moves": {
+    "accent": "#c1121f",
+    "canvas": "#fbf6f1",
+    "hairline": "#8c1c2b",
+    "display_weight": 700,
+    "motif": "heart_bite"
+   },
+   "hero_line": "Love notes you can eat: the Framboise chérie jar, $8.",
+   "tie_in": {
+    "handle": "framboise-cherie",
+    "title": "Framboise chérie",
+    "price": 8.0,
+    "variantId": "41826118205628",
+    "image": "img/cake-framboise.jpg",
+    "glyph": "f",
+    "desc": "Raspberry mousse, raspberry jam, almond streusel; in a jar",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/valentine/2026-10-22_1220_heart_bite.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/valentine/2026-10-22_1220_love_letter.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “valentine” between its dates in Pasadena time; choose “La Saint-Valentin” to force it. The “Du moment” section features Framboise chérie through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Feb 14 | Saturday | Valentine's Day | Observance"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Feb 14 | Sunday | Valentine's Day | Observance"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "mardi-gras",
+   "name": {
+    "fr": "Mardi gras",
+    "en": "Mardi Gras"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-02-17",
+      "end": "2026-02-17"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-02-09",
+      "end": "2027-02-09"
+     }
+    ]
+   },
+   "rule": "Fat Tuesday. In 2026 it shares 17 February with Lunar New Year and takes the day as the shorter window.",
+   "concept": "Purple, green and gold with a fleur-de-lis, one day only.",
+   "moves": {
+    "accent": "#5b2a86",
+    "canvas": "#f8f6ee",
+    "hairline": "#b8962e",
+    "display_weight": 700,
+    "motif": "fleur_de_lis"
+   },
+   "hero_line": "Mardi Gras on Green Street: a praline ring for Fat Tuesday.",
+   "tie_in": {
+    "handle": "paris-brest",
+    "title": "Paris-Brest",
+    "price": 6.75,
+    "variantId": null,
+    "image": null,
+    "glyph": "P",
+    "desc": "Praline cream in a choux ring",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/mardi_gras_bastille/2026-10-22_1220_fleur_de_lis.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “mardi-gras” between its dates in Pasadena time; choose “Mardi gras” to force it. The “Du moment” section features Paris-Brest through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Feb 17 | Tuesday | Shrove Tuesday/Mardi Gras"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Feb 9 | Tuesday | Shrove Tuesday/Mardi Gras"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "In 2026 Mardi Gras and Lunar New Year fall on the same day (17 Feb)."
+  },
+  {
+   "id": "artnight",
+   "name": {
+    "fr": "ArtNight Pasadena",
+    "en": "ArtNight Pasadena"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-03-13",
+      "end": "2026-03-13"
+     },
+     {
+      "start": "2026-10-09",
+      "end": "2026-10-09"
+     }
+    ],
+    "2027": []
+   },
+   "rule": "Twice a year, one Friday evening in March and one in October. 2027 nights are not announced yet.",
+   "concept": "Gallery teal and indigo with an artist’s beret, for the free night of museums and galleries.",
+   "moves": {
+    "accent": "#0f766e",
+    "canvas": "#f6f5f0",
+    "hairline": "#1f156b",
+    "display_weight": 600,
+    "motif": "beret"
+   },
+   "hero_line": "ArtNight in Pasadena: biscuits for the walk between galleries.",
+   "tie_in": {
+    "handle": "diamants-biscuit-by-6",
+    "title": "Diamants biscuits, by 5",
+    "price": 7.0,
+    "variantId": "42532786536636",
+    "image": null,
+    "glyph": "d",
+    "desc": "Melt-in-the-mouth biscuits with a hint of lemon",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/paris/2026-10-22_1221_beret.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “artnight” between its dates in Pasadena time; choose “ArtNight Pasadena” to force it. The “Du moment” section features Diamants biscuits, by 5 through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://artnightpasadena.org/",
+     "opened": "2026-10-24",
+     "quote": "ArtNight Pasadena returns Friday, October 9, 2026, 6:00-10:00 pm."
+    },
+    {
+     "url": "https://www.cityofpasadena.net/artnight",
+     "opened": "2026-10-24",
+     "quote": "Save the Date! ArtNight Pasadena returns Friday, October 9, 2026"
+    },
+    {
+     "url": "https://www.oldpasadena.org/visit/events/2026/march/artnight-pasadena",
+     "opened": "2026-10-24",
+     "quote": "ArtNight Pasadena returns Friday, March 13, 2026, 6:00-10:00 PM."
+    },
+    {
+     "url": "https://www.visitpasadena.com/events/annual-events/artnight",
+     "opened": "2026-10-24",
+     "quote": "The event takes place twice a year, in March and October"
+    }
+   ],
+   "dates_verified": false,
+   "dates_note": "Both 2026 nights confirmed; 2027 nights not announced as of 2026-10-24. Add them when artnightpasadena.org posts them."
+  },
+  {
+   "id": "macaron-day",
+   "name": {
+    "fr": "Le jour du macaron",
+    "en": "National Macaron Day"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-03-20",
+      "end": "2026-03-20"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-03-20",
+      "end": "2027-03-20"
+     }
+    ]
+   },
+   "rule": "20 March, the same day in France and the US.",
+   "concept": "Pistachio and raspberry, a macaron where the heart sits.",
+   "moves": {
+    "accent": "#5f7d3a",
+    "canvas": "#faf6ef",
+    "hairline": "#a51c2a",
+    "display_weight": 700,
+    "motif": "macaron"
+   },
+   "hero_line": "Le jour du macaron: the assorted box, or six of your choosing.",
+   "tie_in": {
+    "handle": "macarons",
+    "title": "Assorted macaron box",
+    "price": 18.0,
+    "variantId": "42881210810556",
+    "image": "img/macarons.jpg",
+    "glyph": "m",
+    "desc": "Raspberry, pistachio, chocolate, coffee, coconut",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/core/2026-10-22_1220_macaron.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/paris/2026-10-22_1221_macaron_tower.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “macaron-day” between its dates in Pasadena time; choose “Le jour du macaron” to force it. The “Du moment” section features Assorted macaron box through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://nationaldaycalendar.com/national-macaron-day-march-20/",
+     "opened": "2026-10-24",
+     "quote": "March 20 is National Macaron Day!"
+    },
+    {
+     "url": "https://www.pierreherme.com/fr/jour-du-macaron",
+     "opened": "2026-10-24",
+     "quote": "Évènement du vendredi 20 mars au dimanche 22 mars"
+    },
+    {
+     "url": "https://fr.gaultmillau.com/fr/news/le-jour-du-macaron-revient-pour-une-21-edition",
+     "opened": "2026-10-24",
+     "quote": "Le 20 mars 2026, la Maison Pierre Hermé Paris célèbre"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "Same date in France and the US. In 2026 Pierre Hermé ran the in-store 'un don, un macaron' offer from Fri 20 to Sun 22 March. The 2027 French event is not announced yet; 20 March 2027 (a Saturday) comes from the fixed-date rule."
+  },
+  {
+   "id": "printemps",
+   "name": {
+    "fr": "Le printemps et Pâques",
+    "en": "Spring and Easter"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-03-20",
+      "end": "2026-04-05"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-03-20",
+      "end": "2027-03-28"
+     }
+    ]
+   },
+   "rule": "The March equinox through Easter Sunday (5 April 2026, 28 March 2027). Macaron Day keeps 20 March.",
+   "concept": "Leaf green and butter yellow, a tulip and a chevron egg. Pastels without pink.",
+   "moves": {
+    "accent": "#3f7d4e",
+    "canvas": "#f8f8ef",
+    "hairline": "#c9a227",
+    "display_weight": 600,
+    "motif": "tulip"
+   },
+   "hero_line": "Spring in the case: lemon jars, tulips and the Easter table.",
+   "tie_in": {
+    "handle": "citron-ma-passion",
+    "title": "Citron ma passion",
+    "price": 8.0,
+    "variantId": "41826113618108",
+    "image": "img/cake-citron.jpg",
+    "glyph": "c",
+    "desc": "Lemon curd, meringue, almond streusel; in a jar",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/spring/2026-10-22_1220_tulip.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/easter/2026-10-22_1220_egg_chevron.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/spring/2026-10-22_1220_bunny_ears.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “printemps” between its dates in Pasadena time; choose “Le printemps et Pâques” to force it. The “Du moment” section features Citron ma passion through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Mar 20 | Friday | March Equinox | Season"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Mar 20 | Saturday | March Equinox | Season"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Apr 5 | Sunday | Easter Sunday | Observance, Christian"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Mar 28 | Sunday | Easter Sunday | Observance, Christian"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "mothers-day",
+   "name": {
+    "fr": "La fête des mères",
+    "en": "Mother’s Day"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-05-04",
+      "end": "2026-05-10"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-05-03",
+      "end": "2027-05-09"
+     }
+    ]
+   },
+   "rule": "The week up to the second Sunday of May.",
+   "concept": "Violet and sage, a bouquet, and tea for two booked ahead.",
+   "moves": {
+    "accent": "#6b4f9e",
+    "canvas": "#fbf8f2",
+    "hairline": "#a3906a",
+    "display_weight": 600,
+    "motif": "bouquet"
+   },
+   "hero_line": "For Mother’s Day: tea for two in the salon de thé.",
+   "tie_in": {
+    "handle": "tea-party-for-two",
+    "title": "Tea party for two",
+    "price": 80.0,
+    "variantId": null,
+    "image": null,
+    "glyph": "P",
+    "desc": "Tea with the chef’s selection of sweets and savories; $40 for each extra guest, while supplies last",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/mothers_fathers_day/2026-10-22_1220_bouquet.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “mothers-day” between its dates in Pasadena time; choose “La fête des mères” to force it. The “Du moment” section features Tea party for two through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "May 10 | Sunday | Mother's Day | Observance"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "May 9 | Sunday | Mother's Day | Observance"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "pride",
+   "name": {
+    "fr": "Le mois des fiertés",
+    "en": "Pride Month"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-06-01",
+      "end": "2026-06-30"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-06-01",
+      "end": "2027-06-30"
+     }
+    ]
+   },
+   "rule": "All of June; Father’s Day week and Éclair Day take their own days.",
+   "concept": "The six-stripe rainbow in the motif, violet where the heart sits, everyone at the table.",
+   "moves": {
+    "accent": "#750787",
+    "canvas": "#faf8f3",
+    "hairline": "#c9a961",
+    "display_weight": 700,
+    "motif": "rainbow"
+   },
+   "hero_line": "Pride on Green Street: every colour in the case, everyone at the table.",
+   "tie_in": {
+    "handle": "fruit-tart",
+    "title": "Fruit tart",
+    "price": 6.5,
+    "variantId": null,
+    "image": null,
+    "glyph": "t",
+    "desc": "Fresh fruit tart",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/pride/2026-10-22_1220_rainbow.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “pride” between its dates in Pasadena time; choose “Le mois des fiertés” to force it. The “Du moment” section features Fruit tart through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Jun 1 | Monday | First Day of Pride Month"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Jun 1 | Tuesday | First Day of Pride Month"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "fathers-day",
+   "name": {
+    "fr": "La fête des pères",
+    "en": "Father’s Day"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-06-15",
+      "end": "2026-06-21"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-06-14",
+      "end": "2027-06-20"
+     }
+    ]
+   },
+   "rule": "The week up to the third Sunday of June.",
+   "concept": "Navy and tan, a bow tie in cookie form, chocolate that keeps.",
+   "moves": {
+    "accent": "#1d4e89",
+    "canvas": "#f6f6f2",
+    "hairline": "#8b6f3e",
+    "display_weight": 700,
+    "motif": "bow_tie"
+   },
+   "hero_line": "For Father’s Day: a Dubai chocolate bar, and a bow tie in cookie form.",
+   "tie_in": {
+    "handle": "dubai-chocolate-vegan",
+    "title": "Dubai chocolate bar",
+    "price": 35.0,
+    "variantId": "44712864579772",
+    "image": null,
+    "glyph": "D",
+    "desc": "Chocolate shell, pistachio, tahini and kataifi filling",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/mothers_fathers_day/2026-10-22_1220_bow_tie.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “fathers-day” between its dates in Pasadena time; choose “La fête des pères” to force it. The “Du moment” section features Dubai chocolate bar through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Jun 21 | Sunday | Father's Day | Observance"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Jun 20 | Sunday | Father's Day | Observance"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "In 2026 Father's Day and the June solstice are both on 21 June."
+  },
+  {
+   "id": "eclair-day",
+   "name": {
+    "fr": "La journée de l’éclair",
+    "en": "National Éclair Day"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-06-22",
+      "end": "2026-06-22"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-06-22",
+      "end": "2027-06-22"
+     }
+    ]
+   },
+   "rule": "22 June (the US calendar lists it as National Chocolate Eclair Day).",
+   "concept": "Chocolate glaze and gold leaf for the pastry the shop is named for.",
+   "moves": {
+    "accent": "#6b3e1f",
+    "canvas": "#faf6ee",
+    "hairline": "#c49a3f",
+    "display_weight": 700,
+    "motif": "eclair"
+   },
+   "hero_line": "National Éclair Day, at a shop named for it.",
+   "tie_in": {
+    "handle": "chefs-special-eclair",
+    "title": "Chef’s special éclair",
+    "price": 9.0,
+    "variantId": null,
+    "image": null,
+    "glyph": "é",
+    "desc": "The chef’s éclair of the moment",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/core/2026-10-22_1220_eclair.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “eclair-day” between its dates in Pasadena time; choose “La journée de l’éclair” to force it. The “Du moment” section features Chef’s special éclair through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://nationaldaycalendar.com/celebrations/national-chocolate-eclair-day-june-22",
+     "opened": "2026-10-24",
+     "quote": "National Chocolate Eclair Day falls on June 22 each year"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "National Day Calendar lists the day as 'National Chocolate Eclair Day'. The page at the older URL (national-eclair-day-june-22) did not load any content."
+  },
+  {
+   "id": "ete",
+   "name": {
+    "fr": "L’été",
+    "en": "Summer"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-07-01",
+      "end": "2026-09-07"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-07-01",
+      "end": "2027-09-06"
+     }
+    ]
+   },
+   "rule": "1 July through Labor Day (7 September 2026, 6 September 2027). The solstice sits inside Pride Month, which keeps June.",
+   "concept": "Sea teal and sun gold for long Old Pasadena afternoons.",
+   "moves": {
+    "accent": "#0f6f72",
+    "canvas": "#f8f6ee",
+    "hairline": "#d4a017",
+    "display_weight": 600,
+    "motif": "sun"
+   },
+   "hero_line": "Summer in Old Pasadena: tropical jars, cold brew and long afternoons.",
+   "tie_in": {
+    "handle": "douceur-tropicale",
+    "title": "Douceur tropicale",
+    "price": 8.0,
+    "variantId": "41829515428028",
+    "image": null,
+    "glyph": "d",
+    "desc": "Passion fruit and mango mousse, jam, coconut crumble; in a jar",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/summer/2026-10-22_1220_sun.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/summer/2026-10-22_1220_popsicle.svg",
+    "brain_state/clients/eng-0002/merch/cookie_cutters/summer/2026-10-22_1220_seashell.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “ete” between its dates in Pasadena time; choose “L’été” to force it. The “Du moment” section features Douceur tropicale through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Jun 21 | Sunday | June Solstice | Season"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Jun 21 | Monday | June Solstice | Season"
+    },
+    {
+     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+     "opened": "2026-10-24",
+     "quote": "Monday, September 07 | Labor Day (2026 schedule)"
+    },
+    {
+     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+     "opened": "2026-10-24",
+     "quote": "Monday, September 06 | Labor Day (2027 schedule)"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "bastille",
+   "name": {
+    "fr": "Le 14 juillet",
+    "en": "Bastille Day"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-07-10",
+      "end": "2026-07-14"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-07-10",
+      "end": "2027-07-14"
+     }
+    ]
+   },
+   "rule": "The five days up to 14 July.",
+   "concept": "Bleu, blanc, rouge: the cocarde as the motif, a blue hairline, a baguette up front.",
+   "moves": {
+    "accent": "#c8102e",
+    "canvas": "#f9f8f4",
+    "hairline": "#0b3d91",
+    "display_weight": 700,
+    "motif": "cocarde"
+   },
+   "hero_line": "Le 14 juillet: a baguette, a cocarde and the tricolore.",
+   "tie_in": {
+    "handle": "baguette",
+    "title": "Baguette",
+    "price": 5.5,
+    "variantId": null,
+    "image": null,
+    "glyph": "b",
+    "desc": "French baguette",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/mardi_gras_bastille/2026-10-22_1220_cocarde.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “bastille” between its dates in Pasadena time; choose “Le 14 juillet” to force it. The “Du moment” section features Baguette through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2026",
+     "opened": "2026-10-24",
+     "quote": "Jul 14 | Tuesday | Bastille Day | Observance"
+    },
+    {
+     "url": "https://www.timeanddate.com/holidays/us/2027",
+     "opened": "2026-10-24",
+     "quote": "Jul 14 | Wednesday | Bastille Day | Observance"
+    }
+   ],
+   "dates_verified": true
+  },
+  {
+   "id": "rentree",
+   "name": {
+    "fr": "La rentrée",
+    "en": "Back to school"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-08-10",
+      "end": "2026-08-21"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-08-09",
+      "end": "2027-08-20"
+     }
+    ]
+   },
+   "rule": "The week before the Pasadena Unified first day (17 August 2026, 16 August 2027) through its first week.",
+   "concept": "Apple red and chalkboard green: sablés for the lunchbox, coffee for the drop-off.",
+   "moves": {
+    "accent": "#a4161a",
+    "canvas": "#f7f6f0",
+    "hairline": "#2f4f2f",
+    "display_weight": 600,
+    "motif": "coffee_cup"
+   },
+   "hero_line": "Back to school: sablés for the lunchbox, coffee for the drop-off.",
+   "tie_in": {
+    "handle": "chocolate-fingers-sables-poches",
+    "title": "Chocolate fingers, sablés pochés",
+    "price": 7.0,
+    "variantId": "42532856987836",
+    "image": null,
+    "glyph": "s",
+    "desc": "Melt-in-the-mouth, dipped in dark chocolate",
+    "source": "assets/menu.json"
+   },
+   "cutters": [
+    "brain_state/clients/eng-0002/merch/cookie_cutters/cafe/2026-10-22_1221_coffee_cup.svg"
+   ],
+   "shopify_note": "Online Store > Themes > Customize > Theme settings > Skin. Leave it on Auto and the theme reads this entry from a “Skins” metaobject (the same fields as this file) and applies “rentree” between its dates in Pasadena time; choose “La rentrée” to force it. The “Du moment” section features Chocolate fingers, sablés pochés through a product picker on the same entry. When the window ends, Auto returns to La maison with no edit. On Shopify Plus, Launchpad can instead publish a duplicate theme on the start date and revert it on the end date.",
+   "date_sources": [
+    {
+     "url": "https://www.pusd.us/departments/communications/back-to-school",
+     "opened": "2026-10-24",
+     "quote": "The first day of the 2026-2027 school year is Monday, August 17, 2026"
+    },
+    {
+     "url": "https://drive.google.com/file/d/1cH8TDNo_8Lydwmtc88PwqyrCphGslpY2/view?usp=drive_link",
+     "opened": "2026-10-24",
+     "quote": "08/17 First Day for Students, 1st semester"
+    },
+    {
+     "url": "https://drive.google.com/file/d/1S8TLfAum1c4aHywCM7YptosiNZqrrnCb/view?usp=drive_link",
+     "opened": "2026-10-24",
+     "quote": "August ... 16 1st Sem begins, First Day Students"
+    }
+   ],
+   "dates_verified": true,
+   "dates_note": "Both PDFs are hosted on Google Drive and linked from the official pusd.us Calendars page. They were read as web pages, not downloaded. In the 2027-28 grid the day number 16 sits under August; 16 Aug 2027 is a Monday, which matches the pattern."
+  }
+ ]
+}

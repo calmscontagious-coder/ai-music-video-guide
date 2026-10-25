@@ -1,0 +1,11 @@
+/* skin: vegan-day (World Vegan Day). Green for the day the rest of the world celebrates what the shop does every day.
+   Motif: the heart cookie cutter outline (brain_state/clients/eng-0002/merch/cookie_cutters/core/2026-10-22_1220_heart.svg), 43 points.
+   Loaded only while this skin is active. Variables only. */
+[data-skin="vegan-day"] {
+  --heart: #2f7d32;
+  --canvas: #f6f7ef;
+  --hairline: #7c9a5e;
+  --display-wght: 600;
+  --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60.0 54.2'%3E%3Cpath d='M30.0 13.0 29.5 10.5 28.2 7.7 24.8 3.5 22.3 1.8 19.9 0.8 17.4 0.2 14.7 0.0 11.7 0.4 9.1 1.4 6.6 2.8 4.2 4.8 2.6 6.7 1.1 9.4 0.3 11.8 0.0 14.9 0.3 18.0 1.1 20.5 4.2 25.9 9.1 31.3 24.6 45.3 28.4 50.2 30.0 54.2 31.4 50.6 35.2 45.5 50.4 31.9 55.8 25.9 59.0 20.2 60.0 14.9 59.7 11.8 58.9 9.4 57.6 7.0 55.8 4.8 53.4 2.8 50.7 1.2 48.3 0.4 45.3 0.0 42.6 0.2 40.1 0.8 37.7 1.8 35.2 3.5 31.8 7.7 30.5 10.5Z'/%3E%3C/svg%3E");
+  --motif-fill: #2f7d32;
+}

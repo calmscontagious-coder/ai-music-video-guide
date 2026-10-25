@@ -68,7 +68,7 @@
    "logo": "https://purposewithpresence.com/demo/eng-0002/img/logo-full.png",
    "image": [
     "https://purposewithpresence.com/demo/eng-0002/img/shop-caneles-tray.jpg",
-    "https://purposewithpresence.com/demo/eng-0002/img/golden-ticket-3.jpg",
+    "https://purposewithpresence.com/demo/eng-0002/img/gift-basket-large.jpg",
     "https://purposewithpresence.com/demo/eng-0002/img/macarons-2.jpg"
    ],
    "address": {
@@ -272,6 +272,8 @@
 .lc-visit .panel h3{font-size:var(--text-lg);font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1;line-height:1.1}
 
 @media (prefers-reduced-motion:reduce){.lc-nights label,.lc-nights label:active{transition:none;transform:none}}
+/* order strip (home blend): the board docks below the strip */
+@media (min-width:900px){.has-ostrip .lc-board{top:calc(100px + var(--os-h))}}
 </style>
 </head>
 <body data-home="index.html">
@@ -315,6 +317,43 @@
     </figure>
   </div>
 </section>
+
+<div class="ostrip" data-ostrip data-after=".soir" role="region" aria-label="Your order">
+  <div class="wrap ostrip-in">
+    <ol class="os-steps" aria-label="Three steps to pay">
+      <li class="os-step is-done" data-os-step="slot">
+        <button class="os-go os-slot" type="button" data-os-slot-btn aria-expanded="false" aria-controls="os-panel">
+          <span class="os-n" aria-hidden="true"><i>1</i><svg viewBox="0 0 24 24"><path d="M5.5 12.5l4 4 9-9"/></svg></span>
+          <span class="os-t"><small data-os-day>Pickup today</small><b data-os-time>Earliest slot</b></span>
+          <svg class="ico os-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+        </button>
+      </li>
+      <li class="os-step" data-os-step="add">
+        <a class="os-go os-add" href="#carte" data-os-add>
+          <span class="os-n" aria-hidden="true"><i>2</i><svg viewBox="0 0 24 24"><path d="M5.5 12.5l4 4 9-9"/></svg></span>
+          <span class="os-t"><small>Add</small><b data-os-count>None yet</b></span>
+        </a>
+      </li>
+      <li class="os-step" data-os-step="pay">
+        <a class="os-go os-pay" href="index.html#pickup" data-cart-open data-os-pay>
+          <span class="os-n" aria-hidden="true"><i>3</i></span>
+          <span class="os-t"><small>Pay<span class="os-where" data-os-where></span></small><b data-cart-total>$0.00</b></span>
+        </a>
+      </li>
+    </ol>
+    <p class="os-note">Example slots; the kitchen sets the real ones.</p>
+    <div class="os-panel" id="os-panel" data-os-panel hidden>
+      <div class="os-pick" data-slot-picker role="group" aria-label="Pickup day and time, example slots">
+        <p class="os-pick-h"><b>Pickup day and time</b><span class="ex">Example</span></p>
+        <div class="days" role="group" aria-label="Day" data-days></div>
+        <div class="times" role="group" aria-label="Time" data-times></div>
+        <p class="os-pick-foot"><span data-slot-note>Slots close themselves when the kitchen is full</span><b data-slot-out>Earliest slot</b></p>
+      </div>
+      <button class="btn btn-brand btn-sm" type="button" data-os-done>Done</button>
+    </div>
+  </div>
+</div>
+
 
 <div class="facts" role="region" aria-label="La Cave at a glance">
   <div class="wrap">

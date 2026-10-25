@@ -1,0 +1,11 @@
+/* skin: rentree (Back to school). Apple red and chalkboard green: sablés for the lunchbox, coffee for the drop-off.
+   Motif: the coffee cup cookie cutter outline (brain_state/clients/eng-0002/merch/cookie_cutters/cafe/2026-10-22_1221_coffee_cup.svg), 62 points.
+   Loaded only while this skin is active. Variables only. */
+[data-skin="rentree"] {
+  --heart: #a4161a;
+  --canvas: #f7f6f0;
+  --hairline: #2f4f2f;
+  --display-wght: 600;
+  --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 85.0 75.2'%3E%3Cmask id='m'%3E%3Cpath d='M0.1 68.6 3.3 70.9 10.5 72.9 21.4 74.4 32.6 75.1 46.5 75.1 59.6 74.4 70.5 72.9 77.2 71.1 80.6 69.1 81.1 68.1 80.6 67.0 76.3 64.6 66.5 62.1 65.3 59.9 65.8 56.2 66.5 54.8 67.7 53.8 72.8 53.5 76.1 52.6 79.2 51.0 81.7 48.9 83.6 46.2 84.7 43.0 84.9 39.3 84.1 36.1 82.2 32.8 79.2 30.1 76.1 28.4 72.1 27.3 68.8 23.9 65.4 23.4 63.8 22.4 63.0 20.6 63.4 16.8 62.8 13.7 61.5 11.1 59.4 9.1 56.5 7.6 51.8 6.8 48.0 2.6 44.3 0.6 40.0 0.0 36.1 0.9 32.7 3.0 29.3 6.8 24.2 7.8 20.8 9.8 19.1 11.9 17.9 14.7 18.1 20.4 17.5 22.1 15.8 23.4 12.1 23.9 10.4 25.6 10.0 28.2 15.8 60.2 15.0 61.6 13.8 62.5 6.4 64.1 2.0 65.8 0.2 67.2Z' fill='white'/%3E%3Cpath d='M79.1 40.5 79.1 40.5 M32.7 24.8 33.7 23.5 34.2 21.4 31.2 11.4 31.4 9.0 32.7 6.5 M40.5 24.8 41.5 23.5 42.0 21.4 39.1 11.4 39.2 9.0 40.5 6.5 M48.4 24.8 49.4 23.5 49.9 21.4 46.9 11.4 47.1 9.0 48.4 6.5' fill='none' stroke='black' stroke-width='3.0' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/mask%3E%3Crect width='85.0' height='75.2' mask='url(%23m)'/%3E%3C/svg%3E");
+  --motif-fill: #1f156b;
+}

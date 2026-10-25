@@ -1,0 +1,11 @@
+/* skin: lunar-new-year (Lunar New Year). Lucky red and lantern gold, citrus for a sweet start.
+   Motif: the lantern cookie cutter outline (brain_state/clients/eng-0002/merch/cookie_cutters/lunar_new_year/2026-10-22_1220_lantern.svg), 54 points.
+   Loaded only while this skin is active. Variables only. */
+[data-skin="lunar-new-year"] {
+  --heart: #b91c1c;
+  --canvas: #fbf5ec;
+  --hairline: #c9a227;
+  --display-wght: 600;
+  --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 67.5 95.0'%3E%3Cmask id='m'%3E%3Cpath d='M16.9 69.3 16.9 73.6 18.2 75.7 20.0 76.4 26.9 76.5 28.4 77.7 28.7 91.0 29.5 93.1 32.3 94.9 36.0 94.7 37.8 93.4 38.7 91.3 39.1 77.5 40.4 76.5 47.6 76.4 49.7 75.4 50.5 73.7 50.9 67.6 56.4 63.8 60.8 59.6 64.2 54.6 66.5 49.2 67.4 43.6 67.1 37.9 66.0 33.6 63.5 28.3 58.7 22.5 50.9 16.8 50.5 10.7 49.7 8.9 47.8 7.9 40.4 7.5 39.5 6.3 38.9 2.1 36.5 0.2 31.6 0.0 29.6 0.8 28.2 2.9 27.9 6.5 26.7 7.7 19.9 7.9 17.9 8.8 16.9 10.8 16.6 16.7 11.1 20.5 6.6 24.8 3.3 29.6 1.0 35.0 0.0 43.6 1.0 49.3 2.6 53.4 7.3 60.3 11.1 63.8 16.1 67.1Z' fill='white'/%3E%3Cpath d='M33.7 69.1 28.7 67.8 26.4 66.0 23.3 62.4 19.5 53.7 18.0 43.2 19.0 32.6 22.4 23.5 25.3 19.3 27.6 17.3 30.0 16.0 33.7 15.2 M33.7 69.1 37.5 68.4 39.9 67.0 43.2 63.7 45.1 60.9 48.0 53.7 49.5 43.2 48.4 32.6 45.1 23.5 42.1 19.3 39.9 17.3 37.5 16.0 33.7 15.2 M33.7 71.4 33.7 12.9' fill='none' stroke='black' stroke-width='3.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/mask%3E%3Crect width='67.5' height='95.0' mask='url(%23m)'/%3E%3C/svg%3E");
+  --motif-fill: #b91c1c;
+}

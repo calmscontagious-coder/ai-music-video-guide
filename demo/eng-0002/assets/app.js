@@ -75,11 +75,21 @@
   }
   function clear() { state.items = []; save(); say('Your bag is empty.'); }
 
-  /* Shopify cart permalink: /cart/<variant>:<qty>,... opens the live checkout with these lines */
+  /* Shopify cart permalink: /cart/<variant>:<qty>,... opens the live checkout with these lines.
+     The chosen pickup slot rides along as cart attributes plus the order note, so it shows in the
+     order's Notes section in Shopify admin (shopify.dev/docs/apps/build/checkout/create-cart-permalinks:
+     `attributes[name]=value`, `note=`). Before 2026-10-24 the slot was shown on the page and dropped here. */
+  function slotParams() {
+    var s = slot();
+    if (!s.day) return '';
+    var label = slotText(s), q = encodeURIComponent;
+    return '?attributes[Pickup]=' + q(label) + '&attributes[Pickup%20date]=' + q(s.day.key) +
+      '&attributes[Pickup%20time]=' + q(tlabel(s.time)) + '&note=' + q('Pickup at 169 W Green St: ' + label);
+  }
   function checkoutUrl() {
     var m = {}, order = [];
     live().forEach(function (i) { if (!m[i.variantId]) { m[i.variantId] = 0; order.push(i.variantId); } m[i.variantId] += i.qty; });
-    return order.length ? STORE + '/cart/' + order.map(function (v) { return v + ':' + m[v]; }).join(',') : null;
+    return order.length ? STORE + '/cart/' + order.map(function (v) { return v + ':' + m[v]; }).join(',') + slotParams() : null;
   }
 
   var liveRegion;

@@ -15,14 +15,14 @@
 <meta property="og:title" content="Chef Romy, fourth-generation pastry chef. iD Éclair concept preview.">
 <meta property="og:description" content="Romuald Guiot trained at La Maison de Marc Veyrat, opened La Mirabelle in New York and now makes plant-based French pastry at 169 W Green St, Pasadena.">
 <meta property="og:url" content="https://purposewithpresence.com/demo/eng-0002/story.html">
-<meta property="og:image" content="https://purposewithpresence.com/demo/eng-0002/img/golden-ticket-3.jpg">
+<meta property="og:image" content="https://purposewithpresence.com/demo/eng-0002/img/shop-caneles-tray.jpg">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="2134">
 <meta property="og:image:alt" content="Chef Romy at work in the pastry kitchen">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chef Romy, fourth-generation pastry chef. iD Éclair concept preview.">
 <meta name="twitter:description" content="Romuald Guiot trained at La Maison de Marc Veyrat, opened La Mirabelle in New York and now makes plant-based French pastry at 169 W Green St, Pasadena.">
-<meta name="twitter:image" content="https://purposewithpresence.com/demo/eng-0002/img/golden-ticket-3.jpg">
+<meta name="twitter:image" content="https://purposewithpresence.com/demo/eng-0002/img/shop-caneles-tray.jpg">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -49,7 +49,7 @@
    },
    "primaryImageOfPage": {
     "@type": "ImageObject",
-    "url": "https://purposewithpresence.com/demo/eng-0002/img/golden-ticket-3.jpg"
+    "url": "https://purposewithpresence.com/demo/eng-0002/img/shop-caneles-tray.jpg"
    },
    "breadcrumb": {
     "@id": "https://purposewithpresence.com/demo/eng-0002/story.html#breadcrumb"
@@ -68,7 +68,7 @@
    "logo": "https://purposewithpresence.com/demo/eng-0002/img/logo-full.png",
    "image": [
     "https://purposewithpresence.com/demo/eng-0002/img/shop-caneles-tray.jpg",
-    "https://purposewithpresence.com/demo/eng-0002/img/golden-ticket-3.jpg",
+    "https://purposewithpresence.com/demo/eng-0002/img/gift-basket-large.jpg",
     "https://purposewithpresence.com/demo/eng-0002/img/macarons-2.jpg"
    ],
    "address": {
@@ -119,7 +119,7 @@
    "worksFor": {
     "@id": "https://www.id-eclair.com/#bakery"
    },
-   "image": "https://purposewithpresence.com/demo/eng-0002/img/golden-ticket-3.jpg",
+   "image": "https://purposewithpresence.com/demo/eng-0002/img/story-chef-competition.jpg",
    "description": "Fourth-generation pastry chef; trained at La Maison de Marc Veyrat, opened La Mirabelle in New York in 2015, finalist on Season 8 of Food Network’s Spring Baking Championship."
   }
  ]
@@ -195,6 +195,8 @@
 .st-close .sec-head{max-width:46ch}
 .btn-line{background:transparent;color:var(--color-on-brand);border-color:var(--color-on-brand-muted)}
 .btn-line:hover{border-color:var(--color-on-brand)}
+/* order strip (home blend): the chapter heading docks below the strip */
+@media (min-width:900px){.has-ostrip .st-path .sec-head{top:calc(110px + var(--os-h))}}
 </style>
 </head>
 <body data-home="index.html">
@@ -233,11 +235,48 @@
       </div>
     </div>
     <figure class="hero-media rise d2" data-grid-break>
-      <img src="img/golden-ticket-3-800.jpg" srcset="img/golden-ticket-3-800.jpg 800w, img/golden-ticket-3.jpg 1600w" sizes="(min-width:900px) 46vw, 100vw" width="1600" height="2134" alt="Chef Romy in a black chef’s jacket and straw hat, holding up a hand mixer and a bowl of meringue in the pastry kitchen" fetchpriority="high">
-      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span>Chef Romy, mid-demonstration</span><small>the shop’s About page</small></figcaption>
+      <img src="img/shop-caneles-tray-800.jpg" srcset="img/shop-caneles-tray-800.jpg 800w, img/shop-caneles-tray.webp 1600w" sizes="(min-width:900px) 46vw, 100vw" width="800" height="800" alt="Rows of dark, caramelised cannelés in a white iD Éclair box, the shop’s card propped up behind them" fetchpriority="high">
+      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span>Cannelés from the case, boxed at the shop</span><small>the shop’s photo</small></figcaption>
     </figure>
   </div>
 </section>
+
+<div class="ostrip" data-ostrip data-after=".st-hero" role="region" aria-label="Your order">
+  <div class="wrap ostrip-in">
+    <ol class="os-steps" aria-label="Three steps to pay">
+      <li class="os-step is-done" data-os-step="slot">
+        <button class="os-go os-slot" type="button" data-os-slot-btn aria-expanded="false" aria-controls="os-panel">
+          <span class="os-n" aria-hidden="true"><i>1</i><svg viewBox="0 0 24 24"><path d="M5.5 12.5l4 4 9-9"/></svg></span>
+          <span class="os-t"><small data-os-day>Pickup today</small><b data-os-time>Earliest slot</b></span>
+          <svg class="ico os-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+        </button>
+      </li>
+      <li class="os-step" data-os-step="add">
+        <a class="os-go os-add" href="menu.html" data-os-add>
+          <span class="os-n" aria-hidden="true"><i>2</i><svg viewBox="0 0 24 24"><path d="M5.5 12.5l4 4 9-9"/></svg></span>
+          <span class="os-t"><small>Add</small><b data-os-count>None yet</b></span>
+        </a>
+      </li>
+      <li class="os-step" data-os-step="pay">
+        <a class="os-go os-pay" href="index.html#pickup" data-cart-open data-os-pay>
+          <span class="os-n" aria-hidden="true"><i>3</i></span>
+          <span class="os-t"><small>Pay<span class="os-where" data-os-where></span></small><b data-cart-total>$0.00</b></span>
+        </a>
+      </li>
+    </ol>
+    <p class="os-note">Example slots; the kitchen sets the real ones.</p>
+    <div class="os-panel" id="os-panel" data-os-panel hidden>
+      <div class="os-pick" data-slot-picker role="group" aria-label="Pickup day and time, example slots">
+        <p class="os-pick-h"><b>Pickup day and time</b><span class="ex">Example</span></p>
+        <div class="days" role="group" aria-label="Day" data-days></div>
+        <div class="times" role="group" aria-label="Time" data-times></div>
+        <p class="os-pick-foot"><span data-slot-note>Slots close themselves when the kitchen is full</span><b data-slot-out>Earliest slot</b></p>
+      </div>
+      <button class="btn btn-brand btn-sm" type="button" data-os-done>Done</button>
+    </div>
+  </div>
+</div>
+
 
 <div class="facts" role="region" aria-label="The chef’s record, from the press">
   <div class="wrap">

@@ -68,7 +68,7 @@
    "logo": "https://purposewithpresence.com/demo/eng-0002/img/logo-full.png",
    "image": [
     "https://purposewithpresence.com/demo/eng-0002/img/shop-caneles-tray.jpg",
-    "https://purposewithpresence.com/demo/eng-0002/img/golden-ticket-3.jpg",
+    "https://purposewithpresence.com/demo/eng-0002/img/gift-basket-large.jpg",
     "https://purposewithpresence.com/demo/eng-0002/img/macarons-2.jpg"
    ],
    "address": {
@@ -858,7 +858,7 @@
     "name": "iD Éclair"
    },
    "category": "Classes",
-   "image": "https://purposewithpresence.com/demo/eng-0002/img/golden-ticket-3.jpg",
+   "image": "https://purposewithpresence.com/demo/eng-0002/img/golden-ticket.jpg",
    "offers": {
     "@type": "Offer",
     "price": "140.00",
@@ -1585,6 +1585,14 @@ html{scroll-padding-top:136px}
   .pk-panel.on,.toast.on,.item.in-bag .hrt{animation:none}
   .pk-change .ico-s{transition:none}
 }
+/* order strip (home blend): the menu's own band owns the top, so on desktop the strip docks at the foot; Pickup opens the band's picker */
+html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px + env(safe-area-inset-bottom))}
+@media (min-width:900px){
+  .pg-menu .ostrip{top:auto;bottom:0;border-top:1px solid var(--color-line);border-bottom:0;box-shadow:var(--shadow-e2);transform:translateY(100%)}
+  .has-ostrip body.pg-menu{padding-bottom:calc(var(--os-h) + 24px)}
+  html.has-ostrip:has(body.pg-menu){scroll-padding-top:136px;scroll-padding-bottom:calc(var(--os-h) + 16px)}
+  html.os-on .toast{bottom:calc(var(--os-h) + 32px)}
+}
 </style>
 </head>
 <body class="pg-menu" data-home="index.html">
@@ -1634,6 +1642,34 @@ html{scroll-padding-top:136px}
     </figure>
   </div>
 </section>
+
+<div class="ostrip" data-ostrip data-after=".mhead" role="region" aria-label="Your order">
+  <div class="wrap ostrip-in">
+    <ol class="os-steps" aria-label="Three steps to pay">
+      <li class="os-step is-done" data-os-step="slot">
+        <button class="os-go os-slot" type="button" data-os-slot-btn aria-expanded="false" aria-controls="pk-panel">
+          <span class="os-n" aria-hidden="true"><i>1</i><svg viewBox="0 0 24 24"><path d="M5.5 12.5l4 4 9-9"/></svg></span>
+          <span class="os-t"><small data-os-day>Pickup today</small><b data-os-time>Earliest slot</b></span>
+          <svg class="ico os-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+        </button>
+      </li>
+      <li class="os-step" data-os-step="add">
+        <a class="os-go os-add" href="#menu" data-os-add>
+          <span class="os-n" aria-hidden="true"><i>2</i><svg viewBox="0 0 24 24"><path d="M5.5 12.5l4 4 9-9"/></svg></span>
+          <span class="os-t"><small>Add</small><b data-os-count>None yet</b></span>
+        </a>
+      </li>
+      <li class="os-step" data-os-step="pay">
+        <a class="os-go os-pay" href="#order" data-cart-open data-os-pay>
+          <span class="os-n" aria-hidden="true"><i>3</i></span>
+          <span class="os-t"><small>Pay<span class="os-where" data-os-where></span></small><b data-cart-total>$0.00</b></span>
+        </a>
+      </li>
+    </ol>
+    <p class="os-note">Example slots; the kitchen sets the real ones.</p>
+  </div>
+</div>
+
 
 <div class="ozone">
 <div class="obar" id="order" role="region" aria-label="Pickup time and menu sections">
@@ -1896,7 +1932,7 @@ html{scroll-padding-top:136px}
   /* upscaled local files listed in img/MANIFEST.json: img/<name>-800.jpg and img/<name>.webp */
   var LOCAL = {
     'canele': 'shop-caneles-tray', 'macaron': 'macarons-1',
-    'thanksgiving-box-for-2': 'thanksgiving-box-for-2', 'golden-ticket': 'golden-ticket-3', 'cheese-board': 'cheese-board-1',
+    'thanksgiving-box-for-2': 'thanksgiving-box-for-2', 'cheese-board': 'cheese-board-1',
     'dubai-chocolate-vegan': 'dubai-chocolate-vegan', 'white-chocolate-truffles': 'white-chocolate-truffles', 'dark-chocolate-truffles': 'dark-chocolate-truffles',
     'kushyflakes': 'kushyflakes', 'gift-basket-small': 'gift-basket-small', 'gift-basket-large': 'gift-basket-large',
     'pineapple-vanilla-jam': 'pineapple-vanilla-jam', 'caneles': 'caneles-1', 'macarons': 'macarons-2',
@@ -1981,14 +2017,15 @@ html{scroll-padding-top:136px}
     viewEl.addEventListener('click', function (e) { var b = e.target.closest('[data-v]'); if (b) setView(b.getAttribute('data-v'), true); });
 
     /* ---------- pickup band and picker ---------- */
+    var osBtn = $('[data-os-slot-btn]');   /* the order strip's Pickup step opens this band's picker, not a second one */
     function openPanel(focus) {
       if (panel.hidden) { panel.hidden = false; panel.classList.remove('on'); void panel.offsetWidth; panel.classList.add('on'); }
-      change.setAttribute('aria-expanded', 'true');
+      change.setAttribute('aria-expanded', 'true'); if (osBtn) osBtn.setAttribute('aria-expanded', 'true');
       if (focus) { var c = $('.chip[aria-pressed="true"]', panel) || $('.chip', panel); if (c) c.focus({ preventScroll: true }); }
     }
     function closePanel(back) {
       if (panel.hidden) return;
-      panel.hidden = true; change.setAttribute('aria-expanded', 'false');
+      panel.hidden = true; change.setAttribute('aria-expanded', 'false'); if (osBtn) osBtn.setAttribute('aria-expanded', 'false');
       if (back) change.focus({ preventScroll: true });
     }
     change.addEventListener('click', function () { if (panel.hidden) openPanel(true); else closePanel(false); });
@@ -1999,6 +2036,13 @@ html{scroll-padding-top:136px}
     /* capture phase: runs before app.js re-renders the chips, so the clicked chip is still inside the panel */
     document.addEventListener('click', function (e) {
       if (e.target.closest('[data-slot-change]')) { openPanel(false); return; }
+      if (osBtn && osBtn.contains(e.target)) {
+        e.stopPropagation();
+        if (!panel.hidden) { closePanel(false); osBtn.focus({ preventScroll: true }); return; }
+        var ob = $('#order'), r = ob.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > innerHeight) ob.scrollIntoView({ block: 'start' });
+        openPanel(true); return;
+      }
       if (!panel.hidden && !pk.contains(e.target) && !e.target.closest('.drawer, [data-later-go]')) closePanel(false);
     }, true);
 

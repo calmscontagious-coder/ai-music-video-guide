@@ -1,0 +1,11 @@
+/* skin: artnight (ArtNight Pasadena). Gallery teal and indigo with an artist’s beret, for the free night of museums and galleries.
+   Motif: the beret cookie cutter outline (brain_state/clients/eng-0002/merch/cookie_cutters/paris/2026-10-22_1221_beret.svg), 35 points.
+   Loaded only while this skin is active. Variables only. */
+[data-skin="artnight"] {
+  --heart: #0f766e;
+  --canvas: #f6f5f0;
+  --hairline: #1f156b;
+  --display-wght: 600;
+  --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 95.0 48.0'%3E%3Cmask id='m'%3E%3Cpath d='M15.7 45.6 17.6 47.4 20.0 48.0 77.2 47.7 79.0 46.7 80.4 44.9 80.8 39.0 88.2 34.1 92.9 29.1 94.8 25.0 94.5 20.1 93.1 17.2 90.5 14.6 82.9 10.2 75.9 8.1 68.0 6.7 50.5 6.1 49.1 4.9 48.7 2.3 47.7 0.8 46.1 0.1 44.2 0.2 42.5 1.6 41.0 6.1 40.0 7.2 27.3 10.1 15.7 14.4 6.8 19.8 2.1 24.8 0.5 27.9 0.0 30.8 0.4 33.6 1.5 36.1 6.6 40.9 14.9 44.7Z' fill='white'/%3E%3Cpath d='M18.3 37.7 77.4 37.7' fill='none' stroke='black' stroke-width='3.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/mask%3E%3Crect width='95.0' height='48.0' mask='url(%23m)'/%3E%3C/svg%3E");
+  --motif-fill: #0f766e;
+}

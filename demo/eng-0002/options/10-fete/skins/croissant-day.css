@@ -1,0 +1,11 @@
+/* skin: croissant-day (National Croissant Day). Golden brown and butter yellow, a croissant where the heart sits.
+   Motif: the croissant cookie cutter outline (brain_state/clients/eng-0002/merch/cookie_cutters/core/2026-10-22_1220_croissant.svg), 43 points.
+   Loaded only while this skin is active. Variables only. */
+[data-skin="croissant-day"] {
+  --heart: #a15c12;
+  --canvas: #fbf5ea;
+  --hairline: #c79a55;
+  --display-wght: 700;
+  --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90.0 64.1'%3E%3Cpath d='M3.4 1.8 0.9 10.3 0.0 19.0 0.9 27.9 3.4 36.3 7.6 44.1 12.8 50.5 20.0 56.5 27.8 60.7 36.2 63.2 45.0 64.1 53.8 63.2 62.2 60.7 70.0 56.5 76.8 50.9 82.4 44.1 86.6 36.3 89.3 26.8 90.0 16.9 88.0 6.0 86.4 1.6 84.9 0.2 82.9 0.1 81.2 1.4 79.5 9.5 77.2 15.3 73.7 20.9 68.9 26.1 64.3 29.5 57.9 32.7 52.0 34.4 45.4 35.1 39.7 34.7 33.7 33.3 27.6 30.6 22.5 27.2 17.2 21.9 13.3 16.1 10.5 9.5 8.6 1.2 7.3 0.2 5.9 0.0 4.4 0.6Z'/%3E%3C/svg%3E");
+  --motif-fill: #a15c12;
+}

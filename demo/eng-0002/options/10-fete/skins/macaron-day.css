@@ -1,0 +1,11 @@
+/* skin: macaron-day (National Macaron Day). Pistachio and raspberry, a macaron where the heart sits.
+   Motif: the macaron cookie cutter outline (brain_state/clients/eng-0002/merch/cookie_cutters/core/2026-10-22_1220_macaron.svg), 32 points.
+   Loaded only while this skin is active. Variables only. */
+[data-skin="macaron-day"] {
+  --heart: #5f7d3a;
+  --canvas: #faf6ef;
+  --hairline: #a51c2a;
+  --display-wght: 700;
+  --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 55.0 55.0'%3E%3Cpath d='M55.0 26.8 54.5 22.1 52.9 17.0 50.4 12.2 47.0 8.1 42.8 4.6 38.0 2.1 32.2 0.4 27.2 0.0 22.1 0.5 17.0 2.1 12.2 4.6 8.1 8.1 4.6 12.2 2.1 17.0 0.4 22.8 0.0 27.8 0.5 32.9 2.1 38.0 4.6 42.8 8.1 47.0 12.2 50.4 17.0 52.9 22.1 54.5 27.8 55.0 32.9 54.5 38.0 52.9 42.8 50.4 47.0 47.0 50.4 42.8 53.2 37.4 54.7 31.9Z'/%3E%3C/svg%3E");
+  --motif-fill: #a51c2a;
+}

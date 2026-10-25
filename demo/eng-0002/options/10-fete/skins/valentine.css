@@ -1,0 +1,11 @@
+/* skin: valentine (Valentine’s Day). Heart red and claret on ivory, a heart with a bite out of it. No pink.
+   Motif: the heart bite cookie cutter outline (brain_state/clients/eng-0002/merch/cookie_cutters/valentine/2026-10-22_1220_heart_bite.svg), 51 points.
+   Loaded only while this skin is active. Variables only. */
+[data-skin="valentine"] {
+  --heart: #c1121f;
+  --canvas: #fbf6f1;
+  --hairline: #8c1c2b;
+  --display-wght: 700;
+  --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70.0 66.2'%3E%3Cpath d='M0.2 21.2 0.6 23.8 2.4 28.3 7.1 35.2 13.4 41.6 30.5 56.8 34.6 61.6 37.1 65.6 38.0 66.2 39.2 65.7 41.8 61.7 46.0 56.8 65.3 39.5 70.0 34.1 69.6 32.9 67.0 31.7 65.2 30.0 64.2 27.9 63.7 24.8 60.9 23.2 59.4 21.6 58.3 19.6 57.6 16.7 54.2 14.7 52.3 11.8 51.9 9.1 52.4 6.7 54.2 4.2 57.8 2.1 57.9 0.8 57.0 0.0 51.6 0.8 46.0 3.6 43.0 6.4 40.8 9.4 39.1 12.7 38.2 13.1 37.3 12.7 35.6 9.3 33.4 6.3 30.4 3.6 26.8 1.5 22.6 0.2 20.2 0.0 15.8 0.4 13.3 1.0 7.2 4.4 5.3 6.1 2.5 9.8 0.6 14.3 0.0 18.8Z'/%3E%3C/svg%3E");
+  --motif-fill: #c1121f;
+}

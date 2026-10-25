@@ -1,0 +1,18 @@
+/* skin: halloween (Halloween). Cute, never gory: a black cat on the case, pumpkin orange where the heart sits, ghost-shaped macarons and cobweb hairlines.
+   Motif: the black cat cookie cutter outline (brain_state/clients/eng-0002/merch/cookie_cutters/halloween/2026-10-22_1220_black_cat.svg), 74 points.
+   Loaded only while this skin is active. Variables only, plus one decorative pseudo-element. */
+[data-skin="halloween"] {
+  --heart: #b4460b;
+  --canvas: #f7f0e4;
+  --hairline: #6f6253;
+  --display-wght: 700;
+  --motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 73.7 90.0'%3E%3Cmask id='m'%3E%3Cpath d='M9.5 15.3 8.1 19.5 8.0 24.2 9.0 28.5 11.5 33.2 11.6 35.1 10.9 36.5 6.1 41.6 3.0 46.7 1.0 52.3 0.0 59.3 0.3 65.0 1.5 70.6 3.5 75.8 6.4 80.4 10.0 84.3 14.2 87.2 18.7 89.1 23.6 90.0 30.8 89.1 38.2 85.8 42.4 87.2 49.8 87.0 54.4 85.8 59.8 82.8 64.5 77.9 68.1 70.3 69.0 65.3 69.0 59.4 66.0 47.4 67.6 44.9 71.2 44.2 72.8 43.0 73.7 40.7 72.9 38.1 70.0 36.4 66.0 36.2 62.5 37.8 59.8 40.7 58.4 44.1 58.0 47.4 61.2 60.2 61.1 65.0 60.5 68.3 58.7 72.4 56.0 75.7 51.5 78.5 48.5 78.6 47.0 77.4 46.5 75.5 48.4 69.2 49.4 63.7 49.4 57.9 48.4 52.2 46.6 47.0 44.6 43.4 38.5 36.3 37.8 34.6 38.1 32.9 40.8 27.7 41.6 23.3 41.3 19.2 39.5 13.7 40.0 0.9 38.9 0.1 37.6 0.2 30.0 6.0 24.7 5.7 20.4 6.1 18.6 5.6 12.0 0.2 10.3 0.2 9.2 1.8 10.0 13.3Z' fill='white'/%3E%3Cpath d='M21.5 22.3 21.5 22.3 M35.0 20.5 35.0 20.5' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/mask%3E%3Crect width='73.7' height='90.0' mask='url(%23m)'/%3E%3C/svg%3E");
+  --motif-fill: #191426;
+  --rule-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 12'%3E%3Cpath d='M0 2Q12 11 24 2Q36 11 48 2M12 6.4L12 1M36 6.4L36 1' fill='none' stroke='%236f6253' stroke-width='1'/%3E%3C/svg%3E");
+  --rule-size: 48px 12px;
+  --rule-repeat: repeat-x;
+  --mac-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 24'%3E%3Cpath d='M10 1C4.5 1 2 5.5 2 11v12l2.7-2.6L7.3 23 10 20.4 12.7 23l2.6-2.6L18 23V11C18 5.5 15.5 1 10 1z'/%3E%3C/svg%3E");
+  --card-mask: linear-gradient(#000 0 0) top / 100% calc(100% - 7px) no-repeat, radial-gradient(circle 7px at 50% 0, #000 98%, transparent 100%) bottom / 18px 7px repeat-x;
+  --card-radius: 48% 48% 10px 10px / 34% 34% 10px 10px;
+}
+[data-skin="halloween"] .hero::before { content: ""; position: absolute; right: 0; top: 0; transform: scaleX(-1); width: 120px; height: 120px; pointer-events: none; background: no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%236f6253' stroke-width='.8' opacity='.7'%3E%3Cpath d='M0 0L120 60M0 0L90 120M0 0L40 120M0 0L120 20'/%3E%3Cpath d='M30 15Q32 30 18 34M60 30Q62 52 36 70M90 45Q90 78 54 101'/%3E%3C/g%3E%3C/svg%3E"); }
