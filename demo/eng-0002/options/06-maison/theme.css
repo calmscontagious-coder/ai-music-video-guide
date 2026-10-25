@@ -630,3 +630,36 @@ html{scroll-padding-bottom:84px}
 .kicker [lang|="fr"]{font-family:inherit;font-style:normal}
 .slotline small{font-size:var(--t-13)}
 label:has(> input[type="checkbox"]){min-height:44px;display:flex;align-items:center}
+
+/* ============================================================
+   WAVE E, 25 October 2026 (director pass v2: 5.4, 5.6)
+   The bottom bar becomes a dock: the pickup button (the chosen slot, a jump to the picker),
+   two section links and the bag. It still steps aside, now 96 px early, over the box add
+   row and the pickup card. Labels at the 14 px step.
+   ============================================================ */
+.bar { grid-template-columns: minmax(0, 2.2fr) repeat(3, minmax(0, 1fr)); }
+.bar a.bar-pick { display: flex; justify-items: start; justify-content: flex-start; align-items: center; gap: 8px; min-width: 0; min-height: 56px; padding: 0 10px 0 14px; text-align: left; text-transform: none; letter-spacing: 0; color: var(--encre); }
+.bar a.bar-pick::after, .bar a.bar-pick::before { content: none; }
+.bar a.bar-pick .bp-ico { flex: none; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.bar a.bar-pick span { display: grid; gap: 2px; min-width: 0; }
+.bar a.bar-pick small { font: 600 0.875rem/1.15 var(--font-text); color: var(--doux); letter-spacing: 0; text-transform: none; }
+.bar a.bar-pick b { font: 700 0.875rem/1.15 var(--font-text); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-pick:active { transform: scale(0.98); }
+/* 1.1 and 8.1: the arch photograph is the 750 px WebP at high priority; the two side jars (phones hide them) load lazily */
+/* 5.5: the box of six, one card inside the first one and a half phone screens */
+.boxcard{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:var(--sp-3) var(--sp-4);max-width:880px;margin:var(--sp-6) auto 0;padding:var(--sp-4);border:1px solid var(--or);background:var(--papier);color:var(--encre);text-decoration:none;text-align:left}
+.boxcard .bc-six{display:grid;grid-template-columns:repeat(3,14px);gap:6px}
+.boxcard .bc-six i{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--encre)}
+.boxcard .bc-six i:nth-child(2),.boxcard .bc-six i:nth-child(6){background:var(--encre)}
+.boxcard .bc-t{display:grid;gap:2px}
+.boxcard .bc-t b{font:500 1.1875rem/1.2 var(--font-display);font-variant-numeric:tabular-nums}
+.boxcard .bc-t span{font-size:.875rem;color:var(--doux)}
+.boxcard .bc-go{grid-column:1/-1;display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:1px solid var(--encre);font:600 .875rem/1 var(--font-text)}
+.boxcard:active{transform:scale(.98)}
+@media (min-width:760px){.boxcard{grid-template-columns:auto minmax(0,1fr) auto}.boxcard .bc-go{grid-column:auto;padding:0 var(--sp-5)}}
+@media (hover:hover){.boxcard:hover .bc-go{background:var(--encre);color:var(--papier)}}
+@media (max-width:759px){.fronton .boxcard{order:7;width:100%;margin-top:var(--sp-5)}}
+/* 8.1 and 8.2: the sections after the pickup band render, and fetch their photographs, only as they near the
+   screen (content-visibility), so the arch photograph has the first load to itself; the first click or a
+   #fragment link turns this off (inline script in the head) so jumps land exactly */
+html:not(.cv-off) #pickup ~ section { content-visibility: auto; contain-intrinsic-size: auto 1400px; }

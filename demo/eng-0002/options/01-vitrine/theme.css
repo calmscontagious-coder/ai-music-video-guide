@@ -613,3 +613,50 @@ p [lang|="fr"], li [lang|="fr"], .kicker [lang|="fr"], .tagline [lang|="fr"], td
 @media (prefers-reduced-motion: reduce) { .orderbar, .orderbar.is-yield { transition: none; } }
 /* one bag target per phone screen: the order bar carries it below 1024 px */
 @media (max-width: 1023px) { .top-actions .cartbtn { display: none; } }
+
+/* ============================================================
+   WAVE E, 25 October 2026 (director pass v2: 1.1, 2.5, 2.8, 3.2, 5.5, 8.1)
+   ============================================================ */
+/* 2.8: the hero's text column keeps one height whether Fraunces or its fallback is drawing.
+   At 520 px the H1 sets in four lines in Fraunces, Georgia, Times, Palatino, Iowan and Charter
+   (measured at 1280 to 1920), so the swap no longer moves the lead, the plates or the index. */
+@media (min-width: 960px) {
+  .hero-grid { align-items: start; }
+  .hero h1 { max-width: 520px; }
+}
+.plates img { height: auto; aspect-ratio: 1; }
+@media (min-width: 960px) { .plates img { aspect-ratio: 5 / 4; } }
+@media (max-width: 599px) { .plates img:first-child { aspect-ratio: 4 / 3; } }
+/* 3.2 and 5.4: the order bar's label and slot at the 14 px step */
+.orderbar a small, .orderbar a span { font-size: 0.875rem; }
+.orderbar a small { line-height: 1.2; }
+/* 2.5: press feedback on every control group, hover stays behind (hover: hover) */
+.btn, .add, .nudge, .chip, .rail a, .link, .textlink, [data-f], [data-box-surprise], [data-box-clear], .boxcard, .orderbar a, .orderbar button, .cartbtn, .stepper button { transition: transform 100ms var(--ease-enter); }
+.btn:active, .add:active, .nudge:active, .chip:active, .rail a:active, .link:active, .textlink:active, [data-f]:active, [data-box-surprise]:active, [data-box-clear]:active, [data-box] button:active, .boxcard:active, .orderbar a:active, .orderbar button:active, .cartbtn:active, .stepper button:active, .index a:active { transform: scale(0.98); }
+.add:disabled:active, .btn:disabled:active, [data-f]:disabled:active { transform: none; }
+@media (prefers-reduced-motion: reduce) { .btn, .add, .nudge, .chip, .rail a, .link, .textlink, [data-f], .boxcard, .orderbar a, .orderbar button { transition: none; } }
+/* 5.5: the box of six, one card inside the first one and a half phone screens */
+.boxcard { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-3) var(--sp-4); margin-top: var(--sp-6); padding: var(--sp-4); border: 1px solid var(--color-brand); border-radius: var(--radius-hair); background: var(--color-surface); color: var(--color-brand); text-decoration: none; }
+.boxcard .bc-six { display: grid; grid-template-columns: repeat(3, 14px); gap: 6px; }
+.boxcard .bc-six i { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--color-brand); }
+.boxcard .bc-six i:nth-child(2), .boxcard .bc-six i:nth-child(6) { background: var(--color-brand); }
+.boxcard .bc-t { display: grid; gap: 2px; }
+.boxcard .bc-t b { font: 600 1.1875rem/1.2 var(--font-display); font-variant-numeric: tabular-nums; }
+.boxcard .bc-t span { font-size: 0.875rem; color: var(--color-ink-quiet); }
+.boxcard .bc-go { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid var(--color-brand); border-radius: var(--radius-hair); font: 600 0.875rem/1 var(--font-text); }
+@media (min-width: 720px) { .boxcard { grid-template-columns: auto minmax(0, 1fr) auto; } .boxcard .bc-go { grid-column: auto; padding: 0 var(--sp-5); } }
+@media (hover: hover) { .boxcard:hover .bc-go { background: var(--color-brand); color: var(--color-on-brand); } }
+/* 2.8 on phones: the H1 sets in four lines in Fraunces and in every fallback (300 px, measured at 375, 390, 412),
+   and the macarons crop to 3:2 to pay for the line, so the action stays above the order bar */
+@media (max-width: 599px) {
+  .hero h1 { max-width: 300px; }
+  .plates img:first-child { aspect-ratio: 3 / 2; }
+}
+/* 5.6: the shelf rail steps up while the pickup picker passes under it (transform only) */
+.rail { transition: transform 150ms var(--ease-enter), visibility 0s; }
+.rail.is-yield { transform: translateY(-100%); visibility: hidden; transition: transform 150ms var(--ease-exit), visibility 0s 150ms; }
+@media (prefers-reduced-motion: reduce) { .rail, .rail.is-yield { transition: none; } }
+/* 8.2: shelves from the third down render, and fetch their photographs, only as they near the screen
+   (content-visibility; the reserved size matches a rail shelf, 460 to 530 px) */
+/* the first click (or a link with a #fragment on arrival) turns this off, so a jump lands on its exact target */
+html:not(.cv-off) .shelves .shelf:nth-child(n+3) { content-visibility: auto; contain-intrinsic-size: auto 480px; }

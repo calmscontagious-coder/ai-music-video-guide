@@ -294,7 +294,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="iD Éclair, this page"><img src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair, this page"><img src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair"></a>
     <nav class="nav" aria-label="Primary">
       <a href="../../menu.html">Full menu</a><a href="../../cakes.html">Cakes</a><a href="../../classes.html">Classes</a><a href="../../la-cave.html">La Cave</a><a href="../../merch.html">Merch</a><a href="../../story.html">The chef</a>
     </nav>
@@ -542,7 +542,7 @@
   <div class="wrap">
     <div class="foot">
       <div>
-        <img class="foot-logo" src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair" loading="lazy">
+        <img class="foot-logo" src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair" loading="lazy">
         <address><span><b>iD Éclair</b>, 169 W Green St, Pasadena, CA 91105</span><span><b>La Cave</b>, next door at 163 W Green St</span></address>
       </div>
       <div>
@@ -562,7 +562,7 @@
     </div>
     <p class="foot-note">Concept preview, direction 09 (Galerie), 24 October 2026. Not the live store. Prices from the shop’s menu app (21 October) and live store (22 October); pickup slots, class dates, the club and gift cards are examples.</p>
   </div>
-  <div class="gs" data-gs hidden>
+  <div class="gs" data-gs>
     <div class="gs-panel" id="gs-panel" hidden role="dialog" aria-label="Pickup time">
       <div class="pk" data-slot-picker role="group" aria-label="Pickup time, example slots">
         <div class="pk-h"><b>Pickup day and time</b><span class="ex">Example slots</span></div>
@@ -602,9 +602,8 @@
     function render() {
       var st = IDE.state(), s = IDE.slot(), n = 0, counter = 0, url = IDE.checkoutUrl();
       st.items.forEach(function (i) { n += i.qty; if (!i.variantId) counter += i.qty; });
-      gs.hidden = n === 0; document.body.classList.toggle('has-bag', n > 0);
-      if (n === 0) close(false);
-      if (seen === 0 && n > 0) { gs.classList.remove('rise'); void gs.offsetWidth; gs.classList.add('rise'); }
+      /* wave E: the strip is the phone's dock from the first screen (pickup, bag, Pay), empty or not */
+      gs.hidden = false; document.body.classList.toggle('has-bag', n > 0);
       seen = n;
       when.textContent = s.date ? s.label : 'No slot open';
       slotBtn.setAttribute('aria-label', 'Pickup ' + s.label + '. Change the pickup time');
@@ -626,6 +625,17 @@
     panel.addEventListener('click', function (e) { var t = e.target.closest('[data-time]'); if (t && t.getAttribute('aria-disabled') !== 'true') setTimeout(function () { close(true); }, 280); });
     document.addEventListener('ide:bag', render);
     render();
+    /* wave E: the strip steps aside, 96 px early, while the box add row or the pickup plate's picker would sit under it */
+    var marks = Array.prototype.slice.call(document.querySelectorAll('[data-box-add], #p-retrait [data-slot-picker]')), tk = false;
+    function yieldUpd() {
+      tk = false;
+      if (!panel.hidden || getComputedStyle(gs).display === 'none') { gs.classList.remove('is-yield'); return; }
+      var top = window.innerHeight - gs.offsetHeight - 8;
+      gs.classList.toggle('is-yield', marks.some(function (m) { var r = m.getBoundingClientRect(); return r.height > 0 && r.bottom > top - 96 && r.top < window.innerHeight + 96; }));
+    }
+    window.addEventListener('scroll', function () { if (!tk) { tk = true; requestAnimationFrame(yieldUpd); } }, { passive: true });
+    window.addEventListener('resize', yieldUpd);
+    yieldUpd();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(boot, 0); }); else setTimeout(boot, 0);
 })();

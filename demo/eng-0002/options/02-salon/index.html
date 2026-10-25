@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1f156b">
 <title>Salon de thé and pâtisserie at 169 W Green St, Old Pasadena. iD Éclair concept preview, direction 02.</title>
-<meta name="description" content="Plant-based French pâtisserie by Chef Romuald Guiot at 169 W Green St, Pasadena: order the case for a pickup time, take a $125 Tuesday masterclass seat, reserve afternoon tea, and end the evening at La Cave next door.">
+<meta name="description" content="Plant-based French pâtisserie by Chef Romuald Guiot at 169 W Green St, Pasadena: order the case for a pickup time, take a $125 Tuesday masterclass seat, request an afternoon tea sitting, and end the evening at La Cave next door.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="iD Éclair">
 <meta property="og:locale" content="en_US">
@@ -151,7 +151,7 @@
 
 <header class="masthead">
   <div class="wrap mast">
-    <a class="logo" href="index.html" aria-label="iD Éclair, top of this page"><img src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair, top of this page"><img src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot"></a>
     <nav class="nav" aria-label="Primary">
       <a href="../../menu.html">Menu</a><a href="../../cakes.html">Cakes</a><a href="../../classes.html">Classes</a><a href="../../la-cave.html">La Cave</a><a href="../../story.html">Chef Romy</a><a href="../../merch.html">Boutique</a>
     </nav>
@@ -421,36 +421,24 @@
     </div>
 
     <div class="split tea-row">
-      <form class="ask" data-concept-form novalidate data-done="Nothing is held or sent from this preview. Tea for {pick}: the salon confirms by email.">
-        <h3 class="block-h">Reserve tea for two, or four</h3>
+      <form class="ask" data-tea-request novalidate>
+        <h3 class="block-h">Request a sitting</h3>
+        <p class="block-p">Tell the salon how many are coming and the day you would like. The request goes in your bag at $0.00; the salon replies with a sitting and the price.</p>
         <fieldset>
           <legend>Guests</legend>
           <div class="picks">
-            <input type="radio" id="tg-2" name="guests" value="2" data-say="2 guests" checked><label for="tg-2">2</label>
-            <input type="radio" id="tg-3" name="guests" value="3" data-say="3 guests"><label for="tg-3">3</label>
-            <input type="radio" id="tg-4" name="guests" value="4" data-say="4 guests"><label for="tg-4">4</label>
+            <input type="radio" id="tg-2" name="guests" value="2" checked><label for="tg-2">2</label>
+            <input type="radio" id="tg-3" name="guests" value="3"><label for="tg-3">3</label>
+            <input type="radio" id="tg-4" name="guests" value="4"><label for="tg-4">4</label>
           </div>
         </fieldset>
         <fieldset>
-          <legend>Day <span class="ex">Example days</span></legend>
-          <div class="picks">
-            <input type="radio" id="td-23" name="day" value="2026-10-23" data-say="Friday 23 October"><label for="td-23">Fri 23 Oct</label>
-            <input type="radio" id="td-24" name="day" value="2026-10-24" data-say="Saturday 24 October" checked><label for="td-24">Sat 24 Oct</label>
-            <input type="radio" id="td-25" name="day" value="2026-10-25" data-say="Sunday 25 October"><label for="td-25">Sun 25 Oct</label>
-            <input type="radio" id="td-27" name="day" value="2026-10-27" data-say="Tuesday 27 October"><label for="td-27">Tue 27 Oct</label>
-          </div>
+          <legend>Day you would like</legend>
+          <div class="picks" data-tea-days><span class="fine">Turn on JavaScript to choose a day.</span></div>
         </fieldset>
-        <fieldset>
-          <legend>Sitting <span class="ex">Example times</span></legend>
-          <div class="picks">
-            <input type="radio" id="ts-1" name="sitting" value="13:00" data-say="1:00 pm"><label for="ts-1">1:00 pm</label>
-            <input type="radio" id="ts-2" name="sitting" value="14:30" data-say="2:30 pm" checked><label for="ts-2">2:30 pm</label>
-            <input type="radio" id="ts-3" name="sitting" value="16:00" data-say="4:00 pm"><label for="ts-3">4:00 pm</label>
-          </div>
-        </fieldset>
-        <button class="btn btn-brand" type="submit">Request the table</button>
-        <p class="form-out" data-concept-out role="status" aria-live="polite"></p>
-        <p class="fine">Nothing is held from this preview. The salon sets the sittings and the price, and confirms by email.</p>
+        <button class="btn btn-brand" type="submit">Request a sitting</button>
+        <p class="form-out" data-tea-out role="status" aria-live="polite"></p>
+        <p class="fine">A request, not a booking: nothing is held from this page, and no sitting is taken until the salon confirms.</p>
       </form>
       <aside class="merch-note" aria-label="From the first merchandise run">
         <img src="../../img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="Drawing of a cream mug with a dark blue rim, printed with Un thé, deux éclairs" loading="lazy">
@@ -592,7 +580,7 @@
 <footer class="colophon">
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      <img src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair" loading="lazy">
+      <img src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p>169 W Green St, Old Pasadena, CA 91105. La Cave next door at 163 W Green St.</p>
       <p class="fine">Concept preview, direction 02, Salon; not the live store.</p>
     </div>
@@ -603,11 +591,10 @@
   <button class="cartpill" type="button" data-cart-open data-cart-pill><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
 </footer>
 
-<nav class="bar" aria-label="Chapters">
+<nav class="bar" aria-label="Pickup and bag">
+  <a class="bar-pick" href="#pickup"><svg class="bp-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span><small>Pickup</small><b data-dock-when>Earliest slot</b></span></a>
   <a href="#vitrine"><b>I</b>Order</a>
-  <a href="#chef"><b>II</b>Chef</a>
   <a href="#salon"><b>III</b>Tea</a>
-  <a href="#cave"><b>IV</b>La Cave</a>
   <a href="#pickup" data-cart-open data-section="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Bag<span class="badge" data-cart-count>0</span></a>
 </nav>
 
@@ -620,7 +607,7 @@
     ticking = false;
     if (getComputedStyle(bar).display === 'none') { bar.classList.remove('is-yield'); return; }
     var top = window.innerHeight - bar.offsetHeight - 8;
-    bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.box-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top && r.top < window.innerHeight; }));
+    bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.box-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top - 96 && r.top < window.innerHeight + 96; })); /* wave E: 96 px lead */
   }
   function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
   window.addEventListener('scroll', queue, { passive: true });
@@ -650,6 +637,39 @@
       }
       if (out) out.textContent = msg;
     });
+  });
+})();
+</script>
+<script>
+/* wave E: the bar's pickup button shows the chosen slot (window.IDE, set by ../../assets/app.js) */
+(function () {
+  function upd() { var I = window.IDE; if (!I) return; var l = I.slot().label; Array.prototype.forEach.call(document.querySelectorAll('[data-dock-when]'), function (e) { e.textContent = l || 'Choose a time'; }); }
+  document.addEventListener('ide:bag', upd);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(upd, 0); }); else setTimeout(upd, 0);
+})();
+</script>
+<script>
+/* wave E (standard 6.1, ruling 3): afternoon tea is a request line in the bag, no variant and $0.00, like the
+   cake request on 11; the salon replies with a sitting. Days: the next four, Mondays left out, Pacific time. */
+(function () {
+  var f = document.querySelector('[data-tea-request]'); if (!f) return;
+  var box = f.querySelector('[data-tea-days]'), out = f.querySelector('[data-tea-out]');
+  var DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', year: 'numeric', month: 'numeric', day: 'numeric' }).formatToParts(new Date());
+  var get = function (t) { return +p.filter(function (x) { return x.type === t; })[0].value; };
+  var t0 = Date.UTC(get('year'), get('month') - 1, get('day')), days = [];
+  for (var i = 0; days.length < 4 && i < 10; i++) { var d = new Date(t0 + i * 864e5); if (d.getUTCDay() !== 1) days.push(d); }
+  box.innerHTML = days.map(function (d, k) {
+    var id = 'td-' + k, lab = (k === 0 && d.getTime() === t0 ? 'Today' : DOW[d.getUTCDay()]) + ' ' + d.getUTCDate() + ' ' + MON[d.getUTCMonth()];
+    return '<input type="radio" id="' + id + '" name="day" value="' + d.toISOString().slice(0, 10) + '" data-say="' + lab + '"' + (k === 1 ? ' checked' : '') + '><label for="' + id + '">' + lab + '</label>';
+  }).join('');
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var g = f.querySelector('input[name="guests"]:checked'), d = f.querySelector('input[name="day"]:checked');
+    if (!window.IDE || !g || !d) { out.textContent = 'Choose the guests and a day first.'; return; }
+    window.IDE.add({ handle: 'tea-request:' + d.value + '-' + g.value, title: 'Afternoon tea request, ' + g.value + ' guests, ' + d.getAttribute('data-say'), price: 0, variantId: null, glyph: 't',
+      meta: 'request, not a booking · the salon replies with a sitting and the price' }, 1);
+    out.textContent = 'In your bag as a request at $0.00, not a booking. The salon replies with a sitting for ' + g.value + ' on ' + d.getAttribute('data-say') + ', and the price.';
   });
 })();
 </script>

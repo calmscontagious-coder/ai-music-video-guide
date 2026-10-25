@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1f156b">
 <title>One day at 169 W Green St: iD Éclair, plant-based French pâtisserie in Old Pasadena. Concept 07.</title>
-<meta name="description" content="Concept 07, Frontier: an Old Pasadena pâtisserie told as one day. A concierge builds your box in three questions, pickup takes two taps, tea and class seats share the bag, and La Cave opens next door at 3.">
+<meta name="description" content="Concept 07, Frontier: an Old Pasadena pâtisserie told as one day. A concierge builds your box in three questions, pickup takes two taps, a tea request and class seats share the bag, and La Cave opens next door at 3.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="iD Éclair">
 <meta property="og:locale" content="en_US">
@@ -165,7 +165,7 @@
         { "@type": "Question", "name": "Can I order tonight and choose a pickup time for tomorrow?", "acceptedAnswer": { "@type": "Answer", "text": "Yes: pick the day, then the time. Until the new checkout opens, scheduled pickup runs on the shop’s menu app." } },
         { "@type": "Question", "name": "How far ahead should I order a custom cake?", "acceptedAnswer": { "@type": "Answer", "text": "At least a week, the shop’s own rule. For a whole menu cake or a wedding, ask the shop for its dates." } },
         { "@type": "Question", "name": "Are there macaron classes in Pasadena?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Macaron Masterclass with Chef Romy runs on Tuesdays from 3:30 to 5:30 pm at 169 W Green St, $125 a seat, and you take home 20 to 30 macarons." } },
-        { "@type": "Question", "name": "Do you serve afternoon tea?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in the salon de thé: small pastries and savory bites with Palais des Thés teas, also listed as Tea Time for Two. The planner on this page holds a table." } },
+        { "@type": "Question", "name": "Do you serve afternoon tea?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in the salon de thé: small pastries and savory bites with Palais des Thés teas, also listed as Tea Time for Two. The form on this page sends the salon a request, and the salon replies with a sitting." } },
         { "@type": "Question", "name": "What is La Cave?", "acceptedAnswer": { "@type": "Answer", "text": "The vegan wine bar next door at 163 W Green St: organic, biodynamic and vegan wines, Rebel Cheese boards and plated desserts from the pâtisserie, Wednesday to Sunday, 3 to 9 pm." } },
         { "@type": "Question", "name": "Can I send a gift to one person or a whole office?", "acceptedAnswer": { "@type": "Answer", "text": "Gift baskets ($45 and $55), truffles, jams and the four-jar discovery box ($30) are on the live store today, and the Golden Ticket ($140) turns a class into a present." } }
       ]
@@ -189,7 +189,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html"><img src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot, home"></a>
+    <a class="logo" href="index.html"><img src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot, home"></a>
     <nav class="nav" aria-label="Primary">
       <a href="../../menu.html">Menu</a><a href="../../cakes.html">Cakes</a><a href="../../classes.html">Classes</a><a href="../../la-cave.html">La Cave</a><a href="../../merch.html">Shop</a><a href="../../story.html">Chef Romy</a>
     </nav>
@@ -229,6 +229,11 @@
         <a class="btn" href="#choose">Choose my box</a>
         <a class="textlink" href="../../menu.html">Order from the full menu</a>
       </div>
+      <a class="boxcard" href="#six" data-box-card>
+        <span class="bc-six" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="bc-t"><b>A box of six macarons, $15.00</b><span>Choose all six yourself, or let the concierge pick.</span></span>
+        <span class="bc-go">Build a box of six</span>
+      </a>
       <ul class="facts" aria-label="From the shop’s own listings">
         <li><b>$6.50</b><span>chocolate or pistachio éclair, counter menu, 21 Oct 2026</span></li>
         <li><b>Tue 3:30</b><span>Macaron Masterclass, $125 a seat</span></li>
@@ -395,7 +400,7 @@
       </div>
     </div>
 
-    <div class="box" data-box data-price="15" data-title="Box of six macarons" data-image="img/macarons-2-800.jpg">
+    <div class="box" id="six" data-box data-price="15" data-title="Box of six macarons" data-image="img/macarons-2-800.jpg">
       <img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.jpg 1600w" sizes="(min-width: 900px) 40vw, 100vw" width="1600" height="1600" alt="Raspberry, pistachio, chocolate and lemon macarons lined up in an open white box" loading="lazy">
       <div class="box-copy">
         <h3>Or fill the box of six yourself.</h3>
@@ -452,7 +457,7 @@
       <div class="how">
         <h3>From the bag to Shopify</h3>
         <ol class="steps">
-          <li><p><b>One bag for the whole afternoon.</b>Éclairs, a box of six, tea for four, a class seat and a gift card share one bag and one checkout.</p></li>
+          <li><p><b>One bag for the whole afternoon.</b>Éclairs, a box of six, a tea request, a class seat and a gift card share one bag and one checkout.</p></li>
           <li><p><b>The slot travels with the order.</b>Express buttons stay off on dated items so no order skips the time, and a checkout rule refuses one that tries.</p></li>
           <li><p><b>Shopify checkout.</b>Apple Pay, Google Pay, Shop Pay or a card, as a guest or with an account.</p></li>
           <li><p><b>The price you see is the price you pay.</b>No service fee appears at the end, as California’s Honest Pricing Law requires. A tip line stays optional at checkout, as on the live store today.</p></li>
@@ -508,8 +513,8 @@
     </div>
     <div class="tea-grid">
       <div class="panel" data-tea>
-        <h3>Plan an afternoon tea</h3>
-        <p>Small pastries and savory bites with Palais des Thés teas, served in the <span lang="fr">salon de thé</span>. Choose the party, the day and a sitting.</p>
+        <h3>Request a sitting for afternoon tea</h3>
+        <p>Small pastries and savory bites with Palais des Thés teas, served in the <span lang="fr">salon de thé</span>. Choose the party and the day; the salon replies with a sitting.</p>
         <div>
           <p class="field-label" id="tea-n-l">Guests</p>
           <div class="count" role="group" aria-labelledby="tea-n-l">
@@ -519,19 +524,15 @@
           </div>
         </div>
         <div>
-          <p class="field-label" id="tea-d-l">Day</p>
+          <p class="field-label" id="tea-d-l">Day you would like</p>
           <div class="days" role="group" aria-labelledby="tea-d-l" data-tea-days><p class="note">Turn on JavaScript to see the next open days.</p></div>
         </div>
-        <div>
-          <p class="field-label" id="tea-t-l">Sitting <span class="ex">Example</span></p>
-          <div class="times" role="group" aria-labelledby="tea-t-l" data-tea-times></div>
-        </div>
-        <div class="sum-box framed" data-tea-sum><b data-tea-label>Tea for 2</b><span data-tea-est>About $80 at the reported $40 a guest</span></div>
+        <div class="sum-box framed" data-tea-sum><b data-tea-label>Tea for 2</b><span data-tea-est>A request at $0.00; the salon confirms the sitting and the price</span></div>
         <div class="rung-act">
-          <button class="btn" type="button" data-tea-add>Add the table to the bag</button>
+          <button class="btn" type="button" data-tea-add>Request a sitting</button>
           <a class="textlink" href="#choose" data-cg-preset="tea">Tea at home instead</a>
         </div>
-        <p class="note">$40 a guest is the price a Yelp review on Apple Maps reported (read 21 October 2026); the salon confirms the price when it confirms your table.</p>
+        <p class="note" data-tea-note>A request, not a booking: nothing is held from this page, and no sitting is taken until the salon confirms. A guest’s review reported $40 a guest.</p>
       </div>
 
       <div class="panel bench">
@@ -629,7 +630,7 @@
         </fieldset>
         <div class="field"><label for="gc-to">For (optional)</label><input id="gc-to" type="text" maxlength="40" autocomplete="off"></div>
         <div class="voucher" aria-hidden="true">
-          <img src="../../img/logo-wordmark-ivory.png" width="904" height="658" alt="" role="presentation">
+          <img src="../../img/logo-wordmark-ivory.png" width="904" height="658" alt="" role="presentation" loading="lazy">
           <div><b data-v-amt>$50</b><span><span lang="fr">Carte cadeau</span> · <span data-v-to>for someone sweet</span></span></div>
         </div>
         <div class="rung-act"><button class="btn" type="button" data-v-add>Add the gift card, $50</button></div>
@@ -748,7 +749,7 @@
       <li><h3>Can I order tonight and choose a pickup time for tomorrow?</h3><p>Yes: pick the day, then the time. Until the new checkout opens, scheduled pickup runs on the shop’s menu app.</p></li>
       <li><h3>How far ahead should I order a custom cake?</h3><p>At least a week, the shop’s own rule. For a whole menu cake or a wedding, ask the shop for its dates.</p></li>
       <li><h3>Are there macaron classes in Pasadena?</h3><p>Yes. The Macaron Masterclass with Chef Romy runs on Tuesdays from 3:30 to 5:30 pm at 169 W Green St, $125 a seat, and you take home 20 to 30 macarons.</p></li>
-      <li><h3>Do you serve afternoon tea?</h3><p>Yes, in the <span lang="fr">salon de thé</span>: small pastries and savory bites with Palais des Thés teas, also listed as Tea Time for Two. The planner on this page holds a table.</p></li>
+      <li><h3>Do you serve afternoon tea?</h3><p>Yes, in the <span lang="fr">salon de thé</span>: small pastries and savory bites with Palais des Thés teas, also listed as Tea Time for Two. The form on this page sends the salon a request, and the salon replies with a sitting.</p></li>
       <li><h3>What is La Cave?</h3><p>The vegan wine bar next door at 163 W Green St: organic, biodynamic and vegan wines, Rebel Cheese boards and plated desserts from the pâtisserie, Wednesday to Sunday, 3 to 9 pm.</p></li>
       <li><h3>Can I send a gift to one person or a whole office?</h3><p>Gift baskets ($45 and $55), truffles, jams and the four-jar discovery box ($30) are on the live store today, and the Golden Ticket ($140) turns a class into a present.</p></li>
     </ul>
@@ -760,7 +761,7 @@
 <footer>
   <div class="wrap">
     <div class="foot-about">
-      <img class="foot-logo" src="../../img/logo-wordmark-ivory.png" width="904" height="658" alt="iD Éclair">
+      <img class="foot-logo" src="../../img/logo-wordmark-ivory.png" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p><strong>iD Éclair</strong>, <span lang="fr">pâtisserie française</span> and <span lang="fr">salon de thé</span>. 169 W Green St, Pasadena, CA 91105.</p>
       <p><strong>La Cave</strong>, vegan wine bar. 163 W Green St, Wednesday to Sunday, 3 to 9 pm.</p>
     </div>
@@ -773,12 +774,11 @@
   <button class="cartpill" type="button" data-cart-open data-cart-pill><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
 </footer>
 
-<nav class="bar" aria-label="Chapters, phone">
-  <a href="#vitrine"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10h18M3 15h18"/></svg>Vitrine</a>
+<nav class="bar" aria-label="Pickup and bag">
+  <a class="bar-pick" href="#pickup"><svg class="bp-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span><small>Pickup</small><b data-dock-when>Earliest slot</b></span></a>
   <a href="#choose"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 11h18M8 7V5a4 4 0 0 1 8 0v2"/></svg>Choose</a>
-  <a href="#pickup" data-cart-open data-section="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Bag<span class="badge" data-cart-count>0</span></a>
   <a href="#tea"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H16M8 3v3M12 3v3"/></svg>Tea</a>
-  <a href="#cave"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l-.5 6a3.5 3.5 0 0 1-7 0z"/><path d="M12 12.5V20M8.5 20h7"/></svg>La Cave</a>
+  <a href="#pickup" data-cart-open data-section="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Bag<span class="badge" data-cart-count>0</span></a>
 </nav>
 
 <script>
@@ -968,14 +968,13 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ---------- afternoon tea planner ---------- */
-  var tp = $('[data-tea]'), T = { n: 2, day: null, time: null }, TIMES = ['12:30', '1:30', '2:30', '3:30'];
+  var tp = $('[data-tea]'), T = { n: 2, day: null }; /* wave E: a request for a day, no sitting times on the page */
   function teaDays() {
     var outD = [];
     for (var i = 0; outD.length < 4 && i < 12; i++) {
       var d = dayAt(i); if (d.getUTCDay() === 1) continue;
-      var times = TIMES.map(function (t) { return { t: t, ok: i > 0 || mins(t) >= NOW.min + 60 }; });
-      if (!times.some(function (x) { return x.ok; })) continue;
-      outD.push({ d: d, k: iso(d), i: i, times: times });
+      if (i === 0 && NOW.min > 15 * 60) continue;
+      outD.push({ d: d, k: iso(d), i: i });
     }
     return outD;
   }
@@ -984,32 +983,27 @@ document.addEventListener('DOMContentLoaded', function () {
   function paintTea() {
     if (!tp || !TD.length) return;
     var day = TD.filter(function (x) { return x.k === T.day; })[0] || TD[0]; T.day = day.k;
-    if (!day.times.some(function (x) { return x.ok && x.t === T.time; })) T.time = (day.times.filter(function (x) { return x.ok && x.t === '2:30'; })[0] || day.times.filter(function (x) { return x.ok; })[0]).t;
     $('[data-tea-days]', tp).innerHTML = TD.map(function (x) {
       return '<button class="chip" type="button" data-tday="' + x.k + '" aria-pressed="' + (x.k === T.day) + '"><b>' + (x.i === 0 ? 'Today' : DOW[x.d.getUTCDay()]) + '</b>' + x.d.getUTCDate() + ' ' + MON[x.d.getUTCMonth()] + '</button>';
     }).join('');
-    $('[data-tea-times]', tp).innerHTML = day.times.map(function (x) {
-      return '<button class="chip" type="button" data-ttime="' + x.t + '" aria-pressed="' + (x.t === T.time) + '"' + (x.ok ? '' : ' aria-disabled="true"') + ' aria-label="' + x.t + ' pm' + (x.ok ? '' : ', past') + '">' + x.t + '</button>';
-    }).join('');
     $('[data-tea-n]', tp).textContent = T.n;
     $('[data-tea-step="-1"]', tp).disabled = T.n <= 1; $('[data-tea-step="1"]', tp).disabled = T.n >= 8;
-    var lab = (day.i === 0 ? 'today' : short(day.d)) + ', ' + T.time + ' pm';
+    var lab = day.i === 0 ? 'today' : short(day.d);
     $('[data-tea-label]', tp).textContent = 'Tea for ' + T.n + ', ' + lab;
-    $('[data-tea-est]', tp).textContent = 'About ' + money(40 * T.n) + ' at the reported $40 a guest' + (T.n === 8 ? '; for more than eight, ask the salon' : '');
-    $('[data-tea-add]', tp).textContent = 'Add the table to the bag, ' + money(40 * T.n);
+    $('[data-tea-est]', tp).textContent = 'A request at $0.00; the salon confirms the sitting and the price' + (T.n === 8 ? '. For more than eight, ask the salon' : '');
+    $('[data-tea-add]', tp).textContent = 'Request a sitting';
     $('[data-tea-sum]', tp).classList.add('is-ready');
   }
   if (tp) {
     tp.addEventListener('click', function (e) {
       var b = e.target.closest('button'); if (!b || !tp.contains(b)) return;
       if (b.hasAttribute('data-tday')) { T.day = b.getAttribute('data-tday'); paintTea(); var f = $('[data-tday="' + T.day + '"]', tp); if (f) f.focus(); }
-      else if (b.hasAttribute('data-ttime')) { if (b.getAttribute('aria-disabled') === 'true') return; T.time = b.getAttribute('data-ttime'); paintTea(); var g = $('[data-ttime="' + T.time + '"]', tp); if (g) g.focus(); }
       else if (b.hasAttribute('data-tea-step')) { setTeaN(T.n + (+b.getAttribute('data-tea-step'))); }
       else if (b.hasAttribute('data-tea-add') && IDE) {
         var day = TD.filter(function (x) { return x.k === T.day; })[0];
-        IDE.add({ handle: 'afternoon-tea-' + T.day + '-' + T.time.replace(':', ''), title: 'Afternoon tea, ' + (day.i === 0 ? 'today' : short(day.d)) + ', ' + T.time + ' pm', price: 40, glyph: 'T',
-          meta: 'Salon de thé, per guest. Example booking at the $40 a guest reported in a review; the salon confirms.' }, T.n);
-        b.textContent = 'Table in your bag'; setTimeout(paintTea, 1400);
+        IDE.add({ handle: 'tea-request:' + T.day + '-' + T.n, title: 'Afternoon tea request, ' + T.n + (T.n === 1 ? ' guest, ' : ' guests, ') + (day.i === 0 ? 'today' : short(day.d)), price: 0, variantId: null, glyph: 'T',
+          meta: 'request, not a booking · the salon replies with a sitting and the price' }, 1);
+        b.textContent = 'Request in your bag'; setTimeout(paintTea, 1400);
       }
     });
     paintTea();
@@ -1176,11 +1170,19 @@ document.addEventListener('DOMContentLoaded', function () {
     io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) on.add(e.target); else on.delete(e.target); });
       bar.classList.toggle('aside', on.size > 0);
-    }, { rootMargin: '-' + Math.max(0, window.innerHeight - band) + 'px 0px 0px 0px' });
-    Array.prototype.forEach.call(document.querySelectorAll('[data-box-add], [data-slot-picker]'), function (el) { io.observe(el); });
+    }, { rootMargin: '-' + Math.max(0, window.innerHeight - band - 96) + 'px 0px 96px 0px' }); /* wave E: 96 px lead */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-box-add], [data-slot-picker], #pickup .mirror'), function (el) { io.observe(el); });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
   window.addEventListener('resize', build);
+})();
+</script>
+<script>
+/* wave E: the bar's pickup button shows the chosen slot (window.IDE, set by ../../assets/app.js) */
+(function () {
+  function upd() { var I = window.IDE; if (!I) return; var l = I.slot().label; Array.prototype.forEach.call(document.querySelectorAll('[data-dock-when]'), function (e) { e.textContent = l || 'Choose a time'; }); }
+  document.addEventListener('ide:bag', upd);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(upd, 0); }); else setTimeout(upd, 0);
 })();
 </script>
 </body>

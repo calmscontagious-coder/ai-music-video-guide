@@ -605,3 +605,25 @@ html{scroll-padding-bottom:calc(var(--dock-h) + 32px)}
 .dock-slot small{font-size:.75rem}
 .credits dd{font-size:var(--t-body)}
 dd > a{display:inline-block;min-height:24px}
+
+/* ============================================================
+   WAVE E, 25 October 2026 (director pass v2: 3.2, 5.5)
+   ============================================================ */
+/* 3.2: three sizes on the first phone screen (14, 19, 36): buttons, text links and the dock at the 14 px step */
+.btn, .textlink { font-size: .875rem; }
+.dock-slot, .dock-slot small { font-size: .875rem; }
+@media (max-width: 899px) { .dock-slot { font-size: .875rem; line-height: 1.2; } }
+/* 5.5: the box of six, one card inside the first one and a half phone screens */
+.boxcard { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px 16px; margin-top: 24px; padding: 16px; border: 1px solid var(--c-gold); border-radius: var(--radius-hair); color: var(--c-ivory); text-decoration: none; }
+.boxcard .bc-six { display: grid; grid-template-columns: repeat(3, 14px); gap: 6px; }
+.boxcard .bc-six i { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--c-gold); }
+.boxcard .bc-six i:nth-child(2), .boxcard .bc-six i:nth-child(6) { background: var(--c-gold); }
+.boxcard .bc-t { display: grid; gap: 2px; }
+.boxcard .bc-t b { font: 500 1.1875rem/1.2 var(--font-display); font-variant-numeric: tabular-nums; }
+.boxcard .bc-t span { font: 400 .875rem/1.4 var(--font-text); color: var(--c-ivory-dim); }
+.boxcard .bc-go { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid var(--c-ivory); border-radius: var(--radius-hair); font: 500 .875rem/1 var(--font-ui); }
+.boxcard { transition: transform var(--dur-tap) var(--ease-enter); }
+.boxcard:active { transform: scale(.98); }
+@media (min-width: 720px) { .boxcard { grid-template-columns: auto minmax(0, 1fr) auto; } .boxcard .bc-go { grid-column: auto; padding: 0 20px; } }
+@media (hover: hover) { .boxcard:hover .bc-go { background: var(--c-ivory); color: var(--c-indigo); } }
+@media (max-width: 899px) { .hero .boxcard { order: 3; margin-top: 0; } }

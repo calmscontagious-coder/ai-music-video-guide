@@ -676,7 +676,7 @@
 <header class="top">
   <div class="wrap">
     <div class="top-row">
-      <a class="logo" href="index.html" aria-label="iD Éclair, home"><img src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot"></a>
+      <a class="logo" href="index.html" aria-label="iD Éclair, home"><img src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot"></a>
       <nav class="nav" aria-label="Primary">
         <a href="../../menu.html">Menu</a><a href="../../cakes.html">Cakes</a><a href="../../classes.html">Classes</a><a href="../../merch.html">Shop</a><a href="../../la-cave.html">La Cave</a><a href="../../story.html">Chef Romy</a>
       </nav>
@@ -1262,7 +1262,7 @@
       <p class="fine">Example. Gift cards go on sale on the current store first, before the new site launches. Nothing here is sent or charged.</p>
     </div>
     <div class="note-preview" aria-live="polite" aria-label="Gift card preview">
-      <img class="np-logo" src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <img class="np-logo" src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p class="np-to">For <b data-np-to>their name</b></p>
       <p class="np-amt" data-np-amt>$50</p>
       <p class="np-msg" data-np-msg lang="fr">Pour toi, un éclair par jour.</p>
@@ -1359,7 +1359,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="addr">
-        <img class="foot-logo" src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+        <img class="foot-logo" src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair" loading="lazy">
         <p><b>iD Éclair, pâtisserie and <span lang="fr">salon de thé</span></b>169 W Green St, Pasadena, CA 91105. Hours are being confirmed, since the public listings disagree.</p>
         <p><b>La Cave, vegan wine bar</b>163 W Green St, next door. Wednesday to Sunday, 3 to 9 pm, as published.</p>
       </div>
@@ -1372,12 +1372,11 @@
   <button class="cartpill" type="button" data-cart-open data-cart-pill><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
 </footer>
 
-<nav class="bar" aria-label="Sections">
+<nav class="bar" aria-label="Pickup and bag">
+  <a class="bar-pick" href="#pickup"><svg class="bp-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span><small>Pickup</small><b data-dock-when>Earliest slot</b></span></a>
   <a href="#box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M3 11h18M8 7V5a4 4 0 0 1 8 0v2"/></svg>Box</a>
   <a href="#menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Counter</a>
   <a href="#pickup" data-cart-open data-section="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Bag<span class="badge" data-cart-count>0</span></a>
-  <a href="#cakes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M5 20v-6a7 7 0 0 1 14 0v6M12 7V4M9 10c1 1 2 1 3 0s2-1 3 0"/></svg>Cakes</a>
-  <a href="#classes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Classes</a>
 </nav>
 
 <script>
@@ -1389,7 +1388,7 @@
     ticking = false;
     if (getComputedStyle(bar).display === 'none') { bar.classList.remove('is-yield'); return; }
     var top = window.innerHeight - bar.offsetHeight - 8;
-    bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.boite-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top && r.top < window.innerHeight; }));
+    bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.boite-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top - 96 && r.top < window.innerHeight; })); /* wave E: 96 px lead above; none below, so the bar shows on the first screen over the box builder's fold */
   }
   function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
   window.addEventListener('scroll', queue, { passive: true });
@@ -1468,6 +1467,14 @@
     try { localStorage.setItem('ide.marche.carnet', JSON.stringify({ at: Date.now(), news: $('#cn-news').checked, order: $('#cn-order').checked, promo: $('#cn-promo').checked, loyalty: $('#cn-loyal').checked })); } catch (err) { /* private mode */ }
     status.innerHTML = '<span lang="fr">Merci.</span> You’re in the carnet on this device; nothing was sent.';
   });
+})();
+</script>
+<script>
+/* wave E: the bar's pickup button shows the chosen slot (window.IDE, set by ../../assets/app.js) */
+(function () {
+  function upd() { var I = window.IDE; if (!I) return; var l = I.slot().label; Array.prototype.forEach.call(document.querySelectorAll('[data-dock-when]'), function (e) { e.textContent = l || 'Choose a time'; }); }
+  document.addEventListener('ide:bag', upd);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(upd, 0); }); else setTimeout(upd, 0);
 })();
 </script>
 </body>

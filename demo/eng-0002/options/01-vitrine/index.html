@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>/* wave E: a link with a #fragment renders every shelf first, so the jump lands exactly */ if (location.hash) document.documentElement.classList.add('cv-off'); document.addEventListener('click', function () { document.documentElement.classList.add('cv-off'); }, { capture: true, once: true });</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#faf7f2">
@@ -1195,7 +1196,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="iD Éclair, home"><img src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair, home"><img src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot"></a>
     <span class="tagline"><span lang="fr">Pâtisserie française</span>, <span lang="fr">salon de thé</span>, Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="../../menu.html">Menu</a><a href="#box">Macarons</a><a href="../../cakes.html">Cakes</a><a href="../../classes.html">Classes</a><a href="../../la-cave.html">La Cave</a><a href="../../merch.html">Shop</a><a href="../../story.html">Chef Romy</a>
@@ -1222,14 +1223,20 @@
         </div>
       </div>
       <figure class="plates" data-grid-break>
-        <img src="../../img/macarons-1-800.jpg" srcset="../../img/macarons-1-800.jpg 800w, ../../img/macarons-1.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Six macarons on a blue glazed plate, seen from above" fetchpriority="high">
-        <img src="../../img/caneles-1-800.jpg" srcset="../../img/caneles-1-800.jpg 800w, ../../img/caneles-1.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Three cannelés on the same blue plate">
-        <img src="../../img/dark-chocolate-truffles-800.jpg" srcset="../../img/dark-chocolate-truffles-800.jpg 800w, ../../img/dark-chocolate-truffles.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Cocoa-dusted dark chocolate truffles on a blue plate">
-        <img src="../../img/chocolate-fingers-sables-poches-800.jpg" srcset="../../img/chocolate-fingers-sables-poches-800.jpg 800w, ../../img/chocolate-fingers-sables-poches.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Piped chocolate sablé fingers on a blue plate">
+        <img src="../../img/macarons-1-750.webp" width="750" height="750" alt="Six macarons on a blue glazed plate, seen from above" fetchpriority="high">
+        <img src="../../img/caneles-1-800.jpg" srcset="../../img/caneles-1-800.jpg 800w, ../../img/caneles-1.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Three cannelés on the same blue plate" loading="lazy">
+        <img src="../../img/dark-chocolate-truffles-800.jpg" srcset="../../img/dark-chocolate-truffles-800.jpg 800w, ../../img/dark-chocolate-truffles.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Cocoa-dusted dark chocolate truffles on a blue plate" loading="lazy">
+        <img src="../../img/chocolate-fingers-sables-poches-800.jpg" srcset="../../img/chocolate-fingers-sables-poches-800.jpg 800w, ../../img/chocolate-fingers-sables-poches.jpg 1600w" sizes="(min-width:960px) 25vw, 50vw" width="800" height="800" alt="Piped chocolate sablé fingers on a blue plate" loading="lazy">
         <figcaption>One frame for the whole case: square, white marble, the house blue plates.</figcaption>
         <p class="next"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></p>
       </figure>
     </div>
+
+    <a class="boxcard" href="#box" data-box-card>
+      <span class="bc-six" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="bc-t"><b>A box of six macarons, $15.00</b><span>Choose six flavours, or let the counter mix them.</span></span>
+      <span class="bc-go">Build a box of six</span>
+    </a>
 
     <nav class="index" aria-label="Everything the shop makes">
       <a href="#d-eclair"><b>Éclairs</b><span>5 kinds, from $5.50</span></a>
@@ -1277,7 +1284,7 @@
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">viennoiserie</small><b lang="fr">Suisse</b></div><h4 lang="fr">Pain suisse</h4><p>From the morning bake</p><div class="row"><span class="price">$5.50</span><button class="add" type="button" data-add data-handle="suisse" data-title="Suisse" data-price="5.5" data-glyph="s" aria-label="Add Suisse, $5.50">Add</button></div></article></li>
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">du jour</small><b lang="fr">Cruffin</b></div><h4 lang="fr">Cruffin du jour</h4><p>Croissant dough baked as a muffin, flavour of the day</p><div class="row"><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="cruffin-du-jour" data-title="Cruffin du jour" data-price="9.0" data-glyph="c" aria-label="Add Cruffin du jour, $9.00">Add</button></div></article></li>
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">à l’unité</small><b lang="fr">Cannelé</b></div><h4 lang="fr">Cannelé</h4><p>One cannelé: caramelised crust, soft centre</p><div class="row"><span class="price">$3.25</span><button class="add" type="button" data-add data-handle="canele" data-title="Cannelé" data-price="3.25" data-glyph="c" aria-label="Add Cannelé, $3.25">Add</button></div></article></li>
-<li><article class="tile"><span class="live">Live store</span><div class="frame"><img src="../../img/caneles-1-800.jpg" width="800" height="800" alt="Three cannelés on a blue glazed plate" loading="lazy"></div><h4 lang="fr">Cannelés, par trois</h4><p>Three on a plate, as the store sells them</p><div class="row"><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="caneles" data-title="Cannelés, by 3" data-price="9.0" data-variant="42881176993980" data-glyph="c" aria-label="Add Cannelés, by 3, $9.00">Add</button></div></article></li>
+<li><article class="tile"><span class="live">Live store</span><div class="frame"><img src="../../img/caneles-1-750.webp" width="750" height="750" alt="Three cannelés on a blue glazed plate" loading="lazy"></div><h4 lang="fr">Cannelés, par trois</h4><p>Three on a plate, as the store sells them</p><div class="row"><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="caneles" data-title="Cannelés, by 3" data-price="9.0" data-variant="42881176993980" data-glyph="c" aria-label="Add Cannelés, by 3, $9.00">Add</button></div></article></li>
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">feuilletage</small><b lang="fr">Mille-feuille</b></div><h4 lang="fr">Mille-feuille</h4><p>Feathered icing, set on a gold board</p><div class="row"><span class="price">$6.75</span><button class="add" type="button" data-add data-handle="mille-feuille" data-title="Mille-feuille" data-price="6.75" data-glyph="m" aria-label="Add Mille-feuille, $6.75">Add</button></div></article></li>
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">tarte</small><b lang="fr">Fruits</b></div><h4 lang="fr">Tarte aux fruits</h4><p>Fresh fruit tart</p><div class="row"><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="fruit-tart" data-title="Fruit tart" data-price="6.5" data-glyph="t" aria-label="Add Fruit tart, $6.50">Add</button></div></article></li>
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">entremets</small><b lang="fr">Mousse</b></div><h4 lang="fr">Entremets</h4><p>Individual mousse cake</p><div class="row"><span class="price">$15.00</span><button class="add" type="button" data-add data-handle="mousse-cake" data-title="Mousse cake" data-price="15.0" data-glyph="M" aria-label="Add Mousse cake, $15.00">Add</button></div></article></li>
@@ -1287,7 +1294,7 @@
 <div class="shelf-head"><div><h3 id="s-macaron"><span lang="fr">Macarons et verrines</span></h3><p>Macarons and jars · 10, from $3</p></div>
 <div class="nudges"><button class="nudge" type="button" data-nudge="-1" aria-controls="t-macaron" aria-label="Scroll macarons and jars back"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button><button class="nudge" type="button" data-nudge="1" aria-controls="t-macaron" aria-label="Scroll macarons and jars forward"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button></div></div>
 <ul class="tiles" id="t-macaron" data-rail aria-labelledby="s-macaron">
-<li><article class="tile"><div class="frame"><img src="../../img/macarons-1-800.jpg" width="800" height="800" alt="Six macarons in green, yellow, red and lavender on a blue plate" loading="lazy"></div><h4 lang="fr">Macaron</h4><p>One, or six for $15</p><div class="row"><span class="price">$3.00</span><button class="add" type="button" data-add data-handle="macaron" data-title="Macaron" data-price="3.0" data-glyph="m" aria-label="Add Macaron, $3.00">Add</button></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/macarons-1-750.webp" width="750" height="750" alt="Six macarons in green, yellow, red and lavender on a blue plate" loading="lazy"></div><h4 lang="fr">Macaron</h4><p>One, or six for $15</p><div class="row"><span class="price">$3.00</span><button class="add" type="button" data-add data-handle="macaron" data-title="Macaron" data-price="3.0" data-glyph="m" aria-label="Add Macaron, $3.00">Add</button></div></article></li>
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">coffret</small><b lang="fr">Six</b></div><h4 lang="fr">Coffret de six</h4><p>You choose the six, flavour by flavour</p><div class="row"><span class="price">$15.00</span><a class="add" href="#box">Build it</a></div></article></li>
 <li><article class="tile"><span class="live">Live store</span><div class="frame"><img src="../../img/macarons-2-800.jpg" width="800" height="800" alt="A row of macarons in a white iD Éclair box" loading="lazy"></div><h4 lang="fr">Coffret assorti</h4><p>Raspberry, pistachio, chocolate, coffee, coconut</p><div class="row"><span class="price">$18.00</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18.0" data-variant="42881210810556" data-glyph="m" aria-label="Add Assorted macaron box, $18.00">Add</button></div></article></li>
 <li><article class="tile"><span class="live">Live store</span><div class="frame"><img src="../../img/chocolat-mon-amour-800.jpg" width="800" height="800" alt="Chocolat mon amour in its glass jar with a biscuit spoon" loading="lazy"></div><h4 lang="fr">Chocolat mon amour</h4><p>Chocolate crumble, ganache and mousse</p><div class="row"><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="chocolat-mon-amour" data-title="Chocolat mon amour" data-price="8.0" data-variant="41826123317436" data-glyph="C" aria-label="Add Chocolat mon amour, $8.00">Add</button></div></article></li>
@@ -1562,7 +1569,7 @@
             <input type="radio" name="gc" id="gc-100" value="100"><label for="gc-100">$100</label>
             <input type="radio" name="gc" id="gc-150" value="150"><label for="gc-150">$150</label>
             <div class="face" aria-live="polite">
-              <img src="../../img/logo-wordmark-ivory.png" width="904" height="658" alt="iD Éclair">
+              <img src="../../img/logo-wordmark-ivory.png" width="904" height="658" alt="iD Éclair" loading="lazy">
               <p class="amt"><span class="a25">$25</span><span class="a50">$50</span><span class="a100">$100</span><span class="a150">$150</span></p>
               <small>Never expires. Balance and QR code in Apple Wallet.</small>
             </div>
@@ -1670,7 +1677,7 @@
   <div class="wrap">
     <div class="foot">
       <div>
-        <img class="foot-logo" src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+        <img class="foot-logo" src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair" loading="lazy">
         <address>iD Éclair, 169 W Green St, Old Pasadena, CA 91105<br>La Cave, next door at 163 W Green St</address>
       </div>
       <div><h2>Order</h2><ul><li><a href="../../menu.html">Menu and pickup</a></li><li><a href="#box">Box of six</a></li><li><a href="../../cakes.html">Cakes</a></li><li><a href="../../menu.html#ships">Gifts that ship</a></li></ul></div>
@@ -1697,11 +1704,15 @@
   (function () {
     var bar = document.querySelector('.orderbar'); if (!bar) return;
     var marks = all('[data-box-add], #pickup'), ticking = false;
+    var rail = document.querySelector('.vitrine > .rail'), pick = document.querySelector('#pickup [data-slot-picker]');
     function update() {
       ticking = false;
       if (getComputedStyle(bar).display === 'none') { bar.classList.remove('is-yield'); return; }
       var top = window.innerHeight - bar.offsetHeight - 8;
-      bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.box-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top && r.top < window.innerHeight; }));
+      /* wave E: a lead (96 px above, 200 px below), so the bar has left before the control reaches it */
+      bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.box-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top - 96 && r.top < window.innerHeight + 200; }));
+      /* wave E: the shelf rail steps up while the pickup picker passes under it */
+      if (rail && pick) { var q = pick.getBoundingClientRect(); rail.classList.toggle('is-yield', q.height > 0 && q.top < rail.offsetHeight + 160 && q.bottom > 0); }
     }
     function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
     window.addEventListener('scroll', queue, { passive: true });
@@ -1728,6 +1739,8 @@
     });
     rail.addEventListener('scroll', sync, { passive: true });
     window.addEventListener('resize', sync);
+    /* wave E: lower shelves render late (content-visibility), so measure the rail again when its shelf comes into view */
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { if (es[0].isIntersecting) sync(); }).observe(shelf);
     sync();
   });
 

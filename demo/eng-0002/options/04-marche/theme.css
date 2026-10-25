@@ -731,3 +731,18 @@ html { scroll-padding-bottom: 80px; }
 .nextchip small { font-size: .875rem; }
 .flavours span { font-size: 1.1875rem; }
 .press a { min-height: 44px; }
+
+/* ============================================================
+   WAVE E, 25 October 2026 (director pass v2: 5.4, 5.6)
+   The bottom bar becomes a dock: the pickup button (the chosen slot, a jump to the picker),
+   two section links and the bag. It still steps aside, now 96 px early, over the box add
+   row and the pickup card. Labels at the 14 px step.
+   ============================================================ */
+.bar { grid-template-columns: minmax(0, 2.2fr) repeat(3, minmax(0, 1fr)); }
+.bar a.bar-pick { display: flex; justify-items: start; justify-content: flex-start; align-items: center; gap: 8px; min-width: 0; min-height: 56px; padding: 0 10px 0 14px; text-align: left; text-transform: none; letter-spacing: 0; color: var(--ink); }
+.bar a.bar-pick::after, .bar a.bar-pick::before { content: none; }
+.bar a.bar-pick .bp-ico { flex: none; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.bar a.bar-pick span { display: grid; gap: 2px; min-width: 0; }
+.bar a.bar-pick small { font: 600 0.875rem/1.15 var(--font-text); color: var(--ink-2); letter-spacing: 0; text-transform: none; }
+.bar a.bar-pick b { font: 700 0.875rem/1.15 var(--font-text); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-pick:active { transform: scale(0.98); }

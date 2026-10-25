@@ -492,3 +492,20 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px
    buttons: no ring, a sunken ivory, the number quiet. A filled slot keeps
    its flavour colour and removes on tap. */
 .box-ui .boxslots button:disabled { border: 0; background: var(--canvas-2); box-shadow: inset 0 1px 3px rgba(23, 16, 79, .14); color: var(--muted); font-weight: 500; cursor: default; }
+
+/* ============================================================
+   WAVE E, 25 October 2026 (director pass v2: 5.4, 5.6, 3.2)
+   The strip (pickup, bag, Pay) is the phone's dock from the first screen; above 900 px it still waits
+   for the first item. It steps aside (transform only) over the box add row and the pickup picker.
+   Labels at the 14 px step.
+   ============================================================ */
+@media (max-width: 899px) { body { padding-bottom: 96px; } }
+@media (min-width: 900px) { body:not(.has-bag) .gs { display: none; } }
+.gs { transition: transform 150ms var(--ease-enter), visibility 0s; }
+.gs.is-yield { transform: translateY(calc(100% + 16px)); visibility: hidden; transition: transform 150ms var(--ease-enter), visibility 0s 150ms; }
+@media (prefers-reduced-motion: reduce) { .gs, .gs.is-yield { transition: none; } }
+.gs-slot small, .gs-slot b, .gs-pay { font-size: 0.875rem; }
+.gs-slot:active, .gs-bag:active, .gs-pay:active { transform: scale(0.98); }
+/* 2.8: the italic run in the H1 adds no height of its own, so the line boxes keep their size while the
+   italic face arrives after the roman (desktop shift 0.059 in the v2 pass) */
+.front h1 em { line-height: 0; }

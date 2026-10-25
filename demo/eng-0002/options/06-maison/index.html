@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>/* wave E: a link with a #fragment, or the first click, renders every deferred section first, so a jump lands exactly */ if (location.hash) document.documentElement.classList.add('cv-off'); document.addEventListener('click', function () { document.documentElement.classList.add('cv-off'); }, { capture: true, once: true });</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>iD Éclair, plant-based French pâtisserie on West Green Street · Maison concept</title>
@@ -545,7 +546,7 @@
       <a class="mast-addr" href="#visit">169 W Green St · Old Pasadena</a>
       <a class="mast-order" href="#menu">Order</a>
     </div>
-    <a class="mast-logo" href="#top" aria-label="iD Éclair, back to the top"><img src="../../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot"></a>
+    <a class="mast-logo" href="#top" aria-label="iD Éclair, back to the top"><img src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot"></a>
     <div class="mast-side mast-side--end">
       <a class="cartbtn" href="#pickup" data-cart-open aria-label="Your bag, 0 items"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span>Bag</span><span class="badge" data-cart-count>0</span></a>
     </div>
@@ -573,18 +574,23 @@
     <p class="slotline"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></p>
     <div class="vitrine">
       <figure class="niche niche--side">
-        <div class="niche-frame"><div class="arch"><img src="../../img/chocolat-mon-amour-800.jpg" srcset="../../img/chocolat-mon-amour-800.jpg 800w, ../../img/chocolat-mon-amour.jpg 1600w" sizes="(min-width:760px) 220px, 26vw" width="1600" height="1600" alt="Chocolat mon amour, a jar of chocolate crumble, ganache and mousse with a biscuit spoon" fetchpriority="high" decoding="async"></div></div>
+        <div class="niche-frame"><div class="arch"><img src="../../img/chocolat-mon-amour-800.jpg" srcset="../../img/chocolat-mon-amour-800.jpg 800w, ../../img/chocolat-mon-amour.jpg 1600w" sizes="(min-width:760px) 220px, 26vw" width="1600" height="1600" alt="Chocolat mon amour, a jar of chocolate crumble, ganache and mousse with a biscuit spoon" loading="lazy" decoding="async"></div></div>
         <figcaption><span lang="fr">Chocolat mon amour</span><b>$8</b></figcaption>
       </figure>
       <figure class="niche niche--center">
-        <div class="niche-frame"><div class="arch"><img src="../../img/macarons-1-800.jpg" srcset="../../img/macarons-1-800.jpg 800w, ../../img/macarons-1.jpg 1600w" sizes="(min-width:760px) 320px, 38vw" width="1600" height="1600" alt="Six macarons, raspberry, pistachio, lemon and violet among them, on one of the shop’s blue glazed plates" fetchpriority="high" decoding="async"></div></div>
+        <div class="niche-frame"><div class="arch"><img src="../../img/macarons-1-750.webp" width="750" height="750" alt="Six macarons, raspberry, pistachio, lemon and violet among them, on one of the shop’s blue glazed plates" fetchpriority="high"></div></div>
         <figcaption><span>Macarons</span><b>6 for $15</b></figcaption>
       </figure>
       <figure class="niche niche--side">
-        <div class="niche-frame"><div class="arch"><img src="../../img/citron-ma-passion-800.jpg" srcset="../../img/citron-ma-passion-800.jpg 800w, ../../img/citron-ma-passion.jpg 1600w" sizes="(min-width:760px) 220px, 26vw" width="1600" height="1600" alt="Citron ma passion, a jar of lemon curd, meringue and almond streusel with a biscuit spoon" fetchpriority="high" decoding="async"></div></div>
+        <div class="niche-frame"><div class="arch"><img src="../../img/citron-ma-passion-800.jpg" srcset="../../img/citron-ma-passion-800.jpg 800w, ../../img/citron-ma-passion.jpg 1600w" sizes="(min-width:760px) 220px, 26vw" width="1600" height="1600" alt="Citron ma passion, a jar of lemon curd, meringue and almond streusel with a biscuit spoon" loading="lazy" decoding="async"></div></div>
         <figcaption><span lang="fr">Citron ma passion</span><b>$8</b></figcaption>
       </figure>
     </div>
+    <a class="boxcard" href="#box" data-box-card>
+      <span class="bc-six" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="bc-t"><b>A box of six macarons, $15.00</b><span>Choose six flavours, or let the house mix them.</span></span>
+      <span class="bc-go">Build a box of six</span>
+    </a>
   </div>
 </section>
 
@@ -637,10 +643,10 @@
       <p class="intro">Pastry for pickup, jars and gifts from the live store, and the evening next door. Whatever you add waits in the same bag on every page.</p>
     </div>
     <ol class="index">
-      <li><a href="#menu"><span class="niche-frame"><span class="arch"><img src="../../img/caneles-1-800.jpg" srcset="../../img/caneles-1-800.jpg 800w, ../../img/caneles-1.jpg 1600w" sizes="200px" width="1600" height="1600" alt="Three cannelés on a blue glazed plate" loading="lazy" decoding="async"></span></span><span class="num">I</span><span class="idx-name" lang="fr">Les Classiques</span><span class="idx-note">The case, from $3.25</span></a></li>
+      <li><a href="#menu"><span class="niche-frame"><span class="arch"><img src="../../img/caneles-1-750.webp" width="750" height="750" alt="Three cannelés on a blue glazed plate" loading="lazy" decoding="async"></span></span><span class="num">I</span><span class="idx-name" lang="fr">Les Classiques</span><span class="idx-note">The case, from $3.25</span></a></li>
       <li><a href="#jarres"><span class="niche-frame"><span class="arch"><img src="../../img/framboise-cherie-800.jpg" srcset="../../img/framboise-cherie-800.jpg 800w, ../../img/framboise-cherie.jpg 1600w" sizes="200px" width="1600" height="1600" alt="Framboise chérie in its glass jar" loading="lazy" decoding="async"></span></span><span class="num">II</span><span class="idx-name" lang="fr">Les Jarres</span><span class="idx-note">Six love notes, $8 each</span></a></li>
       <li><a href="#cadeaux"><span class="niche-frame"><span class="arch"><img src="../../img/gift-basket-small-800.jpg" srcset="../../img/gift-basket-small-800.jpg 800w, ../../img/gift-basket-small.jpg 1600w" sizes="200px" width="1600" height="1600" alt="A small gift basket of meringues, cookies and jam" loading="lazy" decoding="async"></span></span><span class="num">III</span><span class="idx-name" lang="fr">Les Cadeaux</span><span class="idx-note">From $9 to the $140 ticket</span></a></li>
-      <li><a href="#la-cave"><span class="niche-frame"><span class="arch"><img src="../../img/cheese-board-1-800.jpg" srcset="../../img/cheese-board-1-800.jpg 800w, ../../img/cheese-board-1.jpg 1600w" sizes="200px" width="1600" height="1066" alt="The La Cave cheese board with fruit and baguette" loading="lazy" decoding="async"></span></span><span class="num">IV</span><span class="idx-name">La Cave</span><span class="idx-note">Wednesday to Sunday, 3 to 9 pm</span></a></li>
+      <li><a href="#la-cave"><span class="niche-frame"><span class="arch"><img src="../../img/cheese-board-1-750.webp" width="750" height="500" alt="The La Cave cheese board with fruit and baguette" loading="lazy" decoding="async"></span></span><span class="num">IV</span><span class="idx-name">La Cave</span><span class="idx-note">Wednesday to Sunday, 3 to 9 pm</span></a></li>
     </ol>
   </div>
 </section>
@@ -1081,12 +1087,11 @@
   <button class="cartpill" type="button" data-cart-open data-cart-pill><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
 </footer>
 
-<nav class="bar" aria-label="Sections">
+<nav class="bar" aria-label="Pickup and bag">
+  <a class="bar-pick" href="#pickup"><svg class="bp-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span><small>Pickup</small><b data-dock-when>Earliest slot</b></span></a>
   <a href="#menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Menu</a>
   <a href="#cadeaux"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="9" width="17" height="11.5"/><path d="M2.5 9h19M12 9v11.5M12 9C10.5 5.5 6.5 5 6.5 7.5S10 9 12 9zM12 9c1.5-3.5 5.5-4 5.5-1.5S14 9 12 9z"/></svg>Gifts</a>
   <a href="#pickup" data-cart-open data-section="pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>Bag<span class="badge" data-cart-count>0</span></a>
-  <a href="#gateaux"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M5 20v-6a7 7 0 0 1 14 0v6M12 7V4M9 10c1 1 2 1 3 0s2-1 3 0"/></svg>Cakes</a>
-  <a href="#classes"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Classes</a>
 </nav>
 
 <script>
@@ -1098,7 +1103,7 @@
     ticking = false;
     if (getComputedStyle(bar).display === 'none') { bar.classList.remove('is-yield'); return; }
     var top = window.innerHeight - bar.offsetHeight - 8;
-    bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.coffret-act') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top && r.top < window.innerHeight; }));
+    bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.coffret-act') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top - 96 && r.top < window.innerHeight + 96; })); /* wave E: 96 px lead */
   }
   function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
   window.addEventListener('scroll', queue, { passive: true });
@@ -1269,6 +1274,14 @@
       var s = $('[role="status"]', f); if (s) s.textContent = f.getAttribute('data-done');
     });
   });
+})();
+</script>
+<script>
+/* wave E: the bar's pickup button shows the chosen slot (window.IDE, set by ../../assets/app.js) */
+(function () {
+  function upd() { var I = window.IDE; if (!I) return; var l = I.slot().label; Array.prototype.forEach.call(document.querySelectorAll('[data-dock-when]'), function (e) { e.textContent = l || 'Choose a time'; }); }
+  document.addEventListener('ide:bag', upd);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(upd, 0); }); else setTimeout(upd, 0);
 })();
 </script>
 </body>

@@ -469,3 +469,9 @@ html { scroll-padding-bottom: 96px; }
 }
 /* French inside English headings, set names and bold labels: the display italic too */
 :is(h2, h3, h4, small, b, strong, a) > span[lang="fr"] { font-family: var(--font-display); font-style: italic; }
+
+/* ============================================================
+   WAVE E, 25 October 2026 (director pass v2: 3.2)
+   The dock's pickup label at the 14 px step, so the first phone screen keeps four sizes (14, 16, 19, 36).
+   ============================================================ */
+.dock-slot small { font-size: .875rem; }

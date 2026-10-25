@@ -189,6 +189,11 @@
       <a class="btn btn-brand" href="#menu">Order for pickup</a>
       <a class="textlink" href="#technique">Watch the technique</a>
     </div>
+    <a class="boxcard" href="#box" data-box-card>
+      <span class="bc-six" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="bc-t"><b>A box of six macarons, $15.00</b><span>Six shells in the order you choose, or let the bench mix them.</span></span>
+      <span class="bc-go">Build a box of six</span>
+    </a>
     <dl class="credits arrive d3">
       <div><dt>Lineage</dt><dd>Fourth generation of French pastry chefs</dd></div>
       <div><dt>Formerly</dt><dd>La Maison de Marc Veyrat <i>· three Michelin stars</i></dd></div>
@@ -640,7 +645,7 @@
   function update() {
     ticking = false;
     var top = window.innerHeight - dock.offsetHeight - 24;
-    dock.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.box-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top && r.top < window.innerHeight; }));
+    dock.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.box-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top - 96 && r.top < window.innerHeight + 96; })); /* wave E: 96 px lead */
   }
   function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
   window.addEventListener('scroll', queue, { passive: true });
