@@ -1,7 +1,7 @@
 /* Options board for the eng-0002 concept preview, 2026-10-22.
    Tokens follow assets/site.css (operator colour ruling 2026-10-22):
    ivory canvas, white cards, indigo ink, the logo red as punctuation only, no blush or pink.
-   Type: Bodoni Moda (display) and Nunito Sans (text), the shared site pair.
+   Type: Fraunces (display) and Nunito Sans (text), the shared site pair, self-hosted from ../assets/fonts.css (wave D, 2026-10-25).
    Spacing on a 4 px base; radius by hierarchy (card 12, shot 8, pill 999); two shadow steps. */
 :root {
   --color-brand: #1f156b;
@@ -15,7 +15,7 @@
   --color-line: #e3ded4;
   --color-on-brand: #faf7f2;
   --color-on-brand-muted: #cdcbe6;
-  --font-display: "Bodoni Moda", Didot, "Times New Roman", serif;
+  --font-display: "Fraunces", "Abril Fatface", Georgia, serif;
   --font-text: "Nunito Sans", system-ui, sans-serif;
   --text-xs: .8125rem;
   --text-sm: .9375rem;
@@ -86,10 +86,10 @@ h1 em { font-style: italic; }
 .facts dt { font-weight: 700; color: var(--color-ink); }
 .facts dd { margin: 0; }
 .open { align-self: flex-start; margin-top: auto; display: inline-flex; align-items: center; gap: var(--sp-2); min-height: 48px; padding: 0 var(--sp-6); background: var(--color-brand); color: var(--color-on-brand); border-radius: var(--radius-pill); font: 700 var(--text-sm)/1 var(--font-text); text-decoration: none; transition: transform var(--dur-fast) var(--ease-enter), opacity var(--dur-fast) var(--ease-enter); }
-.open:hover { opacity: .92; }
+@media (hover: hover) { .open:hover { opacity: .92; } }
 .open:active { transform: scale(.98); }
 .open svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.card:hover { box-shadow: var(--shadow-e3); }
+@media (hover: hover) { .card:hover { box-shadow: var(--shadow-e3); } }
 /* seven cards: the last one takes the full row, image beside text */
 @media (min-width: 720px) {
   .card:last-child { grid-column: 1 / -1; flex-direction: row; }
@@ -116,3 +116,9 @@ footer ul { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); margin
 footer a { display: inline-block; min-height: 24px; padding: 2px 0; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+/* wave D, 25 October 2026: each card's button names its direction ("Open Vitrine"), the words held in
+   one inline run so the space between them survives the flex row; the kicker dot is indigo, so red
+   stays the logo's heart and the focus ring */
+.open > span { white-space: nowrap; }
+.kicker::before { background: var(--color-brand); }

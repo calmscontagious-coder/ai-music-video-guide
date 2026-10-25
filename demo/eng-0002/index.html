@@ -121,7 +121,7 @@
      "name": "Can I order ahead for pickup?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. You choose a day and a time and the order is boxed for then, to collect at the counter at 169 W Green St. Today the counter menu takes pickup orders on the shop’s menu app and packaged goods sell on id-eclair.com; the new order page puts both in one bag."
+      "text": "Yes. You choose a day and a time and the order is boxed for then, to collect at the counter at 169 W Green St. Pastries from the case and jars from the shelf go in one bag on the menu page."
      }
     },
     {
@@ -129,7 +129,7 @@
      "name": "Does iD Éclair make custom vegan cakes?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes, with at least a week’s notice. Chef Romy makes custom cakes for birthdays, weddings and other occasions; today you start by calling, visiting or emailing the shop, and the cake page shows the six-step request planned for the new site."
+      "text": "Yes, with at least a week’s notice. Chef Romy makes custom cakes for birthdays, weddings and other occasions; start on the cake page in six short steps, and the chef answers with a sketch and a price."
      }
     },
     {
@@ -430,6 +430,27 @@
   .ix-vitrine .chip-float{top:24px;left:24px}
   .ix-price{left:24px;bottom:24px}
 }
+/* wave D, 25 Oct 2026: the kicker's dots are indigo, so red stays the heart's alone */
+.ix-hero .kick span+span::before{background:var(--color-brand-quiet)}
+/* wave D, 25 Oct 2026: on phones nothing sits on the photograph. The cannelés run edge to edge
+   (the phone's grid break), the price card becomes a one-line caption under them, the pickup chip
+   steps aside (the order strip carries the slot once the hero scrolls past), and the headline runs
+   three lines, so "Order for pickup" lands in the lower part of the screen, clear of the app bar */
+@media (max-width:899px){
+  .ix-hero .kick span:nth-child(3){display:none}
+  .ix-hero h1{max-width:none}
+  .ix-hero h1 em{display:inline}
+  .ix-vitrine{padding:0;border-radius:0;margin-inline:-16px}
+  .ix-vitrine::before,.ix-vitrine::after{display:none}
+  .ix-hero{padding-top:var(--sp-2)}
+  .ix-hero .wrap{gap:var(--sp-3)}
+  .ix-vitrine img{aspect-ratio:17/10;border-radius:0;box-shadow:none}
+  .ix-vitrine .chip-float{display:none}
+  .ix-price{position:static;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;min-width:0;padding:6px 16px 0;line-height:1.2;background:none;border-radius:0;box-shadow:none}
+  .ix-price::before{display:none}
+  .ix-price span{font-size:1.125rem}
+  .ix-price small{display:none}
+}
 
 /* the load moment: the frame settles, the words arrive, under 300ms in all */
 .ix-in{animation:ix-arrive 200ms var(--ease-enter) both}
@@ -444,7 +465,7 @@
 .ix-case-head .sec-head{margin-bottom:0}
 .ix-case{display:grid;grid-auto-flow:column;grid-auto-columns:min(70%,270px);gap:var(--sp-3);overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:4px 16px var(--sp-4);scrollbar-width:thin}
 @media (min-width:900px){.ix-case{grid-auto-flow:row dense;grid-auto-columns:auto;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-6);overflow:visible;margin:0;padding:0}.vc.wide{grid-column:span 2}.vc > img,.vc > .tile{aspect-ratio:auto;height:240px}}
-.vc{position:relative;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-e1);transition:box-shadow var(--dur-base) var(--ease-move)}
+.vc{position:relative;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-e1)}
 .vc::after{content:"";position:absolute;inset:6px;border:1px solid color-mix(in srgb,var(--color-brand) 42%,transparent);border-radius:18px;opacity:0;pointer-events:none;transition:opacity var(--dur-base) var(--ease-enter)}
 .vc.in-bag{box-shadow:var(--shadow-e3)}
 .vc.in-bag::after{opacity:1}
@@ -523,13 +544,13 @@
 .ix-soir .ix-copy p,.ix-soir .ix-list small{color:var(--color-on-brand-muted)}
 .ix-soir .ix-list li{border-color:color-mix(in srgb,var(--color-on-brand) 22%,transparent)}
 .ix-soir .add{background:transparent;color:var(--color-on-brand);border-color:var(--color-on-brand)}
-.ix-soir .add:hover{background:var(--color-on-brand);color:var(--color-brand)}
+@media (hover:hover){.ix-soir .add:hover{background:var(--color-on-brand);color:var(--color-brand)}}
 .ix-soir .stepper{background:var(--color-on-brand);color:var(--color-brand)}
-.ix-soir .stepper button:hover{background:color-mix(in srgb,var(--color-brand) 10%,transparent)}
+@media (hover:hover){.ix-soir .stepper button:hover{background:color-mix(in srgb,var(--color-brand) 10%,transparent)}}
 .ix-soir .link{color:var(--color-on-brand)}
 .ix-hours{display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-6);font-size:var(--text-sm);color:var(--color-on-brand)}
 .ix-hours span{display:inline-flex;gap:8px;align-items:baseline}
-.ix-hours span + span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--color-accent);align-self:center}
+.ix-hours span + span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--color-on-brand-muted);align-self:center}
 
 /* chapter VI: the invitation */
 .ix-invite .sec-head{max-width:46ch}
@@ -537,15 +558,15 @@
 .ix-doors{display:grid;gap:var(--sp-3);margin-top:var(--sp-12)}
 @media (min-width:720px){.ix-doors{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1000px){.ix-doors{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:var(--sp-4)}}
-.door{position:relative;display:grid;gap:6px;align-content:start;min-height:184px;padding:var(--sp-6);padding-right:72px;border-radius:var(--radius-md);background:var(--color-surface);color:var(--color-ink);text-decoration:none;box-shadow:var(--shadow-e1);transition:transform var(--dur-fast) var(--ease-move),box-shadow var(--dur-fast) var(--ease-move)}
-.door:hover{transform:translateY(-2px);box-shadow:var(--shadow-e3)}
+.door{position:relative;display:grid;gap:6px;align-content:start;min-height:184px;padding:var(--sp-6);padding-right:72px;border-radius:var(--radius-md);background:var(--color-surface);color:var(--color-ink);text-decoration:none;box-shadow:var(--shadow-e1);transition:transform var(--dur-fast) var(--ease-move)}
+@media (hover:hover){.door:hover{transform:translateY(-2px);box-shadow:var(--shadow-e3)}}
 .door:active{transform:translateY(1px)}
 .door-fr{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:1rem;color:var(--color-brand-quiet)}
 .door-t{font-family:var(--font-display);font-weight:600;font-size:1.5rem;line-height:1.1;color:var(--color-brand)}
 .door-d{font-size:var(--text-sm);line-height:1.45;color:var(--color-muted)}
 .door-go{position:absolute;right:20px;bottom:20px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--color-canvas-deep);color:var(--color-brand);transition:transform var(--dur-fast) var(--ease-move)}
 .door-go svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.door:hover .door-go{transform:translate(2px,-1px)}
+@media (hover:hover){.door:hover .door-go{transform:translate(2px,-1px)}}
 .door.main{background:var(--color-brand);color:var(--color-on-brand)}
 .door.main .door-fr,.door.main .door-d{color:var(--color-on-brand-muted)}
 .door.main .door-t{color:var(--color-on-brand);font-size:clamp(1.75rem,3vw,2.25rem)}
@@ -597,8 +618,8 @@
     </div>
     <figure class="ix-vitrine" data-grid-break>
       <picture><source media="(max-width:899px)" srcset="img/shop-caneles-tray-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/shop-caneles-tray-800.jpg"><img src="img/shop-caneles-tray-800.jpg" srcset="img/shop-caneles-tray-800.jpg 800w, img/shop-caneles-tray.jpg 1600w" sizes="(min-width:900px) 40vw, 100vw" width="1600" height="1600" alt="Rows of dark, caramelised cannelés in a white iD Éclair box, the shop’s card propped up behind them" fetchpriority="high"></picture>
-      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></figcaption>
-      <p class="ix-price ix-in"><span lang="fr">Cannelés</span><b>$3.25 each, 3 for $9</b><small>Counter menu, 21 October 2026</small></p>
+      <figcaption class="chip-float"><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></figcaption>
+      <p class="ix-price ix-in"><span lang="fr">Cannelés</span><b>$3.25 each, 3 for $9.00</b><small>From the counter, by three</small></p>
     </figure>
   </div>
 </section>
@@ -784,9 +805,9 @@
           <button type="button" data-f="Coffee" data-short="Coff"><i class="f-coffee"></i>Coffee</button>
           <button type="button" data-f="Coconut" data-short="Coco"><i class="f-coconut"></i>Coconut</button>
         </div>
-        <p class="note-sm">Flavours from the shop’s own assorted-box listing; the day’s bake decides what is in the case.</p>
+        <p class="note-sm">The day’s bake decides which flavours are in the case.</p>
         <div class="foot"><span class="price">$15.00</span><button class="btn btn-brand" type="button" data-box-add disabled>Fill the box first</button><button class="link" type="button" data-box-clear>Start over</button><button class="link" type="button" data-box-surprise>Surprise me</button></div>
-        <div class="alt"><span>Want a box from the live store today? The assorted box is $18 on id-eclair.com.</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-image="img/macarons-2-800.jpg">Add</button></div>
+        <div class="alt"><span>Or the assorted box, boxed today</span><span class="price">$18.00</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-image="img/macarons-2-800.jpg">Add</button></div>
       </div>
     </div>
   </div>
@@ -805,7 +826,7 @@
         <li><span class="nm"><b>Latte</b><small>Plant milk; cold foam $1, a pump of vanilla 50¢</small></span><div class="row"><span class="price">$7.50</span><button class="add" type="button" data-add data-handle="latte" data-title="Latte" data-price="7.5" data-glyph="L">Add</button></div></li>
         <li><span class="nm"><b lang="fr">Confiture framboise</b><small>Raspberry jam for the croissant at home, on the live store</small></span><div class="row"><span class="price">$7.95</span><button class="add" type="button" data-add data-handle="raspberry-jam" data-title="Raspberry jam" data-price="7.95" data-variant="41829477253308" data-image="img/raspberry-jam-800.jpg">Add</button></div></li>
       </ul>
-      <p class="note-sm">Prices from the counter board, photographed 22 October 2026, and the live store. Tea party: $80 for two, $40 for each extra guest, while supplies last. The salon has no photograph of its own yet; the planned shoot covers the tea service.</p>
+      <p class="note-sm">Tea party: $80 for two, $40 for each extra guest, while supplies last.</p>
     </div>
     <figure>
       <img src="img/shop-jam-lifestyle-800.jpg" srcset="img/shop-jam-lifestyle-800.jpg 800w, img/shop-jam-lifestyle.jpg 1600w" sizes="(min-width:900px) 38vw, 100vw" width="1600" height="2000" alt="Raspberry jam spilling from a tipped jar onto a silver spoon, two more jars behind it on white marble" loading="lazy">
@@ -826,8 +847,8 @@
       <p>La Cave is the pâtisserie’s evening: organic, biodynamic and vegan wines, Rebel Cheese boards, small plates, and plated desserts from the kitchen next door with a glass poured to match.</p>
       <p class="ix-hours"><span>163 W Green St</span><span>Wednesday to Sunday, 3 to 9 pm</span><span>21 and over for wine</span></p>
       <ul class="ix-list">
-        <li><span class="nm"><b>The cheese board, for ten</b><small>Rebel Cheese, baguette, dried fruit and nuts; pickup only, on the live store</small></span><div class="row"><span class="price">$100</span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board, serves 10" data-price="100" data-variant="45433279971516" data-image="img/cheese-board-1-800.jpg" data-meta="Pickup only">Add</button></div></li>
-        <li><span class="nm"><b>Dark chocolate truffles</b><small>200 g with an orange note, on the live store</small></span><div class="row"><span class="price">$15</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15" data-variant="43134021828796" data-image="img/dark-chocolate-truffles-800.jpg">Add</button></div></li>
+        <li><span class="nm"><b>The cheese board, for ten</b><small>Rebel Cheese, baguette, dried fruit and nuts; pickup only, on the live store</small></span><div class="row"><span class="price">$100.00</span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board, serves 10" data-price="100" data-variant="45433279971516" data-image="img/cheese-board-1-800.jpg" data-meta="Pickup only">Add</button></div></li>
+        <li><span class="nm"><b>Dark chocolate truffles</b><small>200 g with an orange note, on the live store</small></span><div class="row"><span class="price">$15.00</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15" data-variant="43134021828796" data-image="img/dark-chocolate-truffles-800.jpg">Add</button></div></li>
       </ul>
       <div class="ix-links"><a class="link" href="la-cave.html">Visit La Cave: the list, the tables, the pairing evenings</a></div>
     </div>
@@ -842,12 +863,12 @@
       <p>The jar desserts already carry the shop’s love-note names. All four are on the live store today, and the doors below lead to everything else.</p>
     </div>
     <div class="strip">
-      <figure><img src="img/caramel-je-taime-800.jpg" srcset="img/caramel-je-taime-800.jpg 800w, img/caramel-je-taime.jpg 1600w" sizes="(min-width:1000px) 260px, 300px" width="1600" height="1600" alt="Caramel je t’aime in its jar" loading="lazy"><figcaption><span lang="fr">Caramel je t’aime</span><span class="price">$8</span></figcaption><p class="meta">Caramel, almond crumble, caramel mousse, vanilla chantilly</p><div class="row"><span class="meta">On the live store</span><button class="add" type="button" data-add data-handle="caramel-je-taime" data-title="Caramel je t’aime" data-price="8" data-variant="41826128265404" data-image="img/caramel-je-taime-800.jpg">Add</button></div></figure>
-      <figure><img src="img/chocolat-mon-amour-800.jpg" srcset="img/chocolat-mon-amour-800.jpg 800w, img/chocolat-mon-amour.jpg 1600w" sizes="(min-width:1000px) 260px, 300px" width="1600" height="1600" alt="Chocolat mon amour in its jar" loading="lazy"><figcaption><span lang="fr">Chocolat mon amour</span><span class="price">$8</span></figcaption><p class="meta">Chocolate crumble, ganache and mousse</p><div class="row"><span class="meta">On the live store</span><button class="add" type="button" data-add data-handle="chocolat-mon-amour" data-title="Chocolat mon amour" data-price="8" data-variant="41826123317436" data-image="img/chocolat-mon-amour-800.jpg">Add</button></div></figure>
-      <figure><img src="img/framboise-cherie-800.jpg" srcset="img/framboise-cherie-800.jpg 800w, img/framboise-cherie.jpg 1600w" sizes="(min-width:1000px) 260px, 300px" width="1600" height="1599" alt="Framboise chérie in its jar" loading="lazy"><figcaption><span lang="fr">Framboise chérie</span><span class="price">$8</span></figcaption><p class="meta">Raspberry mousse, raspberry jam, almond streusel</p><div class="row"><span class="meta">On the live store</span><button class="add" type="button" data-add data-handle="framboise-cherie" data-title="Framboise chérie" data-price="8" data-variant="41826118205628" data-image="img/framboise-cherie-800.jpg">Add</button></div></figure>
-      <figure><img src="img/citron-ma-passion-800.jpg" srcset="img/citron-ma-passion-800.jpg 800w, img/citron-ma-passion.jpg 1600w" sizes="(min-width:1000px) 260px, 300px" width="1600" height="1600" alt="Citron ma passion in its jar" loading="lazy"><figcaption><span lang="fr">Citron ma passion</span><span class="price">$8</span></figcaption><p class="meta">Lemon curd, meringue, almond streusel</p><div class="row"><span class="meta">On the live store</span><button class="add" type="button" data-add data-handle="citron-ma-passion" data-title="Citron ma passion" data-price="8" data-variant="41826113618108" data-image="img/citron-ma-passion-800.jpg">Add</button></div></figure>
+      <figure><img src="img/caramel-je-taime-800.jpg" srcset="img/caramel-je-taime-800.jpg 800w, img/caramel-je-taime.jpg 1600w" sizes="(min-width:1000px) 260px, 300px" width="1600" height="1600" alt="Caramel je t’aime in its jar" loading="lazy"><figcaption><span lang="fr">Caramel je t’aime</span><span class="price">$8.00</span></figcaption><p class="meta">Caramel, almond crumble, caramel mousse, vanilla chantilly</p><div class="row"><span class="meta">On the live store</span><button class="add" type="button" data-add data-handle="caramel-je-taime" data-title="Caramel je t’aime" data-price="8" data-variant="41826128265404" data-image="img/caramel-je-taime-800.jpg">Add</button></div></figure>
+      <figure><img src="img/chocolat-mon-amour-800.jpg" srcset="img/chocolat-mon-amour-800.jpg 800w, img/chocolat-mon-amour.jpg 1600w" sizes="(min-width:1000px) 260px, 300px" width="1600" height="1600" alt="Chocolat mon amour in its jar" loading="lazy"><figcaption><span lang="fr">Chocolat mon amour</span><span class="price">$8.00</span></figcaption><p class="meta">Chocolate crumble, ganache and mousse</p><div class="row"><span class="meta">On the live store</span><button class="add" type="button" data-add data-handle="chocolat-mon-amour" data-title="Chocolat mon amour" data-price="8" data-variant="41826123317436" data-image="img/chocolat-mon-amour-800.jpg">Add</button></div></figure>
+      <figure><img src="img/framboise-cherie-800.jpg" srcset="img/framboise-cherie-800.jpg 800w, img/framboise-cherie.jpg 1600w" sizes="(min-width:1000px) 260px, 300px" width="1600" height="1599" alt="Framboise chérie in its jar" loading="lazy"><figcaption><span lang="fr">Framboise chérie</span><span class="price">$8.00</span></figcaption><p class="meta">Raspberry mousse, raspberry jam, almond streusel</p><div class="row"><span class="meta">On the live store</span><button class="add" type="button" data-add data-handle="framboise-cherie" data-title="Framboise chérie" data-price="8" data-variant="41826118205628" data-image="img/framboise-cherie-800.jpg">Add</button></div></figure>
+      <figure><img src="img/citron-ma-passion-800.jpg" srcset="img/citron-ma-passion-800.jpg 800w, img/citron-ma-passion.jpg 1600w" sizes="(min-width:1000px) 260px, 300px" width="1600" height="1600" alt="Citron ma passion in its jar" loading="lazy"><figcaption><span lang="fr">Citron ma passion</span><span class="price">$8.00</span></figcaption><p class="meta">Lemon curd, meringue, almond streusel</p><div class="row"><span class="meta">On the live store</span><button class="add" type="button" data-add data-handle="citron-ma-passion" data-title="Citron ma passion" data-price="8" data-variant="41826113618108" data-image="img/citron-ma-passion-800.jpg">Add</button></div></figure>
     </div>
-    <div class="alt"><span>All four in the discovery box, $30.</span><button class="add" type="button" data-add data-handle="4-desserts-in-jar" data-title="Four desserts in a jar" data-price="30" data-variant="41826161557692" data-image="img/4-desserts-in-jar-800.jpg">Add</button></div>
+    <div class="alt"><span>All four in the discovery box</span><span class="price">$30.00</span><button class="add" type="button" data-add data-handle="4-desserts-in-jar" data-title="Four desserts in a jar" data-price="30" data-variant="41826161557692" data-image="img/4-desserts-in-jar-800.jpg">Add</button></div>
     <nav class="ix-doors" aria-label="Ways to order">
       <a class="door main" href="menu.html"><span class="door-fr" lang="fr">Commander</span><span class="door-t">Order for pickup</span><span class="door-d">Pick a day and a time at 169 W Green St; the box is ready for then.</span><span class="door-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       <a class="door" href="#box"><span class="door-fr" lang="fr">Six macarons</span><span class="door-t">Build a box</span><span class="door-d">Six for $15, flavour by flavour.</span><span class="door-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
@@ -871,11 +892,11 @@
       </div>
       <div class="qa">
         <h3>Can I order ahead for pickup?</h3>
-        <p>Yes. You choose a day and a time and the order is boxed for then, to collect at the counter at 169 W Green St. Today the counter menu takes pickup orders on the shop’s menu app and packaged goods sell on id-eclair.com; <a href="menu.html">the new order page</a> puts both in one bag.</p>
+        <p>Yes. You choose a day and a time and the order is boxed for then, to collect at the counter at 169 W Green St. Pastries from the case and jars from the shelf go in one bag on <a href="menu.html">the menu page</a>.</p>
       </div>
       <div class="qa">
         <h3>Does iD Éclair make custom vegan cakes?</h3>
-        <p>Yes, with at least a week’s notice. Chef Romy makes custom cakes for birthdays, weddings and other occasions; today you start by calling, visiting or emailing the shop, and <a href="cakes.html">the cake page</a> shows the six-step request planned for the new site.</p>
+        <p>Yes, with at least a week’s notice. Chef Romy makes custom cakes for birthdays, weddings and other occasions; start on <a href="cakes.html">the cake page</a> in six short steps, and the chef answers with a sketch and a price.</p>
       </div>
       <div class="qa">
         <h3>Is there a macaron class in Pasadena?</h3>

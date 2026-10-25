@@ -184,3 +184,20 @@ footer a { display: inline-block; min-height: 24px; padding: 2px 0; }
   .lede { font-size: var(--text-base); }
 }
 .card .go { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* wave D, 25 October 2026 (Gemini grade v2): the "Open" links keep their space, French in headings
+   is set in italic like French in running text, every capture shows whole (no crop through a pastry),
+   the moods become a swipe rail on phones, and the phone's first screen ends on a clean edge */
+.card .go { gap: .3em; }
+:where(h2, h3) span:lang(fr) { font-style: italic; }
+.card .shot, .pick .shot { aspect-ratio: 750 / 1440; }
+@media (max-width: 639px) { .card .shot { aspect-ratio: 750 / 1440; } }
+@media (max-width: 559px) {
+  .moods { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 62%; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(-1 * var(--sp-4)); padding: 0 var(--sp-4) var(--sp-3); scrollbar-width: thin; }
+  .moods li { scroll-snap-align: start; }
+}
+@media (max-width: 719px) {
+  .intro { padding-bottom: var(--sp-16); min-height: calc(100svh - 150px); }
+  .top nav ul { -webkit-mask-image: linear-gradient(to right, #000 86%, transparent); mask-image: linear-gradient(to right, #000 86%, transparent); padding-right: var(--sp-12); }
+}
+@media (min-width: 720px) { .intro { min-height: min(calc(100svh - 150px), 720px); } }
