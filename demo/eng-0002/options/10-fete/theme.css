@@ -453,3 +453,36 @@ body { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
 /* three sizes on the first phone screen (14, 19 and the H1) plus prices */
 .moment h2 { font-size: var(--t-name); }
 .mo-buy .tag { font-size: var(--t-micro); }
+
+/* ==========================================================================
+   WAVE D, 25 October 2026 (Gemini grade v2 fixes; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave D")
+   ========================================================================== */
+/* the menu below 960 px: one scrolling row of 44 px links beside the logo,
+   fading at the right edge, so the full menu, cakes, classes and La Cave are
+   on the first screen */
+@media (max-width: 959px) {
+  .top .wrap { gap: var(--s-4); }
+  .nav { display: flex; flex: 1 1 auto; min-width: 0; gap: 0 var(--s-1); overflow-x: auto; scrollbar-width: none; margin-right: calc(var(--gutter) * -1); padding-right: var(--gutter); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent); }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { flex: 0 0 auto; padding: 0 10px; white-space: nowrap; }
+  .logo { flex: none; }
+}
+/* phones: the motif sits in the greeting's corner and the headline starts
+   below it, so no skin's drawing touches the H1 */
+@media (max-width: 759px) {
+  .motif { top: 0; width: 44px; }
+  .hero h1 { margin-top: var(--s-4); }
+  /* a skin's corner decoration (Halloween's cobweb, 120 px) shrinks into the
+     same corner, clear of the greeting and the headline */
+  html[data-skin] .hero::before { width: 56px; height: 56px; background-size: contain; background-position: right top; }
+}
+/* the calendar folds into one line; the Preview control stays open */
+.cal-all { margin-top: var(--s-4); border-top: 1px solid var(--line); }
+.cal-all > summary { display: flex; align-items: center; min-height: 44px; font-weight: 700; color: var(--brand); cursor: pointer; }
+.cal-all[open] > summary { margin-bottom: var(--s-3); }
+.cal-sw { display: none; }
+.cal-all > summary { list-style: none; gap: var(--s-2); }
+.cal-all > summary::-webkit-details-marker { display: none; }
+.cal-all > summary::after { content: "+"; margin-left: auto; font: 500 1.5rem/1 var(--font-display); }
+.cal-all[open] > summary::after { content: "\2212"; }

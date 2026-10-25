@@ -667,3 +667,22 @@ footer address { font-style: normal; display: grid; gap: var(--s-2); }
 .rail-nav button { width: 44px; height: 44px; }
 .flav button { min-height: 44px; }
 .link { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* ======================================================================
+   Wave D, 25 October 2026 (Gemini grade v2 fixes; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave D")
+   ====================================================================== */
+/* the bag count meets the 12 px floor */
+.badge { font-size: .75rem; }
+/* phones: the cannelés plate bleeds off the right edge (the grid break) */
+@media (max-width: 999px) {
+  .hero { overflow-x: clip; }
+  .vitrine img:first-child { width: calc(100% + var(--gutter)); max-width: none; margin-right: calc(-1 * var(--gutter)); border-radius: var(--r-row) 0 0 var(--r-row); }
+}
+/* the jar thumbnails: the photos sit far back in white space, so the frame
+   moves in on the jar (1.2x keeps the whole jar and spoon in frame) */
+#jars .thumb img { transform: scale(1.2); }
+/* the Golden Ticket photo is landscape (1200 x 876): a landscape frame, so
+   the card and the tablet are not cut */
+.gt { grid-template-columns: 112px minmax(0, 1fr); }
+.gt img { width: 112px; height: 82px; object-position: 50% 50%; }

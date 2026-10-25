@@ -735,3 +735,16 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 input[type="date"]:focus{outline:2px solid var(--color-focus);outline-offset:2px}
 input[type="date"]:focus-within{outline:2px solid var(--color-focus);outline-offset:2px}
 @media (max-width:899px){html{scroll-padding-bottom:calc(var(--bar-real,72px) + 16px)}}
+
+/* ======================================================================
+   WAVE D, 25 October 2026 (Gemini grade v2 fixes; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave D")
+   ====================================================================== */
+/* red only on the bag and the in-bag mark: the cake topper and the
+   stationery stamp are gold */
+.cz-cake .heart,.cz-note-preview .heart{fill:var(--cz-gold)}
+/* phones: a shorter desk photograph, so the three from the case, their
+   prices and Add sit on the first screen with the question box under them */
+@media (max-width:899px){
+  .cz-photo img{aspect-ratio:375/120}
+}

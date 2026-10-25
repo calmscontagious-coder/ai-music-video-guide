@@ -225,7 +225,7 @@
     $('[data-cz-sizes]').disabled = s.tiers > 1;
     drawCake(e, s);
     $('[data-cz-from]').textContent = e.priceText;
-    $('[data-cz-lead]').textContent = (e.lead === 28 ? 'Four weeks’ notice for a wedding (proposed)' : 'One week’s notice, the shop’s rule') + ': the earliest pickup is ' + new Date(e.earliest + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' }) + '.';
+    $('[data-cz-lead]').textContent = (e.lead === 28 ? 'Four weeks’ notice for a wedding (planned)' : 'One week’s notice, the shop’s rule') + ': the earliest pickup is ' + new Date(e.earliest + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' }) + '.';
     var date = $('#cz-date'); date.min = e.earliest;
     $('[data-cz-date-min]').textContent = 'from ' + e.earliest;
     $('[data-cz-ins-n]').textContent = s.inscription.length + ' of 24';
@@ -250,7 +250,7 @@
     engine.cakeFlavours.forEach(function (f, k) {
       var s = el('span', 'cz-opt'), i = el('input'), l = el('label');
       i.type = 'radio'; i.name = 'flavour'; i.id = 'fl-' + f.id; i.value = f.id; if (!k) i.checked = true;
-      l.htmlFor = i.id; l.appendChild(el('i', 't-' + f.tone)); l.appendChild(document.createTextNode(f.title)); l.appendChild(el('small', null, f.note));
+      l.htmlFor = i.id; l.appendChild(el('i', 't-' + f.tone)); if (/^(Chocolat|Framboise|Citron|Caramel je|Noisette|Douceur|Praliné)/.test(f.title)) { var fr = el('span', null, f.title); fr.lang = 'fr'; l.appendChild(fr); } else l.appendChild(document.createTextNode(f.title)); /* wave D: French names carry lang=fr */ l.appendChild(el('small', null, f.note));
       l.firstChild.setAttribute('aria-hidden', 'true');
       s.appendChild(i); s.appendChild(l); fl.appendChild(s);
     });
@@ -301,7 +301,7 @@
   function renderGift() {
     var f = $('[data-cz-giftform]'), b = +budgetIn.value, g = engine.gift(b, val(f, 'who'));
     giftNow = g;
-    $('[data-cz-budget-out]').textContent = '$' + b;
+    $('[data-cz-budget-out]').textContent = money(b);
     var ul = $('[data-cz-basket]'); ul.innerHTML = '';
     g.items.forEach(function (i) { var li = el('li'); li.appendChild(el('b', null, i.title)); li.appendChild(el('span', 'price', money(i.price))); li.appendChild(el('small', null, i.desc)); ul.appendChild(li); });
     $('[data-cz-gift-total]').textContent = money(g.total);

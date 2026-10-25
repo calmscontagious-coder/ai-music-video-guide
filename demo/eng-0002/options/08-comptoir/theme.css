@@ -447,3 +447,25 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px
 .dock { transition: transform var(--dur-tap) var(--ease-exit); }
 .dock.aside { transform: translateY(calc(100% + 24px)); pointer-events: none; }
 @media (max-width: 999px) { .top .cartbtn { display: none; } }
+
+/* ==========================================================================
+   WAVE D, 25 October 2026 (Gemini grade v2 fixes; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave D")
+   ========================================================================== */
+/* running copy at the body size (19 px); item and set sub-notes at 16 px;
+   14 px stays for labels, tags, the notice and the legal line */
+.lede, .rest-h p, .club p, .qa p, footer p, footer address { font-size: var(--t-body); }
+.lu-txt p, .mr p, .tile p, .box6-h p, .set small, .dock-sheet .sheet-row p { font-size: 1rem; }
+footer .foot-note, footer .fine { font-size: var(--t-micro); }
+/* the dock never covers the lead item: it steps aside while the lead's price
+   and Add sit in its strip (page script), and the line-up keeps room under
+   its last row */
+.lineup { padding-bottom: var(--s-4); }
+html { scroll-padding-bottom: 96px; }
+@media (min-width: 1000px) { html { scroll-padding-bottom: 16px; } }
+/* phones: the box of six breaks the column, edge to edge (the grid break) */
+@media (max-width: 999px) {
+  .box6[data-grid-break] { margin-inline: calc(var(--gutter) * -1); border-radius: 0; border-inline: 0; padding-inline: var(--gutter); }
+}
+/* French inside English headings, set names and bold labels: the display italic too */
+:is(h2, h3, h4, small, b, strong, a) > span[lang="fr"] { font-family: var(--font-display); font-style: italic; }

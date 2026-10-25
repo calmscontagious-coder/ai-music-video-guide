@@ -549,3 +549,32 @@ input[aria-invalid="true"]{border-color:var(--flav-raspberry);border-width:2px}
 .bar.is-yield{transform:translateY(calc(100% + 8px));visibility:hidden;transition:transform 150ms var(--ease-out),visibility 0s 150ms}
 html{scroll-padding-bottom:calc(var(--bar-h) + 16px)}
 @media (min-width:900px){html{scroll-padding-bottom:16px}}
+
+/* ======================================================================
+   Wave D, 25 October 2026 (Gemini grade v2 fixes; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave D")
+   ====================================================================== */
+/* heart red, from the logo's heart: the cover's one primary action, the
+   checkout and the bag count. Gold stays the rule colour; every other
+   button stays indigo. */
+:root{--color-heart:#e02030;--color-heart-deep:#b81a28}
+.cover-act .btn-brand,.sheet .btn-brand.checkout{background:var(--color-heart);border-color:var(--color-heart);color:#fff}
+@media (hover: hover){.cover-act .btn-brand:hover,.sheet .btn-brand.checkout:hover{background:var(--color-heart-deep);border-color:var(--color-heart-deep)}}
+.badge.on{background:var(--color-heart);color:#fff}
+/* press feedback on every control */
+.btn:active,.add:active,.chip:active,.picks label:active,.nav a:active,.bar a:active,.link:active,.link-arrow:active,.cartbtn:active{transform:scale(.98)}
+.btn:not([disabled]):active{background:var(--color-ink-deep);border-color:var(--color-ink-deep)}
+.cover-act .btn-brand:active,.sheet .btn-brand.checkout:active{background:var(--color-heart-deep);border-color:var(--color-heart-deep)}
+/* the phone cover: a tighter stack so "Order for pickup" sits well inside
+   the first screen; the framed cannelés bleed off the right edge (the
+   grid break) */
+@media (max-width:959px){
+  .cover{padding-top:12px}
+  .cover h1{margin-top:8px}
+  .gilt{margin:10px 0}
+  .frame{margin:12px calc(var(--gutter) * -1) 0 12px}
+  .cover-act{margin-top:14px}
+  .nav{gap:0 14px;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent)}
+}
+/* the masterclass plate is square, so no macaron is cut by the frame */
+.stage-photo img{aspect-ratio:1/1}
