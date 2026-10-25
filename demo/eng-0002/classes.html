@@ -401,7 +401,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
     <div>
       <p class="kick rise"><span>Tuesdays</span><span>$125 a seat</span><span>169 W Green St</span></p>
       <h1 id="h1">Macaron Masterclass with Chef Romy, <em>Tuesdays at 3:30.</em></h1>
-      <p class="lead">Two hands-on hours at the shop, 3:30 to 5:30 pm, with the same plant-based recipes as the vitrine. You leave with 20 to 30 macarons in a box. Seats are very limited.</p>
+      <p class="lead">Two hands-on hours at the shop. You leave with 20 to 30 macarons.</p>
       <div class="hero-actions rise d3">
         <a class="btn btn-brand" href="#dates">See the Tuesdays</a>
         <a class="link" href="#gift">Give it as a gift</a>
@@ -451,21 +451,12 @@ textarea.cl-input{min-height:88px;resize:vertical}
 </div>
 
 
-<div class="facts" role="region" aria-label="Class facts from the shop’s own posts and store">
-  <div class="wrap">
-    <div><strong>$125.00</strong><span>a seat, per the shop’s posts</span></div>
-    <div><strong>2 hours</strong><span>Tuesdays, 3:30 to 5:30 pm</span></div>
-    <div><strong>20 to 30</strong><span>macarons to take home</span></div>
-    <div><strong>$140.00</strong><span>the Golden Ticket, as a gift</span></div>
-  </div>
-</div>
 
 <section id="dates" aria-labelledby="h-dates">
   <div class="wrap">
     <div class="cl-head">
       <div class="sec-head">
         <h2 id="h-dates">Pick your Tuesday.</h2>
-        <p>The next twelve Tuesdays, counted from today in Pasadena time. Reserve puts a seat in your bag; add more seats with the + button.</p>
       </div>
       <span class="ex">Example seat counts</span>
     </div>
@@ -474,11 +465,20 @@ textarea.cl-input{min-height:88px;resize:vertical}
     </div>
     <button class="btn btn-ghost btn-sm cl-more" type="button" data-cl-more hidden>Show four more Tuesdays</button>
     <div class="cl-how">
-      <p><b>How Reserve works.</b> It puts a seat in the same bag as your éclairs and boxes, so the whole order is one checkout, and the class calendar holds the seat, the waitlist and the reminders. Today the shop books classes by DM or in person.</p>
-      <p>Seat counts here are examples; the class calendar shows the real ones.</p>
+      <p><b>How Reserve works.</b> It puts a seat in the same bag as your éclairs and boxes (the + button adds more seats), so the whole order is one checkout, and the class calendar holds the seat, the waitlist and the reminders. Today the shop books classes by DM or in person.</p>
+      <p>These are the next twelve Tuesdays still on sale, counted from today in Pasadena time. Seat counts here are examples; the class calendar shows the real ones.</p>
     </div>
   </div>
 </section>
+
+<div class="facts" role="region" aria-label="Class facts from the shop’s own posts and store">
+  <div class="wrap">
+    <div><strong>$125.00</strong><span>a seat, per the shop’s posts</span></div>
+    <div><strong>2 hours</strong><span>Tuesdays, 3:30 to 5:30 pm</span></div>
+    <div><strong>20 to 30</strong><span>macarons to take home</span></div>
+    <div><strong>$140.00</strong><span>the Golden Ticket, as a gift</span></div>
+  </div>
+</div>
 
 <section class="bg-white" aria-labelledby="h-learn">
   <div class="wrap cl-learn">
@@ -669,7 +669,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
   function exampleLeft(d) { return ((d.getUTCDate() * 37 + (d.getUTCMonth() + 1) * 11) % 9); }
   for (var k = 0; list.length < TOTAL && k < 60; k++) {
     var days = off + 7 * k, mins = days * 1440 + START - now.min;
-    if (mins <= 0) continue;
+    if (mins < CUTOFF) continue; /* wave E3: a Tuesday whose sales have closed drops off the list, so the first ticket can be reserved */
     var dt = new Date(T0 + days * 864e5), x = { d: dt, key: dt.toISOString().slice(0, 10), left: Math.min(CAP, exampleLeft(dt)), closed: mins < CUTOFF };
     list.push(x); byKey[x.key] = x;
   }

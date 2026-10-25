@@ -518,6 +518,13 @@
 .ix-boxwrap{margin-top:var(--sp-12);padding:var(--sp-4);background:var(--color-surface);border-radius:var(--radius-md);box-shadow:var(--shadow-e2)}
 @media (min-width:900px){.ix-boxwrap{padding:var(--sp-8)}}
 .ix-boxwrap h3{text-wrap:balance;font-size:var(--text-xl);line-height:1.05;font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1}
+/* wave E3, 25 Oct 2026: the box of six is chapter II, straight after the vitrine, so the most-ordered
+   bundle sits within four and a half phone screens; on phones chapter I opens with the cannelés from the
+   photograph as one row (the rail's cannelés card steps aside there), so the first Add is in reach */
+.ix-six .ix-boxwrap{margin-top:0}
+.ix-list.ix-lead{margin:var(--sp-3) 0 var(--sp-4)}
+@media (min-width:900px){.ix-list.ix-lead{display:none}}
+@media (max-width:899px){.ix-case .vc-lead{display:none}}
 
 /* chapter IV: the salon */
 .ix-salon .wrap{display:grid;gap:var(--sp-8);align-items:center}
@@ -666,12 +673,15 @@
       <div class="sec-head">
         <p class="ix-moment"><b>I</b><span lang="fr">La vitrine</span></p>
         <h2 id="h-case">Today behind the glass.</h2>
-        <p>Six from the counter at the shop’s own prices. Add what tempts you; the earliest pickup time is already chosen.</p>
+        <ul class="ix-list ix-lead" aria-label="The cannelés from the photograph">
+          <li><span class="nm"><b lang="fr">Cannelés</b><small>By three, from the tray above; on the live store</small></span><div class="row"><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="caneles" data-title="Cannelés, by 3" data-price="9" data-variant="42881176993980" data-image="img/caneles-1-800.jpg">Add</button></div></li>
+        </ul>
+        <p>From the counter at the shop’s own prices. Add what tempts you; the earliest pickup time is already chosen.</p>
       </div>
       <a class="link" href="menu.html">The whole menu, with search</a>
     </div>
     <div class="ix-case">
-      <article class="vc wide" data-card>
+      <article class="vc wide vc-lead" data-card>
         <span class="live">On the live store</span>
         <img src="img/caneles-1-800.jpg" srcset="img/caneles-1-800.jpg 800w, img/caneles-1.jpg 1600w" sizes="(min-width:900px) 560px, 270px" width="1600" height="1600" alt="Three cannelés on one of the shop’s blue glazed plates" loading="lazy">
         <span class="vc-mark" aria-hidden="true"><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></span>
@@ -727,6 +737,32 @@
   </div>
 </section>
 
+<section class="ix-six bg-deep" id="box" aria-labelledby="h-box">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="ix-moment"><b>II</b><span lang="fr">La boîte</span></p>
+      <h2 id="h-box">Six macarons, boxed your way.</h2>
+      <p>Tap flavours until the box is full: six for $15, the shop’s own price. Tap a macaron in the box to swap it out.</p>
+    </div>
+    <div class="box ix-boxwrap" data-box data-price="15" data-title="Box of six macarons" data-image="img/macarons-2-800.jpg">
+      <img src="img/macarons-2-800.jpg" srcset="img/macarons-2-800.jpg 800w, img/macarons-2.jpg 1600w" sizes="(min-width:900px) 40vw, 100vw" width="1600" height="1600" alt="Six macarons lined up in a white iD Éclair box" loading="lazy">
+      <div>
+        <div class="slots" data-box-slots role="group" aria-live="polite" aria-label="Your box"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+        <div class="flav" role="group" aria-label="Flavours">
+          <button type="button" data-f="Raspberry" data-short="Rasp"><i class="f-raspberry"></i>Raspberry</button>
+          <button type="button" data-f="Pistachio" data-short="Pist"><i class="f-pistachio"></i>Pistachio</button>
+          <button type="button" data-f="Chocolate" data-short="Choc"><i class="f-chocolate"></i>Chocolate</button>
+          <button type="button" data-f="Coffee" data-short="Coff"><i class="f-coffee"></i>Coffee</button>
+          <button type="button" data-f="Coconut" data-short="Coco"><i class="f-coconut"></i>Coconut</button>
+        </div>
+        <p class="note-sm">The day’s bake decides which flavours are in the case.</p>
+        <div class="foot"><span class="price">$15.00</span><button class="btn btn-brand" type="button" data-box-add disabled>Fill the box first</button><button class="link" type="button" data-box-clear>Start over</button><button class="link" type="button" data-box-surprise>Surprise me</button></div>
+        <div class="alt"><span>Or the assorted box, boxed today</span><span class="price">$18.00</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-image="img/macarons-2-800.jpg">Add</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="ix-chef bg-white" id="chef" aria-labelledby="h-chef">
   <div class="wrap">
     <figure>
@@ -734,7 +770,7 @@
       <figcaption>The large gift basket on the live store: biscuits, meringues, truffles and a jar of jam.</figcaption>
     </figure>
     <div class="ix-copy">
-      <p class="ix-moment"><b>II</b><span lang="fr">Les mains</span></p>
+      <p class="ix-moment"><b>III</b><span lang="fr">Les mains</span></p>
       <h2 id="h-chef">Four generations of pastry, one pair of hands.</h2>
       <p>Romuald Guiot comes from a family of pastry cooks; the shop’s own story starts in a grandfather’s restaurant, with a blue apron. Chef Romy trained at La Maison de Marc Veyrat, opened La Mirabelle in New York, and reached the final of Food Network’s Spring Baking Championship.</p>
       <p>On Green Street the technique stays French and the butter comes from plants. Guests are often surprised to learn that the whole case is vegan, the chef told Flaunt. After the Eaton Fire the shop gave éclairs away, and its daily leftovers now go to Friends In Deed in Pasadena.</p>
@@ -756,7 +792,7 @@
   <div class="wrap">
     <div class="ix-rite-top">
       <div>
-        <p class="ix-moment"><b>III</b><span lang="fr">Le rituel</span></p>
+        <p class="ix-moment"><b>IV</b><span lang="fr">Le rituel</span></p>
         <div class="sec-head tight">
           <h2 id="h-pickup">Choose the moment. It is boxed for then.</h2>
           <p>Ordering ahead takes a minute on a phone: add from the case, pick a day and a time, and walk in to a box with your name on it.</p>
@@ -789,34 +825,13 @@
         <div class="actions" data-review><button class="btn btn-brand btn-sm" type="button" data-cart-open>Review your bag · <span data-cart-total>$0.00</span></button></div>
       </div>
     </div>
-
-    <div class="box ix-boxwrap" id="box" data-box data-price="15" data-title="Box of six macarons" data-image="img/macarons-2-800.jpg">
-      <img src="img/macarons-2-800.jpg" srcset="img/macarons-2-800.jpg 800w, img/macarons-2.jpg 1600w" sizes="(min-width:900px) 40vw, 100vw" width="1600" height="1600" alt="Six macarons lined up in a white iD Éclair box" loading="lazy">
-      <div>
-        <div class="sec-head tight">
-          <h3>While you are here, a box of six.</h3>
-          <p>Tap flavours until the box is full: six for $15, the shop’s own price. Tap a macaron in the box to swap it out.</p>
-        </div>
-        <div class="slots" data-box-slots role="group" aria-live="polite" aria-label="Your box"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
-        <div class="flav" role="group" aria-label="Flavours">
-          <button type="button" data-f="Raspberry" data-short="Rasp"><i class="f-raspberry"></i>Raspberry</button>
-          <button type="button" data-f="Pistachio" data-short="Pist"><i class="f-pistachio"></i>Pistachio</button>
-          <button type="button" data-f="Chocolate" data-short="Choc"><i class="f-chocolate"></i>Chocolate</button>
-          <button type="button" data-f="Coffee" data-short="Coff"><i class="f-coffee"></i>Coffee</button>
-          <button type="button" data-f="Coconut" data-short="Coco"><i class="f-coconut"></i>Coconut</button>
-        </div>
-        <p class="note-sm">The day’s bake decides which flavours are in the case.</p>
-        <div class="foot"><span class="price">$15.00</span><button class="btn btn-brand" type="button" data-box-add disabled>Fill the box first</button><button class="link" type="button" data-box-clear>Start over</button><button class="link" type="button" data-box-surprise>Surprise me</button></div>
-        <div class="alt"><span>Or the assorted box, boxed today</span><span class="price">$18.00</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-image="img/macarons-2-800.jpg">Add</button></div>
-      </div>
-    </div>
   </div>
 </section>
 
 <section class="ix-salon bg-deep" id="salon" aria-labelledby="h-salon">
   <div class="wrap">
     <div class="ix-copy">
-      <p class="ix-moment"><b>IV</b><span lang="fr">Le salon de thé</span></p>
+      <p class="ix-moment"><b>V</b><span lang="fr">Le salon de thé</span></p>
       <h2 id="h-salon">Or stay a while, and take tea.</h2>
       <p>Afternoon tea is the third service on Green Street. The counter board lists thirteen Palais des Thés teas, espresso on plant milk, Romy’s hot chocolate, a French breakfast, the soup and sandwich <span lang="fr">du jour</span> and four <span lang="fr">salades</span>, and a tea party for two at $80 with the chef’s sweets and savories. The chalkboard sums the room up in three words of its own: <q>Tasty, Fancy, and Frenchy!</q> Reviewers single out the décor and the dishes, the outdoor tables, the welcome for dogs, and a staff that commits fully to the French theme.</p>
       <ul class="ix-list">
@@ -841,7 +856,7 @@
       <figcaption>Dark chocolate truffles, made next door at 169.</figcaption>
     </figure>
     <div class="ix-copy">
-      <p class="ix-moment"><b>V</b><span lang="fr">Le soir</span></p>
+      <p class="ix-moment"><b>VI</b><span lang="fr">Le soir</span></p>
       <h2 id="h-soir">In the evening, one door down at 163.</h2>
       <p class="ix-sign" lang="fr">Un verre, un éclair.</p>
       <p>La Cave is the pâtisserie’s evening: organic, biodynamic and vegan wines, Rebel Cheese boards, small plates, and plated desserts from the kitchen next door with a glass poured to match.</p>
@@ -858,7 +873,7 @@
 <section class="ix-invite" id="order" aria-labelledby="h-invite">
   <div class="wrap">
     <div class="sec-head">
-      <p class="ix-moment"><b>VI</b><span lang="fr">L’invitation</span></p>
+      <p class="ix-moment"><b>VII</b><span lang="fr">L’invitation</span></p>
       <h2 id="h-invite">A love letter you can eat, <em lang="fr">à emporter.</em></h2>
       <p>The jar desserts already carry the shop’s love-note names. All four are on the live store today, and the doors below lead to everything else.</p>
     </div>
