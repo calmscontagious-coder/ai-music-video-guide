@@ -13,17 +13,17 @@
 <meta property="og:image" content="mood-01.jpg">
 <meta property="og:image:alt" content="The recommended home page on a phone: “The éclair case at 169 W Green St, made entirely from plants” over a photo of cannelés">
 <meta property="og:locale" content="en_US">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="../assets/fonts.css">
 <link rel="stylesheet" href="review.css">
 </head>
 <body>
-<aside class="notice" aria-label="Private preview"><div class="wrap"><b>Private preview</b><span>This is a review board, not the live store. Prices on every page come from the shop’s own listings, read 21 and 22 October 2026; pickup slots, class seats and tables are examples. Nothing here takes an order or a payment.</span></div></aside>
+<aside class="notice" aria-label="Private preview"><div class="wrap"><b>Private preview.</b> <span>Prices read 21–22 Oct 2026. Slots and tables are examples; nothing is ordered.</span><span class="more">This is a review board, not the live store; prices on every page come from the shop’s own listings, and nothing here takes a payment.</span></div></aside>
 
 <header class="top">
   <div class="wrap">
-    <a href="../index.html"><img class="logo" src="../img/logo-wordmark.png" width="904" height="658" alt="iD Éclair, Pâtisserie Française"></a>
+    <a href="../index.html"><img class="logo" src="../img/logo-wordmark.png" srcset="../img/logo-wordmark-200.webp 200w, ../img/logo-wordmark-400.webp 400w, ../img/logo-wordmark.png 904w" sizes="(max-width:719px) 72px, 96px" width="904" height="658" alt="iD Éclair, Pâtisserie Française"></a>
     <nav aria-label="On this board">
       <ul>
         <li><a href="#recommended">Recommended</a></li>
@@ -44,6 +44,7 @@
       <p class="kicker">Review board · 24 October 2026</p>
       <h1 id="h1">Your new site for 169 W Green St, <em>ready to choose.</em></h1>
       <p class="lede">Everything the studio has built for the shop sits on this one page. Start with the recommended home page, look at the eleven directions it grew from, then answer three questions. Open each link on your phone: that is how most customers will meet it.</p>
+      <a class="btn btn-brand intro-go" href="../index.html">Open the recommended home <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </section>
 
     <section class="sec" id="recommended" aria-labelledby="h-rec">
@@ -53,7 +54,7 @@
         <p>One home page made from the two strongest directions below.</p>
       </div>
       <div class="pick" data-grid-break>
-        <figure class="shot"><img src="mood-01.jpg" width="750" height="2840" alt="The home blend on a phone: “The éclair case at 169 W Green St, made entirely from plants” over a box of cannelés, then the first chapter, La vitrine"></figure>
+        <figure class="shot"><img src="mood-01.jpg" width="750" height="2840" loading="lazy" alt="The home blend on a phone: “The éclair case at 169 W Green St, made entirely from plants” over a box of cannelés, then the first chapter, La vitrine"></figure>
         <div>
           <h3>Why this one</h3>
           <ol class="why">
@@ -75,16 +76,16 @@
       </div>
       <ul class="moods">
         <li><figure><a href="mood-01.jpg"><img src="mood-01.jpg" width="750" height="2840" alt="Mood one: the home as built, indigo type on the ivory canvas" loading="lazy"></a>
-          <figcaption><b>Ivory, as built</b><span>Nothing moved. The whole page sits on <code>--color-canvas</code>, the warm ivory.</span></figcaption></figure></li>
+          <figcaption><b>Ivory, as built</b><span>Nothing moved. The whole page sits on the warm ivory.</span></figcaption></figure></li>
         <li><figure><a href="mood-02.jpg"><img src="mood-02.jpg" width="750" height="2840" alt="Mood two: the opening of the home on a deep indigo band, with ivory headline and an ivory button" loading="lazy"></a>
-          <figcaption><b>A deep indigo opening</b><span>More than one variable: the opening takes <code>--color-brand-deep</code> as its ground, and in its text column ink, brand and muted turn ivory while the button turns ivory with indigo type.</span></figcaption></figure></li>
+          <figcaption><b>A deep indigo opening</b><span>More than one colour moves: the opening sits on the deep indigo, its words turn ivory, and the button turns ivory with indigo type.</span></figcaption></figure></li>
         <li><figure><a href="mood-03.jpg"><img src="mood-03.jpg" width="750" height="2840" alt="Mood three: the home as built, with a thin gold rule beside and under the chapter heading La vitrine" loading="lazy"></a>
-          <figcaption><b><span lang="fr">Salon</span>’s gold hairline</b><span>More than one variable, and a new colour: there is no gold token yet, so two rules paint <span lang="fr">Salon</span>’s gold on the line beside each chapter numeral and under each chapter heading. The chapter names stay indigo, because gold text on ivory is too faint to read.</span></figcaption></figure></li>
+          <figcaption><b><span lang="fr">Salon</span>’s gold hairline</b><span>More than one colour moves, and one is new: gold is not in the palette yet, so <span lang="fr">Salon</span>’s gold is drawn on the line beside each chapter numeral and under each chapter heading. The chapter names stay indigo, because gold text on ivory is too faint to read.</span></figcaption></figure></li>
       </ul>
       <ol class="moods-notes" aria-label="What moved in each mood">
-        <li><b>Ivory:</b> nothing moved; the page sits on <code>--color-canvas</code>.</li>
-        <li><b>Deep indigo opening:</b> more than one variable; the opening takes <code>--color-brand-deep</code> and its text turns ivory.</li>
-        <li><b><span lang="fr">Salon</span>’s gold:</b> more than one variable and a new colour; gold lines at the chapter heads, names still indigo.</li>
+        <li><b>Ivory:</b> nothing moved; the page sits on the warm ivory.</li>
+        <li><b>Deep indigo opening:</b> more than one colour moves; the opening sits on the deep indigo and its words turn ivory.</li>
+        <li><b><span lang="fr">Salon</span>’s gold:</b> more than one colour moves and one is new; gold lines at the chapter heads, names still indigo.</li>
       </ol>
     </section>
 
@@ -155,7 +156,7 @@
           <div class="body">
             <p class="num">Direction 06</p>
             <h3 lang="fr">Maison</h3>
-            <p class="arg">The shop presented like the great Paris houses, selling by leading with gifts, from the $140 Golden Ticket to coffrets.</p>
+            <p class="arg">The shop presented like the great Paris houses, selling by leading with gifts, from the $140 Golden Ticket to <span lang="fr">coffrets</span>.</p>
             <p class="best"><b>Best for</b> gifts, holidays and office orders.</p>
             <p class="facts">6 taps, 8 with your own slot · box and slot 6.1 screens down</p>
             <a class="go" href="../options/06-maison/">Open <span lang="fr">Maison</span></a>
@@ -188,7 +189,7 @@
           <div class="body">
             <p class="num">Direction 09</p>
             <h3 lang="fr">Galerie</h3>
-            <p class="arg">The case set as a museum catalogue, one numbered planche to a phone screen, the shop’s own photographs in mats, prices as captions.</p>
+            <p class="arg">The case set as a museum catalogue, one numbered <span lang="fr">planche</span> to a phone screen, the shop’s own photographs in mats, prices as captions.</p>
             <p class="best"><b>Best for</b> gifting and customers who shop with their eyes.</p>
             <p class="facts">6 taps, 9 with your own slot · box 5.6 screens down, slot in the strip from the first Add</p>
             <a class="go" href="../options/09-galerie/">Open <span lang="fr">Galerie</span></a>
@@ -199,7 +200,7 @@
           <div class="body">
             <p class="num">Direction 10</p>
             <h3 lang="fr">Fête</h3>
-            <p class="arg">One page dressed for the calendar: 25 skins through 2027, from Halloween and Noël to Bastille Day and Macaron Day, each one night’s change that reverts on its own.</p>
+            <p class="arg">One page dressed for the calendar: 25 skins through 2027, from Halloween and <span lang="fr">Noël</span> to Bastille Day and Macaron Day, each one night’s change that reverts on its own.</p>
             <p class="best"><b>Best for</b> a shop that wants to feel alive all year without rebuilding anything.</p>
             <p class="facts">6 taps, 8 with your own slot · box and slot 3.0 screens down · today opens in the Halloween skin</p>
             <a class="go" href="../options/10-fete/">Open <span lang="fr">Fête</span></a>
@@ -212,7 +213,7 @@
             <h3>Concierge</h3>
             <p class="arg">A counter assistant on the page: it answers from the shop’s own facts, prices and hours, fills a box of six from a sentence, composes a cake request, and says “the shop can tell you” when it does not know.</p>
             <p class="best"><b>Best for</b> questions at 9 pm, gluten and allergy checks, and showing that the shop’s tech is as considered as its pastry.</p>
-            <p class="facts">Rules answer 25 of 30 sample questions with no model call · live-store adds carry the Shopify cart link · voice where the browser supports it</p>
+            <p class="facts">It answers 25 of 30 sample questions from the shop’s own menu · live-store adds carry the Shopify cart link · voice where the browser supports it</p>
             <a class="go" href="../options/11-concierge/">Open Concierge</a>
           </div>
         </li>
@@ -253,7 +254,7 @@
         </div>
         <div class="tile">
           <h3>42 cookie cutters for the shop’s year</h3>
-          <p>The six house pastries, a set for each season from <span lang="fr">Saint-Valentin</span> to New Year, and a <span lang="fr">« merci »</span> stamp plate, each ready to print.</p>
+          <p>The six house pastries, a set for each season from <span lang="fr">Saint-Valentin</span> to New Year, and a <span lang="fr">merci</span> stamp plate, each ready to print.</p>
           <p class="fine">Recipe notes on the cutter board still need the chef’s eye before anything is printed.</p>
           <a class="btn btn-brand" href="../merch/cutters/">Open the cutter board <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>

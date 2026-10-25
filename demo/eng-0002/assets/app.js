@@ -21,6 +21,9 @@
   function money(n) { return '$' + (Math.round(n * 100) / 100).toFixed(2); }
   function plural(n, w) { return n + ' ' + w + (n === 1 ? '' : 's'); }
   function pop(el, cls) { if (!el || reduce) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+  /* canon 27: the count bumps for pointer adds only; a keyboard or script add changes the number without the bump */
+  var viaPointer = false;
+  function bump() { if (viaPointer) $$('[data-cart-count]').forEach(function (b) { pop(b, 'bump'); }); }
   var ICON = {
     plus: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg>',
     x: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
@@ -58,14 +61,14 @@
     put(item, qty);
     save();
     say('Added ' + item.title + '. ' + plural(count(), 'item') + ' in your bag.');
-    $$('[data-cart-count]').forEach(function (b) { pop(b, 'bump'); });
+    bump();
   }
   /* a one-tap set: every item in one save, one announcement */
   function addSet(items) {
     items.forEach(function (i) { put(i, 1); });
     save();
     say('Added ' + items.map(function (i) { return i.title; }).join(' and ') + '. ' + plural(count(), 'item') + ' in your bag.');
-    $$('[data-cart-count]').forEach(function (b) { pop(b, 'bump'); });
+    bump();
   }
   function setQty(h, q) {
     var f = find(h); if (!f) return;
@@ -76,15 +79,26 @@
   function clear() { state.items = []; save(); say('Your bag is empty.'); }
 
   /* Shopify cart permalink: /cart/<variant>:<qty>,... opens the live checkout with these lines.
-     The chosen pickup slot rides along as cart attributes plus the order note, so it shows in the
-     order's Notes section in Shopify admin (shopify.dev/docs/apps/build/checkout/create-cart-permalinks:
-     `attributes[name]=value`, `note=`). Before 2026-10-24 the slot was shown on the page and dropped here. */
+     The chosen pickup slot rides along as cart attributes plus the order note
+     (shopify.dev/docs/apps/build/checkout/create-cart-permalinks: `attributes[name]=value`, `note=`).
+     Two sets of attributes, 25 Oct 2026 (decision 4, DECISION_LOG 2026-10-25):
+       - human-readable: Pickup, Pickup date, Pickup time, for staff reading the order in admin;
+       - the pickup app's own keys, default candidate Zapiet: Checkout-Method=pickup, Pickup-Date
+         (YYYY-MM-DD), Pickup-Time (24 h or 12 h accepted). Verified 25 Oct 2026 on Zapiet's docs,
+         https://docs.zapiet.com/guides/note-attributes (the table of store-pickup attributes).
+         Pickup-Location-Id and the Pickup-Location-* address keys are left out on purpose: the id is the
+         shop's own Zapiet location id, which exists only once the app is installed; add it then, and
+         rename these keys if a different pickup app is chosen. Not yet opened on a dev store. */
+  function hhmm(t) { var m = mins(t); return ('0' + Math.floor(m / 60)).slice(-2) + ':' + ('0' + (m % 60)).slice(-2); }
   function slotParams() {
     var s = slot();
     if (!s.day) return '';
     var label = slotText(s), q = encodeURIComponent;
     return '?attributes[Pickup]=' + q(label) + '&attributes[Pickup%20date]=' + q(s.day.key) +
-      '&attributes[Pickup%20time]=' + q(tlabel(s.time)) + '&note=' + q('Pickup at 169 W Green St: ' + label);
+      '&attributes[Pickup%20time]=' + q(tlabel(s.time)) +
+      '&attributes[Checkout-Method]=pickup&attributes[Pickup-Date]=' + q(s.day.key) +
+      '&attributes[Pickup-Time]=' + q(hhmm(s.time)) +
+      '&note=' + q('Pickup at 169 W Green St: ' + label);
   }
   function checkoutUrl() {
     var m = {}, order = [];
@@ -209,7 +223,7 @@
     foot.hidden = false;
     lines.innerHTML = state.items.map(lineHTML).join('');
     var lq = L.reduce(function (a, i) { return a + i.qty; }, 0), cq = C.reduce(function (a, i) { return a + i.qty; }, 0), nt = '';
-    if (L.length) nt += '<p class="bag-note"><b>Live store items (' + lq + ', ' + money(total(L)) + ').</b> These purchases really happen on the client’s store, with pickup at 169 W Green St, usually ready in 24 hours. The pickup time above is part of the concept and does not carry over yet.</p>';
+    if (L.length) nt += '<p class="bag-note"><b>Live store items (' + lq + ', ' + money(total(L)) + ').</b> These purchases really happen on id-eclair.com, with pickup at 169 W Green St, usually ready in 24 hours. The pickup time above travels with the order to checkout.</p>';
     if (C.length) nt += '<p class="bag-note"><b>Counter items (' + cq + ', ' + money(total(C)) + ').</b> These move into the new checkout with the pickup app; in the live store they are ordered at the counter or on the <a href="' + MENU_APP + '" target="_blank" rel="noopener">menu app</a> today.</p>';
     notes.innerHTML = nt + '<button class="link" type="button" data-bag-clear>Empty the bag</button>';
     var h = '<div class="sum"><span>Subtotal</span><b>' + money(total()) + '</b></div>';
@@ -275,7 +289,7 @@
       var c = $('[data-cats][data-target="' + grid.id + '"]'); if (c) initCats(c);
       return list;
     }).catch(function () {
-      grid.innerHTML = '<p class="note-sm">The menu loads from ' + esc(src) + '. Open this page from a web server to see it.</p>';
+      grid.innerHTML = '<p class="note-sm">The menu did not load. Refresh the page to try again; the counter at 169 W Green St has the full case today.</p>';
     });
   }
 
@@ -471,10 +485,11 @@
   /* ---------- events ---------- */
   document.addEventListener('click', function (e) {
     var t = e.target.closest('a,button,[data-cart-close]'); if (!t) return;
+    viaPointer = e.detail > 0;
     if (t.hasAttribute('data-add')) {
       var had = document.activeElement === t, st = t.nextElementSibling;
       add(itemFrom(t));
-      if (st && st.classList.contains('stepper')) { pop(st, 'pop'); if (had) st.querySelector('[data-inc]').focus({ preventScroll: true }); }
+      if (st && st.classList.contains('stepper')) { if (viaPointer) pop(st, 'pop'); if (had) st.querySelector('[data-inc]').focus({ preventScroll: true }); }
       return;
     }
     if (t.hasAttribute('data-set-items')) {   /* option 05 keeps its own data-set buttons; this one carries its items */

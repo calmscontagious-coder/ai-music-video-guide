@@ -184,9 +184,9 @@
 }
 </script>
 <!-- search-layer:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
 <style>
@@ -199,6 +199,7 @@
 .soir .hero-media img{box-shadow:none}
 .btn-line{background:transparent;color:var(--color-on-brand);border-color:var(--color-on-brand-muted)}
 .btn-line:hover{border-color:var(--color-on-brand)}
+.soir .link{color:var(--color-on-brand)}
 
 /* la carte: a framed list, the double hairline borrowed from the vitrine's price cards */
 .lc-two{display:grid;gap:var(--sp-8)}
@@ -274,19 +275,21 @@
 @media (prefers-reduced-motion:reduce){.lc-nights label,.lc-nights label:active{transition:none;transform:none}}
 /* order strip (home blend): the board docks below the strip */
 @media (min-width:900px){.has-ostrip .lc-board{top:calc(100px + var(--os-h))}}
+/* wave A, 25 Oct 2026: the checkbox and its words make one 44 px target */
+.lc-check label{display:inline-flex;align-items:center;min-height:44px;cursor:pointer}
 </style>
 </head>
-<body data-home="index.html">
+<body data-home="index.html" data-hero-cta>
 
 <a class="skip" href="#top">Skip to the content</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>La Cave’s hours and offer from its own site and the Old Pasadena directory, read 21 October 2026; cheese board price from the live store, 22 October 2026.</span><span class="more">Table booking and the pairing evening are examples; nothing is held or sent.</span></div>
+  <div class="wrap"><b>Concept.</b> <span>Hours read 21 Oct 2026. Tables are examples; nothing is held or sent.</span><span class="more">Hours and offer from La Cave’s own site and the Old Pasadena directory; the cheese board price from the live store.</span></div>
 </aside>
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
     <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html" aria-current="page">La Cave</a><a href="story.html">Chef Romy</a>
@@ -300,19 +303,19 @@
 
 <main id="top">
 
-<section class="hero soir" aria-labelledby="h1">
+<section class="hero hero-flow soir" aria-labelledby="h1">
   <div class="wrap">
     <div>
       <p class="kick rise"><span>Vegan wine bar</span><span>Old Pasadena</span></p>
-      <h1 id="h1" class="rise d1">La Cave, next door at 163. <em>Un verre, un éclair.</em></h1>
-      <p class="lead rise d2">One glass, one éclair. La Cave is the pâtisserie’s evening, one door down: organic, biodynamic and vegan wines, mostly French varietals from California and abroad, Rebel Cheese boards, and plated desserts from the kitchen next door with a glass poured to match.</p>
+      <h1 id="h1" class="rise d1">La Cave, next door at 163. <em lang="fr">Un verre, un éclair.</em></h1>
+      <p class="lead">One glass, one éclair. La Cave is the pâtisserie’s evening, one door down: organic, biodynamic and vegan wines, mostly French varietals from California and abroad, Rebel Cheese boards, and plated desserts from the kitchen next door with a glass poured to match.</p>
       <div class="hero-actions rise d3">
         <a class="btn btn-ivory" href="#reserve">Reserve a table</a>
-        <a class="btn btn-line" href="#board">The cheese board, $100</a>
+        <a class="link" href="#board">See the cheese board, $100</a>
       </div>
     </div>
-    <figure class="hero-media rise d2" data-grid-break>
-      <img src="img/cheese-board-1-800.jpg" srcset="img/cheese-board-1-800.jpg 800w, img/cheese-board-1.jpg 1600w" sizes="(min-width:900px) 46vw, 100vw" width="1600" height="1066" alt="The cheese board on a wine-barrel table: vegan cheeses, baguette toasts, dried apricots, dates, grapes and strawberries" fetchpriority="high">
+    <figure class="hero-media" data-grid-break>
+      <picture><source media="(max-width:899px)" srcset="img/cheese-board-1-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/cheese-board-1-800.jpg"><img src="img/cheese-board-1-800.jpg" srcset="img/cheese-board-1-800.jpg 800w, img/cheese-board-1.jpg 1600w" sizes="(min-width:900px) 46vw, 100vw" width="1600" height="1066" alt="The cheese board on a wine-barrel table: vegan cheeses, baguette toasts, dried apricots, dates, grapes and strawberries" fetchpriority="high"></picture>
       <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cave-open>Wed to Sun, 3 to 9 pm</span><small>published hours</small></figcaption>
     </figure>
   </div>
@@ -397,7 +400,7 @@
     <div class="steps">
       <ol>
         <li><div><h3>Choose the party and the night</h3><p>Only the nights La Cave opens appear, Wednesday to Sunday, and only the times still ahead of you tonight.</p></div></li>
-        <li><div><h3>The calendar holds the table</h3><p>In the build this runs on Sesami, the booking app the plan already prices for the masterclass: $19 a month for five calendars, with the confirmation sent by email.</p></div></li>
+        <li><div><h3>The calendar holds the table</h3><p>La Cave confirms the night, the time and the party by email.</p></div></li>
         <li><div><h3>One Reserve button on every map</h3><p>Google and Apple Maps both take a Reserve link, so a search for a wine bar in Old Pasadena ends at this page instead of a phone call.</p></div></li>
       </ol>
       <div class="slot" role="group" aria-labelledby="res-h" data-res>
@@ -438,12 +441,12 @@
   <div class="wrap lc-pair">
     <figure class="lc-pair-media">
       <img src="img/shop-truffle-box-800.jpg" srcset="img/shop-truffle-box-800.jpg 800w, img/shop-truffle-box.jpg 1600w" sizes="(min-width:900px) 40vw, 100vw" width="1600" height="1601" alt="A white iD Éclair box of cocoa-dusted truffles on a dark, glossy table" loading="lazy">
-      <figcaption class="lc-ticket"><b>Soirée accords</b><span class="ex">Example</span><span class="meta">Plated dessert course · paired pours · 21 and over</span><span class="seats" role="img" aria-label="Example seat map, two seats left"><i></i><i></i><i></i><i></i><i></i><i></i><i class="open"></i><i class="open"></i></span></figcaption>
+      <figcaption class="lc-ticket"><b lang="fr">Soirée accords</b><span class="ex">Example</span><span class="meta">Plated dessert course · paired pours · 21 and over</span><span class="seats" role="img" aria-label="Example seat map, two seats left"><i></i><i></i><i></i><i></i><i></i><i></i><i class="open"></i><i class="open"></i></span></figcaption>
     </figure>
     <div>
       <div class="sec-head tight">
         <h2 id="h-soirees">Soirée accords: the dessert first, then the glass.</h2>
-        <p><span class="ex">Concept</span> A dated evening at La Cave: a plated dessert course from the pastry kitchen, with pours La Cave chooses for each plate. Seats are capped and sold as tickets on this site, 21 and over confirmed at checkout and ID checked at the door. La Cave sets the nights, the menu and the price.</p>
+        <p><span class="ex">Example</span> A dated evening at La Cave: a plated dessert course from the pastry kitchen, with pours La Cave chooses for each plate. Seats are capped, wine is poured for guests 21 and over, and ID is checked at the door. La Cave sets the nights, the menu and the price.</p>
       </div>
       <p class="note-sm">Weeknight events sell best when they are announced three to four weeks ahead (SevenRooms, October 2026), so the first date goes to this list before anywhere else.</p>
       <form class="lc-form" data-wait novalidate aria-labelledby="wait-h">
@@ -465,7 +468,7 @@
         </div>
         <p class="lc-msg" data-wait-msg role="alert" hidden></p>
         <div class="actions"><button class="btn btn-brand" type="submit">Save my place</button></div>
-        <p class="note-sm">Saved on this device only; nothing is sent. In the build, the list feeds one email to guests who opted in and are 21 or over.</p>
+        <p class="note-sm">Saved on this device only; nothing is sent from this preview. The list is one email per evening, to guests who opted in and are 21 or over.</p>
       </form>
       <div class="lc-done" data-wait-done tabindex="-1" hidden>
         <h3>You are on the list.</h3>
@@ -531,7 +534,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>

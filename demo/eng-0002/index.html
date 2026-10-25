@@ -374,9 +374,9 @@
 }
 </script>
 <!-- search-layer:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
 <style>
@@ -415,6 +415,21 @@
 .ix-price b{font-weight:800;color:var(--color-brand);font-variant-numeric:tabular-nums}
 .ix-price small{font-size:.75rem;color:var(--color-muted)}
 @media (min-width:900px){.ix-price{left:-40px;bottom:56px}}
+/* wave A, 25 Oct 2026: on phones the hero reads headline, vitrine, action, lead, so the cannelés and
+   "Order for pickup" share the first screen; the vitrine is the LCP element and paints without a delay */
+@media (max-width:899px){
+  .ix-hero{padding:var(--sp-4) 0 var(--sp-8)}
+  .ix-hero .wrap{gap:var(--sp-4)}
+  .ix-hero .wrap > div{display:contents}
+  .ix-hero .kick{order:1;margin-bottom:0}
+  .ix-hero h1{order:2}
+  .ix-vitrine{order:3}
+  .ix-hero .hero-actions{order:4;margin-top:0}
+  .ix-hero .lead{order:5;margin-top:0}
+  .ix-vitrine img{aspect-ratio:5/4}
+  .ix-vitrine .chip-float{top:24px;left:24px}
+  .ix-price{left:24px;bottom:24px}
+}
 
 /* the load moment: the frame settles, the words arrive, under 300ms in all */
 .ix-in{animation:ix-arrive 200ms var(--ease-enter) both}
@@ -545,17 +560,17 @@
 }
 </style>
 </head>
-<body data-home="index.html">
+<body data-home="index.html" data-hero-cta>
 
 <a class="skip" href="#top">Skip to the content</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>Prices from the shop’s own listings, checked 21 and 22 October 2026.</span><span class="more">Pickup slots and the box builder use example data; checkout opens the live store.</span></div>
+  <div class="wrap"><b>Concept.</b> <span>Prices checked 21–22 Oct 2026. Slots are examples; checkout opens the live store.</span><span class="more">The box builder uses example data too.</span></div>
 </aside>
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
     <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
@@ -574,14 +589,14 @@
     <div>
       <p class="kick ix-in"><span lang="fr">Pâtisserie française</span><span lang="fr">Salon de thé</span><span>100% plant-based</span></p>
       <h1 id="h1" class="ix-in d1">The éclair case at 169&nbsp;W&nbsp;Green&nbsp;St, <em>made entirely from plants.</em></h1>
-      <p class="lead ix-in d2">Glossy chocolate, espresso and pistachio éclairs under gold leaf, croissants laminated with plant butter, macarons by the six. A fourth-generation pastry chef fills the case in Old Pasadena, and you choose the moment it is boxed for you.</p>
+      <p class="lead">Glossy chocolate, espresso and pistachio éclairs under gold leaf, croissants laminated with plant butter, macarons by the six. A fourth-generation pastry chef fills the case in Old Pasadena, and you choose the moment it is boxed for you.</p>
       <div class="hero-actions ix-in d3">
         <a class="btn btn-brand" href="menu.html">Order for pickup</a>
         <a class="link" href="#chef">Meet the chef behind the glass</a>
       </div>
     </div>
-    <figure class="ix-vitrine ix-in" data-grid-break>
-      <img src="img/shop-caneles-tray-800.jpg" srcset="img/shop-caneles-tray-800.jpg 800w, img/shop-caneles-tray.jpg 1600w" sizes="(min-width:900px) 40vw, 100vw" width="1600" height="1600" alt="Rows of dark, caramelised cannelés in a white iD Éclair box, the shop’s card propped up behind them" fetchpriority="high">
+    <figure class="ix-vitrine" data-grid-break>
+      <picture><source media="(max-width:899px)" srcset="img/shop-caneles-tray-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/shop-caneles-tray-800.jpg"><img src="img/shop-caneles-tray-800.jpg" srcset="img/shop-caneles-tray-800.jpg 800w, img/shop-caneles-tray.jpg 1600w" sizes="(min-width:900px) 40vw, 100vw" width="1600" height="1600" alt="Rows of dark, caramelised cannelés in a white iD Éclair box, the shop’s card propped up behind them" fetchpriority="high"></picture>
       <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></figcaption>
       <p class="ix-price ix-in"><span lang="fr">Cannelés</span><b>$3.25 each, 3 for $9</b><small>Counter menu, 21 October 2026</small></p>
     </figure>
@@ -782,10 +797,10 @@
     <div class="ix-copy">
       <p class="ix-moment"><b>IV</b><span lang="fr">Le salon de thé</span></p>
       <h2 id="h-salon">Or stay a while, and take tea.</h2>
-      <p>Afternoon tea is the third service on Green Street. The counter board lists thirteen Palais des Thés teas, espresso on plant milk, Romy’s hot chocolate, a French breakfast, the soup and sandwich du jour and four salades, and a tea party for two at $80 with the chef’s sweets and savories. The chalkboard sums the room up in three words of its own: <q>Tasty, Fancy, and Frenchy!</q> Reviewers single out the décor and the dishes, the outdoor tables, the welcome for dogs, and a staff that commits fully to the French theme.</p>
+      <p>Afternoon tea is the third service on Green Street. The counter board lists thirteen Palais des Thés teas, espresso on plant milk, Romy’s hot chocolate, a French breakfast, the soup and sandwich <span lang="fr">du jour</span> and four <span lang="fr">salades</span>, and a tea party for two at $80 with the chef’s sweets and savories. The chalkboard sums the room up in three words of its own: <q>Tasty, Fancy, and Frenchy!</q> Reviewers single out the décor and the dishes, the outdoor tables, the welcome for dogs, and a staff that commits fully to the French theme.</p>
       <ul class="ix-list">
         <li><span class="nm"><b>Palais des Thés</b><small>Thirteen teas, about 20 oz; Fleur de Geisha, Montagne Bleue, the three Herboristes. <a href="menu.html#tea">The tea carte</a></small></span><div class="row"><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="fleur-de-geisha" data-title="Fleur de Geisha" data-price="6.5" data-glyph="T">Add</button></div></li>
-        <li><span class="nm"><b>Romy’s hot chocolate</b><small>The chef’s own chocolate, hot; the chocolat liégeois is $7.50</small></span><div class="row"><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="romys-hot-chocolate" data-title="Romy’s hot chocolate" data-price="6.5" data-glyph="R">Add</button></div></li>
+        <li><span class="nm"><b>Romy’s hot chocolate</b><small>The chef’s own chocolate, hot; the <span lang="fr">chocolat liégeois</span> is $7.50</small></span><div class="row"><span class="price">$6.50</span><button class="add" type="button" data-add data-handle="romys-hot-chocolate" data-title="Romy’s hot chocolate" data-price="6.5" data-glyph="R">Add</button></div></li>
         <li><span class="nm"><b>French breakfast</b><small>Toasted baguette, plant-based butter, house jam</small></span><div class="row"><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="french-breakfast" data-title="French breakfast" data-price="8" data-glyph="B">Add</button></div></li>
         <li><span class="nm"><b>Latte</b><small>Plant milk; cold foam $1, a pump of vanilla 50¢</small></span><div class="row"><span class="price">$7.50</span><button class="add" type="button" data-add data-handle="latte" data-title="Latte" data-price="7.5" data-glyph="L">Add</button></div></li>
         <li><span class="nm"><b lang="fr">Confiture framboise</b><small>Raspberry jam for the croissant at home, on the live store</small></span><div class="row"><span class="price">$7.95</span><button class="add" type="button" data-add data-handle="raspberry-jam" data-title="Raspberry jam" data-price="7.95" data-variant="41829477253308" data-image="img/raspberry-jam-800.jpg">Add</button></div></li>
@@ -852,7 +867,7 @@
     <div class="faq-list">
       <div class="qa">
         <h3>Is there a vegan pâtisserie in Pasadena?</h3>
-        <p>Yes. iD Éclair at 169 W Green St in Old Pasadena is a French pâtisserie and salon de thé where everything is made from plants: éclairs, croissants laminated with plant butter, macarons, cannelés, mousse cakes and tarts. See <a href="menu.html">the menu</a> or <a href="story.html">the chef’s story</a>.</p>
+        <p>Yes. iD Éclair at 169 W Green St in Old Pasadena is a French pâtisserie and <span lang="fr">salon de thé</span> where everything is made from plants: éclairs, croissants laminated with plant butter, macarons, <span lang="fr">cannelés</span>, mousse cakes and tarts. See <a href="menu.html">the menu</a> or <a href="story.html">the chef’s story</a>.</p>
       </div>
       <div class="qa">
         <h3>Can I order ahead for pickup?</h3>
@@ -879,7 +894,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>

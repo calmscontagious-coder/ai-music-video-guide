@@ -126,9 +126,9 @@
 }
 </script>
 <!-- search-layer:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
 <style>
@@ -199,17 +199,17 @@
 @media (min-width:900px){.has-ostrip .st-path .sec-head{top:calc(110px + var(--os-h))}}
 </style>
 </head>
-<body data-home="index.html">
+<body data-home="index.html" data-hero-cta>
 
 <a class="skip" href="#top">Skip to the content</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>Facts from Eater LA (18 September 2024), Flaunt, Friends In Deed (24 April 2025) and the shop’s own pages, read 21 October 2026.</span><span class="more">Photos from the shop’s own site; every quote below is the shop’s own wording.</span></div>
+  <div class="wrap"><b>Concept.</b> <span>Facts from Eater LA, Flaunt, Friends In Deed and the shop’s own pages, read 21 Oct 2026.</span><span class="more">Eater LA 18 September 2024, Friends In Deed 24 April 2025. Photos from the shop’s own site; every quote is the shop’s own wording.</span></div>
 </aside>
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
     <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html" aria-current="page">Chef Romy</a>
@@ -223,19 +223,19 @@
 
 <main id="top">
 
-<section class="hero st-hero" aria-labelledby="h1">
+<section class="hero hero-flow st-hero" aria-labelledby="h1">
   <div class="wrap">
     <div>
       <p class="kick rise"><span>Fourth generation</span><span>100% plant-based</span></p>
       <h1 id="h1" class="rise d1">Romuald Guiot, fourth generation. <em>Every pastry from plants.</em></h1>
-      <p class="lead rise d2">Chef Romy trained at La Maison de Marc Veyrat, three Michelin stars, opened La Mirabelle in New York and reached the final of Food Network’s Spring Baking Championship. At 169 W Green St he makes French pâtisserie with no animal products at all, and guests are often surprised to learn it.</p>
+      <p class="lead">Chef Romy trained at La Maison de Marc Veyrat, three Michelin stars, opened La Mirabelle in New York and reached the final of Food Network’s Spring Baking Championship. At 169 W Green St he makes French pâtisserie with no animal products at all, and guests are often surprised to learn it.</p>
       <div class="hero-actions rise d3">
         <a class="btn btn-brand" href="menu.html">Order for pickup</a>
         <a class="link" href="#path">Read the timeline</a>
       </div>
     </div>
-    <figure class="hero-media rise d2" data-grid-break>
-      <img src="img/shop-caneles-tray-800.jpg" srcset="img/shop-caneles-tray-800.jpg 800w, img/shop-caneles-tray.webp 1600w" sizes="(min-width:900px) 46vw, 100vw" width="800" height="800" alt="Rows of dark, caramelised cannelés in a white iD Éclair box, the shop’s card propped up behind them" fetchpriority="high">
+    <figure class="hero-media" data-grid-break>
+      <picture><source media="(max-width:899px)" srcset="img/shop-caneles-tray-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/shop-caneles-tray-800.jpg"><img src="img/shop-caneles-tray-800.jpg" srcset="img/shop-caneles-tray-800.jpg 800w, img/shop-caneles-tray.webp 1600w" sizes="(min-width:900px) 46vw, 100vw" width="800" height="800" alt="Rows of dark, caramelised cannelés in a white iD Éclair box, the shop’s card propped up behind them" fetchpriority="high"></picture>
       <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span>Cannelés from the case, boxed at the shop</span><small>the shop’s photo</small></figcaption>
     </figure>
   </div>
@@ -296,7 +296,7 @@
     </div>
     <div>
       <blockquote class="st-lead">
-        <p>“French style plant-based bakery and salon de thé, specializing in éclairs.”</p>
+        <p>“French style plant-based bakery and <span lang="fr">salon de thé</span>, specializing in éclairs.”</p>
         <cite>The shop’s own profile on Yelp</cite>
       </blockquote>
       <div class="st-quotes">
@@ -362,7 +362,7 @@
       <li>
         <span class="tl-when">December 2024</span>
         <h3>169 W Green St opens</h3>
-        <p>iD Éclair opens in Old Pasadena as a pâtisserie and salon de thé, with La Cave, the vegan wine bar, next door at 163.</p>
+        <p>iD Éclair opens in Old Pasadena as a pâtisserie and <span lang="fr">salon de thé</span>, with La Cave, the vegan wine bar, next door at 163.</p>
         <span class="tl-src">Sources: the shop’s public listings, among them <a href="https://www.happycow.net/reviews/id-eclair-pasadena-442360" target="_blank" rel="noopener">HappyCow</a> and <a href="https://www.oldpasadena.org/visit/directory/view/549/ideclair" target="_blank" rel="noopener">Old Pasadena</a>, read 21 October 2026</span>
       </li>
       <li>
@@ -464,7 +464,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>

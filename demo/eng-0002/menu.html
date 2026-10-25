@@ -1380,9 +1380,9 @@
 }
 </script>
 <!-- search-layer:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
 <style>
@@ -1411,6 +1411,23 @@ html{scroll-padding-top:136px}
 .try button{min-height:36px;padding:0 14px;border-radius:var(--radius-lg);border:1px solid var(--color-line);background:var(--color-surface);color:var(--color-brand);font:700 .875rem var(--font-text);cursor:pointer;transition:border-color var(--dur-fast) var(--ease-move)}
 .try button:hover{border-color:var(--color-brand)}
 .mh-media{display:none;position:relative;margin:0}
+/* wave A, 25 Oct 2026: on phones the macarons photograph and one "Order for pickup" sit on the first
+   screen, between the headline and the lead; the search follows */
+@media (max-width:899px){
+  .mhead{padding:var(--sp-4) 0 var(--sp-8)}
+  .mhead .wrap{gap:var(--sp-4)}
+  .mhead .wrap > div{display:contents}
+  .mhead .kick{order:1;margin-bottom:0}
+  .mhead h1{order:2;max-width:none}
+  .mh-media{order:3;display:block;margin-inline:-16px}
+  .mh-media .m1{width:100%;aspect-ratio:16/9;object-fit:cover}
+  .mh-media .m2{display:none}
+  .mh-media .chip-float{left:16px;bottom:12px}
+  .mhead .hero-actions{order:4;margin-top:0}
+  .mhead .lead{order:5;margin-top:0}
+  .mhead .find{order:6;margin-top:var(--sp-2)}
+}
+@media (min-width:900px){.mhead .hero-actions{margin-top:var(--sp-6)}}
 @media (min-width:900px){
   .mhead{padding:var(--sp-12) 0 var(--sp-16)}
   .mhead .wrap{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--sp-12)}
@@ -1593,19 +1610,25 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
   html.has-ostrip:has(body.pg-menu){scroll-padding-top:136px;scroll-padding-bottom:calc(var(--os-h) + 16px)}
   html.os-on .toast{bottom:calc(var(--os-h) + 32px)}
 }
+/* wave A, 25 Oct 2026: every repeated control reaches 44 px; nothing under 12 px */
+.try button,.seg button,.pk-change,.cats-bar .cat{min-height:44px}
+.q-clear{width:44px;height:44px;right:4px}
+.later .link{min-height:44px;font-size:.875rem}
+.cal .go{min-height:44px}
+.fb,.pk-lab .ex{font-size:.75rem}
 </style>
 </head>
-<body class="pg-menu" data-home="index.html">
+<body class="pg-menu" data-home="index.html" data-hero-cta>
 
 <a class="skip" href="#top">Skip to the content</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>Prices from the shop’s counter board (photographed 22 October 2026), its menu app (21 October 2026) and its Shopify store (22 October 2026).</span><span class="more">Pickup slots, the Saturday drop and the shipping badges are examples; checkout opens the live store.</span></div>
+  <div class="wrap"><b>Concept.</b> <span>Prices checked 21–22 Oct 2026. Slots are examples; checkout opens the live store.</span><span class="more">Prices from the counter board, the menu app and the shop’s own store. The Saturday drop and the shipping badges are examples too.</span></div>
 </aside>
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
     <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html" aria-current="page">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
@@ -1625,6 +1648,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       <p class="kick"><span>100% plant-based</span><span>Order ahead</span></p>
       <h1 id="h1">Today’s case at 169 W Green St, <em>boxed for your time.</em></h1>
       <p class="lead">Every éclair, croissant, macaron and jar on one page, at the shop’s own prices. Pick a time and it is boxed for then.</p>
+      <div class="hero-actions"><a class="btn btn-brand" href="#menu">Order for pickup</a></div>
       <form class="find" role="search" data-find>
         <label for="q">Search the menu</label>
         <div class="find-box">
@@ -1636,7 +1660,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       </form>
     </div>
     <figure class="mh-media" data-grid-break>
-      <img class="m1" src="img/macarons-1-800.jpg" srcset="img/macarons-1-800.jpg 800w, img/macarons-1.webp 1600w" sizes="(min-width:900px) 46vw, 1px" width="800" height="800" alt="Macarons on one of the shop’s blue glazed plates" loading="lazy">
+      <picture><source media="(max-width:899px)" srcset="img/macarons-1-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/macarons-1-800.jpg"><img class="m1" src="img/macarons-1-800.jpg" srcset="img/macarons-1-800.jpg 800w, img/macarons-1.webp 1600w" sizes="(min-width:900px) 46vw, 100vw" width="800" height="800" alt="Macarons on one of the shop’s blue glazed plates" fetchpriority="high"></picture>
       <img class="m2" src="img/caneles-1-800.jpg" width="800" height="800" alt="Three cannelés on a blue plate" loading="lazy">
       <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></figcaption>
     </figure>
@@ -1741,7 +1765,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
         </div>
       </div>
     </div>
-    <p class="legend"><b>Ships nationwide</b>: shelf-stable boxes the new store can mail, a plan the chef confirms first; the live store offers pickup today. <b>Gluten-free</b>: as marked on the counter board (the soup du jour; the endive and beet salades without crostini) or listed on the live store on 22 October 2026, from a kitchen that also bakes with wheat (operations research, finding 7). Counter items: 19 of the menu app’s 113, prices checked 21 October 2026.</p>
+    <p class="legend"><b>Ships nationwide</b>: shelf-stable boxes the new store can mail, a plan the chef confirms first; the live store offers pickup today. <b>Gluten-free</b>: as marked on the counter board (the soup <span lang="fr">du jour</span>; the endive and beet <span lang="fr">salades</span> without crostini) or listed on the live store on 22 October 2026, from a kitchen that also bakes with wheat (operations research, finding 7). Counter items: 19 of the menu app’s 113, prices checked 21 October 2026.</p>
     <div class="grid mgrid" id="menu-grid" data-src="assets/menu.json" data-cats="eclair,vienn,bread,macaron,cake,gift,jam,cookie,class,drink,juice,tea,savory,salad,occasion" aria-busy="true">
       <div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div>
       <div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div>
@@ -1790,63 +1814,13 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       <p>Three steps on a phone, one checkout, one pickup time. The bag on this preview already behaves this way, and live-store items check out for real today.</p>
     </div>
     <ol>
-      <li><div><h3>Pick a day and a time.</h3><p>The bag opens on the next 14 days and the 15-minute slots that still have room, with the earliest chosen for you. A full slot closes itself, and anything that needs notice says when it can be ready instead of disappearing.</p><span class="src">Plan, sections 4.1 and 4.3; references research, finding 1 (Cedric Grolet’s day-first page); mobile ordering research, finding 41.</span></div></li>
-      <li><div><h3>Fill one bag.</h3><p>Éclairs for Saturday, the love-note jars, a gift that ships and a class seat share one cart and one checkout with Apple Pay, Google Pay or Shop Pay. One order carries one pickup time and takes the longest notice of anything in it. The price on the menu is the price at checkout; no online-ordering fee appears at the end.</p><span class="src">Plan, sections 4.1 and 4.3; operations research, finding 22 (California’s Honest Pricing Law).</span></div></li>
-      <li><div><h3>Say your name at the counter.</h3><p>Staff tap Ready for pickup and you get the message, with orders shelved by slot. In the Shop app the order shows its status and a QR code to scan, so the receipt is already on your phone.</p><span class="src">Shopify research, finding 28; loyalty and messaging addendum, finding 7.</span></div></li>
+      <li><div><h3>Pick a day and a time.</h3><p>The bag opens on the next 14 days and the 15-minute slots that still have room, with the earliest chosen for you. A full slot closes itself, and anything that needs notice says when it can be ready instead of disappearing.</p></div></li>
+      <li><div><h3>Fill one bag.</h3><p>Éclairs for Saturday, the love-note jars, a gift that ships and a class seat share one cart and one checkout with Apple Pay, Google Pay or Shop Pay. One order carries one pickup time and takes the longest notice of anything in it. The price on the menu is the price at checkout; no online-ordering fee appears at the end.</p></div></li>
+      <li><div><h3>Say your name at the counter.</h3><p>Staff tap Ready for pickup and you get the message, with orders shelved by slot. In the Shop app the order shows its status and a QR code to scan, so the receipt is already on your phone.</p></div></li>
     </ol>
   </div>
 </section>
 
-<section class="bg-deep" aria-labelledby="h-shopify">
-  <div class="wrap sa">
-    <div class="sa-intro">
-      <span class="ex">For the chef</span>
-      <h2 id="h-shopify">What Shopify adds for iD Éclair.</h2>
-      <p>Today the counter menu lives on a separate ordering app with its own cart, and the Shopify store sells only its 28 packaged products. Moving the menu into Shopify puts the case, the cakes, the classes and the gifts behind one checkout and one customer record.</p>
-      <span class="src">Brand research, findings 2 to 5; Shopify research, finding 2.</span>
-      <div class="sum-box">
-        <strong>About $158</strong>
-        <p>a month in software at launch: the Grow plan, the pickup app, cake options and class booking. Card fees come on top, 2.7% plus 30¢ per online order on Grow.</p>
-        <span class="src">Plan, sections 5.1 and 5.7; Shopify research, finding 29. Prices to confirm in the store’s own admin.</span>
-      </div>
-      <p class="limit"><b>One limit, stated plainly.</b> Below Shopify Plus the time is chosen in the bag and checkout refuses an order with no valid slot; the picker on the checkout page itself needs Plus, from $2,300 a month, which a shop this size does not need. <span class="src">Shopify research, findings 4 and 29; mobile ordering research, finding 36.</span></p>
-    </div>
-    <ul class="adds">
-      <li>
-        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16l-1.2-5H5.2z"/><path d="M5 10v9h14v-9M9.5 19v-5h5v5"/></svg></span>
-        <div><h3>One checkout for the counter and the web</h3><p>With Shopify POS at the counter, walk-in sales and web orders share one list of orders, customers and stock. Staff tap Ready for pickup, the customer is told, and a printed QR slip finds the order.</p><span class="src">Shopify research, findings 27 and 28.</span></div>
-      </li>
-      <li>
-        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></span>
-        <div><h3>Pickup day and time, held at checkout</h3><p>The pickup app (Bird, $49.99 a month) sets prep time per item, caps each slot and closes full and closed days. The customer chooses in the bag, and a checkout validation refuses any order that skips the slot, Shop Pay included.</p><span class="src">Shopify research, finding 6; mobile ordering research, finding 36; plan, section 4.2.</span></div>
-      </li>
-      <li>
-        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2M10 9.5l1.5 1.5 3-3"/></svg></span>
-        <div><h3>Shop Pay and the Shop app</h3><p>Saved details for one-tap checkout, a Buy again button on past orders, and the pickup order in the Shop app with its status and a QR code once staff mark it ready.</p><span class="src">Loyalty and messaging addendum, findings 6, 7 and 10.</span></div>
-      </li>
-      <li>
-        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4z"/><path d="M4 12l8 4 8-4M4 16l8 4 8-4"/></svg></span>
-        <div><h3>Stock that matches the case</h3><p>Daily pastries count down as they sell, online and at the counter. At five left the menu says Only a few left; at zero it says Sold out today, so the site never sells a pastry the case no longer has.</p><span class="src">Automation map addendum, item A8.</span></div>
-      </li>
-      <li>
-        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M3 10.5h18M7 14.5h4"/></svg></span>
-        <div><h3>Gift cards</h3><p>Sold online, spent at the counter, and kept in Apple Wallet with the balance and a QR code staff scan. California’s rule is built into the terms: cash back on balances under $15.</p><span class="src">Loyalty and messaging addendum, finding 11; operations research, finding 24.</span></div>
-      </li>
-      <li>
-        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><path d="M7.5 7.5h.01"/></svg></span>
-        <div><h3>Discounts</h3><p>A first-order code, a referral credit, or a discount shared as a link or a QR code on the counter card, each one tracked in Shopify.</p><span class="src">Mobile ordering research, finding 52; merchandise and revenue addendum, finding 16.</span></div>
-      </li>
-      <li>
-        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span>
-        <div><h3>Email and text</h3><p>Ready-for-pickup messages from day one, then flows: the morning-of reminder, a birthday note, a nudge to come back. In Klaviyo’s 2026 data, automated flows were 7.6% of text sends and 45.2% of text revenue.</p><span class="src">Plan, section 5.3; automation map addendum, item A3.</span></div>
-      </li>
-      <li>
-        <span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h11v9.5H3zM14 10h3.8l3.2 3.4V16H14"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg></span>
-        <div><h3>TikTok Shop for goods that ship</h3><p>The TikTok channel syncs products, stock and orders into Shopify. Merchandise goes first; boxed chocolates and biscuits follow once FDA registration and labels are in place. Fresh pastry stays off TikTok, and the videos send people to pickup.</p><span class="src">Shopify research, findings 15 to 17; plan, section 5.5.</span></div>
-      </li>
-    </ul>
-  </div>
-</section>
 
 <div class="toast" data-toast aria-hidden="true" hidden></div>
 <p class="sr" data-sr aria-live="polite"></p>
@@ -1867,7 +1841,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       </div>
       <div class="qa">
         <h3>Which pastries are gluten-free?</h3>
-        <p>The live store lists the cannelés, the assorted macarons, the four love-note jars, the truffles, the chocolate fingers and the cookie spoons as gluten-free. They come from a kitchen that also bakes with wheat, so ask at the counter if you need a strict choice.</p>
+        <p>The live store lists the <span lang="fr">cannelés</span>, the assorted macarons, the four love-note jars, the truffles, the chocolate fingers and the cookie spoons as gluten-free. They come from a kitchen that also bakes with wheat, so ask at the counter if you need a strict choice.</p>
       </div>
       <div class="qa">
         <h3>Can I get iD Éclair delivered?</h3>
@@ -1886,7 +1860,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
 <footer>
   <div class="wrap">
     <div>
-      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html" aria-current="page">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
@@ -1990,7 +1964,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
     if (h === 'golden-ticket') return { h: 0, text: 'Class date arranged with the shop' };
     if (h === 'custom-logo-vegan-cookie') return { h: 0, text: 'Your design goes to the shop by email for approval first' };
     if (h === 'macaron-box-6') return { h: 0, text: 'Same day; the flavours follow the day’s bake' };
-    if (h === 'mousse-cake') return { h: 0, text: 'From the case; whole cakes 48 hours ahead (proposed)' };
+    if (h === 'mousse-cake') return { h: 0, text: 'From the case; ask the shop for a whole cake' };
     if (it.channel === 'cafe') return { h: 0, text: it.category === 'drink' ? 'From the salon de thé' : it.category === 'savory' ? 'From the salon’s savory menu' : 'Same day from the case' };
     if (h === 'cheese-board') return { h: 24, text: 'Pickup only; about 24 hours on the live store' };
     return { h: 24, text: 'Live store today: ready for pickup in about 24 hours' };

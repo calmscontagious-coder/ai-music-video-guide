@@ -219,9 +219,9 @@
 }
 </script>
 <!-- search-layer:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
 <style>
@@ -367,19 +367,22 @@ textarea.cl-input{min-height:88px;resize:vertical}
 }
 /* order strip (home blend): the gift ticket docks below the strip */
 @media (min-width:900px){.has-ostrip .cl-gt{top:calc(96px + var(--os-h))}}
+/* wave A, 25 Oct 2026: the checkbox and its words make one 44 px target */
+.cl-flex{min-height:44px;cursor:pointer}
+.cl-flex label{display:inline-flex;align-items:center;min-height:44px;cursor:pointer}
 </style>
 </head>
-<body data-home="index.html">
+<body data-home="index.html" data-hero-cta>
 
 <a class="skip" href="#top">Skip to the content</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>Class details from the shop’s posts and store listing, read 21 and 22 October 2026.</span><span class="more">Seat counts are examples. The Golden Ticket checks out on the live store.</span></div>
+  <div class="wrap"><b>Concept.</b> <span>Class details read 21–22 Oct 2026. Seat counts are examples; checkout opens the live store.</span><span class="more">Details from the shop’s posts and store listing.</span></div>
 </aside>
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
     <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html" aria-current="page">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
@@ -393,19 +396,19 @@ textarea.cl-input{min-height:88px;resize:vertical}
 
 <main id="top">
 
-<section class="hero cl-hero" aria-labelledby="h1">
+<section class="hero hero-flow cl-hero" aria-labelledby="h1">
   <div class="wrap">
     <div>
       <p class="kick rise"><span>Tuesdays</span><span>$125 a seat</span><span>169 W Green St</span></p>
-      <h1 id="h1" class="rise d1">Macaron Masterclass with Chef Romy, <em>Tuesdays at 3:30.</em></h1>
-      <p class="lead rise d2">Two hands-on hours at the shop, 3:30 to 5:30 pm, with the same plant-based recipes as the vitrine. You leave with 20 to 30 macarons in a box. Seats are very limited.</p>
+      <h1 id="h1">Macaron Masterclass with Chef Romy, <em>Tuesdays at 3:30.</em></h1>
+      <p class="lead">Two hands-on hours at the shop, 3:30 to 5:30 pm, with the same plant-based recipes as the vitrine. You leave with 20 to 30 macarons in a box. Seats are very limited.</p>
       <div class="hero-actions rise d3">
         <a class="btn btn-brand" href="#dates">See the Tuesdays</a>
         <a class="link" href="#gift">Give it as a gift</a>
       </div>
     </div>
-    <figure class="hero-media rise d2" data-grid-break>
-      <img src="img/shop-truffle-box-800.jpg" srcset="img/shop-truffle-box-800.jpg 800w, img/shop-truffle-box.webp 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="800" height="801" alt="Cocoa-dusted chocolate truffles spilling from a white iD Éclair box" fetchpriority="high">
+    <figure class="hero-media" data-grid-break>
+      <picture><source media="(max-width:899px)" srcset="img/shop-truffle-box-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/shop-truffle-box-800.jpg"><img src="img/shop-truffle-box-800.jpg" srcset="img/shop-truffle-box-800.jpg 800w, img/shop-truffle-box.webp 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="800" height="801" alt="Cocoa-dusted chocolate truffles spilling from a white iD Éclair box" fetchpriority="high"></picture>
       <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cl-next>Next class on a Tuesday, 3:30 pm</span><small>example seats</small></figcaption>
     </figure>
   </div>
@@ -471,8 +474,8 @@ textarea.cl-input{min-height:88px;resize:vertical}
     </div>
     <button class="btn btn-ghost btn-sm cl-more" type="button" data-cl-more hidden>Show four more Tuesdays</button>
     <div class="cl-how">
-      <p><b>How Reserve works here.</b> It puts a seat in the same bag as your éclairs and boxes, so the whole order is one checkout. In the live version the seat books through the class app (Sesami in the plan, $19 a month), which holds the calendar, the waitlist and the reminders and shows each booking on the shop’s point of sale. Today the shop books classes by DM or in person.</p>
-      <p>Seat counts here are examples. The live calendar shows the real ones and closes sales 48 hours before class (proposed in the plan).</p>
+      <p><b>How Reserve works.</b> It puts a seat in the same bag as your éclairs and boxes, so the whole order is one checkout, and the class calendar holds the seat, the waitlist and the reminders. Today the shop books classes by DM or in person.</p>
+      <p>Seat counts here are examples; the class calendar shows the real ones.</p>
     </div>
   </div>
 </section>
@@ -498,7 +501,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
         <li>Age, when a guest is under 18 (the minimum age is the chef’s call).</li>
         <li>A kitchen waiver and a photo release choice.</li>
       </ul>
-      <p class="note-sm">Proposed class terms from the plan, for the chef and counsel to confirm: a class credit if you cancel more than 48 hours ahead, seats transferable to a friend, and a full refund or credit if the shop cancels.</p>
+      <p class="note-sm">Need to change your seat? Message the shop before class.</p>
     </div>
   </div>
 </section>
@@ -529,7 +532,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
         <span data-gt-add="dark"><button class="add" type="button" data-add data-handle="golden-ticket" data-title="Golden Ticket (dark chocolate 60%)" data-price="140" data-variant="45561722503356" data-image="img/golden-ticket.jpg">Add the Golden Ticket</button></span>
         <span data-gt-add="milk" hidden><button class="add" type="button" data-add data-handle="golden-ticket-milk" data-title="Golden Ticket (milk chocolate 46%)" data-price="140" data-variant="45561722536124" data-image="img/golden-ticket.jpg">Add the Golden Ticket</button></span>
         <span data-gt-add="white" hidden><button class="add" type="button" data-add data-handle="golden-ticket-white" data-title="Golden Ticket (white chocolate 30%)" data-price="140" data-variant="45561722568892" data-image="img/golden-ticket.jpg">Add the Golden Ticket</button></span>
-        <p class="fine">Checks out on id-eclair.com, a real purchase. The note and the send date are concept features: in the build they travel with the order as a gift note, and today’s cart link carries the ticket only.</p>
+        <p class="fine">Checks out on id-eclair.com, a real purchase. The cart carries the ticket; add your note and the send date as the gift note at checkout.</p>
       </div>
     </div>
     <figure class="cl-gt">
@@ -553,7 +556,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
   <div class="wrap cl-private">
     <div class="sec-head">
       <h2 id="h-private">Private and team sessions.</h2>
-      <p>A birthday at the bench, friends in town, a team afternoon: ask for a masterclass of your own. In the live version this goes to the shop’s inbox and the chef answers with dates and a price. This preview sends nothing.</p>
+      <p>A birthday at the bench, friends in town, a team afternoon: ask for a masterclass of your own. The request goes to the shop and the chef answers with dates and a price. This preview sends nothing.</p>
     </div>
     <form class="cl-req" id="cl-req" novalidate>
       <fieldset class="cl-choc">
@@ -618,7 +621,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
 <footer>
   <div class="wrap">
     <div>
-      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
@@ -641,7 +644,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
    Runs during parsing, before the deferred app.js, so the Reserve buttons exist when app.js wires every data-add button. */
 (function () {
   'use strict';
-  var TZ = 'America/Los_Angeles', CAP = 8, SHOW = 8, TOTAL = 12, START = 930 /* 3:30 pm */, CUTOFF = 2880 /* 48 hours, proposed */;
+  var TZ = 'America/Los_Angeles', CAP = 8, SHOW = 8, TOTAL = 12, START = 930 /* 3:30 pm */, CUTOFF = 2880 /* 48 hours; the cutoff is a plan proposal, see HOME_BLEND notes */;
   var DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -675,7 +678,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
   function ticket(x, i) {
     var lab = short(x.d), dots = '', seat, act, cls = 'cl-ticket';
     for (var j = 0; j < CAP; j++) dots += '<i' + (j >= CAP - x.left ? ' class="open"' : '') + '></i>';
-    if (x.closed) { cls += ' is-closed'; seat = 'Sales closed'; act = '<span class="cl-closed">Sales close 48 hours before class (proposed)</span>'; }
+    if (x.closed) { cls += ' is-closed'; seat = 'Sales closed'; act = '<span class="cl-closed">Sales have closed for this class</span>'; }
     else if (!x.left) { cls += ' is-full'; seat = 'Full'; act = '<button class="add cl-wait" type="button" data-cl-wait="' + x.key + '" aria-pressed="false" aria-label="Join the waitlist for ' + lab + '">Join the waitlist</button>'; }
     else {
       seat = x.left + ' of ' + CAP + ' seats left';
@@ -802,7 +805,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
       if (!notes || notes.querySelector('.cl-bag-note') || !seatItems(window.IDE.state()).length) return;
       var p = document.createElement('p');
       p.className = 'bag-note cl-bag-note';
-      p.innerHTML = '<b>Class seats.</b> Example seats for the concept. In the live version they book through the class app, with the waitlist and reminders; today the shop books classes by DM or in person.';
+      p.innerHTML = '<b>Class seats.</b> Example seats on this preview. The class calendar holds the seat, the waitlist and the reminders; today the shop books classes by DM or in person.';
       notes.insertBefore(p, notes.querySelector('[data-bag-clear]'));
     }
     var notesEl = document.querySelector('#bag [data-bag-notes]');

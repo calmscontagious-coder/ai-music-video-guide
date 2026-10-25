@@ -127,7 +127,7 @@
      "name": "How far ahead should I order a custom cake?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "At least one week. The shop states that rule today, and the calendar here starts seven days out. The plan proposes four weeks for wedding cakes, for the chef to confirm."
+      "text": "At least one week. The shop states that rule today, and the calendar here starts seven days out. For a wedding, ask early: the chef answers with the dates he can take."
      }
     },
     {
@@ -135,7 +135,7 @@
      "name": "Can I send a photo of the cake I want?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes, up to three inspiration photos in step 5. The proposed terms say the chef makes his own interpretation rather than a replica, and licensed characters or brand logos need the owner’s permission."
+      "text": "Yes, up to three inspiration photos in step 5. The chef replies with a sketch of his own version, and you approve it before anything is baked."
      }
     },
     {
@@ -174,9 +174,9 @@
 }
 </script>
 <!-- search-layer:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
 <style>
@@ -376,17 +376,17 @@ textarea.ck-input{min-height:96px;resize:vertical}
 @media (min-width:900px){.has-ostrip .ck-summary{top:calc(96px + var(--os-h))}}
 </style>
 </head>
-<body data-home="index.html">
+<body data-home="index.html" data-hero-cta>
 
 <a class="skip" href="#top">Skip to the content</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>One week’s notice on custom cakes, per the shop’s Instagram; flavours from its menu and store, read 21 and 22 October 2026.</span><span class="more">Sizes are examples. This preview sends nothing and takes no payment.</span></div>
+  <div class="wrap"><b>Concept.</b> <span>Flavours read 21–22 Oct 2026. Sizes are examples; nothing is sent or charged.</span><span class="more">The week’s notice is the shop’s own rule, from its Instagram.</span></div>
 </aside>
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
     <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html" aria-current="page">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
@@ -400,19 +400,19 @@ textarea.ck-input{min-height:96px;resize:vertical}
 
 <main id="top">
 
-<section class="hero ck-hero" aria-labelledby="h1">
+<section class="hero hero-flow ck-hero" aria-labelledby="h1">
   <div class="wrap">
     <div>
       <p class="kick rise"><span>Custom cakes</span><span>One week’s notice</span><span>100% plant-based</span></p>
       <h1 id="h1" class="rise d1">Custom cakes from 169 W Green St, <em>one week ahead.</em></h1>
-      <p class="lead rise d2">Tell Chef Romy the occasion, the guests and the flavour, add up to three photos, and get a sketch and a price back. The shop asks for a week’s notice, so the calendar below starts seven days out.</p>
+      <p class="lead">Tell Chef Romy the occasion, the guests and the flavour, add up to three photos, and get a sketch and a price back. The shop asks for a week’s notice, so the calendar below starts seven days out.</p>
       <div class="hero-actions rise d3">
         <a class="btn btn-brand" href="#builder">Start your cake</a>
         <a class="link" href="#gallery">See the gallery</a>
       </div>
     </div>
-    <figure class="hero-media rise d2" data-grid-break>
-      <img src="img/story-chef-competition.jpg" srcset="img/story-chef-competition-800.jpg 800w, img/story-chef-competition.jpg 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="1600" height="1067" alt="The chef in whites, assembling a chocolate and sugar showpiece at a pastry competition" fetchpriority="high">
+    <figure class="hero-media" data-grid-break>
+      <picture><source media="(max-width:899px)" srcset="img/story-chef-competition-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/story-chef-competition-800.jpg"><img src="img/story-chef-competition-800.jpg" srcset="img/story-chef-competition-800.jpg 800w, img/story-chef-competition.jpg 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="1600" height="1067" alt="The chef in whites, assembling a chocolate and sugar showpiece at a pastry competition" fetchpriority="high"></picture>
       <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span>Earliest cake date <b data-ck-earliest>one week out</b></span><small>7-day rule</small></figcaption>
     </figure>
   </div>
@@ -657,7 +657,7 @@ textarea.ck-input{min-height:96px;resize:vertical}
             <p class="ck-price"><b>Price.</b> The chef quotes after reading your request.</p>
             <p class="ck-todo" data-ck-todo>6 steps to go</p>
             <button class="btn btn-brand ck-send" type="submit">Send to the chef</button>
-            <p class="fine">No payment now. If the chef takes the order, a Shopify invoice for the deposit holds your date (proposed in the plan: the greater of $50 or 25%; the chef sets the terms). The balance is invoiced before pickup.</p>
+            <p class="fine">No payment now. If the chef takes the order, a Shopify invoice for the deposit holds your date; the chef sets the amount. The balance is invoiced before pickup.</p>
           </div>
         </aside>
       </div>
@@ -683,20 +683,20 @@ textarea.ck-input{min-height:96px;resize:vertical}
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-gallery">A wall for the cake portfolio.</h2>
-      <p>The photos are the shop’s own flavours from its store. The framed tiles are placeholders for the cakes in its Instagram highlight, Cakes we Make, until the client sends the files. Every tile starts a request like it.</p>
+      <p>The photos are the shop’s own flavours from its store; the framed tiles name the occasions the chef bakes for. Every tile starts a request like it.</p>
     </div>
     <ul class="ck-gal">
       <li class="ck-tile">
-        <div class="ck-frame" aria-hidden="true"><span>Birthday</span><small>Placeholder</small></div>
-        <div class="ck-cap"><h3>Birthday cakes</h3><p>Placeholder for the client’s birthday photos.</p><button class="link" type="button" data-ck-like="Birthday">Request a cake like this</button></div>
+        <div class="ck-frame" aria-hidden="true"><span>Birthday</span></div>
+        <div class="ck-cap"><h3>Birthday cakes</h3><p>Tell the chef the age, the guests and the flavour.</p><button class="link" type="button" data-ck-like="Birthday">Request a cake like this</button></div>
       </li>
       <li class="ck-tile">
         <img src="img/chocolat-mon-amour-2-800.jpg" width="800" height="800" alt="Chocolat mon amour, layered chocolate mousse in a glass jar" loading="lazy">
         <div class="ck-cap"><h3>Chocolat mon amour</h3><p>Chocolate crumble, ganache and mousse. A jar today, $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-chocolat">Use this flavour</button></div>
       </li>
       <li class="ck-tile">
-        <div class="ck-frame" aria-hidden="true"><span>Wedding tiers</span><small>Placeholder</small></div>
-        <div class="ck-cap"><h3>Wedding cakes</h3><p>Placeholder for the client’s wedding work.</p><button class="link" type="button" data-ck-like="Wedding or engagement">Request a cake like this</button></div>
+        <div class="ck-frame" aria-hidden="true"><span>Wedding tiers</span></div>
+        <div class="ck-cap"><h3>Wedding cakes</h3><p>Tiers, flavours and the date, sketched before anything is baked.</p><button class="link" type="button" data-ck-like="Wedding or engagement">Request a cake like this</button></div>
       </li>
       <li class="ck-tile">
         <img src="img/framboise-cherie-2-800.jpg" width="800" height="800" alt="Framboise chérie, raspberry mousse over almond streusel in a jar" loading="lazy">
@@ -707,24 +707,24 @@ textarea.ck-input{min-height:96px;resize:vertical}
         <div class="ck-cap"><h3>A macaron box for the table</h3><p>The assorted box, $18 on the live store (22 October 2026).</p><div class="row"><span class="price">$18.00</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-image="img/macarons-2-800.jpg">Add</button></div></div>
       </li>
       <li class="ck-tile">
-        <div class="ck-frame" aria-hidden="true"><span>Anniversary</span><small>Placeholder</small></div>
-        <div class="ck-cap"><h3>Anniversary cakes</h3><p>Placeholder for the client’s anniversary photos.</p><button class="link" type="button" data-ck-like="Anniversary">Request a cake like this</button></div>
+        <div class="ck-frame" aria-hidden="true"><span>Anniversary</span></div>
+        <div class="ck-cap"><h3>Anniversary cakes</h3><p>A date to mark, a flavour you share, a message on the plaque.</p><button class="link" type="button" data-ck-like="Anniversary">Request a cake like this</button></div>
       </li>
       <li class="ck-tile">
         <img src="img/citron-ma-passion-2-800.jpg" width="800" height="800" alt="Citron ma passion, lemon curd under meringue in a jar" loading="lazy">
         <div class="ck-cap"><h3>Citron ma passion</h3><p>Lemon curd, meringue, almond streusel. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-citron">Use this flavour</button></div>
       </li>
       <li class="ck-tile">
-        <div class="ck-frame" aria-hidden="true"><span>Logos and launches</span><small>Placeholder</small></div>
-        <div class="ck-cap"><h3>Office and team cakes</h3><p>Placeholder for the client’s corporate orders.</p><button class="link" type="button" data-ck-like="Office or team">Request a cake like this</button></div>
+        <div class="ck-frame" aria-hidden="true"><span>Logos and launches</span></div>
+        <div class="ck-cap"><h3>Office and team cakes</h3><p>A logo or a launch, for the office or the team.</p><button class="link" type="button" data-ck-like="Office or team">Request a cake like this</button></div>
       </li>
       <li class="ck-tile">
         <img src="img/caramel-je-taime-2-800.jpg" width="800" height="800" alt="Caramel je t’aime, caramel mousse and vanilla chantilly in a jar" loading="lazy">
         <div class="ck-cap"><h3>Caramel je t’aime</h3><p>Caramel mousse, almond crumble, vanilla chantilly. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-caramel">Use this flavour</button></div>
       </li>
       <li class="ck-tile">
-        <div class="ck-frame" aria-hidden="true"><span>Baby shower</span><small>Placeholder</small></div>
-        <div class="ck-cap"><h3>Baby shower cakes</h3><p>Placeholder for the client’s shower and naming cakes.</p><button class="link" type="button" data-ck-like="Baby shower">Request a cake like this</button></div>
+        <div class="ck-frame" aria-hidden="true"><span>Baby shower</span></div>
+        <div class="ck-cap"><h3>Baby shower cakes</h3><p>For a shower or a naming day, in the colours you choose.</p><button class="link" type="button" data-ck-like="Baby shower">Request a cake like this</button></div>
       </li>
       <li class="ck-tile">
         <img src="img/noisette-toujours-2-800.jpg" width="800" height="800" alt="Noisette toujours, hazelnut cream over hazelnut crisp in a jar" loading="lazy">
@@ -738,26 +738,15 @@ textarea.ck-input{min-height:96px;resize:vertical}
   </div>
 </section>
 
-<section class="bg-deep" aria-labelledby="h-shopify">
-  <div class="wrap two ck-panels">
-    <div class="panel">
-      <h2 id="h-shopify">What Shopify does for cakes.</h2>
-      <ul>
-        <li>Menu-flavour cakes are ordinary products with sizes and a pickup date, so they share one cart with éclairs and boxes.</li>
-        <li>Sizes, flavours, the plaque and the photo uploads are product options (Globo Product Options in the plan, $9.90 a month).</li>
-        <li>Deposits and balances go out as draft-order invoices: a real Shopify checkout with Apple Pay, Google Pay and Shop Pay, at no software cost.</li>
-        <li>The pickup app in the plan (Bird) blocks any date inside the week, so a Saturday cake cannot be ordered on Friday.</li>
-      </ul>
-    </div>
+<section class="bg-deep" aria-labelledby="h-terms">
+  <div class="wrap ck-panels">
     <div class="panel">
       <h2 id="h-terms">Cake terms, written once.</h2>
-      <p>Proposed in the plan, for the chef and counsel to confirm before launch:</p>
       <ul>
-        <li>A week’s notice for custom cakes; four weeks for wedding cakes.</li>
-        <li>A deposit of the greater of $50 or 25%, refundable more than a week out.</li>
-        <li>“Our interpretation, not a replica” for cakes ordered from photos.</li>
-        <li>No licensed characters or brand logos unless the owner has given permission.</li>
-        <li>An allergen note on every cake, written with the kitchen.</li>
+        <li>A week’s notice for custom cakes, as the shop asks today.</li>
+        <li>A deposit on a Shopify invoice holds your date; the chef sets the amount when he quotes.</li>
+        <li>From a photo, the chef sketches his own version and sends it to you before anything is baked.</li>
+        <li>The balance is invoiced before pickup at 169 W Green St.</li>
       </ul>
     </div>
   </div>
@@ -777,11 +766,11 @@ textarea.ck-input{min-height:96px;resize:vertical}
       </div>
       <div class="qa">
         <h3>How far ahead should I order a custom cake?</h3>
-        <p>At least one week. The shop states that rule today, and the calendar here starts seven days out. The plan proposes four weeks for wedding cakes, for the chef to confirm.</p>
+        <p>At least one week. The shop states that rule today, and the calendar here starts seven days out. For a wedding, ask early: the chef answers with the dates he can take.</p>
       </div>
       <div class="qa">
         <h3>Can I send a photo of the cake I want?</h3>
-        <p>Yes, up to three inspiration photos in step 5. The proposed terms say the chef makes his own interpretation rather than a replica, and licensed characters or brand logos need the owner’s permission.</p>
+        <p>Yes, up to three inspiration photos in step 5. The chef replies with a sketch of his own version, and you approve it before anything is baked.</p>
       </div>
       <div class="qa">
         <h3>Can I put a message on a cake?</h3>
@@ -796,7 +785,7 @@ textarea.ck-input{min-height:96px;resize:vertical}
 <footer>
   <div class="wrap">
     <div>
-      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html" aria-current="page">Cakes</a></li></ul></div>

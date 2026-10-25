@@ -1,0 +1,136 @@
+/* eng-0002 self-hosted type, wave A, 25 October 2026.
+
+   Two families, nothing else:
+     Fraunces     display. Variable: opsz 9-144, wght 400-800. SOFT 100 and WONK 1 are baked in by
+                  Google's instancer (the css2 request pins them), so a font-variation-settings value
+                  for SOFT or WONK other than 100 / 1 has no effect with these files.
+     Nunito Sans  text. Variable: opsz 6-12, wght 400-800.
+
+   Files (assets/fonts/), latin and latin-ext only; the browser fetches a latin-ext file only when a
+   page uses a character in its unicode-range, and an italic file only when italic text renders:
+     fraunces-italic-latin-ext.woff2      Fraunces italic, latin-ext, 69 KB
+     fraunces-italic-latin.woff2          Fraunces italic, latin, 79 KB
+     fraunces-roman-latin-ext.woff2       Fraunces normal, latin-ext, 54 KB
+     fraunces-roman-latin.woff2           Fraunces normal, latin, 62 KB
+     nunito-sans-italic-latin-ext.woff2   Nunito Sans italic, latin-ext, 42 KB
+     nunito-sans-italic-latin.woff2       Nunito Sans italic, latin, 47 KB
+     nunito-sans-roman-latin-ext.woff2    Nunito Sans normal, latin-ext, 43 KB
+     nunito-sans-roman-latin.woff2        Nunito Sans normal, latin, 49 KB
+
+   Source: the files Google Fonts' css2 API served on 25 October 2026 to a Chrome 130 user agent for
+     css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1
+          &family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap
+   (Fraunces v38, Nunito Sans v19; both SIL Open Font License 1.1). unicode-range values are Google's.
+
+   Metric overrides: Google's CSS carries none. ascent-override, descent-override and line-gap-override
+   below are read from each file's own hhea table (Fraunces 1956 / -510 / 0 on 2000 upm; Nunito Sans
+   1011 / -353 / 0 on 1000 upm), so the line box is the same on every platform.
+   A size-adjusted local fallback face was measured but not declared, because the design QA gate counts
+   every @font-face family name and allows two. Measured on English letter frequency, for when the gate
+   learns to skip local()-only faces:
+     Georgia Bold for Fraunces 700 at opsz 72   size-adjust 89.8%
+     Georgia for Fraunces 400 at opsz 12        size-adjust 106.5%
+     Arial for Nunito Sans 400                  size-adjust 101.9% (close enough that Arial leads the
+                                                fallback stack in site.css)
+
+   How to use:
+     root pages     <link rel="stylesheet" href="assets/fonts.css">
+     review board   <link rel="stylesheet" href="../assets/fonts.css">
+     directions     <link rel="stylesheet" href="../../assets/fonts.css">
+   and preload the two faces used above the fold, before the stylesheet:
+     <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-roman-latin.woff2">
+     <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/nunito-sans-roman-latin.woff2">
+   (prefix ../ or ../../ the same way). Family names stay "Fraunces" and "Nunito Sans", so
+   --font-display and --font-text in site.css need no change. */
+
+/* Fraunces normal, latin */
+@font-face{
+  font-family:"Fraunces";
+  font-style:normal;
+  font-weight:400 800;
+  font-display:swap;
+  src:url(fonts/fraunces-roman-latin.woff2) format("woff2");
+  ascent-override:97.8%;descent-override:25.5%;line-gap-override:0%;
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Fraunces normal, latin-ext */
+@font-face{
+  font-family:"Fraunces";
+  font-style:normal;
+  font-weight:400 800;
+  font-display:swap;
+  src:url(fonts/fraunces-roman-latin-ext.woff2) format("woff2");
+  ascent-override:97.8%;descent-override:25.5%;line-gap-override:0%;
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Fraunces italic, latin */
+@font-face{
+  font-family:"Fraunces";
+  font-style:italic;
+  font-weight:400 800;
+  font-display:swap;
+  src:url(fonts/fraunces-italic-latin.woff2) format("woff2");
+  ascent-override:97.8%;descent-override:25.5%;line-gap-override:0%;
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Fraunces italic, latin-ext */
+@font-face{
+  font-family:"Fraunces";
+  font-style:italic;
+  font-weight:400 800;
+  font-display:swap;
+  src:url(fonts/fraunces-italic-latin-ext.woff2) format("woff2");
+  ascent-override:97.8%;descent-override:25.5%;line-gap-override:0%;
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Nunito Sans normal, latin */
+@font-face{
+  font-family:"Nunito Sans";
+  font-style:normal;
+  font-weight:400 800;
+  font-stretch:100%;
+  font-display:swap;
+  src:url(fonts/nunito-sans-roman-latin.woff2) format("woff2");
+  ascent-override:101.1%;descent-override:35.3%;line-gap-override:0%;
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Nunito Sans normal, latin-ext */
+@font-face{
+  font-family:"Nunito Sans";
+  font-style:normal;
+  font-weight:400 800;
+  font-stretch:100%;
+  font-display:swap;
+  src:url(fonts/nunito-sans-roman-latin-ext.woff2) format("woff2");
+  ascent-override:101.1%;descent-override:35.3%;line-gap-override:0%;
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Nunito Sans italic, latin */
+@font-face{
+  font-family:"Nunito Sans";
+  font-style:italic;
+  font-weight:400 800;
+  font-stretch:100%;
+  font-display:swap;
+  src:url(fonts/nunito-sans-italic-latin.woff2) format("woff2");
+  ascent-override:101.1%;descent-override:35.3%;line-gap-override:0%;
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Nunito Sans italic, latin-ext */
+@font-face{
+  font-family:"Nunito Sans";
+  font-style:italic;
+  font-weight:400 800;
+  font-stretch:100%;
+  font-display:swap;
+  src:url(fonts/nunito-sans-italic-latin-ext.woff2) format("woff2");
+  ascent-override:101.1%;descent-override:35.3%;line-gap-override:0%;
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}

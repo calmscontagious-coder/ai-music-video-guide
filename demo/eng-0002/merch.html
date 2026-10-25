@@ -180,15 +180,16 @@
 }
 </script>
 <!-- search-layer:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1&family=Nunito+Sans:ital,opsz,wght@0,6..12,400..800;1,6..12,400..800&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
 <style>
 /* merch.html only. Every colour is a token from assets/site.css; the goods are navy, ivory and one red heart.
    Mockups are the merch lane's drawings in img/merch/; data from assets/merch_concepts.json and merch_concepts_extra.json. */
 .mr-hero h1{max-width:10ch}
+@media (max-width:899px){.mr-hero h1{max-width:none}.mr-stack{max-width:300px}}
 .mr-stack{position:relative;width:100%;max-width:560px;aspect-ratio:1/1;margin:0;justify-self:center}
 .mr-s{position:absolute;margin:0;overflow:hidden;background:var(--color-canvas-deep);border-radius:var(--radius-md);box-shadow:var(--shadow-e4);transition:transform var(--dur-base) var(--ease-move)}
 .mr-s img{width:100%;height:100%;object-fit:cover}
@@ -270,19 +271,22 @@
   .mr-stack:hover .mr-s1{transform:rotate(-4deg)}.mr-stack:hover .mr-s2{transform:rotate(3deg)}
   .mc-tr:not([hidden]),.mc-want[aria-pressed="true"] svg{animation:none}
 }
+/* wave A, 25 Oct 2026: Translate and "I’d buy this" reach 44 px */
+.mc-btn,.mc-want{min-height:44px}
+@media (max-width:899px){.mr-stack{max-width:250px}}
 </style>
 </head>
-<body data-home="index.html">
+<body data-home="index.html" data-hero-cta>
 
 <a class="skip" href="#top">Skip to the content</a>
 
 <aside class="notice" aria-label="Concept preview">
-  <div class="wrap"><b>Concept preview</b><span>Cookie spoons, the printed cookie and the Golden Ticket from the live store, read 22 October 2026; every other piece is planned, with proposed prices.</span><span class="more">Base costs from Printful’s catalog and supplier pages, read 22 October 2026.</span></div>
+  <div class="wrap"><b>Concept.</b> <span>Three pieces are on the live store, read 22 Oct 2026; the rest of the line is planned.</span><span class="more">Planned prices are what the first run would sell for.</span></div>
 </aside>
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair"></a>
+    <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
     <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
@@ -296,18 +300,18 @@
 
 <main id="top">
 
-<section class="hero mr-hero" aria-labelledby="h1">
+<section class="hero hero-flow mr-hero" aria-labelledby="h1">
   <div class="wrap">
     <div>
       <p class="kick rise"><span>Planned line</span><span>Navy and ivory</span><span>No animal materials</span></p>
-      <h1 id="h1" class="rise d1">From Green Street, <em>in navy and ivory.</em></h1>
-      <p class="lead rise d2">Eight pieces for the first run, each with one French line and the red heart from the logo, plus numbered macaron tins and counter pieces that change with the season. Prices are proposed and the designs wait for the shop’s yes. Three things can be ordered today.</p>
+      <h1 id="h1">From Green Street, <em>in navy and ivory.</em></h1>
+      <p class="lead">Eight pieces for the first run, each with one French line and the red heart from the logo, plus numbered macaron tins and counter pieces that change with the season. The line is planned and not for sale yet; three things can be ordered today.</p>
       <div class="hero-actions rise d3">
         <a class="btn btn-brand" href="#today">Order today’s three</a>
         <a class="link" href="#line">See the first run</a>
       </div>
     </div>
-    <div class="mr-stack rise d2" data-grid-break>
+    <div class="mr-stack" data-grid-break data-hero-visual>
       <figure class="mr-s mr-s1"><img src="img/merch/sans-beurre-apron.svg" width="800" height="800" alt="Mockup drawing of the apron, printed Sans beurre et sans reproche with the red heart on the bib" fetchpriority="high"></figure>
       <figure class="mr-s mr-s2"><img src="img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="Mockup drawing of the tote, printed Ceci n’est pas du beurre"></figure>
       <figure class="mr-s mr-s3"><img src="img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="Mockup drawing of the mug, printed Un thé, deux éclairs"></figure>
@@ -356,13 +360,13 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-line">The first run: eight pieces, one French line each.</h2>
-      <p>Planned means not for sale yet: the prices are proposed and the shop has not approved the designs. Tap Translate for the English, and tap I’d buy this on the ones you would wear.</p>
+      <p>Planned means not for sale yet. Tap Translate for the English, and tap I’d buy this on the ones you would wear.</p>
     </div>
     <div class="mr-grid" role="region" aria-label="The first run" tabindex="0">
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/sans-beurre-apron.svg" width="800" height="800" alt="Mockup drawing of the apron, printed Sans beurre et sans reproche" loading="lazy"><small>Apron</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$46 <small>proposed</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$46 <small>planned</small></span></div>
           <h3 lang="fr">Sans beurre et sans reproche</h3>
           <p class="meta">Organic cotton apron in navy, the line across the skirt, printed to order.</p>
           <p class="mc-tr" id="tr-apron" hidden>Without butter and beyond reproach, after the old knight’s motto “sans peur et sans reproche.”</p>
@@ -372,17 +376,17 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="Mockup drawing of the tote, printed Ceci n’est pas du beurre" loading="lazy"><small>Tote</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$32 <small>proposed</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$32 <small>planned</small></span></div>
           <h3 lang="fr">Ceci n’est pas du beurre.</h3>
           <p class="meta">Organic cotton tote in oyster, the line set like a gallery caption, printed to order.</p>
-          <p class="mc-tr" id="tr-tote" hidden>This is not butter, after Magritte’s painting “Ceci n’est pas une pipe.”</p>
+          <p class="mc-tr" id="tr-tote" hidden>This is not butter, after Magritte’s painting “<span lang="fr">Ceci n’est pas une pipe</span>.”</p>
           <div class="mc-actions"><button class="mc-btn" type="button" aria-expanded="false" aria-controls="tr-tote">Translate</button><button class="mc-want" type="button" aria-pressed="false" data-want="tote" data-name="the tote"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>I’d buy this</button></div>
         </div>
       </article>
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/eclair-de-genie-tee.svg" width="800" height="800" alt="Mockup drawing of the tee, printed Éclair de génie over the words Pâtisserie française" loading="lazy"><small>Tee</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$34 <small>proposed</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$34 <small>planned</small></span></div>
           <h3 lang="fr">Éclair de génie</h3>
           <p class="meta">Unisex tee in soft cream, printed to order.</p>
           <p class="mc-tr" id="tr-tee" hidden>A flash of genius; word for word, an éclair of genius. The shop’s own name, read as a French idiom.</p>
@@ -392,7 +396,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/club-des-leve-tot-crewneck.svg" width="800" height="800" alt="Mockup drawing of the crewneck, printed Club des lève-tôt over Green Street, Old Pasadena" loading="lazy"><small>Crewneck</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$64 <small>proposed</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$64 <small>planned</small></span></div>
           <h3 lang="fr">Club des lève-tôt</h3>
           <p class="meta">Garment-dyed crewneck in true navy, printed to order.</p>
           <p class="mc-tr" id="tr-crew" hidden>The early risers’ club, for whoever is waiting when the first croissants come out on Green Street.</p>
@@ -402,7 +406,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="Mockup drawing of the mug, printed Un thé, deux éclairs" loading="lazy"><small>Mug</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$22 <small>proposed</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$22 <small>planned</small></span></div>
           <h3 lang="fr">Un thé, deux éclairs.</h3>
           <p class="meta">11 oz white ceramic mug, dark blue inside.</p>
           <p class="mc-tr" id="tr-mug" hidden>One tea, two éclairs, the salon’s order in four words.</p>
@@ -412,7 +416,7 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/la-cave-wine-key.svg" width="800" height="800" alt="Mockup drawing of the La Cave wine key, engraved Pour les grands soirs et les petits mardis" loading="lazy"><small>Wine key · La Cave</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$26 <small>proposed</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$26 <small>planned</small></span></div>
           <h3 lang="fr">Pour les grands soirs et les petits mardis.</h3>
           <p class="meta">Two-step waiter’s corkscrew, engraved; a small run kept at the bar next door.</p>
           <p class="mc-tr" id="tr-key" hidden>For grand evenings and little Tuesdays.</p>
@@ -422,17 +426,17 @@
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/nuancier-des-macarons-print.svg" width="800" height="800" alt="Mockup drawing of the art print: nine macaron colours as paint swatches, Framboise to Mon amour" loading="lazy"><small>Art print</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$38 <small>proposed</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$38 <small>planned</small></span></div>
           <h3 lang="fr">Nuancier des macarons</h3>
           <p class="meta">11 x 14 in matte print, printed to order.</p>
-          <p class="mc-tr" id="tr-print" hidden>A macaron colour chart, framboise to myrtille, with the heart as the last swatch: mon amour.</p>
+          <p class="mc-tr" id="tr-print" hidden>A macaron colour chart, framboise to myrtille, with the heart as the last swatch: <span lang="fr">mon amour</span>.</p>
           <div class="mc-actions"><button class="mc-btn" type="button" aria-expanded="false" aria-controls="tr-print">Translate</button><button class="mc-want" type="button" aria-pressed="false" data-want="print" data-name="the print"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>I’d buy this</button></div>
         </div>
       </article>
       <article class="mc">
         <figure class="mc-face"><img src="img/merch/mon-petit-chou-toddler-tee.svg" width="800" height="800" alt="Mockup drawing of the toddler tee, printed Mon petit chou" loading="lazy"><small>Toddler tee</small></figure>
         <div class="mc-body">
-          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$26 <small>proposed</small></span></div>
+          <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$26 <small>planned</small></span></div>
           <h3 lang="fr">Mon petit chou</h3>
           <p class="meta">Toddler tee in white, printed to order.</p>
           <p class="mc-tr" id="tr-chou" hidden>My little cream puff. Chou is a cream puff and a cabbage, and what French parents call their children.</p>
@@ -491,7 +495,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-editions">Tins, totes and counter pieces, by the season.</h2>
-      <p>The collectible half of the plan, from November 2026 to April 2027. Most are small runs bought into 169 W Green St and sold at the counter; the rest are printed to order. Proposed prices, numbered editions where it says so.</p>
+      <p>The collectible half of the plan, from November 2026 to April 2027. Most are small runs bought into 169 W Green St and sold at the counter; the rest are printed to order. Planned prices, numbered editions where it says so.</p>
     </div>
     <div class="mr-fams">
       <div class="mr-fam">
@@ -551,41 +555,6 @@
   </div>
 </section>
 
-<section class="pickup" id="how" aria-labelledby="h-how">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="h-how">Printed to order, so little sits in a stockroom.</h2>
-      <p>How the line runs once the shop says yes. Costs are supplier base prices before shipping, read 22 October 2026.</p>
-    </div>
-    <div class="steps">
-      <ol>
-        <li><div><h3>One master file per line</h3><p>Fraunces with the type turned to outlines and the heart on its own red layer. A native French speaker reads every line and every accent before anything prints.</p></div></li>
-        <li><div><h3>Printful connects to Shopify</h3><p>Free plan, or Growth at $24.99 a month, free once sales pass $12,000 a year, with 21 integrations including Shopify and TikTok Shop. Printify is the alternative: free, Premium at $39 a month, 11 integrations, its TikTok link US only.</p></div></li>
-        <li><div><h3>An order prints itself</h3><p>The guest checks out on id-eclair.com and Printful prints, packs and ships. The tins, pins, counter mugs, screen-printed totes and the wine key are small runs the shop keeps behind the counter.</p></div></li>
-        <li><div><h3>TikTok Shop reads from Shopify</h3><p>Printful connects to Shopify only, since a second direct TikTok connector can break order status. Merchandise opens the shop’s TikTok Shop; the plan prices the referral fee at 8% until Seller Center confirms it.</p></div></li>
-      </ol>
-      <div class="slot mr-table" role="group" aria-labelledby="h-table">
-        <div class="slot-head"><h3 id="h-table">The first run in numbers</h3><span class="ex">Proposed</span></div>
-        <table>
-          <caption class="sr">Proposed price, supplier base cost and margin for each first-run piece</caption>
-          <thead><tr><th scope="col">Piece</th><th scope="col">Price</th><th scope="col">Base cost</th><th scope="col">Margin</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Apron<small>Printful catalog</small></th><td>$46</td><td>$24.95</td><td>46%</td></tr>
-            <tr><th scope="row">Tote<small>Printful catalog</small></th><td>$32</td><td>$15.87</td><td>50%</td></tr>
-            <tr><th scope="row">Tee<small>Printful catalog</small></th><td>$34</td><td>$11.92</td><td>65%</td></tr>
-            <tr><th scope="row">Crewneck<small>Printful catalog</small></th><td>$64</td><td>$30.59</td><td>52%</td></tr>
-            <tr><th scope="row">Mug<small>Printful catalog</small></th><td>$22</td><td>$8.11</td><td>63%</td></tr>
-            <tr><th scope="row">Wine key<small>supplier list price</small></th><td>$26</td><td>$6.45</td><td>75%</td></tr>
-            <tr><th scope="row">Art print<small>Printful catalog</small></th><td>$38</td><td>$9.83</td><td>74%</td></tr>
-            <tr><th scope="row">Toddler tee<small>Printful catalog</small></th><td>$26</td><td>$13.00</td><td>50%</td></tr>
-          </tbody>
-        </table>
-        <div class="foot"><span>Margin before shipping, payment and marketplace fees</span><b>22 Oct 2026</b></div>
-      </div>
-    </div>
-    <p class="mr-src">Sources: <a href="https://www.stylefactoryproductions.com/blog/printful-vs-printify" target="_blank" rel="noopener">Style Factory, Printful vs Printify</a> (updated 22 July 2026); Printful’s public catalog for the apron, tote, tees, crewneck, mug and print; WineOpeners.com for the wine key; the agency plan, section 5.3, for the Shopify and TikTok setup.</p>
-  </div>
-</section>
 
 <section class="faq" id="faq" aria-labelledby="h-faq">
   <div class="wrap faq-wrap">
@@ -596,7 +565,7 @@
     <div class="faq-list">
       <div class="qa">
         <h3>Can I buy iD Éclair merch online today?</h3>
-        <p>Three things, yes: cookie spoons at $5, the custom printed cookie at $3.75 each and the Golden Ticket class pass at $140, all on id-eclair.com. The rest of this page is a planned line with proposed prices, waiting for the shop’s approval.</p>
+        <p>Three things, yes: cookie spoons at $5, the custom printed cookie at $3.75 each and the Golden Ticket class pass at $140, all on id-eclair.com. The rest of this page is a planned line, not for sale yet.</p>
       </div>
       <div class="qa">
         <h3>Is the merch vegan?</h3>
@@ -604,7 +573,7 @@
       </div>
       <div class="qa">
         <h3>Which pieces are collectibles?</h3>
-        <p>The numbered ones planned for the first season: La Boîte Cœur macaron tins, edition of 150 for Noël 2026 and 100 for Saint-Valentin 2027, the signed Nuancier print, edition of 100, and the alumni pin from <a href="classes.html">the Macaron Masterclass</a>.</p>
+        <p>The numbered ones planned for the first season: La Boîte Cœur macaron tins, edition of 150 for <span lang="fr">Noël</span> 2026 and 100 for Saint-Valentin 2027, the signed Nuancier print, edition of 100, and the alumni pin from <a href="classes.html">the Macaron Masterclass</a>.</p>
       </div>
     </div>
   </div>
@@ -615,7 +584,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <img class="foot-logo" src="img/logo-wordmark.png" width="904" height="658" alt="iD Éclair">
+      <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p class="foot-about">169 W Green St, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
