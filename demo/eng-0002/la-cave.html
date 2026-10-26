@@ -195,6 +195,7 @@
 .soir{background:var(--color-brand-deep);color:var(--color-on-brand)}
 .soir h1{color:var(--color-on-brand);max-width:12ch;font-size:clamp(2.75rem,8.6vw,5.25rem)}
 .soir .kick{color:var(--color-on-brand-muted)}
+.soir .kick span+span::before{background:var(--color-on-brand-muted)}  /* wave H: no red on the kicker */
 .soir .lead{color:var(--color-on-brand-muted)}
 .soir .hero-media img{box-shadow:none}
 .btn-line{background:transparent;color:var(--color-on-brand);border-color:var(--color-on-brand-muted)}
@@ -217,6 +218,7 @@
 .lc-board .price{font-family:var(--font-display);font-size:var(--text-xl);font-weight:600}
 .lc-tag{justify-self:start;font:800 .875rem/1 var(--font-text);letter-spacing:.04em;padding:8px 8px;border-radius:var(--radius-lg);background:var(--color-canvas);color:var(--color-brand);border:1px solid var(--color-line)}
 .lc-thumb{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius-sm)}
+@media (max-width:899px){.lc-thumb{display:none}}  /* wave H: the hero shows the same board 400 px above */
 @media (min-width:900px){.lc-board{position:sticky;top:100px}}
 /* wave E (standard 5.4): on phones the board, the page's one live-store item, leads the section and its
    Add sits under the name, so the first Add is inside the first one and a half screens */
@@ -279,6 +281,16 @@
 .lc-visit .panel h3{font-size:var(--text-lg);font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1;line-height:1.1}
 
 @media (prefers-reduced-motion:reduce){.lc-nights label,.lc-nights label:active{transition:none;transform:none}}
+/* wave H, 25 Oct 2026: one fixed bar at a time on phones, the home's wave F rule. While the strip is
+   docked (html.os-on) the app bar slides down and the strip takes its place at the bottom edge; the strip's
+   layout position is unchanged, so app.js reads the same band when it steps aside for a slot control */
+@media (max-width:899px){
+  .bar{transition:transform var(--dur-base) var(--ease-enter),visibility 0s}
+  html.os-on .bar{transform:translateY(100%);visibility:hidden;transition:transform var(--dur-base) var(--ease-exit),visibility 0s linear var(--dur-base)}
+  .ostrip{transform:translateY(calc(100% + var(--bar-real,var(--bar-h))))}
+  html.os-on .ostrip.is-on:not(.is-yield),html.os-on .ostrip.is-open{transform:translateY(calc(var(--bar-real,var(--bar-h)) - env(safe-area-inset-bottom,0px)));box-shadow:0 -6px 24px rgb(31 21 107 / .08),0 env(safe-area-inset-bottom,0px) 0 var(--color-surface)}
+}
+@media (prefers-reduced-motion:reduce){.bar,html.os-on .bar{transition:none}}
 /* order strip (home blend): the board docks below the strip */
 @media (min-width:900px){.has-ostrip .lc-board{top:calc(100px + var(--os-h))}}
 /* wave A, 25 Oct 2026: the checkbox and its words make one 44 px target */
@@ -296,7 +308,7 @@
 <header class="top">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
-    <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
+    <span class="tag"><span lang="fr">Pâtisserie française · Salon de thé</span> · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html" aria-current="page">La Cave</a><a href="story.html">Chef Romy</a>
     </nav>
@@ -314,15 +326,15 @@
     <div>
       <p class="kick rise"><span>Vegan wine bar</span><span>Old Pasadena</span></p>
       <h1 id="h1" class="rise d1">La Cave, next door at 163. <em lang="fr">Un verre, un éclair.</em></h1>
-      <p class="lead">One glass, one éclair. La Cave is the pâtisserie’s evening, one door down: organic, biodynamic and vegan wines, mostly French varietals from California and abroad, Rebel Cheese boards, and plated desserts from the kitchen next door with a glass poured to match.</p>
+      <p class="lead">One glass, one éclair. La Cave is the <span lang="fr">pâtisserie</span>’s evening, one door down: organic, biodynamic and vegan wines, mostly French varietals from California and abroad, Rebel Cheese boards, and plated desserts from the kitchen next door with a glass poured to match.</p>
       <div class="hero-actions rise d3">
         <a class="btn btn-ivory" href="#reserve">Reserve a table</a>
-        <a class="link" href="#board">See the cheese board, $100</a>
+        <a class="link" href="#board">The cheese board, $100.00</a>
       </div>
     </div>
     <figure class="hero-media" data-grid-break>
       <picture><source media="(max-width:899px)" srcset="img/cheese-board-1-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/cheese-board-1-800.jpg"><img src="img/cheese-board-1-800.jpg" srcset="img/cheese-board-1-800.jpg 800w, img/cheese-board-1.jpg 1600w" sizes="(min-width:900px) 46vw, 100vw" width="1600" height="1066" alt="The cheese board on a wine-barrel table: vegan cheeses, baguette toasts, dried apricots, dates, grapes and strawberries" fetchpriority="high"></picture>
-      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cave-open>Wed to Sun, 3 to 9 pm</span><small>published hours</small></figcaption>
+      <figcaption class="chip-float"><span data-cave-open>Wed to Sun, 3 to 9 pm</span><small>published hours</small></figcaption>
     </figure>
   </div>
 </section>
@@ -369,13 +381,13 @@
   <div class="wrap lc-two">
     <div class="lc-carte">
       <h2 id="h-carte">What La Cave pours and plates.</h2>
-      <p class="note-sm">From La Cave’s own site and the Old Pasadena directory, read 21 October 2026. The wine list itself goes on this page with the build, kept up to date by the bar.</p>
+      <p class="note-sm">Ask at the bar for tonight’s pours.</p>
       <dl class="lc-menu">
-        <div><dt>Les vins</dt><dd>Organic, biodynamic and vegan wines, mostly French varietals, from California and abroad.</dd></div>
-        <div><dt>Les plateaux</dt><dd>Boards built on Rebel Cheese, with baguette, dried fruit and nuts.</dd></div>
-        <div><dt>Les petits plats</dt><dd>Small plates and savory French classics.</dd></div>
-        <div><dt>Le dessert</dt><dd>Plated desserts from the pâtisserie next door, paired with wine.</dd></div>
-        <div><dt>Les soirées</dt><dd>Happy hour, Saturday nights and events, announced on La Cave’s Instagram.</dd></div>
+        <div><dt lang="fr">Les vins</dt><dd>Organic, biodynamic and vegan wines, mostly French varietals, from California and abroad.</dd></div>
+        <div><dt lang="fr">Les plateaux</dt><dd>Boards built on Rebel Cheese, with baguette, dried fruit and nuts.</dd></div>
+        <div><dt lang="fr">Les petits plats</dt><dd>Small plates and savory French classics.</dd></div>
+        <div><dt lang="fr">Le dessert</dt><dd>Plated desserts from the <span lang="fr">pâtisserie</span> next door, paired with wine.</dd></div>
+        <div><dt lang="fr">Les soirées</dt><dd>Happy hour, Saturday nights and events, announced on La Cave’s Instagram.</dd></div>
       </dl>
     </div>
     <aside class="panel lc-board" id="board" aria-labelledby="h-board">
@@ -384,14 +396,14 @@
       <img class="lc-thumb" src="img/cheese-board-1-800.jpg" width="800" height="533" alt="The cheese board for ten, on a wine-barrel table" loading="lazy">
       <p>Rebel Cheese, French baguette, dried fruit and nuts. A charcuterie version on request. Pickup only, at 169 W Green St.</p>
       <div class="row"><span class="price">$100.00</span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board, serves 10" data-price="100" data-variant="45433279971516" data-image="img/cheese-board-1-800.jpg" data-meta="Pickup only">Add the board</button></div>
-      <p class="note-sm">Price and details from the store listing, read 22 October 2026. It checks out on id-eclair.com, where pickup is usually ready in 24 hours. <a href="https://www.id-eclair.com/products/cheese-board" target="_blank" rel="noopener">See the listing</a>.</p>
+      <p class="note-sm">Checks out on id-eclair.com; pickup is usually ready in 24 hours. <a href="https://www.id-eclair.com/products/cheese-board" target="_blank" rel="noopener">See the listing</a>.</p>
     </aside>
   </div>
 </section>
 
 <div class="facts" role="region" aria-label="La Cave at a glance">
   <div class="wrap">
-    <div><strong>163</strong><span>W Green St, next to the pâtisserie at 169</span></div>
+    <div><strong>163</strong><span>W Green St, next to the <span lang="fr">pâtisserie</span> at 169</span></div>
     <div><strong>3 to 9 pm</strong><span>Wednesday to Sunday</span></div>
     <div><strong>$100.00</strong><span>cheese board for ten, on the live store</span></div>
     <div><strong>10.6K</strong><span>following La Cave on Instagram, 21 Oct 2026</span></div>
@@ -402,13 +414,13 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-reserve">Reserve a table in three taps.</h2>
-      <p>How booking works if La Cave takes reservations, which it has not said yet. Try it: nothing is held and nothing is sent. If the bar stays walk-in only, this block becomes a note on how to find the door.</p>
+      <p>Choose the party, the night and the time. On this preview nothing is held and nothing is sent.</p>
     </div>
     <div class="steps">
       <ol>
         <li><div><h3>Choose the party and the night</h3><p>Only the nights La Cave opens appear, Wednesday to Sunday, and only the times still ahead of you tonight.</p></div></li>
         <li><div><h3>The calendar holds the table</h3><p>La Cave confirms the night, the time and the party by email.</p></div></li>
-        <li><div><h3>One Reserve button on every map</h3><p>Google and Apple Maps both take a Reserve link, so a search for a wine bar in Old Pasadena ends at this page instead of a phone call.</p></div></li>
+        <li><div><h3>Book from the map too</h3><p>The same Reserve button opens from La Cave on Google and Apple Maps.</p></div></li>
       </ol>
       <div class="slot" role="group" aria-labelledby="res-h" data-res>
         <div class="slot-head"><h3 id="res-h">Your table</h3><span class="ex">Example</span></div>
@@ -452,10 +464,10 @@
     </figure>
     <div>
       <div class="sec-head tight">
-        <h2 id="h-soirees">Soirée accords: the dessert first, then the glass.</h2>
+        <h2 id="h-soirees"><em lang="fr">Soirée accords</em>: the dessert first, then the glass.</h2>
         <p><span class="ex">Example</span> A dated evening at La Cave: a plated dessert course from the pastry kitchen, with pours La Cave chooses for each plate. Seats are capped, wine is poured for guests 21 and over, and ID is checked at the door. La Cave sets the nights, the menu and the price.</p>
       </div>
-      <p class="note-sm">Weeknight events sell best when they are announced three to four weeks ahead (SevenRooms, October 2026), so the first date goes to this list before anywhere else.</p>
+      <p class="note-sm">Dates and menus go to this list three weeks before each evening opens.</p>
       <form class="lc-form" data-wait novalidate aria-labelledby="wait-h">
         <h3 id="wait-h">Join the waitlist</h3>
         <div class="lc-field"><label for="w-email">Email</label><input id="w-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
@@ -482,7 +494,7 @@
         <p data-wait-sum>Saved on this device.</p>
         <button class="link" type="button" data-wait-remove>Remove me from this device</button>
       </div>
-      <div class="alt"><span>Take the chocolate home: dark chocolate truffles, 200 g with an orange note, $15 on the live store.</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15" data-variant="43134021828796" data-image="img/dark-chocolate-truffles-800.jpg">Add</button></div>
+      <div class="alt"><span>Take the chocolate home: dark chocolate truffles, 200 g with an orange note, $15.00 on the live store.</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15" data-variant="43134021828796" data-image="img/dark-chocolate-truffles-800.jpg">Add</button></div>
     </div>
   </div>
 </section>
@@ -491,7 +503,7 @@
   <div class="wrap lc-visit">
     <div>
       <h2 id="h-visit">Find the door at 163.</h2>
-      <p>One door down from the pâtisserie, on the tree-shaded stretch of Green Street in Old Pasadena. Come for an éclair at 169 in the morning, and for the glass at 163 after three.</p>
+      <p>One door down from the <span lang="fr">pâtisserie</span>, on the tree-shaded stretch of Green Street in Old Pasadena. Come for an éclair at 169 in the morning, and for the glass at 163 after three.</p>
       <dl class="lc-facts">
         <div><dt>Address</dt><dd>163 W Green St, Pasadena, CA 91105</dd></div>
         <div><dt>Hours</dt><dd>Wednesday to Sunday, 3 to 9 pm</dd></div>
@@ -499,10 +511,9 @@
         <div><dt>Online</dt><dd><a href="https://www.instagram.com/lacavepasadena/" target="_blank" rel="noopener">@lacavepasadena</a> on Instagram · <a href="https://www.lacave.la" target="_blank" rel="noopener">lacave.la</a></dd></div>
       </dl>
       <div class="actions"><a class="btn btn-brand" href="https://maps.apple.com/?q=163+W+Green+St,+Pasadena,+CA+91105" target="_blank" rel="noopener">Open in Maps</a><a class="btn btn-ghost" href="#reserve">Reserve a table</a></div>
-      <p class="note-sm">La Cave’s own site gives 169 W Green St and ZIP 91015; Yelp, HappyCow and the Old Pasadena directory give 163 W Green St, 91105. One address goes on every listing at launch, once the bar confirms it.</p>
     </div>
     <div class="panel">
-      <h3 class="lc-side-h">Before the wine, the pâtisserie.</h3>
+      <h3 class="lc-side-h">Before the wine, the <em lang="fr">pâtisserie</em>.</h3>
       <p>The chef behind both doors trained at a three-Michelin-star kitchen and makes every pastry from plants. Order éclairs for pickup at 169, or read how he got to Green Street.</p>
       <div class="actions"><a class="btn btn-brand btn-sm" href="menu.html">Order for pickup</a><a class="link" href="story.html">Chef Romy’s story</a></div>
     </div>
@@ -518,7 +529,7 @@
     <div class="faq-list">
       <div class="qa">
         <h3>Is La Cave a vegan wine bar?</h3>
-        <p>Yes. La Cave, next to the pâtisserie in Old Pasadena, pours organic, biodynamic and vegan wines, mostly French varietals from California and abroad, with Rebel Cheese boards, small plates and plated desserts from next door.</p>
+        <p>Yes. La Cave, next to the <span lang="fr">pâtisserie</span> in Old Pasadena, pours organic, biodynamic and vegan wines, mostly French varietals from California and abroad, with Rebel Cheese boards, small plates and plated desserts from next door.</p>
       </div>
       <div class="qa">
         <h3>When is La Cave open?</h3>
@@ -526,11 +537,11 @@
       </div>
       <div class="qa">
         <h3>Does La Cave take reservations?</h3>
-        <p>It has not said yet; events, happy hour and Saturday nights are announced on its Instagram, @lacavepasadena. The table booking on this page shows how reservations would work if the bar adds them.</p>
+        <p>Not yet; events, happy hour and Saturday nights are announced on its Instagram, @lacavepasadena.</p>
       </div>
       <div class="qa">
         <h3>Can I take the cheese board home?</h3>
-        <p>Yes. The board for ten, $100 on id-eclair.com, is pickup only at 169 W Green St: Rebel Cheese, baguette, dried fruit and nuts, with a charcuterie version on request. For the morning after, <a href="menu.html">order éclairs for pickup</a>.</p>
+        <p>Yes. The board for ten, $100.00 on id-eclair.com, is pickup only at 169 W Green St: Rebel Cheese, baguette, dried fruit and nuts, with a charcuterie version on request. For the morning after, <a href="menu.html">order éclairs for pickup</a>.</p>
       </div>
     </div>
   </div>
@@ -632,7 +643,7 @@
         else if (b.hasAttribute('data-rtime')) { if (b.getAttribute('aria-disabled') === 'true') return; time = b.getAttribute('data-rtime'); paint('[data-rtime="' + time + '"]'); msg.hidden = true; }
         else if (b.hasAttribute('data-res-hold')) {
           msg.hidden = false;
-          msg.textContent = 'Example only: no table is held and nothing was sent. In the build, La Cave’s calendar confirms a table for ' + size + ', ' + night.long + ' at ' + time + ' pm, by email.';
+          msg.textContent = 'Example only: no table is held and nothing was sent. The booking would be a table for ' + size + ', ' + night.long + ' at ' + time + ' pm, confirmed by email.';
         }
       });
     }
@@ -646,7 +657,7 @@
     var show = function (w, focus) {
       F.hidden = !!w; done.hidden = !w;
       if (w) {
-        $('[data-wait-sum]', done).textContent = 'Saved on this device: ' + w.seats + (w.seats === 1 ? ' seat' : ' seats') + (w.nights.length ? ', ' + list(w.nights) : ', any night') + '. In the build, the first date goes to ' + w.email + ' before anywhere else.';
+        $('[data-wait-sum]', done).textContent = 'Saved on this device: ' + w.seats + (w.seats === 1 ? ' seat' : ' seats') + (w.nights.length ? ', ' + list(w.nights) : ', any night') + '. Dates and menus go to ' + w.email + ' three weeks before each evening.';
         if (focus) done.focus();
       }
     };

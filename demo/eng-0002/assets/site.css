@@ -90,7 +90,7 @@ svg{flex:0 0 auto}
 .hero h1{font-size:clamp(2.75rem,9.5vw,var(--text-display));line-height:var(--leading-display);font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1;max-width:11ch}
 .hero h1 em{font-style:italic;font-weight:600}
 .kick{font-size:.875rem;font-weight:800;letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-brand);display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:var(--sp-4)}
-.kick span+span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--color-accent);margin-right:8px;vertical-align:.2em}
+.kick span+span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--color-brand-quiet);margin-right:8px;vertical-align:.2em}  /* wave H: indigo; red means the bag only */
 .lead{font-size:var(--text-base);max-width:36ch;margin-top:var(--sp-6)}
 .hero-actions{display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center;margin-top:var(--sp-8)}
 .hero-media{position:relative;margin:0}

@@ -17,8 +17,8 @@
 <meta property="og:url" content="https://purposewithpresence.com/demo/eng-0002/story.html">
 <meta property="og:image" content="https://purposewithpresence.com/demo/eng-0002/img/shop-caneles-tray.jpg">
 <meta property="og:image:width" content="1600">
-<meta property="og:image:height" content="2134">
-<meta property="og:image:alt" content="Chef Romy at work in the pastry kitchen">
+<meta property="og:image:height" content="1600">
+<meta property="og:image:alt" content="Rows of caramelised cannelés in a white iD Éclair box">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chef Romy, fourth-generation pastry chef. iD Éclair concept preview.">
 <meta name="twitter:description" content="Romuald Guiot trained at La Maison de Marc Veyrat, opened La Mirabelle in New York and now makes plant-based French pastry at 169 W Green St, Pasadena.">
@@ -134,7 +134,23 @@
 <style>
 /* story.html only. Every colour is a token from assets/site.css. */
 .st-hero .hero-media img{object-position:72% 24%}
-@media (min-width:900px){.st-hero .hero-media img{aspect-ratio:4/5}}
+/* wave H: on phones the first screen holds the kicker, a four-line headline, the cannelés and "Order for pickup".
+   The headline steps to 34 px (four lines); the frame is 16/10 on the rows of cannelés, below the shop's card; the caption chip steps aside so no row is
+   covered; the kicker keeps "Fourth generation" (the headline says the plants) */
+@media (max-width:899px){
+  .st-hero.hero-flow h1{font-size:clamp(2.125rem,9vw,2.5rem)}
+  .st-hero .kick span:nth-child(2){display:none}
+  .st-hero.hero-flow .hero-media img{aspect-ratio:16/10;object-position:50% 90%}
+  .st-hero .hero-media .chip-float{display:none}
+}
+@media (min-width:900px){
+  /* wave H: on desktop too the action sits under the headline and the frame shows the cannelés, not the card */
+  .st-hero .hero-media img{aspect-ratio:16/10;object-position:50% 90%}
+  .st-hero .wrap > div:first-child{display:flex;flex-direction:column;align-items:flex-start}
+  .st-hero.hero h1{font-size:4rem;max-width:15ch}
+  .st-hero .hero-actions{order:3;margin-top:var(--sp-6)}
+  .st-hero .lead{order:4}
+}
 .st-hero h1{max-width:13ch;font-size:clamp(2.5rem,8.4vw,4.75rem)}
 
 /* in the shop's own words */
@@ -144,6 +160,8 @@
 .st-words .sec-head p + p{margin-top:var(--sp-1)}
 .st-lead{margin:0;padding:var(--sp-8) var(--sp-6);background:var(--color-brand);color:var(--color-on-brand);border-radius:var(--radius-md);display:grid;gap:var(--sp-4)}
 .st-lead p{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(1.75rem,4.6vw,2.75rem);line-height:1.1;color:var(--color-on-brand)}
+/* wave H: French inside the italic quote turns upright, so it still stands apart */
+.st-lead p span:lang(fr){font-style:normal}
 .st-lead cite,.st-q cite{font:700 var(--text-sm)/1.4 var(--font-text);font-style:normal}
 .st-lead cite{color:var(--color-on-brand-muted)}
 .st-quotes{display:grid;gap:0;margin-top:var(--sp-4)}
@@ -158,7 +176,7 @@
 .tl::before{content:"";position:absolute;left:11px;top:10px;bottom:10px;width:2px;background:var(--color-line)}
 .tl li{position:relative;padding-left:48px;display:grid;gap:8px;align-content:start}
 .tl li::before{content:"";position:absolute;left:3px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--color-surface);box-shadow:inset 0 0 0 3px var(--color-brand)}
-.tl li.now::before{background:var(--color-accent);box-shadow:0 0 0 4px var(--color-canvas)}
+.tl li.now::before{background:var(--color-brand);box-shadow:0 0 0 4px var(--color-canvas)}
 .tl-when{font:800 .75rem/1.2 var(--font-text);letter-spacing:var(--tracking-caps);text-transform:uppercase;color:var(--color-brand-quiet);font-variant-numeric:tabular-nums}
 .tl h3{font-size:1.625rem;font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1;line-height:1.1}
 .tl p{color:var(--color-muted);max-width:54ch;font-size:1.0625rem}
@@ -195,6 +213,16 @@
 .st-close .sec-head{max-width:46ch}
 .btn-line{background:transparent;color:var(--color-on-brand);border-color:var(--color-on-brand-muted)}
 @media (hover: hover){.btn-line:hover{border-color:var(--color-on-brand)}}
+/* wave H, 25 Oct 2026: one fixed bar at a time on phones, the home's wave F rule. While the strip is
+   docked (html.os-on) the app bar slides down and the strip takes its place at the bottom edge; the strip's
+   layout position is unchanged, so app.js reads the same band when it steps aside for a slot control */
+@media (max-width:899px){
+  .bar{transition:transform var(--dur-base) var(--ease-enter),visibility 0s}
+  html.os-on .bar{transform:translateY(100%);visibility:hidden;transition:transform var(--dur-base) var(--ease-exit),visibility 0s linear var(--dur-base)}
+  .ostrip{transform:translateY(calc(100% + var(--bar-real,var(--bar-h))))}
+  html.os-on .ostrip.is-on:not(.is-yield),html.os-on .ostrip.is-open{transform:translateY(calc(var(--bar-real,var(--bar-h)) - env(safe-area-inset-bottom,0px)));box-shadow:0 -6px 24px rgb(31 21 107 / .08),0 env(safe-area-inset-bottom,0px) 0 var(--color-surface)}
+}
+@media (prefers-reduced-motion:reduce){.bar,html.os-on .bar{transition:none}}
 /* order strip (home blend): the chapter heading docks below the strip */
 @media (min-width:900px){.has-ostrip .st-path .sec-head{top:calc(110px + var(--os-h))}}
 </style>
@@ -210,7 +238,7 @@
 <header class="top">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
-    <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
+    <span class="tag"><span lang="fr">Pâtisserie française · Salon de thé</span> · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html" aria-current="page">Chef Romy</a>
     </nav>
@@ -228,7 +256,7 @@
     <div>
       <p class="kick rise"><span>Fourth generation</span><span>100% plant-based</span></p>
       <h1 id="h1" class="rise d1">Romuald Guiot, fourth generation. <em>Every pastry from plants.</em></h1>
-      <p class="lead">Chef Romy trained at La Maison de Marc Veyrat, three Michelin stars, opened La Mirabelle in New York and reached the final of Food Network’s Spring Baking Championship. At 169 W Green St he makes French pâtisserie with no animal products at all, and guests are often surprised to learn it.</p>
+      <p class="lead">Chef Romy trained at La Maison de Marc Veyrat, three Michelin stars, opened La Mirabelle in New York and reached the final of Food Network’s Spring Baking Championship. At 169 W Green St he makes French <span lang="fr">pâtisserie</span> with no animal products at all, and guests are often surprised to learn it.</p>
       <div class="hero-actions rise d3">
         <a class="btn btn-brand" href="menu.html">Order for pickup</a>
         <a class="link" href="#path">Read the timeline</a>
@@ -236,7 +264,7 @@
     </div>
     <figure class="hero-media" data-grid-break>
       <picture><source media="(max-width:899px)" srcset="img/shop-caneles-tray-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/shop-caneles-tray-800.jpg"><img src="img/shop-caneles-tray-800.jpg" srcset="img/shop-caneles-tray-800.jpg 800w, img/shop-caneles-tray.webp 1600w" sizes="(min-width:900px) 46vw, 100vw" width="800" height="800" alt="Rows of dark, caramelised cannelés in a white iD Éclair box, the shop’s card propped up behind them" fetchpriority="high"></picture>
-      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span>Cannelés from the case, boxed at the shop</span><small>the shop’s photo</small></figcaption>
+      <figcaption class="chip-float"><span><span lang="fr">Cannelés</span> from the case, boxed at the shop</span></figcaption>
     </figure>
   </div>
 </section>
@@ -291,7 +319,7 @@
   <div class="wrap st-words">
     <div class="sec-head">
       <h2 id="h-words">Plant-based, said quietly.</h2>
-      <p>The shop leads with French craft and lets the plants come second. Its bios use a plant emoji instead of the word vegan, and the chef told Flaunt that customers are often surprised to learn everything is vegan.</p>
+      <p>French craft first, the plants second. Customers are often surprised to learn everything is vegan, the chef told Flaunt.</p>
       <p>The croissants are laminated with plant butter. The éclairs, the macarons and the cakes are made with no animal products, like everything else in the vitrine.</p>
     </div>
     <div>
@@ -300,7 +328,7 @@
         <cite>The shop’s own profile on Yelp</cite>
       </blockquote>
       <div class="st-quotes">
-        <blockquote class="st-q"><p>“Precision and artistry.”</p><cite>The claim on the same profile</cite></blockquote>
+        <blockquote class="st-q"><p>“Precision and artistry.”</p><cite>The same profile on Yelp</cite></blockquote>
         <blockquote class="st-q"><p>“The first French Vegan Pastry Shop in Los Angeles.”</p><cite>The shop’s About page</cite></blockquote>
         <blockquote class="st-q"><p>“A love letter you can eat.”</p><cite>The shop’s Instagram, on custom cakes</cite></blockquote>
       </div>
@@ -312,7 +340,7 @@
   <div class="wrap st-path">
     <div class="sec-head">
       <h2 id="h-path">From a grandfather’s restaurant to Green Street.</h2>
-      <p>Nine steps, each with its source. Dates appear only where the source gives one.</p>
+      <p>Nine steps, with a link to each story.</p>
     </div>
     <ol class="tl">
       <li>
@@ -362,7 +390,7 @@
       <li>
         <span class="tl-when">December 2024</span>
         <h3>169 W Green St opens</h3>
-        <p>iD Éclair opens in Old Pasadena as a pâtisserie and <span lang="fr">salon de thé</span>, with La Cave, the vegan wine bar, next door at 163.</p>
+        <p>iD Éclair opens in Old Pasadena as a <span lang="fr">pâtisserie</span> and <span lang="fr">salon de thé</span>, with La Cave, the vegan wine bar, next door at 163.</p>
         <span class="tl-src">Sources: the shop’s public listings, among them <a href="https://www.happycow.net/reviews/id-eclair-pasadena-442360" target="_blank" rel="noopener">HappyCow</a> and <a href="https://www.oldpasadena.org/visit/directory/view/549/ideclair" target="_blank" rel="noopener">Old Pasadena</a>, read 21 October 2026</span>
       </li>
       <li>
@@ -385,17 +413,16 @@
   <div class="wrap st-salon">
     <figure class="st-tile">
       <div class="tile" aria-hidden="true">thé<small>salon de thé</small></div>
-      <figcaption>A typographic stand-in until the planned photo day shoots the tea service.</figcaption>
     </figure>
     <div>
-      <h2 id="h-salon">Sit down in the salon de thé.</h2>
+      <h2 id="h-salon">Sit down in the <em lang="fr">salon de thé</em>.</h2>
       <p>Afternoon tea is the third service on Green Street: a spread of small pastries and savory bites with teas from Palais des Thés, also listed as Tea Time for Two. Reviewers single out the 6 am opening, the décor and the dishes, the outdoor tables, the welcome for dogs, and a staff that commits fully to the French theme.</p>
       <dl class="st-dl">
         <div><dt>Tea, on the counter menu</dt><dd>$6.50</dd></div>
         <div><dt>Latte, with plant milk</dt><dd>$7.50</dd></div>
         <div><dt>Chocolate or pistachio éclair</dt><dd>$6.50</dd></div>
       </dl>
-      <p class="note-sm">Prices from the shop’s menu app, read 21 October 2026. In the build, afternoon tea books on the same calendar as the masterclass.</p>
+      <p class="note-sm">Counter prices, 21 October 2026.</p>
       <div class="actions"><a class="btn btn-brand" href="menu.html">See today’s counter</a><a class="btn btn-ghost" href="classes.html">The masterclass</a></div>
     </div>
   </div>
@@ -405,7 +432,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-press">Written about, with the links.</h2>
-      <p>Only coverage we could open, dated where the page carries a date. Titles are as published.</p>
+      <p>Titles as published, dated where the article gives a date.</p>
     </div>
     <ul class="st-press">
       <li><b>Eater LA</b><a href="https://la.eater.com/2024/9/18/24246606/id-eclair-la-cave-pasadena-french-vegan-bakery-chef-romuald-romy-guiot" target="_blank" rel="noopener">A Food Network Star Is Building a French Bakery and Wine Bar in Pasadena</a><span>18 September 2024</span></li>
@@ -453,7 +480,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-close">Start where he does: the éclair.</h2>
-      <p>Chocolate or pistachio at $6.50 and the chef’s special at $9, on the counter menu today. The new order page boxes them for the time you choose at 169 W Green St.</p>
+      <p>Chocolate or pistachio at $6.50 and the chef’s special at $9.00, on the counter today. Order ahead and they are boxed for the time you choose at 169 W Green St.</p>
     </div>
     <div class="actions"><a class="btn btn-ivory" href="menu.html">Order for pickup</a><a class="btn btn-line" href="la-cave.html">La Cave, next door</a></div>
   </div>

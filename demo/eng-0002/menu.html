@@ -119,7 +119,7 @@
      "name": "Can I order ahead for pickup at 169 W Green St?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Choose a day and a pickup time and the order is boxed for then, to collect at the counter. Today counter items order through the shop’s menu app and packaged goods through id-eclair.com, where pickup is usually ready in 24 hours; the new store puts both in one bag."
+      "text": "Yes. Choose a day and a pickup time and the order is boxed for then, to collect at the counter. Pastries from the case and goods from the shelf go in one bag on this page; live-store goods are usually ready in 24 hours."
      }
     },
     {
@@ -143,7 +143,7 @@
      "name": "Can I get iD Éclair delivered?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes, through Uber Eats, DoorDash and Grubhub today. The apps add their own fees, and Grubhub notes that prices may be lower in store; pickup on the new site carries the menu price with no fee added at the end."
+      "text": "Yes, through Uber Eats, DoorDash and Grubhub today. The apps add their own fees, and Grubhub notes that prices may be lower in store; pickup here carries the menu price with no fee added at the end."
      }
     },
     {
@@ -151,7 +151,7 @@
      "name": "What can be shipped?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Shelf-stable boxes: truffles, jams, biscuits, the chocolate bar and the gift baskets, which the new store plans to mail once the chef confirms. Fresh pastry stays pickup only, and the live store offers pickup today. See the goods that ship or the merchandise line."
+      "text": "Shelf-stable boxes: truffles, jams, biscuits, the chocolate bar and the gift baskets, which the shop plans to mail. Fresh pastry stays pickup only; for now the live store offers pickup. See the goods that ship or the merchandise line."
      }
     }
    ]
@@ -1385,6 +1385,7 @@
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
+<noscript><style>html #menu-grid,html .tools,html .cats-bar,html .pk-change{display:none}</style></noscript>
 <style>
 /* menu.html only. Tokens come from assets/site.css; no colour literals here. */
 html{scroll-padding-top:136px}
@@ -1633,6 +1634,37 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
   html.has-ostrip:has(body.pg-menu){scroll-padding-top:136px;scroll-padding-bottom:calc(var(--os-h) + 16px)}
   html.os-on .toast{bottom:calc(var(--os-h) + 32px)}
 }
+/* wave H, 25 Oct 2026: one fixed pickup bar at a time. The menu's own band (.obar) carries the pickup time and its
+   picker at the top, so the order strip steps aside at every width; the bag stays one tap away in the app bar on
+   phones and in the bag pill and the header on desktop. The pickup time wraps rather than truncate. */
+.pg-menu .ostrip{display:none}
+.pk-row b{white-space:normal;overflow:visible}
+@media (max-width:899px){
+  .has-ostrip body.pg-menu{padding-bottom:calc(var(--bar-real,var(--bar-h)) + 20px + env(safe-area-inset-bottom))}
+  html.has-ostrip:has(body.pg-menu){scroll-padding-bottom:calc(var(--bar-real,var(--bar-h)) + 16px)}
+  html.os-on body.pg-menu .toast{bottom:calc(var(--bar-h) + 26px + env(safe-area-inset-bottom))}
+}
+@media (min-width:900px){
+  .has-ostrip body.pg-menu{padding-bottom:0}
+  html.has-ostrip:has(body.pg-menu){scroll-padding-bottom:16px}
+  html.os-on body.pg-menu .toast{bottom:32px}
+  html.os-on body.pg-menu .cartpill.on{display:inline-flex}
+}
+.mgrid:not(.is-list) .item.ledger{grid-column:1 / -1}
+@media (min-width:1000px){.mgrid:not(.is-list) .item.ledger{grid-column:span 2}}  /* ledger rows: one to a line, two on desktop */
+/* wave H: a section with no photographs reads as a ledger (name, line, price, Add) instead of a wall of monogram tiles */
+.mgrid .item.ledger{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;padding:0;border-radius:0;background:transparent;box-shadow:none;border-bottom:1px solid var(--color-line)}
+.mgrid .item.ledger > .tile{display:none}
+.mgrid .item.ledger .body{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:var(--sp-3);row-gap:2px;align-items:center;padding:var(--sp-3) 0}
+.mgrid .item.ledger .body > *{grid-column:1}
+.mgrid .item.ledger .body > .row{grid-column:2;grid-row:1 / span 3;margin:0}
+.mgrid .item.ledger .fb,.mgrid .item.ledger .tags,.mgrid .item.ledger .when,.mgrid .item.ledger .hrt{display:none}  /* the section note says where each comes from; the stepper shows what is in the bag */
+@media (hover: hover){.mgrid .item.ledger:hover{transform:none}}
+.mfall h2{margin:var(--sp-8) 0 var(--sp-2);font-size:var(--text-lg)}
+.mfall ul{list-style:none;margin:0;padding:0;display:grid;gap:0 var(--sp-6)}
+@media (min-width:720px){.mfall ul{grid-template-columns:1fr 1fr}}
+.mfall li{display:flex;justify-content:space-between;gap:var(--sp-3);padding:var(--sp-2) 0;border-bottom:1px solid var(--color-line)}
+.mfall b{color:var(--color-brand);font-variant-numeric:tabular-nums;white-space:nowrap}
 /* wave A, 25 Oct 2026: every repeated control reaches 44 px; nothing under 12 px */
 .try button,.seg button,.pk-change,.cats-bar .cat{min-height:44px}
 .q-clear{width:44px;height:44px;right:4px}
@@ -1652,7 +1684,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
 <header class="top">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
-    <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
+    <span class="tag"><span lang="fr">Pâtisserie française · Salon de thé</span> · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html" aria-current="page">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
     </nav>
@@ -1685,7 +1717,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
     <figure class="mh-media" data-grid-break>
       <picture><source media="(max-width:899px)" srcset="img/macarons-1-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/macarons-1-800.jpg"><img class="m1" src="img/macarons-1-800.jpg" srcset="img/macarons-1-800.jpg 800w, img/macarons-1.webp 1600w" sizes="(min-width:900px) 46vw, 100vw" width="800" height="800" alt="Macarons on one of the shop’s blue glazed plates" fetchpriority="high"></picture>
       <img class="m2" src="img/caneles-1-800.jpg" width="800" height="800" alt="Three cannelés on a blue plate" loading="lazy">
-      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></figcaption>
+      <figcaption class="chip-float"><svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></figcaption>
     </figure>
   </div>
 </section>
@@ -1749,7 +1781,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
             <button class="chip" type="button" aria-pressed="false">5:30</button>
           </div>
           <div class="pk-foot"><span class="note-sm" data-slot-note>Slots close themselves when the kitchen is full</span><button class="btn btn-brand btn-sm" type="button" data-pk-done>Done</button></div>
-          <p class="pk-fine">Example slots, Mondays closed. In the new store the kitchen sets the hours, the 15-minute slots and how many orders each one takes (plan, section 4.3).</p>
+          <p class="pk-fine">Example slots, Mondays closed. The kitchen sets the hours and how many orders each slot takes.</p>
         </div>
       </div>
     </div>
@@ -1788,7 +1820,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
         </div>
       </div>
     </div>
-    <details class="legend"><summary>What “Ships nationwide” and “Gluten-free” mean</summary><p><b>Ships nationwide</b>: shelf-stable boxes the new store can mail, a plan the chef confirms first; the live store offers pickup today. <b>Gluten-free</b>: as marked on the counter board (the soup without crostini) or listed on the live store on 22 October 2026, from a kitchen that also bakes with wheat. <span lang="fr">du jour</span>; the endive and beet <span lang="fr">salades</span> Counter items: 19 of the menu app’s 113, prices checked 21 October 2026.</p></details>
+    <details class="legend"><summary>What “Ships nationwide” and “Gluten-free” mean</summary><p><b>Ships nationwide</b>: shelf-stable boxes the shop plans to mail; for now the live store offers pickup. <b>Gluten-free</b>: as marked on the counter board (the soup <span lang="fr">du jour</span> without crostini, the endive and beet <span lang="fr">salades</span>) or on the live store, from a kitchen that also bakes with wheat.</p></details>
     <div class="grid mgrid" id="menu-grid" data-src="assets/menu.json" data-cats="eclair,vienn,bread,macaron,cake,gift,jam,cookie,class,drink,juice,tea,savory,salad,occasion" aria-busy="true">
       <div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div>
       <div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div><div class="sk" aria-hidden="true"></div>
@@ -1798,7 +1830,8 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       <p>Try pistachio, jar or chocolate, or clear the filters to see all of it.</p>
       <button class="btn btn-ghost btn-sm" type="button" data-clear-all>Show the whole menu</button>
     </div>
-    <noscript><p class="note-sm">This menu loads with JavaScript. Until then the shop takes orders on its menu app and on the live store at id-eclair.com.</p></noscript>
+    <!-- wave H: the 78 menu items in the HTML for a browser without JavaScript (from assets/menu.json, 25 Oct 2026; regenerate when the menu changes) -->
+    <noscript><div class="mfall"><p class="note-sm">The whole menu with its prices. To order ahead, turn on JavaScript, or order on the shop’s <a href="https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780">menu app</a> and on <a href="https://www.id-eclair.com">id-eclair.com</a>.</p><h2>Éclairs</h2><ul><li><span>Chocolate éclair</span><b>$6.50</b></li><li><span>Pistachio éclair</span><b>$6.50</b></li><li><span>Espresso éclair</span><b>$5.50</b></li><li><span>Chef’s special éclair</span><b>$9.00</b></li><li><span>Paris-Brest</span><b>$6.75</b></li></ul><h2>Viennoiserie, tarts and bread</h2><ul><li><span>Butter croissant</span><b>$4.50</b></li><li><span>Suisse</span><b>$5.50</b></li><li><span>Cruffin du jour</span><b>$9.00</b></li><li><span>Cannelé</span><b>$3.25</b></li><li><span>Mille-feuille</span><b>$6.75</b></li><li><span>Fruit tart</span><b>$6.50</b></li><li><span>Baguette</span><b>$5.50</b></li><li><span>Cannelés, by 3</span><b>$9.00</b></li></ul><h2>Macarons</h2><ul><li><span>Macaron</span><b>$3.00</b></li><li><span>Box of six macarons</span><b>$15.00</b></li><li><span>Assorted macaron box</span><b>$18.00</b></li></ul><h2>Cakes and dessert jars</h2><ul><li><span>Mousse cake</span><b>$15.00</b></li><li><span>Douceur tropicale</span><b>$8.00</b></li><li><span>Noisette toujours</span><b>$8.00</b></li><li><span>Four desserts in a jar</span><b>$30.00</b></li><li><span>Caramel je t’aime</span><b>$8.00</b></li><li><span>Chocolat mon amour</span><b>$8.00</b></li><li><span>Framboise chérie</span><b>$8.00</b></li><li><span>Citron ma passion</span><b>$8.00</b></li></ul><h2>Chocolate, biscuits and gifts</h2><ul><li><span>Golden Ticket</span><b>$140.00</b></li><li><span>Dubai chocolate bar</span><b>$35.00</b></li><li><span>White chocolate truffles</span><b>$16.00</b></li><li><span>Dark chocolate truffles</span><b>$15.00</b></li><li><span>Kushyflakes</span><b>$9.00</b></li><li><span>Gift basket, small</span><b>$45.00</b></li><li><span>Gift basket, large</span><b>$55.00</b></li><li><span>Pineapple vanilla jam</span><b>$7.95</b></li><li><span>Chocolate fingers, sablés pochés</span><b>$7.00</b></li><li><span>Diamants biscuits, by 5</span><b>$7.00</b></li><li><span>Cookie spoons</span><b>$5.00</b></li><li><span>Tropical jam</span><b>$7.00</b></li><li><span>Raspberry jam</span><b>$7.95</b></li><li><span>Custom printed cookie</span><b>$3.75</b></li></ul><h2>Coffee, chocolate and juice</h2><ul><li><span>Ristretto</span><b>$4.00</b></li><li><span>Doppio</span><b>$5.30</b></li><li><span>French Roast drip</span><b>$4.00</b></li><li><span>Gourmet Blend drip</span><b>$4.00</b></li><li><span>Americano</span><b>$5.50</b></li><li><span>Cold brew</span><b>$6.00</b></li><li><span>Cortadito</span><b>$5.50</b></li><li><span>Cappuccino</span><b>$6.00</b></li><li><span>Latte</span><b>$7.50</b></li><li><span>Mocha</span><b>$8.00</b></li><li><span>Matcha</span><b>$8.00</b></li><li><span>Romy’s hot chocolate</span><b>$6.50</b></li><li><span>Chocolat liégeois</span><b>$7.50</b></li><li><span>Orange juice, fresh-pressed</span><b>$8.00</b></li><li><span>Alain Milliat juice</span><b>$9.00</b></li></ul><h2>Palais des Thés</h2><ul><li><span>7 Citrus Russian</span><b>$6.50</b></li><li><span>Chai Impérial</span><b>$6.50</b></li><li><span>Chai latte</span><b>$7.50</b></li><li><span>Montagne Bleue</span><b>$6.50</b></li><li><span>Thé du Louvre, Garden</span><b>$6.50</b></li><li><span>Fleur de Geisha</span><b>$6.50</b></li><li><span>Milky Oolong</span><b>$7.50</b></li><li><span>Detox South Africa</span><b>$6.50</b></li><li><span>French Garden</span><b>$6.50</b></li><li><span>Tropical Garden</span><b>$6.50</b></li><li><span>Herboriste N°46, Relaxation</span><b>$6.50</b></li><li><span>Herboriste N°52, Digestion</span><b>$6.50</b></li><li><span>Herboriste N°63, Immune Support</span><b>$6.50</b></li></ul><h2>Petits plats and salads</h2><ul><li><span>French breakfast</span><b>$8.00</b></li><li><span>Avocado toast</span><b>$13.50</b></li><li><span>Grilled cheese</span><b>$14.50</b></li><li><span>Soup du jour</span><b>$9.50</b></li><li><span>Sandwich du jour</span><b>$14.00</b></li><li><span>Combo du jour</span><b>$15.00</b></li><li><span>Endive salade</span><b>$16.00</b></li><li><span>Garden salade</span><b>$15.50</b></li><li><span>Grandmother beet salade</span><b>$15.00</b></li><li><span>Tomato salade and focaccia</span><b>$16.50</b></li></ul><h2>Boards and holiday boxes</h2><ul><li><span>Thanksgiving box for two</span><b>$100.00 to $185.00</b></li><li><span>Cheese board</span><b>$100.00</b></li></ul></div></noscript>
   </div>
 </section>
 </div>
@@ -1817,7 +1850,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       </li>
       <li>
         <div class="cal-when">7 days<small>notice</small></div>
-        <div><h3>Custom cakes</h3><p>The shop asks for a week’s notice. The new site turns that rule into a request with servings, flavours, photos and a deposit.</p></div>
+        <div><h3>Custom cakes</h3><p>The shop asks for a week’s notice. Start with a request: servings, flavours and photos, and a deposit holds the date.</p></div>
         <a class="go" href="cakes.html">Start a cake request<svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </li>
       <li>
@@ -1826,15 +1859,15 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
         <a class="go" href="la-cave.html">Visit La Cave<svg class="ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </li>
     </ul>
-    <p class="deliver">Delivery today runs through <a href="https://www.ubereats.com/store/id-eclair-169-west-green-street/DZBavqIJUAuR3qdYMA7QNQ" target="_blank" rel="noopener">Uber Eats</a>, <a href="https://www.doordash.com/en/store/id-eclair-pasadena-32543221/" target="_blank" rel="noopener">DoorDash</a> and <a href="https://www.grubhub.com/restaurant/id-eclair-169-w-green-st-pasadena/10198432" target="_blank" rel="noopener">Grubhub</a>. The new site keeps them as one small link and puts pickup first (brand research, finding 9; plan, section 4.5).</p>
+    <p class="deliver">Delivery today runs through <a href="https://www.ubereats.com/store/id-eclair-169-west-green-street/DZBavqIJUAuR3qdYMA7QNQ" target="_blank" rel="noopener">Uber Eats</a>, <a href="https://www.doordash.com/en/store/id-eclair-pasadena-32543221/" target="_blank" rel="noopener">DoorDash</a> and <a href="https://www.grubhub.com/restaurant/id-eclair-169-w-green-st-pasadena/10198432" target="_blank" rel="noopener">Grubhub</a>. Pickup here carries the counter price.</p>
   </div>
 </section>
 
 <section class="how bg-white" aria-labelledby="h-how">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="h-how">How ordering works in the new store.</h2>
-      <p>Three steps on a phone, one checkout, one pickup time. The bag on this preview already behaves this way, and live-store items check out for real today.</p>
+      <h2 id="h-how">How ordering ahead works.</h2>
+      <p>Three steps on a phone, one checkout, one pickup time.</p>
     </div>
     <ol>
       <li><div><h3>Pick a day and a time.</h3><p>The bag opens on the next 14 days and the 15-minute slots that still have room, with the earliest chosen for you. A full slot closes itself, and anything that needs notice says when it can be ready instead of disappearing.</p></div></li>
@@ -1856,7 +1889,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
     <div class="faq-list">
       <div class="qa">
         <h3>Can I order ahead for pickup at 169 W Green St?</h3>
-        <p>Yes. Choose a day and a pickup time and the order is boxed for then, to collect at the counter. Today counter items order through the shop’s menu app and packaged goods through id-eclair.com, where pickup is usually ready in 24 hours; the new store puts both in one bag.</p>
+        <p>Yes. Choose a day and a pickup time and the order is boxed for then, to collect at the counter. Pastries from the case and goods from the shelf go in one bag on this page; live-store goods are usually ready in 24 hours.</p>
       </div>
       <div class="qa">
         <h3>Is everything on the menu vegan?</h3>
@@ -1868,11 +1901,11 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       </div>
       <div class="qa">
         <h3>Can I get iD Éclair delivered?</h3>
-        <p>Yes, through Uber Eats, DoorDash and Grubhub today. The apps add their own fees, and Grubhub notes that prices may be lower in store; pickup on the new site carries the menu price with no fee added at the end.</p>
+        <p>Yes, through Uber Eats, DoorDash and Grubhub today. The apps add their own fees, and Grubhub notes that prices may be lower in store; pickup here carries the menu price with no fee added at the end.</p>
       </div>
       <div class="qa">
         <h3>What can be shipped?</h3>
-        <p>Shelf-stable boxes: truffles, jams, biscuits, the chocolate bar and the gift baskets, which the new store plans to mail once the chef confirms. Fresh pastry stays pickup only, and the live store offers pickup today. See <a href="menu.html#ships">the goods that ship</a> or the <a href="merch.html">merchandise line</a>.</p>
+        <p>Shelf-stable boxes: truffles, jams, biscuits, the chocolate bar and the gift baskets, which the shop plans to mail. Fresh pastry stays pickup only; for now the live store offers pickup. See <a href="menu.html#ships">the goods that ship</a> or the <a href="merch.html">merchandise line</a>.</p>
       </div>
     </div>
   </div>
@@ -1918,9 +1951,9 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
     { id: 'macaron', slug: 'macarons', cats: ['macaron'], chip: 'Macarons', label: 'Macarons', note: 'One for $3 or six for $15 at the counter, or the assorted box from the live store.', words: 'macaron macarons box' },
     { id: 'cake', slug: 'cakes', cats: ['cake'], chip: 'Cakes and jars', label: 'Cakes and dessert jars', note: 'Individual mousse cakes from the case and the love-note jars. Whole and custom cakes start on <a href="cakes.html">the cakes page</a>.', words: 'cake cakes jar jars dessert mousse entremets' },
     { id: 'gift', slug: 'gifts', cats: ['gift', 'jam', 'cookie', 'class'], chip: 'Chocolate and gifts', label: 'Chocolate, biscuits and gifts', note: 'Boxed, shelf-stable, and the part of the menu that can travel.', words: 'gift gifts chocolate chocolates truffle truffles biscuit biscuits cookie cookies jam jams present' },
-    { id: 'drink', slug: 'coffee', cats: ['drink', 'juice'], chip: 'Coffee', label: 'Coffee, chocolate and juice', note: 'Espresso drinks on plant milk, Romy’s hot chocolate, the chocolat liégeois and fresh-pressed juice. Cold foam $1, a pump of vanilla 50¢.', words: 'coffee espresso ristretto doppio americano cortadito cappuccino latte mocha matcha chocolate chocolat juice jus drink drinks' },
+    { id: 'drink', slug: 'coffee', cats: ['drink', 'juice'], chip: 'Coffee', label: 'Coffee, chocolate and juice', note: 'Espresso drinks on plant milk, Romy’s hot chocolate, the <span lang="fr">chocolat liégeois</span> and fresh-pressed juice. Cold foam $1, a pump of vanilla 50¢.', words: 'coffee espresso ristretto doppio americano cortadito cappuccino latte mocha matcha chocolate chocolat juice jus drink drinks' },
     { id: 'tea', slug: 'tea', cats: ['tea'], chip: 'Palais des Thés', label: 'Palais des Thés', note: 'Thirteen teas from the Paris house, about 20 oz each; the citrus black and the two garden infusions come iced on request. Tea party for two at $80, while supplies last.', words: 'tea teas thé palais chai oolong herbal infusion rooibos iced party' },
-    { id: 'savory', slug: 'savory', cats: ['savory', 'salad'], chip: 'Plats and salads', label: 'Petits plats and salads', note: 'French breakfast, the soup and sandwich du jour, the weekday combo and four salades, served in the salon de thé or packed for pickup.', words: 'savory savoury lunch breakfast soup sandwich toast grilled cheese combo salad salade' },
+    { id: 'savory', slug: 'savory', cats: ['savory', 'salad'], chip: 'Plats and salads', label: 'Petits plats and salads', note: 'French breakfast, the soup and sandwich <span lang="fr">du jour</span>, the weekday combo and four <span lang="fr">salades</span>, served in the <span lang="fr">salon de thé</span> or packed for pickup.', words: 'savory savoury lunch breakfast soup sandwich toast grilled cheese combo salad salade' },
     { id: 'occasion', slug: 'holiday', cats: ['occasion'], chip: 'Boards and holidays', label: 'Boards and holiday boxes', note: 'For a table of ten or a holiday at home. Pickup only.', words: 'board boards holiday thanksgiving party' }
   ];
   /* shelf-stable goods the plan lists as able to ship (plan section 3, Shop); fresh items stay pickup only */
@@ -2074,7 +2107,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       var html = '', pn = noteOf(it);
       if (pn) html += '<p class="pnote">' + esc(pn) + '</p>';
       html += '<ul class="tags" aria-label="Dietary"><li>' + ICON.leaf + 'Plant-based</li>' + (GF[it.handle] ? '<li class="t-gf">Gluten-free</li>' : '') + '</ul>';
-      html += '<p class="when">' + ICON.clock + '<span>' + esc(lead.text) + '</span></p>';
+      html += '<p class="when">' + ICON.clock + '<span>' + esc(lead.text).replace('salon de thé', '<span lang="fr">salon de thé</span>') + '</span></p>';
       html += '<p class="later" hidden>' + ICON.clock + '<span data-later-txt></span><button class="link" type="button" data-later-go>Switch</button></p>';
       if (it.handle === 'chefs-special-eclair') {
         el.classList.add('feat');
@@ -2107,10 +2140,14 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       GROUPS.forEach(function (g) {
         var mine = pairs.filter(function (p) { return p.g === g.id; });
         if (!mine.length) return;
-        function rank(p) { return p.it.handle === 'chefs-special-eclair' ? 0 : p.it.channel === 'cafe' ? 1 : 2; }
+        /* wave H: the chef's éclair, then photographed items, then the counter's typographic plates, then the rest */
+        function pic(p) { return !!p.el.querySelector('img'); }
+        function rank(p) { return p.it.handle === 'chefs-special-eclair' ? 0 : pic(p) ? 1 : p.it.channel === 'cafe' ? 2 : 3; }
         mine.sort(function (a, b) { return rank(a) - rank(b) || a.i - b.i; });
+        var ledger = !mine.some(pic) && !mine.some(function (p) { return p.it.handle === 'chefs-special-eclair'; });
         var head = document.createElement('div');
-        head.className = 'grp'; head.setAttribute('data-grp', g.id);
+        head.className = 'grp' + (ledger ? ' grp-ledger' : ''); head.setAttribute('data-grp', g.id);
+        if (ledger) mine.forEach(function (p) { p.el.classList.add('ledger'); });
         head.innerHTML = '<h2 id="g-' + g.id + '">' + g.label + '</h2><p>' + g.note + ' <span class="gn">' + plural(mine.length, 'item') + '</span></p>';
         frag.appendChild(head); heads.push(head);
         mine.forEach(function (p) { frag.appendChild(p.el); items.push(p); });
@@ -2246,7 +2283,7 @@ html.os-on .toast{bottom:calc(var(--bar-real,var(--bar-h)) + var(--os-h) + 14px 
       return 'À ' + (idx === 0 ? 'tout à l’heure' : idx === 1 ? 'demain' : JOURS[dow]) + ', ' + frTime(s.time) + '.';
     }
     function showToast() {
-      toast.innerHTML = ICON.heart + '<em>Merci.</em><span>' + esc(merci()) + '</span>';
+      toast.innerHTML = ICON.heart + '<em lang="fr">Merci.</em><span lang="fr">' + esc(merci()) + '</span>';
       toast.hidden = false; toast.classList.remove('on'); void toast.offsetWidth; toast.classList.add('on');
       clearTimeout(toastT); toastT = setTimeout(function () { toast.hidden = true; }, 1900);
     }

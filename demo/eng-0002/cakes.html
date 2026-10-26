@@ -143,7 +143,7 @@
      "name": "Can I put a message on a cake?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Step 5 takes a message plaque of up to 35 characters, and in the new store the $15 individual mousse cake takes the same plaque at checkout. For a smaller treat, see today’s menu."
+      "text": "Yes. Step 5 takes a message plaque of up to 35 characters, and the $15 individual mousse cake takes the same plaque at checkout. For a smaller treat, see today’s menu."
      }
     }
    ]
@@ -185,6 +185,13 @@
 .ck-hero .hero-media img{aspect-ratio:3/2}
 @media (min-width:900px){.ck-hero .hero-media img{aspect-ratio:1/1}}
 .ck-hero .chip-float b{font-weight:800}
+/* wave H: on phones the kicker is one line (the headline already says "one week ahead") and the photograph
+   16/10, so "Start your cake" clears the app bar at 375 x 720 */
+@media (max-width:899px){
+  .ck-hero .kick span:nth-child(2){display:none}
+  .ck-hero.hero-flow .hero-media img{aspect-ratio:16/10}
+  .ck-hero.hero-flow h1{font-size:2.25rem}
+}
 
 /* the ladder, three rungs */
 .ck-ways{list-style:none;margin:0;padding:0;display:grid;gap:var(--sp-3);counter-reset:w}
@@ -349,8 +356,8 @@ textarea.ck-input{min-height:96px;resize:vertical}
 @media (min-width:1000px){.ck-gal{grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-6)}}
 .ck-tile{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-e1);transition:transform var(--dur-base) var(--ease-move);}
 @media (hover: hover){.ck-tile:hover{box-shadow:var(--shadow-e3);transform:translateY(-2px)}}
-.ck-tile > img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.ck-frame{position:relative;aspect-ratio:4/5;display:grid;place-items:center;padding:var(--sp-6) var(--sp-4);background:var(--color-brand)}
+.ck-tile > img{width:100%;aspect-ratio:1/1;object-fit:cover}  /* wave H: square frames on square photos */
+.ck-frame{position:relative;aspect-ratio:1/1;display:grid;place-items:center;padding:var(--sp-6) var(--sp-4);background:var(--color-brand)}
 .ck-frame::before{content:"";position:absolute;inset:12px;border:1px solid var(--color-on-brand-muted);border-radius:calc(var(--radius-md) - 12px)}
 .ck-frame::after{content:"";position:absolute;inset:17px;border:1px solid rgb(250 247 242 / .28);border-radius:calc(var(--radius-md) - 17px)}
 .ck-frame span{font:italic 500 clamp(1.125rem,4.6vw,2.3rem)/1.05 var(--font-display);color:var(--color-on-brand);text-align:center}
@@ -373,6 +380,21 @@ textarea.ck-input{min-height:96px;resize:vertical}
   .ck-choice,.ck-flav,.ck-size,.ck-tile,.ck-choice::before,.ck-choice::after,.ck-flav::before,.ck-flav::after,.ck-size::before,.ck-size::after{transition:none;}
   .ck-tile:hover,.ck-choice:active,.ck-flav:active,.ck-size:active{transform:none}
 }
+/* wave H, 25 Oct 2026: one fixed bar at a time on phones, the home's wave F rule. While the strip is
+   docked (html.os-on) the app bar slides down and the strip takes its place at the bottom edge; the strip's
+   layout position is unchanged, so app.js reads the same band when it steps aside for a slot control */
+@media (max-width:899px){
+  .bar{transition:transform var(--dur-base) var(--ease-enter),visibility 0s}
+  html.os-on .bar{transform:translateY(100%);visibility:hidden;transition:transform var(--dur-base) var(--ease-exit),visibility 0s linear var(--dur-base)}
+  .ostrip{transform:translateY(calc(100% + var(--bar-real,var(--bar-h))))}
+  html.os-on .ostrip.is-on:not(.is-yield),html.os-on .ostrip.is-open{transform:translateY(calc(var(--bar-real,var(--bar-h)) - env(safe-area-inset-bottom,0px)));box-shadow:0 -6px 24px rgb(31 21 107 / .08),0 env(safe-area-inset-bottom,0px) 0 var(--color-surface)}
+}
+@media (prefers-reduced-motion:reduce){.bar,html.os-on .bar{transition:none}}
+/* wave H: inside the six-step builder the strip steps aside on phones and the app bar comes back */
+@media (max-width:899px){
+  html.ck-in-builder .ostrip.is-on:not(.is-open){transform:translateY(calc(100% + var(--bar-real,var(--bar-h))));visibility:hidden}
+  html.ck-in-builder.os-on .bar{transform:none;visibility:visible}
+}
 /* order strip (home blend): the summary docks below the strip */
 @media (min-width:900px){.has-ostrip .ck-summary{top:calc(96px + var(--os-h))}}
 </style>
@@ -388,7 +410,7 @@ textarea.ck-input{min-height:96px;resize:vertical}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
-    <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
+    <span class="tag"><span lang="fr">Pâtisserie française · Salon de thé</span> · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html" aria-current="page">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
     </nav>
@@ -414,7 +436,7 @@ textarea.ck-input{min-height:96px;resize:vertical}
     </div>
     <figure class="hero-media" data-grid-break>
       <picture><source media="(max-width:899px)" srcset="img/story-chef-competition-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/story-chef-competition-800.jpg"><img src="img/story-chef-competition-800.jpg" srcset="img/story-chef-competition-800.jpg 800w, img/story-chef-competition.jpg 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="1600" height="1067" alt="The chef in whites, assembling a chocolate and sugar showpiece at a pastry competition" fetchpriority="high"></picture>
-      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span>Earliest cake date <b data-ck-earliest>one week out</b></span><small>7-day rule</small></figcaption>
+      <figcaption class="chip-float"><span>Earliest cake date <b data-ck-earliest>one week out</b></span><small>7-day rule</small></figcaption>
     </figure>
   </div>
 </section>
@@ -460,17 +482,17 @@ textarea.ck-input{min-height:96px;resize:vertical}
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-ways">Three ways to order a cake.</h2>
-      <p>From a message on one entremets to a cake designed with the chef.</p>
+      <p>From a message on one <span lang="fr">entremets</span> to a cake designed with the chef.</p>
     </div>
     <ol class="ck-ways">
       <li class="ck-way">
         <h3>A message on a mousse cake</h3>
-        <p>The counter’s entremets, with a plaque of up to 35 characters.</p>
+        <p>The counter’s <span lang="fr">entremets</span>, with a plaque of up to 35 characters.</p>
         <div class="row"><span class="price">$15.00</span><button class="add" type="button" data-add data-handle="mousse-cake" data-title="Mousse cake" data-price="15" data-glyph="M">Add</button></div>
       </li>
       <li class="ck-way">
         <h3>A celebration cake in a menu flavour</h3>
-        <p>Guests, size and a flavour from the menu, one week ahead. In the live version it is paid in full with the pickup date.</p>
+        <p>Guests, size and a flavour from the menu, one week ahead, paid in full with the pickup date.</p>
         <a class="link" href="#builder">Start at step 1</a>
       </li>
       <li class="ck-way">
@@ -545,16 +567,16 @@ textarea.ck-input{min-height:96px;resize:vertical}
 
           <fieldset class="ck-step" id="ck-s3" tabindex="-1">
             <legend><span class="ck-n">Step 3 of 6</span>Pick a flavour.</legend>
-            <p class="ck-help">Flavours from the shop’s menu and store, read 21 and 22 October 2026. Today they come as jars, éclairs and the Paris-Brest; the chef confirms which ones work as a whole cake.</p>
+            <p class="ck-help">Flavours from the shop’s menu and store. Today they come as jars, éclairs and the <span lang="fr">Paris-Brest</span>; the chef confirms which ones work as a whole cake.</p>
             <div class="ck-flavs">
-              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-chocolat" value="Chocolat mon amour"><label class="ck-flav" for="fl-chocolat"><img src="img/chocolat-mon-amour-800.jpg" width="800" height="800" alt="Chocolat mon amour in its jar" loading="lazy"><span class="ck-ft"><b>Chocolat mon amour</b><small>Chocolate crumble, ganache and mousse</small></span></label></div>
-              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-framboise" value="Framboise chérie"><label class="ck-flav" for="fl-framboise"><img src="img/framboise-cherie-800.jpg" width="800" height="800" alt="Framboise chérie in its jar" loading="lazy"><span class="ck-ft"><b>Framboise chérie</b><small>Raspberry mousse, raspberry jam, almond streusel</small></span></label></div>
-              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-citron" value="Citron ma passion"><label class="ck-flav" for="fl-citron"><img src="img/citron-ma-passion-800.jpg" width="800" height="800" alt="Citron ma passion in its jar" loading="lazy"><span class="ck-ft"><b>Citron ma passion</b><small>Lemon curd, meringue, almond streusel</small></span></label></div>
-              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-caramel" value="Caramel je t’aime"><label class="ck-flav" for="fl-caramel"><img src="img/caramel-je-taime-800.jpg" width="800" height="800" alt="Caramel je t’aime in its jar" loading="lazy"><span class="ck-ft"><b>Caramel je t’aime</b><small>Caramel mousse, almond crumble, vanilla chantilly</small></span></label></div>
-              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-noisette" value="Noisette toujours"><label class="ck-flav" for="fl-noisette"><img src="img/noisette-toujours-800.jpg" width="800" height="800" alt="Noisette toujours in its jar" loading="lazy"><span class="ck-ft"><b>Noisette toujours</b><small>Hazelnut crisp, hazelnut cream</small></span></label></div>
-              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-tropicale" value="Douceur tropicale"><label class="ck-flav" for="fl-tropicale"><img src="img/douceur-tropicale-800.jpg" width="800" height="800" alt="Douceur tropicale in its jar" loading="lazy"><span class="ck-ft"><b>Douceur tropicale</b><small>Passion fruit and mango mousse, coconut crumble</small></span></label></div>
-              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-pistache" value="Pistache"><label class="ck-flav" for="fl-pistache"><span class="ck-glyph" aria-hidden="true">p</span><span class="ck-ft"><b>Pistache</b><small>Pistachio, as in the pistachio éclair</small></span></label></div>
-              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-praline" value="Praliné"><label class="ck-flav" for="fl-praline"><span class="ck-glyph" aria-hidden="true">P</span><span class="ck-ft"><b>Praliné</b><small>Praline cream, as in the Paris-Brest</small></span></label></div>
+              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-chocolat" value="Chocolat mon amour"><label class="ck-flav" for="fl-chocolat"><img src="img/chocolat-mon-amour-800.jpg" width="800" height="800" alt="Chocolat mon amour in its jar" loading="lazy"><span class="ck-ft"><b lang="fr">Chocolat mon amour</b><small>Chocolate crumble, ganache and mousse</small></span></label></div>
+              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-framboise" value="Framboise chérie"><label class="ck-flav" for="fl-framboise"><img src="img/framboise-cherie-800.jpg" width="800" height="800" alt="Framboise chérie in its jar" loading="lazy"><span class="ck-ft"><b lang="fr">Framboise chérie</b><small>Raspberry mousse, raspberry jam, almond streusel</small></span></label></div>
+              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-citron" value="Citron ma passion"><label class="ck-flav" for="fl-citron"><img src="img/citron-ma-passion-800.jpg" width="800" height="800" alt="Citron ma passion in its jar" loading="lazy"><span class="ck-ft"><b lang="fr">Citron ma passion</b><small>Lemon curd, meringue, almond streusel</small></span></label></div>
+              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-caramel" value="Caramel je t’aime"><label class="ck-flav" for="fl-caramel"><img src="img/caramel-je-taime-800.jpg" width="800" height="800" alt="Caramel je t’aime in its jar" loading="lazy"><span class="ck-ft"><b lang="fr">Caramel je t’aime</b><small>Caramel mousse, almond crumble, vanilla chantilly</small></span></label></div>
+              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-noisette" value="Noisette toujours"><label class="ck-flav" for="fl-noisette"><img src="img/noisette-toujours-800.jpg" width="800" height="800" alt="Noisette toujours in its jar" loading="lazy"><span class="ck-ft"><b lang="fr">Noisette toujours</b><small>Hazelnut crisp, hazelnut cream</small></span></label></div>
+              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-tropicale" value="Douceur tropicale"><label class="ck-flav" for="fl-tropicale"><img src="img/douceur-tropicale-800.jpg" width="800" height="800" alt="Douceur tropicale in its jar" loading="lazy"><span class="ck-ft"><b lang="fr">Douceur tropicale</b><small>Passion fruit and mango mousse, coconut crumble</small></span></label></div>
+              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-pistache" value="Pistache"><label class="ck-flav" for="fl-pistache"><span class="ck-glyph" aria-hidden="true">p</span><span class="ck-ft"><b lang="fr">Pistache</b><small>Pistachio, as in the pistachio éclair</small></span></label></div>
+              <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-praline" value="Praliné"><label class="ck-flav" for="fl-praline"><span class="ck-glyph" aria-hidden="true">P</span><span class="ck-ft"><b lang="fr">Praliné</b><small>Praline cream, as in the <span lang="fr">Paris-Brest</span></small></span></label></div>
               <div class="ck-opt"><input class="ck-in" type="radio" name="flavour" id="fl-chef" value="Chef’s choice"><label class="ck-flav" for="fl-chef"><span class="ck-glyph sm" aria-hidden="true">du chef</span><span class="ck-ft"><b>Chef’s choice</b><small>The chef picks from the season</small></span></label></div>
             </div>
             <p class="ck-err" role="alert" hidden></p>
@@ -603,7 +625,7 @@ textarea.ck-input{min-height:96px;resize:vertical}
                 <div class="ck-up"><input class="ck-file" type="file" id="ck-ph2" data-n="2" accept="image/*"><label class="ck-drop" for="ck-ph2"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-8 8"/></svg><span class="ck-drop-t">Photo 2</span></label><button class="ck-x" type="button" data-clear="2" aria-label="Remove photo 2" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></div>
                 <div class="ck-up"><input class="ck-file" type="file" id="ck-ph3" data-n="3" accept="image/*"><label class="ck-drop" for="ck-ph3"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-8 8"/></svg><span class="ck-drop-t">Photo 3</span></label><button class="ck-x" type="button" data-clear="3" aria-label="Remove photo 3" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></div>
               </div>
-              <p class="note-sm">In this preview your photos stay on this device. The live form sends them with the request, up to 20 MB each.</p>
+              <p class="note-sm">Up to 20 MB each. On this preview your photos stay on this device.</p>
               <p class="ck-err" role="alert" data-ck-uperr hidden></p>
             </fieldset>
 
@@ -664,8 +686,8 @@ textarea.ck-input{min-height:96px;resize:vertical}
       </div>
 
       <div class="ck-done" data-ck-done role="status" hidden>
-        <h3 tabindex="-1" data-ck-merci>Merci.</h3>
-        <p>Your request is ready for the chef. In the live version it lands in the shop’s inbox with your photos, and this is what happens next:</p>
+        <h3 tabindex="-1" data-ck-merci lang="fr">Merci.</h3>
+        <p>Your request is ready for the chef, with your photos. What happens next:</p>
         <ol class="ck-after">
           <li><span><b>A sketch and a price</b>from the chef, in the reply time the kitchen sets.</span></li>
           <li><span><b>You approve the design</b>before anything is baked.</span></li>
@@ -688,48 +710,48 @@ textarea.ck-input{min-height:96px;resize:vertical}
     </div>
     <ul class="ck-gal">
       <li class="ck-tile">
-        <div class="ck-frame" aria-hidden="true"><span>Birthday</span></div>
-        <div class="ck-cap"><h3>Birthday cakes</h3><p>Tell the chef the age, the guests and the flavour.</p><button class="link" type="button" data-ck-like="Birthday">Request a cake like this</button></div>
+        <img src="img/chocolat-mon-amour-2-800.jpg" width="800" height="800" alt="Chocolat mon amour, layered chocolate mousse in a glass jar" loading="lazy">
+        <div class="ck-cap"><h3 lang="fr">Chocolat mon amour</h3><p>Chocolate crumble, ganache and mousse. A jar today, $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-chocolat">Use this flavour</button></div>
       </li>
       <li class="ck-tile">
-        <img src="img/chocolat-mon-amour-2-800.jpg" width="800" height="800" alt="Chocolat mon amour, layered chocolate mousse in a glass jar" loading="lazy">
-        <div class="ck-cap"><h3>Chocolat mon amour</h3><p>Chocolate crumble, ganache and mousse. A jar today, $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-chocolat">Use this flavour</button></div>
+        <img src="img/framboise-cherie-2-800.jpg" width="800" height="800" alt="Framboise chérie, raspberry mousse over almond streusel in a jar" loading="lazy">
+        <div class="ck-cap"><h3 lang="fr">Framboise chérie</h3><p>Raspberry mousse, raspberry jam, almond streusel. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-framboise">Use this flavour</button></div>
+      </li>
+      <li class="ck-tile">
+        <img src="img/macarons-2-800.jpg" width="800" height="800" alt="Six macarons lined up in an iD Éclair box" loading="lazy">
+        <div class="ck-cap"><h3>A macaron box for the table</h3><p>The assorted box from the live store.</p><div class="row"><span class="price">$18.00</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-image="img/macarons-2-800.jpg">Add</button></div></div>
+      </li>
+      <li class="ck-tile">
+        <img src="img/citron-ma-passion-2-800.jpg" width="800" height="800" alt="Citron ma passion, lemon curd under meringue in a jar" loading="lazy">
+        <div class="ck-cap"><h3 lang="fr">Citron ma passion</h3><p>Lemon curd, meringue, almond streusel. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-citron">Use this flavour</button></div>
+      </li>
+      <li class="ck-tile">
+        <img src="img/caramel-je-taime-2-800.jpg" width="800" height="800" alt="Caramel je t’aime, caramel mousse and vanilla chantilly in a jar" loading="lazy">
+        <div class="ck-cap"><h3 lang="fr">Caramel je t’aime</h3><p>Caramel mousse, almond crumble, vanilla chantilly. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-caramel">Use this flavour</button></div>
+      </li>
+      <li class="ck-tile">
+        <img src="img/noisette-toujours-2-800.jpg" width="800" height="800" alt="Noisette toujours, hazelnut cream over hazelnut crisp in a jar" loading="lazy">
+        <div class="ck-cap"><h3 lang="fr">Noisette toujours</h3><p>Hazelnut crisp, hazelnut cream. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-noisette">Use this flavour</button></div>
+      </li>
+      <li class="ck-tile">
+        <div class="ck-frame" aria-hidden="true"><span>Birthday</span></div>
+        <div class="ck-cap"><h3>Birthday cakes</h3><p>Tell the chef the age, the guests and the flavour.</p><button class="link" type="button" data-ck-like="Birthday">Request a cake like this</button></div>
       </li>
       <li class="ck-tile">
         <div class="ck-frame" aria-hidden="true"><span>Wedding tiers</span></div>
         <div class="ck-cap"><h3>Wedding cakes</h3><p>Tiers, flavours and the date, sketched before anything is baked.</p><button class="link" type="button" data-ck-like="Wedding or engagement">Request a cake like this</button></div>
       </li>
       <li class="ck-tile">
-        <img src="img/framboise-cherie-2-800.jpg" width="800" height="800" alt="Framboise chérie, raspberry mousse over almond streusel in a jar" loading="lazy">
-        <div class="ck-cap"><h3>Framboise chérie</h3><p>Raspberry mousse, raspberry jam, almond streusel. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-framboise">Use this flavour</button></div>
-      </li>
-      <li class="ck-tile">
-        <img src="img/macarons-2-800.jpg" width="800" height="800" alt="Six macarons lined up in an iD Éclair box" loading="lazy">
-        <div class="ck-cap"><h3>A macaron box for the table</h3><p>The assorted box, $18 on the live store (22 October 2026).</p><div class="row"><span class="price">$18.00</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-image="img/macarons-2-800.jpg">Add</button></div></div>
-      </li>
-      <li class="ck-tile">
         <div class="ck-frame" aria-hidden="true"><span>Anniversary</span></div>
         <div class="ck-cap"><h3>Anniversary cakes</h3><p>A date to mark, a flavour you share, a message on the plaque.</p><button class="link" type="button" data-ck-like="Anniversary">Request a cake like this</button></div>
-      </li>
-      <li class="ck-tile">
-        <img src="img/citron-ma-passion-2-800.jpg" width="800" height="800" alt="Citron ma passion, lemon curd under meringue in a jar" loading="lazy">
-        <div class="ck-cap"><h3>Citron ma passion</h3><p>Lemon curd, meringue, almond streusel. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-citron">Use this flavour</button></div>
       </li>
       <li class="ck-tile">
         <div class="ck-frame" aria-hidden="true"><span>Logos and launches</span></div>
         <div class="ck-cap"><h3>Office and team cakes</h3><p>A logo or a launch, for the office or the team.</p><button class="link" type="button" data-ck-like="Office or team">Request a cake like this</button></div>
       </li>
       <li class="ck-tile">
-        <img src="img/caramel-je-taime-2-800.jpg" width="800" height="800" alt="Caramel je t’aime, caramel mousse and vanilla chantilly in a jar" loading="lazy">
-        <div class="ck-cap"><h3>Caramel je t’aime</h3><p>Caramel mousse, almond crumble, vanilla chantilly. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-caramel">Use this flavour</button></div>
-      </li>
-      <li class="ck-tile">
         <div class="ck-frame" aria-hidden="true"><span>Baby shower</span></div>
         <div class="ck-cap"><h3>Baby shower cakes</h3><p>For a shower or a naming day, in the colours you choose.</p><button class="link" type="button" data-ck-like="Baby shower">Request a cake like this</button></div>
-      </li>
-      <li class="ck-tile">
-        <img src="img/noisette-toujours-2-800.jpg" width="800" height="800" alt="Noisette toujours, hazelnut cream over hazelnut crisp in a jar" loading="lazy">
-        <div class="ck-cap"><h3>Noisette toujours</h3><p>Hazelnut crisp, hazelnut cream. $8 on the live store.</p><button class="link" type="button" data-ck-flav="fl-noisette">Use this flavour</button></div>
       </li>
       <li class="ck-tile ck-you">
         <div class="ck-frame" aria-hidden="true"><span>Your idea</span><small>Up to 3 photos</small></div>
@@ -775,7 +797,7 @@ textarea.ck-input{min-height:96px;resize:vertical}
       </div>
       <div class="qa">
         <h3>Can I put a message on a cake?</h3>
-        <p>Yes. Step 5 takes a message plaque of up to 35 characters, and in the new store the $15 individual mousse cake takes the same plaque at checkout. For a smaller treat, see <a href="menu.html">today’s menu</a>.</p>
+        <p>Yes. Step 5 takes a message plaque of up to 35 characters, and the $15 individual mousse cake takes the same plaque at checkout. For a smaller treat, see <a href="menu.html">today’s menu</a>.</p>
       </div>
     </div>
   </div>
@@ -1130,6 +1152,16 @@ textarea.ck-input{min-height:96px;resize:vertical}
   else { var g0 = +guestsIn.value || 8; $('[data-ck-suggest]').innerHTML = 'For ' + g0 + ' guests we suggest the <b>' + document.getElementById(suggestId(g0)).getAttribute('data-label') + '</b>.'; }
   update();
   go(start, false);
+})();
+</script>
+<script>
+/* wave H: mark the builder band so the order strip steps aside over the six steps on phones (see the page style) */
+(function () {
+  var b = document.getElementById('builder'), html = document.documentElement, t = false;
+  if (!b) return;
+  function upd() { t = false; var r = b.getBoundingClientRect(); html.classList.toggle('ck-in-builder', r.top < innerHeight && r.bottom > 96); }
+  window.addEventListener('scroll', function () { if (!t) { t = true; requestAnimationFrame(upd); } }, { passive: true });
+  window.addEventListener('resize', upd); upd();
 })();
 </script>
 </body>

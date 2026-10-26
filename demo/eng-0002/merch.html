@@ -185,6 +185,7 @@
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/app.js" defer></script>
+<noscript><style>.mc-tr[hidden]{display:block}.mc-btn,.mc-want,.mr-want{display:none}</style></noscript>
 <style>
 /* merch.html only. Every colour is a token from assets/site.css; the goods are navy, ivory and one red heart.
    Mockups are the merch lane's drawings in img/merch/; data from assets/merch_concepts.json and merch_concepts_extra.json. */
@@ -198,6 +199,8 @@
 .mr-s3{bottom:0;left:24%;width:40%;aspect-ratio:1/1}
 @media (min-width:768px){
   .mr-s1{transform:rotate(-4deg)}.mr-s2{transform:rotate(3deg)}.mr-s3{transform:rotate(-1.5deg)}
+}
+@media (min-width:768px) and (hover: hover){
   .mr-stack:hover .mr-s1{transform:rotate(-5deg) translateY(-4px)}.mr-stack:hover .mr-s2{transform:rotate(4deg) translateY(-3px)}
 }
 
@@ -219,11 +222,13 @@
 @keyframes mc-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .mc-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
 .mc-btn,.mc-want{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;border-radius:var(--radius-lg);background:var(--color-surface);color:var(--color-brand);font:800 .875rem var(--font-text);cursor:pointer}
-.mc-btn{border:1.5px solid var(--color-control)}
+.mc-btn{border:1.5px solid var(--color-control);transition:transform var(--dur-fast) var(--ease-move)}
+.mc-want{transition:transform var(--dur-fast) var(--ease-move)}
+.mc-btn:active,.mc-want:active{transform:scale(.98)}
 .mc-want{border:1.5px solid var(--color-brand)}
-.mc-want svg{width:16px;height:16px;fill:none;stroke:var(--color-accent);stroke-width:2.2}
+.mc-want svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2}  /* wave H: indigo; red means the bag only */
 .mc-want[aria-pressed="true"]{background:var(--color-brand);color:var(--color-on-brand)}
-.mc-want[aria-pressed="true"] svg{fill:var(--color-accent);animation:pop var(--dur-base) var(--ease-enter)}
+.mc-want[aria-pressed="true"] svg{fill:currentColor;animation:pop var(--dur-base) var(--ease-enter)}
 .mr-want{max-width:70ch;margin-top:var(--sp-4);padding:var(--sp-3) var(--sp-4);border:1px solid var(--color-line);border-radius:var(--radius-sm);background:var(--color-surface);font-size:var(--text-sm);color:var(--color-ink)}
 .mr-want b{color:var(--color-brand)}
 
@@ -241,6 +246,11 @@
 /* on the live store today */
 .mr-today{display:grid;gap:var(--sp-3);grid-template-columns:repeat(2,minmax(0,1fr))}
 .mr-today .mr-gt{grid-column:1 / -1}
+/* wave H: each photo framed on its own subject: the printed cookie centred in its portrait photo, the
+   Golden Ticket at its own landscape ratio when it spans the row on phones */
+.mr-today .item img.mr-cookie{object-position:50% 66%}
+@media (max-width:899px){.mr-hero .kick span:nth-child(2){display:none}.mr-hero.hero-flow h1{font-size:2.25rem}}  /* wave H: one-line kicker and a two-line 36 px headline on phones, so "Order today’s three" clears the app bar */
+@media (max-width:899px){.mr-today .mr-gt > img{aspect-ratio:1200/876}}
 @media (min-width:900px){.mr-today{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-6);align-items:start}.mr-today .mr-gt{grid-column:auto}}
 .mr-today .price small{font-weight:700;font-size:.75rem;color:var(--color-muted)}
 .mr-styles{display:grid;gap:8px}
@@ -252,7 +262,6 @@
 @media (min-width:900px){.mr-made{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:var(--sp-16)}}
 .mr-made h2{font-size:clamp(2rem,5vw,var(--text-2xl));line-height:1.05;font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1}
 .mr-made-line{max-width:60ch;font-family:var(--font-display);font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.35;color:var(--color-brand)}
-.mr-made-line .heart{width:.7em;height:.7em;margin-left:8px}
 
 /* how the line runs */
 .mr-table{overflow-x:auto}
@@ -271,6 +280,16 @@
   .mr-stack:hover .mr-s1{transform:rotate(-4deg)}.mr-stack:hover .mr-s2{transform:rotate(3deg)}
   .mc-tr:not([hidden]),.mc-want[aria-pressed="true"] svg{animation:none}
 }
+/* wave H, 25 Oct 2026: one fixed bar at a time on phones, the home's wave F rule. While the strip is
+   docked (html.os-on) the app bar slides down and the strip takes its place at the bottom edge; the strip's
+   layout position is unchanged, so app.js reads the same band when it steps aside for a slot control */
+@media (max-width:899px){
+  .bar{transition:transform var(--dur-base) var(--ease-enter),visibility 0s}
+  html.os-on .bar{transform:translateY(100%);visibility:hidden;transition:transform var(--dur-base) var(--ease-exit),visibility 0s linear var(--dur-base)}
+  .ostrip{transform:translateY(calc(100% + var(--bar-real,var(--bar-h))))}
+  html.os-on .ostrip.is-on:not(.is-yield),html.os-on .ostrip.is-open{transform:translateY(calc(var(--bar-real,var(--bar-h)) - env(safe-area-inset-bottom,0px)));box-shadow:0 -6px 24px rgb(31 21 107 / .08),0 env(safe-area-inset-bottom,0px) 0 var(--color-surface)}
+}
+@media (prefers-reduced-motion:reduce){.bar,html.os-on .bar{transition:none}}
 /* wave A, 25 Oct 2026: Translate and "I’d buy this" reach 44 px */
 .mc-btn,.mc-want{min-height:44px}
 @media (max-width:899px){.mr-stack{max-width:250px}}
@@ -282,7 +301,7 @@
   .mr-stack{max-width:none;width:auto;aspect-ratio:auto;margin-inline:-16px;justify-self:stretch}
   .mr-stack .mr-s1,.mr-stack .mr-s2{display:none}
   .mr-photo{position:static;width:100%;aspect-ratio:auto;overflow:visible;border-radius:0;box-shadow:none;background:none;transform:none}
-  .mr-photo img{height:auto;aspect-ratio:3/2}
+  .mr-photo img{height:auto;aspect-ratio:16/10}
   .mr-cap{display:flex;flex-wrap:nowrap;align-items:center;gap:12px;padding:8px 16px 0}
   .mr-cap > span:first-child{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:var(--text-base);line-height:1.2;color:var(--color-brand)}
   .mr-cap .add{margin-left:auto}
@@ -300,7 +319,7 @@
 <header class="top">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
-    <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
+    <span class="tag"><span lang="fr">Pâtisserie française · Salon de thé</span> · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
     </nav>
@@ -329,7 +348,7 @@
       <figure class="mr-s mr-s2"><img src="img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="Mockup drawing of the tote, printed Ceci n’est pas du beurre"></figure>
       <figure class="mr-s mr-s3 mr-photo">
         <picture><source media="(max-width:899px)" srcset="img/cookie-spoon-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/cookie-spoon-800.jpg"><img src="img/cookie-spoon-800.jpg" srcset="img/cookie-spoon-800.jpg 800w, img/cookie-spoon.webp 1600w" sizes="(min-width:900px) 18vw, 100vw" width="1600" height="1599" alt="Five cookie spoons on a blue glazed plate, one of the three pieces on the live store today" fetchpriority="high"></picture>
-        <figcaption class="mr-cap"><span>Cookie spoons</span><span class="price">$5.00</span><button class="add" type="button" data-add data-handle="cookie-spoon" data-title="Cookie spoons, 5 count" data-price="5" data-variant="41829520539836" data-image="img/cookie-spoon-800.jpg">Add</button></figcaption>
+        <figcaption class="mr-cap"><span>Cookie spoons</span><span class="price">$5.00</span><button class="add" type="button" data-add data-handle="cookie-spoon" data-title="Cookie spoons, 5 count" data-price="5" data-variant="41829520539836" data-image="img/cookie-spoon-800.jpg">Add spoons</button></figcaption>
       </figure>
     </div>
   </div>
@@ -385,7 +404,7 @@
           <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$46.00 <small>planned</small></span></div>
           <h3 lang="fr">Sans beurre et sans reproche</h3>
           <p class="meta">Organic cotton apron in navy, the line across the skirt, printed to order.</p>
-          <p class="mc-tr" id="tr-apron" hidden>Without butter and beyond reproach, after the old knight’s motto “sans peur et sans reproche.”</p>
+          <p class="mc-tr" id="tr-apron" hidden>Without butter and beyond reproach, after the old knight’s motto “<span lang="fr">sans peur et sans reproche</span>.”</p>
           <div class="mc-actions"><button class="mc-btn" type="button" aria-expanded="false" aria-controls="tr-apron">Translate</button><button class="mc-want" type="button" aria-pressed="false" data-want="apron" data-name="the apron"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>I’d buy this</button></div>
         </div>
       </article>
@@ -445,7 +464,7 @@
           <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$38.00 <small>planned</small></span></div>
           <h3 lang="fr">Nuancier des macarons</h3>
           <p class="meta">11 x 14 in matte print, printed to order.</p>
-          <p class="mc-tr" id="tr-print" hidden>A macaron colour chart, framboise to myrtille, with the heart as the last swatch: <span lang="fr">mon amour</span>.</p>
+          <p class="mc-tr" id="tr-print" hidden>A macaron colour chart, <span lang="fr">framboise</span> to <span lang="fr">myrtille</span>, with the heart as the last swatch: <span lang="fr">mon amour</span>.</p>
           <div class="mc-actions"><button class="mc-btn" type="button" aria-expanded="false" aria-controls="tr-print">Translate</button><button class="mc-want" type="button" aria-pressed="false" data-want="print" data-name="the print"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>I’d buy this</button></div>
         </div>
       </article>
@@ -455,12 +474,12 @@
           <div class="mc-top"><span class="ex">Planned</span><span class="mc-price">$26.00 <small>planned</small></span></div>
           <h3 lang="fr">Mon petit chou</h3>
           <p class="meta">Toddler tee in white, printed to order.</p>
-          <p class="mc-tr" id="tr-chou" hidden>My little cream puff. Chou is a cream puff and a cabbage, and what French parents call their children.</p>
+          <p class="mc-tr" id="tr-chou" hidden>My little cream puff. <span lang="fr">Chou</span> is a cream puff and a cabbage, and what French parents call their children.</p>
           <div class="mc-actions"><button class="mc-btn" type="button" aria-expanded="false" aria-controls="tr-chou">Translate</button><button class="mc-want" type="button" aria-pressed="false" data-want="chou" data-name="the toddler tee"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>I’d buy this</button></div>
         </div>
       </article>
     </div>
-    <p class="mr-want" data-want-count aria-live="polite">Nothing picked yet. Your picks stay on this device; in the build, they tell the shop which piece to print first.</p>
+    <p class="mr-want" data-want-count aria-live="polite">Nothing picked yet. Your picks stay on this device.</p>
   </div>
 </section>
 
@@ -468,7 +487,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-today">Three you can order today.</h2>
-      <p>All three are on the live store. Add puts them in the same bag as the rest of the menu, and checkout opens id-eclair.com. Prices read 22 October 2026.</p>
+      <p>All three are on the live store. Add puts them in the same bag as the rest of the menu, and checkout opens id-eclair.com.</p>
     </div>
     <div class="mr-today">
       <article class="item">
@@ -482,7 +501,7 @@
       </article>
       <article class="item">
         <span class="live">On the live store</span>
-        <img src="img/custom-logo-vegan-cookie-800.jpg" srcset="img/custom-logo-vegan-cookie-800.jpg 800w, img/custom-logo-vegan-cookie.jpg 1600w" sizes="(min-width:900px) 28vw, 50vw" width="1600" height="2133" alt="A fluted cookie with a printed design of roses, held between two fingers" loading="lazy">
+        <img class="mr-cookie" src="img/custom-logo-vegan-cookie-800.jpg" srcset="img/custom-logo-vegan-cookie-800.jpg 800w, img/custom-logo-vegan-cookie.jpg 1600w" sizes="(min-width:900px) 28vw, 50vw" width="1600" height="2133" alt="A fluted cookie with a printed design of roses, held between two fingers" loading="lazy">
         <div class="body">
           <h3>Custom printed cookie</h3>
           <p class="meta">Merch you can eat: a 6 cm vegan cookie with a printed top, for a monogram, a company logo or the shop’s heart. The store asks for the design by email as a JPG.</p>
@@ -511,7 +530,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-editions">Tins, totes and counter pieces, by the season.</h2>
-      <p>The collectible half of the plan, from November 2026 to April 2027. Most are small runs bought into 169 W Green St and sold at the counter; the rest are printed to order. Planned prices, numbered editions where it says so.</p>
+      <p>From November 2026 to April 2027. Most are small runs sold at the counter at 169 W Green St; the rest are printed to order. Planned prices, numbered editions where it says so.</p>
     </div>
     <div class="mr-fams">
       <div class="mr-fam">
@@ -523,7 +542,7 @@
         </ul>
       </div>
       <div class="mr-fam">
-        <h3>Les Mots Doux totes</h3>
+        <h3><span lang="fr">Les Mots Doux</span> totes</h3>
         <ul class="mr-rows">
           <li><b lang="fr">Framboise chérie</b><span>$28.00</span><small>The jar’s name and the small red heart on natural canvas; on the back, <span lang="fr">Un éclair, s’il vous plaît. Ou deux.</span> <i>At the counter</i></small></li>
           <li><b lang="fr">Caramel je t’aime</b><span>$28.00</span><small>The second name of the set, in indigo ink on natural canvas. <i>At the counter</i></small></li>
@@ -567,7 +586,7 @@
 <section class="bg-white" id="materials" aria-labelledby="h-made">
   <div class="wrap mr-made">
     <h2 id="h-made">What the merch is made of.</h2>
-    <p class="mr-made-line">Everything in the pastry case is made without animal products, and the merch follows the same rule: no leather, wool, silk, feathers, beeswax, carmine or bone china, down to the thread, the ink, the label and the glue. Before a piece goes on sale, its maker confirms in writing that every part of it is free of animal materials and was never tested on animals.<svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></p>
+    <p class="mr-made-line">Everything in the pastry case is made without animal products, and the merch follows the same rule: no leather, wool, silk, feathers, beeswax, carmine or bone china, down to the thread, the ink, the label and the glue. Before a piece goes on sale, its maker confirms in writing that every part of it is free of animal materials and was never tested on animals.</p>
   </div>
 </section>
 
@@ -585,11 +604,11 @@
       </div>
       <div class="qa">
         <h3>Is the merch vegan?</h3>
-        <p>Yes, by the same rule as the pastry case: no animal materials in any part of a piece, from the fabric to the glue, confirmed in writing by each maker before it goes on sale. The plan keeps those statements on file and lists the materials on every product page.</p>
+        <p>Yes, by the same rule as the pastry case: no animal materials in any part of a piece, from the fabric to the glue, confirmed in writing by each maker before it goes on sale, and each product page lists the materials.</p>
       </div>
       <div class="qa">
         <h3>Which pieces are collectibles?</h3>
-        <p>The numbered ones planned for the first season: La Boîte Cœur macaron tins, edition of 150 for <span lang="fr">Noël</span> 2026 and 100 for Saint-Valentin 2027, the signed Nuancier print, edition of 100, and the alumni pin from <a href="classes.html">the Macaron Masterclass</a>.</p>
+        <p>The numbered ones planned for the first season: <span lang="fr">La Boîte Cœur</span> macaron tins, edition of 150 for <span lang="fr">Noël</span> 2026 and 100 for <span lang="fr">Saint-Valentin</span> 2027, the signed <span lang="fr">Nuancier</span> print, edition of 100, and the alumni pin from <a href="classes.html">the Macaron Masterclass</a>.</p>
       </div>
     </div>
   </div>
@@ -635,8 +654,8 @@
     if (!out) return;
     var names = wants.filter(function (b) { return picked.indexOf(b.getAttribute('data-want')) >= 0; }).map(function (b) { return b.getAttribute('data-name'); });
     out.innerHTML = names.length
-      ? 'You picked <b>' + names.length + ' of ' + wants.length + '</b>: ' + list(names) + '. The picks stay on this device; in the build, they tell the shop which piece to print first.'
-      : 'Nothing picked yet. Your picks stay on this device; in the build, they tell the shop which piece to print first.';
+      ? 'You picked <b>' + names.length + ' of ' + wants.length + '</b>: ' + list(names) + '. The picks stay on this device.'
+      : 'Nothing picked yet. Your picks stay on this device.';
   }
   document.addEventListener('click', function (e) {
     var b = e.target.closest('button'); if (!b) return;

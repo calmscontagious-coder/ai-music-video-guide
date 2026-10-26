@@ -119,7 +119,7 @@
      "name": "Is there a macaron class in Pasadena?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Chef Romy teaches a hands-on Macaron Masterclass at 169 W Green St in Old Pasadena on Tuesdays from 3:30 to 5:30 pm, at $125 a seat. Seats are very limited."
+      "text": "Yes. Chef Romy teaches a hands-on Macaron Masterclass at 169 W Green St in Old Pasadena on Tuesdays from 3:30 to 5:30 pm, at $125.00 a seat. Seats are very limited."
      }
     },
     {
@@ -135,7 +135,7 @@
      "name": "How do I book a seat?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Today the shop books classes by Instagram message or in person. The new site sells seats on a calendar with a waitlist; on this preview, Reserve puts an example seat in your bag."
+      "text": "Pick a Tuesday and tap Reserve: the seat goes in the same bag as your pastries, and a full class has a waitlist. The shop also books classes by Instagram message or in person."
      }
     },
     {
@@ -143,7 +143,7 @@
      "name": "Can I give the class as a gift?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. The Golden Ticket, $140 on id-eclair.com, is a pass to an upcoming class with an organic chocolate tablet, and the date is arranged with the shop. A boxed version is part of the planned merchandise line."
+      "text": "Yes. The Golden Ticket, $140.00 on id-eclair.com, is a pass to an upcoming class with an organic chocolate tablet, and the date is arranged with the shop. A boxed version is part of the planned merchandise line."
      }
     }
    ]
@@ -227,9 +227,12 @@
 <style>
 /* classes.html only. Shared parts come from assets/site.css; everything here is scoped with cl- and uses its tokens. */
 .cl-hero h1{font-size:clamp(2.5rem,8vw,4.75rem);max-width:13ch}
-.cl-hero .hero-media img{aspect-ratio:4/3;object-position:50% 60%}
+.cl-hero .hero-media img{aspect-ratio:16/10;object-position:50% 62%}  /* wave H: the macaron plate, whole, in a 16/10 phone frame */
 @media (min-width:900px){.cl-hero .hero-media img{aspect-ratio:1/1;object-position:50% 55%}}
 .cl-hero .chip-float b{font-weight:800}
+/* wave H: on phones the headline is 36 px and the caption one line, so the plate shows whole and
+   "See the Tuesdays" clears the app bar at 375 x 720 */
+@media (max-width:899px){.cl-hero.hero-flow h1{font-size:2.25rem}.cl-hero .chip-float small{display:none}}
 
 /* the calendar: one ticket per Tuesday */
 .cl-head{display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-4);align-items:baseline;justify-content:space-between;margin-bottom:var(--sp-6)}
@@ -251,7 +254,7 @@
 .cl-mon{font:italic 500 1rem/1 var(--font-display)}
 .cl-body{grid-area:body;display:grid;gap:4px;align-content:center;padding:var(--sp-3) var(--sp-4) 0}
 .cl-body strong{font:600 1.125rem/1.2 var(--font-display);color:var(--color-brand)}
-.cl-when{font-size:var(--text-sm);color:var(--color-muted)}
+.cl-when{font-size:var(--text-sm);color:var(--color-muted);font-variant-numeric:tabular-nums}
 .cl-seats{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-top:4px;font-size:var(--text-sm);font-weight:700;color:var(--color-ink)}
 .cl-seats small{font-weight:600;color:var(--color-muted)}
 .cl-dots{display:inline-flex;gap:4px}
@@ -274,10 +277,9 @@
 /* the two hours */
 .cl-learn{display:grid;gap:var(--sp-8)}
 @media (min-width:900px){.cl-learn{grid-template-columns:5fr 6fr;align-items:center;gap:var(--sp-12)}}
-.cl-pics{margin:0;display:grid;grid-template-columns:3fr 2fr;gap:var(--sp-3);align-items:end}
+.cl-pics{margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-3);align-items:end}
 .cl-pics img{width:100%;object-fit:cover;border-radius:var(--radius-md);box-shadow:var(--shadow-e2)}
-.cl-pics img:first-child{aspect-ratio:4/5}
-.cl-pics img:last-child{aspect-ratio:1/1;margin-bottom:var(--sp-8)}
+.cl-pics img{aspect-ratio:1/1}  /* wave H: one square photo in a square frame (the plate moved to the hero) */
 .cl-learn h2{font-size:clamp(2rem,5.5vw,var(--text-2xl));line-height:1.05;font-weight:700;font-variation-settings:"SOFT" 100,"WONK" 1;max-width:16ch}
 .cl-learn > div > p{margin-top:var(--sp-4);color:var(--color-muted);max-width:54ch}
 .cl-take{list-style:none;margin:var(--sp-6) 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-3)}
@@ -365,6 +367,16 @@ textarea.cl-input{min-height:88px;resize:vertical}
   .cl-ticket,.cl-pill{transition:none;}
   .cl-gt-t.is-pop{animation:none}
 }
+/* wave H, 25 Oct 2026: one fixed bar at a time on phones, the home's wave F rule. While the strip is
+   docked (html.os-on) the app bar slides down and the strip takes its place at the bottom edge; the strip's
+   layout position is unchanged, so app.js reads the same band when it steps aside for a slot control */
+@media (max-width:899px){
+  .bar{transition:transform var(--dur-base) var(--ease-enter),visibility 0s}
+  html.os-on .bar{transform:translateY(100%);visibility:hidden;transition:transform var(--dur-base) var(--ease-exit),visibility 0s linear var(--dur-base)}
+  .ostrip{transform:translateY(calc(100% + var(--bar-real,var(--bar-h))))}
+  html.os-on .ostrip.is-on:not(.is-yield),html.os-on .ostrip.is-open{transform:translateY(calc(var(--bar-real,var(--bar-h)) - env(safe-area-inset-bottom,0px)));box-shadow:0 -6px 24px rgb(31 21 107 / .08),0 env(safe-area-inset-bottom,0px) 0 var(--color-surface)}
+}
+@media (prefers-reduced-motion:reduce){.bar,html.os-on .bar{transition:none}}
 /* order strip (home blend): the gift ticket docks below the strip */
 @media (min-width:900px){.has-ostrip .cl-gt{top:calc(96px + var(--os-h))}}
 /* wave A, 25 Oct 2026: the checkbox and its words make one 44 px target */
@@ -383,7 +395,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="iD Éclair home"><img src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="(min-width:900px) 64px, 58px" width="904" height="658" alt="iD Éclair"></a>
-    <span class="tag">Pâtisserie française · Salon de thé · Old Pasadena</span>
+    <span class="tag"><span lang="fr">Pâtisserie française · Salon de thé</span> · Old Pasadena</span>
     <nav class="nav" aria-label="Primary">
       <a href="menu.html">Menu</a><a href="index.html#box">Macarons</a><a href="cakes.html">Cakes</a><a href="classes.html" aria-current="page">Classes</a><a href="la-cave.html">La Cave</a><a href="story.html">Chef Romy</a>
     </nav>
@@ -399,7 +411,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
 <section class="hero hero-flow cl-hero" aria-labelledby="h1">
   <div class="wrap">
     <div>
-      <p class="kick rise"><span>Tuesdays</span><span>$125 a seat</span><span>169 W Green St</span></p>
+      <p class="kick rise"><span>$125.00 a seat</span><span>169 W Green St</span></p>
       <h1 id="h1">Macaron Masterclass with Chef Romy, <em>Tuesdays at 3:30.</em></h1>
       <p class="lead">Two hands-on hours at the shop. You leave with 20 to 30 macarons.</p>
       <div class="hero-actions rise d3">
@@ -408,8 +420,8 @@ textarea.cl-input{min-height:88px;resize:vertical}
       </div>
     </div>
     <figure class="hero-media" data-grid-break>
-      <picture><source media="(max-width:899px)" srcset="img/shop-truffle-box-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/shop-truffle-box-800.jpg"><img src="img/shop-truffle-box-800.jpg" srcset="img/shop-truffle-box-800.jpg 800w, img/shop-truffle-box.webp 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="800" height="801" alt="Cocoa-dusted chocolate truffles spilling from a white iD Éclair box" fetchpriority="high"></picture>
-      <figcaption class="chip-float"><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cl-next>Next class on a Tuesday, 3:30 pm</span><small>example seats</small></figcaption>
+      <picture><source media="(max-width:899px)" srcset="img/macarons-1-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/macarons-1-800.jpg"><img src="img/macarons-1-800.jpg" srcset="img/macarons-1-800.jpg 800w, img/macarons-1.webp 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="800" height="800" alt="Six macarons in raspberry, pistachio, lemon and violet on one of the shop’s blue glazed plates" fetchpriority="high"></picture>
+      <figcaption class="chip-float"><span data-cl-next>Next class on a Tuesday, 3:30 pm</span><small>example seats</small></figcaption>
     </figure>
   </div>
 </section>
@@ -461,7 +473,13 @@ textarea.cl-input{min-height:88px;resize:vertical}
       <span class="ex">Example seat counts</span>
     </div>
     <div class="cl-cal" id="cl-cal">
-      <p class="note-sm">Tuesdays, 3:30 to 5:30 pm. Turn on JavaScript to see the dates.</p>
+      <!-- wave H: four Tuesdays in the HTML, so the dates show without JavaScript; the script below redraws the live list -->
+      <h3 class="cl-month" tabindex="-1">November 2026</h3><ul class="cl-list">
+        <li class="cl-ticket" data-key="2026-11-03"><div class="cl-stub" aria-hidden="true"><span class="cl-dow">Tue</span><b>3</b><span class="cl-mon">Nov</span></div><div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">Tue 3 Nov, </span>3:30 to 5:30 pm · $125.00 a seat</p><p class="cl-seats"><span class="cl-dots" aria-hidden="true"><i></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i></span><span>7 of 8 seats left</span></p></div><div class="cl-act"><a class="add" href="tel:+16263651161">Call to book</a></div></li>
+        <li class="cl-ticket" data-key="2026-11-10"><div class="cl-stub" aria-hidden="true"><span class="cl-dow">Tue</span><b>10</b><span class="cl-mon">Nov</span></div><div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">Tue 10 Nov, </span>3:30 to 5:30 pm · $125.00 a seat</p><p class="cl-seats"><span class="cl-dots" aria-hidden="true"><i></i><i></i><i></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i></span><span>5 of 8 seats left</span></p></div><div class="cl-act"><a class="add" href="tel:+16263651161">Call to book</a></div></li>
+        <li class="cl-ticket" data-key="2026-11-17"><div class="cl-stub" aria-hidden="true"><span class="cl-dow">Tue</span><b>17</b><span class="cl-mon">Nov</span></div><div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">Tue 17 Nov, </span>3:30 to 5:30 pm · $125.00 a seat</p><p class="cl-seats"><span class="cl-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i class="open"></i><i class="open"></i><i class="open"></i></span><span>3 of 8 seats left</span></p></div><div class="cl-act"><a class="add" href="tel:+16263651161">Call to book</a></div></li>
+        <li class="cl-ticket" data-key="2026-11-24"><div class="cl-stub" aria-hidden="true"><span class="cl-dow">Tue</span><b>24</b><span class="cl-mon">Nov</span></div><div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">Tue 24 Nov, </span>3:30 to 5:30 pm · $125.00 a seat</p><p class="cl-seats"><span class="cl-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="open"></i></span><span>1 of 8 seats left</span></p></div><div class="cl-act"><a class="add" href="tel:+16263651161">Call to book</a></div></li>
+      </ul>
     </div>
     <button class="btn btn-ghost btn-sm cl-more" type="button" data-cl-more hidden>Show four more Tuesdays</button>
     <div class="cl-how">
@@ -471,19 +489,10 @@ textarea.cl-input{min-height:88px;resize:vertical}
   </div>
 </section>
 
-<div class="facts" role="region" aria-label="Class facts from the shop’s own posts and store">
-  <div class="wrap">
-    <div><strong>$125.00</strong><span>a seat, per the shop’s posts</span></div>
-    <div><strong>2 hours</strong><span>Tuesdays, 3:30 to 5:30 pm</span></div>
-    <div><strong>20 to 30</strong><span>macarons to take home</span></div>
-    <div><strong>$140.00</strong><span>the Golden Ticket, as a gift</span></div>
-  </div>
-</div>
 
 <section class="bg-white" aria-labelledby="h-learn">
   <div class="wrap cl-learn">
     <figure class="cl-pics">
-      <img src="img/macarons-1-800.jpg" width="800" height="800" alt="Six macarons in raspberry, pistachio, lemon and violet tones on a blue glazed plate" loading="lazy">
       <img src="img/macarons-2-800.jpg" width="800" height="800" alt="Macarons lined up in a white iD Éclair box" loading="lazy">
     </figure>
     <div>
@@ -494,7 +503,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
         <li><b>2 hours</b><span>3:30 to 5:30 pm</span></li>
         <li><b>$125.00</b><span>a seat</span></li>
       </ul>
-      <h3>What the live booking asks for</h3>
+      <h3>What booking asks for</h3>
       <ul class="cl-asks">
         <li>Each guest’s name, so every seat carries a name.</li>
         <li>Allergies, in writing, before the class.</li>
@@ -511,7 +520,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
     <div>
       <div class="sec-head">
         <h2 id="h-gift">Give the Golden Ticket.</h2>
-        <p>The class as a present: a pass to an upcoming macaron masterclass with an organic chocolate tablet, $140 on the live store (checked 22 October 2026). Today the date is arranged with the shop; in the build, the recipient picks a Tuesday from this calendar.</p>
+        <p>The class as a present: a pass to an upcoming macaron masterclass with an organic chocolate tablet, $140.00 on the live store. The date is arranged with the shop.</p>
       </div>
       <fieldset class="cl-choc">
         <legend>Choose the chocolate tablet</legend>
@@ -598,7 +607,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
     <div class="faq-list">
       <div class="qa">
         <h3>Is there a macaron class in Pasadena?</h3>
-        <p>Yes. Chef Romy teaches a hands-on Macaron Masterclass at 169 W Green St in Old Pasadena on Tuesdays from 3:30 to 5:30 pm, at $125 a seat. Seats are very limited.</p>
+        <p>Yes. Chef Romy teaches a hands-on Macaron Masterclass at 169 W Green St in Old Pasadena on Tuesdays from 3:30 to 5:30 pm, at $125.00 a seat. Seats are very limited.</p>
       </div>
       <div class="qa">
         <h3>What do I take home from the masterclass?</h3>
@@ -606,11 +615,11 @@ textarea.cl-input{min-height:88px;resize:vertical}
       </div>
       <div class="qa">
         <h3>How do I book a seat?</h3>
-        <p>Today the shop books classes by Instagram message or in person. The new site sells seats on a calendar with a waitlist; on this preview, Reserve puts an example seat in your bag.</p>
+        <p>Pick a Tuesday and tap Reserve: the seat goes in the same bag as your pastries, and a full class has a waitlist. The shop also books classes by Instagram message or in person.</p>
       </div>
       <div class="qa">
         <h3>Can I give the class as a gift?</h3>
-        <p>Yes. The Golden Ticket, $140 on id-eclair.com, is a pass to an upcoming class with an organic chocolate tablet, and the date is arranged with the shop. A boxed version is part of the planned <a href="merch.html">merchandise line</a>.</p>
+        <p>Yes. The Golden Ticket, $140.00 on id-eclair.com, is a pass to an upcoming class with an organic chocolate tablet, and the date is arranged with the shop. A boxed version is part of the planned <a href="merch.html">merchandise line</a>.</p>
       </div>
     </div>
   </div>
@@ -684,12 +693,12 @@ textarea.cl-input{min-height:88px;resize:vertical}
     else {
       seat = x.left + ' of ' + CAP + ' seats left';
       act = '<button class="add" type="button" data-add data-handle="masterclass-' + x.key + '" data-title="Macaron Masterclass, ' + lab + '" data-price="125" data-glyph="M"' +
-        ' data-meta="3:30 to 5:30 pm at 169 W Green St. Example seat: the live site books it through the class app." aria-label="Reserve a seat on ' + lab + '">Reserve</button>';
+        ' data-meta="3:30 to 5:30 pm at 169 W Green St." aria-label="Reserve a seat on ' + lab + '">Reserve</button>';
     }
     return '<li class="' + cls + '" data-key="' + x.key + '"' + (i >= SHOW ? ' data-later hidden' : '') + '>' +
       '<div class="cl-stub" aria-hidden="true"><span class="cl-dow">' + DOW[x.d.getUTCDay()] + '</span><b>' + x.d.getUTCDate() + '</b><span class="cl-mon">' + MON[x.d.getUTCMonth()] + '</span></div>' +
       '<div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">' + lab + ', </span>3:30 to 5:30 pm · $125.00 a seat</p>' +
-      '<p class="cl-seats"><span class="cl-dots" aria-hidden="true">' + dots + '</span><span>' + seat + '</span><small>example</small></p></div>' +
+      '<p class="cl-seats"><span class="cl-dots" aria-hidden="true">' + dots + '</span><span>' + seat + '</span></p></div>' +
       '<div class="cl-act">' + act + '</div></li>';
   }
   var cal = document.getElementById('cl-cal'), html = '', month = '';
@@ -728,7 +737,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
       $$('[data-gt-add]').forEach(function (w) { w.hidden = w.getAttribute('data-gt-add') !== c.value; });
     }
     var meta = [to && 'For ' + to, from && 'from ' + from, sd && 'sends ' + short(sd)].filter(Boolean).join(', ');
-    $$('[data-gt-add] [data-add]').forEach(function (b) { b.setAttribute('data-meta', meta ? 'Gift note: ' + meta : 'Gift note added at checkout in the build'); });
+    $$('[data-gt-add] [data-add]').forEach(function (b) { b.setAttribute('data-meta', meta ? 'Gift note: ' + meta : 'Add the gift note at checkout'); });
     if (pop && card && !reduce) { card.classList.remove('is-pop'); void card.offsetWidth; card.classList.add('is-pop'); }
   }
   ['input', 'change'].forEach(function (ev) {
@@ -757,7 +766,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
       pkErr('');
       var dd = parse($('#pk-date').value);
       done.innerHTML = '<b>Merci, ' + esc(name.split(/\s+/)[0]) + '.</b>' + esc(kind.value) + ', ' + size + ' people' + (dd ? ', first choice ' + short(dd) : '') + ($('#pk-flex').checked ? ', dates flexible' : '') +
-        '. In the live site this lands in the shop’s inbox and the chef replies with dates and a price. Nothing was sent from this preview.';
+        '. The chef replies with dates and a price. Nothing was sent from this preview.';
       done.hidden = false; done.focus();
     });
     req.addEventListener('click', function (e) {
@@ -772,7 +781,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
     if (t.hasAttribute('data-cl-wait')) {
       var on = t.getAttribute('aria-pressed') !== 'true';
       t.setAttribute('aria-pressed', String(on)); t.textContent = on ? 'On the waitlist' : 'Join the waitlist';
-      say(on ? 'Example only: the live calendar takes your email and texts you when a seat opens. Nothing is saved here.' : 'Left the waitlist.');
+      say(on ? 'Example only: nothing is saved here.' : 'Left the waitlist.');
       return;
     }
     if (t.hasAttribute('data-cl-more')) {
