@@ -488,3 +488,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 /* footer rhythm on the section step */
 footer{padding:var(--sp-16) 0}
 @media (min-width:900px){footer{padding:var(--sp-24) 0 var(--sp-16)}}
+
+/* wave F 2026-10-25: the strip's Pay step stays out of view until the bag holds an item */
+.os-step.is-empty{display:none}

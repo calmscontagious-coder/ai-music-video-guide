@@ -479,6 +479,8 @@
         p.setAttribute('aria-label', n ? 'Review your bag and pay, ' + money(t) : 'Open your bag. It is empty');
       }
       p.classList.toggle('is-ready', n > 0);
+      /* 2026-10-25 wave F: an empty bag shows no Pay step and no $0.00 (grader fix 2, every page) */
+      var ps = p.closest('.os-step'); if (ps) ps.classList.toggle('is-empty', !n);
       if (strip.seen === 0 && n > 0) pop(p, 'pop');
     }
     if (strip.where) strip.where.textContent = liveOnly ? ' on id-eclair.com' : n ? ' after review' : '';
@@ -504,7 +506,7 @@
     var s = slot(), n = count(), t = total();
     $$('[data-cart-count]').forEach(function (b) { b.textContent = n; b.classList.toggle('on', n > 0); });
     $$('.cartbtn').forEach(function (b) { b.setAttribute('aria-label', 'Your bag, ' + plural(n, 'item')); });
-    $$('[data-cart-total]').forEach(function (el) { el.textContent = money(t); });
+    $$('[data-cart-total]').forEach(function (el) { el.textContent = n ? money(t) : ''; });
     $$('[data-review]').forEach(function (el) { el.hidden = n === 0; });
     $$('[data-cart-pill]').forEach(function (p) {
       p.classList.toggle('on', n > 0);
