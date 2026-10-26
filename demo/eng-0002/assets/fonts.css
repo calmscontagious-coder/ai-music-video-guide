@@ -4,7 +4,8 @@
      Fraunces     display. Variable: opsz 9-144, wght 400-800. SOFT 100 and WONK 1 are baked in by
                   Google's instancer (the css2 request pins them), so a font-variation-settings value
                   for SOFT or WONK other than 100 / 1 has no effect with these files.
-     Nunito Sans  text. Variable: opsz 6-12, wght 400-800.
+     Nunito Sans  text. Variable: wght 400-800; opsz 6-12 in the other files, pinned at 12 in the
+                  roman latin subset (wave G3 below).
 
    Wave E, 25 October 2026 (standard 3.1, two font files per page): four faces are declared, and an
    English or French page fetches exactly two files, fraunces-roman-latin and nunito-sans-roman-latin.
@@ -20,11 +21,20 @@
      fraunces-italic-latin-ext.woff2      Fraunces italic, latin-ext, 69 KB
      fraunces-italic-latin.woff2          Fraunces italic, latin, 79 KB
      fraunces-roman-latin-ext.woff2       Fraunces normal, latin-ext, 54 KB
-     fraunces-roman-latin.woff2           Fraunces normal, latin, 62 KB
+     fraunces-roman-latin.woff2           Fraunces normal, latin, subset (wave G3), 45.6 KB
+     fraunces-roman-latin.full.woff2      the same face before the subset, 62 KB (not declared)
      nunito-sans-italic-latin-ext.woff2   Nunito Sans italic, latin-ext, 42 KB
      nunito-sans-italic-latin.woff2       Nunito Sans italic, latin, 47 KB
      nunito-sans-roman-latin-ext.woff2    Nunito Sans normal, latin-ext, 43 KB
-     nunito-sans-roman-latin.woff2        Nunito Sans normal, latin, 49 KB
+     nunito-sans-roman-latin.woff2        Nunito Sans normal, latin, subset (wave G3), 20.5 KB
+     nunito-sans-roman-latin.full.woff2   the same face before the subset, 49 KB (not declared)
+
+   Wave G3, 25 October 2026: the two roman latin files are subsets (137 characters each: what the pages draw in
+   that family, A-Z a-z 0-9, prose punctuation, the French accented letters, quotes, dashes, guillemets, euro,
+   cent). Fraunces keeps opsz and wght whole and draws point for point like the full file; Nunito Sans keeps wght
+   and is pinned at opsz 12, its default. A character outside a subset falls back to the next family in the
+   stack in that spot. Neither file has a tnum feature. The full files are the .full.woff2 pair; character list,
+   rebuild commands and checks are in demo/HOME_BLEND_2026-10-22.md, wave G3.
 
    Source: the files Google Fonts' css2 API served on 25 October 2026 to a Chrome 130 user agent for
      css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..800,100,1;1,9..144,400..800,100,1
