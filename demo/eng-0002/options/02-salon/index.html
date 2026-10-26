@@ -591,7 +591,7 @@
   <button class="cartpill" type="button" data-cart-open data-cart-pill><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
 </footer>
 
-<nav class="bar" aria-label="Pickup and bag">
+<nav class="bar is-early" aria-label="Pickup and bag">
   <a class="bar-pick" href="#pickup"><svg class="bp-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span><small>Pickup</small><b data-dock-when>Earliest slot</b></span></a>
   <a href="#vitrine"><b>I</b>Order</a>
   <a href="#salon"><b>III</b>Tea</a>
@@ -599,13 +599,15 @@
 </nav>
 
 <script>
-/* the bottom bar steps aside while the box add row or the pickup card would sit under it */
+/* the bottom bar waits below the first screen (wave F) and steps aside while the box add row or the pickup card would sit under it */
 (function () {
   var bar = document.querySelector('.bar'); if (!bar) return;
   var marks = [].slice.call(document.querySelectorAll('[data-box-add], #pickup')), ticking = false;
   function update() {
     ticking = false;
     if (getComputedStyle(bar).display === 'none') { bar.classList.remove('is-yield'); return; }
+    /* wave F: the dock rises once the first screen has scrolled up past it, so it never sits over the cover */
+    bar.classList.toggle('is-early', window.scrollY < window.innerHeight - bar.offsetHeight - 24);
     var top = window.innerHeight - bar.offsetHeight - 8;
     bar.classList.toggle('is-yield', marks.some(function (m) { var r = (m.closest('.box-foot') || m).getBoundingClientRect(); return r.height > 0 && r.bottom > top - 96 && r.top < window.innerHeight + 96; })); /* wave E: 96 px lead */
   }

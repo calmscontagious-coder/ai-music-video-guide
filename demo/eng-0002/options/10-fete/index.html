@@ -266,7 +266,7 @@
         <p class="mo-k"><span lang="fr">Du moment</span></p>
         <h2 id="h-moment">Dark chocolate truffles</h2>
         <p class="mo-d">200 g box, an orange note</p>
-        <div class="mo-buy"><span class="price">$15.00</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15.0" data-variant="43134021828796" data-image="img/truffles-750.webp" aria-label="Add Dark chocolate truffles, $15.00">Add</button><span class="tag">Live store</span></div>
+        <div class="mo-buy"><span class="price">$15.00</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15.0" data-variant="43134021828796" data-image="img/truffles-750.webp" aria-label="Add Dark chocolate truffles, $15.00">Add the truffles</button><span class="tag">Live store</span></div>
       </div>
     </div>
   </div>
@@ -334,7 +334,7 @@
   <div class="wrap">
     <div class="sec-h"><h2 id="h-gifts">Gifts that keep, for any occasion</h2><p>On the live store today, ready in about 24 hours.</p></div>
     <ul class="tiles">
-      <li class="ft" data-card><span class="ft-pic"><img src="../../img/truffles-750.webp" width="750" height="750" alt="Dark chocolate truffles dusted with cocoa, on a blue plate" loading="lazy"></span><h3>Dark chocolate truffles</h3><p>200 g box, an orange note</p><div class="ft-buy"><span class="price">$15.00</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15.0" data-variant="43134021828796" data-image="img/truffles-750.webp" aria-label="Add Dark chocolate truffles, $15.00">Add</button></div><span class="tag">Live store</span></li>
+      <li class="ft" data-card><span class="ft-pic"><img src="../../img/shop-truffle-box-750.webp" width="750" height="750" alt="Cocoa-dusted dark chocolate truffles in a long white iD Éclair box on a black ground" loading="lazy"></span><h3>Dark chocolate truffles</h3><p>200 g box, an orange note</p><div class="ft-buy"><span class="price">$15.00</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15.0" data-variant="43134021828796" data-image="img/truffles-750.webp" aria-label="Add Dark chocolate truffles, $15.00">Add</button></div><span class="tag">Live store</span></li>
       <li class="ft" data-card><span class="ft-pic"><img src="../../img/chocolat-mon-amour-800.jpg" width="800" height="800" alt="The Chocolat mon amour jar, topped with chocolate cream and a wafer" loading="lazy"></span><h3><span lang="fr">Chocolat mon amour</span></h3><p>Chocolate crumble, ganache and mousse; in a jar</p><div class="ft-buy"><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="chocolat-mon-amour" data-title="Chocolat mon amour" data-price="8.0" data-variant="41826123317436" data-image="img/chocolat-mon-amour-800.jpg" aria-label="Add Chocolat mon amour, $8.00">Add</button></div><span class="tag">Live store</span></li>
       <li class="ft" data-card><span class="ft-pic"><img src="../../img/gift-basket-small-800.jpg" width="800" height="800" alt="The small gift basket: meringues, biscuits and jam in a gift box" loading="lazy"></span><h3>Gift basket, small</h3><p>Seasonal jam, <span lang="fr">diamants</span>, two <span lang="fr">poché</span> cookies, a meringue</p><div class="ft-buy"><span class="price">$45.00</span><button class="add" type="button" data-add data-handle="gift-basket-small" data-title="Gift basket, small" data-price="45.0" data-variant="43094183837884" data-image="img/gift-basket-small-800.jpg" aria-label="Add Gift basket, small, $45.00">Add</button></div><span class="tag">Live store</span></li>
       <li class="ft" data-card><span class="ft-pic ft-type" aria-hidden="true"><i lang="fr">confiture</i></span><h3>Raspberry jam</h3><p>Raspberry, sugar, pectin; light in sugar</p><div class="ft-buy"><span class="price">$7.95</span><button class="add" type="button" data-add data-handle="raspberry-jam" data-title="Raspberry jam" data-price="7.95" data-variant="41829477253308" data-glyph="j" aria-label="Add Raspberry jam, $7.95">Add</button></div><span class="tag">Live store</span></li>
@@ -392,7 +392,7 @@
     </div>
     <p class="foot-note">Concept preview, direction 10 (Fête), 24 October 2026. Not the live store. Prices from the shop’s menu app (21 October) and live store (22 October); pickup slots, class dates, the club and gift cards are examples.</p>
   </div>
-  <div class="fp" data-fp data-n="0">
+  <div class="fp is-early" data-fp data-n="0">
     <a class="fp-slot" href="#pickup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span><small>Pickup</small><b data-fp-when>Earliest slot</b></span></a>
     <a class="fp-pay" href="#pickup" data-fp-pay aria-label="Your bag is empty"><span data-fp-n>Bag empty</span><b data-cart-total>$0.00</b><span class="fp-go">Pay</span></a>
   </div>
@@ -476,6 +476,9 @@
       seen = n;
     }
     document.addEventListener('ide:bag', render); render();
+    /* wave F: the Pay bar rises once the first screen has scrolled up past it, so it never covers that screen */
+    var early = function () { fp.classList.toggle('is-early', window.scrollY < window.innerHeight - fp.offsetHeight - 24); };
+    window.addEventListener('scroll', early, { passive: true }); window.addEventListener('resize', early); early();
     /* the bar steps aside while the featured Add, the box's add row or the pickup card sits in its strip
        (wave C, 25 Oct 2026): it never covers them */
     if ('IntersectionObserver' in window) {

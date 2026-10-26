@@ -243,7 +243,7 @@
      "name": "Why one piece to a page?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Because the case is the shop’s finest room. Each plate keeps its Add, and the pickup strip appears once the bag holds something, so the catalogue stays a shop."
+      "text": "Because the case is the shop’s finest room. Every plate has its price and an Add button, and Pay joins the pickup strip once something is in the bag."
      }
     },
     {
@@ -533,7 +533,7 @@
 <section class="faq" id="faq" aria-labelledby="h-faq">
   <div class="wrap">
     <h2 id="h-faq">Notes on the catalogue</h2>
-    <div class="qa-list"><div class="qa"><h3>Is everything plant-based?</h3><p>Yes. Every pastry, cake, jar and drink in the shop is 100% plant-based, the croissant included.</p></div><div class="qa"><h3>Why one piece to a page?</h3><p>Because the case is the shop’s finest room. Each plate keeps its Add, and the pickup strip appears once the bag holds something, so the catalogue stays a shop.</p></div><div class="qa"><h3>Which pieces check out on id-eclair.com today?</h3><p>Plates marked Live store, such as the <span lang="fr">cannelés</span>, the jars, the truffles and the cheese board, go through the shop’s Shopify checkout. The éclair, the croissant, the box of six and the class join it with the pickup app; today they are ordered at the counter or on the menu app.</p></div><div class="qa"><h3>How far ahead do I order a custom cake?</h3><p>Seven days, which is the shop’s own rule. The cakes page has sizes and flavours.</p></div></div>
+    <div class="qa-list"><div class="qa"><h3>Is everything plant-based?</h3><p>Yes. Every pastry, cake, jar and drink in the shop is 100% plant-based, the croissant included.</p></div><div class="qa"><h3>Why one piece to a page?</h3><p>Because the case is the shop’s finest room. Every plate has its price and an Add button, and Pay joins the pickup strip once something is in the bag.</p></div><div class="qa"><h3>Which pieces check out on id-eclair.com today?</h3><p>Plates marked Live store, such as the <span lang="fr">cannelés</span>, the jars, the truffles and the cheese board, go through the shop’s Shopify checkout. The éclair, the croissant, the box of six and the class join it with the pickup app; today they are ordered at the counter or on the menu app.</p></div><div class="qa"><h3>How far ahead do I order a custom cake?</h3><p>Seven days, which is the shop’s own rule. The cakes page has sizes and flavours.</p></div></div>
   </div>
 </section>
 </main>
@@ -562,7 +562,7 @@
     </div>
     <p class="foot-note">Concept preview, direction 09 (Galerie), 24 October 2026. Not the live store. Prices from the shop’s menu app (21 October) and live store (22 October); pickup slots, class dates, the club and gift cards are examples.</p>
   </div>
-  <div class="gs" data-gs>
+  <div class="gs is-early" data-gs>
     <div class="gs-panel" id="gs-panel" hidden role="dialog" aria-label="Pickup time">
       <div class="pk" data-slot-picker role="group" aria-label="Pickup time, example slots">
         <div class="pk-h"><b>Pickup day and time</b><span class="ex">Example slots</span></div>
@@ -582,7 +582,8 @@
 
 <script>
 /* Direction 09, Galerie: page behaviour on top of ../../assets/app.js (window.IDE).
-   The strip of mechanics (pickup, bag, Pay) stays hidden until the bag holds something, then rises.
+   The strip of mechanics (pickup, bag, Pay) rises once the first screen has scrolled past; the bag total and Pay
+   join it only when the bag holds something (wave F).
    Nothing here leaves the device. */
 (function () {
   'use strict';
@@ -602,7 +603,7 @@
     function render() {
       var st = IDE.state(), s = IDE.slot(), n = 0, counter = 0, url = IDE.checkoutUrl();
       st.items.forEach(function (i) { n += i.qty; if (!i.variantId) counter += i.qty; });
-      /* wave E: the strip is the phone's dock from the first screen (pickup, bag, Pay), empty or not */
+      /* wave E: the strip is the phone's dock (pickup, bag, Pay); wave F: it waits below the first screen, and the bag and Pay wait for the first item */
       gs.hidden = false; document.body.classList.toggle('has-bag', n > 0);
       seen = n;
       when.textContent = s.date ? s.label : 'No slot open';
@@ -630,6 +631,8 @@
     function yieldUpd() {
       tk = false;
       if (!panel.hidden || getComputedStyle(gs).display === 'none') { gs.classList.remove('is-yield'); return; }
+      /* wave F: nothing on the first screen sits under the strip; it rises once that screen has scrolled up past it */
+      gs.classList.toggle('is-early', window.scrollY < window.innerHeight - gs.offsetHeight - 24);
       var top = window.innerHeight - gs.offsetHeight - 8;
       gs.classList.toggle('is-yield', marks.some(function (m) { var r = m.getBoundingClientRect(); return r.height > 0 && r.bottom > top - 96 && r.top < window.innerHeight + 96; }));
     }

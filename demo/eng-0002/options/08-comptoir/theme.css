@@ -475,3 +475,13 @@ html { scroll-padding-bottom: 96px; }
    The dock's pickup label at the 14 px step, so the first phone screen keeps four sizes (14, 16, 19, 36).
    ============================================================ */
 .dock-slot small { font-size: .875rem; }
+
+/* ============================================================
+   WAVE F, 25 October 2026 (Gemini grade v3: A3, B2, C4; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave F")
+   The dock waits below the first screen (the page script removes .is-early once that screen has scrolled up
+   past it). French set as a whole heading or label (h4 lang="fr") takes the same italic as a French span.
+   ============================================================ */
+.dock.is-early { transform: translateY(calc(100% + 24px)); visibility: hidden; pointer-events: none; }
+:is(h2, h3, h4, small, b, strong)[lang="fr"] { font-family: var(--font-display); font-style: italic; }
+.lu-lead .tag { white-space: nowrap; }

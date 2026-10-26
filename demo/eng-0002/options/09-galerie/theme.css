@@ -509,3 +509,22 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px
 /* 2.8: the italic run in the H1 adds no height of its own, so the line boxes keep their size while the
    italic face arrives after the roman (desktop shift 0.059 in the v2 pass) */
 .front h1 em { line-height: 0; }
+
+/* ============================================================
+   WAVE F, 25 October 2026 (Gemini grade v3: A3, E2, C5; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave F")
+   The strip waits below the first screen (the script removes .is-early once that screen has scrolled up past it),
+   and with an empty bag it carries the pickup slot only: no $0.00, no Pay. Plates keep each photograph's own
+   proportion, so no plate is cut. Every price sets tabular lining figures.
+   ============================================================ */
+.gs.is-early { transform: translateY(calc(100% + 16px)); visibility: hidden; transition: transform 150ms var(--ease-enter), visibility 0s 150ms; }
+body:not(.has-bag) .gs-bag, body:not(.has-bag) .gs-pay { display: none; }
+.gs-bag { align-content: center; }
+.mat img, .pl-fig.wide .mat img { aspect-ratio: auto; height: auto; object-fit: contain; }
+.pl-buy .price { font-variant-numeric: tabular-nums lining-nums; }
+@media (max-width: 999px) {
+  /* the first screen at 375 x 720 holds the headline, the plate, its caption and the box button */
+  .front { padding-top: var(--s-2); }
+  .front figure { margin-top: 12px; }
+  .front-act { margin-top: 12px; }
+}

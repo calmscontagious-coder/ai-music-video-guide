@@ -95,10 +95,6 @@ h3 { margin: 0; font: 600 var(--text-lg)/1.15 var(--font-display); font-variatio
 .moods figcaption { margin-top: var(--sp-3); font-size: var(--text-xs); line-height: 1.45; color: var(--color-muted); }
 .moods figcaption b { display: block; margin-bottom: var(--sp-1); font-size: var(--text-sm); color: var(--color-ink); }
 .moods code { font-size: .8125rem; color: var(--color-brand); overflow-wrap: anywhere; }
-@media (max-width: 559px) { .moods figcaption > span { display: none; } .moods-notes { display: block; } }
-.moods-notes { display: none; margin: var(--sp-6) 0 0; padding-left: var(--sp-6); font-size: var(--text-xs); color: var(--color-muted); }
-.moods-notes li { margin-bottom: var(--sp-2); }
-.moods-notes code { font-size: .8125rem; color: var(--color-brand); overflow-wrap: anywhere; }
 
 /* (b) seven directions */
 .cards { display: grid; gap: var(--sp-6); margin: 0; padding: 0; list-style: none; }
@@ -201,3 +197,11 @@ footer a { display: inline-block; min-height: 24px; padding: 4px 0; }
   .top nav ul { -webkit-mask-image: linear-gradient(to right, #000 86%, transparent); mask-image: linear-gradient(to right, #000 86%, transparent); padding-right: var(--sp-12); }
 }
 @media (min-width: 720px) { .intro { min-height: min(calc(100svh - 150px), 720px); } }
+
+/* wave F, 25 October 2026 (Gemini grade v3): each mood keeps its own caption under the picture at
+   every width (the repeated notes list is gone), the mood pictures end at the section break under
+   "The whole menu, with search", above the rail of cards, so no frame cuts through a tray of
+   cannelés (the full capture still opens on tap), and every figure that carries a price or a count
+   sets tabular numerals */
+.moods a img { width: 100%; aspect-ratio: 750 / 2490; object-fit: cover; object-position: top center; }
+.arg, .links p, .pick .why { font-variant-numeric: tabular-nums; }

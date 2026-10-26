@@ -748,3 +748,25 @@ input[type="date"]:focus-within{outline:2px solid var(--color-focus);outline-off
 @media (max-width:899px){
   .cz-photo img{aspect-ratio:375/120}
 }
+
+/* ======================================================================
+   WAVE F, 25 October 2026 (Gemini grade v3: A2, A3, E2; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave F")
+   ====================================================================== */
+/* the app bar waits below the first screen (the page script removes .is-early once that screen has
+   scrolled up past it), so the header keeps the bag on a phone */
+.bar.is-early{transform:translateY(110%);visibility:hidden;pointer-events:none}
+@media (max-width:899px){.top-actions .cartbtn{display:inline-grid}}
+/* phones: the desk photograph is a real first-screen picture again (16:9, about 211 px at 375, the whole
+   row of macarons in the box), and a tighter desk keeps the three from the case and their Adds inside 812 px */
+@media (max-width:899px){
+  .cz-photo img{aspect-ratio:16/9;object-position:50% 62%}
+}
+@media (max-width:479px){
+  .cz-hero{padding-top:var(--sp-2)}
+  .cz-hero-in{gap:12px}
+  .cz-desk-h{padding:6px var(--sp-4)}
+  .cz-slotline{padding-block:4px}
+  .cz-log{padding-top:8px}
+  .cz-three li{padding:3px 0}
+}

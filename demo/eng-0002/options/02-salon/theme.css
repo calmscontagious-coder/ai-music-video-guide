@@ -593,3 +593,23 @@ html{scroll-padding-bottom:calc(var(--bar-h) + 16px)}
 .bar a.bar-pick small { font: 600 0.875rem/1.15 var(--font-text); color: var(--color-muted); letter-spacing: 0; text-transform: none; }
 .bar a.bar-pick b { font: 700 0.875rem/1.15 var(--font-text); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bar-pick:active { transform: scale(0.98); }
+
+/* ============================================================
+   WAVE F, 25 October 2026 (Gemini grade v3: A3; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave F")
+   The dock waits below the first screen (the script removes .is-early once that screen has scrolled up past
+   it), so the bag returns to the masthead on a phone. A tighter cover stack and a 7:5 frame, in which the
+   whole plate still sits, bring "Order for pickup" well inside 720 px.
+   ============================================================ */
+.bar.is-early{transform:translateY(calc(100% + 8px));visibility:hidden;transition:transform 150ms var(--ease-out),visibility 0s 150ms}
+@media (max-width:899px){
+  .mast-act .cartbtn{display:grid}
+  .mast{padding-block:6px}
+}
+@media (max-width:959px){
+  .cover{padding-top:8px}
+  .gilt{margin:8px 0}
+  .frame{margin-top:10px}
+  .frame img{aspect-ratio:7/5;object-position:50% 54%}
+  .cover-act{margin-top:12px}
+}

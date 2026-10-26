@@ -499,3 +499,19 @@ body { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
 /* 8.1 and 8.2: the gifts section and everything after it render, and fetch their photographs, only as they near
    the screen (content-visibility); the first click or a #fragment link turns this off so jumps land exactly */
 html:not(.cv-off) #gifts, html:not(.cv-off) #gifts ~ section { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+
+/* ============================================================
+   WAVE F, 25 October 2026 (Gemini grade v3: A3, E2; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave F")
+   The Pay bar waits below the first screen (the page script removes .is-early once that screen has scrolled up
+   past it). The featured Add names its object ("Add the truffles"); a tighter phone stack keeps it inside
+   720 px, and the featured frame at 1.55:1 still holds the whole plate.
+   ============================================================ */
+.fp.is-early { transform: translateY(calc(100% + 24px)); visibility: hidden; pointer-events: none; }
+@media (max-width: 759px) {
+  .hero { padding-top: var(--s-2); }
+  .hero h1 { margin-top: var(--s-2); }
+  .moment { padding-top: 4px; }
+  .mo-pic, .mo-pic img { aspect-ratio: 1.55 / 1; }
+  .mo-pic img { object-position: 50% 46%; }
+}

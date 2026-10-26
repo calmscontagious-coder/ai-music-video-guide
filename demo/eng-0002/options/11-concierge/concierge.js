@@ -166,6 +166,8 @@
   /* built once; a bag change only relabels the buttons, so focus stays where it was */
   function renderThree() {
     var ul = $('[data-cz-three]', desk); if (!ul) return;
+    /* wave F: the page ships a static three (for no script); the engine's own three replace it once */
+    if (ul.hasAttribute('data-cz-fallback')) { ul.removeAttribute('data-cz-fallback'); while (ul.firstChild) ul.removeChild(ul.firstChild); }
     if (!ul.children.length) engine.today().map(engine.item).filter(Boolean).forEach(function (i) {
       var li = el('li'), nm = el('span', 'nm', i.title); nm.appendChild(el('small', null, i.desc));
       li.appendChild(nm); li.appendChild(el('span', 'price', money(i.price)));
@@ -247,6 +249,8 @@
   }
   function buildComp() {
     var fl = $('[data-cz-flavs]'), fi = $('[data-cz-finishes]');
+    /* wave F: the static options in the page (for no script) give way to the built ones */
+    while (fl.firstChild) fl.removeChild(fl.firstChild); while (fi.firstChild) fi.removeChild(fi.firstChild);
     engine.cakeFlavours.forEach(function (f, k) {
       var s = el('span', 'cz-opt'), i = el('input'), l = el('label');
       i.type = 'radio'; i.name = 'flavour'; i.id = 'fl-' + f.id; i.value = f.id; if (!k) i.checked = true;

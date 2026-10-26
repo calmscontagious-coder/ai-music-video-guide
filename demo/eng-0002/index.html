@@ -581,10 +581,48 @@
 .ix-more{margin-top:var(--sp-6);font-size:var(--text-sm);color:var(--color-muted)}
 .ix-more a{color:var(--color-brand);font-weight:700;text-underline-offset:3px}
 
+/* wave F, 25 Oct 2026 (Gemini grade v3, home fixes 1 to 3). On phones the vitrine is a 10:7 frame
+   on the square tray photo (rows 108 to 633 of the 750 px WebP), so the shop's card and every row of
+   cannelés show whole; the price line moves beside "Order for pickup" and the hero gaps step down to
+   8 px, so the button stays clear of the app bar at 375 x 720 (a 4:3 frame would put it under the bar) */
+@media (max-width:899px){
+  .ix-hero{padding-top:var(--sp-1)}
+  .ix-hero .wrap{gap:var(--sp-2)}
+  .ix-vitrine img{aspect-ratio:10/7;object-position:center 48%}
+  .ix-vitrine .ix-price{display:none}
+  .ix-hero .hero-actions .link{flex-basis:100%}
+  .ix-price-m{flex:1 1 9.5rem;min-width:0;margin:0;font-size:1rem;line-height:1.25;color:var(--color-brand)}
+  .ix-price-m span{font-family:var(--font-display);font-style:italic;font-weight:500}
+  .ix-price-m b{font-weight:800;font-variant-numeric:tabular-nums}
+}
+@media (min-width:900px){.ix-price-m{display:none}}
+
+/* wave F: the order strip stays out of the first screen. Its data-after target is this marker, as
+   tall as the hero and at least one phone screen plus 32 px, so the strip slides in only after the
+   whole first screen has scrolled away, at any phone height */
+.ix-hero{position:relative}
+.ix-after{position:absolute;left:0;top:0;bottom:0;width:1px;pointer-events:none;visibility:hidden}
+@media (max-width:899px){.ix-after{min-height:calc(100vh + 32px);min-height:calc(100lvh + 32px)}}
+/* wave F: with an empty bag the strip shows Pickup and Add only; Pay and its total appear with the
+   first item (app.js marks both steps on the same count) */
+.ostrip [data-os-step="add"]:not(.is-done) + [data-os-step="pay"]{display:none}
+.ostrip [data-os-step="add"]:not(.is-done){margin-left:auto}
+/* wave F: one fixed bar at a time on phones. While the strip is docked (html.os-on) the app bar slides
+   down and the strip takes its place at the bottom edge; the strip's layout position is unchanged,
+   so app.js reads the same band when it steps aside for a box or slot control */
+@media (max-width:899px){
+  .bar{transition:transform var(--dur-base) var(--ease-enter),visibility 0s}
+  html.os-on .bar{transform:translateY(100%);visibility:hidden;transition:transform var(--dur-base) var(--ease-exit),visibility 0s linear var(--dur-base)}
+  .ostrip{transform:translateY(calc(100% + var(--bar-real,var(--bar-h))))}
+  html.os-on .ostrip.is-on:not(.is-yield),html.os-on .ostrip.is-open{transform:translateY(calc(var(--bar-real,var(--bar-h)) - env(safe-area-inset-bottom,0px)));box-shadow:0 -6px 24px rgb(31 21 107 / .08),0 env(safe-area-inset-bottom,0px) 0 var(--color-surface)}
+}
+/* wave F: the gift basket is a square photograph; a square frame keeps the bags and the box whole */
+.ix-chef img{aspect-ratio:1/1;object-position:center}
 @media (prefers-reduced-motion:reduce){
   .ix-in,.ix-vitrine.ix-in{animation:none}
   .vc,.vc::after,.vc-mark,.door,.door-go{transition:none;}
   .door:hover,.door:hover .door-go{transform:none}
+  .bar,html.os-on .bar{transition:none}
 }
 </style>
 </head>
@@ -613,6 +651,7 @@
 <main id="top">
 
 <section class="ix-hero" aria-labelledby="h1">
+  <span class="ix-after" aria-hidden="true"></span>
   <div class="wrap">
     <div>
       <p class="kick ix-in"><span lang="fr">Pâtisserie française</span><span lang="fr">Salon de thé</span><span>100% plant-based</span></p>
@@ -620,6 +659,7 @@
       <p class="lead">Glossy chocolate, espresso and pistachio éclairs under gold leaf, croissants laminated with plant butter, macarons by the six. A fourth-generation pastry chef fills the case in Old Pasadena, and you choose the moment it is boxed for you.</p>
       <div class="hero-actions ix-in d3">
         <a class="btn btn-brand" href="menu.html">Order for pickup</a>
+        <p class="ix-price-m"><span lang="fr">Cannelés</span> <b>$3.25&nbsp;each, 3&nbsp;for&nbsp;$9.00</b></p>
         <a class="link" href="#chef">Meet the chef behind the glass</a>
       </div>
     </div>
@@ -631,7 +671,7 @@
   </div>
 </section>
 
-<div class="ostrip" data-ostrip data-after=".ix-hero" role="region" aria-label="Your order">
+<div class="ostrip" data-ostrip data-after=".ix-after" role="region" aria-label="Your order">
   <div class="wrap ostrip-in">
     <ol class="os-steps" aria-label="Three steps to pay">
       <li class="os-step is-done" data-os-step="slot">
@@ -687,6 +727,11 @@
         <span class="vc-mark" aria-hidden="true"><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></span>
         <div class="vc-body"><h3 lang="fr">Cannelés</h3><p class="meta">By three: caramelised crust, soft centre</p><div class="row"><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="caneles" data-title="Cannelés, by 3" data-price="9" data-variant="42881176993980" data-image="img/caneles-1-800.jpg">Add</button></div></div>
       </article>
+      <article class="vc wide" data-card>
+        <img src="img/macarons-1-800.jpg" srcset="img/macarons-1-800.jpg 800w, img/macarons-1.jpg 1600w" sizes="(min-width:900px) 560px, 270px" width="1600" height="1600" alt="Six macarons in raspberry, pistachio, lemon and violet tones on a blue glazed plate" loading="lazy">
+        <span class="vc-mark" aria-hidden="true"><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></span>
+        <div class="vc-body"><h3 lang="fr">Macaron</h3><p class="meta">One at a time, or six for $15 in the box below</p><div class="row"><span class="price">$3.00</span><button class="add" type="button" data-add data-handle="macaron" data-title="Macaron" data-price="3" data-image="img/macarons-1-800.jpg">Add</button></div></div>
+      </article>
       <article class="vc" data-card>
         <div class="tile" aria-hidden="true">é<small>chocolat</small></div>
         <span class="vc-mark" aria-hidden="true"><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></span>
@@ -706,11 +751,6 @@
         <div class="tile" aria-hidden="true">c<small>croissant</small></div>
         <span class="vc-mark" aria-hidden="true"><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></span>
         <div class="vc-body"><h3 lang="fr">Croissant</h3><p class="meta">Butter croissant, laminated with plant butter</p><div class="row"><span class="price">$4.50</span><button class="add" type="button" data-add data-handle="butter-croissant" data-title="Butter croissant" data-price="4.5" data-glyph="c">Add</button></div></div>
-      </article>
-      <article class="vc wide" data-card>
-        <img src="img/macarons-1-800.jpg" srcset="img/macarons-1-800.jpg 800w, img/macarons-1.jpg 1600w" sizes="(min-width:900px) 560px, 270px" width="1600" height="1600" alt="Six macarons in raspberry, pistachio, lemon and violet tones on a blue glazed plate" loading="lazy">
-        <span class="vc-mark" aria-hidden="true"><svg class="heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></span>
-        <div class="vc-body"><h3 lang="fr">Macaron</h3><p class="meta">One at a time, or six for $15 in the box below</p><div class="row"><span class="price">$3.00</span><button class="add" type="button" data-add data-handle="macaron" data-title="Macaron" data-price="3" data-image="img/macarons-1-800.jpg">Add</button></div></div>
       </article>
     </div>
     <div class="ix-now" data-now>
