@@ -6,6 +6,7 @@
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ## Guides
+- [AI Video APIs for Developers and Bulk Creators (2026)](https://purposewithpresence.com/blog/ai-video-api-for-developers.html): Template-render APIs like Shotstack versus generative APIs like Leonardo: costs and limits from their own pages, a comparison table, and when to skip the API.
 - [Seedance vs Veo 3.1: Cost Per Finished Minute (2026)](https://purposewithpresence.com/blog/seedance-vs-veo-3-1-cost-per-finished-minute.html): Which is cheaper per finished minute of music video, Seedance 2.5 or Veo 3.1? Every API, Flow and credit-plan rate read October 21, 2026, arithmetic shown.
 - [Udio Song to Music Video After the Download Lock](https://purposewithpresence.com/blog/udio-song-to-music-video-after-download-lock.html): Udio locked downloads on October 29, 2025. How to make a music video for a Udio track in 2026, with or without the old file, and what it costs.
 - [Free AI Music Video Generators Ranked (2026): Finish at $0](https://purposewithpresence.com/blog/free-ai-music-video-generators-ranked-what-you-can-finish.html): What can you make free with no watermark in October 2026? We rank 11 free AI video lanes by what a musician can finish at $0, each credit limit sourced.
