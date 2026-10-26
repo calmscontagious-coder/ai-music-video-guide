@@ -101,13 +101,13 @@ q{quotes:"\201C" "\201D" "\2018" "\2019"}
 
 /* ---------- concept notice ---------- */
 .notice{background:var(--color-ink);color:var(--color-on-ink);font-size:var(--t-fine);line-height:1.45}
-.notice .wrap{display:flex;flex-wrap:wrap;gap:2px 12px;padding-block:7px}
+.notice .wrap{display:flex;flex-wrap:wrap;gap:4px 12px;padding-block:8px}
 .notice b{font-weight:600;letter-spacing:.04em}
 .notice span{color:var(--color-on-ink-soft)}
 
 /* ---------- masthead ---------- */
 .masthead{position:relative;z-index:30;background:var(--color-paper);border-bottom:1px solid var(--color-accent)}
-.mast{display:flex;flex-wrap:wrap;align-items:center;gap:4px var(--sp-block);padding-block:10px}
+.mast{display:flex;flex-wrap:wrap;align-items:center;gap:4px var(--sp-block);padding-block:12px}
 .logo{display:block;flex:0 0 auto}
 .logo img{height:52px;width:auto}
 .nav{order:3;flex:1 1 100%;display:grid;grid-template-columns:repeat(3,max-content);gap:0 24px;font-size:.9375rem;letter-spacing:.02em}
@@ -118,7 +118,7 @@ q{quotes:"\201C" "\201D" "\2018" "\2019"}
 .cartbtn{position:relative;display:grid;place-items:center;width:48px;height:48px;color:var(--color-ink);text-decoration:none;border:1px solid var(--color-control);border-radius:var(--radius-control)}
 @media (hover: hover){.cartbtn:hover{border-color:var(--color-ink)}}
 .cartbtn svg,.bar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
-.badge{position:absolute;top:-8px;right:-8px;min-width:22px;height:22px;padding:0 6px;border-radius:var(--radius-count);background:var(--color-ink);color:var(--color-on-ink);box-shadow:0 0 0 2px var(--color-paper);font:600 .75rem/22px var(--font-text);text-align:center;font-variant-numeric:tabular-nums;display:none}
+.badge{position:absolute;top:-8px;right:-8px;min-width:22px;height:22px;padding:0 8px;border-radius:var(--radius-count);background:var(--color-ink);color:var(--color-on-ink);box-shadow:0 0 0 2px var(--color-paper);font:600 .75rem/22px var(--font-text);text-align:center;font-variant-numeric:tabular-nums;display:none}
 .badge.on{display:block}
 .badge.bump{animation:bump var(--dur-sheet) var(--ease-out)}
 @media (min-width:900px){
@@ -131,16 +131,16 @@ q{quotes:"\201C" "\201D" "\2018" "\2019"}
 }
 
 /* ---------- buttons and links ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 26px;border:1px solid var(--color-ink);border-radius:var(--radius-control);background:var(--color-ink);color:var(--color-on-ink);font:500 1rem/1.2 var(--font-text);letter-spacing:.05em;text-decoration:none;text-align:center;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:12px 28px;border:1px solid var(--color-ink);border-radius:var(--radius-control);background:var(--color-ink);color:var(--color-on-ink);font:500 1rem/1.2 var(--font-text);letter-spacing:.05em;text-decoration:none;text-align:center;cursor:pointer}
 @media (hover: hover){.btn:hover{background:var(--color-ink-deep);border-color:var(--color-ink-deep)}}
 .btn[disabled]{background:transparent;color:var(--color-muted);border-color:var(--color-control);cursor:not-allowed}
-.btn-sm{min-height:44px;padding:10px 18px;font-size:.9375rem}
+.btn-sm{min-height:44px;padding:12px 20px;font-size:.9375rem}
 .btn-ivory{background:var(--color-on-ink);color:var(--color-ink);border-color:var(--color-on-ink)}
 @media (hover: hover){.btn-ivory:hover{background:var(--color-paper-deep);border-color:var(--color-paper-deep)}}
-.link-arrow{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:var(--t-ui);letter-spacing:.02em;text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px;text-underline-offset:7px}
+.link-arrow{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:var(--t-ui);letter-spacing:.02em;text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px;text-underline-offset:7px}
 .link-arrow::after{content:"\2192";content:"\2192" / "";display:inline-block;transition:transform var(--dur-tap) var(--ease-out)}
 @media (hover: hover){.link-arrow:hover::after{transform:translateX(4px)}}
-.link{min-height:44px;padding:0 2px;border:0;background:none;font-size:var(--t-ui);letter-spacing:.02em;text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px;text-underline-offset:6px;cursor:pointer}
+.link{min-height:44px;padding:0 4px;border:0;background:none;font-size:var(--t-ui);letter-spacing:.02em;text-decoration:underline;text-decoration-color:var(--color-accent);text-decoration-thickness:1px;text-underline-offset:6px;cursor:pointer}
 .links{display:flex;flex-wrap:wrap;gap:0 var(--sp-block);margin-top:var(--sp-base)}
 
 /* add buttons and the quantity stepper app.js puts beside them */
@@ -165,7 +165,7 @@ q{quotes:"\201C" "\201D" "\2018" "\2019"}
 .lede{font-family:var(--font-display);font-size:var(--t-lede);line-height:1.38;max-width:46ch}
 .cover-act{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-tight) var(--sp-block);margin-top:var(--sp-pair)}
 .next{margin-top:var(--sp-block);font-size:var(--t-ui);color:var(--color-muted)}
-.next small{margin-left:6px;font-size:var(--t-fine);border-bottom:1px solid var(--color-accent)}
+.next small{margin-left:8px;font-size:var(--t-fine);border-bottom:1px solid var(--color-accent)}
 .cover-photo{position:relative}
 .frame{position:relative}
 .frame::before{content:"";position:absolute;inset:-12px 12px 12px -12px;border:1px solid var(--color-accent);pointer-events:none}
@@ -194,7 +194,7 @@ q{quotes:"\201C" "\201D" "\2018" "\2019"}
   .sommaire li{border-bottom:0;border-top:1px solid var(--color-accent)}
   .sommaire a{grid-template-columns:minmax(0,1fr);align-content:start}
   .sommaire .no{grid-row:auto;margin-bottom:var(--sp-label)}
-  .sommaire .d{grid-column:1;margin-top:6px}
+  .sommaire .d{grid-column:1;margin-top:8px}
 }
 
 /* ---------- chapters ---------- */
@@ -210,7 +210,7 @@ q{quotes:"\201C" "\201D" "\2018" "\2019"}
   .chap-no{grid-row:1 / span 2}
 }
 .block-h{font-size:var(--t-h3);font-weight:400;line-height:1.15}
-.block-h small{display:block;margin-top:6px;font:400 var(--t-fine)/1.4 var(--font-text);letter-spacing:.02em;color:var(--color-muted)}
+.block-h small{display:block;margin-top:8px;font:400 var(--t-fine)/1.4 var(--font-text);letter-spacing:.02em;color:var(--color-muted)}
 .block-p{margin-top:var(--sp-tight);max-width:62ch}
 .band{margin-top:var(--sp-section);padding-block:var(--sp-section);background:var(--color-paper-deep)}
 .split{display:grid;gap:var(--sp-group)}
@@ -239,10 +239,10 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .m-name{font-family:var(--font-display);font-size:1.25rem;line-height:1.25}
 .merch-note .meta,.merch-item .meta{margin-top:4px;font-size:.9375rem}
 .merch-note .buy,.merch-item .buy{justify-content:flex-start;margin-top:var(--sp-tight)}
-.tag{display:inline-block;margin-top:6px;font-size:var(--t-fine);letter-spacing:.04em;color:var(--color-muted);border-bottom:1px solid var(--color-accent)}
+.tag{display:inline-block;margin-top:8px;font-size:var(--t-fine);letter-spacing:.04em;color:var(--color-muted);border-bottom:1px solid var(--color-accent)}
 
 /* box of six */
-.slots{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;max-width:440px;margin:var(--sp-block) 0;padding:14px;border:1px solid var(--color-control);border-radius:var(--radius-control);background:var(--color-paper)}
+.slots{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;max-width:440px;margin:var(--sp-block) 0;padding:16px;border:1px solid var(--color-control);border-radius:var(--radius-control);background:var(--color-paper)}
 .slots span,.slots button{display:grid;place-items:center;width:100%;min-width:24px;aspect-ratio:1;padding:0;border:1px dashed var(--color-control);border-radius:var(--radius-round);background:transparent;font:500 .75rem/1 var(--font-text);color:var(--color-muted)}
 .slots .full{border:0;background:var(--f);color:var(--color-on-ink);cursor:pointer;animation:bump var(--dur-sheet) var(--ease-out)}
 .slots .full.f-pistachio,.slots .full.light{color:var(--color-ink)}
@@ -271,7 +271,7 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .slot-head h4{font-size:1.5rem;font-weight:400}
 .days,.times{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .times{margin-top:var(--sp-tight)}
-.chip{display:grid;place-items:center;min-height:44px;padding:6px 4px;border:1px solid var(--color-control);border-radius:var(--radius-control);background:var(--color-paper);font-size:var(--t-ui);line-height:1.2;text-align:center;font-variant-numeric:tabular-nums;cursor:pointer}
+.chip{display:grid;place-items:center;min-height:44px;padding:8px 4px;border:1px solid var(--color-control);border-radius:var(--radius-control);background:var(--color-paper);font-size:var(--t-ui);line-height:1.2;text-align:center;font-variant-numeric:tabular-nums;cursor:pointer}
 .days .chip{min-height:60px;font-size:var(--t-fine)}
 .days .chip b{display:block;font-family:var(--font-display);font-size:1.125rem;font-weight:400}
 @media (hover: hover){.chip:hover{border-color:var(--color-ink)}}
@@ -300,7 +300,7 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .proofs{margin-top:var(--sp-pair);border-top:1px solid var(--color-ink)}
 .proofs li{display:grid;grid-template-columns:84px minmax(0,1fr);gap:var(--sp-base);align-items:baseline;padding:var(--sp-base) 0;border-bottom:1px solid var(--color-line);font-size:var(--t-ui);line-height:1.45}
 .proofs .big{font-family:var(--font-display);font-weight:300;font-size:2rem;line-height:1}
-.proofs small{display:block;margin-top:2px;font-size:var(--t-fine);color:var(--color-muted)}
+.proofs small{display:block;margin-top:4px;font-size:var(--t-fine);color:var(--color-muted)}
 .ladder{margin-top:var(--sp-section)}
 .rungs{display:grid;margin-top:var(--sp-pair);border-top:1px solid var(--color-ink)}
 .rungs li{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:var(--sp-base);row-gap:var(--sp-tight);padding:var(--sp-block) 0;border-bottom:1px solid var(--color-line);align-content:start}
@@ -325,8 +325,8 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .t-date{padding-right:var(--sp-base);border-right:1px dashed var(--color-control);text-align:center}
 .t-date b{display:block;font-family:var(--font-display);font-weight:300;font-size:2.5rem;line-height:1}
 .t-date span{font-size:var(--t-fine);letter-spacing:.04em}
-.t-mid{display:grid;gap:6px;font-size:var(--t-ui)}
-.seats{display:flex;gap:5px}
+.t-mid{display:grid;gap:8px;font-size:var(--t-ui)}
+.seats{display:flex;gap:4px}
 .seats i{width:10px;height:10px;border:1px solid var(--color-control);border-radius:var(--radius-round)}
 .seats i.open{background:var(--color-ink);border-color:var(--color-ink)}
 .ticket .buy{grid-column:1 / -1;justify-content:flex-start}
@@ -357,7 +357,7 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .ask legend{margin-bottom:var(--sp-label);padding:0;font-size:var(--t-ui);font-weight:500;letter-spacing:.03em}
 .picks{position:relative;display:flex;flex-wrap:wrap;gap:8px}
 .picks input{position:absolute;width:1px;height:1px;margin:0;opacity:0}
-.picks label{display:inline-grid;place-items:center;min-width:48px;min-height:44px;padding:6px 14px;border:1px solid var(--color-control);border-radius:var(--radius-control);font-size:var(--t-ui);line-height:1.2;text-align:center;cursor:pointer}
+.picks label{display:inline-grid;place-items:center;min-width:48px;min-height:44px;padding:8px 16px;border:1px solid var(--color-control);border-radius:var(--radius-control);font-size:var(--t-ui);line-height:1.2;text-align:center;cursor:pointer}
 @media (hover: hover){.picks label:hover{border-color:var(--color-ink)}}
 .picks input:checked + label{background:var(--color-ink);border-color:var(--color-ink);color:var(--color-on-ink)}
 .picks input:focus-visible + label{outline:2px solid var(--color-ink);outline-offset:3px}
@@ -380,9 +380,9 @@ figcaption{font-size:var(--t-fine);line-height:1.5;color:var(--color-muted)}
 .table-entry{margin-top:var(--sp-pair);padding:var(--sp-block);border:1px solid var(--color-accent)}
 .table-entry h3{font-size:1.5rem}
 .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-tight);margin:var(--sp-base) 0}
-.fields label{display:block;margin-bottom:6px;font-size:var(--t-fine);letter-spacing:.03em}
+.fields label{display:block;margin-bottom:8px;font-size:var(--t-fine);letter-spacing:.03em}
 .soir .fields label{color:var(--color-on-ink-soft)}
-select,input[type="email"],input[type="tel"]{width:100%;min-height:48px;padding:10px 12px;border:1px solid var(--color-control);border-radius:var(--radius-control);background:var(--color-paper);color:var(--color-ink);font-size:1.0625rem}
+select,input[type="email"],input[type="tel"]{width:100%;min-height:48px;padding:12px 12px;border:1px solid var(--color-control);border-radius:var(--radius-control);background:var(--color-paper);color:var(--color-ink);font-size:1.0625rem}
 input[aria-invalid="true"]{border-color:var(--flav-raspberry);border-width:2px}
 
 /* P.S. */
@@ -432,11 +432,11 @@ input[aria-invalid="true"]{border-color:var(--flav-raspberry);border-width:2px}
 .colophon ul a{display:inline-flex;align-items:center;min-height:32px;font-size:var(--t-ui);text-decoration:none}
 @media (hover: hover){.colophon ul a:hover{text-decoration:underline;text-decoration-color:var(--color-accent);text-underline-offset:5px}}
 @media (min-width:900px){.foot-grid{grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr))}.foot-brand{grid-column:auto}}
-.cartpill{position:fixed;right:var(--sp-block);bottom:var(--sp-block);z-index:40;display:none;align-items:center;gap:var(--sp-base);min-height:52px;padding:0 22px;border:0;border-radius:var(--radius-control);background:var(--color-ink);color:var(--color-on-ink);box-shadow:0 0 0 1px var(--color-accent);font:500 1rem var(--font-text);letter-spacing:.03em;cursor:pointer}
+.cartpill{position:fixed;right:var(--sp-block);bottom:var(--sp-block);z-index:40;display:none;align-items:center;gap:var(--sp-base);min-height:52px;padding:0 24px;border:0;border-radius:var(--radius-control);background:var(--color-ink);color:var(--color-on-ink);box-shadow:0 0 0 1px var(--color-accent);font:500 1rem var(--font-text);letter-spacing:.03em;cursor:pointer}
 .cartpill b{font-weight:600;font-variant-numeric:tabular-nums}
 @media (min-width:900px){.cartpill.on{display:inline-flex}}
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));height:calc(var(--bar-h) + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);border-top:1px solid var(--color-accent);background:var(--color-paper)}
-.bar a{position:relative;display:grid;place-items:center;align-content:center;gap:2px;font-size:var(--t-fine);letter-spacing:.02em;text-decoration:none;color:var(--color-ink)}
+.bar a{position:relative;display:grid;place-items:center;align-content:center;gap:4px;font-size:var(--t-fine);letter-spacing:.02em;text-decoration:none;color:var(--color-ink)}
 .bar a b{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:1.125rem;line-height:1}
 .bar a[aria-current]::after{content:"";position:absolute;top:0;left:28%;right:28%;height:2px;background:var(--color-ink)}
 .bar .badge{top:4px;right:calc(50% - 28px)}
@@ -471,9 +471,9 @@ input[aria-invalid="true"]{border-color:var(--flav-raspberry);border-width:2px}
 .line .mini{display:grid;place-items:center;background:var(--color-ink);color:var(--color-on-ink);font:italic 300 1.75rem/1 var(--font-display)}
 .line h3{font:500 1rem/1.3 var(--font-text)}
 .line .meta{font-size:var(--t-fine)}
-.line .src{display:inline-block;margin-top:2px;font-size:var(--t-fine);color:var(--color-muted)}
+.line .src{display:inline-block;margin-top:4px;font-size:var(--t-fine);color:var(--color-muted)}
 .line .src.on{color:var(--color-ink)}
-.line .end{display:grid;justify-items:end;gap:6px}
+.line .end{display:grid;justify-items:end;gap:8px}
 .line .end .price{font-size:1rem}
 .line .stepper{min-height:36px}
 .line .stepper button{width:34px;height:36px}
@@ -513,7 +513,7 @@ input[aria-invalid="true"]{border-color:var(--flav-raspberry);border-width:2px}
 .tea-list .tea-en{font-family:var(--font-display);font-size:1.5625rem;line-height:1.25}
 /* the notice: one dated line on a phone */
 .notice .wrap{display:block}
-.notice .more{display:none;margin-left:6px}
+.notice .more{display:none;margin-left:8px}
 @media (min-width:720px){.notice .more{display:inline}}
 /* masthead: one row of 44 px links on a phone; the bag lives in the bottom bar there */
 .nav a{min-height:44px;min-width:44px;justify-content:center}
@@ -571,10 +571,10 @@ html{scroll-padding-bottom:calc(var(--bar-h) + 16px)}
 @media (max-width:959px){
   .cover{padding-top:12px}
   .cover h1{margin-top:8px}
-  .gilt{margin:10px 0}
+  .gilt{margin:12px 0}
   .frame{margin:12px calc(var(--gutter) * -1) 0 12px}
-  .cover-act{margin-top:14px}
-  .nav{gap:0 14px;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent)}
+  .cover-act{margin-top:16px}
+  .nav{gap:0 16px;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent)}
 }
 /* the masterclass plate is square, so no macaron is cut by the frame */
 .stage-photo img{aspect-ratio:1/1}
@@ -586,10 +586,10 @@ html{scroll-padding-bottom:calc(var(--bar-h) + 16px)}
    row and the pickup card. Labels at the 14 px step.
    ============================================================ */
 .bar { grid-template-columns: minmax(0, 2.2fr) repeat(3, minmax(0, 1fr)); }
-.bar a.bar-pick { display: flex; justify-items: start; justify-content: flex-start; align-items: center; gap: 8px; min-width: 0; min-height: 56px; padding: 0 10px 0 14px; text-align: left; text-transform: none; letter-spacing: 0; color: var(--color-ink); }
+.bar a.bar-pick { display: flex; justify-items: start; justify-content: flex-start; align-items: center; gap: 8px; min-width: 0; min-height: 56px; padding: 0 12px 0 16px; text-align: left; text-transform: none; letter-spacing: 0; color: var(--color-ink); }
 .bar a.bar-pick::after, .bar a.bar-pick::before { content: none; }
 .bar a.bar-pick .bp-ico { flex: none; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.bar a.bar-pick span { display: grid; gap: 2px; min-width: 0; }
+.bar a.bar-pick span { display: grid; gap: 4px; min-width: 0; }
 .bar a.bar-pick small { font: 600 0.875rem/1.15 var(--font-text); color: var(--color-muted); letter-spacing: 0; text-transform: none; }
 .bar a.bar-pick b { font: 700 0.875rem/1.15 var(--font-text); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bar-pick:active { transform: scale(0.98); }
@@ -604,12 +604,45 @@ html{scroll-padding-bottom:calc(var(--bar-h) + 16px)}
 .bar.is-early{transform:translateY(calc(100% + 8px));visibility:hidden;transition:transform 150ms var(--ease-out),visibility 0s 150ms}
 @media (max-width:899px){
   .mast-act .cartbtn{display:grid}
-  .mast{padding-block:6px}
+  .mast{padding-block:8px}
 }
 @media (max-width:959px){
   .cover{padding-top:8px}
   .gilt{margin:8px 0}
-  .frame{margin-top:10px}
+  .frame{margin-top:12px}
   .frame img{aspect-ratio:7/5;object-position:50% 54%}
   .cover-act{margin-top:12px}
 }
+
+/* ============================================================
+   WAVE G, 25 October 2026 (director pass v3, fixes 1 and 5; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave G")
+   3.5: figures set tabular everywhere a price can appear (bag, rows, prose); the H1 keeps its proportional
+   figures, and a price inside it sits in a .pr span. 7.1: section bands on the 64 px (phone)
+   and 96 px (desktop) steps; the first-screen section keeps its own tighter top. 7.7: the footer's contact
+   and policy line, as on the root pages.
+   ============================================================ */
+/* the themes' font shorthands reset the numeric variant, so this one rule is marked important; no theme sets
+   old-style figures, so the only change is tabular widths. The H1 keeps proportional figures (its wrap is tuned). */
+body :not(h1) { font-variant-numeric: lining-nums tabular-nums !important; }
+:is(#cave,#ps) { padding-top: 64px; padding-bottom: 64px; }
+@media (min-width: 900px) { :is(#cave,#ps) { padding-top: 96px; padding-bottom: 96px; } }
+:is(#chef,#salon,#vitrine) { padding-top: 64px; }
+@media (min-width: 900px) { :is(#chef,#salon,#vitrine) { padding-top: 96px; } }
+.foot-meta { display: flex; flex-wrap: wrap; gap: 0 16px; margin: 8px 0 0; padding: 0; list-style: none; }
+.foot-meta li { margin: 0; }
+.foot-meta a { display: inline-flex; align-items: center; min-height: 44px; }
+.tea-carte { padding: 28px; }
+@media (min-width: 900px) { .tea-carte { padding: 40px; } }
+@media (min-width: 1200px) { .tea-carte { padding: 56px; } }
+/* 5.5: La vitrine opens with the builder's own Surprise me and Add row, so the box add sits within four and a half
+   phone screens; the full builder stays further down the case */
+.bc-build{margin:0 0 var(--sp-group);padding:var(--sp-block);border:1px solid var(--color-line);border-radius:var(--radius-control);background:var(--color-paper-deep)}
+.bc-build .block-p a{color:var(--color-ink)}
+.bc-build .slots{margin:var(--sp-base) 0 0;background:var(--color-paper)}
+.bc-build .box-foot{margin-top:var(--sp-base)}
+/* the card's six places stay 44 px targets at 375: no inner panel, 8 px apart */
+.bc-build [data-box-slots] { padding: 0; border: 0; background: none; gap: 8px; }
+.bc-build [data-box-slots] > * { min-width: 44px; min-height: 44px; }
+.bc-build { padding: 16px; }
+@media (max-width: 374px) { .bc-build [data-box-slots] { gap: 4px; } .bc-build [data-box-slots] > * { min-width: 0; } }

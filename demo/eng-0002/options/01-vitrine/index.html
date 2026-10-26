@@ -229,7 +229,7 @@
       {
        "@type": "MenuItem",
        "name": "Macaron",
-       "description": "One, or six for $15",
+       "description": "One, or six for $15.00",
        "offers": {
         "@type": "Offer",
         "price": "3.00",
@@ -1232,21 +1232,33 @@
       </figure>
     </div>
 
-    <a class="boxcard" href="#box" data-box-card>
-      <span class="bc-six" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
-      <span class="bc-t"><b>A box of six macarons, $15.00</b><span>Choose six flavours, or let the counter mix them.</span></span>
-      <span class="bc-go">Build a box of six</span>
-    </a>
+    <div class="g-lead" role="group" aria-labelledby="g-lead-k">
+      <p class="g-lead-k" id="g-lead-k"><span class="live">Live store</span> Ready today, by three</p>
+      <div class="g-row"><span class="g-nm"><b lang="fr">Cannelés</b><small>Caramelised crust, soft centre</small></span><span class="price">$9.00</span><button class="add" type="button" data-add data-handle="caneles" data-title="Cannelés, by 3" data-price="9.0" data-variant="42881176993980" data-glyph="c" aria-label="Add Cannelés, by 3, $9.00">Add</button></div>
+    </div>
+
+    <div class="boxcard bc-build" data-box data-price="15" data-title="Box of six macarons" data-box-card>
+      <p class="bc-t"><b>A box of six macarons, $15.00</b><span>Surprise me fills the six from the counter’s flavours, then add the box. Or <a href="#box">choose each flavour</a>.</span></p>
+      <div class="slots bc-slots" data-box-slots role="group" aria-live="polite" aria-label="Your box, six places"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+      <div class="bc-flav" hidden>
+        <button type="button" data-f="Raspberry" data-short="Rasp"><i class="f-raspberry"></i>Raspberry</button>
+        <button type="button" data-f="Pistachio" data-short="Pist"><i class="f-pistachio"></i>Pistachio</button>
+        <button type="button" data-f="Chocolate" data-short="Choc"><i class="f-chocolate"></i>Chocolate</button>
+        <button type="button" data-f="Coffee" data-short="Coff"><i class="f-coffee"></i>Coffee</button>
+        <button type="button" data-f="Coconut" data-short="Coco"><i class="f-coconut"></i>Coconut</button>
+      </div>
+      <div class="bc-foot"><button class="btn" type="button" data-box-add disabled>Fill the box first</button><button class="link" type="button" data-box-surprise>Surprise me</button></div>
+    </div>
 
     <nav class="index" aria-label="Everything the shop makes">
       <a href="#d-eclair"><b>Éclairs</b><span>5 kinds, from $5.50</span></a>
       <a href="#d-vienn"><b lang="fr">Viennoiserie</b><span>Croissant $4.50, cannelé $3.25</span></a>
-      <a href="#box"><b>Macarons and jars</b><span>A box of six for $15, jars $8</span></a>
-      <a href="#d-choc"><b>Chocolate and gifts</b><span>Truffles $15, baskets from $45</span></a>
+      <a href="#box"><b>Macarons and jars</b><span>A box of six for $15.00, jars $8.00</span></a>
+      <a href="#d-choc"><b>Chocolate and gifts</b><span>Truffles $15.00, baskets from $45.00</span></a>
       <a href="#cakes"><b>Cakes</b><span>Designed to order, a week’s notice</span></a>
-      <a href="#classes"><b>Macaron Masterclass</b><span>$125, Tuesdays 3:30 pm</span></a>
+      <a href="#classes"><b>Macaron Masterclass</b><span>$125.00, Tuesdays 3:30 pm</span></a>
       <a href="#lacave"><b>La Cave</b><span>Wine bar next door, Wed to Sun, 3 to 9 pm</span></a>
-      <a href="#shop"><b>Shop and gift cards</b><span>Merchandise from $22, planned</span></a>
+      <a href="#shop"><b>Shop and gift cards</b><span>Merchandise from $22.00, planned</span></a>
     </nav>
   </div>
 </section>
@@ -1291,10 +1303,10 @@
 </ul>
 </div>
 <div class="shelf" id="d-macaron">
-<div class="shelf-head"><div><h3 id="s-macaron"><span lang="fr">Macarons et verrines</span></h3><p>Macarons and jars · 10, from $3</p></div>
+<div class="shelf-head"><div><h3 id="s-macaron"><span lang="fr">Macarons et verrines</span></h3><p>Macarons and jars · 10, from $3.00</p></div>
 <div class="nudges"><button class="nudge" type="button" data-nudge="-1" aria-controls="t-macaron" aria-label="Scroll macarons and jars back"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button><button class="nudge" type="button" data-nudge="1" aria-controls="t-macaron" aria-label="Scroll macarons and jars forward"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button></div></div>
 <ul class="tiles" id="t-macaron" data-rail aria-labelledby="s-macaron">
-<li><article class="tile"><div class="frame"><img src="../../img/macarons-1-750.webp" width="750" height="750" alt="Six macarons in green, yellow, red and lavender on a blue plate" loading="lazy"></div><h4 lang="fr">Macaron</h4><p>One, or six for $15</p><div class="row"><span class="price">$3.00</span><button class="add" type="button" data-add data-handle="macaron" data-title="Macaron" data-price="3.0" data-glyph="m" aria-label="Add Macaron, $3.00">Add</button></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/macarons-1-750.webp" width="750" height="750" alt="Six macarons in green, yellow, red and lavender on a blue plate" loading="lazy"></div><h4 lang="fr">Macaron</h4><p>One, or six for $15.00</p><div class="row"><span class="price">$3.00</span><button class="add" type="button" data-add data-handle="macaron" data-title="Macaron" data-price="3.0" data-glyph="m" aria-label="Add Macaron, $3.00">Add</button></div></article></li>
 <li><article class="tile"><div class="carte" aria-hidden="true"><small lang="fr">coffret</small><b lang="fr">Six</b></div><h4 lang="fr">Coffret de six</h4><p>You choose the six, flavour by flavour</p><div class="row"><span class="price">$15.00</span><a class="add" href="#box">Build it</a></div></article></li>
 <li><article class="tile"><span class="live">Live store</span><div class="frame"><img src="../../img/macarons-2-800.jpg" width="800" height="800" alt="A row of macarons in a white iD Éclair box" loading="lazy"></div><h4 lang="fr">Coffret assorti</h4><p>Raspberry, pistachio, chocolate, coffee, coconut</p><div class="row"><span class="price">$18.00</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18.0" data-variant="42881210810556" data-glyph="m" aria-label="Add Assorted macaron box, $18.00">Add</button></div></article></li>
 <li><article class="tile"><span class="live">Live store</span><div class="frame"><img src="../../img/chocolat-mon-amour-800.jpg" width="800" height="800" alt="Chocolat mon amour in its glass jar with a biscuit spoon" loading="lazy"></div><h4 lang="fr">Chocolat mon amour</h4><p>Chocolate crumble, ganache and mousse</p><div class="row"><span class="price">$8.00</span><button class="add" type="button" data-add data-handle="chocolat-mon-amour" data-title="Chocolat mon amour" data-price="8.0" data-variant="41826123317436" data-glyph="C" aria-label="Add Chocolat mon amour, $8.00">Add</button></div></article></li>
@@ -1308,7 +1320,7 @@
 <p class="shelf-note">The six jars carry the shop’s own love-note names. All six, the discovery box and the assorted box check out on id-eclair.com today.</p>
 </div>
 <div class="shelf" id="d-choc">
-<div class="shelf-head"><div><h3 id="s-choc"><span lang="fr">Chocolats et biscuits</span></h3><p>Chocolate and biscuits · 7, from $5</p></div>
+<div class="shelf-head"><div><h3 id="s-choc"><span lang="fr">Chocolats et biscuits</span></h3><p>Chocolate and biscuits · 7, from $5.00</p></div>
 <div class="nudges"><button class="nudge" type="button" data-nudge="-1" aria-controls="t-choc" aria-label="Scroll chocolate and biscuits back"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button><button class="nudge" type="button" data-nudge="1" aria-controls="t-choc" aria-label="Scroll chocolate and biscuits forward"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button></div></div>
 <ul class="tiles" id="t-choc" data-rail aria-labelledby="s-choc">
 <li><article class="tile"><span class="live">Live store</span><div class="frame"><img src="../../img/dark-chocolate-truffles-800.jpg" width="800" height="800" alt="Dark chocolate truffles dusted in cocoa on a blue plate" loading="lazy"></div><h4 lang="fr">Truffes noires</h4><p>200 g box, an orange note</p><div class="row"><span class="price">$15.00</span><button class="add" type="button" data-add data-handle="dark-chocolate-truffles" data-title="Dark chocolate truffles" data-price="15.0" data-variant="43134021828796" data-glyph="T" aria-label="Add Dark chocolate truffles, $15.00">Add</button></div></article></li>
@@ -1321,7 +1333,7 @@
 </ul>
 </div>
 <div class="shelf" id="d-gift">
-<div class="shelf-head"><div><h3 id="s-gift"><span lang="fr">Cadeaux et confitures</span></h3><p>Gifts, jams and boards · 7, from $7</p></div>
+<div class="shelf-head"><div><h3 id="s-gift"><span lang="fr">Cadeaux et confitures</span></h3><p>Gifts, jams and boards · 7, from $7.00</p></div>
 <div class="nudges"><button class="nudge" type="button" data-nudge="-1" aria-controls="t-gift" aria-label="Scroll gifts, jams and boards back"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button><button class="nudge" type="button" data-nudge="1" aria-controls="t-gift" aria-label="Scroll gifts, jams and boards forward"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button></div></div>
 <ul class="tiles" id="t-gift" data-rail aria-labelledby="s-gift">
 <li><article class="tile"><span class="live">Live store</span><div class="carte" aria-hidden="true"><small lang="fr">panier</small><b lang="fr">Petit</b></div><h4 lang="fr">Petit panier</h4><p>Seasonal jam, diamants, two poché cookies, a meringue</p><div class="row"><span class="price">$45.00</span><button class="add" type="button" data-add data-handle="gift-basket-small" data-title="Gift basket, small" data-price="45.0" data-variant="43094183837884" data-glyph="P" aria-label="Add Gift basket, small, $45.00">Add</button></div></article></li>
@@ -1392,8 +1404,8 @@
       <img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.jpg 1600w" sizes="(min-width:900px) 40vw, 100vw" width="800" height="800" alt="Macarons lined up in a white iD Éclair box" loading="lazy">
     </div>
     <div>
-      <h2 id="h-box">A box of six macarons, $15.</h2>
-      <p>Tap a flavour for each place in the box; tap a macaron in the box to swap it. The price is the menu’s own six for $15. Flavours come from the shop’s assorted-box listing, and the day’s bake decides what is in the case.</p>
+      <h2 id="h-box">A box of six macarons, $15.00.</h2>
+      <p>Tap a flavour for each place in the box; tap a macaron in the box to swap it. The price is the menu’s own six for $15.00. Flavours come from the shop’s assorted-box listing, and the day’s bake decides what is in the case.</p>
       <div class="slots" data-box-slots role="group" aria-label="Your box, six places"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
       <div class="flav" role="group" aria-label="Flavours">
         <button type="button" data-f="Raspberry" data-short="Rasp"><i class="f-raspberry"></i>Raspberry</button>
@@ -1403,7 +1415,7 @@
         <button type="button" data-f="Coconut" data-short="Coco"><i class="f-coconut"></i>Coconut</button>
       </div>
       <div class="box-foot"><span class="price">$15.00</span><button class="btn" type="button" data-box-add disabled>Fill the box first</button><button class="link" type="button" data-box-surprise>Surprise me</button><button class="link" type="button" data-box-clear>Start over</button></div>
-      <div class="alt"><span>On the live store today: the assorted box, $18.</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-glyph="m" aria-label="Add the assorted macaron box, $18">Add</button></div>
+      <div class="alt"><span>On the live store today: the assorted box, $18.00.</span><button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-glyph="m" aria-label="Add the assorted macaron box, $18.00">Add</button></div>
     </div>
   </div>
 </section>
@@ -1420,11 +1432,11 @@
         <h3>A message on a menu cake</h3>
         <p>Start from the case and add a plaque and candles at checkout, after the pickup date.</p>
         <ul class="facts">
-          <li><span>Individual entremets</span><span>$15</span></li>
+          <li><span>Individual entremets</span><span>$15.00</span></li>
           <li><span>Whole menu cakes</span><span>48 hours</span></li>
           <li><span>Plaque message</span><span>35 characters</span></li>
         </ul>
-        <div class="act"><button class="add" type="button" data-add data-handle="mousse-cake" data-title="Mousse cake" data-price="15" data-glyph="M" aria-label="Add an individual mousse cake, $15">Add an entremets</button></div>
+        <div class="act"><button class="add" type="button" data-add data-handle="mousse-cake" data-title="Mousse cake" data-price="15" data-glyph="M" aria-label="Add an individual mousse cake, $15.00">Add an entremets</button></div>
       </li>
       <li class="rung">
         <span class="step" aria-hidden="true">2</span>
@@ -1474,34 +1486,34 @@
     </div>
     <div class="classes">
       <div>
-        <p class="class-facts"><span><b>$125</b> a seat</span><span><b>3:30 to 5:30 pm</b></span><span class="ex">Example seats</span></p>
+        <p class="class-facts"><span><b>$125.00</b> a seat</span><span><b>3:30 to 5:30 pm</b></span><span class="ex">Example seats</span></p>
         <ol class="tickets">
           <li class="ticket" data-class-row>
             <div class="stub"><b data-class-date>Tue 27 Oct</b><span>3:30 pm</span></div>
             <div class="ticket-body">
               <div><strong>2 of 8 seats left</strong><div class="seats" role="img" aria-label="Example: 2 of 8 seats open"><i></i><i></i><i></i><i></i><i></i><i></i><i class="open"></i><i class="open"></i></div></div>
-              <button class="add" type="button" data-add data-handle="macaron-masterclass-2026-10-27" data-title="Macaron Masterclass, Tue 27 Oct" data-price="125" aria-label="Reserve a seat on Tue 27 Oct, $125" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat">Reserve a seat</button>
+              <button class="add" type="button" data-add data-handle="macaron-masterclass-2026-10-27" data-title="Macaron Masterclass, Tue 27 Oct" data-price="125" aria-label="Reserve a seat on Tue 27 Oct, $125.00" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat">Reserve a seat</button>
             </div>
           </li>
           <li class="ticket" data-class-row>
             <div class="stub"><b data-class-date>Tue 3 Nov</b><span>3:30 pm</span></div>
             <div class="ticket-body">
               <div><strong>5 of 8 seats left</strong><div class="seats" role="img" aria-label="Example: 5 of 8 seats open"><i></i><i></i><i></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i></div></div>
-              <button class="add" type="button" data-add data-handle="macaron-masterclass-2026-11-03" data-title="Macaron Masterclass, Tue 3 Nov" data-price="125" aria-label="Reserve a seat on Tue 3 Nov, $125" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat">Reserve a seat</button>
+              <button class="add" type="button" data-add data-handle="macaron-masterclass-2026-11-03" data-title="Macaron Masterclass, Tue 3 Nov" data-price="125" aria-label="Reserve a seat on Tue 3 Nov, $125.00" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat">Reserve a seat</button>
             </div>
           </li>
           <li class="ticket" data-class-row>
             <div class="stub"><b data-class-date>Tue 10 Nov</b><span>3:30 pm</span></div>
             <div class="ticket-body">
               <div><strong>8 of 8 seats left</strong><div class="seats" role="img" aria-label="Example: 8 of 8 seats open"><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i></div></div>
-              <button class="add" type="button" data-add data-handle="macaron-masterclass-2026-11-10" data-title="Macaron Masterclass, Tue 10 Nov" data-price="125" aria-label="Reserve a seat on Tue 10 Nov, $125" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat">Reserve a seat</button>
+              <button class="add" type="button" data-add data-handle="macaron-masterclass-2026-11-10" data-title="Macaron Masterclass, Tue 10 Nov" data-price="125" aria-label="Reserve a seat on Tue 10 Nov, $125.00" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat">Reserve a seat</button>
             </div>
           </li>
           <li class="ticket" data-class-row>
             <div class="stub"><b data-class-date>Tue 17 Nov</b><span>3:30 pm</span></div>
             <div class="ticket-body">
               <div><strong>8 of 8 seats left</strong><div class="seats" role="img" aria-label="Example: 8 of 8 seats open"><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i></div></div>
-              <button class="add" type="button" data-add data-handle="macaron-masterclass-2026-11-17" data-title="Macaron Masterclass, Tue 17 Nov" data-price="125" aria-label="Reserve a seat on Tue 17 Nov, $125" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat">Reserve a seat</button>
+              <button class="add" type="button" data-add data-handle="macaron-masterclass-2026-11-17" data-title="Macaron Masterclass, Tue 17 Nov" data-price="125" aria-label="Reserve a seat on Tue 17 Nov, $125.00" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat">Reserve a seat</button>
             </div>
           </li>
         </ol>
@@ -1511,7 +1523,7 @@
         <img src="../../img/golden-ticket.jpg" sizes="100vw" width="1200" height="876" alt="The Golden Ticket: the class pass card beside its organic chocolate tablet, the product’s own listing photo" loading="lazy">
         <h3>The Golden Ticket, as a gift</h3>
         <p>A pass to an upcoming masterclass with an organic chocolate tablet. On the live store today; the class date is arranged with the shop.</p>
-        <div class="row"><span class="price">$140.00</span><button class="add" type="button" data-add data-handle="golden-ticket" data-title="Golden Ticket (dark chocolate 60%)" data-price="140" data-variant="45561722503356" data-glyph="G" aria-label="Add the Golden Ticket with dark chocolate, $140">Add the ticket</button></div>
+        <div class="row"><span class="price">$140.00</span><button class="add" type="button" data-add data-handle="golden-ticket" data-title="Golden Ticket (dark chocolate 60%)" data-price="140" data-variant="45561722503356" data-glyph="G" aria-label="Add the Golden Ticket with dark chocolate, $140.00">Add the ticket</button></div>
       </div>
     </div>
   </div>
@@ -1532,7 +1544,7 @@
         <li>Plated desserts paired with a glass of wine</li>
       </ul>
       <div class="act"><a class="btn btn-light" href="../../la-cave.html#reserve">Reserve a table</a><a class="textlink" href="../../la-cave.html#carte">What La Cave pours</a></div>
-      <div class="board"><span>Take the cheese board home, serves 10, pickup only · <span class="price">$100.00</span></span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board" data-price="100" data-variant="45433279971516" data-glyph="P" aria-label="Add the cheese board, $100">Add</button></div>
+      <div class="board"><span>Take the cheese board home, serves 10, pickup only · <span class="price">$100.00</span></span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board" data-price="100" data-variant="45433279971516" data-glyph="P" aria-label="Add the cheese board, $100.00">Add</button></div>
       <p class="fine">Tables are booked on the La Cave page. Wine is served to guests 21 and over.</p>
     </div>
   </div>
@@ -1545,15 +1557,15 @@
       <p>Seven pieces from the launch line, printed to order so little sits in a stockroom. Planned pieces, not on sale yet. The TikTok Shop opens with this line, since éclairs and cream pastries cannot ship.</p>
     </div>
     <div class="shelf merch" id="d-merch">
-      <div class="shelf-head"><div><h3 id="s-merch"><span lang="fr">La ligne</span></h3><p>Merchandise · 7 launch pieces, from $22</p></div><div class="nudges"><button class="nudge" type="button" data-nudge="-1" aria-controls="t-merch" aria-label="Scroll merchandise back"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button><button class="nudge" type="button" data-nudge="1" aria-controls="t-merch" aria-label="Scroll merchandise forward"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button></div></div>
+      <div class="shelf-head"><div><h3 id="s-merch"><span lang="fr">La ligne</span></h3><p>Merchandise · 7 launch pieces, from $22.00</p></div><div class="nudges"><button class="nudge" type="button" data-nudge="-1" aria-controls="t-merch" aria-label="Scroll merchandise back"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button><button class="nudge" type="button" data-nudge="1" aria-controls="t-merch" aria-label="Scroll merchandise forward"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button></div></div>
       <ul class="tiles" id="t-merch" data-rail aria-labelledby="s-merch">
-<li><article class="tile"><div class="frame"><img src="../../img/merch/eclair-de-genie-tee.svg" width="800" height="800" alt="A cream T-shirt printed Éclair de génie in indigo" loading="lazy"></div><h4 lang="fr">Éclair de génie</h4><p>A flash of genius (literally, an éclair of genius).</p><span class="tag">Soft cream tee, front print</span><div class="row"><span class="price">$34</span><span class="tag">Planned</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/sans-beurre-apron.svg" width="800" height="800" alt="An apron printed Sans beurre et sans reproche with a red heart" loading="lazy"></div><h4 lang="fr">Sans beurre et sans reproche</h4><p>Without butter and beyond reproach.</p><span class="tag">Organic cotton apron, navy</span><div class="row"><span class="price">$46</span><span class="tag">Planned</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="A white mug printed Un thé, deux éclairs" loading="lazy"></div><h4 lang="fr">Un thé, deux éclairs</h4><p>One tea, two éclairs.</p><span class="tag">11 oz mug, dark blue inside</span><div class="row"><span class="price">$22</span><span class="tag">Planned</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="A tote bag printed Ceci n’est pas du beurre" loading="lazy"></div><h4 lang="fr">Ceci n’est pas du beurre</h4><p>This is not butter.</p><span class="tag">Organic tote, oyster</span><div class="row"><span class="price">$32</span><span class="tag">Planned</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/club-des-leve-tot-crewneck.svg" width="800" height="800" alt="A navy sweatshirt printed Club des lève-tôt, ouvert dès 6 h" loading="lazy"></div><h4 lang="fr">Club des lève-tôt</h4><p>The early risers’ club.</p><span class="tag">Garment-dyed crewneck, navy</span><div class="row"><span class="price">$64</span><span class="tag">Planned</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/la-cave-wine-key.svg" width="800" height="800" alt="A waiter’s corkscrew engraved for La Cave" loading="lazy"></div><h4 lang="fr">Pour les grands soirs et les petits mardis</h4><p>For grand evenings and little Tuesdays.</p><span class="tag">Engraved waiter’s corkscrew, for La Cave</span><div class="row"><span class="price">$26</span><span class="tag">Planned</span></div></article></li>
-<li><article class="tile"><div class="frame"><img src="../../img/merch/mon-petit-chou-toddler-tee.svg" width="800" height="800" alt="A small white T-shirt printed Mon petit chou" loading="lazy"></div><h4 lang="fr">Mon petit chou</h4><p>My little cream puff.</p><span class="tag">Toddler tee, white</span><div class="row"><span class="price">$26</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/eclair-de-genie-tee.svg" width="800" height="800" alt="A cream T-shirt printed Éclair de génie in indigo" loading="lazy"></div><h4 lang="fr">Éclair de génie</h4><p>A flash of genius (literally, an éclair of genius).</p><span class="tag">Soft cream tee, front print</span><div class="row"><span class="price">$34.00</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/sans-beurre-apron.svg" width="800" height="800" alt="An apron printed Sans beurre et sans reproche with a red heart" loading="lazy"></div><h4 lang="fr">Sans beurre et sans reproche</h4><p>Without butter and beyond reproach.</p><span class="tag">Organic cotton apron, navy</span><div class="row"><span class="price">$46.00</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/un-the-deux-eclairs-mug.svg" width="800" height="800" alt="A white mug printed Un thé, deux éclairs" loading="lazy"></div><h4 lang="fr">Un thé, deux éclairs</h4><p>One tea, two éclairs.</p><span class="tag">11 oz mug, dark blue inside</span><div class="row"><span class="price">$22.00</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="A tote bag printed Ceci n’est pas du beurre" loading="lazy"></div><h4 lang="fr">Ceci n’est pas du beurre</h4><p>This is not butter.</p><span class="tag">Organic tote, oyster</span><div class="row"><span class="price">$32.00</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/club-des-leve-tot-crewneck.svg" width="800" height="800" alt="A navy sweatshirt printed Club des lève-tôt, ouvert dès 6 h" loading="lazy"></div><h4 lang="fr">Club des lève-tôt</h4><p>The early risers’ club.</p><span class="tag">Garment-dyed crewneck, navy</span><div class="row"><span class="price">$64.00</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/la-cave-wine-key.svg" width="800" height="800" alt="A waiter’s corkscrew engraved for La Cave" loading="lazy"></div><h4 lang="fr">Pour les grands soirs et les petits mardis</h4><p>For grand evenings and little Tuesdays.</p><span class="tag">Engraved waiter’s corkscrew, for La Cave</span><div class="row"><span class="price">$26.00</span><span class="tag">Planned</span></div></article></li>
+<li><article class="tile"><div class="frame"><img src="../../img/merch/mon-petit-chou-toddler-tee.svg" width="800" height="800" alt="A small white T-shirt printed Mon petit chou" loading="lazy"></div><h4 lang="fr">Mon petit chou</h4><p>My little cream puff.</p><span class="tag">Toddler tee, white</span><div class="row"><span class="price">$26.00</span><span class="tag">Planned</span></div></article></li>
       </ul>
       <p class="more"><a class="textlink" href="#join">Tell me when the line opens</a><a class="textlink" href="../../merch.html">Every piece, with costs</a><a class="textlink" href="https://www.tiktok.com/@ideclairlosangeles" target="_blank" rel="noopener">Follow the drops on TikTok</a></p>
     </div>
@@ -1564,24 +1576,24 @@
         <div class="gc-form">
           <fieldset class="amounts">
             <legend>Amount</legend>
-            <input type="radio" name="gc" id="gc-25" value="25"><label for="gc-25">$25</label>
-            <input type="radio" name="gc" id="gc-50" value="50" checked><label for="gc-50">$50</label>
-            <input type="radio" name="gc" id="gc-100" value="100"><label for="gc-100">$100</label>
-            <input type="radio" name="gc" id="gc-150" value="150"><label for="gc-150">$150</label>
+            <input type="radio" name="gc" id="gc-25" value="25"><label for="gc-25">$25.00</label>
+            <input type="radio" name="gc" id="gc-50" value="50" checked><label for="gc-50">$50.00</label>
+            <input type="radio" name="gc" id="gc-100" value="100"><label for="gc-100">$100.00</label>
+            <input type="radio" name="gc" id="gc-150" value="150"><label for="gc-150">$150.00</label>
             <div class="face" aria-live="polite">
               <img src="../../img/logo-wordmark-ivory.png" width="904" height="658" alt="iD Éclair" loading="lazy">
-              <p class="amt"><span class="a25">$25</span><span class="a50">$50</span><span class="a100">$100</span><span class="a150">$150</span></p>
+              <p class="amt"><span class="a25">$25.00</span><span class="a50">$50.00</span><span class="a100">$100.00</span><span class="a150">$150.00</span></p>
               <small>Never expires. Balance and QR code in Apple Wallet.</small>
             </div>
           </fieldset>
-          <p class="fine">Bought online, spent at the counter or on the site. California rules apply: no expiry, and any balance under $15 is paid in cash on request. Gift cards are planned for id-eclair.com; until then the gifts below are on the live store.</p>
+          <p class="fine">Bought online, spent at the counter or on the site. California rules apply: no expiry, and any balance under $15.00 is paid in cash on request. Gift cards are planned for id-eclair.com; until then the gifts below are on the live store.</p>
         </div>
       </div>
       <div class="ships">
         <img src="../../img/gift-basket-small-800.jpg" width="800" height="800" alt="The small gift basket: meringues, cookies and a jar of jam in an iD Éclair box" loading="lazy">
         <h3>A gift you can buy today</h3>
-        <p>The small basket: seasonal jam, diamants, two poché cookies and a meringue. The large one adds a red velvet cookie, $55.</p>
-        <div class="row"><span class="price">$45.00</span><button class="add" type="button" data-add data-handle="gift-basket-small" data-title="Gift basket, small" data-price="45" data-variant="43094183837884" data-glyph="P" aria-label="Add the small gift basket, $45">Add the basket</button></div>
+        <p>The small basket: seasonal jam, diamants, two poché cookies and a meringue. The large one adds a red velvet cookie, $55.00.</p>
+        <div class="row"><span class="price">$45.00</span><button class="add" type="button" data-add data-handle="gift-basket-small" data-title="Gift basket, small" data-price="45" data-variant="43094183837884" data-glyph="P" aria-label="Add the small gift basket, $45.00">Add the basket</button></div>
       </div>
     </div>
   </div>
@@ -1608,16 +1620,16 @@
       <div class="rewards">
         <h3>Rewards, one point per dollar</h3>
         <ol>
-          <li><b>50</b><span>$3 off any piece, about two pickup orders in</span></li>
-          <li><b>100</b><span>Any viennoiserie or drink up to $8</span></li>
-          <li><b>200</b><span>$15 toward a box, a cake or a class seat</span></li>
-          <li><b>400</b><span>$35 toward a cake deposit or a masterclass seat</span></li>
+          <li><b>50</b><span>$3.00 off any piece, about two pickup orders in</span></li>
+          <li><b>100</b><span>Any viennoiserie or drink up to $8.00</span></li>
+          <li><b>200</b><span>$15.00 toward a box, a cake or a class seat</span></li>
+          <li><b>400</b><span>$35.00 toward a cake deposit or a masterclass seat</span></li>
         </ol>
         <ul>
           <li>Points on pickup orders, cakes, classes and merchandise; none on tips or gift cards.</li>
           <li>A pastry or a drink on any day of your birth month.</li>
           <li>Points expire only after 12 months with no purchase.</li>
-          <li>Three levels: <span lang="fr">Membre</span>, <span lang="fr">Gourmand</span> at $300 a year, <span lang="fr">Connaisseur</span> at $900 a year, with first booking on masterclass dates.</li>
+          <li>Three levels: <span lang="fr">Membre</span>, <span lang="fr">Gourmand</span> at $300.00 a year, <span lang="fr">Connaisseur</span> at $900.00 a year, with first booking on masterclass dates.</li>
         </ul>
         <p class="fine">Planned for the new site.</p>
       </div>
@@ -1678,7 +1690,8 @@
     <div class="foot">
       <div>
         <img class="foot-logo" src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="104px" width="904" height="658" alt="iD Éclair" loading="lazy">
-        <address>iD Éclair, 169 W Green St, Old Pasadena, CA 91105<br>La Cave, next door at 163 W Green St</address>
+        <address>iD Éclair, <a href="https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105" target="_blank" rel="noopener">169 W Green St, Old Pasadena, CA 91105</a><br>La Cave, next door at 163 W Green St</address>
+        <ul class="foot-meta" aria-label="Contact and policies"><li><a href="tel:+16263651161">626-365-1161</a></li><li><a href="https://www.id-eclair.com/pages/contact" target="_blank" rel="noopener">Hours and contact</a></li><li><a href="https://www.id-eclair.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a></li></ul>
       </div>
       <div><h2>Order</h2><ul><li><a href="../../menu.html">Menu and pickup</a></li><li><a href="#box">Box of six</a></li><li><a href="../../cakes.html">Cakes</a></li><li><a href="../../menu.html#ships">Gifts that ship</a></li></ul></div>
       <div><h2>Visit</h2><ul><li><a href="../../classes.html">Masterclass</a></li><li><a href="../../la-cave.html">La Cave</a></li><li><a href="../../story.html">Chef Romy</a></li><li><a href="#faq">Questions</a></li></ul></div>
@@ -1688,7 +1701,7 @@
   </div>
 </footer>
 
-<nav class="orderbar" aria-label="Pickup and bag">
+<nav class="orderbar is-early" aria-label="Pickup and bag">
   <a href="#pickup"><small>Pickup, example slot · change</small><span data-next-slot>Next pickup today, 2:30 pm</span></a>
   <button type="button" data-cart-open aria-label="Open your bag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><b data-cart-total>$0.00</b><span class="badge" data-cart-count>0</span></button>
 </nav>
@@ -1766,7 +1779,7 @@
     row.querySelector('[data-class-date]').textContent = lab;
     b.setAttribute('data-handle', 'macaron-masterclass-' + t.toISOString().slice(0, 10));
     b.setAttribute('data-title', 'Macaron Masterclass, ' + lab);
-    b.setAttribute('aria-label', 'Reserve a seat on ' + lab + ', $125');
+    b.setAttribute('aria-label', 'Reserve a seat on ' + lab + ', $125.00');
   });
 
   /* cakes: earliest pickup by notice; a Monday moves to Tuesday */
@@ -1789,6 +1802,18 @@
     email.removeAttribute('aria-invalid');
     msg.innerHTML = '<span lang="fr">Merci.</span> Concept preview: nothing was sent or saved.';
   });
+})();
+</script>
+<script>
+/* wave G: the order bar waits below the first screen and rises once that screen has scrolled up past it */
+(function () {
+  var bar = document.querySelector('.orderbar'); if (!bar) return;
+  var ticking = false;
+  function update() { ticking = false; bar.classList.toggle('is-early', window.scrollY < window.innerHeight - bar.offsetHeight - 24); }
+  function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', queue, { passive: true });
+  window.addEventListener('resize', queue);
+  update();
 })();
 </script>
 </body>

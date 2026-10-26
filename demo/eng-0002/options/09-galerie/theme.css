@@ -171,7 +171,7 @@ main { overflow-x: clip; }
 
 /* ---------- concept notice ---------- */
 .notice { background: var(--canvas-2); color: var(--muted); font-size: var(--t-micro); line-height: 1.4; }
-.notice .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 2px var(--s-2); padding-block: 7px; }
+.notice .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 4px var(--s-2); padding-block: 8px; }
 .notice b { color: var(--brand); font-weight: 700; }
 @media (max-width: 699px) { .notice .more { display: none; } }
 
@@ -186,7 +186,7 @@ main { overflow-x: clip; }
 @media (min-width: 960px) { .nav { display: flex; } }
 .cartbtn { position: relative; margin-left: auto; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--brand); display: grid; place-items: center; }
 @media (hover: hover){.cartbtn:hover{ border-color: var(--brand); }}
-.badge { position: absolute; top: -4px; right: -4px; min-width: 20px; height: 20px; padding: 0 6px; border-radius: var(--r-pill); background: var(--heart); color: var(--on-heart); font: 700 .75rem/20px var(--font-text); text-align: center; font-variant-numeric: tabular-nums; display: none; }
+.badge { position: absolute; top: -4px; right: -4px; min-width: 20px; height: 20px; padding: 0 8px; border-radius: var(--r-pill); background: var(--heart); color: var(--on-heart); font: 700 .75rem/20px var(--font-text); text-align: center; font-variant-numeric: tabular-nums; display: none; }
 .badge.on { display: block; }
 .badge.bump { animation: pop var(--dur-sheet) var(--ease-enter); }
 
@@ -194,10 +194,10 @@ main { overflow-x: clip; }
 .pk { display: grid; gap: var(--s-2); }
 .pk-h { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-2); }
 .pk-h b { font: 700 var(--t-meta) var(--font-text); color: var(--brand); }
-.ex { display: inline-block; font: 700 .75rem/1 var(--font-text); color: var(--muted); border: 1px solid var(--line-2); border-radius: var(--r-tag); padding: 4px 6px; white-space: nowrap; }
+.ex { display: inline-block; font: 700 .75rem/1 var(--font-text); color: var(--muted); border: 1px solid var(--line-2); border-radius: var(--r-tag); padding: 4px 8px; white-space: nowrap; }
 .days, .times { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-2); }
-.chip { min-height: 44px; border-radius: var(--r-row); border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 var(--t-meta)/1.15 var(--font-text); font-variant-numeric: tabular-nums; padding: 6px 4px; transition: transform var(--dur-tap) var(--ease-exit); }
-.days .chip { display: grid; gap: 2px; min-height: 52px; font-size: var(--t-micro); color: var(--muted); }
+.chip { min-height: 44px; border-radius: var(--r-row); border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 var(--t-meta)/1.15 var(--font-text); font-variant-numeric: tabular-nums; padding: 8px 4px; transition: transform var(--dur-tap) var(--ease-exit); }
+.days .chip { display: grid; gap: 4px; min-height: 52px; font-size: var(--t-micro); color: var(--muted); }
 .days .chip b { font-size: var(--t-meta); color: var(--ink); }
 @media (hover: hover){.chip:hover{ border-color: var(--brand); }}
 .chip:active { transform: scale(.98); }
@@ -208,12 +208,12 @@ main { overflow-x: clip; }
 .pk-foot b { font-size: var(--t-meta); color: var(--brand); font-variant-numeric: tabular-nums; text-align: right; }
 
 /* ---------- Add and the stepper app.js swaps in ---------- */
-.add { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; min-width: 44px; padding: 0 16px; border: 1.5px solid var(--brand); border-radius: var(--r-pill); background: var(--surface); color: var(--brand); font: 700 var(--t-meta)/1 var(--font-text); white-space: nowrap; transition: transform var(--dur-tap) var(--ease-exit); }
+.add { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; min-width: 44px; padding: 0 16px; border: 1.5px solid var(--brand); border-radius: var(--r-pill); background: var(--surface); color: var(--brand); font: 700 var(--t-meta)/1 var(--font-text); white-space: nowrap; transition: transform var(--dur-tap) var(--ease-exit); }
 @media (hover: hover){.add:hover{ background: var(--brand); color: var(--on-brand); }}
 .add:active { transform: scale(.98); }
 .add[hidden] { display: none; }
 .add svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
-.stepper { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; border-radius: var(--r-pill); background: var(--brand); color: var(--on-brand); }
+.stepper { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; border-radius: var(--r-pill); background: var(--brand); color: var(--on-brand); }
 .stepper[hidden] { display: none; }
 .stepper button { width: 38px; height: 44px; border: 0; border-radius: var(--r-pill); background: transparent; color: inherit; font: 700 1.125rem/1 var(--font-text); }
 @media (hover: hover){.stepper button:hover{ background: rgb(255 255 255 / .14); }}
@@ -226,7 +226,7 @@ main { overflow-x: clip; }
 .boxslots .full { border: 0; background: var(--f); color: #faf7f2; cursor: pointer; animation: pop var(--dur-sheet) var(--ease-enter); }
 .boxslots .full.light { color: var(--ink); box-shadow: inset 0 0 0 1px var(--line-2); }
 .flav { display: flex; flex-wrap: wrap; gap: var(--s-2); }
-.flav button { display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 14px 0 10px; border-radius: var(--r-pill); border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 var(--t-meta)/1 var(--font-text); transition: transform var(--dur-tap) var(--ease-exit); }
+.flav button { display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 16px 0 12px; border-radius: var(--r-pill); border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 var(--t-meta)/1 var(--font-text); transition: transform var(--dur-tap) var(--ease-exit); }
 @media (hover: hover){.flav button:hover{ border-color: var(--brand); }}
 .flav button:active { transform: scale(.98); }
 .flav button[disabled] { opacity: .5; cursor: not-allowed; }
@@ -266,9 +266,9 @@ main { overflow-x: clip; }
 .line .mini { display: grid; place-items: center; background: var(--canvas-2); color: var(--brand); font: 600 1.5rem/1 var(--font-display); }
 .line h3 { font: 700 var(--t-meta)/1.25 var(--font-text); color: var(--ink); }
 .line .meta { font-size: var(--t-micro); color: var(--muted); }
-.line .src { display: inline-block; margin-top: 3px; font-size: .75rem; font-weight: 700; color: var(--muted); }
+.line .src { display: inline-block; margin-top: 4px; font-size: .75rem; font-weight: 700; color: var(--muted); }
 .line .src.on { color: var(--brand); }
-.line .end { display: grid; justify-items: end; gap: 6px; }
+.line .end { display: grid; justify-items: end; gap: 8px; }
 .line .price { font-weight: 700; color: var(--brand); }
 .line .stepper { min-height: 44px; }
 .line .stepper button { width: 44px; height: 44px; }
@@ -284,11 +284,11 @@ main { overflow-x: clip; }
 @media (hover: hover){.btn:hover{ background: var(--brand-press); }}
 .btn[disabled] { background: var(--canvas-2); color: var(--muted); cursor: not-allowed; }
 .btn-sm { min-height: 44px; padding: 0 var(--s-4); }
-.checkout { width: 100%; padding-block: 10px; }
+.checkout { width: 100%; padding-block: 12px; }
 .fine { font-size: var(--t-micro); line-height: 1.45; color: var(--muted); }
 
 /* ---------- forms ---------- */
-.field { display: grid; gap: 6px; }
+.field { display: grid; gap: 8px; }
 .field label { font: 700 var(--t-micro)/1.2 var(--font-text); color: var(--muted); }
 .field input, .field select { min-height: 48px; padding: 0 var(--s-3); border: 1px solid var(--line-2); border-radius: var(--r-row); background: var(--surface); color: var(--ink); font-size: 1rem; }
 .field input:focus-visible, .field select:focus-visible { outline: 2px solid var(--heart); outline-offset: 2px; border-color: var(--brand); }
@@ -305,7 +305,7 @@ main { overflow-x: clip; }
 html { scroll-padding-top: 0; }
 body.has-bag { padding-bottom: 96px; }
 h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--brand); font-optical-sizing: auto; }
-.tag { display: inline-block; font: 700 .75rem/1 var(--font-text); border: 1px solid currentColor; border-radius: var(--r-tag); padding: 4px 6px; }
+.tag { display: inline-block; font: 700 .75rem/1 var(--font-text); border: 1px solid currentColor; border-radius: var(--r-tag); padding: 4px 8px; }
 .top { background: var(--canvas); }
 
 /* frontispiece */
@@ -331,7 +331,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--br
 .somm li { break-inside: avoid; }
 .somm a { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr) auto; gap: var(--s-3); align-items: baseline; min-height: 48px; padding: var(--s-3) 0; border-bottom: 1px solid var(--line-2); text-decoration: none; }
 @media (hover: hover){.somm a:hover .sn{ text-decoration: underline; }}
-.somm .sr-n { font: 500 var(--t-meta)/1 var(--font-display); color: var(--gold-text); font-variant-numeric: lining-nums; }
+.somm .sr-n { font: 500 var(--t-meta)/1 var(--font-display); color: var(--gold-text); font-variant-numeric: lining-nums tabular-nums; }
 .somm .sn { font: italic 500 var(--t-name)/1.15 var(--font-display); color: var(--brand); }
 .somm .price { font-size: var(--t-meta); font-weight: 700; color: var(--ink); }
 
@@ -366,7 +366,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--br
 .pl-en { font-size: var(--t-body); max-width: 40ch; color: var(--muted); }
 .dark .pl-en { color: var(--on-night-soft); }
 .pl-buy { display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap; margin-top: var(--s-2); }
-.pl-buy .price { font: 500 var(--t-h3)/1 var(--font-display); font-variant-numeric: lining-nums; }
+.pl-buy .price { font: 500 var(--t-h3)/1 var(--font-display); font-variant-numeric: lining-nums tabular-nums; }
 .pl-note { font-size: var(--t-micro); color: var(--muted); max-width: 46ch; }
 .dark .pl-note { color: var(--on-night-soft); }
 .pl-note a { color: inherit; }
@@ -432,7 +432,7 @@ footer address { font-style: normal; display: grid; gap: var(--s-2); }
 .gs { position: fixed; left: var(--s-2); right: var(--s-2); bottom: calc(var(--s-2) + env(safe-area-inset-bottom)); z-index: 70; max-width: 600px; margin: 0 auto; display: grid; gap: var(--s-2); }
 .gs[hidden] { display: none; }
 .gs.rise { animation: rise var(--dur-sheet) var(--ease-enter); }
-.gs-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 4px; padding: 6px; border-radius: var(--r-pill); background: var(--brand); color: var(--on-brand); box-shadow: var(--e-3); outline: 1px solid var(--gold-night); outline-offset: -4px; }
+.gs-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 4px; padding: 8px; border-radius: var(--r-pill); background: var(--brand); color: var(--on-brand); box-shadow: var(--e-3); outline: 1px solid var(--gold-night); outline-offset: -4px; }
 .gs-slot { display: flex; align-items: center; gap: var(--s-2); min-width: 0; min-height: 52px; padding: 0 var(--s-3); border: 0; border-radius: var(--r-pill); background: transparent; color: inherit; text-align: left; }
 @media (hover: hover){.gs-slot:hover{ background: rgb(246 241 231 / .1); }}
 .gs-slot span { display: grid; min-width: 0; }
@@ -453,7 +453,7 @@ footer address { font-style: normal; display: grid; gap: var(--s-2); }
    ========================================================================== */
 /* the notice: one dated line at 375 */
 .notice { line-height: 1.35; }
-.notice .wrap { padding-block: 6px; }
+.notice .wrap { padding-block: 8px; }
 /* gold as text is the darker gilt (#7a5c22, 5.0:1 on ivory 2); the light gilt stays on hairlines */
 /* inputs: the 2 px ring; inline French inside English in the display italic */
 input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--heart); outline-offset: 2px; }
@@ -528,3 +528,49 @@ body:not(.has-bag) .gs-bag, body:not(.has-bag) .gs-pay { display: none; }
   .front figure { margin-top: 12px; }
   .front-act { margin-top: 12px; }
 }
+
+/* ============================================================
+   WAVE G, 25 October 2026 (director pass v3, fixes 1 and 5; notes in
+   options/OPTIONS_2026-10-22.md, "25 October 2026, wave G")
+   3.5: figures set tabular everywhere a price can appear (bag, rows, prose); the H1 keeps its proportional
+   figures, and a price inside it sits in a .pr span. 7.1: section bands on the 64 px (phone)
+   and 96 px (desktop) steps; the first-screen section keeps its own tighter top. 7.7: the footer's contact
+   and policy line, as on the root pages.
+   ============================================================ */
+/* the themes' font shorthands reset the numeric variant, so this one rule is marked important; no theme sets
+   old-style figures, so the only change is tabular widths. The H1 keeps proportional figures (its wrap is tuned). */
+body :not(h1) { font-variant-numeric: lining-nums tabular-nums !important; }
+:is(#faq,#p-caneles,#p-caramel,#p-chocolat,#p-coffret,#p-confiture,#p-croissant,#p-eclair,#p-framboise,#p-masterclass,#p-panier,#p-plateau,#p-pots,#p-retrait,#p-truffes) { padding-top: 64px; padding-bottom: 64px; }
+@media (min-width: 900px) { :is(#faq,#p-caneles,#p-caramel,#p-chocolat,#p-coffret,#p-confiture,#p-croissant,#p-eclair,#p-framboise,#p-masterclass,#p-panier,#p-plateau,#p-pots,#p-retrait,#p-truffes) { padding-top: 96px; padding-bottom: 96px; } }
+.foot-meta { display: flex; flex-wrap: wrap; gap: 0 16px; margin: 8px 0 0; padding: 0; list-style: none; }
+.foot-meta li { margin: 0; }
+.foot-meta a { display: inline-flex; align-items: center; min-height: 44px; }
+.mat { padding: 12px; }
+@media (min-width: 600px) { .mat { padding: 24px; } }
+@media (min-width: 900px) { .mat { padding: 32px; } }
+.pl-label h2 { padding-top: 4px; }
+.pt-glyph { padding-top: 16px; }
+@media (min-width: 900px) { .pl-label h2 { padding-top: 8px; } .pt-glyph { padding-top: 24px; } }
+/* 5.4 and 5.5 on phones: planche I's live-store row and the coffret's own Surprise me and Add row follow the
+   lead, so the first Add and the box add sit within a screen and a half; the plates keep their own Adds */
+.g-lead, .bc-build { display: none; }
+@media (max-width: 999px) {
+  .front .g-lead { order: 5; display: grid; gap: var(--s-2); margin-top: var(--s-6); padding: var(--s-3) var(--s-4); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-slip); }
+  .g-lead-k { font-size: var(--t-micro); color: var(--muted); }
+  .g-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--s-3); }
+  .g-nm { display: grid; gap: var(--s-1); }
+  .g-nm b { font: italic 500 var(--t-h3)/1.05 var(--font-display); color: var(--brand); }
+  .g-nm small { font-size: var(--t-micro); color: var(--muted); }
+  .g-row .price { font: 500 var(--t-name)/1 var(--font-display); color: var(--brand); }
+  .front .bc-build { order: 6; display: grid; gap: var(--s-4); margin-top: var(--s-4); padding: var(--s-4); background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--r-slip); }
+  .bc-build .bc-t { display: grid; gap: var(--s-1); }
+  .bc-build .bc-t b { font: 500 var(--t-h3)/1.1 var(--font-display); color: var(--brand); }
+  .bc-build .bc-t > span { font-size: var(--t-micro); color: var(--muted); }
+  .bc-build .bc-t a { color: var(--brand); }
+  .bc-slots span { aspect-ratio: 1; min-height: 44px; display: grid; place-items: center; border-radius: 50%; border: 1.5px dashed var(--line-2); background: var(--canvas); color: var(--muted); font: 700 .75rem/1 var(--font-text); }
+  .bc-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-6); }
+}
+/* the card's six places stay 44 px targets at 375: no inner panel, 8 px apart */
+.bc-build [data-box-slots] { padding: 0; border: 0; background: none; gap: 8px; }
+.bc-build [data-box-slots] > * { min-width: 44px; min-height: 44px; }
+@media (max-width: 374px) { .bc-build [data-box-slots] { gap: 4px; } .bc-build [data-box-slots] > * { min-width: 0; } }
