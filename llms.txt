@@ -6,6 +6,7 @@
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ## Guides
+- [Google Flow Failed Veo Generations: Do They Cost Credits?](https://purposewithpresence.com/blog/google-flow-failed-generation-credits.html): Do failed or stuck Veo jobs in Google Flow use credits? What paying users report on Google's forums, how to check credit activity and ask for a refund.
 - [Seedance Review 2026: Strengths, Flaws and Verdict](https://purposewithpresence.com/blog/seedance-review.html): An honest Seedance review for music videos from five published write-ups and a Trustpilot page: what 2.0 and 2.5 do well, where they fail, and who should pay.
 - [AI Video Extender Tools Compared (2026): Limits and Cost](https://purposewithpresence.com/blog/ai-video-extender-tools-compared.html): Premiere Generative Extend adds 2 seconds, Higgsfield builds 30-second scenes, YouArt bills per second. Four extenders compared, plus the two-extension rule.
 - [AI Video APIs for Developers and Bulk Creators (2026)](https://purposewithpresence.com/blog/ai-video-api-for-developers.html): Template-render APIs like Shotstack versus generative APIs like Leonardo: costs and limits from their own pages, a comparison table, and when to skip the API.
