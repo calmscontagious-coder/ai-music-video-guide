@@ -491,3 +491,18 @@ footer{padding:var(--sp-16) 0}
 
 /* wave F 2026-10-25: the strip's Pay step stays out of view until the bag holds an item */
 .os-step.is-empty{display:none}
+
+/* v4 pass 2026-10-27 (standard 1.4, 7.6): one "Order for pickup" per screen at every width. On pages whose
+   hero carries the primary action ([data-hero-cta]) the header's button waits, out of the tab order, while
+   that hero action is on screen; app.js sets html.hero-cta-off once it is out of view and the button fades
+   in. Hidden by visibility, so the header keeps its width and nothing shifts. Phones keep the rule above. */
+@media (min-width:900px){
+  [data-hero-cta] .top-actions .btn{transition:opacity var(--dur-fast) var(--ease-enter)}
+  html:not(.hero-cta-off) [data-hero-cta] .top-actions .btn{visibility:hidden;opacity:0}
+}
+@media (prefers-reduced-motion:reduce){[data-hero-cta] .top-actions .btn{transition:none}}
+/* v4 (standard 7.3): while the strip slides away (240 ms, then visibility hidden) its steps leave the tab
+   order at once, so a Tab never lands on a step the app bar is already covering; and a focus that lands
+   in the docked strip finds the app bar already gone */
+.ostrip:not(.is-open):is(:not(.is-on),.is-yield) :is(a,button){visibility:hidden}
+@media (max-width:899px){html.os-on:has(.ostrip :focus-visible) .bar{transition:none}}

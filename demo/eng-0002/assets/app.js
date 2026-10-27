@@ -604,6 +604,29 @@
     if (dy) window.scrollBy({ top: dy, behavior: 'instant' });
   });
 
+  /* ---------- one primary action per screen (v4, 2026-10-27): on a page whose hero carries the primary
+     action ([data-hero-cta]) the header's button waits in site.css while that action is on screen below the
+     header; html.hero-cta-off releases it whenever the hero action is out of view (scrolled past, or below
+     the fold on a short desktop window). Read from layout once per frame on scroll, like the strip. ---------- */
+  function initHeroCta() {
+    var html = document.documentElement, b = document.body;
+    if (!b || !b.hasAttribute('data-hero-cta')) return;
+    var hero = $('main .hero-actions .btn'), head = $('.top'), ticking = false;
+    if (!hero) { html.classList.add('hero-cta-off'); return; }
+    function update() {
+      ticking = false;
+      var r = hero.getBoundingClientRect(), hh = head ? Math.max(0, head.getBoundingClientRect().bottom) : 0;
+      var half = r.height / 2;   /* on screen = at least half of the button shows below the header */
+      html.classList.toggle('hero-cta-off', !(r.width && r.bottom > hh + half && r.top < innerHeight - half));
+    }
+    function queue() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    update();
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    window.addEventListener('load', queue);   /* fonts and images can move the hero after the first read */
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
+  }
+
   /* ---------- boot ---------- */
   buildDrawer();
   enhanceAdds(document);
@@ -612,6 +635,7 @@
   $$('[data-menu-grid][data-src]').forEach(function (g) { if (!g.querySelector('.item')) renderMenu(g); });
   initBar();
   initStrip();
+  initHeroCta();
   renderAll();
 
   window.IDE = { add: add, addSet: addSet, setQty: setQty, clear: clear, open: openBag, close: closeBag, state: snapshot, checkoutUrl: checkoutUrl, renderMenu: renderMenu, slot: function () { var s = slot(); return { date: s.day && s.day.key, time: s.time, label: slotText(s) }; } };

@@ -669,3 +669,5 @@ body :not(h1) { font-variant-numeric: lining-nums tabular-nums !important; }
 .bc-build [data-box-slots] { padding: 0; border: 0; background: none; gap: 8px; }
 .bc-build [data-box-slots] > * { min-width: 44px; min-height: 44px; }
 @media (max-width: 374px) { .bc-build [data-box-slots] { gap: 4px; } .bc-build [data-box-slots] > * { min-width: 0; } }
+/* v4: the two-line demo notice stays within 56 px on a phone (it measured 56.6 at 375; standard 1.8) */
+.notice, .notice * { line-height: 1.4; }

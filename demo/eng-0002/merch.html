@@ -306,6 +306,14 @@
   .mr-cap > span:first-child{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:var(--text-base);line-height:1.2;color:var(--color-brand)}
   .mr-cap .add{margin-left:auto}
 }
+/* v4 pass 2026-10-27 (standard 5.4 at 1366): on desktop the spoons' name, price and Add sit beside their
+   photograph in the stack, level with it, so the first Add is on the first screen beside the headline */
+@media (min-width:900px){
+  .mr-photo{overflow:visible}
+  .mr-photo img{border-radius:inherit}
+  .mr-cap{display:grid;justify-items:start;gap:var(--sp-2);position:absolute;left:calc(100% + var(--sp-4));bottom:0;width:calc(90% - var(--sp-4));padding:var(--sp-3) var(--sp-4) var(--sp-4);background:var(--color-surface);border-radius:var(--radius-md);box-shadow:var(--shadow-e2);transform:rotate(1.5deg)}
+  .mr-cap > span:first-child{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:var(--text-base);line-height:1.2;color:var(--color-brand)}
+}
 </style>
 </head>
 <body data-home="index.html" data-hero-cta>

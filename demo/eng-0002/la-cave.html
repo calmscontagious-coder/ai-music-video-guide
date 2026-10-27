@@ -295,6 +295,14 @@
 @media (min-width:900px){.has-ostrip .lc-board{top:calc(100px + var(--os-h))}}
 /* wave A, 25 Oct 2026: the checkbox and its words make one 44 px target */
 .lc-check label{display:inline-flex;align-items:center;min-height:44px;cursor:pointer}
+/* v4 pass 2026-10-27 (standard 5.4 at 1366): on desktop the board in the photograph carries its own price
+   and Add, top right of the frame, so the first Add sits on the first screen; phones keep the board's row */
+.lc-tag{display:none}
+@media (min-width:900px){
+  .lc-tag{position:absolute;top:var(--sp-4);right:var(--sp-4);display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) var(--sp-2) var(--sp-2) var(--sp-4);background:var(--color-surface);color:var(--color-brand);border-radius:var(--radius-lg);box-shadow:var(--shadow-e3)}
+  .lc-tag-t{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:var(--text-base);line-height:1.2}
+  .lc-tag .price{font-weight:800;font-variant-numeric:lining-nums tabular-nums}
+}
 </style>
 </head>
 <body data-home="index.html" data-hero-cta>
@@ -335,6 +343,7 @@
     <figure class="hero-media" data-grid-break>
       <picture><source media="(max-width:899px)" srcset="img/cheese-board-1-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/cheese-board-1-800.jpg"><img src="img/cheese-board-1-800.jpg" srcset="img/cheese-board-1-800.jpg 800w, img/cheese-board-1.jpg 1600w" sizes="(min-width:900px) 46vw, 100vw" width="1600" height="1066" alt="The cheese board on a wine-barrel table: vegan cheeses, baguette toasts, dried apricots, dates, grapes and strawberries" fetchpriority="high"></picture>
       <figcaption class="chip-float"><span data-cave-open>Wed to Sun, 3 to 9 pm</span><small>published hours</small></figcaption>
+      <div class="lc-tag"><span class="lc-tag-t">The board for ten</span><span class="price">$100.00</span><button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board, serves 10" data-price="100" data-variant="45433279971516" data-image="img/cheese-board-1-800.jpg" data-meta="Pickup only">Add the board</button></div>
     </figure>
   </div>
 </section>

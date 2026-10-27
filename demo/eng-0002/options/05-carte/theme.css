@@ -749,3 +749,7 @@ body :not(h1) { font-variant-numeric: lining-nums tabular-nums !important; }
 .bc-build [data-box-slots] { padding: 0; border: 0; background: none; gap: 8px; }
 .bc-build [data-box-slots] > * { min-width: 44px; min-height: 44px; }
 @media (max-width: 374px) { .bc-build [data-box-slots] { gap: 4px; } .bc-build [data-box-slots] > * { min-width: 0; } }
+/* v4 pass 2026-10-27: the strip's pickup time shows whole ("Today, 10:00 am" was cut to an ellipsis at
+   375 px): under 420 px the clock icon steps aside to give the time its room; under 360 px it may wrap */
+@media (max-width: 419px) { .slotbtn > svg:first-child { display: none; } .slotbtn { grid-template-columns: minmax(0, auto) auto; } }
+@media (max-width: 359px) { .slotbtn b { white-space: normal; overflow: visible; text-overflow: clip; } }

@@ -711,3 +711,9 @@ body :not(h1) { font-variant-numeric: lining-nums tabular-nums !important; }
 .bc-build [data-box-slots] { padding: 0; border: 0; background: none; gap: 8px; }
 .bc-build [data-box-slots] > * { min-width: 44px; min-height: 44px; }
 @media (max-width: 374px) { .bc-build [data-box-slots] { gap: 4px; } .bc-build [data-box-slots] > * { min-width: 0; } }
+/* v4 pass 2026-10-27: the bottom bar's pickup time wraps instead of cutting to an ellipsis ("Today, 10:00 am"
+   was clipped at 375 px); under 420 px the clock icon steps aside so the time keeps the room */
+.bar a.bar-pick b { white-space: normal; overflow: visible; text-overflow: clip; }
+@media (max-width: 419px) { .bar a.bar-pick { padding: 0 8px 0 12px; } .bar a.bar-pick .bp-ico { display: none; } }
+/* v4: the two-line demo notice stays within 56 px on a phone (it measured 56.6 at 375; standard 1.8) */
+.notice, .notice * { line-height: 1.4; }
