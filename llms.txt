@@ -6,6 +6,7 @@
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ## Guides
+- [Seedance Versions Explained: 1.0 to 2.5 Timeline (2026)](https://purposewithpresence.com/blog/seedance-versions-explained.html): Seedance 1.0 (June 2025), 2.0 (February 2026) and 2.5 (July 31, 2026): what each version changed, where sources disagree, and which sites are not ByteDance.
 - [Who Owns an AI Music Video? Copyright Explained (2026)](https://purposewithpresence.com/blog/who-owns-an-ai-music-video.html): Who owns an AI music video and the AI song inside it: the US human-authorship rule, the EU view, what tool terms really grant, and the layers you can still own.
 - [Google Flow Failed Veo Generations: Do They Cost Credits?](https://purposewithpresence.com/blog/google-flow-failed-generation-credits.html): Do failed or stuck Veo jobs in Google Flow use credits? What paying users report on Google's forums, how to check credit activity and ask for a refund.
 - [Seedance Content Policy: What Gets Blocked (2026)](https://purposewithpresence.com/blog/seedance-content-policy-what-gets-blocked.html): What Seedance content rules block: celebrity names, studio characters, explicit content and impersonation, per four policies and CNBC's Hollywood report.
