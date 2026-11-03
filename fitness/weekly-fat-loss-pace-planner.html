@@ -78,23 +78,6 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;colo
 .disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
 @media(max-width:640px){.nlinks{display:none}}
 
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-
 .tool{background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px;padding:20px;margin:22px 0}
 .tool label{display:block;font-weight:600;margin:14px 0 6px;font-size:1rem}
 .tool input,.tool select{width:100%;min-height:48px;font-size:1rem;padding:10px 12px;border-radius:10px;border:1px solid var(--line2,rgba(244,242,238,.25));background:rgba(10,10,16,.6);color:var(--cream)}
@@ -174,7 +157,7 @@ h+='<p class="note">Not medical advice. The research pace applies to healthy adu
 <!-- ctabar:start -->
 <div id="ctab" data-program="drgains" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
 <div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
-<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Science-based hypertrophy programs, 15 to 60 minutes a session.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Training programs, 4 to 8 weeks.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
 <a href="/go/drgains" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See programs &#8599;</a>
 <button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
