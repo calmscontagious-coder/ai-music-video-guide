@@ -311,11 +311,17 @@
     return '<article class="item" data-cat="' + esc(i.category) + '">' + (i.variantId ? '<span class="live">On the live store</span>' : '') + pic +
       '<div class="body"><h3>' + esc(i.title) + '</h3><p class="meta">' + esc(i.desc || '') + (i.price_note ? ' · ' + esc(i.price_note) : '') + '</p><div class="row"><span class="price">' + money(i.price) + '</span>' + act + '</div></div></article>';
   }
-  function renderMenu(grid) {
+  /* the grid's item list, filtered as renderMenu filters it, without touching the DOM (a grid rendered at build
+     time by tools/regen_static.py asks for this and wires its own static cards) */
+  function menuData(grid) {
     var src = grid.getAttribute('data-src'), ch = grid.getAttribute('data-channel'), cats = (grid.getAttribute('data-cats') || '').split(',').filter(Boolean), lim = +grid.getAttribute('data-limit') || 0;
     return fetch(src).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (data) {
       var list = data.items.filter(function (i) { return !i.hidden && (!ch || ch === 'all' || i.channel === ch) && (!cats.length || cats.indexOf(i.category) >= 0); });
-      if (lim) list = list.slice(0, lim);
+      return lim ? list.slice(0, lim) : list;
+    });
+  }
+  function renderMenu(grid) {
+    return menuData(grid).then(function (list) {
       grid.innerHTML = list.map(card).join('');
       enhanceAdds(grid); syncAdds();
       var c = $('[data-cats][data-target="' + grid.id + '"]'); if (c) initCats(c);
@@ -676,5 +682,5 @@
   initSeason();
   renderAll();
 
-  window.IDE = { add: add, addSet: addSet, setQty: setQty, clear: clear, open: openBag, close: closeBag, state: snapshot, checkoutUrl: checkoutUrl, renderMenu: renderMenu, slot: function () { var s = slot(); return { date: s.day && s.day.key, time: s.time, label: slotText(s) }; } };
+  window.IDE = { add: add, addSet: addSet, setQty: setQty, clear: clear, open: openBag, close: closeBag, state: snapshot, checkoutUrl: checkoutUrl, renderMenu: renderMenu, menuData: menuData, slot: function () { var s = slot(); return { date: s.day && s.day.key, time: s.time, label: slotText(s) }; } };
 })();
