@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Sitemap: https://purposewithpresence.com/sitemap.xml
+Sitemap: https://purposewithpresence.com/sitemap-fitness.xml
 Disallow: /demo/
