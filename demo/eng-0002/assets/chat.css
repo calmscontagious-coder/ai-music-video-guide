@@ -1,0 +1,48 @@
+/* Chat assistant (2 November 2026): the bubble, the sheet, the log, chips, the hand-off card and the message form.
+   Tokens from site.css only. Phones: a full sheet above the safe area, keyboard-safe (dvh, 16 px inputs). Desktop:
+   a 380 px panel bottom right. Targets 48 px. Motion 250 ms transform and opacity; none under reduced motion. */
+.ch-bubble{position:fixed;right:16px;bottom:calc(var(--bar-real,calc(var(--bar-h) + env(safe-area-inset-bottom))) + 14px);z-index:38;width:56px;height:56px;border-radius:50%;border:0;background:var(--color-brand);color:var(--color-on-brand);display:grid;place-items:center;box-shadow:var(--shadow-e3);cursor:pointer;transition:transform var(--dur-fast) var(--ease-move)}
+.ch-bubble:active{transform:scale(.96)}
+.ch-bubble svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+html.os-on .ch-bubble{bottom:calc(var(--bar-real,calc(var(--bar-h) + env(safe-area-inset-bottom))) + var(--os-h,58px) + 14px)}
+@media (min-width:900px){.ch-bubble{right:24px;bottom:24px}html.os-on .ch-bubble{bottom:24px}}
+.ch-bubble[hidden]{display:none}
+.ch{position:fixed;inset:0;z-index:60;display:none;align-items:flex-end;justify-content:flex-end}
+.ch.is-open{display:flex}
+.ch-back{position:absolute;inset:0;background:rgb(26 19 64 / .32)}
+.ch-panel{position:relative;display:grid;grid-template-rows:auto 1fr auto;width:100%;height:100dvh;max-height:100dvh;background:var(--color-canvas);color:var(--color-ink);box-shadow:var(--shadow-e4);transform:translateY(16px);opacity:0;transition:transform var(--dur-base) var(--ease-enter),opacity var(--dur-base) var(--ease-enter)}
+.ch.is-open .ch-panel{transform:none;opacity:1}
+@media (min-width:900px){.ch{padding:0 24px 24px 0}.ch-back{background:transparent}.ch-panel{width:380px;height:min(680px,calc(100dvh - 48px));border-radius:var(--radius-md);overflow:hidden}}
+.ch-head{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:calc(12px + env(safe-area-inset-top)) 16px 10px;background:var(--color-surface);border-bottom:1px solid var(--color-line)}
+.ch-head h2{font-size:var(--text-lg);font-weight:600;line-height:1.1;margin:0}
+.ch-head p{grid-column:1 / -1;font-size:var(--text-xs);color:var(--color-muted);line-height:1.35}
+.ch-x{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--color-line);background:var(--color-surface);color:var(--color-brand);display:grid;place-items:center;cursor:pointer}
+.ch-log{overflow-y:auto;overscroll-behavior:contain;padding:16px;display:grid;gap:12px;align-content:start}
+.ch-msg{max-width:88%;padding:10px 14px;border-radius:18px;font-size:var(--text-sm);line-height:1.45;background:var(--color-surface);box-shadow:var(--shadow-e1)}
+.ch-msg.me{justify-self:end;background:var(--color-brand);color:var(--color-on-brand);border-bottom-right-radius:6px}
+.ch-msg.bot{justify-self:start;border-bottom-left-radius:6px}
+.ch-msg p{margin:0}
+.ch-msg .ch-src{margin-top:6px;font-size:var(--text-xs);color:var(--color-muted)}
+.ch-msg .tag{display:inline-block;margin-left:6px;padding:1px 6px;border:1px solid currentColor;border-radius:var(--radius-lg);font-size:.6875rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.ch-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.ch-act{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:var(--radius-lg);border:1.5px solid var(--color-brand);background:var(--color-surface);color:var(--color-brand);font:700 var(--text-xs) var(--font-text);text-decoration:none;cursor:pointer}
+.ch-act.done{background:var(--color-canvas-deep);border-color:transparent;color:var(--color-muted)}
+.ch-card{display:grid;gap:10px;padding:14px;border-radius:var(--radius-sm);background:var(--color-canvas-deep)}
+.ch-card b{color:var(--color-brand)}
+.ch-card .ch-acts{margin-top:0}
+.ch-form{display:grid;gap:10px}
+.ch-form label{font-size:var(--text-xs);font-weight:700;color:var(--color-brand)}
+.ch-form input,.ch-form textarea{font:inherit;font-size:16px;min-height:48px;padding:10px 12px;border:1.5px solid var(--color-control);border-radius:var(--radius-sm);background:var(--color-surface);color:var(--color-ink);width:100%}
+.ch-form textarea{min-height:88px;resize:vertical}
+.ch-form .ch-ok{display:none;color:var(--color-success);font-weight:700;font-size:var(--text-xs)}
+.ch-form.is-sent .ch-ok{display:block}
+.ch-chips{display:flex;gap:8px;overflow-x:auto;padding:10px 16px 0;scrollbar-width:none}
+.ch-chips button{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:var(--radius-lg);border:1.5px solid var(--color-line);background:var(--color-surface);color:var(--color-brand);font:700 var(--text-xs) var(--font-text);cursor:pointer;white-space:nowrap}
+.ch-foot{display:grid;gap:8px;padding:8px 16px calc(12px + env(safe-area-inset-bottom));background:var(--color-surface);border-top:1px solid var(--color-line)}
+.ch-in{display:flex;gap:8px}
+.ch-in input{flex:1 1 auto;min-width:0;font:inherit;font-size:16px;min-height:48px;padding:0 14px;border:1.5px solid var(--color-control);border-radius:var(--radius-lg);background:var(--color-surface);color:var(--color-ink)}
+.ch-in button{flex:0 0 auto;min-width:48px;min-height:48px;padding:0 16px;border-radius:var(--radius-lg);border:0;background:var(--color-brand);color:var(--color-on-brand);font:700 var(--text-sm) var(--font-text);cursor:pointer}
+.ch-typing{justify-self:start;display:inline-flex;gap:4px;padding:12px 14px}
+.ch-typing i{width:7px;height:7px;border-radius:50%;background:var(--color-brand-soft);opacity:.6}
+@media (prefers-reduced-motion: reduce){.ch-panel,.ch-bubble{transition:none}}
+body.ch-lock{overflow:hidden}

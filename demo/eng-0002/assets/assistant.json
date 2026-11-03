@@ -1,0 +1,288 @@
+{
+ "version": 1,
+ "written": "2026-11-02",
+ "engagement": "eng-0002",
+ "about": "The one file the shop maintains for the chat assistant on the home page. facts: what the assistant may state, each with its status (published = the shop says so today; disputed = the shop’s own pages disagree; proposed = in the plan, not confirmed; example = a stand-in). Menu items and prices come from assets/menu.json, never from here. Change a fact here and the assistant says the new thing on the next load.",
+ "endpoint": null,
+ "endpoint_note": "Set window.CHEF_CHAT_ENDPOINT on the page (or endpoint here) to a Worker URL and the widget POSTs {message, history, page, bag} and expects {reply, actions, cites}; every answer still passes the engine’s guard (no price, time or item outside the records). Without it, the rules in the browser answer.",
+ "strings": {
+  "title": "Need help? We are glad to help!",
+  "disclosure": "Automated assistant: it answers from the shop’s own menu and pages. A person reads any message you leave for the kitchen. No message text is stored here.",
+  "greeting": "Bonjour! Ask me about the case, prices, hours, ordering ahead, gluten-free, cakes, the class or the Thanksgiving box.",
+  "dont_know": "I do not know that yet; the shop can tell you. Leave a message for the kitchen, or call during opening hours.",
+  "handoff_title": "A person can help",
+  "leave_title": "Leave a message for the kitchen",
+  "leave_note": "This preview cannot send mail by itself: your message is kept on this device and the button opens your mail app with it filled in. In the new store it reaches the shop directly.",
+  "sent": "Saved on this device. Your mail app has the message ready to send.",
+  "placeholder": "Ask about the menu, hours, ordering…"
+ },
+ "chips": [
+  "Hours today",
+  "How do I order ahead?",
+  "Gluten-free?",
+  "Thanksgiving box",
+  "Custom cake",
+  "Macaron prices"
+ ],
+ "handoff": {
+  "order": {
+   "label": "Order now",
+   "href": "menu.html"
+  },
+  "call": {
+   "label": "Call",
+   "href": "tel:+16263651161",
+   "text": "626-365-1161"
+  },
+  "email": {
+   "label": "Email",
+   "href": "mailto:contact@id-eclair.com",
+   "text": "contact@id-eclair.com"
+  },
+  "directions": {
+   "label": "Directions",
+   "href": "https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105"
+  }
+ },
+ "facts": {
+  "address": {
+   "text": "169 W Green St, Old Pasadena, CA 91105, one door from La Cave at 163.",
+   "status": "published",
+   "source": "id-eclair.com footer and contact page",
+   "checked": "2026-11-02"
+  },
+  "plant_based": {
+   "text": "Everything is vegan: the first French vegan pastry shop in Los Angeles, no butter, milk or eggs anywhere in the case. La Cave next door is a vegan wine bar.",
+   "status": "published",
+   "source": "id-eclair.com About the shop",
+   "checked": "2026-11-02"
+  },
+  "hours_bakery": {
+   "text": "The shop’s contact page lists Tuesday 9 am to 3 pm and Wednesday to Sunday 6 am to 3 pm; its About page lists later closings, so please call 626-365-1161 to confirm today’s hours.",
+   "status": "disputed",
+   "source": "id-eclair.com/pages/contact and /pages/about-the-shop, read 28 Oct and 2 Nov 2026",
+   "checked": "2026-11-02"
+  },
+  "closed_mondays": {
+   "text": "Closed on Mondays.",
+   "status": "published",
+   "source": "id-eclair.com footer",
+   "checked": "2026-11-02"
+  },
+  "la_cave": {
+   "text": "La Cave is the same kitchen’s vegan wine bar next door at 163 W Green St: French, organic, biodynamic and vegan wines, small plates, Rebel Cheese boards and plated desserts paired with a glass. Open Wednesday to Sunday, 3 to 9 pm, as published on its own site (which gives 169 as the address; the shop confirms one).",
+   "status": "published",
+   "source": "agency/clients/id-eclair/research/brand.md, findings 20 and 21; operations.md, finding 2",
+   "checked": "2026-10-21"
+  },
+  "masterclass": {
+   "text": "The Macaron Masterclass is hands-on, Tuesdays 3:30 to 5:30 pm, $125 a seat, 20 to 30 macarons to take home; seats are very limited, and today it is booked with the shop.",
+   "status": "published",
+   "source": "live store Golden Ticket listing; classes.html",
+   "checked": "2026-11-02"
+  },
+  "class_cutoff": {
+   "text": "In the new store, seat sales close 48 hours before class.",
+   "status": "proposed",
+   "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, slots table",
+   "checked": "2026-10-22"
+  },
+  "golden_ticket": {
+   "text": "The Golden Ticket is a class pass with an organic chocolate tablet, $140 on the live store; the person who receives it arranges the date with the shop.",
+   "status": "published",
+   "source": "agency/clients/id-eclair/research/brand.md, finding 11; demo/assets/menu.json, golden-ticket",
+   "checked": "2026-10-22"
+  },
+  "custom_cake_notice": {
+   "text": "Custom cakes need one week’s notice, the shop’s own rule. Tell the chef the occasion, the guests and the flavour on the cakes page and get a sketch and a price back.",
+   "status": "published",
+   "source": "shop Instagram; cakes.html",
+   "checked": "2026-11-02"
+  },
+  "menu_cake_notice": {
+   "text": "Whole menu cakes need 48 hours.",
+   "status": "proposed",
+   "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, slots table",
+   "checked": "2026-10-22"
+  },
+  "wedding_cake_notice": {
+   "text": "Wedding cakes book four weeks out, by consultation.",
+   "status": "proposed",
+   "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, slots table",
+   "checked": "2026-10-22"
+  },
+  "bespoke_consult": {
+   "text": "Bespoke and wedding cakes start with a paid consultation, $50, credited to the cake, then a sketch and a quote, with the deposit and balance by Shopify invoice.",
+   "status": "proposed",
+   "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, the custom cake ladder",
+   "checked": "2026-10-22"
+  },
+  "cake_addons": {
+   "text": "A message plaque and candles are priced add-ons on menu cakes.",
+   "status": "proposed",
+   "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3, the custom cake ladder",
+   "checked": "2026-10-22"
+  },
+  "cake_estimate_rule": {
+   "text": "Price-from estimate for the concept: the smallest guest count for the size, at $15 a guest, the counter’s price for one individual mousse cake. The kitchen’s own price grid replaces it; the playbook lists that grid among the owners’ items.",
+   "status": "example",
+   "per_guest": 15,
+   "source": "demo/assets/menu.json, mousse-cake ($15, menu app 2026-10-21); agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 10 and owners’ checklist (cake sizes, flavours, price grid)",
+   "checked": "2026-10-22"
+  },
+  "cake_sizes": {
+   "text": "Example sizes for the concept, matching the shared cakes page: 6-inch for 4 to 6, 8-inch for 7 to 12, 10-inch for 13 to 20, two tiers for 21 to 40, three tiers planned with the chef.",
+   "status": "example",
+   "sizes": [
+    {
+     "id": "6",
+     "label": "6-inch",
+     "tiers": 1,
+     "min": 4,
+     "max": 6
+    },
+    {
+     "id": "8",
+     "label": "8-inch",
+     "tiers": 1,
+     "min": 7,
+     "max": 12
+    },
+    {
+     "id": "10",
+     "label": "10-inch",
+     "tiers": 1,
+     "min": 13,
+     "max": 20
+    },
+    {
+     "id": "2t",
+     "label": "Two tiers",
+     "tiers": 2,
+     "min": 21,
+     "max": 40
+    },
+    {
+     "id": "3t",
+     "label": "Three tiers",
+     "tiers": 3,
+     "min": 41,
+     "max": 80
+    }
+   ],
+   "source": "demo/cakes.html, size step (example sizes); agency/clients/id-eclair/research/client_references.md, findings 13 and 19",
+   "checked": "2026-10-22"
+  },
+  "pickup_lead": {
+   "text": "Choose a day and a time when you order and it is boxed for then. The live store today says orders are usually ready in 24 hours; in the new checkout same-day pickup opens 30 minutes after you order.",
+   "status": "proposed",
+   "source": "live store listings; plan section 4.3 for the 30 minutes",
+   "checked": "2026-11-02"
+  },
+  "box_of_six": {
+   "text": "Six macarons are $15 at the counter, and you choose the six. The assorted box on the live store is $18. Flavours on the shop’s listing: raspberry, pistachio, chocolate, coffee and coconut; the day’s bake decides what is in the case.",
+   "status": "published",
+   "source": "demo/assets/menu.json, macaron-box-6 and macarons; demo/assets/README.md, colour rules",
+   "checked": "2026-10-22"
+  },
+  "afternoon_tea": {
+   "text": "Tea party for two is $80 at the salon, with the chef’s selection of sweets and savouries; each extra guest is $40, while supplies last. It is booked ahead.",
+   "status": "published",
+   "source": "demo/assets/menu.json, tea-party-for-two (counter board, read 2026-10-22)",
+   "checked": "2026-10-22"
+  },
+  "gluten_board": {
+   "text": "The counter board marks the soup du jour as gluten-free, and the endive and grandmother beet salades as gluten-free without their crostini.",
+   "status": "published",
+   "source": "demo/assets/menu.json, gf flags and notes",
+   "checked": "2026-10-22"
+  },
+  "gluten_store": {
+   "text": "The live store labels these gluten free in a product title or tag: the assorted macarons, cannelés by 3, the four dessert jars and their discovery box, the chocolate fingers, the cookie spoons, both truffle boxes, the Kushyflakes and the large gift basket.",
+   "status": "published",
+   "handles": [
+    "macarons",
+    "caneles",
+    "chocolat-mon-amour",
+    "framboise-cherie",
+    "citron-ma-passion",
+    "caramel-je-taime",
+    "4-desserts-in-jar",
+    "chocolate-fingers-sables-poches",
+    "cookie-spoon",
+    "dark-chocolate-truffles",
+    "white-chocolate-truffles",
+    "kushyflakes",
+    "gift-basket-large"
+   ],
+   "source": "brain_state/clients/eng-0002/site_audit/products.json (the live store’s products.json, read 2026-10-22): store titles and tags",
+   "checked": "2026-10-22"
+  },
+  "gluten_caution": {
+   "text": "Gluten-free on a label means the shop’s own labelling; the kitchen also bakes croissants and baguettes. If it matters for your health, ask the counter before you order.",
+   "status": "published",
+   "source": "live store titles, counter board",
+   "checked": "2026-11-02"
+  },
+  "allergens": {
+   "text": "The shop has not published an allergen chart yet, so nothing here is promised nut-free: almonds are in the macarons, the jars’ streusel and the sablés, and the kitchen works with nuts, soy and wheat. Ask at the counter or leave a message with your allergy and the kitchen answers.",
+   "status": "published",
+   "source": "live store listings and the counter board; chart pending",
+   "checked": "2026-11-02"
+  },
+  "fees": {
+   "text": "The price on the menu is the price at checkout. No service fee; a tip line in the new checkout is optional.",
+   "status": "proposed",
+   "source": "plan section 4; the shop has not confirmed the tip line",
+   "checked": "2026-11-02"
+  },
+  "payment": {
+   "text": "Most major credit cards are accepted, as well as Google Pay and Apple Pay.",
+   "status": "published",
+   "source": "id-eclair.com FAQ, What payments are supported",
+   "checked": "2026-11-02"
+  },
+  "delivery": {
+   "text": "Today the shop delivers through Uber Eats, DoorDash and Grubhub, and the live store ships shelf items in the United States: standard shipping $19 to $25, 2 to 3 business days, no PO boxes, no international. Pickup at 169 W Green St is the way to get the case itself.",
+   "status": "published",
+   "source": "id-eclair.com About the shop and Shipping policy, read 2 Nov 2026",
+   "checked": "2026-11-02"
+  },
+  "gift_cards": {
+   "text": "Gift cards are planned for the new store: $25, $50, $100 and $150, no expiry and no fees, and under California law a balance under $10 is paid in cash on request. Today the Golden Ticket ($140, a masterclass seat) and the gift baskets are the gifts on the live store.",
+   "status": "proposed",
+   "source": "California Civil Code 1749.5; the amounts are an example until the shop confirms",
+   "checked": "2026-11-02"
+  },
+  "gift_note": {
+   "text": "In the build the gift note rides on the order as a Shopify cart note. In this preview it stays on your screen.",
+   "status": "proposed",
+   "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 3 (a gift note previewed as a card, with a send date)",
+   "checked": "2026-10-22"
+  },
+  "carnet": {
+   "text": "Le carnet, the proposed loyalty programme: 1 point per $1, 50 points take $3 off, a pastry or drink in your birthday month.",
+   "status": "proposed",
+   "source": "agency/clients/id-eclair/plan/PLAYBOOK_FINAL_2026-10-22.md, section 12",
+   "checked": "2026-10-22"
+  },
+  "parking": {
+   "text": "Street parking around Green Street is paid; there are outdoor tables and dogs are welcome, say the reviewers.",
+   "status": "published",
+   "source": "Yelp and Google reviews, read 21 Oct 2026",
+   "checked": "2026-11-02"
+  },
+  "holiday_preorder": {
+   "text": "The Thanksgiving box for two is on the live store, $100 to $185 by option, pickup only 11 to 26 November at 3 pm, ordered 48 hours ahead. Christmas boxes open when the kitchen posts them; order ahead and choose your pickup day.",
+   "status": "published",
+   "source": "id-eclair.com product listing, Thanksgiving box for 2, read 22 Oct 2026",
+   "checked": "2026-11-02"
+  },
+  "catering": {
+   "text": "For an office, a family table or a wedding: the cheese board for ten is $100 and the 600 g truffle box is $30 on the live store today; trays, printed cookies and bigger tables start with the catering request, and the kitchen answers with what it can make by then and a price.",
+   "status": "published",
+   "source": "live store listings; the request page is a concept",
+   "checked": "2026-11-02"
+  }
+ }
+}

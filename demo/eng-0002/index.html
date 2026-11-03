@@ -379,6 +379,7 @@
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/seasons.css">
+<link rel="stylesheet" href="assets/chat.css">
 <!-- season:start -->
 <script>/* Season layer, 28 Oct 2026. Loaded synchronously in <head> so the look is set before first paint (about 1 KB,
    no fetch). ?season=<id> previews a look; otherwise the window that holds today's Pasadena date, shortest window
@@ -401,6 +402,8 @@
 })();</script>
 <!-- season:end -->
 <script src="assets/app.js" defer></script>
+<script src="options/11-concierge/concierge-core.js" defer></script>
+<script src="assets/chat.js" defer></script>
 <style>
 /* index.html only: the home page told as one day on Green Street.
    Six chapters: the vitrine, the hands, the ritual, the salon, the evening, the invitation.
@@ -645,24 +648,6 @@
   .vc,.vc::after,.vc-mark,.door,.door-go{transition:none;}
   .door:hover,.door:hover .door-go{transform:none}
   .bar,html.os-on .bar{transition:none}
-}
-
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
 }
 </style>
 </head>
@@ -1034,6 +1019,8 @@ article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .
   </div>
   <button class="cartpill" type="button" data-cart-open data-cart-pill><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg><span data-cart-summary>0 items</span><b data-cart-total>$0.00</b></button>
 </footer>
+
+<div data-chef-chat data-src="assets/assistant.json"></div>
 
 <nav class="bar" aria-label="Sections">
   <a href="menu.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Menu</a>
