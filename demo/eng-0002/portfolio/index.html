@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f156b">
+<title>Working examples for 169 W Green St. A private portfolio.</title>
+<meta name="description" content="Working examples built for the plant-based pâtisserie at 169 W Green St, Old Pasadena: the home page, the order flow, six seasonal looks and three more pages, each opening in the live demo, shown on a phone and on a desktop.">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Presence with Purpose">
+<meta property="og:title" content="Working examples for 169 W Green St">
+<meta property="og:description" content="The home page, the order flow, six seasonal looks and three more pages, on a phone and on a desktop. A private preview.">
+<meta property="og:url" content="https://purposewithpresence.com/demo/eng-0002/portfolio/">
+<meta property="og:image" content="https://purposewithpresence.com/demo/eng-0002/portfolio/shots/home-maison-desk.jpg">
+<meta property="og:image:alt" content="The demo home page on a desktop">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/seasons.css">
+<!-- season:start -->
+<script>/* Season layer, 28 Oct 2026. Loaded synchronously in <head> so the look is set before first paint (about 1 KB,
+   no fetch). ?season=<id> previews a look; otherwise the window that holds today's Pasadena date, shortest window
+   first; otherwise maison. The window table between the markers is written from assets/seasons.json by
+   tools/regen_static.py (run it or --check before every publish). In the Shopify build the same table is a
+   metaobject read in Liquid and one theme setting (Season: Auto or a named look). */
+(function () {
+  var T = /*SEASONS:START*/{"ids":["maison","toussaint","thanksgiving","noel","valentine","paques"],"windows":[["toussaint","2026-10-17","2026-11-02"],["thanksgiving","2026-11-03","2026-11-26"],["noel","2026-11-27","2026-12-26"],["valentine","2027-02-01","2027-02-14"],["paques","2027-03-14","2027-03-28"],["toussaint","2027-10-16","2027-11-02"],["thanksgiving","2027-11-02","2027-11-25"],["noel","2027-11-26","2027-12-26"],["valentine","2028-02-01","2028-02-14"],["paques","2028-04-02","2028-04-16"]]}/*SEASONS:END*/, ids = T.ids || ['maison'], W = T.windows || [];
+  var q = /[?&]season=([a-z-]+)/.exec(location.search), want = q && q[1], pick = 'maison', preview = false;
+  if (want && ids.indexOf(want) >= 0) { pick = want; preview = true; }
+  else {
+    var o = {}, today;
+    try { new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; }); today = o.year + '-' + o.month + '-' + o.day; } catch (e) { today = new Date().toISOString().slice(0, 10); }
+    var best = null, len = Infinity;
+    for (var i = 0; i < W.length; i++) { var w = W[i]; if (w[1] <= today && today <= w[2]) { var d = Date.parse(w[2]) - Date.parse(w[1]); if (d < len) { len = d; best = w[0]; } } }
+    if (best) pick = best;
+  }
+  document.documentElement.setAttribute('data-season', pick);
+  window.IDE_SEASON = { id: pick, preview: preview };
+})();</script>
+<!-- season:end -->
+<link rel="stylesheet" href="portfolio.css">
+</head>
+<body class="pf">
+<a class="skip" href="#top">Skip to the content</a>
+
+<aside class="notice" aria-label="Private preview">
+  <div class="wrap"><b>Private preview.</b> <span>Working examples, captured 2 November 2026. Every link opens the live demo; nothing here takes a payment.</span><span class="more">Prices on the demo come from the shop’s own listings, read 21–22 October 2026.</span></div>
+</aside>
+
+<header class="pf-top">
+  <div class="wrap">
+    <a class="pf-logo" href="../index.html"><img src="../img/logo-wordmark.png" srcset="../img/logo-wordmark-200.webp 200w, ../img/logo-wordmark-400.webp 400w" sizes="64px" width="904" height="658" alt="iD Éclair"></a>
+    <nav class="pf-nav" aria-label="On this page">
+      <a href="#home">The home</a><a href="#flow">Ordering</a><a href="#looks">Six looks</a><a href="#more">Three more pages</a><a href="#confirm">To confirm</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="pf-hero" aria-labelledby="h1" data-grid-break>
+  <div class="wrap">
+    <p class="kick"><span>Working examples</span><span>169 W Green St</span><span>Phone and desktop</span></p>
+    <h1 id="h1">Your site for 169 W Green St, <em>working, on a phone and on a desk.</em></h1>
+    <p class="lead">Every example below is live: tap the button and it opens the page in the demo. The phone frames are captured at 390 pixels, the desktop frames at 1,440. Open this on your phone first; that is how most customers meet the shop.</p>
+    <div class="hero-actions">
+      <a class="btn btn-brand" href="../index.html" target="_blank" rel="noopener">Open the demo home</a>
+      <a class="link" href="#looks">See the six looks</a>
+    </div>
+  </div>
+</section>
+
+<section id="home" aria-labelledby="h-home">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="ix-moment"><b>1</b><span lang="fr">L’accueil</span></p>
+      <h2 id="h-home">The home page, as it stands today.</h2>
+      <p>The shop’s own cannelés fill the first phone screen, the pickup time is already chosen, and the first Add is one scroll away.</p>
+    </div>
+    <article class="pf-ex">
+  <div class="pf-exh"><h3>The home page</h3><p class="why">One hero element, one primary action in thumb reach, the shop’s own photograph on a quarter of the first screen. The calendar dresses it for the season below.</p><a class="btn btn-brand btn-sm" href="../index.html" target="_blank" rel="noopener">Open the home</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/home-maison-phone.jpg" width="390" height="844" alt="The home page on a phone: the headline over the tray of cannelés, the Order for pickup button beside the price" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/home-maison-desk.jpg" width="1200" height="750" alt="The home page on a desktop: headline on the left, the tray of cannelés on the right with the next pickup time" loading="lazy"></figure></div>
+</article>
+  </div>
+</section>
+
+<section id="flow" class="bg-white" aria-labelledby="h-flow">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="ix-moment"><b>2</b><span lang="fr">La commande</span></p>
+      <h2 id="h-flow">Pickup, Add, Pay: the strip that follows the thumb.</h2>
+      <p>Three numbered steps sit above the app bar on every page once the hero has scrolled away. Two items and a pickup time take six taps; live-store items go straight to the shop’s own checkout with the pickup day and time attached.</p>
+    </div>
+    <div class="flow">
+      <figure class="ph"><img src="shots/flow-strip-phone.jpg" width="390" height="844" alt="The pickup panel open above the strip: day chips, time chips, the earliest slot chosen" loading="lazy"><figcaption><b>1. Pickup</b> The day and time panel opens from the strip. Closed days and full slots say so.</figcaption></figure>
+      <figure class="ph"><img src="shots/flow-add-phone.jpg" width="390" height="844" alt="The cannelés added: the Add button has become a minus, one, plus stepper and the bag shows one item" loading="lazy"><figcaption><b>2. Add</b> Each Add says what goes in the bag at what price; the button turns into a stepper.</figcaption></figure>
+      <figure class="ph"><img src="shots/flow-bag-phone.jpg" width="390" height="844" alt="The strip with all three steps filled: pickup Tuesday 10:00, one item, pay nine dollars" loading="lazy"><figcaption><b>3. Pay</b> The total fills in; Pay opens the shop’s checkout with the slot as a cart attribute.</figcaption></figure>
+      <figure class="ph"><img src="shots/flow-foot-phone.jpg" width="390" height="844" alt="The footer: address, phone, the published hours with their date, and the order links" loading="lazy"><figcaption><b>Hours and the door</b> Address, phone and the published hours on every page, dated, with the map link.</figcaption></figure>
+    </div>
+    <figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/flow-menu-desk.jpg" width="1200" height="750" alt="The menu page on a desktop: category chips, the menu grid with photographs and prices, the strip docked under the header" loading="lazy"></figure>
+    <p class="note-sm pf-cap">The menu page on a desktop: 78 items with prices from the shop’s listings, the shop’s photographs where it has them, the strip docked under the header. <a href="../menu.html" target="_blank" rel="noopener">Open the menu</a>.</p>
+  </div>
+</section>
+
+<section id="looks" aria-labelledby="h-looks">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="ix-moment"><b>3</b><span lang="fr">Les saisons</span></p>
+      <h2 id="h-looks">Six looks, one calendar, the same checkout.</h2>
+      <p>A look moves the colours, puts one cookie-cutter shape behind the headline, writes one dated line in the hero and sets a seasonal shelf: items already on the menu, at the menu price. Layout, prices, hours and the bag never change. The calendar switches it; today it picks Halloween. Add <code>?season=noel</code> to any demo page to preview a look.</p>
+    </div>
+    <article class="pf-ex">
+  <div class="pf-exh"><p class="ix-moment"><b>M</b><span lang="fr">La maison</span></p><h3>Everyday</h3><p class="why">Ivory, indigo and the red heart. The default whenever no window is open.</p><a class="btn btn-brand btn-sm" href="../index.html?season=maison" target="_blank" rel="noopener">Open the La maison look</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/home-maison-phone.jpg" width="390" height="844" alt="The home page on a phone under the Everyday look" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/home-maison-desk.jpg" width="1200" height="750" alt="The home page on a desktop under the Everyday look" loading="lazy"></figure></div>
+</article><article class="pf-ex">
+  <div class="pf-exh"><p class="ix-moment"><b>T</b><span lang="fr">Halloween</span></p><h3>Halloween, 17 October to 2 November</h3><p class="why">Pumpkin orange where the heart sits, a black-cat cutter behind the headline, and a shelf of boxed chocolate for the bowl by the door.</p><a class="btn btn-brand btn-sm" href="../index.html?season=toussaint" target="_blank" rel="noopener">Open the Halloween look</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/home-toussaint-phone.jpg" width="390" height="844" alt="The home page on a phone under the Halloween, 17 October to 2 November look" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/home-toussaint-desk.jpg" width="1200" height="750" alt="The home page on a desktop under the Halloween, 17 October to 2 November look" loading="lazy"></figure><figure class="ph"><img src="shots/home-toussaint-shelf-phone.jpg" width="390" height="844" alt="The seasonal shelf on a phone under the Halloween, 17 October to 2 November look" loading="lazy"></figure></div>
+</article><article class="pf-ex">
+  <div class="pf-exh"><p class="ix-moment"><b>T</b><span lang="fr">Thanksgiving</span></p><h3>Thanksgiving, 3 to 26 November</h3><p class="why">Rust and amber, a falling-leaf cutter, and the box for two and the board for ten up front: both on the live store today.</p><a class="btn btn-brand btn-sm" href="../index.html?season=thanksgiving" target="_blank" rel="noopener">Open the Thanksgiving look</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/home-thanksgiving-phone.jpg" width="390" height="844" alt="The home page on a phone under the Thanksgiving, 3 to 26 November look" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/home-thanksgiving-desk.jpg" width="1200" height="750" alt="The home page on a desktop under the Thanksgiving, 3 to 26 November look" loading="lazy"></figure></div>
+</article><article class="pf-ex">
+  <div class="pf-exh"><p class="ix-moment"><b>N</b><span lang="fr">Noël</span></p><h3>Christmas, 27 November to 26 December</h3><p class="why">Pine green and a gold hairline, a snowflake cutter, and the gifts that are already wrapped: two baskets, the discovery box, white truffles.</p><a class="btn btn-brand btn-sm" href="../index.html?season=noel" target="_blank" rel="noopener">Open the Noël look</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/home-noel-phone.jpg" width="390" height="844" alt="The home page on a phone under the Christmas, 27 November to 26 December look" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/home-noel-desk.jpg" width="1200" height="750" alt="The home page on a desktop under the Christmas, 27 November to 26 December look" loading="lazy"></figure><figure class="ph"><img src="shots/home-noel-shelf-phone.jpg" width="390" height="844" alt="The seasonal shelf on a phone under the Christmas, 27 November to 26 December look" loading="lazy"></figure></div>
+</article><article class="pf-ex">
+  <div class="pf-exh"><p class="ix-moment"><b>V</b><span lang="fr">Saint-Valentin</span></p><h3>Valentine’s, 1 to 14 February</h3><p class="why">Heart red and claret, no pink, a heart-with-a-bite cutter, and the jars that already carry love-note names.</p><a class="btn btn-brand btn-sm" href="../index.html?season=valentine" target="_blank" rel="noopener">Open the Saint-Valentin look</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/home-valentine-phone.jpg" width="390" height="844" alt="The home page on a phone under the Valentine’s, 1 to 14 February look" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/home-valentine-desk.jpg" width="1200" height="750" alt="The home page on a desktop under the Valentine’s, 1 to 14 February look" loading="lazy"></figure><figure class="ph"><img src="shots/home-valentine-shelf-phone.jpg" width="390" height="844" alt="The seasonal shelf on a phone under the Valentine’s, 1 to 14 February look" loading="lazy"></figure></div>
+</article><article class="pf-ex">
+  <div class="pf-exh"><p class="ix-moment"><b>P</b><span lang="fr">Pâques</span></p><h3>Easter, the two weeks before Easter Sunday</h3><p class="why">Leaf green and butter yellow, a tulip cutter, chocolate to hide and biscuits to find.</p><a class="btn btn-brand btn-sm" href="../index.html?season=paques" target="_blank" rel="noopener">Open the Pâques look</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/home-paques-phone.jpg" width="390" height="844" alt="The home page on a phone under the Easter, the two weeks before Easter Sunday look" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/home-paques-desk.jpg" width="1200" height="750" alt="The home page on a desktop under the Easter, the two weeks before Easter Sunday look" loading="lazy"></figure><figure class="ph"><img src="shots/home-paques-shelf-phone.jpg" width="390" height="844" alt="The seasonal shelf on a phone under the Easter, the two weeks before Easter Sunday look" loading="lazy"></figure></div>
+</article>
+  </div>
+</section>
+
+<section id="more" class="bg-white" aria-labelledby="h-more">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="ix-moment"><b>4</b><span lang="fr">Trois pages de plus</span></p>
+      <h2 id="h-more">Three more pages, with real copy and real prices.</h2>
+      <p>Each one is a working page in the demo, not a mock-up. Forms draw their summary on the page; nothing is sent or charged from the preview.</p>
+    </div>
+    <article class="pf-ex">
+  <div class="pf-exh"><h3>Catering and group orders</h3><p class="why">The board for ten and the truffle box can be ordered today; trays and printed cookies start with a five-question request that becomes a draft order in the shop’s Shopify.</p><a class="btn btn-brand btn-sm" href="../catering.html" target="_blank" rel="noopener">Open catering</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/catering-phone.jpg" width="390" height="844" alt="The catering page on a phone: the cheese board for ten under the headline, Request a quote" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/catering-desk.jpg" width="1200" height="750" alt="The catering page on a desktop" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/catering-form-desk.jpg" width="1200" height="750" alt="The catering request form on a desktop, with the summary beside it" loading="lazy"></figure></div>
+</article>
+    <article class="pf-ex">
+  <div class="pf-exh"><h3>Gift cards and boxed gifts</h3><p class="why">An amount, a name, a line: the card is drawn as it is written and arrives by email now or on a chosen morning. The Golden Ticket, the basket and the four jars are on the live store today.</p><a class="btn btn-brand btn-sm" href="../gift-cards.html" target="_blank" rel="noopener">Open gift cards</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/gift-phone.jpg" width="390" height="844" alt="The gift card page on a phone: the Golden Ticket under the headline" loading="lazy"></figure><figure class="ph"><img src="shots/gift-card-phone.jpg" width="390" height="844" alt="The gift card form on a phone: four amounts, the name, the date" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/gift-desk.jpg" width="1200" height="750" alt="The gift card page on a desktop" loading="lazy"></figure></div>
+</article>
+    <article class="pf-ex">
+  <div class="pf-exh"><h3>The counter board</h3><p class="why">The board behind the counter, drawn from the same menu file as the website: a price changes in one place. Print it, or show it full screen on the shop’s own display.</p><a class="btn btn-brand btn-sm" href="../menu-board.html?board=1" target="_blank" rel="noopener">Open the board</a></div>
+  <div class="frames"><figure class="ph"><img src="shots/board-phone.jpg" width="390" height="844" alt="The counter board on a phone: éclairs and viennoiserie with dotted price leaders on indigo" loading="lazy"></figure><figure class="dk"><span class="dk-bar" aria-hidden="true"><i></i><i></i><i></i></span><img src="shots/board-desk.jpg" width="1200" height="750" alt="The counter board full screen on a desktop: nine groups in three columns" loading="lazy"></figure></div>
+</article>
+  </div>
+</section>
+
+<section id="confirm" aria-labelledby="h-confirm">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="ix-moment"><b>5</b><span lang="fr">À confirmer</span></p>
+      <h2 id="h-confirm">Six things only the shop can confirm.</h2>
+      <p>Everything else on these pages comes from the shop’s own listings, menu board and photographs.</p>
+    </div>
+    <ol class="pf-list">
+      <li><b>Hours.</b> The live site publishes two different sets (the contact page and the footer). The demo shows the contact page’s, dated; one set goes live.</li>
+      <li><b>Pickup slots.</b> How many orders a slot can take, the slot length, and the earliest pickup after an order. The demo uses example slots and a 30-minute lead.</li>
+      <li><b>Same-day or ahead.</b> Which case items are same-day, which need a day, and the cut-off dates for Thanksgiving and Christmas boxes.</li>
+      <li><b>Photographs.</b> Four of the six case cards on the home are typographic plates because there is no photograph yet of the éclairs, the Paris-Brest and the croissant. Six photographs on the blue plate finish the case.</li>
+      <li><b>Gift cards.</b> Whether the shop wants the digital card, and the amounts. The demo shows $25 to $150 as an example.</li>
+      <li><b>Delivery.</b> Pickup is the standard on every page. Whether Pasadena delivery is offered, and at what minimum, for the catering request.</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer class="pf-foot">
+  <div class="wrap">
+    <p>Built by <a href="https://purposewithpresence.com/" target="_blank" rel="noopener">Presence with Purpose</a>, a design and tech studio. A private preview for the shop at 169 W Green St; not the live store, not indexed.</p>
+  </div>
+</footer>
+</body>
+</html>

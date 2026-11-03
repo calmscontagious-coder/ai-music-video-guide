@@ -1,0 +1,42 @@
+/* portfolio/index.html only (2 November 2026). Tokens from ../assets/site.css; the season layer applies here too.
+   Device frames: a phone bezel (radius 36, 10 px edge) and a desktop window (radius 12, a three-dot bar). */
+body.pf{padding-bottom:0}
+.pf-top{border-bottom:1px solid var(--color-line);background:var(--color-canvas)}
+.pf-top .wrap{display:flex;align-items:center;gap:var(--sp-4);min-height:64px;flex-wrap:wrap}
+.pf-logo img{height:40px;width:auto}
+.pf-nav{display:flex;gap:var(--sp-2) var(--sp-4);flex-wrap:wrap;margin-left:auto;font-size:var(--text-sm);font-weight:700;color:var(--color-brand)}
+.pf-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;padding:0 4px;border-bottom:2px solid transparent}
+@media (hover: hover){.pf-nav a:hover{border-bottom-color:var(--color-brand)}}
+.pf-hero{position:relative;padding:var(--sp-8) 0 var(--sp-12)}
+.pf-hero h1{font-size:clamp(2.4rem,7vw,4.25rem);line-height:var(--leading-display);max-width:16ch}
+.pf-hero h1 em{font-style:italic;font-weight:600}
+.pf-hero .lead{max-width:52ch}
+.pf-ex{display:grid;gap:var(--sp-4);padding:var(--sp-6) 0;border-top:1px solid var(--color-line)}
+.pf-ex:first-of-type{border-top:0}
+.pf-exh{display:grid;gap:var(--sp-2);align-content:start;max-width:52ch}
+.pf-exh h3{font-size:var(--text-lg);font-weight:600;line-height:1.15}
+.pf-exh .why{color:var(--color-muted);font-size:var(--text-sm)}
+.pf-exh .btn{justify-self:start;margin-top:var(--sp-2)}
+.frames{display:grid;gap:var(--sp-4);grid-template-columns:repeat(auto-fit,minmax(240px,1fr));align-items:start}
+.frames .dk{grid-column:1 / -1}
+@media (min-width:900px){.pf-ex{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--sp-8)}.frames{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}.frames .dk{grid-column:auto}.frames .ph+.ph{grid-column:1}.frames .ph+.ph+.ph{grid-column:2}}
+.ph{margin:0;max-width:300px;justify-self:center;width:100%;border-radius:36px;padding:10px;background:var(--color-ink);box-shadow:var(--shadow-e3)}
+.ph img{display:block;width:100%;height:auto;border-radius:26px;background:var(--color-canvas)}
+.ph figcaption{color:var(--color-on-brand);font-size:var(--text-xs);padding:var(--sp-3) var(--sp-2) var(--sp-1);line-height:1.4}
+.ph figcaption b{display:block;color:var(--color-surface);font-size:var(--text-sm);margin-bottom:2px}
+.dk{margin:0;width:100%;border-radius:12px;overflow:hidden;background:var(--color-ink);box-shadow:var(--shadow-e3)}
+.dk-bar{display:flex;gap:6px;padding:8px 12px}
+.dk-bar i{width:10px;height:10px;border-radius:50%;background:var(--color-control)}
+.dk img{display:block;width:100%;height:auto;background:var(--color-canvas)}
+.flow{display:grid;gap:var(--sp-4);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:var(--sp-6)}
+.flow .ph{max-width:none}
+.pf-cap{margin-top:var(--sp-3);max-width:62ch}
+.pf-cap a{color:var(--color-brand)}
+.pf-list{margin:0;padding:0 0 0 1.4em;display:grid;gap:var(--sp-3);max-width:62ch}
+.pf-list li{padding-left:4px}
+.pf-list b{color:var(--color-brand)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:var(--color-canvas-deep);padding:1px 6px;border-radius:6px}
+.pf-foot{padding:var(--sp-8) 0;border-top:1px solid var(--color-line);font-size:var(--text-sm);color:var(--color-muted)}
+.pf-foot a{color:var(--color-brand)}
+.ix-moment{display:flex;align-items:baseline;gap:var(--sp-2);font-size:var(--text-sm);color:var(--color-muted);font-style:italic;font-family:var(--font-display)}
+.ix-moment b{font-style:normal;font-weight:600;color:var(--color-brand)}

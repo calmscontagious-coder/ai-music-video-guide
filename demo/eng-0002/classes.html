@@ -223,6 +223,28 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/nunito-sans-roman-latin.woff2">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/seasons.css">
+<!-- season:start -->
+<script>/* Season layer, 28 Oct 2026. Loaded synchronously in <head> so the look is set before first paint (about 1 KB,
+   no fetch). ?season=<id> previews a look; otherwise the window that holds today's Pasadena date, shortest window
+   first; otherwise maison. The window table between the markers is written from assets/seasons.json by
+   tools/regen_static.py (run it or --check before every publish). In the Shopify build the same table is a
+   metaobject read in Liquid and one theme setting (Season: Auto or a named look). */
+(function () {
+  var T = /*SEASONS:START*/{"ids":["maison","toussaint","thanksgiving","noel","valentine","paques"],"windows":[["toussaint","2026-10-17","2026-11-02"],["thanksgiving","2026-11-03","2026-11-26"],["noel","2026-11-27","2026-12-26"],["valentine","2027-02-01","2027-02-14"],["paques","2027-03-14","2027-03-28"],["toussaint","2027-10-16","2027-11-02"],["thanksgiving","2027-11-02","2027-11-25"],["noel","2027-11-26","2027-12-26"],["valentine","2028-02-01","2028-02-14"],["paques","2028-04-02","2028-04-16"]]}/*SEASONS:END*/, ids = T.ids || ['maison'], W = T.windows || [];
+  var q = /[?&]season=([a-z-]+)/.exec(location.search), want = q && q[1], pick = 'maison', preview = false;
+  if (want && ids.indexOf(want) >= 0) { pick = want; preview = true; }
+  else {
+    var o = {}, today;
+    try { new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; }); today = o.year + '-' + o.month + '-' + o.day; } catch (e) { today = new Date().toISOString().slice(0, 10); }
+    var best = null, len = Infinity;
+    for (var i = 0; i < W.length; i++) { var w = W[i]; if (w[1] <= today && today <= w[2]) { var d = Date.parse(w[2]) - Date.parse(w[1]); if (d < len) { len = d; best = w[0]; } } }
+    if (best) pick = best;
+  }
+  document.documentElement.setAttribute('data-season', pick);
+  window.IDE_SEASON = { id: pick, preview: preview };
+})();</script>
+<!-- season:end -->
 <script src="assets/app.js" defer></script>
 <style>
 /* classes.html only. Shared parts come from assets/site.css; everything here is scoped with cl- and uses its tokens. */
@@ -475,10 +497,11 @@ textarea.cl-input{min-height:88px;resize:vertical}
     <div class="cl-cal" id="cl-cal">
       <!-- wave H: four Tuesdays in the HTML, so the dates show without JavaScript; the script below redraws the live list -->
       <h3 class="cl-month" tabindex="-1">November 2026</h3><ul class="cl-list">
-        <li class="cl-ticket" data-key="2026-11-03"><div class="cl-stub" aria-hidden="true"><span class="cl-dow">Tue</span><b>3</b><span class="cl-mon">Nov</span></div><div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">Tue 3 Nov, </span>3:30 to 5:30 pm · $125.00 a seat</p><p class="cl-seats"><span class="cl-dots" aria-hidden="true"><i></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i></span><span>7 of 8 seats left</span></p></div><div class="cl-act"><a class="add" href="tel:+16263651161">Call to book</a></div></li>
         <li class="cl-ticket" data-key="2026-11-10"><div class="cl-stub" aria-hidden="true"><span class="cl-dow">Tue</span><b>10</b><span class="cl-mon">Nov</span></div><div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">Tue 10 Nov, </span>3:30 to 5:30 pm · $125.00 a seat</p><p class="cl-seats"><span class="cl-dots" aria-hidden="true"><i></i><i></i><i></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i></span><span>5 of 8 seats left</span></p></div><div class="cl-act"><a class="add" href="tel:+16263651161">Call to book</a></div></li>
         <li class="cl-ticket" data-key="2026-11-17"><div class="cl-stub" aria-hidden="true"><span class="cl-dow">Tue</span><b>17</b><span class="cl-mon">Nov</span></div><div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">Tue 17 Nov, </span>3:30 to 5:30 pm · $125.00 a seat</p><p class="cl-seats"><span class="cl-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i class="open"></i><i class="open"></i><i class="open"></i></span><span>3 of 8 seats left</span></p></div><div class="cl-act"><a class="add" href="tel:+16263651161">Call to book</a></div></li>
         <li class="cl-ticket" data-key="2026-11-24"><div class="cl-stub" aria-hidden="true"><span class="cl-dow">Tue</span><b>24</b><span class="cl-mon">Nov</span></div><div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">Tue 24 Nov, </span>3:30 to 5:30 pm · $125.00 a seat</p><p class="cl-seats"><span class="cl-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="open"></i></span><span>1 of 8 seats left</span></p></div><div class="cl-act"><a class="add" href="tel:+16263651161">Call to book</a></div></li>
+      </ul><h3 class="cl-month" tabindex="-1">December 2026</h3><ul class="cl-list">
+        <li class="cl-ticket" data-key="2026-12-01"><div class="cl-stub" aria-hidden="true"><span class="cl-dow">Tue</span><b>1</b><span class="cl-mon">Dec</span></div><div class="cl-body"><p><strong>Macaron Masterclass</strong></p><p class="cl-when"><span class="sr">Tue 1 Dec, </span>3:30 to 5:30 pm · $125.00 a seat</p><p class="cl-seats"><span class="cl-dots" aria-hidden="true"><i></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i><i class="open"></i></span><span>7 of 8 seats left</span></p></div><div class="cl-act"><a class="add" href="tel:+16263651161">Call to book</a></div></li>
       </ul>
     </div>
     <button class="btn btn-ghost btn-sm cl-more" type="button" data-cl-more hidden>Show four more Tuesdays</button>
@@ -633,6 +656,7 @@ textarea.cl-input{min-height:88px;resize:vertical}
       <img class="foot-logo" src="img/logo-wordmark.png" srcset="img/logo-wordmark-200.webp 200w, img/logo-wordmark-400.webp 400w, img/logo-wordmark.png 904w" sizes="56px" width="904" height="658" alt="iD Éclair" loading="lazy">
       <p class="foot-about foot-addr"><a href="https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105" target="_blank" rel="noopener">169 W Green St, Pasadena, CA 91105</a>, Old Pasadena. La Cave next door at 163. Concept preview, not the live store.</p>
       <ul class="foot-meta" aria-label="Contact and policies"><li><a href="tel:+16263651161">626-365-1161</a></li><li><a href="https://www.id-eclair.com/pages/contact" target="_blank" rel="noopener">Hours and contact</a></li><li><a href="https://www.id-eclair.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a></li></ul>
+      <p class="foot-hours"><b>Hours</b> Tue 9 am to 3 pm · Wed to Sun 6 am to 3 pm · Mon closed. <small>As published on <a href="https://www.id-eclair.com/pages/contact" target="_blank" rel="noopener">id-eclair.com</a>, read 28 Oct 2026; the chef confirms before launch.</small></p>
     </div>
     <div><h3>Order</h3><ul><li><a href="menu.html">Menu and pickup</a></li><li><a href="index.html#box">Box of six</a></li><li><a href="cakes.html">Cakes</a></li></ul></div>
     <div><h3>Visit</h3><ul><li><a href="classes.html" aria-current="page">Masterclass</a></li><li><a href="la-cave.html">La Cave</a></li><li><a href="story.html">Chef Romy</a></li></ul></div>

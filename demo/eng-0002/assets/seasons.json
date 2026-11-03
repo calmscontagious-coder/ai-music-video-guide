@@ -1,0 +1,275 @@
+{
+ "version": 1,
+ "generated": "2026-10-28",
+ "engagement": "eng-0002",
+ "time_zone": "America/Los_Angeles",
+ "how_it_picks": "With ?season=<id> in the URL the page previews that look. Otherwise the look whose window holds the current Pasadena date; overlapping windows go to the shortest; with no window open, maison.",
+ "what_a_look_may_change": "Colour variables (accent, canvas, hairline, notice ground), one decorative motif layer on the hero, the dated greeting line in the hero, and the seasonal shelf on the home page: a selection of items already on the menu at their menu prices. Never a new product, a changed price, hours, layout or buying copy. Ruling 2 of 25 Oct 2026 kept; the shelf is curation, not a new product set.",
+ "how_owners_switch": "In the build: one theme setting (Theme settings > Season: Auto, or a named look) read by Liquid, so nothing flashes and a look reverts when its window closes. In this concept: assets/season.js reads the same windows before first paint.",
+ "generated_files": "tools/regen_static.py writes assets/seasons.css and the window table inside assets/season.js from this file; run it (or --check) before every publish.",
+ "seasons": [
+  {
+   "id": "maison",
+   "name": {
+    "fr": "La maison",
+    "en": "Everyday"
+   },
+   "windows": {},
+   "rule": "The default whenever no other window is open.",
+   "moves": {
+    "accent": "#e02030",
+    "canvas": "#faf7f2",
+    "hairline": "#a8833f",
+    "notice": "#120052"
+   },
+   "motif_from": null,
+   "greeting": null,
+   "shelf": null
+  },
+  {
+   "id": "toussaint",
+   "name": {
+    "fr": "Halloween et Toussaint",
+    "en": "Halloween"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-10-17",
+      "end": "2026-11-02"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-10-16",
+      "end": "2027-11-02"
+     }
+    ]
+   },
+   "rule": "Two weeks before 31 October through All Saints’ Day, 1 November, and the day after.",
+   "moves": {
+    "accent": "#b4460b",
+    "canvas": "#f7f0e4",
+    "hairline": "#6f6253",
+    "notice": "#1b1430"
+   },
+   "motif_from": "options/10-fete/skins/halloween.css",
+   "motif_name": "black cat cookie cutter, direction 10",
+   "greeting": {
+    "text": "Halloween week at the case, through 2 November",
+    "lang": "en"
+   },
+   "shelf": {
+    "kicker": "Pour Halloween",
+    "title": "Chocolate for the bowl by the door.",
+    "note": "Boxed chocolate from the shelf, at the menu price, until 2 November. Order ahead and it is at the counter for your time.",
+    "handles": [
+     "dark-chocolate-truffles",
+     "dubai-chocolate-vegan",
+     "kushyflakes",
+     "macarons"
+    ]
+   }
+  },
+  {
+   "id": "thanksgiving",
+   "name": {
+    "fr": "Thanksgiving",
+    "en": "Thanksgiving"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-11-03",
+      "end": "2026-11-26"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-11-02",
+      "end": "2027-11-25"
+     }
+    ]
+   },
+   "rule": "From the day after All Souls’ to Thanksgiving Thursday.",
+   "moves": {
+    "accent": "#a4461a",
+    "canvas": "#faf3e8",
+    "hairline": "#b07a3a",
+    "notice": "#2b1a10"
+   },
+   "motif_from": "options/10-fete/skins/thanksgiving.css",
+   "motif_name": "leaf cookie cutter, direction 10",
+   "greeting": {
+    "text": "Thanksgiving orders: the box for two is on the live store",
+    "lang": "en"
+   },
+   "shelf": {
+    "kicker": "Pour Thanksgiving",
+    "title": "The table, from the shelf.",
+    "note": "The Thanksgiving box for two and the board for ten are on the live store today; the jars finish the table. Pickup only.",
+    "handles": [
+     "thanksgiving-box-for-2",
+     "cheese-board",
+     "4-desserts-in-jar",
+     "dark-chocolate-truffles"
+    ]
+   }
+  },
+  {
+   "id": "noel",
+   "name": {
+    "fr": "Noël",
+    "en": "Christmas"
+   },
+   "windows": {
+    "2026": [
+     {
+      "start": "2026-11-27",
+      "end": "2026-12-26"
+     }
+    ],
+    "2027": [
+     {
+      "start": "2027-11-26",
+      "end": "2027-12-26"
+     }
+    ]
+   },
+   "rule": "From the day after Thanksgiving to Boxing Day.",
+   "moves": {
+    "accent": "#1e6b47",
+    "canvas": "#f7f8f4",
+    "hairline": "#b49a4c",
+    "notice": "#0f2e20"
+   },
+   "motif_from": "options/10-fete/skins/noel.css",
+   "motif_name": "snowflake cookie cutter, direction 10",
+   "greeting": {
+    "text": "Gifts from Green Street, boxed for pickup through 24 December",
+    "lang": "en"
+   },
+   "shelf": {
+    "kicker": "Pour Noël",
+    "title": "Gifts that are already wrapped.",
+    "note": "Two baskets, the discovery box and white truffles, all on the live store at the menu price. Choose a pickup day; the shelf is boxed for then.",
+    "handles": [
+     "gift-basket-large",
+     "gift-basket-small",
+     "4-desserts-in-jar",
+     "white-chocolate-truffles"
+    ]
+   }
+  },
+  {
+   "id": "valentine",
+   "name": {
+    "fr": "Saint-Valentin",
+    "en": "Valentine’s"
+   },
+   "windows": {
+    "2027": [
+     {
+      "start": "2027-02-01",
+      "end": "2027-02-14"
+     }
+    ],
+    "2028": [
+     {
+      "start": "2028-02-01",
+      "end": "2028-02-14"
+     }
+    ]
+   },
+   "rule": "The first two weeks of February.",
+   "moves": {
+    "accent": "#c1121f",
+    "canvas": "#fbf6f1",
+    "hairline": "#8c1c2b",
+    "notice": "#3a0a10"
+   },
+   "motif_from": "options/10-fete/skins/valentine.css",
+   "motif_name": "heart-with-a-bite cookie cutter, direction 10",
+   "greeting": {
+    "text": "Love notes in a jar, for pickup on the 14th",
+    "lang": "en"
+   },
+   "shelf": {
+    "kicker": "Pour la Saint-Valentin",
+    "title": "The jars already say it.",
+    "note": "Caramel je t’aime, Chocolat mon amour and Framboise chérie carry the shop’s own love-note names, at $8.00 each on the live store; the macaron box makes four.",
+    "handles": [
+     "caramel-je-taime",
+     "chocolat-mon-amour",
+     "framboise-cherie",
+     "macarons"
+    ]
+   }
+  },
+  {
+   "id": "paques",
+   "name": {
+    "fr": "Pâques",
+    "en": "Easter"
+   },
+   "windows": {
+    "2027": [
+     {
+      "start": "2027-03-14",
+      "end": "2027-03-28"
+     }
+    ],
+    "2028": [
+     {
+      "start": "2028-04-02",
+      "end": "2028-04-16"
+     }
+    ]
+   },
+   "rule": "The two weeks up to Easter Sunday (28 March 2027, 16 April 2028).",
+   "moves": {
+    "accent": "#3f7d4e",
+    "canvas": "#f8f8ef",
+    "hairline": "#c9a227",
+    "notice": "#15301d"
+   },
+   "motif_from": "options/10-fete/skins/printemps.css",
+   "motif_name": "tulip cookie cutter, direction 10",
+   "greeting": {
+    "text": "Easter week: chocolate from the shelf, cannelés from the tray",
+    "lang": "en"
+   },
+   "shelf": {
+    "kicker": "Pour Pâques",
+    "title": "Chocolate to hide, biscuits to find.",
+    "note": "Two truffle boxes, the diamants and the cookie spoons, all on the live store at the menu price. Order ahead for Saturday and it is boxed for the hunt.",
+    "handles": [
+     "dark-chocolate-truffles",
+     "white-chocolate-truffles",
+     "diamants-biscuit-by-6",
+     "cookie-spoon"
+    ]
+   }
+  }
+ ],
+ "shelf_images": {
+  "note": "the shop's own 800 px photograph for each shelf item (standard 4.1); tools/regen_static.py --check fails if one is missing",
+  "by_handle": {
+   "dark-chocolate-truffles": "img/dark-chocolate-truffles-800.jpg",
+   "dubai-chocolate-vegan": "img/dubai-chocolate-vegan-800.jpg",
+   "kushyflakes": "img/kushyflakes-800.jpg",
+   "macarons": "img/macarons-2-800.jpg",
+   "thanksgiving-box-for-2": "img/thanksgiving-box-for-2-800.jpg",
+   "cheese-board": "img/cheese-board-1-800.jpg",
+   "4-desserts-in-jar": "img/4-desserts-in-jar-800.jpg",
+   "gift-basket-large": "img/gift-basket-large-800.jpg",
+   "gift-basket-small": "img/gift-basket-small-800.jpg",
+   "white-chocolate-truffles": "img/white-chocolate-truffles-800.jpg",
+   "caramel-je-taime": "img/caramel-je-taime-800.jpg",
+   "chocolat-mon-amour": "img/chocolat-mon-amour-800.jpg",
+   "framboise-cherie": "img/framboise-cherie-800.jpg",
+   "diamants-biscuit-by-6": "img/diamants-biscuit-by-6-800.jpg",
+   "cookie-spoon": "img/cookie-spoon-800.jpg"
+  }
+ }
+}

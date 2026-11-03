@@ -627,6 +627,43 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
   }
 
+
+  /* ---------- season layer (28 Oct 2026): assets/season.js set data-season before paint; this fills the dated
+     greeting and the home's seasonal shelf from assets/seasons.json. The shelf is curation: items already in
+     menu.json at their menu prices, never a new product (ruling 2 of 25 Oct 2026). Maison shows neither. ---------- */
+  function initSeason() {
+    var id = document.documentElement.getAttribute('data-season') || 'maison';
+    var greet = $('[data-season-greeting]'), shelf = $('[data-season-shelf]');
+    if (!greet && !shelf) return;
+    if (id === 'maison') return;
+    fetch('assets/seasons.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (data) {
+      var s = data.seasons.filter(function (x) { return x.id === id; })[0];
+      if (!s) return;
+      if (greet && s.greeting) { greet.textContent = s.greeting.text; if (s.greeting.lang) greet.setAttribute('lang', s.greeting.lang); greet.classList.add('is-on'); }
+      if (!shelf || !s.shelf) return;
+      return fetch(shelf.getAttribute('data-src') || 'assets/menu.json').then(function (r) { return r.json(); }).then(function (menu) {
+        var items = s.shelf.handles.map(function (h) { return menu.items.filter(function (i) { return i.handle === h && !i.hidden; })[0]; }).filter(Boolean);
+        if (!items.length) return;
+        $('[data-season-kicker]', shelf).textContent = s.shelf.kicker;
+        $('[data-season-title]', shelf).textContent = s.shelf.title;
+        $('[data-season-note]', shelf).textContent = s.shelf.note;
+        var pics = (data.shelf_images && data.shelf_images.by_handle) || {};
+        $('[data-season-items]', shelf).innerHTML = items.map(function (i) { return shelfCard(i, pics[i.handle]); }).join('');
+        enhanceAdds(shelf); syncAdds();
+        shelf.classList.add('is-on');
+      });
+    }).catch(function () { /* no season file: the page stays as it is */ });
+  }
+  function shelfCard(i, own) {
+    var src = own || i.image;
+    var pic = src ? '<img src="' + esc(src) + '" width="800" height="800" sizes="(min-width:1000px) 260px, 300px" alt="' + esc(i.title) + '" loading="lazy">' : '<div class="tile" aria-hidden="true">' + esc(i.glyph || i.title.charAt(0)) + '<small>' + esc(i.label || '') + '</small></div>';
+    var vs = (i.variants || []).map(function (v) { return +v.price; }), lo = vs.length ? Math.min.apply(null, vs) : i.price, hi = vs.length ? Math.max.apply(null, vs) : i.price;
+    var act, price = lo === hi ? money(i.price) : 'From ' + money(lo);
+    if (i.needs_choice && lo !== hi) act = '<a class="add" href="' + esc(i.url) + '" target="_blank" rel="noopener">Choose</a>';
+    else act = '<button class="add" type="button" data-add data-handle="' + esc(i.handle) + '" data-title="' + esc(i.title) + '" data-price="' + i.price + '"' + (i.variantId ? ' data-variant="' + esc(i.variantId) + '"' : '') + (i.image ? ' data-image="' + esc(src) + '"' : ' data-glyph="' + esc(i.glyph || '') + '"') + '>Add</button>';
+    return '<figure>' + pic + '<figcaption><span>' + esc(i.title) + '</span><span class="price">' + price + '</span></figcaption><p class="meta">' + esc(i.desc || '') + '</p><div class="row"><span class="from">' + (i.variantId ? 'On the live store' : 'At the counter') + '</span>' + act + '</div></figure>';
+  }
+
   /* ---------- boot ---------- */
   buildDrawer();
   enhanceAdds(document);
@@ -636,6 +673,7 @@
   initBar();
   initStrip();
   initHeroCta();
+  initSeason();
   renderAll();
 
   window.IDE = { add: add, addSet: addSet, setQty: setQty, clear: clear, open: openBag, close: closeBag, state: snapshot, checkoutUrl: checkoutUrl, renderMenu: renderMenu, slot: function () { var s = slot(); return { date: s.day && s.day.key, time: s.time, label: slotText(s) }; } };
