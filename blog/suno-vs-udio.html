@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Suno vs Udio in 2026: Which One Should You Use Now?", "description": "Suno vs Udio, October 2026: Suno retired every pre-v6 model and caps downloads at 20 or 60 a month. Udio still cannot export. Prices and rights, verified.", "wordCount": 2586, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/suno-vs-udio.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I download songs from Udio in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "No. Udio switched off downloads of audio, video and stems on October 29, 2025, the day it settled with Universal, and its help center still lists them as disabled in October 2026. The only exception was a 48-hour window in early November 2025. The coming Starstruck app is designed so creations never leave it, so exports are not expected back."}}, {"@type": "Question", "name": "How many songs can I download from Suno each month?", "acceptedAnswer": {"@type": "Answer", "text": "Pro allows 20 downloads a month and Premier 60, counted per song: re-downloads, extra formats and stems do not use another download. Unused downloads do not roll over. Free accounts opened before September 3, 2026 have up to 7 lifetime trial downloads with no commercial rights. Premier users working inside Suno Studio have no download cap. Reviewers report extra downloads at $2.99 each; Suno lists no price."}}, {"@type": "Question", "name": "Can I still use Suno v5 or v5.5?", "acceptedAnswer": {"@type": "Answer", "text": "No. Suno retired every model before v6 when v6 launched on September 9, 2026, and nothing older appears in the model picker. Songs you already made stay in your library, playable and shareable, and you can still extend, cover or remix them, but those operations now run on v6, so the result can sound different from the original."}}, {"@type": "Question", "name": "Do I own the music I make with Suno, and can I use it commercially?", "acceptedAnswer": {"@type": "Answer", "text": "On Pro or Premier, Suno assigns you all of its rights in the song, and commercial use attaches to each permitted download and survives cancellation. Suno's terms also say it makes no warranty that copyright will vest in any output, so add human authorship: write the lyrics yourself and keep drafts. Free-tier songs and trial downloads are personal use only."}}, {"@type": "Question", "name": "Is Udio worth paying for right now?", "acceptedAnswer": {"@type": "Answer", "text": "Only as a listening tool. Standard at $10 and Pro at $30 a month buy 2,400 or 6,000 credits of high-fidelity generation you can play and share on Udio but never download. If you want to release music, the same money on Suno buys a real export path. If you want to remix major-label songs as a fan, wait for Starstruck."}}, {"@type": "Question", "name": "Is Suno still being sued?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, twice by Universal and Sony in Boston federal court: the original 2024 case over 560 recordings and a second complaint filed September 18, 2026 over 60,202 recordings, which argues v6 was trained on the outputs of the earlier, unlicensed models. Warner settled in November 2025. Musicians, SOCAN and Round Hill have filed separate suits. No court has ruled on fair use yet."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › Suno vs Udio</p>
 <h1>Suno vs Udio in 2026: Which One Should You Use Now?</h1>
@@ -150,7 +166,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>The headline prices are identical: $10 a month for the middle tier and $30 for the top tier, or $8 and $24 on annual billing. The difference is what the money buys: Suno's paid tiers include 20 or 60 downloads a month with commercial rights, and Udio's include none.</p>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Plan</th><th>Suno</th><th>Udio (legacy product)</th></tr></thead>
 <tbody>
 <tr><td>Free</td><td>$0. 50 credits a day. v6-mini only. No monthly downloads, no commercial rights; older accounts keep up to 7 lifetime trial downloads for personal use.</td><td>$0. 10 credits a day, 100 a month. Three full-length (2:10) songs a day, 4 songs at once. No downloads.</td></tr>
@@ -158,7 +174,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Top tier</td><td>Premier, $30 a month or $24 on annual billing. 10,000 credits. 60 downloads a month. Suno Studio with MIDI, effects, automation and plugins, with no download cap inside Studio. Three stem modes. 30-minute uploads.</td><td>Pro, $30 a month or $24 on annual billing ($288 a year). 6,000 credits. 10 songs at once. No downloads.</td></tr>
 <tr><td>Credit rules</td><td>Subscription credits do not roll over. Purchased top-ups never expire but need an active subscription. Extra downloads can be bought; Suno lists no price, and reviewers report $2.99 each.</td><td>Credits do not roll over. A la carte: 100 credits for $3, 1,000 for $25, never expire. Two credits per pair of 32-second clips, four per pair of 130-second songs.</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>(Sources: <a href="https://suno.com/pricing">Suno pricing</a>, <a href="https://help.suno.com/en/articles/13926209">Suno Help Center</a>, <a href="https://www.udio.com/pricing">Udio pricing</a>, <a href="https://help.udio.com/en/articles/10739134-credits-and-credit-limits">Udio Help Center</a>, all checked October 21, 2026.)</p>
 
@@ -200,7 +216,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>Suno for anything that leaves the app, Udio only for listening-grade sketches, and Starstruck, when it ships, for fan remixes you never intend to own. The Suno vs Udio verdict is a logistics verdict, not a taste verdict, because only Suno lets the file leave.</p>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Use case</th><th>Pick</th><th>Why</th></tr></thead>
 <tbody>
 <tr><td>Full songs with vocals you will release</td><td>Suno Pro or Premier</td><td>The only export path of the two. 20 or 60 downloads a month, commercial rights per download.</td></tr>
@@ -210,7 +226,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Remixing major-label songs as a fan</td><td>Wait for Starstruck</td><td>Built for exactly that. You will not own the output.</td></tr>
 <tr><td>Minimizing legal exposure</td><td>Neither cleanly</td><td>Udio is licensed but export-dead and still sued by Sony. Suno ships files under two live Universal and Sony cases.</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>A Starstruck launch date, an official price for Suno download top-ups, or a fair-use ruling in Boston could each rewrite a row of this table; check the sources below first.</p>
 
@@ -226,7 +242,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><a href="https://www.prnewswire.com/news-releases/universal-music-group-and-udio-announce-udios-first-strategic-agreements-for-new-licensed-ai-music-creation-platform-302599129.html">Universal Music Group and Udio press release</a>, October 29, 2025</li>
 <li><a href="https://www.musicbusinessworldwide.com/universal-and-sony-sue-suno-for-a-second-time-claiming-platforms-v6-models-are-the-fruit-of-the-same-poisoned-tree/">Music Business Worldwide, &ldquo;Universal and Sony sue Suno for a second time&rdquo;</a>, September 18, 2026</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -249,11 +265,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Sora Is Gone: What Musicians Should Use for Music Videos Now", "description": "The Sora shutdown is complete: app closed April 26, 2026, API gone September 24. What musicians should use for music videos now, with October 2026 prices.", "wordCount": 2568, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/is-sora-shut-down-what-musicians-use-now.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Sora completely shut down in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. OpenAI discontinued the Sora web and mobile apps on April 26, 2026 and removed the Sora API, including sora-2 and sora-2-pro, on September 24, 2026. OpenAI's deprecation table lists no replacement model, and the company told the BBC it is leaving video generation to focus on other work, including robotics."}}, {"@type": "Question", "name": "Can I still download my Sora videos?", "acceptedAnswer": {"@type": "Answer", "text": "As of late September 2026, OpenAI's help center still points to an Export button at sora.chatgpt.com/sunset, with an email sent when the archive is ready. OpenAI says all Sora data will be permanently deleted after any final export window closes, so export now and keep two copies. Exports are finished renders, not editable projects."}}, {"@type": "Question", "name": "What is the closest replacement for Sora for music videos?", "acceptedAnswer": {"@type": "Answer", "text": "For most musicians, Seedance 2.5. It generates 30-second clips in standard mode, up to 180 seconds in a beta long-video mode, and accepts up to 50 reference inputs including audio. Kling 4.0, launched globally on October 16, 2026, also makes 30-second clips and adds 10 keyframes for shot control; Veo 3.1 suits short polished moments."}}, {"@type": "Question", "name": "How much does it cost to make a 3-minute music video without Sora?", "acceptedAnswer": {"@type": "Answer", "text": "A 3-minute song is about 180 generated seconds. On Dreamina, Seedance 2.5 uses 37 credits per second at 720p, so one full pass needs about 6,660 credits before retakes, more than four times the 1,575 credits in the $0.29 US intro month offered from October 21, 2026. On Veo 3.1 Quality, 23 eight-second clips cost about 2,300 Flow credits, more than Google AI Pro's 1,000 monthly credits."}}, {"@type": "Question", "name": "Did Sora's Disney characters ever launch?", "acceptedAnswer": {"@type": "Answer", "text": "No. Disney announced a three-year licensing deal and a $1 billion investment in December 2025, but the BBC and TechCrunch both reported the partnership was wound down when Sora closed in March 2026, and Reuters reported that no money had changed hands. No current music video tool offers licensed Disney, Marvel or Star Wars characters."}}, {"@type": "Question", "name": "Can I get a refund for a Sora subscription or credits?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI directs refund questions to its standard ChatGPT subscription refund process, so eligibility follows those rules rather than a Sora-specific policy. OpenAI says purchased ChatGPT or Sora credits can still be used for Codex, its coding tool. Check your billing history before the account data is deleted."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › sora shutdown</p>
 <h1>Sora Is Gone: What Musicians Should Use for Music Videos Now</h1>
@@ -119,14 +135,14 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>The Sora shutdown ran in three steps:</p>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Date</th><th>What happened</th><th>Source</th></tr></thead>
 <tbody>
 <tr><td>March 24, 2026</td><td>OpenAI announced the closure on X ("We're saying goodbye to Sora") and gave API developers a six-month deprecation window</td><td>NBC News; OpenAI deprecations page</td></tr>
 <tr><td>April 26, 2026</td><td>Sora web app and iOS/Android apps discontinued, including Sora subscriptions</td><td>OpenAI Help Center</td></tr>
 <tr><td>September 24, 2026</td><td>Videos API and the sora-2, sora-2-pro and all dated snapshots removed from the API</td><td>OpenAI deprecations page</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>The reasons are documented, not rumored. OpenAI told the BBC it discontinued Sora to focus on other work, including robotics "that will help people solve real-world, physical tasks," and the BBC reported that the company will no longer focus on developing video-generation tools at all. The $1 billion Disney partnership that would have put Marvel and Star Wars characters in Sora was wound down at the same time; Reuters reported no money had changed hands.</p>
 
@@ -157,7 +173,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>Three tools cover the ground Sora left, and they are not interchangeable. Seedance 2.5 and Kling 4.0 both generate 30 seconds natively; Seedance adds a 180-second beta mode and up to 50 references, while Kling 4.0 adds up to 10 keyframes for shot control. Veo 3.1 fits only if you already pay for a Google AI plan and the song needs a handful of eight-second shots.</p>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Tool and model</th><th>Longest single clip</th><th>Native audio</th><th>Entry price we verified</th><th>Credits math</th><th>Weak spot for music videos</th></tr></thead>
 <tbody>
 <tr><td>Seedance 2.5 on Dreamina</td><td>30 seconds standard; 180 seconds in beta long-video mode</td><td>Yes, plus audio and video references (up to 50 inputs)</td><td>$0.29 first month in the US (98 percent off, from October 21, 2026) with 1,575 credits; listed renewal $15 a month (Dreamina Seedance price page, October 21, 2026)</td><td>Seedance 2.5 uses 37 credits per second at 720p, so the intro month covers about 42 seconds; a 180-second pass needs about 6,660 credits before retakes</td><td>Intro allowance covers well under one full song; earlier versions added their own subtitles and background music</td></tr>
@@ -165,7 +181,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Veo 3.1 in Google Flow</td><td>8 seconds (Quality); 4, 6 or 8 seconds (Fast and Lite)</td><td>Yes</td><td>Google AI Pro $19.99 per month with 1,000 Flow credits plus 50 free daily credits; Ultra from $99.99 per month with 10,000 credits (Google One US plans page and Flow Help, read October 21, 2026)</td><td>Veo 3.1 Quality is 100 credits per 8-second clip, so Pro buys about 10 Quality clips a month; Fast is 20 credits</td><td>The 8-second ceiling; 4K upscaling is Ultra-only at 50 credits; non-subscribers can be blocked from video during 2 PM to 5 PM UTC</td></tr>
 <tr><td>Sora 2 (OpenAI)</td><td>Discontinued</td><td>Was yes</td><td>None; app closed April 26, 2026, API closed September 24, 2026</td><td>Export only</td><td>Gone</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>Every price in that table came from the vendor's own page, read October 21, 2026. Dreamina's September offer ($1.50 first month, $0.035 per second) ended October 9, 2026, and Dreamina now files it as historical; the per-second figures on its pages are effective rates inside a promotional allowance, not renewal prices. Kling's blog is explicit that the discounted price applies to a first subscription only.</p>
 
@@ -226,7 +242,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><a href="https://kling.ai/blog/kling-video-3-0-credit-cost-guide">Kling AI: Kling 3.0 credit cost and plan table</a> (July 28, 2026), <a href="https://www.globenewswire.com/news-release/2026/10/16/3382484/0/en/kling-ai-launches-kling-40-globally-with-professional-grade-output-stable-motion-and-multimodal-control.html">Kling AI: Kling 4.0 global launch</a> (October 16, 2026) and <a href="https://kling.ai/blog/kling-4-ai-video-model">Kling AI: Inside Kling 4.0</a> (September 30, 2026)</li>
 <li><a href="https://support.google.com/flow/answer/16526234?hl=en">Google Flow Help: Manage your Google Flow credits</a> and <a href="https://one.google.com/intl/en_us/about/google-ai-plans">Google One: Google AI plans (US)</a> (both read October 21, 2026)</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -249,11 +265,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

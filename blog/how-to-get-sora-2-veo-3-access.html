@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Get Veo 3.1 Access: Flow, Gemini, AI Studio and Vids (2026)", "description": "Veo 3.1 access in 2026: Google Flow's 50 free daily credits, why the Gemini app switched to Omni, API prices, Vids free clips, and when an aggregator fits.", "wordCount": 2555, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/how-to-get-sora-2-veo-3-access.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Veo 3.1 free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Partly. Google Flow gives every account 50 credits a day, which covers five Veo 3.1 Lite clips or two Fast clips, but never a 100-credit Quality clip. Google Vids gives personal accounts 6 clips a month. The Gemini API has no free tier for Veo 3.1. Free Flow users also lose video generation during peak hours, roughly 2 PM to 5 PM UTC."}}, {"@type": "Question", "name": "Do I need Google AI Pro to use Veo 3.1 Quality in Flow?", "acceptedAnswer": {"@type": "Answer", "text": "You need some paid Google AI plan, because Quality costs 100 credits and the free allowance is 50 a day with no rollover. Google AI Plus adds 200 credits a month, enough for two Quality clips. Pro at $19.99 adds 1,000 credits, or 10 Quality clips, and turns on free 1080p upscaling. Ultra adds 10,000 or 25,000 credits and 4K upscaling."}}, {"@type": "Question", "name": "Why can't I pick Veo 3.1 in the Gemini app anymore?", "acceptedAnswer": {"@type": "Answer", "text": "Because Google replaced it. The Gemini video page says Gemini Omni 1.1 Flash now replaces the previous Veo 3.1 model in the app, and the help page describes video generation as an Omni feature. Omni makes 10-second clips with native audio and conversational edits. If you want Veo 3.1 specifically, open Google Flow and choose it there."}}, {"@type": "Question", "name": "How much does an 8-second Veo 3.1 clip cost through the API?", "acceptedAnswer": {"@type": "Answer", "text": "On the Gemini API pricing page dated October 1, 2026: Standard with audio is $0.40 a second at 720p or 1080p, so $3.20 per 8-second clip, and $0.60 a second at 4K, so $4.80. Fast is $0.80 per 8 seconds at 720p. Lite is $0.40 per 8 seconds at 720p. You need a paid-tier key; the free tier lists Veo 3.1 as not available."}}, {"@type": "Question", "name": "Does Veo 3.1 put a watermark on videos?", "acceptedAnswer": {"@type": "Answer", "text": "Videos made in the Gemini app carry SynthID, Google's imperceptible watermark, according to Google's video generation page, and you can ask Gemini to check a file for it. There is no visible logo stamped on the frame. Treat the invisible mark as permanent; it's meant to survive editing, and platforms are building detectors for it."}}, {"@type": "Question", "name": "Can I use Veo without a Google account?", "acceptedAnswer": {"@type": "Answer", "text": "Through an aggregator, yes. Seedance lists Google Veo 3, Veo 3.1 and Veo 3.1 Lite in its engine menu alongside Seedance 2, Kling and Wan. The free tier is 1 credit a day, and a Veo 3.1 Fast clip costs 10 credits, so plan on the Basic plan at $19.90 a month for 200 credits. You still need a Seedance account."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › Veo 3.1 access</p>
 <h1>How to Get Veo 3.1 Access: Flow, Gemini, AI Studio and Vids (2026)</h1>
@@ -121,7 +137,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>Here is how the routes compare, with the numbers from Google's help pages on October 21, 2026.</p>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Route</th><th>Who can use it</th><th>What it costs</th><th>Veo 3.1 variants</th><th>Best for</th></tr></thead>
 <tbody>
 <tr><td>Google Flow</td><td>Any Google account, 18+, in about 150 countries</td><td>50 free credits a day; AI plans add 200 to 25,000 a month</td><td>Lite, Fast, Quality, plus Extend</td><td>Short films, music video shots, scene extension</td></tr>
@@ -130,7 +146,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>AI Studio / Gemini API</td><td>Developers with a paid-tier API key</td><td>$0.05 to $0.60 per second of output</td><td>Standard, Fast, Lite</td><td>Automation, batch renders, custom apps</td></tr>
 <tr><td>Seedance (aggregator)</td><td>Anyone, any country the site serves</td><td>1 free credit a day; plans from $19.90 a month, or $9.90 a month billed yearly</td><td>Veo 3, Veo 3.1 and Veo 3.1 Lite in the engine menu; Veo 3.1 Fast 10 credits, Quality 75</td><td>One login for Veo 3.1, Seedance 2, Kling and Wan</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2>Is Veo 3.1 free in Google Flow?</h2>
 <p>Partly: Google's Flow help page says every account, subscribed or not, receives 50 Flow credits a day. A Veo 3.1 Lite clip costs 10 credits and a Fast clip costs 20, so a free account can make five Lite clips or two Fast clips daily. Veo 3.1 Quality costs 100 credits, which a 50-credit day never reaches, and daily credits don't roll over.</p>
@@ -155,7 +171,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>Here are the plan figures from Google's US plans page and the Flow credits page, October 21, 2026.</p>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Plan</th><th>Price</th><th>Extra Flow credits a month</th><th>Quality clips that buys</th><th>Fast clips that buys</th></tr></thead>
 <tbody>
 <tr><td>No plan</td><td>$0</td><td>0 (50 a day only)</td><td>0</td><td>2 a day</td></tr>
@@ -164,7 +180,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Google AI Ultra ($100 tier)</td><td>$99.99 a month, monthly billing only</td><td>10,000</td><td>100</td><td>1,000 (10 credits each)</td></tr>
 <tr><td>Google AI Ultra ($200 tier)</td><td>$199.99 a month, monthly billing only</td><td>25,000</td><td>250</td><td>2,500</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>Plus comes in two storage sizes. The US plans page lists Plus at $4.99 a month with 400 GB. The 2 TB version costs $9.99 and has carried the Plus name since <a href="https://9to5google.com/2026/06/08/google-ai-plus-price-drop">Google cut the Plus price on June 8, 2026</a>. Both carry the same 200 Flow credits. Google's Flow page says Plus members can buy top-up AI credits, while its Plus benefits page says they can't. We'd budget as if top-ups are Pro and Ultra only.</p>
 
@@ -235,7 +251,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><a href="https://support.google.com/docs/answer/15609411?hl=en">Google Vids Help: Availability of Gemini features in Vids</a> (per-plan clip and second limits; read October 21, 2026)</li>
 </ul>
 
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -258,11 +274,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

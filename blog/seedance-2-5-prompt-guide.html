@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Seedance 2.5 Prompt Guide for Music Videos: Formula and Prep (2026)", "description": "How to write Seedance 2.5 prompts for a music video: Dreamina's 8-part formula, reference roles, camera language, what to avoid, and a pre-render checklist.", "wordCount": 1590, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-10-30", "dateModified": "2026-10-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/seedance-2-5-prompt-guide.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long can one Seedance 2.5 clip be?", "acceptedAnswer": {"@type": "Answer", "text": "Dreamina's Seedance 2.5 guide, dated August 18, 2026, says the model renders a single native segment of up to 30 seconds, selectable in its interface alongside 9:16, 16:9 and 1:1 aspect ratios. A three-minute song therefore needs at least six clips. Check the duration menu on the platform you use, because PrompTessor notes that maximum duration varies by partner platform."}}, {"@type": "Question", "name": "Can I upload my whole song as the audio reference?", "acceptedAnswer": {"@type": "Answer", "text": "Not on Seedance 2.0, where InVideo's guide lists three audio references totalling 15 seconds or less. Dreamina's 2.5 prompt page raises the reference pool to 50 assets but does not publish a per-file audio length. Either way, cut the slice of the track that belongs to the clip you are rendering and name it to match the @Audio handle in your prompt."}}, {"@type": "Question", "name": "Are the Seedance 2.0 and 1.0 Pro prompt guides still useful for 2.5?", "acceptedAnswer": {"@type": "Answer", "text": "For vocabulary, yes. Atlabs' 1.0 Pro guide has the best list of shot types, camera moves, lens terms and cinematic verbs, and InVideo's 2.0 guide explains reference roles and why the opening words matter most. Treat their numbers as version-specific: the 3 to 12 second range, the 15-second audio total and the 3,000-character cap are 1.0 and 2.0 figures."}}, {"@type": "Question", "name": "How many camera moves should one shot have?", "acceptedAnswer": {"@type": "Answer", "text": "One. Dreamina's troubleshooting table says the camera ignores a move when it is buried under style language, and its fix is one move per shot with the shot size stated first. If a section needs two moves, split it into two timed beats inside the same 30-second prompt, or into two shots, and ask for the cut or match cut at a timecode."}}, {"@type": "Question", "name": "Should I ask Seedance to put the lyrics on screen?", "acceptedAnswer": {"@type": "Answer", "text": "No. Dreamina's guide lists unstable text and logos as a known failure, because the model has to redraw typography while everything moves, and its fix is to keep any mark front-facing in a locked frame. For a lyric video, render clean footage with Seedance and add the words in your editor, where they stay sharp and timed to the track."}}, {"@type": "Question", "name": "What do I change first when the singer's face drifts between shots?", "acceptedAnswer": {"@type": "Answer", "text": "Fix identity before anything else. Dreamina's advice is to name one primary reference image, list the fixed traits in the prompt, and repeat them at each major beat, with two or three portrait stills per lead attached. Only after the face holds should you touch shot structure, then camera, then style and audio, changing one layer per re-render."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">Try Free<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">Try Free<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › Seedance 2.5 prompt guide</p>
 <h1>Seedance 2.5 Prompt Guide for Music Videos: Formula and Prep (2026)</h1>
@@ -113,7 +129,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <h2>What is the Seedance 2.5 prompt formula?</h2>
 <p>Dreamina's eight-part order is format, subject, action, environment, camera, look, timing, then audio and constraints. Put the facts that cannot change first, describe motion and timing next, and finish with sound and the things the model must not do. InVideo's 2.0 formula and Atlabs' 1.0 Pro syntax are shorter versions of the same order, and all three put subject and action before style.</p>
-<table><thead><tr><th>Part of the prompt</th><th>What to write</th><th>Example for a music video shot</th></tr></thead><tbody>
+<div class="tscroll"><table><thead><tr><th>Part of the prompt</th><th>What to write</th><th>Example for a music video shot</th></tr></thead><tbody>
 <tr><td>1. Format</td><td>Duration, aspect ratio, shot count</td><td>30 seconds, 9:16, three connected shots</td></tr>
 <tr><td>2. Subject</td><td>Who or what, tied to a reference</td><td>The singer from @Image1, same black denim jacket and silver hoops</td></tr>
 <tr><td>3. Action</td><td>Visible movement with a start and an end</td><td>She walks from the back of the empty club to the mic stand and grips it on the downbeat</td></tr>
@@ -122,7 +138,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>6. Look</td><td>Lighting, palette, texture, realism level</td><td>Single hard backlight, teal shadows, red rim, 35mm grain</td></tr>
 <tr><td>7. Timing</td><td>Beats with time ranges</td><td>0 to 8s the walk; 8 to 20s she reaches the mic as the light builds; 20 to 30s close-up on the first line</td></tr>
 <tr><td>8. Audio and constraints</td><td>Sound cues, then what must not change</td><td>Follow @Audio1 for rhythm; keep face, jacket and room identical; no extra people, no subtitles, no camera spins</td></tr>
-</tbody></table>
+</tbody></table></div>
 <p>Read the example column top to bottom and you have the finished prompt; we wrote it as a model of the structure, not a documented output. InVideo's 2.0 guide adds two mechanics: the first 20 to 30 words carry the most weight, because the model locks subject and core action from the opening, and 2.0 had a hard cap of 3,000 characters per prompt. Dreamina publishes no cap for 2.5 and says to use the shortest prompt that fully specifies the production. Atlabs' 1.0 Pro figures, 3 to 12 second clips at 480p to 1080p, are historical; OiiOii's launch release of <a href="https://www.prnewswire.com/news-releases/oiioii-ai-launches-full-capacity-seedance-2-5-today-no-queue-no-waitlist-302846027.html">August 7, 2026</a> describes 2.5 as a 30-second single take, double the 2.0 length, with up to 50 references. PrompTessor (reviewed September 5, 2026) adds that duration and audio features depend on the partner platform, so check the duration menu where you render.</p>
 
 <h2>How do you use references in a music video prompt?</h2>
@@ -166,7 +182,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><a href="https://www.prnewswire.com/news-releases/oiioii-ai-launches-full-capacity-seedance-2-5-today-no-queue-no-waitlist-302846027.html">PR Newswire, OiiOii AI launches full-capacity Seedance 2.5</a> (August 7, 2026)</li>
 <li><a href="https://promptessor.com/seedance-prompt-generator">PrompTessor, Seedance prompt generator and prompting techniques</a> (last substantive review September 5, 2026)</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -189,11 +205,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

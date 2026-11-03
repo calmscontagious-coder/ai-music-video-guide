@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Can Suno Make Music Videos? What Suno Does and Does Not Do", "description": "Suno does not make full music videos. It pairs your clip in Hooks, animates cover art for 5 to 10 seconds and exports songs as video. What each costs.", "wordCount": 2551, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/can-suno-make-music-videos.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Suno have a built-in music video maker?", "acceptedAnswer": {"@type": "Answer", "text": "No. Suno has short-form video features, not a music video generator. Hooks pairs your own clip with a song segment for free, animated cover art generates 5 or 10 seconds of motion from an image for credits, and you can upload a looping cover of up to 10 seconds. A full video for a three-minute song still needs a separate video tool and an editor."}}, {"@type": "Question", "name": "How long can a Suno video be?", "acceptedAnswer": {"@type": "Answer", "text": "Short. Looping video song art is capped at 10 seconds, 9:16 and 720 pixels tall. Generated cover video runs 5 or 10 seconds per clip, with two variants per run. A Hook is as long as the clip you upload, but it is built for the Hooks feed, not a full-length release. Downloading the song as a video file covers the whole track."}}, {"@type": "Question", "name": "Do Suno Hooks cost credits?", "acceptedAnswer": {"@type": "Answer", "text": "Uploading your own clip to make a Hook is free and uses no credits, per Suno's September 22, 2025 launch note. Generating motion does cost credits. One independent test on October 1, 2026 recorded 200 credits for a five-second Advanced clip, which is 8 percent of a Pro plan's 2,500 monthly credits. Check the number on your own Generate button before you run it."}}, {"@type": "Question", "name": "Can I put a Suno video on YouTube?", "acceptedAnswer": {"@type": "Answer", "text": "You can upload the file, but a 10-second vertical loop makes a weak YouTube video. Build a separate 16:9 timeline with the full song, clean titles and a dedicated thumbnail. Also check rights: only songs downloaded on a paid Suno plan carry commercial use, and free-plan trial downloads are personal and non-commercial under the rules in force since September 3, 2026."}}, {"@type": "Question", "name": "Can Suno make a song from a video?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, that direction works. Suno Scenes, launched October 16, 2024 on iPhone, writes a song from a photo or a video, and the v6 models released September 9, 2026 accept text, audio, images or video as a starting point. This is the feature that causes most of the confusion, because the word video appears in the description while the output is audio."}}, {"@type": "Question", "name": "What is the cheapest way to get a real music video for a Suno song?", "acceptedAnswer": {"@type": "Answer", "text": "If the song doesn't need scenes, a visualizer or lyric tool. If it does, download the song on a paid Suno plan and generate a few short clips in Seedance. On the plan we link, Basic is $9.90 a month billed yearly for 150 credits, about one 5-second 720p clip a month, checked October 21, 2026. Assemble in an editor such as CapCut or DaVinci Resolve."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › suno music video</p>
 <h1>Can Suno Make Music Videos? What Suno Does and Does Not Do</h1>
@@ -129,7 +145,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>Labels and credit prices vary between accounts and staged rollouts, so the number on your own Generate button is the one that counts.</p>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Feature</th><th>What it makes</th><th>Length</th><th>Cost</th><th>Added</th></tr></thead>
 <tbody>
 <tr><td>Hooks (your clip)</td><td>A short pairing your uploaded video with a chosen stretch of your song, posted to the Hooks feed</td><td>The clip you upload</td><td>Free, no credits</td><td>Sep 22, 2025</td></tr>
@@ -138,7 +154,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Video download</td><td>The finished song exported as a video file</td><td>Full song</td><td>Counts as that song's one download on paid plans</td><td>Listed in the help center, checked Oct 21, 2026</td></tr>
 <tr><td>Scenes / video as input</td><td>A song generated from a photo or video you upload (it makes audio, not video)</td><td>Not applicable</td><td>Song credits</td><td>Oct 16, 2024; widened in v6 on Sep 9, 2026</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h3>Hooks</h3>
 
@@ -181,14 +197,14 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>Suno's free plan gives 50 credits a day, no monthly downloads and no commercial rights. Pro is $8 a month billed yearly, with 2,500 credits and 20 downloads a month. Premier is $24 a month billed yearly, with 10,000 credits, 60 downloads and access to Suno Studio.</p>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Plan</th><th>Price (checked Oct 21, 2026)</th><th>Credits</th><th>Downloads</th><th>Commercial rights</th><th>Video-relevant extras</th></tr></thead>
 <tbody>
 <tr><td>Free</td><td>$0</td><td>50 per day</td><td>No monthly downloads; up to 7 lifetime trial downloads, personal and non-commercial only</td><td>No</td><td>v6-mini model; upload up to 8 minutes of audio</td></tr>
 <tr><td>Pro</td><td>$8 a month yearly ($10 monthly)</td><td>2,500 per month</td><td>20 per month</td><td>Yes</td><td>v6 and v6-wild; 2 stem separation types; can buy extra credits and downloads</td></tr>
 <tr><td>Premier</td><td>$24 a month yearly ($30 monthly)</td><td>10,000 per month</td><td>60 per month; no limit inside Studio</td><td>Yes</td><td>Studio with MIDI, effects and automation; upload up to 30 minutes; advanced stem split</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>The pricing page says yearly billing saves $24 on Pro and $72 on Premier, which puts month-to-month billing at $10 and $30.</p>
 
@@ -221,14 +237,14 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><strong>Bad: clip length.</strong> Even at 30 seconds a clip, full-song continuity is still your job in the editor. Seams between clips are where an AI music video shows itself first.</li>
 </ul>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Route</th><th>Output</th><th>Length</th><th>Hears the song?</th><th>Typical cost</th><th>Best for</th></tr></thead>
 <tbody>
 <tr><td>Suno animated cover</td><td>One image in motion</td><td>5 or 10 seconds</td><td>Not documented</td><td>Suno credits (200 for a 5-second Advanced clip in an Oct 1, 2026 test)</td><td>Song pages, Hooks, a quick loop</td></tr>
 <tr><td>Visualizer or lyric tool</td><td>Audio-reactive motion or timed words</td><td>Full song</td><td>Yes, for timing</td><td>Varies by tool</td><td>Songs that don't need scenes</td></tr>
 <tr><td>Seedance 2.5 scenes</td><td>Generated shots with sound</td><td>4 to 30 seconds per clip</td><td>Yes, as a reference</td><td>From $9.90 a month billed yearly; 115 credits per 5-second 720p clip (checked Oct 21, 2026)</td><td>Characters, locations, a singer on screen</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>Our <a href="/blog/seedance-credit-cost-per-video.html">Seedance credit cost breakdown</a> converts these rates to dollars per second.</p>
 
@@ -252,7 +268,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><a href="https://seeddance.video/pricing">Seeddance pricing</a>, checked October 21, 2026</li>
 <li><a href="https://seeddance.video/ai-video/seedance2-5">Seeddance: Seedance 2.5 generator and credit rates</a>, checked October 21, 2026</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -275,11 +291,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

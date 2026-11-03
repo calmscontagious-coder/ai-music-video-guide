@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Keep a Character Consistent Across AI Video Shots (2026 Methods)", "description": "Reference images, frame chaining and performance capture compared for AI character consistency across shots \u2014 with verified 2026 credit costs.", "wordCount": 1755, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-08-29", "dateModified": "2026-08-29", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/consistent-character-ai-video.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can you keep the same AI character across an entire music video?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but not in one generation. You build a master reference still, reuse it in every shot, and cut between clips of 8 to 10 seconds. A three-minute video is roughly 20 to 25 separate generations plus retries, so budget for three attempts per keeper and edit the sequence together with a shared colour grade at the end."}}, {"@type": "Question", "name": "How many reference images should I use per shot?", "acceptedAnswer": {"@type": "Answer", "text": "One strong image beats three mediocre ones. Runway's Gen-4 References accepts one to three at a time and can hold a character from a single reference; Gemini Omni Flash accepts up to 10 images per prompt. Add a second reference only when you need to lock something the first image does not show, such as full-body proportions or a specific prop."}}, {"@type": "Question", "name": "What is the cheapest way to test character consistency?", "acceptedAnswer": {"@type": "Answer", "text": "Run your reference through a low-cost tier before committing. Veo 3.1 Lite is $0.05 per second at 720p and Gen-4 Turbo is 5 credits per second on Runway, versus $0.40 per second for Veo 3.1 Standard at 1080p. Prove the composition and blocking cheaply, then re-render only the approved setup on your quality model."}}, {"@type": "Question", "name": "Why does my character look different after about eight seconds?", "acceptedAnswer": {"@type": "Answer", "text": "Identity erodes with duration because the model has no persistent memory of the face it drew in frame one. Veo 3.1 generates fixed 8-second clips and Gemini Omni Flash caps at 10 seconds, and those limits roughly match where drift becomes visible. Treat the native clip length as your shot length and cut on action."}}, {"@type": "Question", "name": "Does performance capture solve consistency on its own?", "acceptedAnswer": {"@type": "Answer", "text": "It solves acting, not appearance. Runway's Act-Two transfers your facial expressions and gestures onto a character image at 5 credits per second with a 3-second minimum, up to 30 seconds at 24 fps. You still need a locked character image going in, so it complements reference workflows rather than replacing them."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › consistent character ai video</p>
 <h1>How to Keep a Character Consistent Across AI Video Shots (2026 Methods)</h1>
@@ -128,20 +144,20 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <h2>Which method holds a character best in 2026?</h2>
 <p>Reference images win for appearance, performance transfer wins for acting, and first-and-last-frame chaining wins for continuity between adjacent shots. Most finished sequences use all three: references to establish the face, frame chaining to move between shots, and a performance-driven pass for any close-up where the acting has to land.</p>
 <p>The trade-offs are real, and nothing here is free.</p>
-<table>
+<div class="tscroll"><table>
 <tr><th>Method</th><th>What it locks</th><th>Real weakness</th></tr>
 <tr><td>Reference images (Gen-4 References, Seedance references, Omni Flash refs)</td><td>Face, wardrobe, body type, general look</td><td>Drifts through profile turns and fast motion; struggles when lighting changes hard</td></tr>
 <tr><td>First / last frame chaining</td><td>Continuity between two adjacent shots</td><td>Compounding artifacts — errors inherit forward, so quality decays over a long chain</td></tr>
 <tr><td>Performance capture (Runway Act-Two)</td><td>Facial expression, gesture, timing</td><td>Capped at 30 seconds, 24 fps, and 1280x720 for 16:9 output; you have to act the take yourself</td></tr>
 <tr><td>Video-to-video reference</td><td>Camera language, choreography, pacing</td><td>Inherits the source clip's flaws along with its strengths</td></tr>
 <tr><td>Prompt description only</td><td>Almost nothing</td><td>New face every generation; usable only for crowds and backs of heads</td></tr>
-</table>
+</table></div>
 <p>One honest caveat about the numbers you will see quoted elsewhere: percentage claims about "95% face consistency" circulate widely and trace back to informal creator testing, not published benchmarks. Treat them as vibes. What you can verify are the specs and the prices, so plan around those.</p>
 
 <h2>What does a consistent-character shot actually cost?</h2>
 <p>Per finished second, expect roughly $0.05 to $0.60 on direct API access, or 5 to 40 credits per second on Runway's credit system. The real cost driver is not the model — it is your keeper rate. At three attempts per usable shot, triple every number below and plan accordingly.</p>
 <p>Published rates, straight from the vendors:</p>
-<table>
+<div class="tscroll"><table>
 <tr><th>Model / tier</th><th>Rate</th><th>Notes</th></tr>
 <tr><td>Veo 3.1 Standard, with audio</td><td>$0.40 per second at 720p and 1080p; $0.60 at 4K</td><td>Fixed 8-second clips</td></tr>
 <tr><td>Veo 3.1 Fast</td><td>$0.10 per second at 720p; $0.12 at 1080p; $0.30 at 4K</td><td>Best iteration tier for reference testing</td></tr>
@@ -151,7 +167,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Gen-4 Turbo / Gen-4.5</td><td>5 and 12 credits per second</td><td>Cheapest way to burn through reference tests</td></tr>
 <tr><td>Gemini Omni Flash</td><td>10 credits per second</td><td>Video-to-video is 11 credits per second of input, plus 1 credit per reference image</td></tr>
 <tr><td>Act-Two performance capture</td><td>5 credits per second, 3-second minimum</td><td>Any clip under 3 seconds still bills 15 credits</td></tr>
-</table>
+</table></div>
 <p>Map that onto a subscription and the picture sharpens. Runway's Free plan gives a one-time deposit of 125 credits; Standard is $15 per month for 625 credits; Pro is $35 for 2,250; Max is $95 for 9,500 with one month of rollover. In the consumer app a 4-second Seedance 2.0 Pro clip at 1080p costs 160 credits, and the Fast variant costs 116 credits for the same 4 seconds. On the Standard plan that is roughly three or four premium 4-second shots a month before you have run dry — which is why serious character work either lives on a higher tier or runs its reference tests on the cheap models first.</p>
 
 <h3>The cheap-test, expensive-final pattern</h3>
@@ -188,7 +204,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 </ul>
 
 <p><em>Disclosure: this site earns affiliate commissions on some of the tools mentioned. Pricing and specs were checked against the vendors' own documentation at the time of writing and change often — verify before you commit a budget.</em></p>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -211,11 +227,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

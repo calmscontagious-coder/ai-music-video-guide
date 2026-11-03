@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Make an AI Music Video on Your Phone: Dreamina, CapCut, What Breaks", "description": "Can you make a whole AI music video from a phone? The Suno to Dreamina to CapCut route, real credit costs, and the six places it breaks, checked Oct 2026.", "wordCount": 2582, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/ai-music-video-on-your-phone-dreamina-capcut.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Seedance 2.5 in the Dreamina phone app?", "acceptedAnswer": {"@type": "Answer", "text": "Sometimes. The US App Store version notes name Seedance 2.0 and later say only that more models were added. Seedance 2.5 reached Dreamina on July 31, 2026, and rolls out by region, subscription and account, with the web app updating before the phone app. If the model picker in the app stops at 2.0, open dreamina.capcut.com in your phone's browser with the same login."}}, {"@type": "Question", "name": "Does CapCut on a phone generate Seedance clips?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The CapCut App Store listing says its AI Video feature supports Seedance, Veo 3 and other models, and the path is Media, then AI Video, then Text to Video or Image to Video. Model availability rolled out by country from March 2026. Clips generated there count as Pro content at export, so a free account gets a CapCut watermark on the finished video."}}, {"@type": "Question", "name": "Why does the finished phone video look soft?", "acceptedAnswer": {"@type": "Answer", "text": "Usually because the clips came from Seedance 2.5, which generates at 720p on Dreamina in practice despite 4K wording on the model page. CapCut's mobile export only offers 4K when your source clips are 4K, and a 720p clip exported at 1080p is upscaled, not sharper. Seedance 2.0 is commonly offered up to 1080p, so use it for shots that must look crisp."}}, {"@type": "Question", "name": "How many credits does a full song need on Dreamina?", "acceptedAnswer": {"@type": "Answer", "text": "At 8 seconds a shot, a three-minute song is about 22 clips before retakes. On Dreamina's Basic plan, $15 a month for 1,575 credits as of October 21, 2026, an 8-second 720p clip costs 296 credits on Seedance 2.5, 136 on Seedance 2.0 and 64 on Seedance 2.0 Mini, per Higgsfield's guide. Shooting everything on 2.5 needs about four months of Basic allowance; Mini fits in one."}}, {"@type": "Question", "name": "Can I put my own face in a Seedance music video from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Not by uploading a photo. Seedance rejects real-face reference images, a rule in place since February 2026, and resubmitting does not help. The Dreamina phone app has a separate Cast feature, powered by Seedance 2.0, where you record your own avatar. We have not tested whether Cast clips can be downloaded and cut to your own song. For a face from a photo, Kling accepts pictures of people."}}, {"@type": "Question", "name": "Do I need a paid Suno plan to download the song?", "acceptedAnswer": {"@type": "Answer", "text": "For commercial use, yes. Since September 3, 2026, Suno allows 7 lifetime trial downloads on Free for accounts created before September 3; newer free accounts may get occasional trial downloads and can buy them. Pro gets 20 a month and Premier 60. Trial downloads are personal use only; commercial rights apply to songs downloaded on a paid plan."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › AI music video on your phone</p>
 <h1>Make an AI Music Video on Your Phone: Dreamina, CapCut, What Breaks</h1>
@@ -129,7 +145,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>CapCut's own App Store listing says its "AI video feature now supports Seedance, Veo 3, and other models," and it lists Standard at $9.99 and Pro at $19.99 a month (<a href="https://apps.apple.com/us/app/capcut-video-editor/id1500855883">CapCut on the App Store, opened October 21, 2026</a>). The mobile path is Media, then AI Video, then Text to Video or Image to Video, then pick the Seedance model from the menu (<a href="https://www.capcut.com/tools/dreamina-seedance-2-0">CapCut Seedance tool page</a>). CapCut's Seedance 2.0 rollout went country by country from March 2026, starting in Southeast Asia and Latin America (<a href="https://news.aibase.com/news/26497">AIbase, March 24, 2026</a>), so the model list you see depends on where your account lives.</p>
 
-<table>
+<div class="tscroll"><table>
 <thead>
 <tr><th>Phone route</th><th>Platforms</th><th>Seedance models named</th><th>Free tier</th><th>Paid entry (US)</th><th>Free download watermark</th></tr>
 </thead>
@@ -139,7 +155,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>CapCut app, AI Video panel</td><td>iPhone, Android</td><td>Seedance 2.0 Mini (tool page); Seedance and Veo 3 (App Store)</td><td>Exports with a CapCut watermark; watermark-free export needs Pro</td><td>Standard $9.99 a month, Pro $19.99 a month (App Store, Oct 21, 2026)</td><td>Yes, on any export that uses AI clips</td></tr>
 <tr><td>Kling app</td><td>iPhone, iPad</td><td>None (Kling's own model, up to 15 seconds, 1080p or 4K)</td><td>Free with in-app purchases</td><td>In-app purchases, region priced</td><td>Not verified by us</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <p>One flag on the table: Dreamina's web app and phone app do not update on the same day. Leadde's access guide lists staggered mobile and web updates, and outdated apps, among the reasons Seedance 2.5 fails to appear (<a href="https://leadde.ai/blog/where-to-use-seedance-2-5">Leadde, October 6, 2026</a>). If the model menu in the app stops at 2.0, open dreamina.capcut.com in the phone's browser. Same login, same credits, and the newer model shows up there first.</p>
 
@@ -232,7 +248,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><a href="https://www.capcut.com/help/join-capcut-pro-for-exporting">CapCut Help, "Why Am I Prompted to Join CapCut Pro When Exporting?"</a> (April 2, 2026)</li>
 <li><a href="https://suno.com/blog/suno-updates-tos">Suno, "An update to our downloads policy and Terms of Service"</a> (August 10, 2026)</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -255,11 +271,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

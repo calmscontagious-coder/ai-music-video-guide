@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Seedance vs Wan 3.0: Can Free Wan Replace a Subscription?", "description": "Wan 3.0 is API-only; Wan 2.2 is the free one. We price local Wan 2.2, Wan 3.0 per second and Seedance plans for music videos, with honest hardware caveats.", "wordCount": 2573, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/seedance-vs-wan-3-0-can-free-wan-replace-a-subscription.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Wan 3.0 free or open source?", "acceptedAnswer": {"@type": "Answer", "text": "No. Alibaba offers Wan 3.0 only through its Model Studio API, launched August 24, 2026, at $0.05 to $0.20 per second depending on resolution. The official Hugging Face and GitHub pages, checked October 21, 2026, hold Wan 2.2 and older weights only. If a page calls Wan 3.0 open-source, the writer meant Wan 2.2 or did not check."}}, {"@type": "Question", "name": "What GPU do I need to run Wan 2.2 locally?", "acceptedAnswer": {"@type": "Answer", "text": "An NVIDIA card. The official README rates the 5B model for 24 GB cards such as the RTX 4090; ComfyUI says it fits on about 8 GB with offloading. The 14B models need 80 GB officially; a quantised community build peaked under 15 GB at 480p, enough for a 16 GB card, while 12 GB is untested. Apple Silicon and AMD have no supported path in the official repository."}}, {"@type": "Question", "name": "Can Wan 2.2 lip-sync a singer to my song?", "acceptedAnswer": {"@type": "Answer", "text": "Not with the text or image models; they produce silent video. Wan 2.2's S2V model takes an image and an audio file and animates the subject to the audio, which can work for a static-camera performance. For shots that need your track as a reference alongside camera moves and scene changes, Wan 3.0 and Seedance 2.5 are the tools built for it."}}, {"@type": "Question", "name": "How much does Wan 3.0 cost for a full music video?", "acceptedAnswer": {"@type": "Answer", "text": "At Alibaba's list price of $0.10 per second at 720p, three minutes of video is $18.00 of generation if every second is a keeper. Real projects render several takes per shot, so the final bill depends on how many you keep, and failed renders are not billed. Through DeepInfra at $0.20 per second the same 180 seconds is $36.00 before retakes."}}, {"@type": "Question", "name": "Is a Seedance plan worth it if Wan 3.0's API is cheaper per second?", "acceptedAnswer": {"@type": "Answer", "text": "Only if you want the interface. The plan buys a no-code workspace where you upload your song, tag it in the prompt and get an audio-synced shot back, plus a commercial licence and refunds on failures. On seconds alone, Wan 3.0's API is cheaper by roughly 9 to 15 times at list price, depending on the plan. Decide by how much coding and account setup you will tolerate."}}, {"@type": "Question", "name": "Did Sora shut down for good?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. OpenAI's help centre states the Sora web and app experiences were discontinued on April 26, 2026 and the API on September 24, 2026. Content export is available through the sunset page, and OpenAI says it will delete remaining data after any final export window. Purchased ChatGPT or Sora credits can still be used for Codex, according to the same page."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › Seedance vs Wan 3.0</p>
 <h1>Seedance vs Wan 3.0: Can Free Wan Replace a Subscription?</h1>
@@ -157,7 +173,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 
 <p>Local Wan 2.2 is free per clip but silent, short and hardware-bound. Between the paid pair, Seedance vs Wan 3.0 comes down to cost against convenience: Wan 3.0 is the cheapest per second but needs an API account, while Seedance on a plan costs the most per second and is the easiest route to audio-synced shots.</p>
 
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Route</th><th>Up-front</th><th>15 s of 720p</th><th>Sound</th><th>Max clip</th><th>Hardware</th><th>Source and date</th></tr></thead>
 <tbody>
 <tr><td>Wan 2.2 TI2V-5B, local</td><td>$0 software</td><td>$0, three renders of about 11 minutes each on a 4090</td><td>None</td><td>About 5 s at 720p, 24 fps</td><td>NVIDIA, 8 to 24 GB</td><td>Wan2.2 README; benchmark, September 23, 2026</td></tr>
@@ -166,7 +182,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Wan 3.0 via DeepInfra</td><td>API key</td><td>$3.00</td><td>Generated</td><td>30 s</td><td>None</td><td>DeepInfra, October 19, 2026</td></tr>
 <tr><td>Seedance 2.5, platform Pro plan</td><td>$19.90 a month, annual billing</td><td>345 credits, the whole month's allowance</td><td>Generated, plus your own reference audio</td><td>4 to 30 s on the platform, checked October 21, 2026</td><td>None</td><td>Plan and model pages, October 21, 2026</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2>Can free Wan replace a paid plan for a music video?</h2>
 
@@ -206,7 +222,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation">OpenAI Help Center, "What to know about the Sora discontinuation"</a>, updated September 28, 2026</li>
 <li><a href="https://seeddance.video/pricing">Seedance platform plan page</a>, prices checked October 21, 2026</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -229,11 +245,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

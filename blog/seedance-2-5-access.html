@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Seedance 2.5 Access: Where It's Live for Musicians (October 2026)", "description": "Seedance 2.5 as of October 21, 2026: live on Dreamina including the US, on resellers, and on the BytePlus API outside the US. Costs and 30s clip math.", "wordCount": 2559, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/seedance-2-5-access.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Seedance 2.5 available in the United States?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as of October 21, 2026. Dreamina's pricing page now quotes its Seedance 2.5 offer for US accounts, Atlas Cloud became an authorized US reseller on October 12, 2026, and Replicate carries the model for API users. The official BytePlus API still does not sell to US buyers. Eligibility is not guaranteed in every listed country, so check your model picker before paying."}}, {"@type": "Question", "name": "How much does Seedance 2.5 cost per second in October 2026?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on where you buy. Dreamina's $0.29 first month works out to about $0.0068 per second of 720p video, its $15 renewal to roughly $0.35. At 720p, BytePlus and Replicate charge about $0.23, Atlas Cloud about $0.30 (its advertised $0.134 is a starting rate), Seeddance (our affiliate) about $0.92 to $1.52 on annual plans, and Runway 30 credits per second. Checked October 21, 2026."}}, {"@type": "Question", "name": "How long can a Seedance 2.5 clip be?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 30 seconds in one generation, double the 15-second ceiling of Seedance 2.0, with multi-round extension that appends further 30-second passes while keeping the subject and sound consistent. Dreamina also lists a long-video mode of up to 180 seconds, marked beta. At 128 BPM a single 30-second clip covers 16 bars, a full verse or chorus."}}, {"@type": "Question", "name": "Can I use a photo of myself as a Seedance 2.5 reference?", "acceptedAnswer": {"@type": "Answer", "text": "Not on Dreamina or through the standard API. Seedance 2.0 and 2.5 reject reference images showing a real person's face, a rule ByteDance adopted in February 2026, and API requests fail before generation. Outside the US, BytePlus lets vetted ModelArk clients verify and authorize a real person's likeness, their own included. Otherwise plan a stylized stand-in; text descriptions, objects and places all work."}}, {"@type": "Question", "name": "Does Seedance 2.5 output 1080p or 4K?", "acceptedAnswer": {"@type": "Answer", "text": "Not on the official API. BytePlus documents 480p and 720p for Seedance 2.5, at 24 frames per second. Dreamina markets 4K output and Atlas Cloud sells native 1080p, so what you get depends on the platform, and the higher tiers on resellers are provider-side additions. Dreamina also stamps a visible AI label, an invisible watermark and C2PA credentials on every render."}}, {"@type": "Question", "name": "Should I draft on Seedance 2.0 and finish on 2.5?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if you pay per credit. On Dreamina, Seedance 2.5 costs 37 credits per second against 17 for Seedance 2.0 Pro and 8 for Fast, so a 30-second shot on 2.5 costs 2.2 times the Pro price. Block out the video on the cheaper model, then spend 2.5 credits on the shots that need one unbroken take."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › seedance 2.5 access</p>
 <h1>Seedance 2.5 Access: Where It&#x27;s Live for Musicians (October 2026)</h1>
@@ -114,7 +130,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <h2>Where is Seedance 2.5 live right now?</h2>
 <p>On October 21, 2026, Seedance 2.5 runs on five kinds of surface: ByteDance's own apps in China (Jimeng AI and Doubao Pro), Dreamina internationally including the US, the BytePlus ModelArk API for developers outside the US, API resellers such as Replicate and Atlas Cloud, and consumer tools such as Runway and Seeddance. A faster Flash variant is still listed by Dreamina as coming soon.</p>
 <p>ByteDance's Seed team shipped the model on July 31, 2026, with Jimeng and Doubao first and API access promised through BytePlus. Here is where each route stands today, with the price basis each one publishes.</p>
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Access point</th><th>Status on October 21, 2026</th><th>Published price basis</th><th>Notes</th></tr></thead>
 <tbody>
 <tr><td>Dreamina (web, international)</td><td>Live, US accounts included</td><td>$0.29 for a first month of US Basic (October 21 to 30, 2026), 1,575 credits, renews at $15 a month</td><td>37 credits per second at 720p</td></tr>
@@ -125,7 +141,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Runway (web)</td><td>Live in the app</td><td>30 credits per second at 720p (CellCog, August 22, 2026)</td><td>Public API docs did not list 2.5 as of October 6, 2026</td></tr>
 <tr><td>Seeddance (web, third-party)</td><td>Live; its 2.5 page lists 4 to 30 seconds at 480p, 720p or 1080p (October 21, 2026)</td><td>Seedance 2.5 at 12, 23 or 48 credits per second (480p/720p/1080p); annual plans from $9.90 a month, $0.040 to $0.066 per credit</td><td>One free credit a day; the shortest 4-second 480p 2.5 job costs 48 credits</td></tr>
 </tbody>
-</table>
+</table></div>
 <p>Dreamina's first rollout, on July 31, covered paid members in Europe, Asia, the Middle East, Africa and South America. The United States was not on that list, which is why guides written in August, ours included, told US readers to wait. Dreamina's pricing page is now dated October 21, 2026 and quotes the current offer for US accounts, and <a href="https://east.im/blog/dreamina-seedance">East.im's October 18, 2026 review</a> reports the US announcement on Dreamina's X account. One caveat, which East.im attributes to Dreamina: eligibility is not guaranteed even in listed countries, so check that the model appears in your picker before you pay.</p>
 <p>The API picture also cleared. <a href="https://www.byteplus.com/en/product/seedance">BytePlus's Seedance page</a> now reads "API fully available now" for the model id dreamina-seedance-2-5-260628, with 480p and 720p output and clips of 4 to 30 seconds. That route is still closed in the United States. BytePlus's international availability list, last revised April 21, 2026, does not include the US, and <a href="https://www.byteplus.com/en/blog/dreamina-seedance2-5">BytePlus's own Seedance 2.5 launch post</a> (August 6, 2026) says it is not available in the United States. <a href="https://cellcog.ai/blog/seedance-2-5-pricing">CellCog's August 22 review</a> (page updated October 6) reports the official route also shut in Canada, the UK, Australia and New Zealand. BytePlus's general list includes those four but exempts restricted models, so readers there should confirm at checkout. The reseller routes exist for the US gap.</p>
 
@@ -139,7 +155,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <p>Then read the renewal line. Basic renews at $15 a month for the same 1,575 credits. If the 37-credit charge holds, a 30-second clip at renewal costs about $10.57, which is roughly $0.35 per second. That is our arithmetic, not Dreamina's figure, and it is higher than every API route, though still below Seeddance. Annual plans change the math again: Basic is about $101 for the first year and renews at $167.99, per Dreamina's October FAQ. Two older Dreamina rates still circulate, $0.097 per second for annual subscribers from the <a href="https://www.prnewswire.com/news-releases/dreamina-launches-seedance-2-5--the-tool-of-ai-video-generation-that-reduces-clip-stitching-visual-drift-and-rework-302841204.html">August 3, 2026 release</a> and $0.035 from the September offer; both are out of date.</p>
 <p>The API routes are simpler. BytePlus launched Seedance 2.5 at $10.70 per million video tokens, which CellCog converts to about $0.1028 per second at 480p and $0.2312 at 720p; Replicate matches those rates. Atlas Cloud, the US reseller, quotes from $0.134 per second and about $9 for a 30-second 720p clip with sound, which works out to about $0.30 per second at 720p, the same rate CellCog found in Atlas's own calculator. One billing trap applies on most API doors: a job with a reference video is usually billed on input plus output seconds at a lower rate, so a cheap-looking reference rate can cost more per finished clip. Replicate works differently and charges $0.9676 per output second at 720p whenever a video is attached, about four times its plain rate (CellCog, October 6, 2026), so leave the camera-move clip out of the pack if you run on Replicate.</p>
 <p>Seeddance (seeddance.video), a separate site that hosts several video models and the platform behind our affiliate link, issues one free credit every 24 hours to signed-in users (checked October 21, 2026), with watermarked output on the free tier. Paid plans on annual billing run $9.90 a month for 150 credits, $19.90 for 350 credits, $34.90 for 750, and $59.90 for 1,500, all with watermark-free exports and a commercial license. For Seedance 2.5 it charges 12 credits per second at 480p, 23 at 720p and 48 at 1080p (<a href="https://seeddance.video/ai-video/seedance2-5">its Seedance 2.5 page</a>, October 21, 2026), and it counts reference-video seconds at the same rate. The $9.90 Basic month buys about six and a half seconds of 720p 2.5, and a 30-second 720p clip costs 690 credits, about $27.60 to $45.54 depending on the plan. Per second it is the most expensive option on this page. What it adds is 1080p 2.5 output and one credit pool across several engines. The plan-by-plan breakdown is in our <a href="/blog/seedance-free-vs-paid-worth-it.html">Seedance free versus paid guide</a>.</p>
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Where</th><th>What a 30-second Seedance 2.5 clip costs at 720p (October 21, 2026)</th><th>Basis</th></tr></thead>
 <tbody>
 <tr><td>Dreamina, $0.29 first month</td><td>1,110 of 1,575 credits, about $0.20 of the allowance</td><td>Dreamina pricing page, October 21, 2026</td></tr>
@@ -149,19 +165,19 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Runway</td><td>900 credits</td><td>30 credits per second (CellCog, August 22, 2026)</td></tr>
 <tr><td>Seeddance (affiliate)</td><td>690 credits, about $27.60 to $45.54</td><td>23 credits per second at 720p; $0.040 to $0.066 per credit on annual plans, Seeddance pricing and Seedance 2.5 pages, October 21, 2026</td></tr>
 </tbody>
-</table>
+</table></div>
 
 <h2>What do 30-second clips and 50 references change for a music video?</h2>
 <p>They halve the seams and move character consistency from prompt luck to a reference pack. A 3:30 track needs seven 30-second clips instead of fourteen 15-second ones, and one generation can hold a full 16-bar verse at 128 BPM. The 50-asset brief lets the song itself drive the cut, because up to 10 audio clips go in with the pictures.</p>
 <p>Start with the seam math, because a music video lives on its cuts. Seedance 2.0 topped out around 15 seconds per generation, so a 210-second track needed at least 14 clips and left 13 joins where a face, an outfit or the light could drift. At 30 seconds the count halves.</p>
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>3:30 track</th><th>15-second clips (Seedance 2.0)</th><th>30-second clips (Seedance 2.5)</th></tr></thead>
 <tbody>
 <tr><td>Minimum clips</td><td>14</td><td>7</td></tr>
 <tr><td>Seams to hide</td><td>13</td><td>6</td></tr>
 <tr><td>Coverage per clip at 128 BPM</td><td>8 bars</td><td>16 bars, a full verse or chorus</td></tr>
 </tbody>
-</table>
+</table></div>
 <p>At 128 BPM in 4/4 a bar lasts 1.875 seconds, so 30 seconds is exactly 16 bars. One generation can now hold a slow push-in across an entire hook or a one-take performance verse, shots the 15-second ceiling could not physically contain. ByteDance's announcement also describes multi-round extension, which appends further 30-second passes, and Dreamina's launch release lists a Long Video Mode of up to three minutes, now a 180-second beta on the model page. We have not tested it. You will still cut on beats; the cuts just become choices instead of forced joins.</p>
 <p>Seedance 2.5 accepts 30 images, 10 video clips and 10 audio clips in one brief, and on the API you address them in the prompt as [Image1], [Video1] and [Audio1], per Replicate's model page. For an artist that means one pack: several angles of the performer or an illustrated stand-in, wardrobe shots, a lighting frame, a camera-move clip, and the section of the song itself as the pacing reference. Dialogue written in quotation marks gets matching lip movement and voice, and audio can be switched off when you plan to lay the master over the picture. Our guide to <a href="/blog/ai-video-character-consistency.html">character consistency in AI video</a> covers how to build that pack.</p>
 
@@ -186,7 +202,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><a href="https://dreamina.capcut.com/seedance/seedance-price">Dreamina: Seedance Pricing</a> (October 21, 2026)</li>
 <li><a href="https://dreamina.capcut.com/ai-video/dreamina-october-offer-faq-2026">Dreamina: October Discount FAQ</a> (October 21, 2026)</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -209,11 +225,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

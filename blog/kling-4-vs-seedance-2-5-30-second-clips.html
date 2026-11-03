@@ -93,6 +93,22 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 @keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
 ::selection{background:#ff2e88;color:#fff}
 
+/* mobile patch v3.1 */
+.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+#ctab button{min-width:48px}
+.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
+.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
+@media(max-width:640px){
+html{-webkit-text-size-adjust:100%}
+body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
+.nav-cta{padding:12px 16px;font-size:1rem}
+.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
+.wrap{padding:0 16px}
+main{padding:36px 0 120px}
+article h1,.page h1{font-size:1.75rem;line-height:1.2}
+article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Kling 4.0 vs Seedance 2.5 for Music Videos: 30-Second Clips Compared", "description": "Kling 4.0 vs Seedance 2.5 for a 30-second music video clip: which follows your song, what one clip costs per plan in October 2026, where each fails.", "wordCount": 2568, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-10-21", "dateModified": "2026-10-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/kling-4-vs-seedance-2-5-30-second-clips.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can Kling 4.0 Flash make a 30-second clip?", "acceptedAnswer": {"@type": "Answer", "text": "No. Kling's release note caps Flash at 3 to 20 seconds, 720p and 8-bit colour, with a start frame but no end frame and no multi-keyframe control. For a 30-second single take you need the full Kling 4.0 model, which runs 3 to 30 seconds at 720p, 1080p or 4K. Flash is the draft lane, not the delivery lane."}}, {"@type": "Question", "name": "Does Seedance 2.5 keep my song or replace it?", "acceptedAnswer": {"@type": "Answer", "text": "Assume it may replace it. Community tests on Seedance 2.0 found it treats an upload as a reference, not a soundtrack to protect, and composes music that only resembles yours, and we have seen no 2.5 test showing that changed. Cite the file as @Audio 1, give it a job, forbid new music, and turn generated audio off on export. Then lay your master underneath."}}, {"@type": "Question", "name": "Is Kling 4.0's 15 credits per second rate official?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. Kling's plans page listed no Kling 4.0 credit rate when Wireflow checked on October 19, 2026. The figure comes from a community rate card and from one tester who measured 450 credits for a 30-second 1080p clip, both reported by kie.ai on October 16. The two agree, but generate one test clip and read the charge before budgeting."}}, {"@type": "Question", "name": "Can I use Seedance 2.5 in the United States?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, through Dreamina. Its October 21, 2026 pricing page is written for US accounts and lists a $0.29 first month that renews at $15. For API access, Replicate and fal serve US customers at $0.2312 and $0.4730 per 720p second. ByteDance's own BytePlus ModelArk API is not sold in the US, Canada, the UK, Australia or New Zealand."}}, {"@type": "Question", "name": "Which is cheaper for one 30-second clip at 1080p?", "acceptedAnswer": {"@type": "Answer", "text": "Kling 4.0, by a wide margin at the reported rate. 450 credits on the $32.56 Pro plan is about $4.88 per clip. Seedance 2.5 at 1080p costs $17.07 for 30 seconds on BytePlus ModelArk or about $31.73 on Runway Pro, and Dreamina publishes its Seedance 2.5 rate for 720p only. At 720p the gap narrows to roughly $3.26 against $6.94."}}, {"@type": "Question", "name": "Do I need Kling's Pro plan to use Kling 4.0?", "acceptedAnswer": {"@type": "Answer", "text": "No. Kling says the model is available to everyone, and Standard at $8.80 a month includes 660 credits, enough for one 30-second 1080p clip with 210 credits left. Pro at $32.56 covers six such clips, and on October 19, 2026 Pro and higher tiers carried a limited-time 10 percent discount on Kling 4.0 generations. The free Basic tier lists no monthly credits."}}]}</script>
@@ -101,7 +117,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
 <nav><a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
 <div class="nlinks"><a href="/blog/">Blog</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· Paid link</span></a></nav>
+<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
 <main class="wrap"><article>
 <p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › Kling 4.0 vs Seedance 2.5</p>
 <h1>Kling 4.0 vs Seedance 2.5 for Music Videos: 30-Second Clips Compared</h1>
@@ -114,7 +130,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <h2>What did Kling 4.0 and Seedance 2.5 each ship for 30-second clips?</h2>
 <p>Both now generate 30 seconds in one pass. Kling 4.0 became available to everyone on October 15, 2026, with 3 to 30 second generation at 720p, 1080p or 4K, stereo audio and up to 10 keyframes. Seedance 2.5 has made 30-second clips with audio since July 31, 2026, and can extend a clip twice.</p>
 <p>The spec sheets, from Kling's release note, ByteDance's Seed page and Runway's model guide, are close on length and far apart on inputs.</p>
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Spec</th><th>Kling 4.0</th><th>Kling 4.0 Flash</th><th>Seedance 2.5</th></tr></thead>
 <tbody>
 <tr><td>Longest single pass</td><td>30 seconds</td><td>20 seconds</td><td>30 seconds, extendable twice</td></tr>
@@ -126,7 +142,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Editing a clip</td><td>Up to 5 input clips, 30 seconds combined</td><td>Not listed</td><td>Timestamped edits, forward and backward extension</td></tr>
 <tr><td>Public release</td><td>October 15, 2026</td><td>Early access from September 28, 2026</td><td>July 31, 2026</td></tr>
 </tbody>
-</table>
+</table></div>
 <p>Three Kling 4.0 headline features were still marked coming soon on October 20, 2026: 10-bit HDR output, the two-minute extension, and the developer API. Kuaishou's October 16 launch release calls the extension and the API coming soon. None of the three matter for a 30-second music clip today. Flash stops at 20 seconds, so every 30-second number below is for the full Kling 4.0 model.</p>
 
 <h2>Which one can follow a song you already have?</h2>
@@ -137,7 +153,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <h2>What does one 30-second clip cost on each as of October 2026?</h2>
 <p>At the reported Kling 4.0 rate of 15 credits per second at 1080p, a 30-second clip is 450 credits, about $4.88 on the $32.56 Pro plan or $6.00 on Standard. Seedance 2.5 on Dreamina is 37 credits per second at 720p, so 1,110 credits per clip, about $10.57 of a $15 Basic month if the renewal keeps the first month's 1,575 credits. Pay-per-second API routes land near $6.94 at 720p.</p>
 <p>Two caveats first. Kling has not published a Kling 4.0 credit rate on its plans page; Wireflow checked on October 19, 2026 and found none. The 15 credits per second figure comes from a community rate card and one tester who measured exactly 450 credits for a 30-second 1080p clip, both reported by kie.ai on October 16. Both come from Chinese-language posts, the tester paid about 16 yuan, and kie.ai lists credit conversion outside China as unconfirmed. The two agree, but run one test clip before you budget a batch. Dreamina's numbers are its own, published October 21, 2026, and they are plan-usage equivalents, not cash prices per clip.</p>
-<table>
+<div class="tscroll"><table>
 <thead><tr><th>Route</th><th>One 30-second clip</th><th>Resolution</th><th>Clips the monthly credits cover</th><th>Checked</th></tr></thead>
 <tbody>
 <tr><td>Kling 4.0, Standard plan ($8.80, 660 credits)</td><td>450 credits, about $6.00</td><td>1080p</td><td>1, with 210 credits left</td><td>Plans October 19, 2026; rate reported October 16</td></tr>
@@ -150,7 +166,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <tr><td>Seedance 2.5, BytePlus ModelArk API</td><td>$6.93 at 720p, $17.07 at 1080p</td><td>720p or 1080p</td><td>Pay as you go; not sold in the US, UK, Canada, Australia or New Zealand</td><td>List updated September 28, 2026</td></tr>
 <tr><td>Seedance 2.5, Runway Pro ($35, 2,250 credits)</td><td>900 credits ($14.00) at 720p; 2,040 credits ($31.73) at 1080p</td><td>720p or 1080p</td><td>2 at 720p, 1 at 1080p</td><td>September 29, 2026</td></tr>
 </tbody>
-</table>
+</table></div>
 <p>The dollar figures divide each plan's renewal price by its monthly credits, then multiply by the clip's credits: Kling Pro is $1.09 per 100 credits after the discounted first month, Standard $1.33, Dreamina Basic $0.95, assuming the renewal month keeps the 1,575 credits Dreamina lists for the first month; Dreamina does not state the renewal allowance, so check it at checkout.</p>
 <p>Read Dreamina's $0.29 line for what it is: from October 21, 2026, 29 cents buys one 30-second Seedance 2.5 clip plus change. It renews at $15, excludes anyone who took the earlier 90 percent offer, and 1,575 credits do not cover a second 30-second take. It is a cheap way to find out whether Seedance 2.5 fits your track, not a monthly price.</p>
 <p>At 1080p the gap widens. Dreamina's published Seedance 2.5 rate is for 720p. BytePlus lists 1080p at $0.569 a second, $17.07 for 30 seconds, and Runway charges 68 credits a second. Kling's reported 1080p rate makes the same clip $4.88 on Pro, roughly a third of the price per take.</p>
@@ -201,7 +217,7 @@ nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
 <li><a href="https://www.atlascloud.ai/blog/tips/kling-4-flash-vs-seedance-2.5">Atlas Cloud: Kling 4.0 Flash vs Seedance 2.5 for product shots and character stability</a>, published October 10, 2026.</li>
 </ul>
 <p>Also read: <a href="https://runway.com/resources/seedance-2-5-prompt-guide">Runway's Seedance 2.5 prompt guide</a> on audio binding, <a href="https://cellcog.ai/blog/seedance-2-5-pricing">CellCog's Seedance 2.5 API price survey</a> re-read October 6, 2026, and <a href="https://www.eachlabs.ai/blog/kling-4-0-is-out-things-to-know">each labs' October 20, 2026 note</a> on which Kling 4.0 features remain coming soon.</p>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
+<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic">↗</span></a></div>
 <p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
@@ -224,11 +240,11 @@ ml('account', '2504111');
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
-<div id="ctab" style="position:fixed;left:0;right:0;bottom:-110px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:12px;margin:0 14px 14px;padding:10px 12px 10px 18px;background:rgba(10,10,16,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);max-width:96vw">
-<span style="color:#f4f2ee;font-size:.92rem"><b>Seedance: 1 free credit a day.</b> Rendering takes paid credits. <span style="color:#a4a2b0;font-size:.8em;white-space:nowrap">Paid link.</span></span>
-<a href="https://seeddance.video/i/JoinSeedDance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;padding:9px 16px;border-radius:11px;text-decoration:none;font-size:.9rem">See plans &#8599;</a>
-<button onclick="document.getElementById('ctab').style.bottom='-110px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="background:none;border:none;color:#a4a2b0;font-size:1.1rem;cursor:pointer;padding:4px">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
+<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans &#8599;</a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
 </div></div>
-<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.35){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
+<script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>
