@@ -12,7 +12,7 @@
   var SRC = mount.getAttribute('data-src') || 'assets/assistant.json', MENU = 'assets/menu.json';
   var STATS = 'ide.chat.stats.v1', MSGS = 'ide.chat.msgs.v1';
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var A = null, engine = null, history = [], lastFocus = null;
+  var A = null, engine = null, history = [], lastFocus = null, RAW = {};
   function $(s, r) { return (r || document).querySelector(s); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function money(n) { return '$' + (Math.round(n * 100) / 100).toFixed(2); }
@@ -55,7 +55,7 @@
       return a;
     }).filter(Boolean);
     /* an item sold by option (the Thanksgiving box, the printed cookie) has no Add; the live listing is the next step */
-    if (!acts.length && out.items && out.items.length === 1) { var it = engine.item(out.items[0]); if (it && it.needs_choice && it.url) acts.push({ type: 'link', href: it.url, label: 'Choose the option on the live store', ext: true }); }
+    if (!acts.length && out.items && out.items.length === 1) { var it = RAW[out.items[0]]; if (it && it.needs_choice && it.url) acts.push({ type: 'link', href: it.url, label: 'Choose the option on the live store', ext: true }); }
     return { intent: out.intent, reply: r, actions: acts, cites: out.cites || [], confident: out.confident, handoff: out.intent === 'allergy' };
   }
   function run(a, btn) {
@@ -132,7 +132,7 @@
   /* ---------- boot: the two files, then the engine ---------- */
   Promise.all([fetch(SRC).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }), fetch(MENU).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })])
     .then(function (d) {
-      A = d[0]; engine = window.ConciergeCore.create({ menu: d[1], facts: { facts: A.facts } });
+      A = d[0]; engine = window.ConciergeCore.create({ menu: d[1], facts: { facts: A.facts } }); (d[1].items || []).forEach(function (i) { RAW[i.handle] = i; });
       $('#ch-title', root).textContent = A.strings.title; $('[data-ch-disc]', root).textContent = A.strings.disclosure; input.placeholder = A.strings.placeholder;
       (A.chips || []).forEach(function (c) { var b = el('button', null, c); b.type = 'button'; b.addEventListener('click', function () { ask(c); }); chips.appendChild(b); });
       bubble.hidden = false;
