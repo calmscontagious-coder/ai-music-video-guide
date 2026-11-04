@@ -206,6 +206,12 @@
   window.IDE_SEASON = { id: pick, preview: preview };
 })();</script>
 <!-- season:end -->
+<!-- stagehead:start -->
+<link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="img/shop/ab-spoons-sq-480.avif 480w, img/shop/ab-spoons-sq-800.avif 800w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="img/shop/ab-spoons-stage-960.avif 960w, img/shop/ab-spoons-stage-1440.avif 1440w, img/shop/ab-spoons-stage-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="assets/stage.css">
+<script src="assets/stage.js" defer></script>
+<!-- stagehead:end -->
 <script src="assets/app.js" defer></script>
 <noscript><style>.mc-tr[hidden]{display:block}.mc-btn,.mc-want,.mr-want{display:none}</style></noscript>
 <style>
@@ -362,29 +368,37 @@
 
 <main id="top">
 
-<section class="hero hero-flow mr-hero" aria-labelledby="h1">
-  <div class="wrap">
-    <div>
-      <p class="kick rise"><span>Planned line</span><span>Navy and ivory</span><span>No animal materials</span></p>
-      <h1 id="h1">From Green Street, <em>in navy and ivory.</em></h1>
-      <p class="lead">Eight pieces for the first run, each with one French line and the red heart from the logo, plus numbered macaron tins and counter pieces that change with the season. The line is planned and not for sale yet; three things can be ordered today.</p>
-      <div class="hero-actions rise d3">
-        <a class="btn btn-brand" href="#today">Order today’s three</a>
-        <a class="link" href="#line">See the first run</a>
-      </div>
-    </div>
-    <div class="mr-stack" data-grid-break data-hero-visual>
-      <figure class="mr-s mr-s1"><img src="img/merch/sans-beurre-apron.svg" width="800" height="800" alt="Mockup drawing of the apron, printed Sans beurre et sans reproche with the red heart on the bib"></figure>
-      <figure class="mr-s mr-s2"><img src="img/merch/ceci-nest-pas-du-beurre-tote.svg" width="800" height="800" alt="Mockup drawing of the tote, printed Ceci n’est pas du beurre"></figure>
-      <figure class="mr-s mr-s3 mr-photo">
-        <picture><source media="(max-width:899px)" srcset="img/cookie-spoon-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/cookie-spoon-800.jpg"><img src="img/cookie-spoon-800.jpg" srcset="img/cookie-spoon-800.jpg 800w, img/cookie-spoon.webp 1600w" sizes="(min-width:900px) 18vw, 100vw" width="1600" height="1599" alt="Five cookie spoons on a blue glazed plate, one of the three pieces on the live store today" fetchpriority="high"></picture>
-        <figcaption class="mr-cap"><span>Cookie spoons</span><span class="price">$5.00</span><button class="add" type="button" data-add data-handle="cookie-spoon" data-title="Cookie spoons, 5 count" data-price="5" data-variant="41829520539836" data-image="img/cookie-spoon-800.jpg">Add spoons</button></figcaption>
-      </figure>
+<!-- stage:start -->
+<section class="stage has-season" aria-labelledby="h1" data-stage data-interval="5000">
+  <div class="stg-slides" aria-roledescription="carousel" aria-label="From the shop’s own photographs">
+    <div class="stg-slide is-on" role="group" aria-roledescription="slide" aria-label="1 of 5: Vegan Cookies" data-ground="#ffd299"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/ab-spoons-stage-960.avif 960w, img/shop/ab-spoons-stage-1440.avif 1440w, img/shop/ab-spoons-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/ab-spoons-stage-960.webp 960w, img/shop/ab-spoons-stage-1440.webp 1440w, img/shop/ab-spoons-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/ab-spoons-stage-1440.jpg"><source type="image/avif" srcset="img/shop/ab-spoons-sq-480.avif 480w, img/shop/ab-spoons-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/ab-spoons-sq-480.webp 480w, img/shop/ab-spoons-sq-800.webp 800w" sizes="100vw"><img src="img/shop/ab-spoons-sq-800.jpg" width="800" height="800" alt="Cookie spoons and a blue glazed plate on an apricot ground" loading="eager" fetchpriority="high" decoding="async"></picture><p class="stg-cap"><b>Vegan Cookies</b><span>Delectable, Melt-in-Your-Mouth Treats</span><a class="stg-shop" href="menu.html#gifts">Shop all<span class="sr"> vegan cookies</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Cookie Spoon" data-ground="#dae3e5"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/spoons-bag-stage-960.avif 960w, img/shop/spoons-bag-stage-1440.avif 1440w, img/shop/spoons-bag-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/spoons-bag-stage-960.webp 960w, img/shop/spoons-bag-stage-1440.webp 1440w, img/shop/spoons-bag-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/spoons-bag-stage-1440.jpg"><source type="image/avif" srcset="img/shop/spoons-bag-sq-480.avif 480w, img/shop/spoons-bag-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/spoons-bag-sq-480.webp 480w, img/shop/spoons-bag-sq-800.webp 800w" sizes="100vw"><img src="img/shop/spoons-bag-sq-800.jpg" width="800" height="800" alt="Cookie spoons standing in a clear bag with the iD Éclair sticker" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Cookie Spoon</b><span>Edible spoons, five to a bag</span><a class="stg-shop" href="menu.html#gifts">Shop all<span class="sr"> cookie spoon</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Custom Cookies" data-ground="#534632"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/cookies-logo-box-stage-960.avif 960w, img/shop/cookies-logo-box-stage-1440.avif 1440w, img/shop/cookies-logo-box-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/cookies-logo-box-stage-960.webp 960w, img/shop/cookies-logo-box-stage-1440.webp 1440w, img/shop/cookies-logo-box-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/cookies-logo-box-stage-1440.jpg"><source type="image/avif" srcset="img/shop/cookies-logo-box-sq-480.avif 480w, img/shop/cookies-logo-box-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/cookies-logo-box-sq-480.webp 480w, img/shop/cookies-logo-box-sq-800.webp 800w" sizes="100vw"><img src="img/shop/cookies-logo-box-sq-800.jpg" width="800" height="800" alt="A tray of round cookies printed with a company logo" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Custom Cookies</b><span>Order a batch</span><a class="stg-shop" href="catering.html#ready">Shop all<span class="sr"> custom cookies</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Jams" data-ground="#ddddd8"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/jam-shelf-stage-960.avif 960w, img/shop/jam-shelf-stage-1440.avif 1440w, img/shop/jam-shelf-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/jam-shelf-stage-960.webp 960w, img/shop/jam-shelf-stage-1440.webp 1440w, img/shop/jam-shelf-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/jam-shelf-stage-1440.jpg"><source type="image/avif" srcset="img/shop/jam-shelf-sq-480.avif 480w, img/shop/jam-shelf-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/jam-shelf-sq-480.webp 480w, img/shop/jam-shelf-sq-800.webp 800w" sizes="100vw"><img src="img/shop/jam-shelf-sq-800.jpg" width="800" height="800" alt="Tropical jam in front of a row of iD Éclair jars" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Jams</b><span>Order now</span><a class="stg-shop" href="menu.html#gifts">Shop all<span class="sr"> jams</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Biscuits &amp; cookies" data-ground="#dce4e7"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/kushy-box-stage-960.avif 960w, img/shop/kushy-box-stage-1440.avif 1440w, img/shop/kushy-box-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/kushy-box-stage-960.webp 960w, img/shop/kushy-box-stage-1440.webp 1440w, img/shop/kushy-box-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/kushy-box-stage-1440.jpg"><source type="image/avif" srcset="img/shop/kushy-box-sq-480.avif 480w, img/shop/kushy-box-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/kushy-box-sq-480.webp 480w, img/shop/kushy-box-sq-800.webp 800w" sizes="100vw"><img src="img/shop/kushy-box-sq-800.jpg" width="800" height="800" alt="Kushyflakes in an open iD Éclair box" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Biscuits &amp; cookies</b><span>Kushyflakes, by the box</span><a class="stg-shop" href="menu.html#gifts">Shop all<span class="sr"> biscuits &amp; cookies</span></a></p></div>
+  </div>
+  <div class="stg-ctl"><div class="stg-dots" role="group" aria-label="Choose a slide"><button class="stg-dot" type="button" aria-label="Show slide 1: Vegan Cookies" aria-current="true"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 2: Cookie Spoon" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 3: Custom Cookies" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 4: Jams" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 5: Biscuits &amp; cookies" aria-current="false"><i></i></button></div><button class="stg-pause" type="button" aria-pressed="false"><svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg><svg class="pl" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button></div>
+  <div class="stg-panel" data-grid-break>
+    <div class="stg-card">
+        <p class="kick rise stg-kick"><span>Planned line</span><span>Navy and ivory</span><span>No animal materials</span></p>
+        <h1 id="h1">From Green Street, <em>in navy and ivory.</em></h1>
+        <p class="stg-lead">Eight pieces for the first run, each with one French line and the red heart from the logo, plus numbered macaron tins and counter pieces that change with the season. The line is planned and not for sale yet; three things can be ordered today.</p>
+        <div class="stg-choice" role="group" aria-label="How you get it"><button type="button" data-how="pickup" aria-pressed="true">Pickup</button><button type="button" data-how="delivery" aria-pressed="false">Delivery</button></div>
+        <p class="stg-how" data-how="pickup">Pickup at 169 W Green St: choose the day and the time, and it is boxed for then.</p>
+        <p class="stg-how" data-how="delivery" hidden>Delivery runs on Uber Eats, DoorDash and Grubhub today, through the shop’s <a href="https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780" target="_blank" rel="noopener">menu app</a>. Shelf gifts also ship in the US.</p>
+        <div class="stg-actions"><a class="stg-go" href="#today">Order today’s three</a><a class="stg-menu" href="menu.html">See the menu</a></div>
+        <p class="stg-pre" data-for="toussaint"><span><b>Halloween week</b>: boxed chocolate for the bowl by the door, through 2 November. <a href="menu.html#gifts">See the chocolate</a></span></p>
+        <p class="stg-pre" data-for="thanksgiving"><span><b>Thanksgiving box for two</b>, $100 to $185: pickup 11 to 26 November at 3 pm, order 48 hours ahead. <a href="https://www.id-eclair.com/products/thanksgiving-box-for-2" target="_blank" rel="noopener">Pre-order</a></span></p>
+        <p class="stg-pre" data-for="noel"><span><b>Christmas gifts</b>: gift baskets from $45 and the four jars for $30, boxed for pickup through 24 December. <a href="gift-cards.html#boxed">See the gifts</a></span></p>
+        <p class="stg-pre" data-for="valentine"><span><b>For the 14th</b>: the love-note jars at $8.00 each, boxed for your pickup time. <a href="menu.html#cakes">Order the jars</a></span></p>
+        <p class="stg-pre" data-for="paques"><span><b>Easter</b>: truffle boxes from $15, boxed for Saturday’s hunt. <a href="menu.html#gifts">Order the truffles</a></span></p>
     </div>
   </div>
 </section>
+<div class="stg-sticky" aria-hidden="true"><a class="stg-go" href="#today" tabindex="-1">Order today’s three</a></div>
+<!-- stage:end -->
 
-<div class="ostrip" data-ostrip data-after=".mr-hero" role="region" aria-label="Your order">
+<div class="ostrip" data-ostrip data-after=".stage" role="region" aria-label="Your order">
   <div class="wrap ostrip-in">
     <ol class="os-steps" aria-label="Three steps to pay">
       <li class="os-step is-done" data-os-step="slot">

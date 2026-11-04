@@ -245,6 +245,12 @@
   window.IDE_SEASON = { id: pick, preview: preview };
 })();</script>
 <!-- season:end -->
+<!-- stagehead:start -->
+<link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="img/shop/ticket-hands-sq-480.avif 480w, img/shop/ticket-hands-sq-800.avif 800w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="img/shop/ticket-hands-stage-960.avif 960w, img/shop/ticket-hands-stage-1440.avif 1440w, img/shop/ticket-hands-stage-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="assets/stage.css">
+<script src="assets/stage.js" defer></script>
+<!-- stagehead:end -->
 <script src="assets/app.js" defer></script>
 <style>
 /* classes.html only. Shared parts come from assets/site.css; everything here is scoped with cl- and uses its tokens. */
@@ -430,25 +436,37 @@ textarea.cl-input{min-height:88px;resize:vertical}
 
 <main id="top">
 
-<section class="hero hero-flow cl-hero" aria-labelledby="h1">
-  <div class="wrap">
-    <div>
-      <p class="kick rise"><span>$125.00 a seat</span><span>169 W Green St</span></p>
-      <h1 id="h1">Macaron Masterclass with Chef Romy, <em>Tuesdays at 3:30.</em></h1>
-      <p class="lead">Two hands-on hours at the shop. You leave with 20 to 30 macarons.</p>
-      <div class="hero-actions rise d3">
-        <a class="btn btn-brand" href="#dates">See the Tuesdays</a>
-        <a class="link" href="#gift">Give it as a gift</a>
-      </div>
+<!-- stage:start -->
+<section class="stage has-season" aria-labelledby="h1" data-stage data-interval="5000">
+  <div class="stg-slides" aria-roledescription="carousel" aria-label="From the shop’s own photographs">
+    <div class="stg-slide is-on" role="group" aria-roledescription="slide" aria-label="1 of 5: Golden Ticket" data-ground="#bc8d71"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/ticket-hands-stage-960.avif 960w, img/shop/ticket-hands-stage-1440.avif 1440w, img/shop/ticket-hands-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/ticket-hands-stage-960.webp 960w, img/shop/ticket-hands-stage-1440.webp 1440w, img/shop/ticket-hands-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/ticket-hands-stage-1440.jpg"><source type="image/avif" srcset="img/shop/ticket-hands-sq-480.avif 480w, img/shop/ticket-hands-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/ticket-hands-sq-480.webp 480w, img/shop/ticket-hands-sq-800.webp 800w" sizes="100vw"><img src="img/shop/ticket-hands-sq-800.jpg" width="800" height="800" alt="Two hands holding the Golden Ticket over a table" loading="eager" fetchpriority="high" decoding="async"></picture><p class="stg-cap"><b>Golden Ticket</b><span>Get your ticket!</span><a class="stg-shop" href="classes.html#gift">Shop all<span class="sr"> golden ticket</span></a></p></div>
+    <div class="stg-slide is-video" role="group" aria-roledescription="slide" aria-label="2 of 5: Golden Ticket" data-ground="#d9c48a"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/ticket-wide-poster.avif"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/ticket-wide-poster.webp"><source media="(min-width:900px)" srcset="img/shop/ticket-wide-poster.jpg"><source type="image/avif" srcset="img/shop/ticket-tall-poster.avif"><source type="image/webp" srcset="img/shop/ticket-tall-poster.webp"><img src="img/shop/ticket-tall-poster.jpg" width="540" height="960" alt="The Golden Ticket masterclass: a class piping macarons at the bench" loading="lazy" decoding="async"></picture><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" data-tall="img/shop/ticket-tall.mp4" data-wide="img/shop/ticket-wide.mp4"></video><p class="stg-cap"><b>Golden Ticket</b><span>Learn to craft pastries like a pro!</span><a class="stg-shop" href="classes.html#gift">Get your ticket!<span class="sr"> golden ticket</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Masterclass" data-ground="#99818c"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/class-group-stage-960.avif 960w, img/shop/class-group-stage-1440.avif 1440w, img/shop/class-group-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/class-group-stage-960.webp 960w, img/shop/class-group-stage-1440.webp 1440w, img/shop/class-group-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/class-group-stage-1440.jpg"><source type="image/avif" srcset="img/shop/class-group-sq-480.avif 480w, img/shop/class-group-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/class-group-sq-480.webp 480w, img/shop/class-group-sq-800.webp 800w" sizes="100vw"><img src="img/shop/class-group-sq-800.jpg" width="800" height="800" alt="A class group holding iD Éclair bags after the masterclass" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Masterclass</b><span>Learn to craft pastries like a pro!</span><a class="stg-shop" href="classes.html#dates">Shop all<span class="sr"> masterclass</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Golden Ticket" data-ground="#e0dbd8"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/ticket-card-stage-960.avif 960w, img/shop/ticket-card-stage-1440.avif 1440w, img/shop/ticket-card-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/ticket-card-stage-960.webp 960w, img/shop/ticket-card-stage-1440.webp 1440w, img/shop/ticket-card-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/ticket-card-stage-1440.jpg"><source type="image/avif" srcset="img/shop/ticket-card-sq-480.avif 480w, img/shop/ticket-card-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/ticket-card-sq-480.webp 480w, img/shop/ticket-card-sq-800.webp 800w" sizes="100vw"><img src="img/shop/ticket-card-sq-800.jpg" width="800" height="800" alt="The Golden Ticket card beside a vase of flowers" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Golden Ticket</b><span>Get your ticket!</span><a class="stg-shop" href="classes.html#gift">Shop all<span class="sr"> golden ticket</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Where it all began" data-ground="#0e0e0e"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/chef-piping-stage-960.avif 960w, img/shop/chef-piping-stage-1440.avif 1440w, img/shop/chef-piping-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/chef-piping-stage-960.webp 960w, img/shop/chef-piping-stage-1440.webp 1440w, img/shop/chef-piping-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/chef-piping-stage-1440.jpg"><source type="image/avif" srcset="img/shop/chef-piping-sq-480.avif 480w" sizes="100vw"><source type="image/webp" srcset="img/shop/chef-piping-sq-480.webp 480w" sizes="100vw"><img src="img/shop/chef-piping-sq-480.jpg" width="480" height="480" alt="Black-and-white photograph of hands piping at the bench" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Where it all began</b><span>At the bench, every morning</span><a class="stg-shop" href="story.html">Shop all<span class="sr"> where it all began</span></a></p></div>
+  </div>
+  <div class="stg-ctl"><div class="stg-dots" role="group" aria-label="Choose a slide"><button class="stg-dot" type="button" aria-label="Show slide 1: Golden Ticket" aria-current="true"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 2: Golden Ticket" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 3: Masterclass" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 4: Golden Ticket" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 5: Where it all began" aria-current="false"><i></i></button></div><button class="stg-pause" type="button" aria-pressed="false"><svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg><svg class="pl" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button></div>
+  <div class="stg-panel" data-grid-break>
+    <div class="stg-card">
+        <p class="kick rise stg-kick"><span>$125.00 a seat</span><span>169 W Green St</span></p>
+        <h1 id="h1">Macaron Masterclass with Chef Romy, <em>Tuesdays at 3:30.</em></h1>
+        <p class="stg-lead">Two hands-on hours at the shop. You leave with 20 to 30 macarons.</p>
+        <div class="stg-choice" role="group" aria-label="How you get it"><button type="button" data-how="pickup" aria-pressed="true">Pickup</button><button type="button" data-how="delivery" aria-pressed="false">Delivery</button></div>
+        <p class="stg-how" data-how="pickup">Pickup at 169 W Green St: choose the day and the time, and it is boxed for then.</p>
+        <p class="stg-how" data-how="delivery" hidden>Delivery runs on Uber Eats, DoorDash and Grubhub today, through the shop’s <a href="https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780" target="_blank" rel="noopener">menu app</a>. Shelf gifts also ship in the US.</p>
+        <div class="stg-actions"><a class="stg-go" href="#dates">See the Tuesdays</a><a class="stg-menu" href="menu.html">See the menu</a></div>
+        <p class="stg-pre" data-for="toussaint"><span><b>Halloween week</b>: boxed chocolate for the bowl by the door, through 2 November. <a href="menu.html#gifts">See the chocolate</a></span></p>
+        <p class="stg-pre" data-for="thanksgiving"><span><b>Thanksgiving box for two</b>, $100 to $185: pickup 11 to 26 November at 3 pm, order 48 hours ahead. <a href="https://www.id-eclair.com/products/thanksgiving-box-for-2" target="_blank" rel="noopener">Pre-order</a></span></p>
+        <p class="stg-pre" data-for="noel"><span><b>Christmas gifts</b>: gift baskets from $45 and the four jars for $30, boxed for pickup through 24 December. <a href="gift-cards.html#boxed">See the gifts</a></span></p>
+        <p class="stg-pre" data-for="valentine"><span><b>For the 14th</b>: the love-note jars at $8.00 each, boxed for your pickup time. <a href="menu.html#cakes">Order the jars</a></span></p>
+        <p class="stg-pre" data-for="paques"><span><b>Easter</b>: truffle boxes from $15, boxed for Saturday’s hunt. <a href="menu.html#gifts">Order the truffles</a></span></p>
     </div>
-    <figure class="hero-media" data-grid-break>
-      <picture><source media="(max-width:899px)" srcset="img/macarons-1-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/macarons-1-800.jpg"><img src="img/macarons-1-800.jpg" srcset="img/macarons-1-800.jpg 800w, img/macarons-1.webp 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="800" height="800" alt="Six macarons in raspberry, pistachio, lemon and violet on one of the shop’s blue glazed plates" fetchpriority="high"></picture>
-      <figcaption class="chip-float"><span data-cl-next>Next class on a Tuesday, 3:30 pm</span><small>example seats</small></figcaption>
-    </figure>
   </div>
 </section>
+<div class="stg-sticky" aria-hidden="true"><a class="stg-go" href="#dates" tabindex="-1">See the Tuesdays</a></div>
+<!-- stage:end -->
 
-<div class="ostrip" data-ostrip data-after=".cl-hero" role="region" aria-label="Your order">
+<div class="ostrip" data-ostrip data-after=".stage" role="region" aria-label="Your order">
   <div class="wrap ostrip-in">
     <ol class="os-steps" aria-label="Three steps to pay">
       <li class="os-step is-done" data-os-step="slot">

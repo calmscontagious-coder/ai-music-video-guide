@@ -1825,5 +1825,258 @@
    "why": "AI-generated and Etsy-era images; the plan says drop them; not fetched"
   }
  ],
- "no_vitrine_photography": "The live site has no photo of the vitrine, the salon, La Cave, the eclairs or the class. Those exist only as customer phone shots on review sites (not ours to use) and the client's Instagram."
+ "no_vitrine_photography": "The live site has no photo of the vitrine, the salon, La Cave, the eclairs or the class. Those exist only as customer phone shots on review sites (not ours to use) and the client's Instagram.",
+ "derivatives_2026-10-25": {
+  "note": "responsive and header derivatives written by the 25 Oct fix waves (srcset widths 750/1500 and the 200/400 px header wordmark); each row names the registered parent it was cut from. Added 2026-11-03.",
+  "rows": [
+   {
+    "file": "caneles-1-750.webp",
+    "width": 750,
+    "height": 750,
+    "bytes": 44586,
+    "sha256": "9fddb74d3ece93eda76ca73085be2a90431ce7298a3f4e9da5638afbba83e7e6",
+    "derived_from": "caneles-1.webp",
+    "manifest_entry": "caneles-1",
+    "source": "shop asset",
+    "how": "Lanczos resize of the registered 1600 px web file, WebP quality 80",
+    "licence": "client-owned site photography, used in the demo under engagement eng-0002; photo-rights confirmation is an open client answer",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T15:34",
+    "used_in": [
+     "options/01-vitrine/index.html",
+     "options/05-carte/index.html",
+     "options/06-maison/index.html",
+     "options/10-fete/index.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "cheese-board-1-750.webp",
+    "width": 750,
+    "height": 500,
+    "bytes": 44048,
+    "sha256": "c8c974b816172e53f549a08f12e03e2553c7a9811bac74451d07b9b8fcc327c6",
+    "derived_from": "cheese-board-1.webp",
+    "manifest_entry": "cheese-board-1",
+    "source": "shop asset",
+    "how": "Lanczos resize of the registered 1600 px web file, WebP quality 80",
+    "licence": "client-owned site photography, used in the demo under engagement eng-0002; photo-rights confirmation is an open client answer",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T02:24",
+    "used_in": [
+     "catering.html",
+     "la-cave.html",
+     "options/06-maison/index.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "cookie-spoon-750.webp",
+    "width": 750,
+    "height": 750,
+    "bytes": 34072,
+    "sha256": "e7f9d4739c34f8fd923e441f4bf1f9f734424c2b4b2c3560f45081f04bb514e0",
+    "derived_from": "cookie-spoon.webp",
+    "manifest_entry": "cookie-spoon",
+    "source": "shop asset",
+    "how": "Lanczos resize of the registered 1600 px web file, WebP quality 80",
+    "licence": "client-owned site photography, used in the demo under engagement eng-0002; photo-rights confirmation is an open client answer",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T15:39",
+    "used_in": [
+     "merch.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "logo-wordmark-200.webp",
+    "width": 200,
+    "height": 146,
+    "bytes": 7886,
+    "sha256": "a4cc5dca2ef6a9f8cff7e4b903974976c28fe61d7f380350c73163ec2b51a7b2",
+    "derived_from": "logo-wordmark.png",
+    "manifest_entry": "logos[2] logo-wordmark.png",
+    "source": "generated",
+    "how": "resize of the concept-variant PNG for the header, WebP",
+    "licence": "agency-made concept variant of the client's own logo artwork (ghost D removed); client approval needed before any live use",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T02:40",
+    "used_in": [
+     "cakes.html",
+     "catering.html",
+     "classes.html",
+     "gift-cards.html",
+     "index.html",
+     "la-cave.html",
+     "menu-board.html",
+     "menu.html",
+     "merch.html",
+     "options/01-vitrine/index.html",
+     "options/02-salon/index.html",
+     "options/04-marche/index.html",
+     "options/05-carte/index.html",
+     "options/06-maison/index.html",
+     "options/07-frontier/index.html",
+     "options/08-comptoir/index.html",
+     "options/09-galerie/index.html",
+     "options/10-fete/index.html",
+     "options/11-concierge/index.html",
+     "story.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "logo-wordmark-400.webp",
+    "width": 400,
+    "height": 292,
+    "bytes": 19114,
+    "sha256": "0f32830e0d37da5d621c693ca7121d4237085d380244cd36637bf3ab2500c395",
+    "derived_from": "logo-wordmark.png",
+    "manifest_entry": "logos[2] logo-wordmark.png",
+    "source": "generated",
+    "how": "resize of the concept-variant PNG for the header, WebP",
+    "licence": "agency-made concept variant of the client's own logo artwork (ghost D removed); client approval needed before any live use",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T02:40",
+    "used_in": [
+     "cakes.html",
+     "catering.html",
+     "classes.html",
+     "gift-cards.html",
+     "index.html",
+     "la-cave.html",
+     "menu-board.html",
+     "menu.html",
+     "merch.html",
+     "options/01-vitrine/index.html",
+     "options/02-salon/index.html",
+     "options/04-marche/index.html",
+     "options/05-carte/index.html",
+     "options/06-maison/index.html",
+     "options/07-frontier/index.html",
+     "options/08-comptoir/index.html",
+     "options/09-galerie/index.html",
+     "options/10-fete/index.html",
+     "options/11-concierge/index.html",
+     "story.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "macarons-1-750.webp",
+    "width": 750,
+    "height": 750,
+    "bytes": 30148,
+    "sha256": "bf56006021dc4de6f99517f21b753f78ccca162b8b630dc8309fb32c3087e0af",
+    "derived_from": "macarons-1.webp",
+    "manifest_entry": "macarons-1",
+    "source": "shop asset",
+    "how": "Lanczos resize of the registered 1600 px web file, WebP quality 80",
+    "licence": "client-owned site photography, used in the demo under engagement eng-0002; photo-rights confirmation is an open client answer",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T02:24",
+    "used_in": [
+     "classes.html",
+     "menu.html",
+     "options/01-vitrine/index.html",
+     "options/05-carte/index.html",
+     "options/06-maison/index.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "shop-caneles-tray-750.webp",
+    "width": 750,
+    "height": 750,
+    "bytes": 63314,
+    "sha256": "bae56a92f000e5bc6db2e0f69602fe63c46087bad2e92bdc3b8cb86a16200b73",
+    "derived_from": "shop-caneles-tray.webp",
+    "manifest_entry": "shop-caneles-tray",
+    "source": "shop asset",
+    "how": "Lanczos resize of the registered 1600 px web file, WebP quality 80",
+    "licence": "client-owned site photography, used in the demo under engagement eng-0002; photo-rights confirmation is an open client answer",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T02:24",
+    "used_in": [
+     "index.html",
+     "options/05-carte/index.html",
+     "story.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "shop-truffle-box-750.webp",
+    "width": 750,
+    "height": 751,
+    "bytes": 21234,
+    "sha256": "38a17fc309a4217994f093daa99660f5a66f7279ec2de16f0bfebcde14bd1605",
+    "derived_from": "shop-truffle-box.webp",
+    "manifest_entry": "shop-truffle-box",
+    "source": "shop asset",
+    "how": "Lanczos resize of the registered 1600 px web file, WebP quality 80",
+    "licence": "client-owned site photography, used in the demo under engagement eng-0002; photo-rights confirmation is an open client answer",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T02:24",
+    "used_in": [
+     "options/10-fete/index.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "story-chef-competition-750.webp",
+    "width": 750,
+    "height": 501,
+    "bytes": 27500,
+    "sha256": "1482716a9ee8d12e52485214e66fbea43693493dfaf052b8a8c091b5653b6daf",
+    "derived_from": "story-chef-competition.webp",
+    "manifest_entry": "story-chef-competition",
+    "source": "shop asset",
+    "how": "Lanczos resize of the registered 1600 px web file, WebP quality 80",
+    "licence": "client-owned site photography, used in the demo under engagement eng-0002; photo-rights confirmation is an open client answer",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T02:24",
+    "used_in": [
+     "cakes.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "truffles-1500.webp",
+    "width": 1500,
+    "height": 1500,
+    "bytes": 126250,
+    "sha256": "8b794c0c7d92df534e23da46f631543de20828274325d1a5f57ff900d33e486d",
+    "derived_from": "truffles.jpg",
+    "manifest_entry": "pre_existing_files_kept truffles.jpg",
+    "source": "shop asset",
+    "how": "Lanczos resize of the kept demo v2 file, WebP quality 80",
+    "licence": "client-owned site photography, used in the demo under engagement eng-0002; photo-rights confirmation is an open client answer",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T15:34",
+    "used_in": [
+     "options/10-fete/index.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   },
+   {
+    "file": "truffles-750.webp",
+    "width": 750,
+    "height": 750,
+    "bytes": 32706,
+    "sha256": "213a1ed6804d60d7f9933125a26eda685b740d020a341de0b3f248ce14c8a8b9",
+    "derived_from": "truffles.jpg",
+    "manifest_entry": "pre_existing_files_kept truffles.jpg",
+    "source": "shop asset",
+    "how": "Lanczos resize of the kept demo v2 file, WebP quality 80",
+    "licence": "client-owned site photography, used in the demo under engagement eng-0002; photo-rights confirmation is an open client answer",
+    "cost_usd": 0,
+    "file_mtime": "2026-10-25T15:34",
+    "used_in": [
+     "options/10-fete/index.html"
+    ],
+    "registered": "2026-11-03 (file-list vs manifest diff; the 25 Oct waves wrote the files without rows)"
+   }
+  ]
+ },
+ "updated": "2026-11-03"
 }

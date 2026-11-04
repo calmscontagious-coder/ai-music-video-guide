@@ -69,6 +69,12 @@
      "kushyflakes",
      "macarons"
     ]
+   },
+   "preorder": {
+    "html": "<b>Halloween week</b>: boxed chocolate for the bowl by the door, through 2 November.",
+    "label": "See the chocolate",
+    "href": "menu.html#gifts",
+    "source": "live store prices"
    }
   },
   {
@@ -114,6 +120,12 @@
      "4-desserts-in-jar",
      "dark-chocolate-truffles"
     ]
+   },
+   "preorder": {
+    "html": "<b>Thanksgiving box for two</b>, $100 to $185: pickup 11 to 26 November at 3 pm, order 48 hours ahead.",
+    "label": "Pre-order",
+    "href": "https://www.id-eclair.com/products/thanksgiving-box-for-2",
+    "source": "live store listing, read 22 Oct 2026"
    }
   },
   {
@@ -159,6 +171,12 @@
      "4-desserts-in-jar",
      "white-chocolate-truffles"
     ]
+   },
+   "preorder": {
+    "html": "<b>Christmas gifts</b>: gift baskets from $45 and the four jars for $30, boxed for pickup through 24 December.",
+    "label": "See the gifts",
+    "href": "gift-cards.html#boxed",
+    "source": "live store prices, read 21 to 22 Oct 2026"
    }
   },
   {
@@ -204,6 +222,12 @@
      "framboise-cherie",
      "macarons"
     ]
+   },
+   "preorder": {
+    "html": "<b>For the 14th</b>: the love-note jars at $8.00 each, boxed for your pickup time.",
+    "label": "Order the jars",
+    "href": "menu.html#cakes",
+    "source": "live store prices"
    }
   },
   {
@@ -249,6 +273,12 @@
      "diamants-biscuit-by-6",
      "cookie-spoon"
     ]
+   },
+   "preorder": {
+    "html": "<b>Easter</b>: truffle boxes from $15, boxed for Saturday’s hunt.",
+    "label": "Order the truffles",
+    "href": "menu.html#gifts",
+    "source": "live store prices"
    }
   }
  ],
@@ -271,5 +301,6 @@
    "diamants-biscuit-by-6": "img/diamants-biscuit-by-6-800.jpg",
    "cookie-spoon": "img/cookie-spoon-800.jpg"
   }
- }
+ },
+ "preorder_note": "preorder: the dated pre-order line the stage's order panel shows under each look (tools/stage.py renders one per season; CSS shows the one for html[data-season])."
 }

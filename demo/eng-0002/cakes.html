@@ -200,6 +200,12 @@
   window.IDE_SEASON = { id: pick, preview: preview };
 })();</script>
 <!-- season:end -->
+<!-- stagehead:start -->
+<link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="img/shop/chef-competition-sq-480.avif 480w, img/shop/chef-competition-sq-800.avif 800w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="img/shop/chef-competition-stage-960.avif 960w, img/shop/chef-competition-stage-1440.avif 1440w, img/shop/chef-competition-stage-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="assets/stage.css">
+<script src="assets/stage.js" defer></script>
+<!-- stagehead:end -->
 <script src="assets/app.js" defer></script>
 <style>
 /* cakes.html only. Shared parts come from assets/site.css; everything here is scoped with ck- and uses its tokens. */
@@ -445,25 +451,37 @@ textarea.ck-input{min-height:96px;resize:vertical}
 
 <main id="top">
 
-<section class="hero hero-flow ck-hero" aria-labelledby="h1">
-  <div class="wrap">
-    <div>
-      <p class="kick rise"><span>Custom cakes</span><span>One week’s notice</span><span>100% plant-based</span></p>
-      <h1 id="h1" class="rise d1">Custom cakes from 169 W Green St, <em>one week ahead.</em></h1>
-      <p class="lead">Tell the chef the occasion, the guests and the flavour, and get a sketch and a price back. Give it a week’s notice.</p>
-      <div class="hero-actions rise d3">
-        <a class="btn btn-brand" href="#builder">Start your cake</a>
-        <a class="link" href="#gallery">See the gallery</a>
-      </div>
+<!-- stage:start -->
+<section class="stage has-season" aria-labelledby="h1" data-stage data-interval="5000">
+  <div class="stg-slides" aria-roledescription="carousel" aria-label="From the shop’s own photographs">
+    <div class="stg-slide is-on" role="group" aria-roledescription="slide" aria-label="1 of 5: Training" data-ground="#837166"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/chef-competition-stage-960.avif 960w, img/shop/chef-competition-stage-1440.avif 1440w, img/shop/chef-competition-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/chef-competition-stage-960.webp 960w, img/shop/chef-competition-stage-1440.webp 1440w, img/shop/chef-competition-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/chef-competition-stage-1440.jpg"><source type="image/avif" srcset="img/shop/chef-competition-sq-480.avif 480w, img/shop/chef-competition-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/chef-competition-sq-480.webp 480w, img/shop/chef-competition-sq-800.webp 800w" sizes="100vw"><img src="img/shop/chef-competition-sq-800.jpg" width="800" height="800" alt="The chef at the 28th US Pastry Competition, finishing a chocolate showpiece" loading="eager" fetchpriority="high" decoding="async"></picture><p class="stg-cap"><b>Training</b><span>Finalist, US Pastry Competition 2017</span><a class="stg-shop" href="story.html">Shop all<span class="sr"> training</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Chocolat mon amour" data-ground="#c5c4c2"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/jar-cacao-stage-960.avif 960w, img/shop/jar-cacao-stage-1440.avif 1440w, img/shop/jar-cacao-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/jar-cacao-stage-960.webp 960w, img/shop/jar-cacao-stage-1440.webp 1440w, img/shop/jar-cacao-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/jar-cacao-stage-1440.jpg"><source type="image/avif" srcset="img/shop/jar-cacao-sq-480.avif 480w, img/shop/jar-cacao-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/jar-cacao-sq-480.webp 480w, img/shop/jar-cacao-sq-800.webp 800w" sizes="100vw"><img src="img/shop/jar-cacao-sq-800.jpg" width="800" height="800" alt="Chocolat mon amour with a biscuit spoon on a bed of cacao beans" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Chocolat mon amour</b><span>Chocolate crumble, ganache and mousse</span><a class="stg-shop" href="menu.html#cakes">Shop all<span class="sr"> chocolat mon amour</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Citron ma passion" data-ground="#bcad94"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/jar-lemons-stage-960.avif 960w, img/shop/jar-lemons-stage-1440.avif 1440w, img/shop/jar-lemons-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/jar-lemons-stage-960.webp 960w, img/shop/jar-lemons-stage-1440.webp 1440w, img/shop/jar-lemons-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/jar-lemons-stage-1440.jpg"><source type="image/avif" srcset="img/shop/jar-lemons-sq-480.avif 480w, img/shop/jar-lemons-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/jar-lemons-sq-480.webp 480w, img/shop/jar-lemons-sq-800.webp 800w" sizes="100vw"><img src="img/shop/jar-lemons-sq-800.jpg" width="800" height="800" alt="Citron ma passion with a biscuit spoon on a pile of lemons" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Citron ma passion</b><span>Lemon curd, meringue, almond streusel</span><a class="stg-shop" href="menu.html#cakes">Shop all<span class="sr"> citron ma passion</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Custom Cookies" data-ground="#af754e"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/cookie-roses-stage-960.avif 960w, img/shop/cookie-roses-stage-1440.avif 1440w, img/shop/cookie-roses-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/cookie-roses-stage-960.webp 960w, img/shop/cookie-roses-stage-1440.webp 1440w, img/shop/cookie-roses-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/cookie-roses-stage-1440.jpg"><source type="image/avif" srcset="img/shop/cookie-roses-sq-480.avif 480w, img/shop/cookie-roses-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/cookie-roses-sq-480.webp 480w, img/shop/cookie-roses-sq-800.webp 800w" sizes="100vw"><img src="img/shop/cookie-roses-sq-800.jpg" width="800" height="800" alt="A cookie topped with piped roses, held up among leaves" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Custom Cookies</b><span>Order a batch</span><a class="stg-shop" href="catering.html#ready">Shop all<span class="sr"> custom cookies</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Dessert in jar" data-ground="#ebf9d6"><picture><source media="(min-width:900px)" type="image/avif" srcset="img/shop/ab-jars-stage-960.avif 960w, img/shop/ab-jars-stage-1440.avif 1440w, img/shop/ab-jars-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="img/shop/ab-jars-stage-960.webp 960w, img/shop/ab-jars-stage-1440.webp 1440w, img/shop/ab-jars-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="img/shop/ab-jars-stage-1440.jpg"><source type="image/avif" srcset="img/shop/ab-jars-sq-480.avif 480w, img/shop/ab-jars-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="img/shop/ab-jars-sq-480.webp 480w, img/shop/ab-jars-sq-800.webp 800w" sizes="100vw"><img src="img/shop/ab-jars-sq-800.jpg" width="800" height="800" alt="Three dessert jars with biscuit spoons, Framboise chérie, Citron ma passion and Chocolat mon amour, on a mint ground" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Dessert in jar</b><span>Framboise chérie, Citron ma passion, Chocolat mon amour</span><a class="stg-shop" href="menu.html#cakes">Shop all<span class="sr"> dessert in jar</span></a></p></div>
+  </div>
+  <div class="stg-ctl"><div class="stg-dots" role="group" aria-label="Choose a slide"><button class="stg-dot" type="button" aria-label="Show slide 1: Training" aria-current="true"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 2: Chocolat mon amour" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 3: Citron ma passion" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 4: Custom Cookies" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 5: Dessert in jar" aria-current="false"><i></i></button></div><button class="stg-pause" type="button" aria-pressed="false"><svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg><svg class="pl" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button></div>
+  <div class="stg-panel" data-grid-break>
+    <div class="stg-card">
+        <p class="kick rise stg-kick"><span>Custom cakes</span><span>One week’s notice</span><span>100% plant-based</span></p>
+        <h1 id="h1">Custom cakes from 169 W Green St, <em>one week ahead.</em></h1>
+        <p class="stg-lead">Tell the chef the occasion, the guests and the flavour, and get a sketch and a price back. Give it a week’s notice.</p>
+        <div class="stg-choice" role="group" aria-label="How you get it"><button type="button" data-how="pickup" aria-pressed="true">Pickup</button><button type="button" data-how="delivery" aria-pressed="false">Delivery</button></div>
+        <p class="stg-how" data-how="pickup">Pickup at 169 W Green St: choose the day and the time, and it is boxed for then.</p>
+        <p class="stg-how" data-how="delivery" hidden>Delivery runs on Uber Eats, DoorDash and Grubhub today, through the shop’s <a href="https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780" target="_blank" rel="noopener">menu app</a>. Shelf gifts also ship in the US.</p>
+        <div class="stg-actions"><a class="stg-go" href="#builder">Start your cake</a><a class="stg-menu" href="menu.html">See the menu</a></div>
+        <p class="stg-pre" data-for="toussaint"><span><b>Halloween week</b>: boxed chocolate for the bowl by the door, through 2 November. <a href="menu.html#gifts">See the chocolate</a></span></p>
+        <p class="stg-pre" data-for="thanksgiving"><span><b>Thanksgiving box for two</b>, $100 to $185: pickup 11 to 26 November at 3 pm, order 48 hours ahead. <a href="https://www.id-eclair.com/products/thanksgiving-box-for-2" target="_blank" rel="noopener">Pre-order</a></span></p>
+        <p class="stg-pre" data-for="noel"><span><b>Christmas gifts</b>: gift baskets from $45 and the four jars for $30, boxed for pickup through 24 December. <a href="gift-cards.html#boxed">See the gifts</a></span></p>
+        <p class="stg-pre" data-for="valentine"><span><b>For the 14th</b>: the love-note jars at $8.00 each, boxed for your pickup time. <a href="menu.html#cakes">Order the jars</a></span></p>
+        <p class="stg-pre" data-for="paques"><span><b>Easter</b>: truffle boxes from $15, boxed for Saturday’s hunt. <a href="menu.html#gifts">Order the truffles</a></span></p>
     </div>
-    <figure class="hero-media" data-grid-break>
-      <picture><source media="(max-width:899px)" srcset="img/story-chef-competition-750.webp" type="image/webp"><source media="(max-width:899px)" srcset="img/story-chef-competition-800.jpg"><img src="img/story-chef-competition-800.jpg" srcset="img/story-chef-competition-800.jpg 800w, img/story-chef-competition.jpg 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="1600" height="1067" alt="The chef in whites, assembling a chocolate and sugar showpiece at a pastry competition" fetchpriority="high"></picture>
-      <figcaption class="chip-float"><span>Earliest cake date <b data-ck-earliest>one week out</b></span><small>7-day rule</small></figcaption>
-    </figure>
   </div>
 </section>
+<div class="stg-sticky" aria-hidden="true"><a class="stg-go" href="#builder" tabindex="-1">Start your cake</a></div>
+<!-- stage:end -->
 
-<div class="ostrip" data-ostrip data-after=".ck-hero" role="region" aria-label="Your order">
+<div class="ostrip" data-ostrip data-after=".stage" role="region" aria-label="Your order">
   <div class="wrap ostrip-in">
     <ol class="os-steps" aria-label="Three steps to pay">
       <li class="os-step is-done" data-os-step="slot">

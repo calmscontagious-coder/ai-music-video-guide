@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1f156b">
 <title>The atelier at 169 W Green St, plant-based pâtisserie by Romuald Guiot. Concept preview, direction 3.</title>
-<meta name="description" content="Concept preview, Atelier direction: watch the technique, then order éclairs for a 15-minute pickup slot in Old Pasadena, build a box of six or order a cake.">
+<meta name="description" content="Concept preview, Atelier direction: watch Chef Romuald Guiot’s technique, then order éclairs for a 15-minute pickup slot in Old Pasadena, build a box of six macarons, commission a cake, book the Tuesday masterclass or a table at La Cave.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="iD Éclair">
 <meta property="og:locale" content="en_US">
@@ -21,6 +21,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
+<!-- stagehead:start -->
+<link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="../../img/shop/chef-competition-sq-480.avif 480w, ../../img/shop/chef-competition-sq-800.avif 800w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="../../img/shop/chef-competition-stage-960.avif 960w, ../../img/shop/chef-competition-stage-1440.avif 1440w, ../../img/shop/chef-competition-stage-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="../../assets/stage.css">
+<script src="../../assets/stage.js" defer></script>
+<!-- stagehead:end -->
+<!-- season:start -->
+<script>/* Season layer, 28 Oct 2026. Loaded synchronously in <head> so the look is set before first paint (about 1 KB,
+   no fetch). ?season=<id> previews a look; otherwise the window that holds today's Pasadena date, shortest window
+   first; otherwise maison. The window table between the markers is written from assets/seasons.json by
+   tools/regen_static.py (run it or --check before every publish). In the Shopify build the same table is a
+   metaobject read in Liquid and one theme setting (Season: Auto or a named look). */
+(function () {
+  var T = /*SEASONS:START*/{"ids":["maison","toussaint","thanksgiving","noel","valentine","paques"],"windows":[["toussaint","2026-10-17","2026-11-02"],["thanksgiving","2026-11-03","2026-11-26"],["noel","2026-11-27","2026-12-26"],["valentine","2027-02-01","2027-02-14"],["paques","2027-03-14","2027-03-28"],["toussaint","2027-10-16","2027-11-02"],["thanksgiving","2027-11-02","2027-11-25"],["noel","2027-11-26","2027-12-26"],["valentine","2028-02-01","2028-02-14"],["paques","2028-04-02","2028-04-16"]]}/*SEASONS:END*/, ids = T.ids || ['maison'], W = T.windows || [];
+  var q = /[?&]season=([a-z-]+)/.exec(location.search), want = q && q[1], pick = 'maison', preview = false;
+  if (want && ids.indexOf(want) >= 0) { pick = want; preview = true; }
+  else {
+    var o = {}, today;
+    try { new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; }); today = o.year + '-' + o.month + '-' + o.day; } catch (e) { today = new Date().toISOString().slice(0, 10); }
+    var best = null, len = Infinity;
+    for (var i = 0; i < W.length; i++) { var w = W[i]; if (w[1] <= today && today <= w[2]) { var d = Date.parse(w[2]) - Date.parse(w[1]); if (d < len) { len = d; best = w[0]; } } }
+    if (best) pick = best;
+  }
+  document.documentElement.setAttribute('data-season', pick);
+  window.IDE_SEASON = { id: pick, preview: preview };
+})();</script>
+<!-- season:end -->
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">
 {
@@ -181,9 +208,38 @@
 
 <main id="top">
 
-<section class="hero" aria-labelledby="h1">
+<!-- stage:start -->
+<section class="stage" aria-labelledby="h1" data-stage data-interval="5000">
+  <div class="stg-slides" aria-roledescription="carousel" aria-label="From the shop’s own photographs">
+    <div class="stg-slide is-on" role="group" aria-roledescription="slide" aria-label="1 of 5: Training" data-ground="#837166"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/chef-competition-stage-960.avif 960w, ../../img/shop/chef-competition-stage-1440.avif 1440w, ../../img/shop/chef-competition-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/chef-competition-stage-960.webp 960w, ../../img/shop/chef-competition-stage-1440.webp 1440w, ../../img/shop/chef-competition-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/chef-competition-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/chef-competition-sq-480.avif 480w, ../../img/shop/chef-competition-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/chef-competition-sq-480.webp 480w, ../../img/shop/chef-competition-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/chef-competition-sq-800.jpg" width="800" height="800" alt="The chef at the 28th US Pastry Competition, finishing a chocolate showpiece" loading="eager" fetchpriority="high" decoding="async"></picture><p class="stg-cap"><b>Training</b><span>Finalist, US Pastry Competition 2017</span><a class="stg-shop" href="../../story.html">Shop all<span class="sr"> training</span></a></p></div>
+    <div class="stg-slide is-video" role="group" aria-roledescription="slide" aria-label="2 of 5: Golden Ticket" data-ground="#d9c48a"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/ticket-wide-poster.avif"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/ticket-wide-poster.webp"><source media="(min-width:900px)" srcset="../../img/shop/ticket-wide-poster.jpg"><source type="image/avif" srcset="../../img/shop/ticket-tall-poster.avif"><source type="image/webp" srcset="../../img/shop/ticket-tall-poster.webp"><img src="../../img/shop/ticket-tall-poster.jpg" width="540" height="960" alt="The Golden Ticket masterclass: a class piping macarons at the bench" loading="lazy" decoding="async"></picture><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" data-tall="../../img/shop/ticket-tall.mp4" data-wide="../../img/shop/ticket-wide.mp4"></video><p class="stg-cap"><b>Golden Ticket</b><span>Learn to craft pastries like a pro!</span><a class="stg-shop" href="../../classes.html#gift">Get your ticket!<span class="sr"> golden ticket</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Éclairs" data-ground="#4b545a"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/eclairs-slate-stage-960.avif 960w, ../../img/shop/eclairs-slate-stage-1440.avif 1440w, ../../img/shop/eclairs-slate-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/eclairs-slate-stage-960.webp 960w, ../../img/shop/eclairs-slate-stage-1440.webp 1440w, ../../img/shop/eclairs-slate-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/eclairs-slate-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/eclairs-slate-sq-480.avif 480w, ../../img/shop/eclairs-slate-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/eclairs-slate-sq-480.webp 480w, ../../img/shop/eclairs-slate-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/eclairs-slate-sq-800.jpg" width="800" height="800" alt="A spread of éclairs with different glazes and decorations on a dark slate" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Éclairs</b><span>The house signature, every morning</span><a class="stg-shop" href="../../menu.html#eclairs">Shop all<span class="sr"> éclairs</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Where it all began" data-ground="#0e0e0e"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/chef-piping-stage-960.avif 960w, ../../img/shop/chef-piping-stage-1440.avif 1440w, ../../img/shop/chef-piping-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/chef-piping-stage-960.webp 960w, ../../img/shop/chef-piping-stage-1440.webp 1440w, ../../img/shop/chef-piping-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/chef-piping-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/chef-piping-sq-480.avif 480w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/chef-piping-sq-480.webp 480w" sizes="100vw"><img src="../../img/shop/chef-piping-sq-480.jpg" width="480" height="480" alt="Black-and-white photograph of hands piping at the bench" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Where it all began</b><span>At the bench, every morning</span><a class="stg-shop" href="../../story.html">Shop all<span class="sr"> where it all began</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Custom Cookies" data-ground="#af754e"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/cookie-roses-stage-960.avif 960w, ../../img/shop/cookie-roses-stage-1440.avif 1440w, ../../img/shop/cookie-roses-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/cookie-roses-stage-960.webp 960w, ../../img/shop/cookie-roses-stage-1440.webp 1440w, ../../img/shop/cookie-roses-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/cookie-roses-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/cookie-roses-sq-480.avif 480w, ../../img/shop/cookie-roses-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/cookie-roses-sq-480.webp 480w, ../../img/shop/cookie-roses-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/cookie-roses-sq-800.jpg" width="800" height="800" alt="A cookie topped with piped roses, held up among leaves" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Custom Cookies</b><span>Order a batch</span><a class="stg-shop" href="../../catering.html#ready">Shop all<span class="sr"> custom cookies</span></a></p></div>
+  </div>
+  <div class="stg-ctl"><div class="stg-dots" role="group" aria-label="Choose a slide"><button class="stg-dot" type="button" aria-label="Show slide 1: Training" aria-current="true"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 2: Golden Ticket" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 3: Éclairs" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 4: Where it all began" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 5: Custom Cookies" aria-current="false"><i></i></button></div><button class="stg-pause" type="button" aria-pressed="false"><svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg><svg class="pl" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button></div>
+  <div class="stg-panel">
+    <div class="stg-card">
+        <p class="stg-kick"><span lang="fr">Pâtisserie française</span><span>100% vegan</span><span>169 W Green St</span></p>
+        <h1 id="h1"><span lang="fr">Pâtisserie française</span> by Romuald Guiot, made from plants at 169&nbsp;W Green&nbsp;St.</h1>
+        <div class="stg-choice" role="group" aria-label="How you get it"><button type="button" data-how="pickup" aria-pressed="true">Pickup</button><button type="button" data-how="delivery" aria-pressed="false">Delivery</button></div>
+        <p class="stg-how" data-how="pickup">Pickup at 169 W Green St: choose the day and the time, and it is boxed for then.</p>
+        <p class="stg-how" data-how="delivery" hidden>Delivery runs on Uber Eats, DoorDash and Grubhub today, through the shop’s <a href="https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780" target="_blank" rel="noopener">menu app</a>. Shelf gifts also ship in the US.</p>
+        <div class="stg-actions"><a class="stg-go" href="#menu">Order for pickup</a></div>
+        <p class="stg-pre" data-for="toussaint"><span><b>Halloween week</b>: boxed chocolate for the bowl by the door, through 2 November. <a href="../../menu.html#gifts">See the chocolate</a></span></p>
+        <p class="stg-pre" data-for="thanksgiving"><span><b>Thanksgiving box for two</b>, $100 to $185: pickup 11 to 26 November at 3 pm, order 48 hours ahead. <a href="https://www.id-eclair.com/products/thanksgiving-box-for-2" target="_blank" rel="noopener">Pre-order</a></span></p>
+        <p class="stg-pre" data-for="noel"><span><b>Christmas gifts</b>: gift baskets from $45 and the four jars for $30, boxed for pickup through 24 December. <a href="../../gift-cards.html#boxed">See the gifts</a></span></p>
+        <p class="stg-pre" data-for="valentine"><span><b>For the 14th</b>: the love-note jars at $8.00 each, boxed for your pickup time. <a href="../../menu.html#cakes">Order the jars</a></span></p>
+        <p class="stg-pre" data-for="paques"><span><b>Easter</b>: truffle boxes from $15, boxed for Saturday’s hunt. <a href="../../menu.html#gifts">Order the truffles</a></span></p>
+    </div>
+  </div>
+</section>
+<div class="stg-sticky" aria-hidden="true"><a class="stg-go" href="#menu" tabindex="-1">Order for pickup</a></div>
+<!-- stage:end -->
+
+<section class="hero" aria-label="Order from the case">
   <div class="hero-copy">
-    <h1 id="h1" class="arrive"><span lang="fr">Pâtisserie française</span> by Romuald Guiot, made from plants at 169&nbsp;W Green&nbsp;St.</h1>
+    
     <p class="lead arrive d1">A fourth-generation pastry chef, formerly of the three-Michelin-star La Maison de Marc Veyrat. Every éclair, croissant and macaron in his case is plant-based, and every one can be boxed for the 15-minute pickup slot you choose.</p>
     <div class="hero-actions arrive d2">
       <a class="btn btn-brand" href="#menu">Order for pickup</a>
@@ -214,7 +270,7 @@
     </dl>
   </div>
   <figure class="hero-media" data-grid-break>
-    <img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.webp 1600w" sizes="(min-width:900px) 55vw, 100vw" width="800" height="800" alt="A tray of the shop’s macarons in rows, the pastel shells the Tuesday class pipes and fills">
+    <img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.webp 1600w" sizes="(min-width:900px) 55vw, 100vw" width="800" height="800" alt="A tray of the shop’s macarons in rows, the pastel shells the Tuesday class pipes and fills" loading="lazy">
     <figcaption><b>From the bench.</b> The macarons the Tuesday class pipes, fills and carries home. No egg or dairy in any of them.</figcaption>
   </figure>
 </section>

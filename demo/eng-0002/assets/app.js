@@ -617,7 +617,7 @@
   function initHeroCta() {
     var html = document.documentElement, b = document.body;
     if (!b || !b.hasAttribute('data-hero-cta')) return;
-    var hero = $('main .hero-actions .btn'), head = $('.top'), ticking = false;
+    var hero = $('main .stg-actions .stg-go') || $('main .hero-actions .btn'), head = $('.top'), ticking = false;
     if (!hero) { html.classList.add('hero-cta-off'); return; }
     function update() {
       ticking = false;

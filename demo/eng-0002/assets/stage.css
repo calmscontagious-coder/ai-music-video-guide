@@ -1,0 +1,111 @@
+/* The stage (3 Nov 2026): the top of every demo page, in the manner of the shop's own home page. A full-bleed
+   slideshow of the shop's art boards, photographs and Golden Ticket video, fading every 5 s with dots and a pause
+   control, and a fixed order panel over it that never moves: the page's headline, Order for pickup, the menu in
+   one tap, pickup or delivery, and the dated holiday pre-order line for the current season.
+   Self-contained: it reads the page's tokens when they exist (site.css or an option's theme.css) and falls back to
+   the client palette, so it works on every page. Motion: 300 ms opacity fades, none under reduced motion. */
+.stage{
+  --stg-ink:var(--color-ink,var(--ink,#1a1340));--stg-brand:var(--color-brand,var(--brand,#1f156b));--stg-brand-deep:var(--color-brand-deep,var(--brand-press,#120052));
+  --stg-canvas:var(--color-canvas,var(--canvas,#faf7f2));--stg-surface:#ffffff;--stg-muted:var(--color-muted,var(--muted,#5c5d65));--stg-line:var(--color-line,var(--line,#e3ded4));
+  --stg-heart:#e02030;--stg-on-brand:#faf7f2;
+  --stg-display:var(--font-display,"Fraunces",Georgia,serif);--stg-text:var(--font-text,"Nunito Sans",Arial,sans-serif);
+  --stg-fade:300ms;--stg-ease:cubic-bezier(.2,0,0,1);
+  position:relative;display:grid;margin:0;padding:0;background:var(--stg-canvas);color:var(--stg-ink);font-family:var(--stg-text);isolation:isolate
+}
+.stage *,.stage *::before,.stage *::after{box-sizing:border-box}
+.stage .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ---- the slides ---- */
+.stg-slides{position:relative;overflow:hidden;background:var(--stg-g,#ebf9d6);aspect-ratio:5/4;transition:background-color var(--stg-fade) var(--stg-ease)}
+.stg-slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity var(--stg-fade) var(--stg-ease),visibility 0s linear var(--stg-fade)}
+.stg-slide.is-on{opacity:1;visibility:visible;transition:opacity var(--stg-fade) var(--stg-ease),visibility 0s}
+/* until the page has loaded, the other slides stay out of the layout, so only the first photo competes with the page */
+.stage:not(.stg-live) .stg-slide:not(.is-on){display:none}
+.stg-slide picture,.stg-slide img,.stg-slide video{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--stg-pos,50% 50%)}
+.stg-slide.is-video{--stg-pos:50% 30%;--stg-pos-d:50% 50%}
+.stg-slide video{position:absolute;inset:0;opacity:0;transition:opacity var(--stg-fade) var(--stg-ease)}
+.stg-slide video.is-ready{opacity:1}
+/* his caption: tracked capitals, his line, a white pill */
+.stg-cap{position:absolute;left:12px;bottom:12px;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:0;padding:8px 8px 8px 14px;background:var(--stg-surface);color:var(--stg-ink);border-radius:999px;box-shadow:0 6px 18px rgb(26 19 64 / .14);width:max-content;max-width:calc(100% - 24px)}
+.stg-cap b{font:800 .75rem/1.2 var(--stg-text);letter-spacing:.14em;text-transform:uppercase;color:var(--stg-brand)}
+.stg-cap span{display:none}
+.stg-shop{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:999px;border:1.5px solid var(--stg-brand);color:var(--stg-brand);font:800 .6875rem/1 var(--stg-text);letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+@media (hover:hover){.stg-shop:hover{background:var(--stg-brand);color:var(--stg-on-brand)}}
+/* dots and pause */
+.stg-ctl{position:relative;z-index:3;display:flex;justify-content:center;align-items:center;gap:4px;padding:2px 0 0}
+.stg-dots{display:flex}
+.stg-dot,.stg-pause{display:grid;place-items:center;width:44px;height:44px;margin:0;padding:0;border:0;background:none;cursor:pointer;color:var(--stg-ink)}
+.stg-dot i{display:block;width:10px;height:10px;border-radius:50%;border:1.5px solid var(--stg-ink);background:var(--stg-surface);transition:background-color 150ms var(--stg-ease)}
+.stg-dot[aria-current="true"] i{background:var(--stg-ink)}
+.stg-pause{border-radius:50%;margin-left:4px}
+.stg-pause svg{width:16px;height:16px;fill:currentColor}
+.stg-pause .pl{display:none}.stg-pause[aria-pressed="true"] .pa{display:none}.stg-pause[aria-pressed="true"] .pl{display:block}
+.stage :focus-visible{outline:2px solid var(--stg-heart);outline-offset:2px}
+/* ---- the order panel ---- */
+.stg-panel{position:relative;z-index:4;display:grid;gap:12px;padding:12px 16px 24px;background:var(--stg-canvas)}
+.stg-kick{order:1}.stage h1{order:2}.stg-actions{order:3}.stg-choice{order:4}.stg-how{order:5}.stg-pre{order:6}.stg-lead{order:7}
+.stg-kick{display:flex;flex-wrap:wrap;gap:4px 10px;margin:0;font:800 .75rem/1.3 var(--stg-text);letter-spacing:.12em;text-transform:uppercase;color:var(--stg-brand)}
+.stg-kick > span+span::before{content:"";display:inline-block;width:4px;height:4px;margin-right:10px;border-radius:50%;background:currentColor;vertical-align:.2em}
+.stage h1{margin:0;font-family:var(--stg-display);font-weight:700;font-size:clamp(1.9rem,7.6vw,2.9rem);line-height:1.02;letter-spacing:-.01em;color:var(--stg-brand);font-variation-settings:"SOFT" 100,"WONK" 1;max-width:16ch;text-wrap:balance}
+.stage h1 em{font-style:italic;font-weight:600}
+.stg-lead{margin:0;font-size:1.0625rem;line-height:1.45;color:var(--stg-muted);max-width:44ch}
+.stg-choice{display:inline-grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:999px;background:var(--stg-surface);border:1px solid var(--stg-line);max-width:360px}
+.stg-choice button{min-height:44px;padding:0 14px;border:0;border-radius:999px;background:none;color:var(--stg-brand);font:700 .875rem/1 var(--stg-text);cursor:pointer}
+.stg-choice button[aria-pressed="true"]{background:var(--stg-brand);color:var(--stg-on-brand)}
+.stg-how{margin:-2px 0 0;font-size:.9375rem;line-height:1.4;color:var(--stg-muted);max-width:46ch}
+.stg-how a{color:var(--stg-brand);font-weight:700}
+.stg-how[hidden]{display:none}
+.stg-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.stg-go{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--stg-brand);color:var(--stg-on-brand);font:800 .9375rem/1 var(--stg-text);text-decoration:none;box-shadow:0 6px 16px rgb(31 21 107 / .18);transition:transform 150ms var(--stg-ease)}
+.stg-go:active{transform:scale(.98)}
+@media (hover:hover){.stg-go:hover{background:var(--stg-brand-deep)}}
+.stg-menu{display:inline-flex;align-items:center;min-height:44px;color:var(--stg-brand);font:700 .9375rem/1.2 var(--stg-text);text-decoration:underline;text-underline-offset:3px}
+.stg-pre{display:none;align-items:flex-start;gap:10px;margin:0;padding:10px 14px;border-radius:14px;background:var(--stg-surface);border:1px solid var(--stg-line);font-size:.9375rem;line-height:1.4;color:var(--stg-ink);max-width:46ch}
+.stg-pre b{color:var(--stg-brand)}
+.stg-pre a{color:var(--stg-brand);font-weight:700;white-space:nowrap}
+.stg-pre::before{content:"";flex:0 0 auto;width:8px;height:8px;margin-top:7px;border-radius:50%;background:var(--stg-heart)}
+html[data-season="toussaint"] .stg-pre[data-for="toussaint"],html[data-season="thanksgiving"] .stg-pre[data-for="thanksgiving"],html[data-season="noel"] .stg-pre[data-for="noel"],
+html[data-season="valentine"] .stg-pre[data-for="valentine"],html[data-season="paques"] .stg-pre[data-for="paques"]{display:flex}
+/* the phone's sticky order pill, for pages with no order strip of their own */
+.stg-sticky{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:45;display:flex;justify-content:center;transform:translateY(140%);visibility:hidden;transition:transform 250ms var(--stg-ease),visibility 0s linear 250ms;pointer-events:none}
+.stg-sticky.is-on{transform:none;visibility:visible;transition:transform 250ms var(--stg-ease),visibility 0s;pointer-events:auto}
+.stg-sticky .stg-go{width:100%;max-width:420px;box-shadow:0 10px 28px rgb(31 21 107 / .28)}
+@media (min-width:900px){.stg-sticky{display:none}}
+/* compact: the menu page and the counter board */
+.stage.is-compact .stg-slides{aspect-ratio:2/1}
+/* ---- desktop: full bleed, the panel on the ground, his caption on the image ---- */
+@media (min-width:900px){
+  .stage{display:block;min-height:clamp(540px,44vw,660px)}
+  .stg-slides{position:absolute;inset:0;aspect-ratio:auto}
+  .stg-slide picture,.stg-slide img,.stg-slide video{object-position:var(--stg-pos-d,100% 50%)}
+  .stg-panel{position:relative;width:min(100% - 64px,1160px);margin:0 auto;padding:clamp(32px,4vw,56px) 0;background:none;min-height:clamp(540px,44vw,660px);align-content:center}
+  .stg-card{display:grid;gap:14px;max-width:520px;padding:32px 32px 28px;border-radius:24px;background:var(--stg-canvas);box-shadow:0 18px 48px rgb(26 19 64 / .16)}
+  .stg-cap{left:auto;right:calc((100% - min(100% - 64px,1160px))/2);bottom:76px;flex-direction:column;align-items:flex-start;gap:6px;padding:14px 18px;border-radius:18px;max-width:340px}
+  .stg-cap span{display:block;font-size:.9375rem;line-height:1.35;color:var(--stg-muted)}
+  .stg-cap .stg-shop{margin-top:4px}
+  .stg-ctl{position:absolute;right:calc((100% - min(100% - 64px,1160px))/2 - 6px);bottom:20px;padding:0}
+  .stg-dots,.stg-pause{background:rgb(255 255 255 / .86)}
+  .stg-dots{border-radius:999px;padding:0 2px}
+  .stage h1{font-size:clamp(2.1rem,1.2rem + 1.9vw,2.9rem);max-width:none}
+  .stg-lead{order:3;font-size:1rem}.stg-choice{order:4}.stg-how{order:5}.stg-actions{order:6}.stg-pre{order:7}
+  .stg-how[data-how="pickup"]{display:none}
+  .stage.is-compact{min-height:380px}
+  .stage.is-compact .stg-slides{aspect-ratio:auto}
+  .stage.is-compact .stg-panel{min-height:380px;padding:32px 0}
+  .stage.is-compact .stg-card{padding:24px 28px}
+  .stage.is-compact h1{font-size:clamp(2rem,3.4vw,2.8rem)}
+}
+@media (max-width:899px){.stg-card{display:contents}}
+@media (max-width:359px){.stg-cap{right:96px}.stg-choice{max-width:none}}
+@media (prefers-reduced-motion:reduce){.stg-slides,.stg-slide,.stg-slide.is-on,.stg-slide video,.stg-dot i,.stg-sticky,.stg-sticky.is-on,.stg-go{transition:none}}
+/* the season's own photo leads the show on seasonal pages: hidden unless its season is on, and then it is the first slide */
+.stg-slide.is-season,.stg-dot.is-season-dot{display:none}
+html[data-season="toussaint"] .stg-slide.is-season[data-for="toussaint"],html[data-season="thanksgiving"] .stg-slide.is-season[data-for="thanksgiving"],html[data-season="noel"] .stg-slide.is-season[data-for="noel"],
+html[data-season="valentine"] .stg-slide.is-season[data-for="valentine"],html[data-season="paques"] .stg-slide.is-season[data-for="paques"]{display:block}
+html[data-season="toussaint"] .has-season .stg-dot.is-season-dot,html[data-season="thanksgiving"] .has-season .stg-dot.is-season-dot,html[data-season="noel"] .has-season .stg-dot.is-season-dot,
+html[data-season="valentine"] .has-season .stg-dot.is-season-dot,html[data-season="paques"] .has-season .stg-dot.is-season-dot{display:grid}
+/* before the script runs, the season's photo is the one on show */
+html[data-season="toussaint"] .stage:not(.stg-run) .stg-slide.is-season[data-for="toussaint"],html[data-season="thanksgiving"] .stage:not(.stg-run) .stg-slide.is-season[data-for="thanksgiving"],
+html[data-season="noel"] .stage:not(.stg-run) .stg-slide.is-season[data-for="noel"],html[data-season="valentine"] .stage:not(.stg-run) .stg-slide.is-season[data-for="valentine"],
+html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-season[data-for="paques"]{opacity:1;visibility:visible;z-index:1}
+/* the counter board's full-screen mode hides the stage */
+html.board .stage{display:none}

@@ -19,6 +19,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
+<!-- stagehead:start -->
+<link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="../../img/shop/eclairs-slate-sq-480.avif 480w, ../../img/shop/eclairs-slate-sq-800.avif 800w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="../../img/shop/eclairs-slate-stage-960.avif 960w, ../../img/shop/eclairs-slate-stage-1440.avif 1440w, ../../img/shop/eclairs-slate-stage-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="../../assets/stage.css">
+<script src="../../assets/stage.js" defer></script>
+<!-- stagehead:end -->
+<!-- season:start -->
+<script>/* Season layer, 28 Oct 2026. Loaded synchronously in <head> so the look is set before first paint (about 1 KB,
+   no fetch). ?season=<id> previews a look; otherwise the window that holds today's Pasadena date, shortest window
+   first; otherwise maison. The window table between the markers is written from assets/seasons.json by
+   tools/regen_static.py (run it or --check before every publish). In the Shopify build the same table is a
+   metaobject read in Liquid and one theme setting (Season: Auto or a named look). */
+(function () {
+  var T = /*SEASONS:START*/{"ids":["maison","toussaint","thanksgiving","noel","valentine","paques"],"windows":[["toussaint","2026-10-17","2026-11-02"],["thanksgiving","2026-11-03","2026-11-26"],["noel","2026-11-27","2026-12-26"],["valentine","2027-02-01","2027-02-14"],["paques","2027-03-14","2027-03-28"],["toussaint","2027-10-16","2027-11-02"],["thanksgiving","2027-11-02","2027-11-25"],["noel","2027-11-26","2027-12-26"],["valentine","2028-02-01","2028-02-14"],["paques","2028-04-02","2028-04-16"]]}/*SEASONS:END*/, ids = T.ids || ['maison'], W = T.windows || [];
+  var q = /[?&]season=([a-z-]+)/.exec(location.search), want = q && q[1], pick = 'maison', preview = false;
+  if (want && ids.indexOf(want) >= 0) { pick = want; preview = true; }
+  else {
+    var o = {}, today;
+    try { new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; }); today = o.year + '-' + o.month + '-' + o.day; } catch (e) { today = new Date().toISOString().slice(0, 10); }
+    var best = null, len = Infinity;
+    for (var i = 0; i < W.length; i++) { var w = W[i]; if (w[1] <= today && today <= w[2]) { var d = Date.parse(w[2]) - Date.parse(w[1]); if (d < len) { len = d; best = w[0]; } } }
+    if (best) pick = best;
+  }
+  document.documentElement.setAttribute('data-season', pick);
+  window.IDE_SEASON = { id: pick, preview: preview };
+})();</script>
+<!-- season:end -->
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">
 {
@@ -565,10 +592,39 @@
 
 <main id="top">
 
-<section class="fronton" aria-labelledby="h1">
+<!-- stage:start -->
+<section class="stage" aria-labelledby="h1" data-stage data-interval="5000">
+  <div class="stg-slides" aria-roledescription="carousel" aria-label="From the shop’s own photographs">
+    <div class="stg-slide is-on" role="group" aria-roledescription="slide" aria-label="1 of 5: Éclairs" data-ground="#4b545a"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/eclairs-slate-stage-960.avif 960w, ../../img/shop/eclairs-slate-stage-1440.avif 1440w, ../../img/shop/eclairs-slate-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/eclairs-slate-stage-960.webp 960w, ../../img/shop/eclairs-slate-stage-1440.webp 1440w, ../../img/shop/eclairs-slate-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/eclairs-slate-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/eclairs-slate-sq-480.avif 480w, ../../img/shop/eclairs-slate-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/eclairs-slate-sq-480.webp 480w, ../../img/shop/eclairs-slate-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/eclairs-slate-sq-800.jpg" width="800" height="800" alt="A spread of éclairs with different glazes and decorations on a dark slate" loading="eager" fetchpriority="high" decoding="async"></picture><p class="stg-cap"><b>Éclairs</b><span>The house signature, every morning</span><a class="stg-shop" href="../../menu.html#eclairs">Shop all<span class="sr"> éclairs</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Dessert in jar" data-ground="#ebf9d6"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/ab-jars-stage-960.avif 960w, ../../img/shop/ab-jars-stage-1440.avif 1440w, ../../img/shop/ab-jars-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/ab-jars-stage-960.webp 960w, ../../img/shop/ab-jars-stage-1440.webp 1440w, ../../img/shop/ab-jars-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/ab-jars-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/ab-jars-sq-480.avif 480w, ../../img/shop/ab-jars-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/ab-jars-sq-480.webp 480w, ../../img/shop/ab-jars-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/ab-jars-sq-800.jpg" width="800" height="800" alt="Three dessert jars with biscuit spoons, Framboise chérie, Citron ma passion and Chocolat mon amour, on a mint ground" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Dessert in jar</b><span>Framboise chérie, Citron ma passion, Chocolat mon amour</span><a class="stg-shop" href="../../menu.html#cakes">Shop all<span class="sr"> dessert in jar</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Gift basket" data-ground="#fda984"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/ab-baskets-stage-960.avif 960w, ../../img/shop/ab-baskets-stage-1440.avif 1440w, ../../img/shop/ab-baskets-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/ab-baskets-stage-960.webp 960w, ../../img/shop/ab-baskets-stage-1440.webp 1440w, ../../img/shop/ab-baskets-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/ab-baskets-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/ab-baskets-sq-480.avif 480w, ../../img/shop/ab-baskets-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/ab-baskets-sq-480.webp 480w, ../../img/shop/ab-baskets-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/ab-baskets-sq-800.jpg" width="800" height="800" alt="Two gift baskets in black boxes printed Faith, Love, Happiness, filled with meringues and biscuits, on a peach ground" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Gift basket</b><span>Luxury Gift Baskets, Thoughtfully Curated</span><a class="stg-shop" href="../../gift-cards.html#boxed">Shop all<span class="sr"> gift basket</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Cannelés" data-ground="#eddbbd"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/caneles-tray-stage-960.avif 960w, ../../img/shop/caneles-tray-stage-1440.avif 1440w, ../../img/shop/caneles-tray-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/caneles-tray-stage-960.webp 960w, ../../img/shop/caneles-tray-stage-1440.webp 1440w, ../../img/shop/caneles-tray-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/caneles-tray-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/caneles-tray-sq-480.avif 480w, ../../img/shop/caneles-tray-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/caneles-tray-sq-480.webp 480w, ../../img/shop/caneles-tray-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/caneles-tray-sq-800.jpg" width="800" height="800" alt="Rows of dark, caramelised cannelés in a white iD Éclair box with the shop’s card" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Cannelés</b><span>Caramelised crust, soft centre, by three</span><a class="stg-shop" href="../../menu.html#viennoiserie">Shop all<span class="sr"> cannelés</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Training" data-ground="#837166"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/chef-competition-stage-960.avif 960w, ../../img/shop/chef-competition-stage-1440.avif 1440w, ../../img/shop/chef-competition-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/chef-competition-stage-960.webp 960w, ../../img/shop/chef-competition-stage-1440.webp 1440w, ../../img/shop/chef-competition-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/chef-competition-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/chef-competition-sq-480.avif 480w, ../../img/shop/chef-competition-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/chef-competition-sq-480.webp 480w, ../../img/shop/chef-competition-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/chef-competition-sq-800.jpg" width="800" height="800" alt="The chef at the 28th US Pastry Competition, finishing a chocolate showpiece" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Training</b><span>Finalist, US Pastry Competition 2017</span><a class="stg-shop" href="../../story.html">Shop all<span class="sr"> training</span></a></p></div>
+  </div>
+  <div class="stg-ctl"><div class="stg-dots" role="group" aria-label="Choose a slide"><button class="stg-dot" type="button" aria-label="Show slide 1: Éclairs" aria-current="true"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 2: Dessert in jar" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 3: Gift basket" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 4: Cannelés" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 5: Training" aria-current="false"><i></i></button></div><button class="stg-pause" type="button" aria-pressed="false"><svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg><svg class="pl" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button></div>
+  <div class="stg-panel">
+    <div class="stg-card">
+        <p class="kicker stg-kick"><span lang="fr">Pâtisserie française</span> · <span lang="fr">Salon de thé</span> · 100% plant-based</p>
+        <h1 id="h1">The house of the éclair, at 169 W Green St.</h1>
+        <div class="stg-choice" role="group" aria-label="How you get it"><button type="button" data-how="pickup" aria-pressed="true">Pickup</button><button type="button" data-how="delivery" aria-pressed="false">Delivery</button></div>
+        <p class="stg-how" data-how="pickup">Pickup at 169 W Green St: choose the day and the time, and it is boxed for then.</p>
+        <p class="stg-how" data-how="delivery" hidden>Delivery runs on Uber Eats, DoorDash and Grubhub today, through the shop’s <a href="https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780" target="_blank" rel="noopener">menu app</a>. Shelf gifts also ship in the US.</p>
+        <div class="stg-actions"><a class="stg-go" href="#menu">Order for pickup</a></div>
+        <p class="stg-pre" data-for="toussaint"><span><b>Halloween week</b>: boxed chocolate for the bowl by the door, through 2 November. <a href="../../menu.html#gifts">See the chocolate</a></span></p>
+        <p class="stg-pre" data-for="thanksgiving"><span><b>Thanksgiving box for two</b>, $100 to $185: pickup 11 to 26 November at 3 pm, order 48 hours ahead. <a href="https://www.id-eclair.com/products/thanksgiving-box-for-2" target="_blank" rel="noopener">Pre-order</a></span></p>
+        <p class="stg-pre" data-for="noel"><span><b>Christmas gifts</b>: gift baskets from $45 and the four jars for $30, boxed for pickup through 24 December. <a href="../../gift-cards.html#boxed">See the gifts</a></span></p>
+        <p class="stg-pre" data-for="valentine"><span><b>For the 14th</b>: the love-note jars at $8.00 each, boxed for your pickup time. <a href="../../menu.html#cakes">Order the jars</a></span></p>
+        <p class="stg-pre" data-for="paques"><span><b>Easter</b>: truffle boxes from $15, boxed for Saturday’s hunt. <a href="../../menu.html#gifts">Order the truffles</a></span></p>
+    </div>
+  </div>
+</section>
+<div class="stg-sticky" aria-hidden="true"><a class="stg-go" href="#menu" tabindex="-1">Order for pickup</a></div>
+<!-- stage:end -->
+
+<section class="fronton" aria-label="Order from the case">
   <div class="wrap">
-    <p class="kicker"><span lang="fr">Pâtisserie française</span> · <span lang="fr">Salon de thé</span> · 100% plant-based</p>
-    <h1 id="h1">The house of the éclair, at 169 W Green St.</h1>
+    
+    
     <p class="lead">French pâtisserie by Chef Romuald Guiot, trained at the three-Michelin-star La Maison de Marc Veyrat and made entirely from plants. Gifts boxed by the house; the case ready at the hour you choose.</p>
     <div class="acts"><a class="btn" href="#menu">Order for pickup</a><a class="lnk" href="#cadeaux">Choose a gift</a></div>
     <p class="slotline"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-next-slot>Next pickup today, 2:30 pm</span><small>example</small></p>
@@ -578,7 +634,7 @@
         <figcaption><span lang="fr">Chocolat mon amour</span><b>$8.00</b></figcaption>
       </figure>
       <figure class="niche niche--center">
-        <div class="niche-frame"><div class="arch"><img src="../../img/macarons-1-750.webp" width="750" height="750" alt="Six macarons, raspberry, pistachio, lemon and violet among them, on one of the shop’s blue glazed plates" fetchpriority="high"></div></div>
+        <div class="niche-frame"><div class="arch"><img src="../../img/macarons-1-750.webp" width="750" height="750" alt="Six macarons, raspberry, pistachio, lemon and violet among them, on one of the shop’s blue glazed plates" loading="lazy"></div></div>
         <figcaption><span>Macarons</span><b>6 for $15</b></figcaption>
       </figure>
       <figure class="niche niche--side">

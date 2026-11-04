@@ -1,0 +1,626 @@
+{
+ "version": 1,
+ "written": "2026-11-03",
+ "about": "The stage at the top of every demo page (tools/stage.py writes it between <!-- stage:start --> and <!-- stage:end -->). mode replace: the page's old hero became the stage. mode prepend: the stage sits above the page's old hero, whose kicker and h1 moved up into the stage panel; the rest (box builders, desks, chapter menus) stays where it was. Captions: the shop's own words where his site has them, verbatim.",
+ "interval_ms": 5000,
+ "how": {
+  "pickup": "Pickup at 169 W Green St: choose the day and the time, and it is boxed for then.",
+  "delivery": "Delivery runs on Uber Eats, DoorDash and Grubhub today, through the shop’s <a href=\"https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780\" target=\"_blank\" rel=\"noopener\">menu app</a>. Shelf gifts also ship in the US."
+ },
+ "captions": {
+  "ab-spoons": {
+   "label": "Vegan Cookies",
+   "line": "Delectable, Melt-in-Your-Mouth Treats",
+   "href": "menu.html#gifts"
+  },
+  "ab-jars": {
+   "label": "Dessert in jar",
+   "line": "Framboise chérie, Citron ma passion, Chocolat mon amour",
+   "href": "menu.html#cakes"
+  },
+  "ab-baskets": {
+   "label": "Gift basket",
+   "line": "Luxury Gift Baskets, Thoughtfully Curated",
+   "href": "gift-cards.html#boxed"
+  },
+  "video:ticket": {
+   "label": "Golden Ticket",
+   "line": "Learn to craft pastries like a pro!",
+   "href": "classes.html#gift",
+   "button": "Get your ticket!"
+  },
+  "eclairs-slate": {
+   "label": "Éclairs",
+   "line": "The house signature, every morning",
+   "href": "menu.html#eclairs"
+  },
+  "caneles-tray": {
+   "label": "Cannelés",
+   "line": "Caramelised crust, soft centre, by three",
+   "href": "menu.html#viennoiserie"
+  },
+  "caneles-plate": {
+   "label": "Cannelés",
+   "line": "Caramelised crust, soft centre, by three",
+   "href": "menu.html#viennoiserie"
+  },
+  "macarons-box": {
+   "label": "Macarons",
+   "line": "Assorted, vegan and gluten free",
+   "href": "index.html#box"
+  },
+  "macarons-plate": {
+   "label": "Macarons",
+   "line": "One for $3, six for $15",
+   "href": "index.html#box"
+  },
+  "truffle-box": {
+   "label": "Chocolate",
+   "line": "Indulge in the Finest Chocolate Experience",
+   "href": "menu.html#gifts"
+  },
+  "truffles-dark": {
+   "label": "Chocolate",
+   "line": "Indulge in the Finest Chocolate Experience",
+   "href": "menu.html#gifts"
+  },
+  "truffles-white-box": {
+   "label": "Chocolate",
+   "line": "Indulge in the Finest Chocolate Experience",
+   "href": "menu.html#gifts"
+  },
+  "dubai-bars": {
+   "label": "Chocolate",
+   "line": "Indulge in the Finest Chocolate Experience",
+   "href": "menu.html#gifts"
+  },
+  "tg-box": {
+   "label": "Thanksgiving",
+   "line": "The box for two, pickup 11 to 26 November",
+   "href": "https://www.id-eclair.com/products/thanksgiving-box-for-2",
+   "button": "Pre-order"
+  },
+  "tg-wine": {
+   "label": "Thanksgiving",
+   "line": "The box for two, pickup 11 to 26 November",
+   "href": "https://www.id-eclair.com/products/thanksgiving-box-for-2"
+  },
+  "tg-box-2": {
+   "label": "Thanksgiving",
+   "line": "The box for two, pickup 11 to 26 November",
+   "href": "https://www.id-eclair.com/products/thanksgiving-box-for-2"
+  },
+  "cheese-board": {
+   "label": "Cheese board",
+   "line": "For ten, pickup only",
+   "href": "catering.html#ready"
+  },
+  "basket-large": {
+   "label": "Gift basket",
+   "line": "Luxury Gift Baskets, Thoughtfully Curated",
+   "href": "gift-cards.html#boxed"
+  },
+  "basket-small": {
+   "label": "Gift basket",
+   "line": "Luxury Gift Baskets, Thoughtfully Curated",
+   "href": "gift-cards.html#boxed"
+  },
+  "ticket-hands": {
+   "label": "Golden Ticket",
+   "line": "Get your ticket!",
+   "href": "classes.html#gift"
+  },
+  "ticket-card": {
+   "label": "Golden Ticket",
+   "line": "Get your ticket!",
+   "href": "classes.html#gift"
+  },
+  "class-group": {
+   "label": "Masterclass",
+   "line": "Learn to craft pastries like a pro!",
+   "href": "classes.html#dates"
+  },
+  "chef-competition": {
+   "label": "Training",
+   "line": "Finalist, US Pastry Competition 2017",
+   "href": "story.html"
+  },
+  "chef-piping": {
+   "label": "Where it all began",
+   "line": "At the bench, every morning",
+   "href": "story.html"
+  },
+  "jar-cacao": {
+   "label": "Chocolat mon amour",
+   "line": "Chocolate crumble, ganache and mousse",
+   "href": "menu.html#cakes"
+  },
+  "jar-lemons": {
+   "label": "Citron ma passion",
+   "line": "Lemon curd, meringue, almond streusel",
+   "href": "menu.html#cakes"
+  },
+  "jar-framboise-spoon": {
+   "label": "Framboise chérie",
+   "line": "Raspberry mousse, raspberry jam, almond streusel",
+   "href": "menu.html#cakes"
+  },
+  "jar-chocolat-spoon": {
+   "label": "Chocolat mon amour",
+   "line": "Chocolate crumble, ganache and mousse",
+   "href": "menu.html#cakes"
+  },
+  "jars-spoons": {
+   "label": "Dessert in jar",
+   "line": "Dessert to go",
+   "href": "menu.html#cakes"
+  },
+  "cookies-logo-box": {
+   "label": "Custom Cookies",
+   "line": "Order a batch",
+   "href": "catering.html#ready"
+  },
+  "cookies-noel": {
+   "label": "Custom Cookies",
+   "line": "Order a batch",
+   "href": "catering.html#ready"
+  },
+  "cookie-roses": {
+   "label": "Custom Cookies",
+   "line": "Order a batch",
+   "href": "catering.html#ready"
+  },
+  "jars-row": {
+   "label": "Jams",
+   "line": "Order now",
+   "href": "menu.html#gifts"
+  },
+  "jam-shelf": {
+   "label": "Jams",
+   "line": "Order now",
+   "href": "menu.html#gifts"
+  },
+  "kushy-box": {
+   "label": "Biscuits & cookies",
+   "line": "Kushyflakes, by the box",
+   "href": "menu.html#gifts"
+  },
+  "kushy-plate": {
+   "label": "Biscuits & cookies",
+   "line": "Kushyflakes, by the box",
+   "href": "menu.html#gifts"
+  },
+  "spoons-bag": {
+   "label": "Cookie Spoon",
+   "line": "Edible spoons, five to a bag",
+   "href": "menu.html#gifts"
+  },
+  "fingers-plate": {
+   "label": "Vegan Cookies",
+   "line": "Delectable, Melt-in-Your-Mouth Treats",
+   "href": "menu.html#gifts"
+  }
+ },
+ "pages": {
+  "index.html": {
+   "mode": "replace",
+   "slides": [
+    "ab-jars",
+    "video:ticket",
+    "eclairs-slate",
+    "ab-spoons",
+    "ab-baskets",
+    "caneles-tray"
+   ],
+   "adopted": {
+    "h1": "The éclair case at 169&nbsp;W&nbsp;Green&nbsp;St, <em>made entirely from plants.</em>",
+    "kicker": "<p class=\"kick ix-in\"><span lang=\"fr\">Pâtisserie française</span><span lang=\"fr\">Salon de thé</span><span>100% plant-based</span></p>",
+    "lead": "Glossy chocolate, espresso and pistachio éclairs under gold leaf, croissants laminated with plant butter, macarons by the six. A fourth-generation pastry chef fills the case in Old Pasadena, and you choose the moment it is boxed for you.",
+    "cta": {
+     "href": "menu.html",
+     "label": "Order for pickup"
+    },
+    "old_id": null
+   },
+   "seasonal": true
+  },
+  "menu.html": {
+   "mode": "prepend",
+   "slides": [
+    "eclairs-slate",
+    "macarons-box",
+    "caneles-tray",
+    "ab-jars",
+    "truffle-box"
+   ],
+   "variant": "compact",
+   "adopted": {
+    "h1": "Today’s case at 169 W Green St, <em>boxed for your time.</em>",
+    "kicker": "<p class=\"kick\"><span>100% plant-based</span><span>Order ahead</span></p>",
+    "lead": "Every éclair, croissant, macaron and jar, at the shop’s own prices.",
+    "cta": {
+     "href": "#menu",
+     "label": "Order for pickup"
+    },
+    "old_id": "start"
+   },
+   "seasonal": true
+  },
+  "cakes.html": {
+   "mode": "replace",
+   "slides": [
+    "chef-competition",
+    "jar-cacao",
+    "jar-lemons",
+    "cookie-roses",
+    "ab-jars"
+   ],
+   "adopted": {
+    "h1": "Custom cakes from 169 W Green St, <em>one week ahead.</em>",
+    "kicker": "<p class=\"kick rise\"><span>Custom cakes</span><span>One week’s notice</span><span>100% plant-based</span></p>",
+    "lead": "Tell the chef the occasion, the guests and the flavour, and get a sketch and a price back. Give it a week’s notice.",
+    "cta": {
+     "href": "#builder",
+     "label": "Start your cake"
+    },
+    "old_id": null
+   }
+  },
+  "classes.html": {
+   "mode": "replace",
+   "slides": [
+    "ticket-hands",
+    "video:ticket",
+    "class-group",
+    "ticket-card",
+    "chef-piping"
+   ],
+   "adopted": {
+    "h1": "Macaron Masterclass with Chef Romy, <em>Tuesdays at 3:30.</em>",
+    "kicker": "<p class=\"kick rise\"><span>$125.00 a seat</span><span>169 W Green St</span></p>",
+    "lead": "Two hands-on hours at the shop. You leave with 20 to 30 macarons.",
+    "cta": {
+     "href": "#dates",
+     "label": "See the Tuesdays"
+    },
+    "old_id": null
+   }
+  },
+  "la-cave.html": {
+   "mode": "replace",
+   "slides": [
+    "cheese-board",
+    "tg-wine",
+    "tg-box-2",
+    "dubai-bars",
+    "truffle-box"
+   ],
+   "adopted": {
+    "h1": "La Cave, next door at 163. <em lang=\"fr\">Un verre, un éclair.</em>",
+    "kicker": "<p class=\"kick rise\"><span>Vegan wine bar</span><span>Old Pasadena</span></p>",
+    "lead": "One glass, one éclair. La Cave is the <span lang=\"fr\">pâtisserie</span>’s evening, one door down: organic, biodynamic and vegan wines, mostly French varietals from California and abroad, Rebel Cheese boards, and plated desserts from the kitchen next door with a glass poured to match.",
+    "cta": {
+     "href": "#reserve",
+     "label": "Reserve a table"
+    },
+    "old_id": null
+   }
+  },
+  "story.html": {
+   "mode": "replace",
+   "slides": [
+    "chef-competition",
+    "chef-piping",
+    "eclairs-slate",
+    "caneles-tray",
+    "ab-jars"
+   ],
+   "adopted": {
+    "h1": "Romuald Guiot, fourth generation. <em>Every pastry from plants.</em>",
+    "kicker": "<p class=\"kick rise\"><span>Fourth generation</span><span>100% plant-based</span></p>",
+    "lead": "Chef Romy trained at La Maison de Marc Veyrat, three Michelin stars, opened La Mirabelle in New York and reached the final of Food Network’s Spring Baking Championship. At 169 W Green St he makes French <span lang=\"fr\">pâtisserie</span> with no animal products at all, and guests are often surprised to learn it.",
+    "cta": {
+     "href": "menu.html",
+     "label": "Order for pickup"
+    },
+    "old_id": null
+   }
+  },
+  "merch.html": {
+   "mode": "replace",
+   "slides": [
+    "ab-spoons",
+    "spoons-bag",
+    "cookies-logo-box",
+    "jam-shelf",
+    "kushy-box"
+   ],
+   "adopted": {
+    "h1": "From Green Street, <em>in navy and ivory.</em>",
+    "kicker": "<p class=\"kick rise\"><span>Planned line</span><span>Navy and ivory</span><span>No animal materials</span></p>",
+    "lead": "Eight pieces for the first run, each with one French line and the red heart from the logo, plus numbered macaron tins and counter pieces that change with the season. The line is planned and not for sale yet; three things can be ordered today.",
+    "cta": {
+     "href": "#today",
+     "label": "Order today’s three"
+    },
+    "old_id": null
+   }
+  },
+  "catering.html": {
+   "mode": "replace",
+   "slides": [
+    "cheese-board",
+    "cookies-logo-box",
+    "tg-box",
+    "basket-large",
+    "caneles-tray"
+   ],
+   "adopted": {
+    "h1": "A table from the case at 169 W Green St, <em>for ten or for forty.</em>",
+    "kicker": "<p class=\"kick rise\"><span>Events and offices</span><span>Pickup at 169 W Green St</span><span>100% vegan</span></p>",
+    "lead": "The board for ten, trays of macarons and cannelés, a box of jars, cookies printed with your logo. Tell the kitchen the date and the headcount; it answers with what it can make by then and a price.",
+    "cta": {
+     "href": "#request",
+     "label": "Request a quote"
+    },
+    "old_id": null
+   },
+   "seasonal": true
+  },
+  "gift-cards.html": {
+   "mode": "replace",
+   "slides": [
+    "ticket-hands",
+    "ab-baskets",
+    "basket-large",
+    "cookies-noel",
+    "truffles-white-box"
+   ],
+   "adopted": {
+    "h1": "Give the case at 169 W Green St, <em>and let them choose.</em>",
+    "kicker": "<p class=\"kick rise\"><span>Gift cards</span><span>Sent by email, the same minute</span><span>Spent at the counter or online</span></p>",
+    "lead": "A card for the éclair case, the salon de thé, a box of macarons or a seat at the masterclass. Pick an amount, write a line, and it lands in their inbox now or on the morning you choose.",
+    "cta": {
+     "href": "#card",
+     "label": "Choose an amount"
+    },
+    "old_id": null
+   },
+   "seasonal": true
+  },
+  "menu-board.html": {
+   "mode": "replace",
+   "slides": [
+    "eclairs-slate",
+    "macarons-plate",
+    "caneles-plate"
+   ],
+   "variant": "compact",
+   "adopted": {
+    "h1": "The board behind the counter at 169 W Green St, <em>the same file as the website.</em>",
+    "kicker": "<p class=\"kick\"><span>The counter board</span><span>169 W Green St</span><span>Every price from the menu file</span></p>",
+    "lead": "One menu file feeds the website, the pickup app and this board, so a price changes in one place. Print it for the counter, or open it on the shop screen; it is redrawn from the menu before every publish.",
+    "cta": {
+     "href": "menu.html",
+     "label": "Order from the menu"
+    },
+    "old_id": null
+   }
+  },
+  "options/01-vitrine/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "eclairs-slate",
+    "caneles-tray",
+    "macarons-box",
+    "ab-jars",
+    "truffle-box"
+   ],
+   "adopted": {
+    "h1": "The vitrine at 169&nbsp;W&nbsp;Green&nbsp;St, <em>boxed for the time you choose.</em>",
+    "kicker": "<p class=\"kicker\"><span lang=\"fr\">Pâtisserie française</span> and <span lang=\"fr\">salon de thé</span>, 100% plant-based</p>",
+    "lead": "Chef <b>Romuald Guiot</b> trained at three-Michelin-star La Maison de Marc Veyrat and reached the Spring Baking Championship final. Every piece in his case is made from plants. Pick a pickup slot, then fill the box from 43 pieces on six shelves.",
+    "cta": {
+     "href": "#pickup",
+     "label": "Choose a pickup time"
+    },
+    "old_id": "start"
+   }
+  },
+  "options/02-salon/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "caneles-plate",
+    "ab-jars",
+    "jar-lemons",
+    "macarons-plate",
+    "ab-baskets"
+   ],
+   "adopted": {
+    "h1": "<em>An afternoon</em> at 169 West Green Street.",
+    "kicker": "<p class=\"dateline\"><span lang=\"fr\">Pâtisserie française et salon de thé</span>, 100% plant-based, in Old Pasadena</p>",
+    "lead": "French pastry by Chef Romuald Guiot, trained in a three-Michelin-star kitchen and made entirely from plants. Order from the case for the hour you choose, sit down to afternoon tea, or take a Tuesday seat at his bench.",
+    "cta": {
+     "href": "#vitrine",
+     "label": "Order for pickup"
+    },
+    "old_id": "start"
+   }
+  },
+  "options/03-atelier/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "chef-competition",
+    "video:ticket",
+    "eclairs-slate",
+    "chef-piping",
+    "cookie-roses"
+   ],
+   "adopted": {
+    "h1": "<span lang=\"fr\">Pâtisserie française</span> by Romuald Guiot, made from plants at 169&nbsp;W Green&nbsp;St.",
+    "kicker": null,
+    "lead": "A fourth-generation pastry chef, formerly of the three-Michelin-star La Maison de Marc Veyrat. Every éclair, croissant and macaron in his case is plant-based, and every one can be boxed for the 15-minute pickup slot you choose.",
+    "cta": {
+     "href": "#menu",
+     "label": "Order for pickup"
+    },
+    "old_id": "start"
+   }
+  },
+  "options/04-marche/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "macarons-box",
+    "macarons-plate",
+    "jars-row",
+    "kushy-plate",
+    "ab-spoons"
+   ],
+   "adopted": {
+    "h1": "Fill a box of 6 for <span class=\"pr\">$15</span>.",
+    "kicker": null,
+    "lead": "Boxed at 169 W Green St in Old Pasadena for the time you choose, and made from plants, like everything in the case.",
+    "cta": null,
+    "old_id": "box"
+   }
+  },
+  "options/05-carte/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "eclairs-slate",
+    "caneles-tray",
+    "macarons-box",
+    "jar-chocolat-spoon",
+    "truffles-dark"
+   ],
+   "adopted": {
+    "h1": "The whole counter at 169 W Green St, <em>in three taps.</em>",
+    "kicker": null,
+    "lead": "Add what you want, open the bag, pay. Éclairs from <b>$5.50</b>, six macarons for <b>$15.00</b>, all of it plant-based.",
+    "cta": {
+     "href": "#eclairs",
+     "label": "Start your order"
+    },
+    "old_id": "order"
+   }
+  },
+  "options/06-maison/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "eclairs-slate",
+    "ab-jars",
+    "ab-baskets",
+    "caneles-tray",
+    "chef-competition"
+   ],
+   "adopted": {
+    "h1": "The house of the éclair, at 169 W Green St.",
+    "kicker": "<p class=\"kicker\"><span lang=\"fr\">Pâtisserie française</span> · <span lang=\"fr\">Salon de thé</span> · 100% plant-based</p>",
+    "lead": "French pâtisserie by Chef Romuald Guiot, trained at the three-Michelin-star La Maison de Marc Veyrat and made entirely from plants. Gifts boxed by the house; the case ready at the hour you choose.",
+    "cta": {
+     "href": "#menu",
+     "label": "Order for pickup"
+    },
+    "old_id": "start"
+   }
+  },
+  "options/07-frontier/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "caneles-tray",
+    "eclairs-slate",
+    "jar-lemons",
+    "cheese-board",
+    "tg-wine"
+   ],
+   "adopted": {
+    "h1": "One day at 169&nbsp;W&nbsp;Green&nbsp;St, <em>from the 6&nbsp;am case to La&nbsp;Cave at&nbsp;9.</em>",
+    "kicker": "<p class=\"hero-kick\"><span lang=\"fr\">Pâtisserie française</span> and <span lang=\"fr\">salon de thé</span> · 100% plant-based · Old Pasadena</p>",
+    "lead": "Chef Romuald Guiot trained at the three-Michelin-star La Maison de Marc Veyrat and makes every pastry here from plants. Scroll through his day: the vitrine, a box chosen for you in three questions, pickup in two taps, tea and the Tuesday masterclass at half past three, then a glass next door.",
+    "cta": {
+     "href": "#choose",
+     "label": "Choose my box"
+    },
+    "old_id": "start"
+   }
+  },
+  "options/08-comptoir/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "eclairs-slate",
+    "macarons-box",
+    "caneles-tray",
+    "ab-jars"
+   ],
+   "adopted": {
+    "h1": "Order for pickup at 169 W Green St",
+    "kicker": null,
+    "lead": "The earliest pickup is already chosen, and <b>all of it is plant-based.</b>",
+    "cta": null,
+    "old_id": "order"
+   }
+  },
+  "options/09-galerie/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "eclairs-slate",
+    "jar-cacao",
+    "cookie-roses",
+    "chef-competition",
+    "macarons-plate"
+   ],
+   "adopted": {
+    "h1": "<em lang=\"fr\">La Galerie.</em> Thirteen pieces from 169 W Green St, one to a page.",
+    "kicker": null,
+    "lead": "A catalogue of the case at the plant-based French <span lang=\"fr\">pâtisserie</span> in Old Pasadena. Each plate carries its price and its Add.",
+    "cta": {
+     "href": "#p-coffret",
+     "label": "Fill a box of six, $15.00"
+    },
+    "old_id": "start"
+   }
+  },
+  "options/10-fete/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "tg-box",
+    "cookies-noel",
+    "ab-baskets",
+    "macarons-box",
+    "jar-framboise-spoon"
+   ],
+   "adopted": {
+    "h1": "iD Éclair, dressed for the day at 169 W Green St",
+    "kicker": "<p class=\"hero-k\" data-skin-slot=\"greeting\"><b data-skin-greeting>Bonjour from Green Street</b><span data-skin-when>every day</span></p>",
+    "lead": "Plant-based French <span lang=\"fr\">pâtisserie</span>, from 6 am.",
+    "cta": null,
+    "old_id": "start"
+   },
+   "seasonal": true
+  },
+  "options/11-concierge/index.html": {
+   "mode": "prepend",
+   "slides": [
+    "ab-jars",
+    "eclairs-slate",
+    "ab-baskets",
+    "video:ticket"
+   ],
+   "adopted": {
+    "h1": "Ask the counter at 169 W Green St. <em>It answers from the menu.</em>",
+    "kicker": "<p class=\"cz-kick\"><span lang=\"fr\">Le Concierge</span><span>Old Pasadena</span></p>",
+    "lead": "Prices, gluten-free marks, a cake’s notice, Tuesday’s $125.00 class, <span lang=\"fr\">La Cave</span>’s hours: ask, and <span lang=\"fr\">Le Concierge</span> answers from the shop’s own menu, shows where each answer came from and puts what you choose in the bag. What you type stays on this page.",
+    "cta": null,
+    "old_id": "start"
+   }
+  }
+ },
+ "season_lead": {
+  "toussaint": "truffle-box",
+  "thanksgiving": "tg-box",
+  "noel": "cookies-noel",
+  "valentine": "jar-framboise-spoon",
+  "paques": "truffles-white-box"
+ },
+ "season_lead_note": "On pages marked seasonal, the slideshow leads with the season's own photo; html[data-season] picks it before first paint and the head preloads it."
+}

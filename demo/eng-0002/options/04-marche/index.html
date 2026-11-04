@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#fffbf2">
 <title>A box of 6 macarons for $15, 169 W Green St. iD Éclair concept, Marché.</title>
-<meta name="description" content="Build a box of six plant-based macarons for $15, pick a pickup time and walk past the line at 169 W Green St, Old Pasadena. Éclairs, cakes and the masterclass.">
+<meta name="description" content="Build a box of six plant-based macarons for $15, pick a pickup time and walk past the line at 169 W Green St, Old Pasadena. Éclairs, love-note jars, cakes, the Tuesday masterclass and La Cave next door.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="iD Éclair">
 <meta property="og:locale" content="en_US">
@@ -18,6 +18,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
+<!-- stagehead:start -->
+<link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="../../img/shop/macarons-box-sq-480.avif 480w, ../../img/shop/macarons-box-sq-800.avif 800w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="../../img/shop/macarons-box-stage-960.avif 960w, ../../img/shop/macarons-box-stage-1440.avif 1440w, ../../img/shop/macarons-box-stage-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="../../assets/stage.css">
+<script src="../../assets/stage.js" defer></script>
+<!-- stagehead:end -->
+<!-- season:start -->
+<script>/* Season layer, 28 Oct 2026. Loaded synchronously in <head> so the look is set before first paint (about 1 KB,
+   no fetch). ?season=<id> previews a look; otherwise the window that holds today's Pasadena date, shortest window
+   first; otherwise maison. The window table between the markers is written from assets/seasons.json by
+   tools/regen_static.py (run it or --check before every publish). In the Shopify build the same table is a
+   metaobject read in Liquid and one theme setting (Season: Auto or a named look). */
+(function () {
+  var T = /*SEASONS:START*/{"ids":["maison","toussaint","thanksgiving","noel","valentine","paques"],"windows":[["toussaint","2026-10-17","2026-11-02"],["thanksgiving","2026-11-03","2026-11-26"],["noel","2026-11-27","2026-12-26"],["valentine","2027-02-01","2027-02-14"],["paques","2027-03-14","2027-03-28"],["toussaint","2027-10-16","2027-11-02"],["thanksgiving","2027-11-02","2027-11-25"],["noel","2027-11-26","2027-12-26"],["valentine","2028-02-01","2028-02-14"],["paques","2028-04-02","2028-04-16"]]}/*SEASONS:END*/, ids = T.ids || ['maison'], W = T.windows || [];
+  var q = /[?&]season=([a-z-]+)/.exec(location.search), want = q && q[1], pick = 'maison', preview = false;
+  if (want && ids.indexOf(want) >= 0) { pick = want; preview = true; }
+  else {
+    var o = {}, today;
+    try { new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; }); today = o.year + '-' + o.month + '-' + o.day; } catch (e) { today = new Date().toISOString().slice(0, 10); }
+    var best = null, len = Infinity;
+    for (var i = 0; i < W.length; i++) { var w = W[i]; if (w[1] <= today && today <= w[2]) { var d = Date.parse(w[2]) - Date.parse(w[1]); if (d < len) { len = d; best = w[0]; } } }
+    if (best) pick = best;
+  }
+  document.documentElement.setAttribute('data-season', pick);
+  window.IDE_SEASON = { id: pick, preview: preview };
+})();</script>
+<!-- season:end -->
 <script src="../../assets/app.js" defer></script>
 <script type="application/ld+json">
 {
@@ -771,17 +798,46 @@
   </symbol>
 </svg>
 
-<section class="overture" id="box" aria-labelledby="h1">
+<!-- stage:start -->
+<section class="stage" aria-labelledby="h1" data-stage data-interval="5000">
+  <div class="stg-slides" aria-roledescription="carousel" aria-label="From the shop’s own photographs">
+    <div class="stg-slide is-on" role="group" aria-roledescription="slide" aria-label="1 of 5: Macarons" data-ground="#c2ced0"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/macarons-box-stage-960.avif 960w, ../../img/shop/macarons-box-stage-1440.avif 1440w, ../../img/shop/macarons-box-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/macarons-box-stage-960.webp 960w, ../../img/shop/macarons-box-stage-1440.webp 1440w, ../../img/shop/macarons-box-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/macarons-box-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/macarons-box-sq-480.avif 480w, ../../img/shop/macarons-box-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/macarons-box-sq-480.webp 480w, ../../img/shop/macarons-box-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/macarons-box-sq-800.jpg" width="800" height="800" alt="An open box of assorted macarons in raspberry, pistachio, chocolate, coffee and coconut" loading="eager" fetchpriority="high" decoding="async"></picture><p class="stg-cap"><b>Macarons</b><span>Assorted, vegan and gluten free</span><a class="stg-shop" href="../../index.html#box">Shop all<span class="sr"> macarons</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Macarons" data-ground="#c8d3d9"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/macarons-plate-stage-960.avif 960w, ../../img/shop/macarons-plate-stage-1440.avif 1440w, ../../img/shop/macarons-plate-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/macarons-plate-stage-960.webp 960w, ../../img/shop/macarons-plate-stage-1440.webp 1440w, ../../img/shop/macarons-plate-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/macarons-plate-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/macarons-plate-sq-480.avif 480w, ../../img/shop/macarons-plate-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/macarons-plate-sq-480.webp 480w, ../../img/shop/macarons-plate-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/macarons-plate-sq-800.jpg" width="800" height="800" alt="Six macarons on a blue glazed plate" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Macarons</b><span>One for $3, six for $15</span><a class="stg-shop" href="../../index.html#box">Shop all<span class="sr"> macarons</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Jams" data-ground="#c8c4bf"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/jars-row-stage-960.avif 960w, ../../img/shop/jars-row-stage-1440.avif 1440w, ../../img/shop/jars-row-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/jars-row-stage-960.webp 960w, ../../img/shop/jars-row-stage-1440.webp 1440w, ../../img/shop/jars-row-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/jars-row-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/jars-row-sq-480.avif 480w, ../../img/shop/jars-row-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/jars-row-sq-480.webp 480w, ../../img/shop/jars-row-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/jars-row-sq-800.jpg" width="800" height="800" alt="A row of jam jars on white marble, tropical and raspberry in front" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Jams</b><span>Order now</span><a class="stg-shop" href="../../menu.html#gifts">Shop all<span class="sr"> jams</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Biscuits &amp; cookies" data-ground="#edf3f3"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/kushy-plate-stage-960.avif 960w, ../../img/shop/kushy-plate-stage-1440.avif 1440w, ../../img/shop/kushy-plate-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/kushy-plate-stage-960.webp 960w, ../../img/shop/kushy-plate-stage-1440.webp 1440w, ../../img/shop/kushy-plate-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/kushy-plate-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/kushy-plate-sq-480.avif 480w, ../../img/shop/kushy-plate-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/kushy-plate-sq-480.webp 480w, ../../img/shop/kushy-plate-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/kushy-plate-sq-800.jpg" width="800" height="800" alt="Green Kushyflakes clusters on a blue glazed plate" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Biscuits &amp; cookies</b><span>Kushyflakes, by the box</span><a class="stg-shop" href="../../menu.html#gifts">Shop all<span class="sr"> biscuits &amp; cookies</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Vegan Cookies" data-ground="#ffd299"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/ab-spoons-stage-960.avif 960w, ../../img/shop/ab-spoons-stage-1440.avif 1440w, ../../img/shop/ab-spoons-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/ab-spoons-stage-960.webp 960w, ../../img/shop/ab-spoons-stage-1440.webp 1440w, ../../img/shop/ab-spoons-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/ab-spoons-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/ab-spoons-sq-480.avif 480w, ../../img/shop/ab-spoons-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/ab-spoons-sq-480.webp 480w, ../../img/shop/ab-spoons-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/ab-spoons-sq-800.jpg" width="800" height="800" alt="Cookie spoons and a blue glazed plate on an apricot ground" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Vegan Cookies</b><span>Delectable, Melt-in-Your-Mouth Treats</span><a class="stg-shop" href="../../menu.html#gifts">Shop all<span class="sr"> vegan cookies</span></a></p></div>
+  </div>
+  <div class="stg-ctl"><div class="stg-dots" role="group" aria-label="Choose a slide"><button class="stg-dot" type="button" aria-label="Show slide 1: Macarons" aria-current="true"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 2: Macarons" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 3: Jams" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 4: Biscuits &amp; cookies" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 5: Vegan Cookies" aria-current="false"><i></i></button></div><button class="stg-pause" type="button" aria-pressed="false"><svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg><svg class="pl" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button></div>
+  <div class="stg-panel">
+    <div class="stg-card">
+        <p class="stg-kick"><span lang="fr">Pâtisserie française</span><span>100% vegan</span><span>169 W Green St</span></p>
+        <h1 id="h1">Fill a box of 6 for <span class="pr">$15</span>.</h1>
+        <div class="stg-choice" role="group" aria-label="How you get it"><button type="button" data-how="pickup" aria-pressed="true">Pickup</button><button type="button" data-how="delivery" aria-pressed="false">Delivery</button></div>
+        <p class="stg-how" data-how="pickup">Pickup at 169 W Green St: choose the day and the time, and it is boxed for then.</p>
+        <p class="stg-how" data-how="delivery" hidden>Delivery runs on Uber Eats, DoorDash and Grubhub today, through the shop’s <a href="https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780" target="_blank" rel="noopener">menu app</a>. Shelf gifts also ship in the US.</p>
+        <div class="stg-actions"><a class="stg-go" href="#box">Order for pickup</a><a class="stg-menu" href="../../menu.html">See the menu</a></div>
+        <p class="stg-pre" data-for="toussaint"><span><b>Halloween week</b>: boxed chocolate for the bowl by the door, through 2 November. <a href="../../menu.html#gifts">See the chocolate</a></span></p>
+        <p class="stg-pre" data-for="thanksgiving"><span><b>Thanksgiving box for two</b>, $100 to $185: pickup 11 to 26 November at 3 pm, order 48 hours ahead. <a href="https://www.id-eclair.com/products/thanksgiving-box-for-2" target="_blank" rel="noopener">Pre-order</a></span></p>
+        <p class="stg-pre" data-for="noel"><span><b>Christmas gifts</b>: gift baskets from $45 and the four jars for $30, boxed for pickup through 24 December. <a href="../../gift-cards.html#boxed">See the gifts</a></span></p>
+        <p class="stg-pre" data-for="valentine"><span><b>For the 14th</b>: the love-note jars at $8.00 each, boxed for your pickup time. <a href="../../menu.html#cakes">Order the jars</a></span></p>
+        <p class="stg-pre" data-for="paques"><span><b>Easter</b>: truffle boxes from $15, boxed for Saturday’s hunt. <a href="../../menu.html#gifts">Order the truffles</a></span></p>
+    </div>
+  </div>
+</section>
+<div class="stg-sticky" aria-hidden="true"><a class="stg-go" href="#box" tabindex="-1">Order for pickup</a></div>
+<!-- stage:end -->
+
+<section class="overture" id="box" aria-label="Order from the case">
   <div class="wrap open-grid">
     <div class="open-copy">
       <p class="aside-fr" lang="fr">Bonjour. La boîte est ouverte.</p>
-      <h1 id="h1">Fill a box of 6 for <span class="pr">$15</span>.</h1>
+      
       <p class="lead">Boxed at 169 W Green St in Old Pasadena for the time you choose, and made from plants, like everything in the case.</p>
     </div>
 
     <div class="open-stage" data-grid-break>
       <figure class="open-photo">
-        <img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.jpg 1600w" sizes="(min-width:1000px) 640px, 100vw" width="1600" height="1600" alt="Six macarons, red, green, grey, brown, yellow and grey, lined up in a white iD Éclair box" fetchpriority="high">
+        <img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.jpg 1600w" sizes="(min-width:1000px) 640px, 100vw" width="1600" height="1600" alt="Six macarons, red, green, grey, brown, yellow and grey, lined up in a white iD Éclair box" loading="lazy">
         <figcaption class="nextchip"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-next-slot>Next pickup today</span><small>example</small></figcaption>
       </figure>
       <div class="boite" data-box data-price="15" data-title="Box of six macarons" data-image="img/macarons-2-800.jpg">

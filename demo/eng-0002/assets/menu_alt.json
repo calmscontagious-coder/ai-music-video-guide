@@ -1,0 +1,31 @@
+{
+ "about": "menu card hover photo (3 Nov 2026): the shop's second photograph of the product, never the main one (checked against his CDN file names); desktop hover only, phones never load it",
+ "alt": {
+  "caramel-je-taime": "jar-caramel",
+  "chocolat-mon-amour": "jar-cacao",
+  "framboise-cherie": "jar-framboise",
+  "citron-ma-passion": "jar-lemons",
+  "douceur-tropicale": "jar-tropicale",
+  "noisette-toujours": "jar-noisette",
+  "macarons": "macarons-plate",
+  "caneles": "caneles-tray",
+  "cookie-spoon": "spoons-bag",
+  "chocolate-fingers-sables-poches": "fingers-bag",
+  "kushyflakes": "kushy-box",
+  "white-chocolate-truffles": "truffles-white-box",
+  "dark-chocolate-truffles": "truffle-box",
+  "diamants-biscuit-by-6": "diamants-stack",
+  "tropical-jam": "jars-row",
+  "raspberry-jam": "jam-raspberry-spill",
+  "pineapple-vanilla-jam": "jam-shelf",
+  "canele": "caneles-plate",
+  "macaron": "macarons-box",
+  "thanksgiving-box-for-2": "tg-box-top",
+  "golden-ticket": "ticket-card",
+  "4-desserts-in-jar": "jars-cluster",
+  "custom-logo-vegan-cookie": "cookies-logo-box",
+  "gift-basket-small": "ab-baskets",
+  "gift-basket-large": "ab-baskets",
+  "dark-truffles-wholesale": "truffle-box"
+ }
+}

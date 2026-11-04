@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#faf7f2">
 <title>Le Concierge at 169 W Green St, Old Pasadena. iD Éclair concept preview, direction 11.</title>
-<meta name="description" content="Ask the counter at iD Éclair, the plant-based pâtisserie in Pasadena: prices, gluten-free marks, cake notice, masterclass and La Cave hours, from the menu.">
+<meta name="description" content="Ask the counter at iD Éclair, the plant-based French pâtisserie at 169 W Green St, Pasadena: prices, gluten-free marks, cake notice, the $125 Tuesday masterclass and La Cave hours, answered from the shop’s own menu, with the bag, a cake composer and a gift builder.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="iD Éclair">
 <meta property="og:locale" content="en_US">
@@ -22,6 +22,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <link rel="stylesheet" href="theme.css">
+<!-- stagehead:start -->
+<link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="../../img/shop/ab-jars-sq-480.avif 480w, ../../img/shop/ab-jars-sq-800.avif 800w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="../../img/shop/ab-jars-stage-960.avif 960w, ../../img/shop/ab-jars-stage-1440.avif 1440w, ../../img/shop/ab-jars-stage-1920.avif 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="../../assets/stage.css">
+<script src="../../assets/stage.js" defer></script>
+<!-- stagehead:end -->
+<!-- season:start -->
+<script>/* Season layer, 28 Oct 2026. Loaded synchronously in <head> so the look is set before first paint (about 1 KB,
+   no fetch). ?season=<id> previews a look; otherwise the window that holds today's Pasadena date, shortest window
+   first; otherwise maison. The window table between the markers is written from assets/seasons.json by
+   tools/regen_static.py (run it or --check before every publish). In the Shopify build the same table is a
+   metaobject read in Liquid and one theme setting (Season: Auto or a named look). */
+(function () {
+  var T = /*SEASONS:START*/{"ids":["maison","toussaint","thanksgiving","noel","valentine","paques"],"windows":[["toussaint","2026-10-17","2026-11-02"],["thanksgiving","2026-11-03","2026-11-26"],["noel","2026-11-27","2026-12-26"],["valentine","2027-02-01","2027-02-14"],["paques","2027-03-14","2027-03-28"],["toussaint","2027-10-16","2027-11-02"],["thanksgiving","2027-11-02","2027-11-25"],["noel","2027-11-26","2027-12-26"],["valentine","2028-02-01","2028-02-14"],["paques","2028-04-02","2028-04-16"]]}/*SEASONS:END*/, ids = T.ids || ['maison'], W = T.windows || [];
+  var q = /[?&]season=([a-z-]+)/.exec(location.search), want = q && q[1], pick = 'maison', preview = false;
+  if (want && ids.indexOf(want) >= 0) { pick = want; preview = true; }
+  else {
+    var o = {}, today;
+    try { new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; }); today = o.year + '-' + o.month + '-' + o.day; } catch (e) { today = new Date().toISOString().slice(0, 10); }
+    var best = null, len = Infinity;
+    for (var i = 0; i < W.length; i++) { var w = W[i]; if (w[1] <= today && today <= w[2]) { var d = Date.parse(w[2]) - Date.parse(w[1]); if (d < len) { len = d; best = w[0]; } } }
+    if (best) pick = best;
+  }
+  document.documentElement.setAttribute('data-season', pick);
+  window.IDE_SEASON = { id: pick, preview: preview };
+})();</script>
+<!-- season:end -->
 <script src="../../assets/app.js" defer></script>
 <script src="concierge-core.js" defer></script>
 <script src="concierge.js" defer></script>
@@ -97,15 +124,43 @@
 
 <main id="top">
 
-<section class="cz-hero" aria-labelledby="h1">
+<!-- stage:start -->
+<section class="stage" aria-labelledby="h1" data-stage data-interval="5000">
+  <div class="stg-slides" aria-roledescription="carousel" aria-label="From the shop’s own photographs">
+    <div class="stg-slide is-on" role="group" aria-roledescription="slide" aria-label="1 of 4: Dessert in jar" data-ground="#ebf9d6"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/ab-jars-stage-960.avif 960w, ../../img/shop/ab-jars-stage-1440.avif 1440w, ../../img/shop/ab-jars-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/ab-jars-stage-960.webp 960w, ../../img/shop/ab-jars-stage-1440.webp 1440w, ../../img/shop/ab-jars-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/ab-jars-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/ab-jars-sq-480.avif 480w, ../../img/shop/ab-jars-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/ab-jars-sq-480.webp 480w, ../../img/shop/ab-jars-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/ab-jars-sq-800.jpg" width="800" height="800" alt="Three dessert jars with biscuit spoons, Framboise chérie, Citron ma passion and Chocolat mon amour, on a mint ground" loading="eager" fetchpriority="high" decoding="async"></picture><p class="stg-cap"><b>Dessert in jar</b><span>Framboise chérie, Citron ma passion, Chocolat mon amour</span><a class="stg-shop" href="../../menu.html#cakes">Shop all<span class="sr"> dessert in jar</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="2 of 4: Éclairs" data-ground="#4b545a"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/eclairs-slate-stage-960.avif 960w, ../../img/shop/eclairs-slate-stage-1440.avif 1440w, ../../img/shop/eclairs-slate-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/eclairs-slate-stage-960.webp 960w, ../../img/shop/eclairs-slate-stage-1440.webp 1440w, ../../img/shop/eclairs-slate-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/eclairs-slate-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/eclairs-slate-sq-480.avif 480w, ../../img/shop/eclairs-slate-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/eclairs-slate-sq-480.webp 480w, ../../img/shop/eclairs-slate-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/eclairs-slate-sq-800.jpg" width="800" height="800" alt="A spread of éclairs with different glazes and decorations on a dark slate" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Éclairs</b><span>The house signature, every morning</span><a class="stg-shop" href="../../menu.html#eclairs">Shop all<span class="sr"> éclairs</span></a></p></div>
+    <div class="stg-slide" role="group" aria-roledescription="slide" aria-label="3 of 4: Gift basket" data-ground="#fda984"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/ab-baskets-stage-960.avif 960w, ../../img/shop/ab-baskets-stage-1440.avif 1440w, ../../img/shop/ab-baskets-stage-1920.avif 1920w" sizes="100vw"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/ab-baskets-stage-960.webp 960w, ../../img/shop/ab-baskets-stage-1440.webp 1440w, ../../img/shop/ab-baskets-stage-1920.webp 1920w" sizes="100vw"><source media="(min-width:900px)" srcset="../../img/shop/ab-baskets-stage-1440.jpg"><source type="image/avif" srcset="../../img/shop/ab-baskets-sq-480.avif 480w, ../../img/shop/ab-baskets-sq-800.avif 800w" sizes="100vw"><source type="image/webp" srcset="../../img/shop/ab-baskets-sq-480.webp 480w, ../../img/shop/ab-baskets-sq-800.webp 800w" sizes="100vw"><img src="../../img/shop/ab-baskets-sq-800.jpg" width="800" height="800" alt="Two gift baskets in black boxes printed Faith, Love, Happiness, filled with meringues and biscuits, on a peach ground" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Gift basket</b><span>Luxury Gift Baskets, Thoughtfully Curated</span><a class="stg-shop" href="../../gift-cards.html#boxed">Shop all<span class="sr"> gift basket</span></a></p></div>
+    <div class="stg-slide is-video" role="group" aria-roledescription="slide" aria-label="4 of 4: Golden Ticket" data-ground="#d9c48a"><picture><source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/ticket-wide-poster.avif"><source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/ticket-wide-poster.webp"><source media="(min-width:900px)" srcset="../../img/shop/ticket-wide-poster.jpg"><source type="image/avif" srcset="../../img/shop/ticket-tall-poster.avif"><source type="image/webp" srcset="../../img/shop/ticket-tall-poster.webp"><img src="../../img/shop/ticket-tall-poster.jpg" width="540" height="960" alt="The Golden Ticket masterclass: a class piping macarons at the bench" loading="lazy" decoding="async"></picture><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" data-tall="../../img/shop/ticket-tall.mp4" data-wide="../../img/shop/ticket-wide.mp4"></video><p class="stg-cap"><b>Golden Ticket</b><span>Learn to craft pastries like a pro!</span><a class="stg-shop" href="../../classes.html#gift">Get your ticket!<span class="sr"> golden ticket</span></a></p></div>
+  </div>
+  <div class="stg-ctl"><div class="stg-dots" role="group" aria-label="Choose a slide"><button class="stg-dot" type="button" aria-label="Show slide 1: Dessert in jar" aria-current="true"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 2: Éclairs" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 3: Gift basket" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 4: Golden Ticket" aria-current="false"><i></i></button></div><button class="stg-pause" type="button" aria-pressed="false"><svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg><svg class="pl" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button></div>
+  <div class="stg-panel">
+    <div class="stg-card">
+        <p class="cz-kick stg-kick"><span lang="fr">Le Concierge</span><span>Old Pasadena</span></p>
+        <h1 id="h1">Ask the counter at 169 W Green St. <em>It answers from the menu.</em></h1>
+        <div class="stg-choice" role="group" aria-label="How you get it"><button type="button" data-how="pickup" aria-pressed="true">Pickup</button><button type="button" data-how="delivery" aria-pressed="false">Delivery</button></div>
+        <p class="stg-how" data-how="pickup">Pickup at 169 W Green St: choose the day and the time, and it is boxed for then.</p>
+        <p class="stg-how" data-how="delivery" hidden>Delivery runs on Uber Eats, DoorDash and Grubhub today, through the shop’s <a href="https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780" target="_blank" rel="noopener">menu app</a>. Shelf gifts also ship in the US.</p>
+        <div class="stg-actions"><a class="stg-go" href="#start">Order for pickup</a><a class="stg-menu" href="../../menu.html">See the menu</a></div>
+        <p class="stg-pre" data-for="toussaint"><span><b>Halloween week</b>: boxed chocolate for the bowl by the door, through 2 November. <a href="../../menu.html#gifts">See the chocolate</a></span></p>
+        <p class="stg-pre" data-for="thanksgiving"><span><b>Thanksgiving box for two</b>, $100 to $185: pickup 11 to 26 November at 3 pm, order 48 hours ahead. <a href="https://www.id-eclair.com/products/thanksgiving-box-for-2" target="_blank" rel="noopener">Pre-order</a></span></p>
+        <p class="stg-pre" data-for="noel"><span><b>Christmas gifts</b>: gift baskets from $45 and the four jars for $30, boxed for pickup through 24 December. <a href="../../gift-cards.html#boxed">See the gifts</a></span></p>
+        <p class="stg-pre" data-for="valentine"><span><b>For the 14th</b>: the love-note jars at $8.00 each, boxed for your pickup time. <a href="../../menu.html#cakes">Order the jars</a></span></p>
+        <p class="stg-pre" data-for="paques"><span><b>Easter</b>: truffle boxes from $15, boxed for Saturday’s hunt. <a href="../../menu.html#gifts">Order the truffles</a></span></p>
+    </div>
+  </div>
+</section>
+<div class="stg-sticky" aria-hidden="true"><a class="stg-go" href="#start" tabindex="-1">Order for pickup</a></div>
+<!-- stage:end -->
+
+<section class="cz-hero" aria-label="Order from the case">
   <div class="wrap cz-hero-in">
     <div class="cz-head">
-      <p class="cz-kick"><span lang="fr">Le Concierge</span><span>Old Pasadena</span></p>
-      <h1 id="h1">Ask the counter at 169 W Green St. <em>It answers from the menu.</em></h1>
+      
+      
     </div>
 
     <div class="cz-desk" data-grid-break data-cz id="cz-ask" tabindex="-1" aria-labelledby="cz-desk-h">
-      <figure class="cz-photo"><img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.jpg 1600w" sizes="(min-width: 900px) 640px, 100vw" width="1600" height="1600" alt="Six macarons lined up inside a white iD Éclair box" fetchpriority="high"></figure>
+      <figure class="cz-photo"><img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.jpg 1600w" sizes="(min-width: 900px) 640px, 100vw" width="1600" height="1600" alt="Six macarons lined up inside a white iD Éclair box" loading="lazy"></figure>
       <div class="cz-desk-h">
         <h2 id="cz-desk-h"><span lang="fr">Le Concierge</span></h2>
         <p class="cz-mode"><i aria-hidden="true"></i><span data-cz-mode>Answers from the menu<span class="cz-wide">, in this tab</span></span></p>

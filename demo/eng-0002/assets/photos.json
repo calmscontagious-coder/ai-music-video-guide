@@ -1,0 +1,2390 @@
+{
+ "photos": {
+  "ab-jars": {
+   "alt": "Three dessert jars with biscuit spoons, Framboise chérie, Citron ma passion and Chocolat mon amour, on a mint ground",
+   "role": "artboard",
+   "source": "files__Artboard_1_copy_19.jpg",
+   "size": [
+    1920,
+    800
+   ],
+   "ground": "#ebf9d6",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     800,
+     800
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "eclairs-slate": {
+   "alt": "A spread of éclairs with different glazes and decorations on a dark slate",
+   "role": "photo",
+   "source": "files__GG_2484.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#4b545a",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "ab-spoons": {
+   "alt": "Cookie spoons and a blue glazed plate on an apricot ground",
+   "role": "artboard",
+   "source": "files__Artboard_1_copy_2_17.jpg",
+   "size": [
+    1920,
+    800
+   ],
+   "ground": "#ffd299",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     800,
+     800
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "ab-baskets": {
+   "alt": "Two gift baskets in black boxes printed Faith, Love, Happiness, filled with meringues and biscuits, on a peach ground",
+   "role": "artboard",
+   "source": "files__Artboard_1_copy_3_13.jpg",
+   "size": [
+    1920,
+    800
+   ],
+   "ground": "#fda984",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     800,
+     800
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "caneles-plate": {
+   "alt": "Three caramelised cannelés on a blue glazed plate",
+   "role": "photo",
+   "source": "files__GG_1880.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dfe7ea",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "truffles-white-box": {
+   "alt": "White chocolate truffles in an open iD Éclair box",
+   "role": "photo",
+   "source": "files__GG_2011.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dfe9ec",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "truffles-white": {
+   "alt": "White chocolate truffles dusted with sugar on a blue glazed plate",
+   "role": "photo",
+   "source": "files__GG_2016.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#ebf1f4",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "truffles-dark": {
+   "alt": "Dark chocolate truffles rolled in cocoa on a blue glazed plate",
+   "role": "photo",
+   "source": "files__GG_2057.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#fbfbfc",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "macarons-box": {
+   "alt": "An open box of assorted macarons in raspberry, pistachio, chocolate, coffee and coconut",
+   "role": "photo",
+   "source": "files__GG_2072.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#c2ced0",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "macarons-plate": {
+   "alt": "Six macarons on a blue glazed plate",
+   "role": "photo",
+   "source": "files__GG_2085.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#c8d3d9",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "diamants-bag": {
+   "alt": "Diamants biscuits stacked in a clear bag with the iD Éclair sticker",
+   "role": "photo",
+   "source": "files__GG_2260.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#d7e0e3",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "spoons-bag": {
+   "alt": "Cookie spoons standing in a clear bag with the iD Éclair sticker",
+   "role": "photo",
+   "source": "files__GG_2274.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dae3e5",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "spoons-plate": {
+   "alt": "Five cookie spoons on a blue glazed plate",
+   "role": "photo",
+   "source": "files__GG_2277.jpg",
+   "size": [
+    2400,
+    2399
+   ],
+   "ground": "#d1dadc",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2399,
+     2399
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "fingers-bag": {
+   "alt": "Chocolate fingers in a clear bag with the iD Éclair sticker",
+   "role": "photo",
+   "source": "files__GG_2328.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#e4ecef",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "fingers-plate": {
+   "alt": "Chocolate finger sablés on a blue glazed plate",
+   "role": "photo",
+   "source": "files__GG_2332.jpg",
+   "size": [
+    2400,
+    2399
+   ],
+   "ground": "#e5edf0",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2399,
+     2399
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "kushy-box": {
+   "alt": "Kushyflakes in an open iD Éclair box",
+   "role": "photo",
+   "source": "files__GG_2367.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dce4e7",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "kushy-plate": {
+   "alt": "Green Kushyflakes clusters on a blue glazed plate",
+   "role": "photo",
+   "source": "files__GG_2372.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#edf3f3",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "kushy-wide": {
+   "alt": "Kushyflakes on a blue glazed plate on white marble",
+   "role": "photo",
+   "source": "files__GG_2375.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#eff3f4",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jam-tropical": {
+   "alt": "A jar of tropical jam with the iD Éclair lid",
+   "role": "photo",
+   "source": "files__GG_2387.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#e7edef",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jam-pineapple": {
+   "alt": "A jar of pineapple vanilla jam with the iD Éclair lid",
+   "role": "photo",
+   "source": "files__GG_2389.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#e7eded",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jam-raspberry": {
+   "alt": "A jar of raspberry jam with the iD Éclair lid",
+   "role": "photo",
+   "source": "files__GG_2392.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#e2e9eb",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-framboise": {
+   "alt": "Framboise chérie in its jar",
+   "role": "photo",
+   "source": "files__GG_2490.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#e2e7eb",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-framboise-spoon": {
+   "alt": "Framboise chérie in its jar with a biscuit spoon",
+   "role": "photo",
+   "source": "files__GG_2493.jpg",
+   "size": [
+    2400,
+    2399
+   ],
+   "ground": "#dee6e9",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2399,
+     2399
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-chocolat": {
+   "alt": "Chocolat mon amour in its jar",
+   "role": "photo",
+   "source": "files__GG_2496.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dfe7ea",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-chocolat-spoon": {
+   "alt": "Chocolat mon amour in its jar with a biscuit spoon",
+   "role": "photo",
+   "source": "files__GG_2498.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dfe7ea",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-noisette": {
+   "alt": "Noisette toujours in its jar",
+   "role": "photo",
+   "source": "files__GG_2501.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dfe6e9",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-noisette-spoon": {
+   "alt": "Noisette toujours in its jar with a biscuit spoon",
+   "role": "photo",
+   "source": "files__GG_2503.jpg",
+   "size": [
+    2400,
+    2399
+   ],
+   "ground": "#dde6e8",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2399,
+     2399
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-citron": {
+   "alt": "Citron ma passion in its jar",
+   "role": "photo",
+   "source": "files__GG_2505.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dae2e4",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-citron-spoon": {
+   "alt": "Citron ma passion in its jar with a biscuit spoon",
+   "role": "photo",
+   "source": "files__GG_2507.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dee5e8",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-tropicale": {
+   "alt": "Douceur tropicale in its jar",
+   "role": "photo",
+   "source": "files__GG_2509.jpg",
+   "size": [
+    2400,
+    2399
+   ],
+   "ground": "#dee5e8",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2399,
+     2399
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-tropicale-spoon": {
+   "alt": "Douceur tropicale in its jar with a biscuit spoon",
+   "role": "photo",
+   "source": "files__GG_2511.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dde5e7",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-caramel": {
+   "alt": "Caramel je t’aime in its jar",
+   "role": "photo",
+   "source": "files__GG_2514.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dde4e7",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-caramel-spoon": {
+   "alt": "Caramel je t’aime in its jar with a biscuit spoon",
+   "role": "photo",
+   "source": "files__GG_2516.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#dde4e6",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jars-row": {
+   "alt": "A row of jam jars on white marble, tropical and raspberry in front",
+   "role": "photo",
+   "source": "files__278021140_5380330555310625_1047194317960447413_n.jpg",
+   "size": [
+    1440,
+    955
+   ],
+   "ground": "#c8c4bf",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     955,
+     955
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jam-raspberry-spill": {
+   "alt": "Two jars of raspberry jam, one tipped over with a spoon of jam beside it",
+   "role": "photo",
+   "source": "files__283860638_5515311078479238_6997341669026093095_n.jpg",
+   "size": [
+    1440,
+    1800
+   ],
+   "ground": "#d2cbc3",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1440,
+     1440
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jars-labels": {
+   "alt": "Dessert jars and biscuit spoons in clear sleeves, labels facing forward",
+   "role": "photo",
+   "source": "products__DSC_0360.jpg",
+   "size": [
+    2136,
+    2136
+   ],
+   "ground": "#cabeae",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2136,
+     2136
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jars-cluster": {
+   "alt": "Dessert jars with biscuit spoons, seen from above",
+   "role": "photo",
+   "source": "collections__0-559-Capture_d_ecran_2021-06-30_a_7.12.17_AM.png",
+   "size": [
+    1140,
+    1520
+   ],
+   "ground": "#c9cbcb",
+   "tone": "light",
+   "widths": [
+    480,
+    800
+   ],
+   "jpg": 1140,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1140,
+     1140
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "basket-large": {
+   "alt": "The large gift basket: biscuits, jam, meringues and a red velvet cookie in a crate",
+   "role": "photo",
+   "source": "files__4AF15104-1E10-4C5D-883B-B754E9A8E955.jpg",
+   "size": [
+    2400,
+    2401
+   ],
+   "ground": "#aca69c",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "basket-small": {
+   "alt": "The small gift basket in a black box printed Faith, Love, Happiness",
+   "role": "photo",
+   "source": "collections__96E62574-9899-48F3-ADFD-2A350EAEA6D6.jpg",
+   "size": [
+    2400,
+    2400
+   ],
+   "ground": "#cdb69e",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "chef-piping": {
+   "alt": "Black-and-white photograph of hands piping at the bench",
+   "role": "photo",
+   "source": "files__37.jpg",
+   "size": [
+    480,
+    720
+   ],
+   "ground": "#0e0e0e",
+   "tone": "dark",
+   "widths": [
+    480
+   ],
+   "jpg": 480,
+   "sq": {
+    "widths": [
+     480
+    ],
+    "jpg": 480,
+    "size": [
+     480,
+     480
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "caneles-tray": {
+   "alt": "Rows of dark, caramelised cannelés in a white iD Éclair box with the shop’s card",
+   "role": "photo",
+   "source": "collections__IMG_2050.png",
+   "size": [
+    1419,
+    1419
+   ],
+   "ground": "#eddbbd",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1419,
+     1419
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "truffle-box": {
+   "alt": "Dark truffles in a long white iD Éclair box on black",
+   "role": "photo",
+   "source": "collections__IMG_2980.jpg",
+   "size": [
+    1576,
+    1577
+   ],
+   "ground": "#020106",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1576,
+     1576
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "dubai-bars": {
+   "alt": "Dubai chocolate bars laid out on the counter",
+   "role": "photo",
+   "source": "files__IMG_2420.jpg",
+   "size": [
+    2400,
+    1350
+   ],
+   "ground": "#b3ada6",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1350,
+     1350
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "ticket-card": {
+   "alt": "The Golden Ticket card beside a vase of flowers",
+   "role": "photo",
+   "source": "files__IMG_0177.jpg",
+   "size": [
+    1291,
+    961
+   ],
+   "ground": "#e0dbd8",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     961,
+     961
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "ticket-hands": {
+   "alt": "Two hands holding the Golden Ticket over a table",
+   "role": "photo",
+   "source": "files__IMG_0180.jpg",
+   "size": [
+    1477,
+    1079
+   ],
+   "ground": "#bc8d71",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1079,
+     1079
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "class-group": {
+   "alt": "A class group holding iD Éclair bags after the masterclass",
+   "role": "photo",
+   "source": "files__IMG_7512.jpg",
+   "size": [
+    2400,
+    2935
+   ],
+   "ground": "#99818c",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     2400,
+     2400
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jam-shelf": {
+   "alt": "Tropical jam in front of a row of iD Éclair jars",
+   "role": "photo",
+   "source": "collections__0-221-x2-JAR.png",
+   "size": [
+    2400,
+    1800
+   ],
+   "ground": "#ddddd8",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1800,
+     1800
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "tg-box": {
+   "alt": "The Thanksgiving box for two, open, with wine, sides and baguette",
+   "role": "photo",
+   "source": "files__MG_0620.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#3d261f",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "tg-box-top": {
+   "alt": "The Thanksgiving box for two from above",
+   "role": "photo",
+   "source": "files__MG_0638.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#89755d",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "tg-sides": {
+   "alt": "Mash, bread and sides from the Thanksgiving box",
+   "role": "photo",
+   "source": "files__MG_0663.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#a79353",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "tg-wine": {
+   "alt": "Wine, cranberry and baguette from the Thanksgiving box",
+   "role": "photo",
+   "source": "files__MG_0665.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#8f6b43",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "tg-box-2": {
+   "alt": "The Thanksgiving box with a bottle of rosé",
+   "role": "photo",
+   "source": "files__MG_0672.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#362218",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "tg-box-3": {
+   "alt": "The Thanksgiving box laid out on a dark table",
+   "role": "photo",
+   "source": "files__MG_0674.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#513b25",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "tg-box-4": {
+   "alt": "The Thanksgiving box for two, every compartment filled",
+   "role": "photo",
+   "source": "files__MG_0679.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#8c765e",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "tg-wine-2": {
+   "alt": "Rosé, cranberry and bread from the Thanksgiving box",
+   "role": "photo",
+   "source": "files__MG_0683.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#7f5e41",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "cheese-board": {
+   "alt": "The cheese board: Rebel Cheese, fruit, crackers and bread",
+   "role": "photo",
+   "source": "files__MG_9470.jpg",
+   "size": [
+    2400,
+    1600
+   ],
+   "ground": "#2d231b",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1600,
+     1600
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "chef-competition": {
+   "alt": "The chef at the 28th US Pastry Competition, finishing a chocolate showpiece",
+   "role": "photo",
+   "source": "articles__0-340-PG_28th_Pastry_Competition_2017_0053.jpg",
+   "size": [
+    1500,
+    1000
+   ],
+   "ground": "#837166",
+   "tone": "dark",
+   "widths": [
+    480,
+    800,
+    1200
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1000,
+     1000
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "cookies-logo-box": {
+   "alt": "A tray of round cookies printed with a company logo",
+   "role": "photo",
+   "source": "collections__il_1140xN.2883370324_as0e.webp",
+   "size": [
+    1140,
+    1520
+   ],
+   "ground": "#534632",
+   "tone": "dark",
+   "widths": [
+    480,
+    800
+   ],
+   "jpg": 1140,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1140,
+     1140
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "cookies-noel": {
+   "alt": "Printed holiday cookies with snowflakes and Santa",
+   "role": "photo",
+   "source": "files__il_1140xN.2883379466_sfrm.webp",
+   "size": [
+    1140,
+    855
+   ],
+   "ground": "#cbbeb1",
+   "tone": "light",
+   "widths": [
+    480,
+    800
+   ],
+   "jpg": 1140,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     855,
+     855
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "cookie-roses": {
+   "alt": "A cookie topped with piped roses, held up among leaves",
+   "role": "photo",
+   "source": "products__il_1140xN.3000908966_8kua.webp",
+   "size": [
+    1140,
+    1520
+   ],
+   "ground": "#af754e",
+   "tone": "dark",
+   "widths": [
+    480,
+    800
+   ],
+   "jpg": 1140,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1140,
+     1140
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-cacao": {
+   "alt": "Chocolat mon amour with a biscuit spoon on a bed of cacao beans",
+   "role": "photo",
+   "source": "files__il_1140xN.3888472074_oebj.webp",
+   "size": [
+    1140,
+    1716
+   ],
+   "ground": "#c5c4c2",
+   "tone": "light",
+   "widths": [
+    480,
+    800
+   ],
+   "jpg": 1140,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1140,
+     1140
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jar-lemons": {
+   "alt": "Citron ma passion with a biscuit spoon on a pile of lemons",
+   "role": "photo",
+   "source": "files__il_1140xN.3888472676_ggx7.webp",
+   "size": [
+    1140,
+    1716
+   ],
+   "ground": "#bcad94",
+   "tone": "light",
+   "widths": [
+    480,
+    800
+   ],
+   "jpg": 1140,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1140,
+     1140
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "diamants-stack": {
+   "alt": "Diamants biscuits stacked beside their bag",
+   "role": "photo",
+   "source": "collections__image_f7c69a66-7c5f-41c2-872f-1009007b7058.png",
+   "size": [
+    1817,
+    1817
+   ],
+   "ground": "#edebd9",
+   "tone": "light",
+   "widths": [
+    480,
+    800,
+    1200,
+    1600
+   ],
+   "jpg": 1200,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1817,
+     1817
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  },
+  "jars-spoons": {
+   "alt": "Dessert jars with biscuit spoons resting across the tops",
+   "role": "photo",
+   "source": "products__284150068_5518376904839322_6477465182101753079_n_ad716c75-35d9-41ac-b488-57932e0e6170.jpg",
+   "size": [
+    1080,
+    1080
+   ],
+   "ground": "#b8bcb9",
+   "tone": "light",
+   "widths": [
+    480,
+    800
+   ],
+   "jpg": 1080,
+   "sq": {
+    "widths": [
+     480,
+     800
+    ],
+    "jpg": 800,
+    "size": [
+     1080,
+     1080
+    ]
+   },
+   "stage": {
+    "widths": [
+     960,
+     1440,
+     1920
+    ],
+    "jpg": 1440
+   }
+  }
+ },
+ "videos": {
+  "ticket-wide": {
+   "mp4": "img/shop/ticket-wide.mp4",
+   "poster": "img/shop/ticket-wide-poster",
+   "bytes": 948630
+  },
+  "ticket-tall": {
+   "mp4": "img/shop/ticket-tall.mp4",
+   "poster": "img/shop/ticket-tall-poster",
+   "bytes": 805127
+  }
+ },
+ "excluded": [
+  {
+   "source": "files__IMG_7476.jpg",
+   "why": "the hand-mixer photograph, retired by the operator (HOME_BLEND 2026-10-22, standard 4.2)"
+  },
+  {
+   "source": "products__il_1140xN.2930324703_njqz.webp",
+   "why": "cookies printed with Star Wars characters: third-party character art we cannot publish on our demo"
+  },
+  {
+   "source": "products__il_1140xN.2882676284_38m0.webp",
+   "why": "heart cookies personalised with a private person’s name and a date"
+  },
+  {
+   "source": "files__Gemini_Generated_Image_b5by1mb5by1mb5by.png",
+   "why": "an AI-generated banner (its own file name); canon 4.1 bars AI imagery"
+  },
+  {
+   "source": "files__banner.jpg",
+   "why": "the pickup app’s clip-art icon, not the shop’s photograph"
+  },
+  {
+   "source": "files__download.jpg",
+   "why": "287 px wide, no larger copy on the shop’s site"
+  },
+  {
+   "source": "articles__download_6cdcfccb-03c5-4e7b-9e4a-8bfeeec5a471.jpg",
+   "why": "287 px wide, no larger copy on the shop’s site"
+  }
+ ],
+ "note": "Generated by tools/shop_photos.py from the shop's own site (harvested 3 Nov 2026). Alt text is what a shopper would write."
+}
