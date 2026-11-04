@@ -75,21 +75,21 @@
     [].forEach.call(choice.querySelectorAll('button'), function (x) { x.setAttribute('aria-pressed', String(x === b)); });
     [].forEach.call(st.querySelectorAll('.stg-how'), function (p) { p.hidden = p.getAttribute('data-how') !== b.getAttribute('data-how'); });
   });
-  /* the phone's sticky Order pill: shown once the panel's button has scrolled away, and only while no order bar of
-     the page's own is on screen at the bottom (the strip, an option's dock); drawers and full-height sheets do not count */
-  var pill = document.querySelector('.stg-sticky'), go = st.querySelector('.stg-go'), past = false, queued = false;
-  function ownOnScreen() {
+  /* the phone's sticky Order pill: only on pages with no bottom order bar of their own. A page's own bar (the order
+     strip, an option's dock or order bar) owns the bottom even while it is hidden or yielding to a control it would
+     cover; drawers and full-height sheets do not count. Shown once the panel's button has scrolled away. */
+  var pill = document.querySelector('.stg-sticky'), go = st.querySelector('.stg-go'), past = false, own = null;
+  function hasOwnBar() {
+    if (document.querySelector('[data-ostrip]')) return true;
     return [].some.call(document.querySelectorAll('body *'), function (el) {
       if (el === pill || pill.contains(el)) return false;
-      var cs = getComputedStyle(el); if (cs.position !== 'fixed' || cs.visibility === 'hidden' || cs.display === 'none') return false;
-      var r = el.getBoundingClientRect();
-      return r.height > 36 && r.height < innerHeight * .5 && r.width > innerWidth * .6 && r.bottom >= innerHeight - 2 && r.top < innerHeight - 8;
+      var cs = getComputedStyle(el); if (cs.position !== 'fixed' || cs.display === 'none') return false;
+      var r = el.getBoundingClientRect(), b = parseFloat(cs.bottom);
+      return r.height > 36 && r.height < innerHeight * .5 && r.width > innerWidth * .6 && !isNaN(b) && b <= 64;
     });
   }
-  function update() { queued = false; pill.classList.toggle('is-on', past && !ownOnScreen()); }
-  function queue() { if (!queued) { queued = true; requestAnimationFrame(update); } }
+  function update() { if (own === null && past) own = hasOwnBar(); pill.classList.toggle('is-on', past && own === false); }
   if (pill && go && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { past = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; queue(); }).observe(go);
-    addEventListener('scroll', function () { if (past) queue(); }, { passive: true });
+    new IntersectionObserver(function (es) { past = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; requestAnimationFrame(update); }).observe(go);
   }
 })();
