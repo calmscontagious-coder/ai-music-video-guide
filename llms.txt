@@ -7,6 +7,7 @@
 
 ## Guides
 - [AI Voice Cloning for Musicians: Narration and Intros](https://purposewithpresence.com/blog/ai-voice-cloning-for-musicians-narration-intros.html): Clone your own voice for narration, intros and dubs: instant vs professional cloning, plan prices, credits per minute, and when YouTube needs an AI label.
+- [Fan Email List for Musicians: Platforms Compared](https://purposewithpresence.com/blog/fan-email-list-newsletter-platforms-for-musicians.html): Four newsletter platforms compared for musicians who want an owned fan list: free-tier caps, which free plans include automations, entry prices, legal floor.
 - [Edit AI Clips Into a Music Video: Beat-Synced Cuts](https://purposewithpresence.com/blog/edit-ai-clips-into-a-music-video-beat-synced-cuts.html): Turn a folder of AI clips and a finished song into a music video: sort by section, beat-sync the cuts in a phone or desktop editor, and disclose AI music.
 - [Where to Run Seedance: Direct vs Aggregators](https://purposewithpresence.com/blog/where-to-run-seedance-direct-vs-aggregators.html): Where should you run Seedance? We compare Dreamina, API hosts like fal.ai and resellers on price and features, with sources and dates for musicians.
 - [Sell AI Music Video Services: Pricing and Monetizing](https://purposewithpresence.com/blog/sell-ai-music-video-services-pricing-and-monetization.html): What Fiverr buyers pay for AI music videos, how to price your own service, and which rights and platform rules to check before you take a client.
