@@ -78,11 +78,13 @@ html[data-season="valentine"] .stg-pre[data-for="valentine"],html[data-season="p
   .stg-slides{position:absolute;inset:0;aspect-ratio:auto}
   .stg-slide picture,.stg-slide img,.stg-slide video{object-position:var(--stg-pos-d,100% 50%)}
   .stg-panel{position:relative;width:min(100% - 64px,1160px);margin:0 auto;padding:clamp(32px,4vw,56px) 0;background:none;min-height:clamp(540px,44vw,660px);align-content:center}
+  .stg-panel{pointer-events:none}
+  .stg-card{pointer-events:auto}
   .stg-card{display:grid;gap:14px;max-width:520px;padding:32px 32px 28px;border-radius:24px;background:var(--stg-canvas);box-shadow:0 18px 48px rgb(26 19 64 / .16)}
-  .stg-cap{left:auto;right:calc((100% - min(100% - 64px,1160px))/2);bottom:76px;flex-direction:column;align-items:flex-start;gap:6px;padding:14px 18px;border-radius:18px;max-width:340px}
+  .stg-cap{z-index:5;left:auto;right:calc((100% - min(100% - 64px,1160px))/2);bottom:76px;flex-direction:column;align-items:flex-start;gap:6px;padding:14px 18px;border-radius:18px;max-width:340px}
   .stg-cap span{display:block;font-size:.9375rem;line-height:1.35;color:var(--stg-muted)}
   .stg-cap .stg-shop{margin-top:4px}
-  .stg-ctl{position:absolute;right:calc((100% - min(100% - 64px,1160px))/2 - 6px);bottom:20px;padding:0}
+  .stg-ctl{z-index:5;position:absolute;right:calc((100% - min(100% - 64px,1160px))/2 - 6px);bottom:20px;padding:0}
   .stg-dots,.stg-pause{background:rgb(255 255 255 / .86)}
   .stg-dots{border-radius:999px;padding:0 2px}
   .stage h1{font-size:clamp(2.1rem,1.2rem + 1.9vw,2.9rem);max-width:none}
