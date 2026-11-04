@@ -75,22 +75,21 @@
     [].forEach.call(choice.querySelectorAll('button'), function (x) { x.setAttribute('aria-pressed', String(x === b)); });
     [].forEach.call(st.querySelectorAll('.stg-how'), function (p) { p.hidden = p.getAttribute('data-how') !== b.getAttribute('data-how'); });
   });
-  /* the phone's sticky Order pill */
-  var pill = document.querySelector('.stg-sticky'), go = st.querySelector('.stg-go');
-  function hasOwnBar() {
-    if (document.querySelector('[data-ostrip]')) return true;
+  /* the phone's sticky Order pill: shown once the panel's button has scrolled away, and only while no order bar of
+     the page's own is on screen at the bottom (the strip, an option's dock); drawers and full-height sheets do not count */
+  var pill = document.querySelector('.stg-sticky'), go = st.querySelector('.stg-go'), past = false, queued = false;
+  function ownOnScreen() {
     return [].some.call(document.querySelectorAll('body *'), function (el) {
       if (el === pill || pill.contains(el)) return false;
-      var cs = getComputedStyle(el); if (cs.position !== 'fixed') return false;
-      var r = el.getBoundingClientRect(); return r.height > 36 && r.bottom >= innerHeight - 2 && r.width > innerWidth * .6;
+      var cs = getComputedStyle(el); if (cs.position !== 'fixed' || cs.visibility === 'hidden' || cs.display === 'none') return false;
+      var r = el.getBoundingClientRect();
+      return r.height > 36 && r.height < innerHeight * .5 && r.width > innerWidth * .6 && r.bottom >= innerHeight - 2 && r.top < innerHeight - 8;
     });
   }
+  function update() { queued = false; pill.classList.toggle('is-on', past && !ownOnScreen()); }
+  function queue() { if (!queued) { queued = true; requestAnimationFrame(update); } }
   if (pill && go && 'IntersectionObserver' in window) {
-    var own = null;
-    new IntersectionObserver(function (es) {
-      if (own === null) own = hasOwnBar();
-      if (own) return;
-      pill.classList.toggle('is-on', !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
-    }).observe(go);
+    new IntersectionObserver(function (es) { past = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; queue(); }).observe(go);
+    addEventListener('scroll', function () { if (past) queue(); }, { passive: true });
   }
 })();
