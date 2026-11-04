@@ -40,3 +40,21 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;back
 .pf-foot a{color:var(--color-brand)}
 .ix-moment{display:flex;align-items:baseline;gap:var(--sp-2);font-size:var(--text-sm);color:var(--color-muted);font-style:italic;font-family:var(--font-display)}
 .ix-moment b{font-style:normal;font-weight:600;color:var(--color-brand)}
+
+/* the gallery (3 Nov 2026): one card per design, per season and per page; phone first, two columns on a phone,
+   three to four on wider screens; the whole card is the link (44 px and up), thumbnails 360x600 WebP, lazy */
+.gx .sec-head{margin-bottom:var(--sp-4)}
+.gx-grid{list-style:none;margin:0;padding:0;display:grid;gap:var(--sp-3);grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:720px){.gx-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-4)}}
+@media (min-width:1100px){.gx-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.gx-card{min-width:0}
+.gx-link{display:grid;height:100%;grid-template-rows:auto 1fr;border-radius:var(--radius-md);overflow:hidden;background:var(--color-surface);box-shadow:var(--shadow-e2);color:var(--color-ink);text-decoration:none;transition:transform 150ms var(--ease-enter),box-shadow 150ms var(--ease-enter)}
+.gx-link:active{transform:scale(.98)}
+@media (hover:hover){.gx-link:hover{box-shadow:var(--shadow-e3);transform:translateY(-2px)}}
+.gx-link picture,.gx-link img{display:block;width:100%;height:auto;aspect-ratio:3/5;object-fit:cover;object-position:50% 0;background:var(--color-canvas-deep)}
+.gx-body{display:grid;gap:4px;align-content:start;padding:12px 12px 14px}
+.gx-n{font:800 .75rem/1 var(--font-text);letter-spacing:.12em;color:var(--color-brand-quiet)}
+.gx-t{font-family:var(--font-display);font-size:1.25rem;font-weight:600;line-height:1.15;color:var(--color-brand)}
+.gx-d{font-size:.875rem;line-height:1.4;color:var(--color-muted)}
+.gx-go{margin-top:6px;font:800 .8125rem/1.2 var(--font-text);color:var(--color-brand)}
+@media (prefers-reduced-motion:reduce){.gx-link{transition:none}}
