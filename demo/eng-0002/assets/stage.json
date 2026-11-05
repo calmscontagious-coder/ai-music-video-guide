@@ -25,23 +25,23 @@
   },
   "video:ticket": {
    "label": "Golden Ticket",
-   "line": "Learn to craft pastries like a pro!",
+   "line": "An unforgettable, hands-on pastry experience",
    "href": "classes.html#gift",
    "button": "Get your ticket!"
   },
   "eclairs-slate": {
    "label": "Éclairs",
-   "line": "The house signature, every morning",
+   "line": "Glossy chocolate glaze, gold leaf",
    "href": "menu.html#eclairs"
   },
   "caneles-tray": {
    "label": "Cannelés",
-   "line": "Caramelised crust, soft centre, by three",
+   "line": "Perfectly caramelized outside, soft inside, by three",
    "href": "menu.html#viennoiserie"
   },
   "caneles-plate": {
    "label": "Cannelés",
-   "line": "Caramelised crust, soft centre, by three",
+   "line": "Perfectly caramelized outside, soft inside, by three",
    "href": "menu.html#viennoiserie"
   },
   "macarons-box": {
@@ -76,18 +76,18 @@
   },
   "tg-box": {
    "label": "Thanksgiving",
-   "line": "The box for two, pickup 11 to 26 November",
+   "line": "The box for two, pickup 11 to 25 November",
    "href": "https://www.id-eclair.com/products/thanksgiving-box-for-2",
    "button": "Pre-order"
   },
   "tg-wine": {
    "label": "Thanksgiving",
-   "line": "The box for two, pickup 11 to 26 November",
+   "line": "The box for two, pickup 11 to 25 November",
    "href": "https://www.id-eclair.com/products/thanksgiving-box-for-2"
   },
   "tg-box-2": {
    "label": "Thanksgiving",
-   "line": "The box for two, pickup 11 to 26 November",
+   "line": "The box for two, pickup 11 to 25 November",
    "href": "https://www.id-eclair.com/products/thanksgiving-box-for-2"
   },
   "cheese-board": {
@@ -117,7 +117,7 @@
   },
   "class-group": {
    "label": "Masterclass",
-   "line": "Learn to craft pastries like a pro!",
+   "line": "An unforgettable, hands-on pastry experience",
    "href": "classes.html#dates"
   },
   "chef-competition": {

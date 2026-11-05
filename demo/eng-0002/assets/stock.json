@@ -1,0 +1,390 @@
+{
+ "items": {
+  "4-desserts-in-jar": {
+   "available": true,
+   "price": 30.0
+  },
+  "41826113618108": {
+   "available": true,
+   "price": 8.0
+  },
+  "41826118205628": {
+   "available": true,
+   "price": 8.0
+  },
+  "41826123317436": {
+   "available": true,
+   "price": 8.0
+  },
+  "41826128265404": {
+   "available": true,
+   "price": 8.0
+  },
+  "41826161557692": {
+   "available": true,
+   "price": 30.0
+  },
+  "41826180792508": {
+   "available": true,
+   "price": 3.75
+  },
+  "41826183807164": {
+   "available": true,
+   "price": 3.75
+  },
+  "41829477253308": {
+   "available": true,
+   "price": 7.95
+  },
+  "41829477744828": {
+   "available": true,
+   "price": 7.0
+  },
+  "41829487280316": {
+   "available": true,
+   "price": 8.0
+  },
+  "41829515428028": {
+   "available": true,
+   "price": 8.0
+  },
+  "41829520539836": {
+   "available": true,
+   "price": 5.0
+  },
+  "42532786536636": {
+   "available": true,
+   "price": 7.0
+  },
+  "42532856987836": {
+   "available": true,
+   "price": 7.0
+  },
+  "42881176993980": {
+   "available": true,
+   "price": 9.0
+  },
+  "42881200324796": {
+   "available": true,
+   "price": 7.95
+  },
+  "42881210810556": {
+   "available": true,
+   "price": 18.0
+  },
+  "42933315731644": {
+   "available": true,
+   "price": 24.0
+  },
+  "43094168993980": {
+   "available": true,
+   "price": 55.0
+  },
+  "43094183837884": {
+   "available": true,
+   "price": 45.0
+  },
+  "43103984419004": {
+   "available": true,
+   "price": 9.0
+  },
+  "43134021828796": {
+   "available": true,
+   "price": 15.0
+  },
+  "43134026907836": {
+   "available": true,
+   "price": 16.0
+  },
+  "43140856185020": {
+   "available": true,
+   "price": 30.0
+  },
+  "44712864579772": {
+   "available": true,
+   "price": 35.0
+  },
+  "45401284968636": {
+   "available": true,
+   "price": 160.0
+  },
+  "45401285001404": {
+   "available": true,
+   "price": 150.0
+  },
+  "45401285034172": {
+   "available": true,
+   "price": 155.0
+  },
+  "45401285066940": {
+   "available": true,
+   "price": 165.0
+  },
+  "45401285099708": {
+   "available": true,
+   "price": 155.0
+  },
+  "45401285132476": {
+   "available": true,
+   "price": 160.0
+  },
+  "45401285198012": {
+   "available": true,
+   "price": 160.0
+  },
+  "45401285230780": {
+   "available": true,
+   "price": 165.0
+  },
+  "45401299648700": {
+   "available": true,
+   "price": 175.0
+  },
+  "45401299681468": {
+   "available": true,
+   "price": 110.0
+  },
+  "45401299714236": {
+   "available": true,
+   "price": 165.0
+  },
+  "45401299747004": {
+   "available": true,
+   "price": 100.0
+  },
+  "45401299779772": {
+   "available": true,
+   "price": 170.0
+  },
+  "45401299812540": {
+   "available": true,
+   "price": 105.0
+  },
+  "45401299845308": {
+   "available": true,
+   "price": 180.0
+  },
+  "45401299878076": {
+   "available": true,
+   "price": 115.0
+  },
+  "45401299910844": {
+   "available": true,
+   "price": 170.0
+  },
+  "45401299943612": {
+   "available": true,
+   "price": 105.0
+  },
+  "45401299976380": {
+   "available": true,
+   "price": 175.0
+  },
+  "45401300009148": {
+   "available": true,
+   "price": 110.0
+  },
+  "45401300107452": {
+   "available": true,
+   "price": 175.0
+  },
+  "45401300140220": {
+   "available": true,
+   "price": 110.0
+  },
+  "45401300172988": {
+   "available": true,
+   "price": 180.0
+  },
+  "45401319506108": {
+   "available": true,
+   "price": 160.0
+  },
+  "45401319538876": {
+   "available": true,
+   "price": 175.0
+  },
+  "45401319571644": {
+   "available": true,
+   "price": 150.0
+  },
+  "45401319604412": {
+   "available": true,
+   "price": 165.0
+  },
+  "45401319637180": {
+   "available": true,
+   "price": 155.0
+  },
+  "45401319669948": {
+   "available": true,
+   "price": 170.0
+  },
+  "45401319702716": {
+   "available": true,
+   "price": 165.0
+  },
+  "45401319735484": {
+   "available": true,
+   "price": 180.0
+  },
+  "45401319768252": {
+   "available": true,
+   "price": 155.0
+  },
+  "45401319801020": {
+   "available": true,
+   "price": 170.0
+  },
+  "45401319833788": {
+   "available": true,
+   "price": 160.0
+  },
+  "45401319866556": {
+   "available": true,
+   "price": 175.0
+  },
+  "45401319932092": {
+   "available": true,
+   "price": 185.0
+  },
+  "45401319964860": {
+   "available": true,
+   "price": 160.0
+  },
+  "45401319997628": {
+   "available": true,
+   "price": 175.0
+  },
+  "45401571459260": {
+   "available": true,
+   "price": 0.0
+  },
+  "45433279971516": {
+   "available": true,
+   "price": 100.0
+  },
+  "45561722503356": {
+   "available": true,
+   "price": 140.0
+  },
+  "45561722536124": {
+   "available": true,
+   "price": 140.0
+  },
+  "45561722568892": {
+   "available": true,
+   "price": 140.0
+  },
+  "caneles": {
+   "available": true,
+   "price": 9.0
+  },
+  "caramel-je-taime": {
+   "available": true,
+   "price": 8.0
+  },
+  "cheese-board": {
+   "available": true,
+   "price": 100.0
+  },
+  "chocolat-mon-amour": {
+   "available": true,
+   "price": 8.0
+  },
+  "chocolate-fingers-sables-poches": {
+   "available": true,
+   "price": 7.0
+  },
+  "citron-ma-passion": {
+   "available": true,
+   "price": 8.0
+  },
+  "cookie-spoon": {
+   "available": true,
+   "price": 5.0
+  },
+  "custom-logo-vegan-cookie": {
+   "available": true,
+   "price": 3.75
+  },
+  "dark-chocolate-truffles": {
+   "available": true,
+   "price": 15.0
+  },
+  "dark-truffles-wholesale": {
+   "available": true,
+   "price": 30.0
+  },
+  "diamants-biscuit-by-6": {
+   "available": true,
+   "price": 7.0
+  },
+  "douceur-tropicale": {
+   "available": true,
+   "price": 8.0
+  },
+  "dubai-chocolate-vegan": {
+   "available": true,
+   "price": 35.0
+  },
+  "framboise-cherie": {
+   "available": true,
+   "price": 8.0
+  },
+  "gift-basket-large": {
+   "available": true,
+   "price": 55.0
+  },
+  "gift-basket-small": {
+   "available": true,
+   "price": 45.0
+  },
+  "golden-ticket": {
+   "available": true,
+   "price": 140.0
+  },
+  "kushyflakes": {
+   "available": true,
+   "price": 9.0
+  },
+  "macarons": {
+   "available": true,
+   "price": 18.0
+  },
+  "noisette-toujours": {
+   "available": true,
+   "price": 8.0
+  },
+  "pineapple-vanilla-jam": {
+   "available": true,
+   "price": 7.95
+  },
+  "raspberry-jam": {
+   "available": true,
+   "price": 7.95
+  },
+  "red-velvet-cookie-vegan-gluten-free-wholesale-by-24": {
+   "available": true,
+   "price": 24.0
+  },
+  "store-pickup-app": {
+   "available": true,
+   "price": 0.0
+  },
+  "thanksgiving-box-for-2": {
+   "available": true,
+   "price": 160.0
+  },
+  "tropical-jam": {
+   "available": true,
+   "price": 7.0
+  },
+  "white-chocolate-truffles": {
+   "available": true,
+   "price": 16.0
+  }
+ },
+ "source": "products.json",
+ "updated_at": "2026-11-05T05:03:59Z"
+}

@@ -386,7 +386,7 @@
         return { i: i, s: s, why: why, idx: idx };
       }).filter(Boolean).sort(function (a, b) { return b.s - a.s || a.idx - b.idx; });
       var picks = scored.slice(0, 3).map(function (r) {
-        return { handle: r.i.handle, title: addTitle(r.i), price: r.i.price, desc: r.i.desc, reason: r.why.length ? r.why.join(', ') : 'a house favourite on the menu', addable: canAdd(r.i), item: bagItem(r.i), box: r.i.handle === 'macaron-box-6' };
+        return { handle: r.i.handle, title: addTitle(r.i), price: r.i.price, desc: r.i.desc, reason: r.why.length ? r.why.join(', ') : 'on our menu', addable: canAdd(r.i), item: bagItem(r.i), box: r.i.handle === 'macaron-box-6' };
       });
       var note = diet === 'nut' ? 'The shop has not published an allergen chart; these name no nut in their description, which is not the same as nut-free. Ask the counter.' :
         diet === 'gf' ? (F.gluten_caution ? F.gluten_caution.text : '') : '';

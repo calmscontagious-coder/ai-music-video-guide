@@ -13,7 +13,7 @@
    contact instead of a dead screen. */
 (function () {
   'use strict';
-  var V = '?v=20261105c', BASE = '../../', reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var V = '?v=20261105e', BASE = '../../', reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var HIST = 'lumiere.counter.v2', HELLO = 'lumiere.hello.v1', LAST = 'lumiere.lastbox.v1', PAIRS = 'lumiere.pairs.v1', POP = 'lumiere.pop.v1', ACTED = 'lumiere.acted.v1';
   var PIC = {"canele":"img/caneles-1-800.jpg","macaron":"img/macarons-1-800.jpg","macaron-box-6":"img/macarons-2-800.jpg","thanksgiving-box-for-2":"img/thanksgiving-box-for-2-800.jpg","golden-ticket":"img/golden-ticket-800.jpg","cheese-board":"img/cheese-board-1-800.jpg","dubai-chocolate-vegan":"img/dubai-chocolate-vegan-800.jpg","dark-truffles-wholesale":"img/dark-truffles-wholesale-800.jpg","white-chocolate-truffles":"img/white-chocolate-truffles-800.jpg","dark-chocolate-truffles":"img/dark-chocolate-truffles-800.jpg","kushyflakes":"img/kushyflakes-800.jpg","gift-basket-small":"img/gift-basket-small-800.jpg","gift-basket-large":"img/gift-basket-large-800.jpg","pineapple-vanilla-jam":"img/pineapple-vanilla-jam-800.jpg","caneles":"img/caneles-1-800.jpg","macarons":"img/macarons-2-800.jpg","chocolate-fingers-sables-poches":"img/chocolate-fingers-sables-poches-800.jpg","diamants-biscuit-by-6":"img/diamants-biscuit-by-6-800.jpg","cookie-spoon":"img/cookie-spoon-800.jpg","douceur-tropicale":"img/douceur-tropicale-800.jpg","noisette-toujours":"img/noisette-toujours-800.jpg","tropical-jam":"img/tropical-jam-800.jpg","raspberry-jam":"img/raspberry-jam-800.jpg","4-desserts-in-jar":"img/4-desserts-in-jar-2-800.jpg","caramel-je-taime":"img/caramel-je-taime-800.jpg","chocolat-mon-amour":"img/chocolat-mon-amour-800.jpg","framboise-cherie":"img/framboise-cherie-800.jpg","citron-ma-passion":"img/citron-ma-passion-800.jpg"};
   var FR = { Raspberry: 'Framboise', Pistachio: 'Pistache', Chocolate: 'Chocolat', Coffee: 'Café', Coconut: 'Coco' };
@@ -36,7 +36,7 @@
       closed_pre: 'We’re closed now. Order for pickup from {next}.', closed_off: 'We’re closed now and open again {next}. I can still answer questions.',
       signoff: ['Merci, it’s in your bag.', 'C’est noté. It’s in your bag.', 'Avec plaisir. Bonne journée.'] },
     starters: ['Fill my box', 'Today’s best', 'Gift ideas', 'Pickup times', 'Cakes'], chips: ['Is everything plant-based?', 'A birthday cake', 'Are you open?'], suggest: ['Is everything plant-based?', 'Are you open?', 'A birthday cake for 12'],
-    popup: { variant: 'fallback', delay_ms: 4000, idle_empty_ms: 25000, idle_bag_ms: 60000, max_per_view: 1, max_per_visit: 2, cooldown_after_close_ms: 10000, typing_quiet_ms: 2000, fast_scroll_px_s: 1800, back_up_px_s: 1500, shimmer_ms: 600,
+    popup: { variant: 'fallback', delay_ms: 4000, idle_empty_ms: 45000, idle_bag_ms: 60000, max_per_view: 2, max_per_visit: 99, cooldown_after_close_ms: 10000, typing_quiet_ms: 2000, fast_scroll_px_s: 1800, back_up_px_s: 1500, shimmer_ms: 600,
       openers: { hello: { line: 'Bonjour, can I help you with your order?', actions: ['best', 'box', 'pickup'] }, choose: { line: 'Need a hand choosing? Tell me who it’s for.', actions: ['forme', 'gift', 'table'] } }, sections: {} },
     handoff: { call: { label: 'Call 626-365-1161', href: 'tel:+16263651161' }, email: { label: 'Write to us', href: 'mailto:contact@id-eclair.com' }, directions: { label: 'Directions', href: 'https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105' } },
     facts: { plant_based: { text: 'Everything we make is plant-based: no butter, milk or eggs.' } }
@@ -157,6 +157,9 @@
     });
     var one = out.items && out.items.length === 1 ? out.items[0] : null;
     if (one && soldOut(one)) return soldAnswer(one);
+    if (one && RAW[one] && RAW[one].channel === 'shopify' && /\b(available|in stock|still (have|got)|got any|left)\b/i.test(text)) {
+      var av = engine.item(one); d = blank('available', 'Yes, the ' + av.title.charAt(0).toLowerCase() + av.title.slice(1) + ' is available, ' + money(av.price) + '. Shall I add it?'); d.items.push({ h: one }); return d;
+    }
     if (d.intent === 'vegan') { d.reply = (F.facts.plant_based || FALLBACK.facts.plant_based).text + ' The croissants are laminated with plant butter.'; d.items = [{ h: 'chocolate-eclair' }]; }
     if (d.intent === 'gluten' && !one) d.reply = 'Our online store labels several pieces gluten-free, among them the assorted macaron box, the cannelés and the dessert jars; at the counter, the soup du jour and two salades without their crostini. We also bake croissants and baguettes, so for coeliac disease please ask the team first.';
     if (d.intent === 'allergy' || d.intent === 'gluten') { d.reply = d.reply.replace(/ The team can tell you before you order\.$/, ''); if (!/ask the team/.test(d.reply)) d.reply += ' ' + S.allergy_tail; d.handoff = 'call'; }
@@ -454,7 +457,7 @@
 
   /* ---------- the pop-up: one opener per page view, chosen by where the visitor is ---------- */
   var pop = null, popTimer = null, lastClose = 0, lastType = 0, lastFast = 0, lastScrollY = scrollY, lastScrollT = Date.now(), shownThisView = 0, idleT = null, bagIdleDone = false, phone = function () { return innerWidth < 900; };
-  var helloState = get('sessionStorage', HELLO, 'new');
+  var helloState = 'new';   /* per page load: a reload greets again */
   function pills() { $$('[data-bonjour]').forEach(function (p) { p.hidden = false; }); }
   /* the pill: Camille's mark and one live line that turns every few seconds, facts only */
   var pillTurns = 0, pillTimer = null, pillHeld = false, pillNext = null;
@@ -505,11 +508,16 @@
     });
     fp.classList.toggle('is-yield', hit);
   }
+  var MUTE = 'lumiere.camille.mute.v1', dismissedView = false;
+  function muted() { try { var u = JSON.parse(localStorage.getItem(MUTE) || 'null'); return !!u && Date.now() < u; } catch (e) { return false; } }
+  function mute24() { try { localStorage.setItem(MUTE, JSON.stringify(Date.now() + 24 * 3600 * 1000)); } catch (e) { /* storage blocked: the dismissal still holds for this page load */ } dismissedView = true; }
+  function forced() { try { return /[?&]camille=1(&|$)/.test(location.search); } catch (e) { return false; } }
+  function searchActive() { return !!document.querySelector('.srch:focus-within, .srch.has-q'); }
   function visit() { return get('sessionStorage', POP, { n: 0, closed: 0 }); }
   function canAuto() {
     var v = visit(), now = Date.now();
-    return !pop && shownThisView < P.max_per_view && v.n < P.max_per_visit && now - Math.max(v.closed || 0, lastClose) > P.cooldown_after_close_ms &&
-      now - lastType > P.typing_quiet_ms && now - lastFast > 700 && root && root.hidden && !$('.drawer.open');
+    return !pop && !dismissedView && !muted() && shownThisView < P.max_per_view && now - Math.max(v.closed || 0, lastClose) > P.cooldown_after_close_ms &&
+      now - lastType > P.typing_quiet_ms && !searchActive() && now - lastFast > 700 && root && root.hidden && !$('.drawer.open');
   }
   function context() {
     var y = innerHeight * 0.45, el = document.elementFromPoint(innerWidth / 2, y), sec = el && el.closest('section[id]');
@@ -538,7 +546,7 @@
     var acts = actions.map(function (a) { var l = actLabel(a); return l ? '<button type="button" class="pop-act" data-pop="' + esc(a) + '" data-track="counter_popup_action">' + esc(l) + '</button>' : ''; }).join('');
     return '<div class="pop-head"><span class="ctr-av">' + MARK + '<i class="live" aria-hidden="true"></i></span><b>' + esc(S.name) + ' <small>at the counter</small></b>' +
       '<button class="pop-x" type="button" aria-label="Close">' + X + '</button></div>' +
-      '<div class="pop-body"><p class="pop-line">' + esc(line) + '</p>' + (acts ? '<div class="pop-acts">' + acts + '</div>' : '') + '</div>';
+      '<div class="pop-body"><p class="pop-line">' + esc(line) + '</p>' + (acts ? '<div class="pop-acts">' + acts + '</div>' : '') + (kind === 'added' || kind === 'waiting' ? '' : '<button type="button" class="pop-mute" data-pop-mute>Don’t show again</button>') + '</div>';
   }
   function showPop(kind, opt) {
     opt = opt || {};
@@ -559,11 +567,12 @@
     if (opt.extra) body.insertAdjacentHTML('beforeend', opt.extra);
     document.body.appendChild(pop);
     pop.addEventListener('click', safe(function (e) {
-      var x = e.target.closest('.pop-x'); if (x) { closePop(); return; }
+      var x = e.target.closest('.pop-x'); if (x) { dismissedView = true; closePop(); return; }
+      if (e.target.closest('[data-pop-mute]')) { mute24(); track('counter_popup_muted'); closePop(); return; }
       var a = e.target.closest('[data-pop]'); if (a) { runAct(a.getAttribute('data-pop'), a); return; }
       var add = e.target.closest('[data-add]'); if (add) { track('counter_popup_add', { from: 'pop' }); acted(); setTimeout(function () { afterAdd(add.getAttribute('data-handle'), true); }, 0); return; }
       var ch = e.target.closest('[data-change-slot]'); if (ch) { open('', 'Pickup times'); }
-      if (pop && pop.classList.contains('is-compact') && e.target.closest('.pop-line, .pop-head b')) { open(); }
+      if (pop && (pop.classList.contains('is-compact') || pop.classList.contains('is-peek')) && e.target.closest('.pop-line, .pop-head b, .ctr-av')) { open(); }
     }));
     if (!opt.response) { shownThisView++; var v = visit(); v.n++; put('sessionStorage', POP, v); track('counter_popup_shown', { opener: kind }); }
     put('sessionStorage', HELLO, 'shown'); helloState = 'shown';
@@ -606,31 +615,43 @@
       return b.width && b.height && b.bottom > r.top - 8 && b.top < r.bottom + 8 && b.right > r.left - 8 && b.left < r.right + 8;
     });
   }
+  function coversHero(r) {
+    return $$('.stg-slides, .stg-cap, .stg-pr, .pr, [data-add], .add, .btn, [data-box-add], .stg-pause').some(function (el) {
+      if (pop.contains(el) || el.closest('.ctr, .drawer, .dock, .sub, [hidden], .stg-slide:not(.is-on)')) return false;
+      var b = el.getBoundingClientRect();
+      return b.width && b.height && b.bottom > r.top - 4 && b.top < r.bottom + 4 && b.right > r.left && b.left < r.right;
+    });
+  }
   function placePop() {
     if (!pop) return;
     var dock = $('.dock'), onPhone = dock && getComputedStyle(dock).display !== 'none';
-    var block = $('.drawer.open') || (root && !root.hidden);
-    var spots = [];
+    var block = $('.drawer.open') || (root && !root.hidden) || searchActive();
+    var spots = [], strict = false;
     if (onPhone) {
-      if (!dock.classList.contains('is-early') && !dock.classList.contains('is-yield')) spots.push({ bottom: dock.offsetHeight + 24 });
-      var ph = $('.stg-slides'), pr = ph && ph.getBoundingClientRect();
-      if (pr && pr.top > 60) spots.push({ top: pr.top + 12, compact: true, width: innerWidth - 24 - 56 });
-      spots.push({ bottom: 12 });
+      /* the peek: full width less 8 px gutters, rising from the dock (or the bottom edge); on the first screen, where
+         the hero photo, its caption and the order button fill the view, it takes the free strip at the top instead */
+      strict = scrollY < innerHeight * 0.9;
+      if (!dock.classList.contains('is-early') && !dock.classList.contains('is-yield')) spots.push({ bottom: dock.offsetHeight + 24, peek: true });
+      spots.push({ bottom: 8, peek: true });
+      if (strict) spots.push({ top: 8, peek: true, edge: 'top' });
     } else { var fp = $('.float-pill'), fr = fp && !fp.hidden && !fp.classList.contains('is-yield') && fp.getBoundingClientRect(); spots.push({ bottom: fr && fr.height ? innerHeight - fr.top + 12 : 24 }); }
     var ok = null;
     for (var i = 0; i < spots.length && !ok; i++) {
       var s = spots[i];
-      pop.classList.toggle('is-compact', !!s.compact);
-      pop.style.width = s.width ? s.width + 'px' : '';
+      pop.classList.toggle('is-peek', !!s.peek); pop.classList.remove('is-compact');
+      pop.style.width = s.peek ? (innerWidth - 16) + 'px' : '';
       var h = pop.offsetHeight, w = pop.offsetWidth;
-      var top = s.top != null ? s.top : innerHeight - s.bottom - h, left = s.compact ? 12 : innerWidth - w - (onPhone ? 12 : 24);
-      if (top + h > innerHeight - 8) continue;
-      if (!covers({ top: top, bottom: top + h, left: left, right: left + w })) ok = s;
+      var top = s.top != null ? s.top : innerHeight - s.bottom - h, left = s.peek ? 8 : innerWidth - w - 24;
+      if (top + h > innerHeight - 4 || top < 0) continue;
+      if (strict && onPhone && coversHero({ top: top, bottom: top + h, left: left, right: left + w })) continue;
+      if (!onPhone && covers({ top: top, bottom: top + h, left: left, right: left + w })) continue;
+      ok = s;
     }
     if (ok) {
-      pop.classList.toggle('is-compact', !!ok.compact); pop.style.width = ok.width ? ok.width + 'px' : '';
-      pop.style.left = ok.compact ? '12px' : ''; pop.style.right = ok.compact ? 'auto' : '';
+      pop.classList.toggle('is-peek', !!ok.peek); pop.style.width = ok.peek ? (innerWidth - 16) + 'px' : '';
+      pop.style.left = ok.peek ? '8px' : ''; pop.style.right = ok.peek ? 'auto' : '';
       pop.style.top = ok.top != null ? ok.top + 'px' : 'auto'; pop.style.bottom = ok.bottom != null ? 'calc(' + ok.bottom + 'px + env(safe-area-inset-bottom))' : 'auto';
+      pop.classList.toggle('is-top', ok.edge === 'top');
     }
     pop.classList.toggle('is-yield', !!block || !ok);
   }
@@ -760,11 +781,24 @@
     ['pointerdown', 'keydown'].forEach(function (t) { addEventListener(t, resetIdle, { passive: true }); });
     document.addEventListener('keydown', function (e) { if (e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) lastType = Date.now(); }, true);
     resetIdle();
-    if (helloState === 'new') popTimer = setTimeout(function wait() { if (canAuto()) showPop(context()); else if (helloState === 'new' && shownThisView < P.max_per_view) popTimer = setTimeout(wait, 1500); }, Math.max(0, P.delay_ms - (performance.now ? performance.now() : 0)));
-    window.LumiereCounter = { open: open, close: close, ask: function (q) { if (root.hidden) open(); ask(q); }, popup: function (k) { shownThisView = 0; put('sessionStorage', POP, { n: 0, closed: 0 }); lastClose = 0; showPop(k || 'hello'); }, route: route };
+    if (forced()) { dismissedView = false; setTimeout(function () { shownThisView = 0; lastClose = 0; showPop('hello'); }, 300); }
+    else if (helloState === 'new') popTimer = setTimeout(function wait() { if (canAuto()) showPop(context()); else if (helloState === 'new' && shownThisView < P.max_per_view) popTimer = setTimeout(wait, 1500); }, Math.max(0, P.delay_ms - (performance.now ? performance.now() : 0)));
+    window.LumiereCounter = { open: open, prefill: function (q) { if (root.hidden) open(); if (input) { input.value = String(q || '').slice(0, 200); chips(input.value); setTimeout(function () { try { input.focus(); } catch (e) { /* nothing */ } }, 60); } }, close: close, ask: function (q) { if (root.hidden) open(); ask(q); }, popup: function (k) { shownThisView = 0; put('sessionStorage', POP, { n: 0, closed: 0 }); lastClose = 0; showPop(k || 'hello'); }, route: route };
+  }
+  /* live stock (assets/stock.json, written by tools/sync_shopify_stock.py every 15 min): fail-open, so a missing,
+     broken or stale (> 6 h) file changes nothing; otherwise sold-out items and today's prices come from it */
+  function applyStock(menu, st) {
+    if (!menu || !menu.items || !st || !st.items) return;
+    var age = Date.now() - Date.parse(st.updated_at); if (!(age < 6 * 3600 * 1000) || age < -600000) return;
+    menu.items.forEach(function (i) {
+      var s = i.channel === 'shopify' && st.items[i.handle]; if (!s) return;
+      if (s.available === false) i.available = false;
+      if (typeof s.price === 'number' && s.price >= 0 && s.price !== i.price) i.price = s.price;
+    });
   }
   Promise.all([
     getJSON('counter-facts.json' + V).catch(function () { return null; }),
-    getJSON(BASE + 'assets/menu.json').catch(function () { return null; })
-  ]).then(function (d) { try { boot(d[0], d[1]); } catch (e) { try { boot(null, null); } catch (x) { /* nothing more to do */ } } });
+    getJSON(BASE + 'assets/menu.json').catch(function () { return null; }),
+    getJSON(BASE + 'assets/stock.json' + V).catch(function () { return null; })
+  ]).then(function (d) { try { applyStock(d[1], d[2]); boot(d[0], d[1]); } catch (e) { try { boot(null, null); } catch (x) { /* nothing more to do */ } } });
 })();

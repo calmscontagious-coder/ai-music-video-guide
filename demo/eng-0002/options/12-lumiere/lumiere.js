@@ -153,11 +153,176 @@
   window.LumiereFly = function (from, img) { try { if (!reduce && from) fly(from, img ? '../../' + img : null); } catch (e) { /* decoration only */ } };
 
   /* 8. the pastry counter, after first paint and an idle moment; the counter loads even if its engine does not */
-  var VER = '?v=20261105c';
+  var VER = '?v=20261105e';
   function load(src, then) { var sc = document.createElement('script'); sc.src = src; sc.async = true; sc.onload = then; sc.onerror = then; document.head.appendChild(sc); }
   function counter() { load('counter-core.js' + VER, function () { load('counter.js' + VER); }); }
   function idle() { if ('requestIdleCallback' in window) requestIdleCallback(counter, { timeout: 2000 }); else setTimeout(counter, 600); }
   if (document.readyState === 'complete') idle(); else addEventListener('load', idle, { once: true });
+
+  /* 8b. live stock: ../../assets/stock.json (tools/sync_shopify_stock.py, every 15 min). Fail-open: a missing, broken
+     or older-than-6-hours file changes nothing. Sold-out items get a calm "Sold out today", a disabled Add and the
+     closest alternative; prices follow the file when they differ. */
+  function money(n) { return '$' + Number(n).toFixed(2); }
+  function applyStock(st, menu) {
+    var age = Date.now() - Date.parse(st && st.updated_at);
+    if (!st || !st.items || !(age < 6 * 3600 * 1000) || age < -600000) return;
+    var byHandle = {}; ((menu && menu.items) || []).forEach(function (i) { byHandle[i.handle] = i; });
+    function alt(h) {
+      var me = byHandle[h]; if (!me) return null;
+      return (menu.items || []).filter(function (i) { var s = st.items[i.handle]; return i.handle !== h && i.category === me.category && i.channel !== 'booking' && !i.needs_choice && !i.hidden && (!s || s.available !== false); })[0] || null;
+    }
+    window.LUMIERE_SOLDOUT = (window.LUMIERE_SOLDOUT || []).concat(Object.keys(st.items).filter(function (k) { return st.items[k].available === false && byHandle[k]; }));
+    $$('[data-add]').forEach(function (b) {
+      var h = b.getAttribute('data-handle'), s = st.items[h]; if (!s) return;
+      var card = b.closest('[data-card], .item, article, li, .stg-slide') || b.parentNode;
+      if (typeof s.price === 'number') {
+        var old = parseFloat(b.getAttribute('data-price'));
+        if (old && Math.abs(old - s.price) > 0.001) {
+          b.setAttribute('data-price', s.price);
+          $$('*', card).forEach(function (n) { if (!n.children.length && n.textContent.trim() === money(old)) n.textContent = money(s.price); });
+          if (b.textContent.indexOf(money(old)) >= 0) b.textContent = b.textContent.replace(money(old), money(s.price));
+          var al = b.getAttribute('aria-label') || '';
+          if (al.indexOf(money(old)) >= 0) b.setAttribute('aria-label', al.replace(money(old), money(s.price)));
+        }
+      }
+      if (s.available === false && !b.classList.contains('is-sold')) {
+        b.disabled = true; b.classList.add('is-sold'); b.setAttribute('aria-label', (b.getAttribute('data-title') || h) + ', sold out today');
+        b.textContent = 'Sold out today';
+        var sib = b.nextElementSibling; if (sib && sib.classList.contains('stepper')) sib.hidden = true;
+        b.hidden = false; card.classList.add('is-sold');
+        var a = alt(h);
+        if (a && !card.querySelector('.sold-note')) {
+          var n = document.createElement('small'); n.className = 'sold-note';
+          n.textContent = 'Closest today: ' + a.title + ', ' + money((st.items[a.handle] && st.items[a.handle].price) || a.price) + '.';
+          b.insertAdjacentElement('afterend', n);
+        }
+      }
+    });
+  }
+  var DATA = (function () {
+    var q = '?v=20261105e', live = true;
+    function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+    setTimeout(function () { live = false; }, 5000);
+    var p = Promise.all([get('../../assets/stock.json' + q).catch(function () { return null; }), get('../../assets/menu.json' + q).catch(function () { return null; })])
+      .then(function (d) { var st = d[0] && d[0].items && Date.now() - Date.parse(d[0].updated_at) < 6 * 3600 * 1000 ? d[0] : null; return { stock: st, menu: d[1] }; });
+    p.then(function (d) { if (live && d.stock) applyStock(d.stock, d.menu); }).catch(function () { /* fail-open */ });
+    return p;
+  })();
+
+  /* 8c. the menu search: one field under the chapter tabs (sticky with them), chips from the real menu, instant
+     accent-insensitive typo-tolerant matching, stock from stock.json, and one line to Camille for questions. */
+  (function () {
+    var box = $('[data-search]'); if (!box) return;
+    var input = $('#srch-q', box), clear = $('.srch-x', box), chipsEl = $('.srch-chips', box), out = $('.srch-out', box), subEl = $('.sub');
+    var items = [], stock = null, active = {}, timer = null;
+    function norm(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function lev(a, b) { var m = a.length, n = b.length, d = [], i, j2; for (i = 0; i <= m; i++) d[i] = [i]; for (j2 = 1; j2 <= n; j2++) d[0][j2] = j2;
+      for (i = 1; i <= m; i++) for (j2 = 1; j2 <= n; j2++) d[i][j2] = Math.min(d[i - 1][j2] + 1, d[i][j2 - 1] + 1, d[i - 1][j2 - 1] + (a[i - 1] === b[j2 - 1] ? 0 : 1)); return d[m][n]; }
+    function pre(a, b) { var k = 0; while (k < a.length && k < b.length && a[k] === b[k]) k++; return k; }
+    function wordHit(tok, w) {
+      if (w.indexOf(tok) === 0 || (tok.length >= 3 && w.indexOf(tok) >= 0)) return true;
+      if (tok.length >= 4 && lev(tok, w) <= (tok.length >= 7 ? 2 : 1)) return true;
+      return tok.length >= 5 && pre(tok, w) >= Math.min(6, tok.length - 1);   /* pistachio / pistache */
+    }
+    function track(name, extra) {
+      var d = { event: name, t: Date.now() }; for (var k in extra) d[k] = extra[k];
+      try { document.dispatchEvent(new CustomEvent('lumiere:track', { detail: d })); } catch (e) { /* old engines */ }
+      try { if (window.LUMIERE_TRACK_URL && navigator.sendBeacon) navigator.sendBeacon(window.LUMIERE_TRACK_URL, JSON.stringify(d)); } catch (e) { /* never block the page */ }
+    }
+    var GROUPS = [
+      { id: 'eclair', label: 'Éclairs', f: function (i) { return i.category === 'eclair'; } },
+      { id: 'macaron', label: 'Macarons', f: function (i) { return i.category === 'macaron'; } },
+      { id: 'jars', label: 'Jars', f: function (i) { return i.category === 'cake' && i.handle !== 'mousse-cake'; } },
+      { id: 'gifts', label: 'Gifts', f: function (i) { return i.category === 'gift'; } },
+      { id: 'gf', label: 'Gluten-free', f: function (i) { return i.gf || /gluten.free/i.test([i.title, i.store_title, i.desc].join(' ')); } },
+      { id: 'coffee', label: 'Coffee and tea', f: function (i) { return i.category === 'drink' || i.category === 'tea'; } }
+    ];
+    function sold(i) { var s = stock && stock.items && stock.items[i.handle]; return (s && s.available === false) || i.available === false || i.stock === 0; }
+    function price(i) { var s = stock && stock.items && stock.items[i.handle]; return s && typeof s.price === 'number' ? s.price : i.price; }
+    function match(i, toks) {
+      var words = i.hay; var score = 0;
+      for (var k = 0; k < toks.length; k++) {
+        var best = 0;
+        for (var w = 0; w < words.length; w++) if (wordHit(toks[k], words[w])) { best = Math.max(best, i.titleWords.indexOf(words[w]) >= 0 ? 2 : 1); }
+        if (!best) return 0; score += best;
+      }
+      return score;
+    }
+    function isQuestion(q) { return /\?/.test(q) || /^(do|does|did|is|are|can|could|how|what|when|where|which|who|will|would|am|why)\b/.test(norm(q)) || /\b(do you have|is it|are you|can i|could i|i need|i want|looking for|help me)\b/.test(norm(q)); }
+    function ask(q) {
+      function go() { if (window.LumiereCounter && window.LumiereCounter.prefill) { window.LumiereCounter.prefill(q); return true; } return false; }
+      if (go()) return; var n = 0, iv = setInterval(function () { if (go() || ++n > 24) clearInterval(iv); }, 250);
+    }
+    function row(i) {
+      var s = sold(i), pr = price(i), title = i.title, act;
+      if (i.needs_choice && i.price_note) act = '<a class="add" href="' + esc(i.url) + '" target="_blank" rel="noopener">Options</a>';
+      else {
+        if (i.needs_choice && i.variants) title += ' (' + i.variants[0].title + ')';
+        act = s ? '<button class="add is-sold" type="button" disabled aria-label="' + esc(i.title) + ', sold out today">Sold out today</button>' :
+          '<button class="add" type="button" data-add data-handle="' + esc(i.handle) + '" data-title="' + esc(title) + '" data-price="' + pr + '"' + (i.variantId ? ' data-variant="' + esc(i.variantId) + '"' : '') + (i.image ? ' data-image="' + esc(i.image) + '"' : ' data-glyph="' + esc(i.glyph || '') + '"') + '>Add</button>';
+      }
+      return '<li class="srch-it' + (s ? ' is-sold' : '') + '"><div><b>' + esc(i.title) + '</b><small>' + esc(i.desc || '') + '</small></div><span class="pr">' + money(pr) + (i.price_note ? '' : '') + '</span>' + act + '</li>';
+    }
+    function render() {
+      var raw = input.value, q = norm(raw), toks = q.split(' ').filter(function (x) { return x.length > 1 || /\d/.test(x); });
+      var gs = GROUPS.filter(function (g) { return active[g.id]; });
+      box.classList.toggle('has-q', !!raw || gs.length > 0);
+      clear.hidden = !raw;
+      if (!raw && !gs.length) { out.hidden = true; out.innerHTML = ''; return; }
+      var found = [];
+      items.forEach(function (i) {
+        if (gs.length && !gs.every(function (g) { return g.f(i); })) return;
+        var sc = toks.length ? match(i, toks) : 1; if (sc) found.push({ i: i, s: sc });
+      });
+      found.sort(function (a, b) { return b.s - a.s; });
+      var html = '', qn = raw.trim();
+      var question = qn && isQuestion(qn);
+      if (qn && (question || !found.length)) html += '<button type="button" class="srch-ask" data-srch-ask><img src="counter-mark.png" alt="" width="48" height="48">Ask Camille: “' + esc(qn.length > 60 ? qn.slice(0, 57) + '…' : qn) + '”</button>';
+      if (found.length) html += '<ul class="srch-list">' + found.slice(0, 12).map(function (f) { return row(f.i); }).join('') + '</ul>';
+      else html += '<p class="srch-none">Nothing in the case matches that.</p>';
+      out.innerHTML = html; out.hidden = false;
+      clearTimeout(timer);
+      if (qn) timer = setTimeout(function () { track(found.length ? 'search_used' : 'search_no_result', { len: qn.length, n: found.length }); }, 900);
+    }
+    function reset() { input.value = ''; active = {}; $$('.srch-chip', chipsEl).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); }); render(); }
+    input.addEventListener('input', render);
+    input.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (input.value || Object.keys(active).length) { reset(); } else input.blur(); } });
+    clear.addEventListener('click', function () { reset(); input.focus(); });
+    chipsEl.addEventListener('click', function (e) { var b = e.target.closest('.srch-chip'); if (!b) return; var id = b.getAttribute('data-g'); active[id] = !active[id]; b.setAttribute('aria-pressed', String(!!active[id])); render(); });
+    out.addEventListener('click', function (e) {
+      if (e.target.closest('[data-srch-ask]')) { var q = input.value.trim(); out.hidden = true; ask(q); return; }
+      var a = e.target.closest('[data-add]'); if (a) { var o = a.textContent; a.textContent = 'Added'; setTimeout(function () { a.textContent = o; }, 1200); }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !out.hidden && !e.defaultPrevented && !$('.drawer.open') && document.activeElement !== input) { reset(); } });
+    document.addEventListener('click', function (e) { if (!out.hidden && !box.contains(e.target) && !e.target.closest('[data-search-open]')) out.hidden = true; });
+    input.addEventListener('focus', function () { if (input.value || Object.keys(active).length) render(); });
+    $$('[data-search-open]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        try { input.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' }); } catch (e) { /* old engines */ }
+        setTimeout(function () { input.focus({ preventScroll: true }); }, reduce ? 0 : 350);
+      });
+    });
+    /* the sticky bar reports its own height, so every sticky offset and scroll padding stays right */
+    function sync() { if (subEl) document.documentElement.style.setProperty('--sub-h', subEl.offsetHeight + 'px'); }
+    if (window.ResizeObserver && subEl) new ResizeObserver(sync).observe(subEl); sync();
+    var hero = $('#eclairs');
+    var stuckCheck = frame(function () { if (subEl && hero) subEl.classList.toggle('is-stuck', hero.getBoundingClientRect().bottom < (subEl.offsetHeight + 40)); });
+    addEventListener('scroll', stuckCheck, { passive: true }); addEventListener('resize', stuckCheck); stuckCheck();
+    DATA.then(function (d) {
+      stock = d.stock;
+      items = ((d.menu && d.menu.items) || []).filter(function (i) { return !i.hidden && i.channel !== 'booking' && i.price > 0; }).map(function (i) {
+        var cat = (d.menu.categories || []).filter(function (c) { return c.id === i.category; })[0];
+        i.titleWords = norm(i.title + ' ' + (i.store_title || '')).split(' ');
+        i.hay = norm([i.title, i.store_title, i.desc, cat && cat.label, i.label].join(' ')).split(' ').filter(Boolean);
+        return i;
+      });
+      var chips = GROUPS.filter(function (g) { return items.some(g.f); });
+      chipsEl.innerHTML = chips.map(function (g) { return '<button type="button" class="srch-chip" data-g="' + g.id + '" aria-pressed="false">' + esc(g.label) + '</button>'; }).join('');
+      chipsEl.hidden = !chips.length;
+      sync(); if (input.value) render();
+    });
+  })();
 
   /* 9. the stage. stage.js draws the slides, swipes, the pause button and the arrow keys; its own interval is set
      to an hour in the markup, and this file keeps time: a new slide every 6 s on every device, whether or not the

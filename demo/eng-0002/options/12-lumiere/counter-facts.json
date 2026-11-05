@@ -65,10 +65,10 @@
  "popup": {
   "variant": "a",
   "delay_ms": 4000,
-  "idle_empty_ms": 25000,
+  "idle_empty_ms": 45000,
   "idle_bag_ms": 60000,
-  "max_per_view": 1,
-  "max_per_visit": 2,
+  "max_per_view": 2,
+  "max_per_visit": 99,
   "cooldown_after_close_ms": 10000,
   "typing_quiet_ms": 2000,
   "fast_scroll_px_s": 1800,
@@ -317,7 +317,7 @@
    "from": "facts.json:delivery"
   },
   "gift_cards": {
-   "text": "To give a seat at the bench, the Golden Ticket is $140 on our online store.",
+   "text": "To give an unforgettable, hands-on pastry experience, the Golden Ticket is $140 on our online store.",
    "status": "proposed",
    "from": "facts.json:gift_cards"
   },
