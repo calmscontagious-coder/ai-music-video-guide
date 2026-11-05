@@ -2,6 +2,9 @@
 
 > Independent, citation-first guides for musicians turning finished songs into AI music videos: Seedance 2.0, Kling 3.0, Veo 3.1 workflows, honest pricing math, monetization rules, and troubleshooting. Every article carries primary-source citations and FAQ schema. Facts are dated ("as of" markers) and updated on change.
 
+## Studio services
+- [Purpose with Presence Studio](https://purposewithpresence.com/studio/): monthly website, Google Business Profile, email, local search and AI-answer visibility plans for local shops, cafés and bakeries. Essentials $950 a month + $2,500 setup (about 3 director hours a month); Growth $1,750 a month + $5,200 setup (about 6.5 hours; adds text perks, rewards, local SEO and AEO, social, events booking); Signature $2,450 a month + $6,500 setup (about 12 hours; adds paid local ads, catering and corporate outreach, merch, monthly photo days). 3-month minimum, then month to month. Clients own every account; no guaranteed results. Prices as of 2026-11-04.
+
 ## Tools
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 

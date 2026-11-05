@@ -1,6 +1,17 @@
 # AI Music Video Guide — full content (purposewithpresence.com)
 # One-file corpus for AI assistants. Each section: title, URL, article text.
 
+## Purpose with Presence Studio: plans for local businesses
+URL: https://purposewithpresence.com/studio/
+Summary: Monthly plans that run a local shop's website, Google profile, email and local search. Exact prices as of 2026-11-04.
+
+Purpose with Presence Studio runs the website, Google Business Profile, customer emails, reviews and local search for local shops, cafés and bakeries. Three monthly plans, each with a one-time setup fee and a 3-month minimum, then month to month.
+Essentials: $950 a month, $2,500 setup, about 3 director hours a month. Measurement and a monthly one-page report; one customer list with consent; six email flows (welcome, birthday, win-back, review ask, cart reminder, holiday pre-order) and two campaigns a month; Google Business Profile kept complete with a weekly post and review replies drafted within two business days; site care with monthly accessibility and speed checks; a 12-month seasonal calendar; one surprise improvement a month.
+Growth: $1,750 a month, $5,200 setup, about 6.5 director hours a month. Everything in Essentials plus text perks with written consent, a rewards program, local SEO and AI-answer visibility (answer-first pages, structured data, a monthly check of 20 fixed questions), 12 social posts and 4 short videos a month with a quarterly photo half-day, classes and events booking, four new seasonal looks.
+Signature: $2,450 a month, $6,500 setup, about 12 director hours a month. Everything in Growth plus flat-fee Meta and Google local ads in the client's own accounts, catering and corporate outreach, merch, a monthly photo half-day, an optional chat assistant, and a quarterly on-site strategy review.
+Clients own every account and their data; a written agreement comes before any work; no results are guaranteed. Your own software (store plan, email platform, apps) is billed by each vendor to the client.
+
+
 ## AI Voice Cloning for Musicians: Narration and Intros
 URL: https://purposewithpresence.com/blog/ai-voice-cloning-for-musicians-narration-intros.html
 Summary: Clone your own voice for narration, intros and dubs: instant vs professional cloning, plan prices, credits per minute, and when YouTube needs an AI label.
