@@ -8,7 +8,9 @@
         and shows the chosen pickup ("Ready Sat Nov 7, 11:00 am");
      5. the flight to the bag: on a pointer Add, the item's photo (or the heart) travels to the bag in 300 ms;
      6. the gift note preview; 7. the transform-only nudge where animation-timeline is missing;
-     8. after the page has painted and gone idle, the pastry counter (counter-core.js, then counter.js).
+     8. after the page has painted and gone idle, the pastry counter (counter-core.js, then counter.js);
+     9. the stage (../../assets/stage.js runs it): arrows, a hold while a pointer, finger or focus rests on it or on
+        its button, the progress line, and the button under it following the slide.
    Reduced motion: no flight, no nudge, no smooth scroll. No dependencies. */
 (function () {
   'use strict';
@@ -153,4 +155,60 @@
   function counter() { load('counter-core.js', function () { load('counter.js'); }); }
   function idle() { if ('requestIdleCallback' in window) requestIdleCallback(counter, { timeout: 2000 }); else setTimeout(counter, 600); }
   if (document.readyState === 'complete') idle(); else addEventListener('load', idle, { once: true });
+
+  /* 9. the stage. stage.js rotates, swipes, pauses and reads arrow keys; this adds the visible arrows, the hold
+     (through the stage's own focus hold), the progress line restart and the button that follows the slide. */
+  var stage = $('[data-stage]');
+  if (stage) {
+    var box = $('.stg-slides', stage), ctas = $$('[data-cta-for]'), holds = 0, cta = $('.hero-cta'), lastOn = null;
+    function dots() { return $$('.stg-dot', stage).filter(function (d) { return d.offsetParent !== null; }); }
+    function cur() { var d = dots(); for (var k = 0; k < d.length; k++) if (d[k].getAttribute('aria-current') === 'true') return k; return 0; }
+    function step(n) { var d = dots(); if (d.length) d[(cur() + n + d.length) % d.length].click(); }
+    var prev = $('[data-stg-prev]', stage), next = $('[data-stg-next]', stage);
+    if (prev) prev.addEventListener('click', function () { step(-1); });
+    if (next) next.addEventListener('click', function () { step(1); });
+    function hold(on) {
+      holds = Math.max(0, holds + (on ? 1 : -1));
+      stage.classList.toggle('is-held', holds > 0);
+      box.dispatchEvent(new FocusEvent(holds > 0 ? 'focusin' : 'focusout', { bubbles: true }));
+      if (!holds && !reduce) { var d = dots()[cur()]; if (d) d.click(); }   /* a fresh full interval after a hold */
+    }
+    function release() { setTimeout(function () { hold(false); }, 1200); }
+    [stage, cta].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') hold(true); });
+      el.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') hold(false); });
+      el.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'mouse') return;
+        hold(true);
+        window.addEventListener('pointerup', release, { once: true });
+      }, { passive: true });
+    });
+    if (cta) { cta.addEventListener('focusin', function () { hold(true); }); cta.addEventListener('focusout', function () { hold(false); }); }
+    function follow() {
+      var on = $('.stg-slide.is-on', stage), h = (on && on.getAttribute('data-cta')) || 'chocolate-eclair';
+      if (!$('[data-cta-for="' + h + '"]')) h = 'chocolate-eclair';
+      if (!(document.activeElement && cta && cta.contains(document.activeElement))) {   /* never swap the button under a keyboard user */
+        ctas.forEach(function (c) { c.hidden = c.getAttribute('data-cta-for') !== h; });
+      }
+      var shown = $$('.stg-slide', stage).filter(function (s) { return !s.classList.contains('is-season') || s.getAttribute('data-for') === document.documentElement.getAttribute('data-season'); });
+      var k = shown.indexOf(on);
+      shown.forEach(function (s) { if (s.classList.contains('is-next') && s !== shown[(k + 1) % shown.length]) s.classList.remove('is-next'); });
+      if (on && lastOn && lastOn !== on) { var gone = lastOn; gone.classList.add('was-on'); setTimeout(function () { gone.classList.remove('was-on'); }, 320); }
+      lastOn = on;
+      if (k >= 0 && shown.length > 1) shown[(k + 1) % shown.length].classList.add('is-next');
+      $$('.stg-dot', stage).forEach(function (d) { d.classList.remove('run'); });
+      var d = dots()[cur()]; if (d) { void d.offsetWidth; d.classList.add('run'); }
+    }
+    /* react to a slide change or stage.js marking the current dot; never to this code's own class changes */
+    var queueFollow = frame(follow);
+    new MutationObserver(function (ms) {
+      if (ms.some(function (m) {
+        if (m.attributeName === 'aria-current') return true;
+        var t = m.target;
+        return t.classList.contains('stg-slide') && ((m.oldValue || '').split(' ').indexOf('is-on') >= 0) !== t.classList.contains('is-on');
+      })) queueFollow();
+    }).observe(stage, { subtree: true, attributes: true, attributeOldValue: true, attributeFilter: ['class', 'aria-current'] });
+    follow();
+  }
 })();

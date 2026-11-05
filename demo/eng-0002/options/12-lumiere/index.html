@@ -17,8 +17,28 @@
 <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/fraunces-roman-latin.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
-<link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="../../img/shop/eclairs-slate-480.avif 480w, ../../img/shop/eclairs-slate-800.avif 800w, ../../img/shop/eclairs-slate-1200.avif 1200w" imagesizes="100vw" fetchpriority="high">
-<link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="../../img/shop/eclairs-slate-800.avif 800w, ../../img/shop/eclairs-slate-1200.avif 1200w, ../../img/shop/eclairs-slate-1600.avif 1600w" imagesizes="75vw" fetchpriority="high">
+<!-- season:start -->
+<script>/* Season, chosen before first paint. Loaded synchronously in <head> so the look is set before first paint (about 1 KB,
+   no fetch). ?season=<id> previews a look; otherwise the window that holds today's Pasadena date, shortest window
+   first; otherwise maison. The window table between the markers is written from assets/seasons.json by
+   tools/regen_static.py (run it or --check before every publish). In the Shopify build the same table is a
+   metaobject read in Liquid and one theme setting (Season: Auto or a named look). */
+(function () {
+  var T = /*SEASONS:START*/{"ids":["maison","toussaint","thanksgiving","noel","valentine","paques"],"windows":[["toussaint","2026-10-17","2026-11-02"],["thanksgiving","2026-11-03","2026-11-26"],["noel","2026-11-27","2026-12-26"],["valentine","2027-02-01","2027-02-14"],["paques","2027-03-14","2027-03-28"],["toussaint","2027-10-16","2027-11-02"],["thanksgiving","2027-11-02","2027-11-25"],["noel","2027-11-26","2027-12-26"],["valentine","2028-02-01","2028-02-14"],["paques","2028-04-02","2028-04-16"]]}/*SEASONS:END*/, ids = T.ids || ['maison'], W = T.windows || [];
+  var q = /[?&]season=([a-z-]+)/.exec(location.search), want = q && q[1], pick = 'maison', preview = false;
+  if (want && ids.indexOf(want) >= 0) { pick = want; preview = true; }
+  else {
+    var o = {}, today;
+    try { new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).forEach(function (p) { o[p.type] = p.value; }); today = o.year + '-' + o.month + '-' + o.day; } catch (e) { today = new Date().toISOString().slice(0, 10); }
+    var best = null, len = Infinity;
+    for (var i = 0; i < W.length; i++) { var w = W[i]; if (w[1] <= today && today <= w[2]) { var d = Date.parse(w[2]) - Date.parse(w[1]); if (d < len) { len = d; best = w[0]; } } }
+    if (best) pick = best;
+  }
+  document.documentElement.setAttribute('data-season', pick);
+  window.IDE_SEASON = { id: pick, preview: preview };
+})();</script>
+<!-- season:end -->
+<script>(function(){var m={"toussaint": "../../img/shop/truffle-box-sq-480.avif 480w, ../../img/shop/truffle-box-sq-800.avif 800w", "thanksgiving": "../../img/shop/tg-box-sq-480.avif 480w, ../../img/shop/tg-box-sq-800.avif 800w", "noel": "../../img/shop/cookies-noel-sq-480.avif 480w, ../../img/shop/cookies-noel-sq-800.avif 800w", "valentine": "../../img/shop/jar-framboise-spoon-sq-480.avif 480w, ../../img/shop/jar-framboise-spoon-sq-800.avif 800w", "paques": "../../img/shop/truffles-white-box-sq-480.avif 480w, ../../img/shop/truffles-white-box-sq-800.avif 800w", "maison": "../../img/shop/eclairs-slate-sq-480.avif 480w, ../../img/shop/eclairs-slate-sq-800.avif 800w"},s=document.documentElement.getAttribute('data-season'),v=m[s]||m.maison;var l=document.createElement('link');l.rel='preload';l.as='image';l.type='image/avif';l.setAttribute('imagesrcset',v);l.setAttribute('imagesizes','(min-width:900px) min(600px, calc(100svh - 380px)), 100vw');l.setAttribute('fetchpriority','high');document.head.appendChild(l);})();</script>
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 /* Lumière, critical layer: tokens, base, header, chapter bar, the first chapter and the dock's hidden state.
@@ -75,16 +95,24 @@ h1,.ch-t{font-family:var(--font-display);font-weight:600;font-size:var(--t-45);l
 .ch-head{padding:var(--sp-8) var(--gutter) var(--sp-6)}
 .ch-fig{position:sticky;top:var(--sub-h);z-index:0;overflow:hidden;margin:0}
 .ch-fig img{width:100%;aspect-ratio:1/1;object-fit:cover}
-.hero .ch-fig img{aspect-ratio:3/2}
 .ch-copy{position:relative;z-index:1;background:var(--ch-bg,var(--ivory));border-radius:var(--radius-md) var(--radius-md) 0 0;margin-top:calc(var(--sp-6) * -1);padding:var(--sp-8) var(--gutter) var(--sp-16);box-shadow:0 -12px 24px oklch(0.3 0.02 277.7 / .08)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);min-height:52px;padding:0 var(--sp-8);border-radius:var(--radius-pill);border:0;background:var(--color-brand);color:var(--color-on-brand);font:700 var(--t-16)/1.2 var(--font-text);text-decoration:none;cursor:pointer;transition:transform var(--dur-fast) var(--ease-move),background-color var(--dur-fast) var(--ease-move)}
 .btn:active{transform:scale(.98)}
 .btn[disabled]{background:var(--ivory-2);color:var(--color-muted);cursor:not-allowed}
 [hidden]{display:none !important}
 .btn svg{width:16px;height:16px;flex:none;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round}
-.hero .ch-copy{display:flex;flex-direction:column;gap:var(--sp-6)}
-.hero .ch-copy > *{margin:0}
-.hero .cta{order:-1}
+.hero-in{display:grid;gap:var(--sp-4);padding:var(--sp-6) 0 var(--sp-6)}
+.hero-head{padding:0 var(--gutter)}
+.kick-heart{width:12px;height:12px;fill:var(--color-accent);vertical-align:-1px;margin:0 var(--sp-1)}
+.stage{position:relative}
+.stg-slides{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--stg-g,var(--ivory-2));transition:background-color var(--dur-base) var(--ease-move)}
+.stg-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity var(--dur-base) var(--ease-move),visibility 0s linear var(--dur-base)}
+.stg-slide.is-on{opacity:1;visibility:visible;transition:opacity var(--dur-base) var(--ease-move),visibility 0s}
+.stg-slide.is-season{display:none}
+.stage:not(.stg-live) .stg-slide:not(.is-on){display:none}
+.stg-slide picture,.stg-slide img,.stg-slide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-cta{padding:0 var(--gutter)}
+.hero-lead{padding:0 var(--gutter)}
 .btn-wide{width:100%;max-width:400px}
 .dock{position:fixed;left:var(--sp-3);right:var(--sp-3);bottom:calc(var(--sp-3) + env(safe-area-inset-bottom));z-index:40;transform:translateY(calc(100% + 32px));transition:transform var(--dur-base) var(--ease-exit)}
 .drawer{position:fixed;inset:0;z-index:60;visibility:hidden;pointer-events:none}
@@ -102,23 +130,46 @@ h1,.ch-t{font-family:var(--font-display);font-weight:600;font-size:var(--t-45);l
   h1,.ch-t{font-size:var(--t-92);line-height:1}
   .ch{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:var(--sp-16);max-width:1360px;margin-inline:auto;padding:var(--sp-24) var(--gutter)}
   .ch-fig{grid-column:1;grid-row:1 / span 2;top:calc(var(--sub-h) + var(--sp-8));align-self:start;height:calc(100svh - var(--sub-h) - var(--sp-16));min-height:480px;max-height:880px;border-radius:var(--radius-md)}
-  .ch-fig picture,.ch-fig img,.hero .ch-fig img{width:100%;height:100%;aspect-ratio:auto}
+  .ch-fig picture,.ch-fig img{width:100%;height:100%;aspect-ratio:auto}
   .ch-head{grid-column:2;padding:12svh 0 var(--sp-6)}
   .ch-copy{grid-column:2;margin:0;padding:0 0 12svh;background:none;box-shadow:none;border-radius:0}
   .flip .ch-fig{grid-column:2}
   .flip .ch-head,.flip .ch-copy{grid-column:1}
-  .hero.ch{padding-top:var(--sp-8)}
-  .hero .ch-head{padding-top:2svh}
-  .hero .cta{order:0}
-  .hero .ch-copy{gap:var(--sp-8)}
+  .hero-in{max-width:1360px;margin-inline:auto;padding:var(--sp-8) var(--gutter) var(--sp-12);grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"head stage" "lead cta";column-gap:var(--sp-16);row-gap:var(--sp-4);align-items:center}
+  .hero-head{grid-area:head;padding:0}
+  .stage{grid-area:stage;width:min(600px,calc(100svh - 380px));min-width:400px}
+  .stg-slides{aspect-ratio:1/1;border-radius:var(--radius-md)}
+  .hero-cta{grid-area:cta;padding:0}
+  .hero-lead{grid-area:lead;padding:0;align-self:start}
   .dock{display:none}
 }
-@media (min-width:900px) and (max-height:820px){.hero h1{font-size:var(--t-60)}.hero .ch-head{padding-top:0}}
+@media (min-width:900px) and (max-height:820px){.hero h1{font-size:var(--t-60)}}
+html[data-season="toussaint"] .stg-slide.is-season[data-for="toussaint"]{display:block}
+html[data-season="toussaint"] .stage .stg-dot.is-season-dot{display:block}
+html[data-season="toussaint"] .stage:not(.stg-run) .stg-slide.is-season[data-for="toussaint"]{opacity:1;visibility:visible;z-index:1}
+html[data-season="toussaint"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season){display:none}
+html[data-season="thanksgiving"] .stg-slide.is-season[data-for="thanksgiving"]{display:block}
+html[data-season="thanksgiving"] .stage .stg-dot.is-season-dot{display:block}
+html[data-season="thanksgiving"] .stage:not(.stg-run) .stg-slide.is-season[data-for="thanksgiving"]{opacity:1;visibility:visible;z-index:1}
+html[data-season="thanksgiving"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season){display:none}
+html[data-season="noel"] .stg-slide.is-season[data-for="noel"]{display:block}
+html[data-season="noel"] .stage .stg-dot.is-season-dot{display:block}
+html[data-season="noel"] .stage:not(.stg-run) .stg-slide.is-season[data-for="noel"]{opacity:1;visibility:visible;z-index:1}
+html[data-season="noel"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season){display:none}
+html[data-season="valentine"] .stg-slide.is-season[data-for="valentine"]{display:block}
+html[data-season="valentine"] .stage .stg-dot.is-season-dot{display:block}
+html[data-season="valentine"] .stage:not(.stg-run) .stg-slide.is-season[data-for="valentine"]{opacity:1;visibility:visible;z-index:1}
+html[data-season="valentine"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season){display:none}
+html[data-season="paques"] .stg-slide.is-season[data-for="paques"]{display:block}
+html[data-season="paques"] .stage .stg-dot.is-season-dot{display:block}
+html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-season[data-for="paques"]{opacity:1;visibility:visible;z-index:1}
+html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season){display:none}
 </style>
 <link rel="stylesheet" href="lumiere.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="lumiere.css"></noscript>
 <script src="lumiere.js" defer></script>
 <script src="../../assets/app.js" defer></script>
+<script src="../../assets/stage.js" defer></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Bakery","@id":"https://www.id-eclair.com/#bakery","name":"iD Éclair","description":"A 100% plant-based French pâtisserie and salon de thé on West Green Street in Old Pasadena, led by chef-owner Romuald Guiot.","url":"https://www.id-eclair.com/","image":"https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2085.jpg?v=1740687892","telephone":"+1-626-365-1161","address":{"@type":"PostalAddress","streetAddress":"169 W Green St","addressLocality":"Pasadena","addressRegion":"CA","postalCode":"91105","addressCountry":"US"},"servesCuisine":["French","Vegan"],"hasMenu":{"@id":"https://www.id-eclair.com/#menu"},"founder":{"@type":"Person","name":"Romuald Guiot","jobTitle":"Chef-owner"},"sameAs":["https://www.instagram.com/ideclairlosangeles/","https://www.tiktok.com/@ideclairlosangeles"]},
@@ -177,24 +228,42 @@ h1,.ch-t{font-family:var(--font-display);font-weight:600;font-size:var(--t-45);l
 <div id="menu">
 
 <section class="chapter hero" id="eclairs" aria-labelledby="h1">
-  <div class="ch">
-    <div class="ch-head">
-      <p class="kick">iD Éclair · 169 W Green St, Old Pasadena</p>
+  <div class="hero-in">
+    <div class="hero-head">
+      <p class="kick">iD Éclair<svg class="kick-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>169 W Green St, Old Pasadena</p>
       <h1 id="h1">The éclair, made entirely from plants.</h1>
     </div>
-    <figure class="ch-fig" data-grid-break>
-      <picture>
-<source type="image/avif" srcset="../../img/shop/eclairs-slate-480.avif 480w, ../../img/shop/eclairs-slate-800.avif 800w, ../../img/shop/eclairs-slate-1200.avif 1200w, ../../img/shop/eclairs-slate-1600.avif 1600w" sizes="(min-width:900px) 75vw, 100vw">
-<source type="image/webp" srcset="../../img/shop/eclairs-slate-480.webp 480w, ../../img/shop/eclairs-slate-800.webp 800w, ../../img/shop/eclairs-slate-1200.webp 1200w, ../../img/shop/eclairs-slate-1600.webp 1600w" sizes="(min-width:900px) 75vw, 100vw">
-<img src="../../img/shop/eclairs-slate-1200.jpg" width="2400" height="1600" alt="A spread of éclairs with different glazes and decorations on a dark slate" fetchpriority="high" decoding="async">
-</picture>
-    </figure>
-    <div class="ch-copy">
-      <p class="lead">Chocolate glaze and gold leaf, $6.50. Made by a chef trained in a three-Michelin-star kitchen and a finalist on Food Network’s Spring Baking Championship.</p>
-      <div class="cta" data-card>
-        <button class="btn btn-wide" type="button" data-add data-handle="chocolate-eclair" data-title="Chocolate éclair" data-price="6.5" data-glyph="é" aria-label="Add a chocolate éclair, $6.50">Add a chocolate éclair · $6.50</button>
+<div class="stage has-season" data-stage data-interval="5000" data-grid-break>
+  <div class="stg-slides" aria-roledescription="carousel" aria-label="From the shop’s own photographs">
+    <div data-for="toussaint" class="stg-slide is-season" role="group" aria-roledescription="slide" aria-label="1 of 1: Chocolate" data-ground="#020106"><picture><source type="image/avif" srcset="../../img/shop/truffle-box-sq-480.avif 480w, ../../img/shop/truffle-box-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/truffle-box-sq-480.webp 480w, ../../img/shop/truffle-box-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/truffle-box-sq-800.jpg" width="800" height="800" alt="Dark truffles in a long white iD Éclair box on black" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Chocolate</b><span>Truffle boxes from $15.00</span></p></div>
+    <div data-for="thanksgiving" class="stg-slide is-season" role="group" aria-roledescription="slide" aria-label="1 of 1: Thanksgiving" data-ground="#3d261f"><picture><source type="image/avif" srcset="../../img/shop/tg-box-sq-480.avif 480w, ../../img/shop/tg-box-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/tg-box-sq-480.webp 480w, ../../img/shop/tg-box-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/tg-box-sq-800.jpg" width="800" height="800" alt="The Thanksgiving box for two, open, with wine, sides and baguette" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Thanksgiving</b><span>The box for two, pickup 11 to 26 November</span></p></div>
+    <div data-for="noel" class="stg-slide is-season" role="group" aria-roledescription="slide" aria-label="1 of 1: Custom Cookies" data-ground="#cbbeb1"><picture><source type="image/avif" srcset="../../img/shop/cookies-noel-sq-480.avif 480w, ../../img/shop/cookies-noel-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/cookies-noel-sq-480.webp 480w, ../../img/shop/cookies-noel-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/cookies-noel-sq-800.jpg" width="800" height="800" alt="Printed holiday cookies with snowflakes and Santa" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Custom Cookies</b><span>Order a batch</span></p></div>
+    <div data-for="valentine" data-cta="framboise-cherie" class="stg-slide is-season" role="group" aria-roledescription="slide" aria-label="1 of 1: Framboise chérie" data-ground="#dee6e9"><picture><source type="image/avif" srcset="../../img/shop/jar-framboise-spoon-sq-480.avif 480w, ../../img/shop/jar-framboise-spoon-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/jar-framboise-spoon-sq-480.webp 480w, ../../img/shop/jar-framboise-spoon-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/jar-framboise-spoon-sq-800.jpg" width="800" height="800" alt="Framboise chérie in its jar with a biscuit spoon" loading="lazy" decoding="async"></picture><p class="stg-cap"><b lang="fr">Framboise chérie</b><span>Raspberry mousse, raspberry jam, almond streusel</span></p></div>
+    <div data-for="paques" data-cta="white-chocolate-truffles" class="stg-slide is-season" role="group" aria-roledescription="slide" aria-label="1 of 1: Chocolate" data-ground="#dfe9ec"><picture><source type="image/avif" srcset="../../img/shop/truffles-white-box-sq-480.avif 480w, ../../img/shop/truffles-white-box-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/truffles-white-box-sq-480.webp 480w, ../../img/shop/truffles-white-box-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/truffles-white-box-sq-800.jpg" width="800" height="800" alt="White chocolate truffles in an open iD Éclair box" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Chocolate</b><span>White chocolate truffles, 200 g, $16.00</span></p></div>
+    <div class="stg-slide is-on" role="group" aria-roledescription="slide" aria-label="1 of 1: Éclairs" data-ground="#4b545a"><picture><source type="image/avif" srcset="../../img/shop/eclairs-slate-sq-480.avif 480w, ../../img/shop/eclairs-slate-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/eclairs-slate-sq-480.webp 480w, ../../img/shop/eclairs-slate-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/eclairs-slate-sq-800.jpg" width="800" height="800" alt="A spread of éclairs with different glazes and decorations on a dark slate" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Éclairs</b><span>The house signature, every morning</span></p></div>
+    <div data-cta="4-desserts-in-jar" class="stg-slide" role="group" aria-roledescription="slide" aria-label="1 of 1: Dessert in jar" data-ground="#ebf9d6"><picture><source type="image/avif" srcset="../../img/shop/ab-jars-sq-480.avif 480w, ../../img/shop/ab-jars-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/ab-jars-sq-480.webp 480w, ../../img/shop/ab-jars-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/ab-jars-sq-800.jpg" width="800" height="800" alt="Three dessert jars with biscuit spoons, Framboise chérie, Citron ma passion and Chocolat mon amour, on a mint ground" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Dessert in jar</b><span>Framboise chérie, Citron ma passion, Chocolat mon amour</span></p></div>
+    <div data-cta="golden-ticket" class="stg-slide is-video" role="group" aria-roledescription="slide" aria-label="1 of 1: Golden Ticket" data-ground="#d9c48a"><picture><source type="image/avif" srcset="../../img/shop/ticket-tall-poster.avif"><source type="image/webp" srcset="../../img/shop/ticket-tall-poster.webp"><img src="../../img/shop/ticket-tall-poster.jpg" width="540" height="960" alt="The Golden Ticket masterclass: a class piping macarons at the bench" loading="lazy" decoding="async"></picture><video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" data-tall="../../img/shop/ticket-tall.mp4" data-wide="../../img/shop/ticket-wide.mp4"></video><p class="stg-cap"><b>Golden Ticket</b><span>Learn to craft pastries like a pro!</span></p></div>
+    <div data-cta="cookie-spoon" class="stg-slide" role="group" aria-roledescription="slide" aria-label="1 of 1: Vegan Cookies" data-ground="#ffd299"><picture><source type="image/avif" srcset="../../img/shop/ab-spoons-sq-480.avif 480w, ../../img/shop/ab-spoons-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/ab-spoons-sq-480.webp 480w, ../../img/shop/ab-spoons-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/ab-spoons-sq-800.jpg" width="800" height="800" alt="Cookie spoons and a blue glazed plate on an apricot ground" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Vegan Cookies</b><span>Delectable, Melt-in-Your-Mouth Treats</span></p></div>
+    <div data-cta="gift-basket-small" class="stg-slide" role="group" aria-roledescription="slide" aria-label="1 of 1: Gift basket" data-ground="#fda984"><picture><source type="image/avif" srcset="../../img/shop/ab-baskets-sq-480.avif 480w, ../../img/shop/ab-baskets-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/ab-baskets-sq-480.webp 480w, ../../img/shop/ab-baskets-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/ab-baskets-sq-800.jpg" width="800" height="800" alt="Two gift baskets in black boxes printed Faith, Love, Happiness, filled with meringues and biscuits, on a peach ground" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Gift basket</b><span>Luxury Gift Baskets, Thoughtfully Curated</span></p></div>
+    <div data-cta="caneles" class="stg-slide" role="group" aria-roledescription="slide" aria-label="1 of 1: Cannelés" data-ground="#eddbbd"><picture><source type="image/avif" srcset="../../img/shop/caneles-tray-sq-480.avif 480w, ../../img/shop/caneles-tray-sq-800.avif 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><source type="image/webp" srcset="../../img/shop/caneles-tray-sq-480.webp 480w, ../../img/shop/caneles-tray-sq-800.webp 800w" sizes="(min-width:900px) min(600px, calc(100svh - 380px)), 100vw"><img src="../../img/shop/caneles-tray-sq-800.jpg" width="800" height="800" alt="Rows of dark, caramelised cannelés in a white iD Éclair box with the shop’s card" loading="lazy" decoding="async"></picture><p class="stg-cap"><b>Cannelés</b><span>Caramelised crust, soft centre, by three</span></p></div>
+  </div>
+  <div class="stg-ctl"><button class="stg-arrow" type="button" data-stg-prev aria-label="Previous slide"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><div class="stg-dots" role="group" aria-label="Choose a slide"><button class="stg-dot is-season-dot" type="button" aria-label="Show slide 1: this season" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 2: Éclairs" aria-current="true"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 3: Dessert in jar" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 4: Golden Ticket" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 5: Vegan Cookies" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 6: Gift basket" aria-current="false"><i></i></button><button class="stg-dot" type="button" aria-label="Show slide 7: Cannelés" aria-current="false"><i></i></button></div><button class="stg-arrow" type="button" data-stg-next aria-label="Next slide"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button><button class="stg-pause" type="button" aria-pressed="false"><svg class="pa" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg><svg class="pl" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button></div>
+</div>
+<script>(function(){if(document.documentElement.getAttribute('data-season')!=='maison')return;var i=document.querySelector('.stage .stg-slide.is-on img');if(i){i.loading='eager';i.setAttribute('fetchpriority','high');}})();</script>
+    <div class="cta hero-cta">
+        <div class="cta-one" data-cta-for="chocolate-eclair"><button class="btn btn-wide" type="button" data-add data-handle="chocolate-eclair" data-title="Chocolate éclair" data-price="6.5" data-glyph="é" aria-label="Add a chocolate éclair, $6.50">Add a chocolate éclair · $6.50</button></div>
+        <div class="cta-one" data-cta-for="framboise-cherie" hidden><button class="btn btn-wide" type="button" data-add data-handle="framboise-cherie" data-title="Framboise chérie" data-price="8" data-variant="41826118205628" data-image="img/framboise-cherie-800.jpg" aria-label="Add Framboise chérie, $8.00">Add Framboise chérie · $8.00</button></div>
+        <div class="cta-one" data-cta-for="white-chocolate-truffles" hidden><button class="btn btn-wide" type="button" data-add data-handle="white-chocolate-truffles" data-title="White chocolate truffles" data-price="16" data-variant="43134026907836" data-image="img/white-chocolate-truffles-800.jpg" aria-label="Add white chocolate truffles, $16.00">Add white chocolate truffles · $16.00</button></div>
+        <div class="cta-one" data-cta-for="4-desserts-in-jar" hidden><button class="btn btn-wide" type="button" data-add data-handle="4-desserts-in-jar" data-title="Four desserts in a jar" data-price="30" data-variant="41826161557692" data-image="img/4-desserts-in-jar-2-800.jpg" aria-label="Add the four jars, $30.00">Add the four jars · $30.00</button></div>
+        <div class="cta-one" data-cta-for="golden-ticket" hidden><button class="btn btn-wide" type="button" data-add data-handle="golden-ticket" data-title="Golden Ticket (dark chocolate 60%)" data-price="140" data-variant="45561722503356" data-image="img/golden-ticket-800.jpg" aria-label="Add the Golden Ticket, $140.00">Add the Golden Ticket · $140.00</button></div>
+        <div class="cta-one" data-cta-for="cookie-spoon" hidden><button class="btn btn-wide" type="button" data-add data-handle="cookie-spoon" data-title="Cookie spoons" data-price="5" data-variant="41829520539836" data-image="img/cookie-spoon-800.jpg" aria-label="Add cookie spoons, $5.00">Add cookie spoons · $5.00</button></div>
+        <div class="cta-one" data-cta-for="gift-basket-small" hidden><button class="btn btn-wide" type="button" data-add data-handle="gift-basket-small" data-title="Gift basket, small" data-price="45" data-variant="43094183837884" data-image="img/gift-basket-small-800.jpg" aria-label="Add the small gift basket, $45.00">Add the small gift basket · $45.00</button></div>
+        <div class="cta-one" data-cta-for="caneles" hidden><button class="btn btn-wide" type="button" data-add data-handle="caneles" data-title="Cannelés, by 3" data-price="9" data-variant="42881176993980" data-image="img/caneles-1-800.jpg" aria-label="Add cannelés, by 3, $9.00">Add cannelés, by 3 · $9.00</button></div>
         <p class="when"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-next-slot>Next pickup today</span><small>example</small></p>
-      </div>
+    </div>
+    <p class="lead hero-lead">Chocolate glaze and gold leaf, $6.50. Made by a chef trained in a three-Michelin-star kitchen and a finalist on Food Network’s Spring Baking Championship.</p>
+  </div>
+  <div class="wrap hero-more">
       <p class="why">His favourite pastry, he told Eater LA in September 2024, for how well it travels and how many ways it can go.</p>
       <h2 class="list-t">Five in the case</h2>
       <ul class="rows" role="list">
@@ -206,7 +275,6 @@ h1,.ch-t{font-family:var(--font-display);font-weight:600;font-size:var(--t-45);l
       </ul>
       <p class="fine">Same day from the case. Counter items: today they’re paid at the counter or on the menu app, and the bag says so.</p>
       <button class="ask" type="button" data-ask-open data-ask="Is everything plant-based?" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-4 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg>Ask the pastry counter</button>
-    </div>
   </div>
 </section>
 

@@ -503,3 +503,43 @@ body.locked{overflow:hidden}
 .pass-code path{stroke:var(--color-brand)}
 @media (min-width:900px){.mb{grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:var(--sp-16)}.pass{width:min(100%,440px);padding:var(--sp-6) var(--sp-8)}.pass-v{font-size:var(--t-34)}}
 @media (max-width:899px){.sub-hello{display:none !important}}
+
+/* ---------- the stage (driven by ../../assets/stage.js) ---------- */
+.stage{--stg-every:5000ms}
+.stg-cap{position:absolute;left:var(--sp-3);bottom:var(--sp-3);z-index:2;display:flex;flex-direction:column;max-width:calc(100% - 2 * var(--sp-3));padding:var(--sp-2) var(--sp-4);border-radius:var(--radius-sm);background:var(--paper);box-shadow:var(--shadow-e2);color:var(--color-ink)}
+.stg-cap b{font-family:var(--font-display);font-weight:600;font-size:var(--t-16);color:var(--color-brand);line-height:1.2}
+.stg-cap span{font-size:var(--t-14);line-height:1.3;color:var(--color-muted)}
+.stg-slide video{opacity:0;transition:opacity var(--dur-base) var(--ease-move)}
+.stg-slide video.is-ready{opacity:1}
+/* arrows and pause sit on the photo's top corner; the progress line runs the full width under it */
+.stg-ctl{padding:0 var(--sp-2)}
+.stg-dots{display:flex;gap:var(--sp-1);min-width:0}
+.stg-dot{flex:1;min-width:0;height:44px;padding:0;border:0;background:none;display:grid;align-items:center;cursor:pointer}
+.stg-dot i{position:relative;display:block;height:3px;border-radius:2px;background:oklch(0.281 0.14 277.7 / .16);overflow:hidden}
+.stg-dot i::after{content:"";position:absolute;inset:0;background:var(--color-brand);transform-origin:0 50%;transform:scaleX(0)}
+.stg-dot[aria-current="true"] i::after{transform:scaleX(1)}
+.stage.stg-live .stg-dot.run[aria-current="true"] i::after{transform:scaleX(0);animation:lum-fill var(--stg-every) linear forwards}
+.stage.is-held .stg-dot i::after,.stage:has(.stg-pause[aria-pressed="true"]) .stg-dot i::after{animation-play-state:paused}
+@keyframes lum-fill{to{transform:scaleX(1)}}
+.stg-dot.is-season-dot{display:none}
+/* only the slide on show, the one leaving and the next one are drawn, so the rest stay unloaded until their turn */
+.stage.stg-live .stg-slide:not(.is-on):not(.is-next):not(.was-on){display:none}
+.stg-arrow,.stg-pause{position:absolute;top:var(--sp-3);z-index:3;width:44px;height:44px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:var(--paper);box-shadow:var(--shadow-e2);color:var(--color-brand);cursor:pointer}
+.stg-pause{right:var(--sp-3)}
+[data-stg-next]{right:calc(var(--sp-3) + 52px)}
+[data-stg-prev]{right:calc(var(--sp-3) + 104px)}
+.stg-arrow .ico{width:20px;height:20px}
+.stg-pause svg{width:14px;height:14px;fill:currentColor}
+.stg-pause .pl,.stg-pause[aria-pressed="true"] .pa{display:none}
+.stg-pause[aria-pressed="true"] .pl{display:block}
+@media (hover:hover){.stg-arrow:hover,.stg-pause:hover{background:var(--ivory)}}
+.hero-more{display:grid;gap:var(--sp-4);padding-bottom:var(--sp-16)}
+.hero-more .rows{margin-top:0 !important}
+@media (min-width:900px){
+  .stg-ctl{padding:0}
+  .stg-cap{left:var(--sp-4);bottom:var(--sp-4)}
+  .hero-more{grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:var(--sp-16);align-items:start;padding-bottom:var(--sp-24)}
+  .hero-more .why{grid-column:1;grid-row:1 / span 4}
+  .hero-more > :not(.why){grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){.stage.stg-live .stg-dot.run[aria-current="true"] i::after,.stage .stg-dot[aria-current="true"] i::after{transform:scaleX(1)}}
