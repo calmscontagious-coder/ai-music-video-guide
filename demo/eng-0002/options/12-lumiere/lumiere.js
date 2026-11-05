@@ -153,7 +153,7 @@
   window.LumiereFly = function (from, img) { try { if (!reduce && from) fly(from, img ? '../../' + img : null); } catch (e) { /* decoration only */ } };
 
   /* 8. the pastry counter, after first paint and an idle moment; the counter loads even if its engine does not */
-  var VER = '?v=20261105e';
+  var VER = '?v=20261105j';
   function load(src, then) { var sc = document.createElement('script'); sc.src = src; sc.async = true; sc.onload = then; sc.onerror = then; document.head.appendChild(sc); }
   function counter() { load('counter-core.js' + VER, function () { load('counter.js' + VER); }); }
   function idle() { if ('requestIdleCallback' in window) requestIdleCallback(counter, { timeout: 2000 }); else setTimeout(counter, 600); }
@@ -200,7 +200,7 @@
     });
   }
   var DATA = (function () {
-    var q = '?v=20261105e', live = true;
+    var q = '?v=20261105j', live = true;
     function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
     setTimeout(function () { live = false; }, 5000);
     var p = Promise.all([get('../../assets/stock.json' + q).catch(function () { return null; }), get('../../assets/menu.json' + q).catch(function () { return null; })])
@@ -210,7 +210,7 @@
   })();
 
   /* 8c. the menu search: one field under the chapter tabs (sticky with them), chips from the real menu, instant
-     accent-insensitive typo-tolerant matching, stock from stock.json, and one line to Camille for questions. */
+     accent-insensitive typo-tolerant matching, stock from stock.json, and one line to the counter for questions. */
   (function () {
     var box = $('[data-search]'); if (!box) return;
     var input = $('#srch-q', box), clear = $('.srch-x', box), chipsEl = $('.srch-chips', box), out = $('.srch-out', box), subEl = $('.sub');
@@ -278,7 +278,7 @@
       found.sort(function (a, b) { return b.s - a.s; });
       var html = '', qn = raw.trim();
       var question = qn && isQuestion(qn);
-      if (qn && (question || !found.length)) html += '<button type="button" class="srch-ask" data-srch-ask><img src="counter-mark.png" alt="" width="48" height="48">Ask Camille: “' + esc(qn.length > 60 ? qn.slice(0, 57) + '…' : qn) + '”</button>';
+      if (qn && (question || !found.length)) html += '<button type="button" class="srch-ask" data-srch-ask><img src="counter-mark.png" alt="" width="48" height="48">Ask the counter: “' + esc(qn.length > 60 ? qn.slice(0, 57) + '…' : qn) + '”</button>';
       if (found.length) html += '<ul class="srch-list">' + found.slice(0, 12).map(function (f) { return row(f.i); }).join('') + '</ul>';
       else html += '<p class="srch-none">Nothing in the case matches that.</p>';
       out.innerHTML = html; out.hidden = false;
@@ -288,14 +288,14 @@
     function reset() { input.value = ''; active = {}; $$('.srch-chip', chipsEl).forEach(function (b) { b.setAttribute('aria-pressed', 'false'); }); render(); }
     input.addEventListener('input', render);
     input.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (input.value || Object.keys(active).length) { reset(); } else input.blur(); } });
-    clear.addEventListener('click', function () { reset(); input.focus(); });
+    clear.addEventListener('click', function () { reset(); input.focus({ preventScroll: true }); });
     chipsEl.addEventListener('click', function (e) { var b = e.target.closest('.srch-chip'); if (!b) return; var id = b.getAttribute('data-g'); active[id] = !active[id]; b.setAttribute('aria-pressed', String(!!active[id])); render(); });
     out.addEventListener('click', function (e) {
       if (e.target.closest('[data-srch-ask]')) { var q = input.value.trim(); out.hidden = true; ask(q); return; }
       var a = e.target.closest('[data-add]'); if (a) { var o = a.textContent; a.textContent = 'Added'; setTimeout(function () { a.textContent = o; }, 1200); }
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !out.hidden && !e.defaultPrevented && !$('.drawer.open') && document.activeElement !== input) { reset(); } });
-    document.addEventListener('click', function (e) { if (!out.hidden && !box.contains(e.target) && !e.target.closest('[data-search-open]')) out.hidden = true; });
+    document.addEventListener('click', function (e) { if (e.isTrusted && !out.hidden && !box.contains(e.target) && !e.target.closest('[data-search-open]')) out.hidden = true; });
     input.addEventListener('focus', function () { if (input.value || Object.keys(active).length) render(); });
     $$('[data-search-open]').forEach(function (b) {
       b.addEventListener('click', function () {

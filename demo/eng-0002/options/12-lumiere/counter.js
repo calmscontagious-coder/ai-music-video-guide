@@ -1,5 +1,5 @@
-/* iD Éclair, Camille at the counter, and the small services around the bag.
-   Loaded after the page has painted. Everything Camille says comes from counter-facts.json, the menu and the
+/* iD Éclair, the pastry counter, and the small services around the bag.
+   Loaded after the page has painted. Everything the counter says comes from counter-facts.json, the menu and the
    opening hours; everything it adds goes through the shared bag (window.IDE). Nothing leaves the browser except
    the optional event names (no message text) when the page sets window.LUMIERE_TRACK_URL.
      - the counter sheet: answers as cards (photo, price, Add), the pickup picker inline, the cake request card,
@@ -7,13 +7,13 @@
      - the pop-up: one context-aware opener per page view (two per visit at most), never over a headline, a price
        or an Add button, never while typing or scrolling fast, never within ten seconds of being closed;
      - after an add: a confirmation with the pickup time and one pairing, once per pairing;
-     - in the bag: one line from Camille, one pairing, the members line;
+     - in the bag: one line from the counter, one pairing, the members line;
      - the gift finder, your last box on this device, the Bonjour pill.
    If a file cannot be read the counter still answers from the copy built in below, and any error shows the team's
    contact instead of a dead screen. */
 (function () {
   'use strict';
-  var V = '?v=20261105e', BASE = '../../', reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var V = '?v=20261105j', BASE = '../../', reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var HIST = 'lumiere.counter.v2', HELLO = 'lumiere.hello.v1', LAST = 'lumiere.lastbox.v1', PAIRS = 'lumiere.pairs.v1', POP = 'lumiere.pop.v1', ACTED = 'lumiere.acted.v1';
   var PIC = {"canele":"img/caneles-1-800.jpg","macaron":"img/macarons-1-800.jpg","macaron-box-6":"img/macarons-2-800.jpg","thanksgiving-box-for-2":"img/thanksgiving-box-for-2-800.jpg","golden-ticket":"img/golden-ticket-800.jpg","cheese-board":"img/cheese-board-1-800.jpg","dubai-chocolate-vegan":"img/dubai-chocolate-vegan-800.jpg","dark-truffles-wholesale":"img/dark-truffles-wholesale-800.jpg","white-chocolate-truffles":"img/white-chocolate-truffles-800.jpg","dark-chocolate-truffles":"img/dark-chocolate-truffles-800.jpg","kushyflakes":"img/kushyflakes-800.jpg","gift-basket-small":"img/gift-basket-small-800.jpg","gift-basket-large":"img/gift-basket-large-800.jpg","pineapple-vanilla-jam":"img/pineapple-vanilla-jam-800.jpg","caneles":"img/caneles-1-800.jpg","macarons":"img/macarons-2-800.jpg","chocolate-fingers-sables-poches":"img/chocolate-fingers-sables-poches-800.jpg","diamants-biscuit-by-6":"img/diamants-biscuit-by-6-800.jpg","cookie-spoon":"img/cookie-spoon-800.jpg","douceur-tropicale":"img/douceur-tropicale-800.jpg","noisette-toujours":"img/noisette-toujours-800.jpg","tropical-jam":"img/tropical-jam-800.jpg","raspberry-jam":"img/raspberry-jam-800.jpg","4-desserts-in-jar":"img/4-desserts-in-jar-2-800.jpg","caramel-je-taime":"img/caramel-je-taime-800.jpg","chocolat-mon-amour":"img/chocolat-mon-amour-800.jpg","framboise-cherie":"img/framboise-cherie-800.jpg","citron-ma-passion":"img/citron-ma-passion-800.jpg"};
   var FR = { Raspberry: 'Framboise', Pistachio: 'Pistache', Chocolate: 'Chocolat', Coffee: 'Café', Coconut: 'Coco' };
@@ -25,9 +25,9 @@
 
   /* the copy used when counter-facts.json cannot be read: enough to greet, answer the basics and hand over */
   var FALLBACK = {
-    strings: { name: 'Camille', title: 'Camille at the counter', sub: 'iD Éclair · 169 W Green St', greeting: 'Bonjour, can I help you with your order?',
-      disclosure: 'Camille is our online counter. The team is a call away.', dont_know: 'That one is outside my counter, I’m afraid. I can help with the case, a cake, pickup or the class.',
-      person: 'I’m Camille, iD Éclair’s online counter, not a person. To speak with the team: 626-365-1161 or contact@id-eclair.com.',
+    strings: { name: 'The pastry counter', short: 'At the counter', title: 'The pastry counter', sub: 'iD Éclair · 169 W Green St', greeting: 'Bonjour.',
+      disclosure: 'This is the shop’s online counter, not a person. The team is a call away.', dont_know: 'That one is outside my counter, I’m afraid. I can help with the case, a cake, pickup or the class.',
+      person: 'I’m iD Éclair’s online counter, not a person. To speak with the team: 626-365-1161 or contact@id-eclair.com.',
       complaint: 'I’m so sorry. Please call 626-365-1161 or write to contact@id-eclair.com with your name and order; the team will follow up with you directly.',
       rude: 'I’m sorry I haven’t helped yet. Tell me what you’d like, or the team is at 626-365-1161.', rules: 'I can only help with our menu, orders and pickup. Shall I show you today’s case?',
       error: 'Let me get the team for that: 626-365-1161 or contact@id-eclair.com.', offline: 'I can’t reach the menu just now. Let me get the team: 626-365-1161 or contact@id-eclair.com.',
@@ -37,7 +37,7 @@
       signoff: ['Merci, it’s in your bag.', 'C’est noté. It’s in your bag.', 'Avec plaisir. Bonne journée.'] },
     starters: ['Fill my box', 'Today’s best', 'Gift ideas', 'Pickup times', 'Cakes'], chips: ['Is everything plant-based?', 'A birthday cake', 'Are you open?'], suggest: ['Is everything plant-based?', 'Are you open?', 'A birthday cake for 12'],
     popup: { variant: 'fallback', delay_ms: 4000, idle_empty_ms: 45000, idle_bag_ms: 60000, max_per_view: 2, max_per_visit: 99, cooldown_after_close_ms: 10000, typing_quiet_ms: 2000, fast_scroll_px_s: 1800, back_up_px_s: 1500, shimmer_ms: 600,
-      openers: { hello: { line: 'Bonjour, can I help you with your order?', actions: ['best', 'box', 'pickup'] }, choose: { line: 'Need a hand choosing? Tell me who it’s for.', actions: ['forme', 'gift', 'table'] } }, sections: {} },
+      openers: { hello: { line: 'Bonjour.', actions: ['best', 'box', 'pickup'] }, choose: { line: 'Need a hand choosing? Tell me who it’s for.', actions: ['forme', 'gift', 'table'] } }, sections: {} },
     handoff: { call: { label: 'Call 626-365-1161', href: 'tel:+16263651161' }, email: { label: 'Write to us', href: 'mailto:contact@id-eclair.com' }, directions: { label: 'Directions', href: 'https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105' } },
     facts: { plant_based: { text: 'Everything we make is plant-based: no butter, milk or eggs.' } }
   };
@@ -177,6 +177,16 @@
     if (alt) d.items.push({ h: alt.handle });
     d.slot = true; return d;
   }
+  /* the greeting: "Bonjour." as the title line, then one calm hours note from the shop's own clock */
+  function helloNote() {
+    var s = hours();
+    if (!s) return '';
+    if (s.open) return 'We’re open until ' + s.today.close + '.';
+    if (s.mode === 'closed-off') return fill(S.closed_off, { next: s.next ? s.next.label : 'soon' });
+    var at = slotLabel() ? slotShort() : (s.next ? s.next.label : 'the next opening');
+    return 'We open ' + at.replace(/^Today/, 'today') + '. I can set your order aside for pickup then.';
+  }
+  function hello() { var d = blank('hello', S.greeting); d.note = helloNote(); return d; }
   function hoursAnswer() {
     var s = hours();
     if (!s) return blank('hours', 'Our hours are being confirmed with the shop; please call 626-365-1161 before a special trip. We’re closed on Mondays.');
@@ -195,11 +205,11 @@
   }
   function route(text) {
     var q = norm(text);
-    if (!q) return blank('hello', S.greeting);
+    if (!q) return hello();
     if (/\b(ignore|disregard|forget) (all |your |the |previous |prior |any )*(rules|instructions|prompt|guidelines)|system prompt|your prompt|developer mode|jailbreak|act as |pretend (to be|you)|you are now|reveal (your|the)|show (me )?(your|the) (prompt|rules|instructions|code|source)|what (are|is) your (rules|instructions|prompt)/.test(q)) {
       var r = blank('rules', S.rules); r.go.push({ to: 'best', label: 'Today’s best' }); return r;
     }
-    if (/\b(are you|is this|am i (talking|speaking|chatting) (to|with)) (a |an )?(real |actual )?(person|human|robot|bot|ai|machine|computer|someone|people)\b|\b(talk|speak) to (a |an )?(person|human|someone|staff|manager)\b|\bwho (are|is) (you|this|camille)\b/.test(q)) { var p = blank('person', S.person); p.handoff = true; return p; }
+    if (/\b(are you|is this|am i (talking|speaking|chatting) (to|with)) (a |an )?(real |actual )?(person|human|robot|bot|ai|machine|computer|someone|people)\b|\b(talk|speak) to (a |an )?(person|human|someone|staff|manager)\b|\bwho (are|is) (you|this)\b/.test(q)) { var p = blank('person', S.person); p.handoff = true; return p; }
     if (/\b(complain|complaint|refund|my order was|order was wrong|wrong order|was missing|were missing|never (got|received|arrived|came)|disappointed|overcharged|charged twice|stale|food poisoning|got sick|made me sick|rude (staff|service)|bad service|terrible service)\b/.test(q)) { var c = blank('complaint', S.complaint); c.handoff = true; return c; }
     if (/\b(stupid|useless|idiot|dumb|shut up|hate (you|this)|sucks|garbage|trash|wtf|fuck|fucking|shit|crap|worst)\b/.test(q)) { var u = blank('rude', S.rude); u.asks = F.starters.slice(0, 3); return u; }
     if (/^(merci|thanks?|thank you|thx|ok thanks|great thanks|merci beaucoup)[\s!.]*$/.test(q)) { var m = blank('thanks', 'Avec plaisir. Bonne journée.'); if (count()) m.go.push({ to: 'bag', label: 'Review your bag' }); return m; }
@@ -255,7 +265,7 @@
       '<p class="ctr-disc" id="ctr-d">' + esc(S.disclosure) + '</p>' +
       '<div class="ctr-log" role="log" aria-live="polite" aria-relevant="additions" data-ctr-log></div>' +
       '<div class="ctr-foot"><div class="ctr-chips" role="group" aria-label="Suggested questions" data-ctr-chips></div>' +
-      '<form class="ctr-in" data-ctr-form><label class="sr" for="ctr-q">Your question for Camille</label><input id="ctr-q" type="text" autocomplete="off" enterkeyhint="send" maxlength="200" placeholder="' + esc(S.placeholder) + '">' +
+      '<form class="ctr-in" data-ctr-form><label class="sr" for="ctr-q">Your question for the counter</label><input id="ctr-q" type="text" autocomplete="off" enterkeyhint="send" maxlength="200" placeholder="' + esc(S.placeholder) + '">' +
       '<button class="btn" type="submit">Ask</button></form></div></div>';
     document.body.appendChild(root);
     log = $('[data-ctr-log]', root); chipsEl = $('[data-ctr-chips]', root); input = $('#ctr-q', root);
@@ -279,7 +289,7 @@
     document.body.classList.add('locked');
     $$('body > *').forEach(function (el) { if (el !== root && el.tagName !== 'SCRIPT' && !el.hasAttribute('aria-live')) el.inert = true; });
     if (!log.children.length) restore();
-    if (!log.children.length) say(Object.assign(blank('hello', S.greeting), { asks: [], rail: true }), true);
+    if (!log.children.length) say(Object.assign(hello(), { asks: [], rail: true }), true);
     var n = $('[data-ctr-n]', root); if (n) n.textContent = count();
     chips('', seed);
     acted(); track('counter_popup_opened');
@@ -304,10 +314,10 @@
 
   /* ---------- messages ---------- */
   function me(t) { var m = document.createElement('div'); m.className = 'cm me'; m.innerHTML = '<p>' + esc(t) + '</p>'; log.appendChild(m); scroll(); }
-  function scroll() { log.scrollTop = log.scrollHeight; }
+  function scroll(top) { log.scrollTop = top ? 0 : log.scrollHeight; }
   function say(d, quiet) {
     nextStep(d);
-    var h = '<span class="cm-av" aria-hidden="true">' + MARK + '</span><div class="cm-body"><p>' + esc(d.reply) + '</p>';
+    var h = '<span class="cm-av" aria-hidden="true">' + MARK + '</span><div class="cm-body"><p' + (d.note ? ' class="cm-hello"><b class="cm-t">' + esc(d.reply) + '</b><span class="cm-note">' + esc(d.note) + '</span>' : '>' + esc(d.reply)) + '</p>';
     if (d.items && d.items.length) h += '<div class="cc-list">' + d.items.map(function (x) { return itemCard(x.h, x.added, x.qty); }).join('') + '</div>';
     if (d.box) h += boxCard(d.box.flavours, d.box.auto);
     if (d.gift) h += giftCard();
@@ -325,9 +335,9 @@
     if (d.slot) repaintPickers();
     var single = (d.items || []).length === 1 ? d.items[0].h : null; if (single) last = single;
     if (!quiet) remember({ who: 'shop', d: strip(d) });
-    scroll();
+    scroll(d.intent === 'hello' && log.children.length === 1);
   }
-  function strip(d) { return { intent: d.intent, reply: d.reply, items: (d.items || []).map(function (x) { return { h: x.h, added: x.added, qty: x.qty }; }), links: d.links || [], go: d.go || [], asks: d.asks || [], slot: !!d.slot, cake: d.cake || null, box: d.box ? { flavours: d.box.flavours } : null, gift: !!d.gift, rail: !!d.rail, handoff: d.handoff || false, signoff: d.signoff || null }; }
+  function strip(d) { return { intent: d.intent, reply: d.reply, note: d.note || null, items: (d.items || []).map(function (x) { return { h: x.h, added: x.added, qty: x.qty }; }), links: d.links || [], go: d.go || [], asks: d.asks || [], slot: !!d.slot, cake: d.cake || null, box: d.box ? { flavours: d.box.flavours } : null, gift: !!d.gift, rail: !!d.rail, handoff: d.handoff || false, signoff: d.signoff || null }; }
   function remember(entry) { var h = get('sessionStorage', HIST, []); h.push(entry); put('sessionStorage', HIST, h.slice(-30)); }
   function restore() { get('sessionStorage', HIST, []).forEach(function (e) { try { if (e.who === 'me') me(e.t); else say(e.d, true); } catch (x) { /* skip a broken entry */ } }); }
   var FL = ['Raspberry', 'Pistachio', 'Chocolate', 'Coffee', 'Coconut'], SW = { Raspberry: 'f-raspberry', Pistachio: 'f-pistachio', Chocolate: 'f-chocolate', Coffee: 'f-coffee', Coconut: 'f-coconut' };
@@ -378,7 +388,7 @@
     var who = card.getAttribute('data-who'), occ = card.getAttribute('data-occ'), budget = card.getAttribute('data-budget'), out = $('.mg-out', card);
     if (!(who && occ && budget) || !engine) return true;
     var r = engine.gift(+budget, who), first = r.items.filter(function (i) { return !soldOut(i.handle); })[0];
-    out.innerHTML = first ? '<p class="gf-k">Camille suggests</p>' + itemCard(first.handle) + '<p class="gf-note">For the note: <span lang="fr">' + esc(NOTE[occ] || NOTE.because) + '</span></p>' : '<p>Nothing on our online store fits that budget; the team can suggest something: <a href="tel:+16263651161">626-365-1161</a>.</p>';
+    out.innerHTML = first ? '<p class="gf-k">The counter suggests</p>' + itemCard(first.handle) + '<p class="gf-note">For the note: <span lang="fr">' + esc(NOTE[occ] || NOTE.because) + '</span></p>' : '<p>Nothing on our online store fits that budget; the team can suggest something: <a href="tel:+16263651161">626-365-1161</a>.</p>';
     scroll(); return true;
   }
   function rail() {
@@ -459,7 +469,7 @@
   var pop = null, popTimer = null, lastClose = 0, lastType = 0, lastFast = 0, lastScrollY = scrollY, lastScrollT = Date.now(), shownThisView = 0, idleT = null, bagIdleDone = false, phone = function () { return innerWidth < 900; };
   var helloState = 'new';   /* per page load: a reload greets again */
   function pills() { $$('[data-bonjour]').forEach(function (p) { p.hidden = false; }); }
-  /* the pill: Camille's mark and one live line that turns every few seconds, facts only */
+  /* the pill: the counter's mark and one live line that turns every few seconds, facts only */
   var pillTurns = 0, pillTimer = null, pillHeld = false, pillNext = null;
   function lines() {
     var out = [], s = hours(), slot = (slotLabel() || '').replace(/^Today/, 'today');
@@ -508,10 +518,10 @@
     });
     fp.classList.toggle('is-yield', hit);
   }
-  var MUTE = 'lumiere.camille.mute.v1', dismissedView = false;
+  var MUTE = 'lumiere.counter.mute.v1', dismissedView = false;
   function muted() { try { var u = JSON.parse(localStorage.getItem(MUTE) || 'null'); return !!u && Date.now() < u; } catch (e) { return false; } }
   function mute24() { try { localStorage.setItem(MUTE, JSON.stringify(Date.now() + 24 * 3600 * 1000)); } catch (e) { /* storage blocked: the dismissal still holds for this page load */ } dismissedView = true; }
-  function forced() { try { return /[?&]camille=1(&|$)/.test(location.search); } catch (e) { return false; } }
+  function forced() { try { return /[?&]counter=1(&|$)/.test(location.search); } catch (e) { return false; } }
   function searchActive() { return !!document.querySelector('.srch:focus-within, .srch.has-q'); }
   function visit() { return get('sessionStorage', POP, { n: 0, closed: 0 }); }
   function canAuto() {
@@ -542,26 +552,30 @@
     if (a.indexOf('add:') === 0) { var b = bagItem(a.slice(4)); return b ? 'Add ' + (b.title.charAt(0).toLowerCase() + b.title.slice(1)) + ' · ' + money(b.price) : null; }
     return ACT[a] ? ACT[a].label : null;
   }
-  function popCard(kind, line, actions) {
+  function popCard(kind, line, actions, note) {
     var acts = actions.map(function (a) { var l = actLabel(a); return l ? '<button type="button" class="pop-act" data-pop="' + esc(a) + '" data-track="counter_popup_action">' + esc(l) + '</button>' : ''; }).join('');
-    return '<div class="pop-head"><span class="ctr-av">' + MARK + '<i class="live" aria-hidden="true"></i></span><b>' + esc(S.name) + ' <small>at the counter</small></b>' +
+    return '<div class="pop-head"><span class="ctr-av">' + MARK + '<i class="live" aria-hidden="true"></i></span><b>' + esc(S.short || S.name) + '</b>' +
       '<button class="pop-x" type="button" aria-label="Close">' + X + '</button></div>' +
-      '<div class="pop-body"><p class="pop-line">' + esc(line) + '</p>' + (acts ? '<div class="pop-acts">' + acts + '</div>' : '') + (kind === 'added' || kind === 'waiting' ? '' : '<button type="button" class="pop-mute" data-pop-mute>Don’t show again</button>') + '</div>';
+      '<div class="pop-body"><p class="pop-line' + (note ? ' is-title' : '') + '">' + esc(line) + '</p>' + (note ? '<p class="pop-note">' + esc(note) + '</p>' : '') + (acts ? '<div class="pop-acts">' + acts + '</div>' : '') + (kind === 'added' || kind === 'waiting' ? '' : '<button type="button" class="pop-mute" data-pop-mute>Don’t show again</button>') + '</div>';
   }
   function showPop(kind, opt) {
     opt = opt || {};
     var o = (P.openers && P.openers[kind]) || P.openers.hello, line = opt.line || o.line, actions = (opt.actions || o.actions || []).slice();
-    var s = hours();
+    var s = hours(), note = '';
+    if (kind === 'hello' && !opt.line) note = helloNote();
     if (s && !s.open && !opt.keep) {
       var next = slotLabel() || (s.next ? s.next.label : 'the next opening');
-      if (s.mode === 'closed-off') { line = fill(S.closed_off, { next: s.next ? s.next.label : 'soon' }); actions = ['members']; }
-      else line = fill(S.closed_pre, { next: next.replace(/^Today/, 'today') }) + ' ' + line;
+      if (s.mode === 'closed-off') { actions = ['members']; if (kind !== 'hello' || opt.line) { line = ''; note = fill(S.closed_off, { next: s.next ? s.next.label : 'soon' }); } }
+      else if (kind !== 'hello' || opt.line) note = fill(S.closed_pre, { next: next.replace(/^Today/, 'today') });
     }
+    if (!line && note) { line = note; note = ''; }
+    var closedNote = !!(s && !s.open && note);
     if (closedOff()) actions = actions.filter(function (a) { return a.indexOf('add:') !== 0 && a !== 'box' && a !== 'fillbox'; });
     hidePop(false);
     pop = document.createElement('div'); pop.className = 'pop is-yield'; pop.setAttribute('role', 'dialog'); pop.setAttribute('aria-modal', 'false'); pop.setAttribute('aria-label', S.title);
     pop.setAttribute('data-kind', kind);
-    pop.innerHTML = popCard(kind, line, actions);
+    pop.innerHTML = popCard(kind, line, actions, note);
+    if (closedNote) document.documentElement.setAttribute('data-pop-hours', '');
     var body = $('.pop-body', pop), ms = reduce ? 0 : (P.shimmer_ms || 600);
     if (ms) { body.hidden = true; body.insertAdjacentHTML('beforebegin', '<p class="pop-typing" aria-hidden="true"><i></i><i></i><i></i></p>'); setTimeout(function () { if (!pop) return; var t = $('.pop-typing', pop); if (t) t.remove(); body.hidden = false; queuePlace(); }, ms); }
     if (opt.extra) body.insertAdjacentHTML('beforeend', opt.extra);
@@ -592,6 +606,7 @@
   function closePop() { var v = visit(); v.closed = Date.now(); put('sessionStorage', POP, v); lastClose = Date.now(); hidePop(true); var p = $$('[data-bonjour]').filter(function (x) { return x.offsetParent; })[0]; if (p) p.focus({ preventScroll: true }); }
   function hidePop(done) {
     if (pop) { pop.remove(); pop = null; }
+    document.documentElement.removeAttribute('data-pop-hours');
     if (done) { helloState = 'done'; put('sessionStorage', HELLO, 'done'); pills(true); }
   }
   /* after an add: the pickup time and one pairing, once per pairing */
@@ -683,7 +698,7 @@
       var r = engine.gift(+pick.budget, pick.who), first = r.items.filter(function (i) { return !soldOut(i.handle); })[0];
       if (!first) { out.innerHTML = '<p class="gf-none">Nothing on our online store fits that budget; the team can suggest something: <a href="tel:+16263651161">Call 626-365-1161</a>.</p>'; return; }
       var line = NOTE[pick.occ] || NOTE.because;
-      out.innerHTML = '<p class="gf-k">Camille suggests</p>' + itemCard(first.handle) +
+      out.innerHTML = '<p class="gf-k">The counter suggests</p>' + itemCard(first.handle) +
         '<p class="gf-note">For the note: <span lang="fr">' + esc(line) + '</span> <button type="button" class="tbtn" data-use-line="' + esc(line) + '">Use this line</button></p>';
     }));
   }
@@ -709,7 +724,7 @@
     if (!box) { box = document.createElement('div'); box.className = 'bag-extra'; box.setAttribute('data-bag-extra', ''); body.appendChild(box); }
     var items = bag(), h = '';
     if (items.length) {
-      h += '<div class="bag-camille"><span class="cm-av" aria-hidden="true">' + MARK + '</span><p>' + esc(S.bag_line) + '</p></div>';
+      h += '<div class="bag-counter"><span class="cm-av" aria-hidden="true">' + MARK + '</span><p>' + esc(S.bag_line) + '</p></div>';
       var r = engine ? pairRule() : null, shown = get('sessionStorage', PAIRS, []);
       if (r && (shown.indexOf(r.id) < 0 || $('#bag [data-pair="' + r.id + '"]'))) {
         if (shown.indexOf(r.id) < 0) { shown.push(r.id); put('sessionStorage', PAIRS, shown); }
@@ -719,7 +734,7 @@
       if (items.some(function (i) { return !i.variantId; })) h += '<p class="mem-line"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10h18"/></svg><span>Members earn points when these counter items are ordered in our ordering app. <a href="#members" data-cart-close>About Members</a></span></p>';
       var s = hours(); if (s && !s.open) h += '<p class="mem-line closed-line">' + esc(fill(S.closed_pre, { next: (slotLabel() || (s.next ? s.next.label : 'the next opening')).replace(/^Today/, 'today') })) + '</p>';
     }
-    h += '<button type="button" class="ask-bag" data-ask-open>Questions? Ask Camille</button>';
+    h += '<button type="button" class="ask-bag" data-ask-open>Questions? Ask at the counter</button>';
     box.innerHTML = h;
   }
   document.addEventListener('click', safe(function (e) {

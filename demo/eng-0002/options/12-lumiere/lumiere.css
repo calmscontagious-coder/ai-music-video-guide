@@ -447,7 +447,8 @@ body.locked{overflow:hidden}
 .dock-hello img,.sub-hello img{width:32px;height:32px;border-radius:50%;background:var(--paper)}
 .dock:has(.dock-hello:not([hidden])){grid-template-columns:minmax(0,1fr) auto auto}
 .dock:has(.dock-hello:not([hidden])) .dock-pick small{display:none}
-.sub-hello{margin-left:auto;min-height:40px}
+.sub-hello{margin-left:auto;min-height:44px}
+.sub-bag{min-height:44px}
 .sub-hello:not([hidden]) + .sub-bag{margin-left:var(--sp-2)}
 @media (max-width:419px){.dock:has(.dock-hello:not([hidden])) .dock-pick .ico{display:none}}
 
@@ -556,7 +557,15 @@ body.locked{overflow:hidden}
 html[data-shop="closed-off"] [data-add][disabled]{opacity:.55}
 @media (max-width:899px){[data-stg-prev],[data-stg-next]{display:none}}
 
-/* ---------- Camille's pop-up ---------- */
+/* the greeting: Bonjour as the title line, one calm hours note under it */
+.cm.shop .cm-body > p.cm-hello{display:grid;gap:4px}
+.cm-t{font:700 var(--t-18,1.125rem)/1.2 var(--font-display);color:var(--color-brand)}
+.cm-note{font-size:var(--t-14);line-height:1.4;color:var(--color-muted)}
+.pop-note{font-size:var(--t-14);line-height:1.4;color:var(--color-muted);margin-top:-4px}
+.pop-line.is-title{font:700 var(--t-18,1.125rem)/1.2 var(--font-display);color:var(--color-brand)}
+.pop.is-peek .pop-line.is-title,.pop.is-compact .pop-line.is-title{font-size:var(--t-16)}
+html[data-pop-hours] .hours-note{display:none}
+/* ---------- the counter's pop-up ---------- */
 .live{position:absolute;right:0;bottom:0;width:10px;height:10px;border-radius:50%;background:oklch(0.62 0.12 150);box-shadow:0 0 0 2px var(--paper)}
 .ctr-av{position:relative}
 .pop{position:fixed;right:var(--sp-3);bottom:calc(84px + env(safe-area-inset-bottom));z-index:45;width:min(360px,calc(100% - 2 * var(--sp-3)));display:grid;gap:var(--sp-2);padding:var(--sp-3);background:var(--paper);border-radius:var(--radius-md);box-shadow:var(--shadow-e4),0 0 0 1px var(--color-line);transition:transform var(--dur-base) var(--ease-enter),opacity var(--dur-base) var(--ease-enter)}
@@ -581,16 +590,16 @@ html[data-shop="closed-off"] [data-add][disabled]{opacity:.55}
 .pop-pair .cc-item{box-shadow:none;background:var(--ivory)}
 .pop-pair a{color:var(--color-brand);font-weight:700}
 .pop-slot{display:flex}
-.bag-camille{display:flex;gap:var(--sp-2);align-items:center;font-size:var(--t-14);color:var(--color-ink)}
+.bag-counter{display:flex;gap:var(--sp-2);align-items:center;font-size:var(--t-14);color:var(--color-ink)}
 .closed-line{color:var(--color-brand);font-weight:700}
 .cc-off{color:var(--color-muted)}
 @media (min-width:900px){.pop{right:var(--sp-6);bottom:var(--sp-6)}}
 @media (prefers-reduced-motion:reduce){.pop-typing i{animation:none;opacity:.6}}
 .pop.is-compact .pop-acts,.pop.is-compact .pop-pair{display:none}
 .pop.is-compact .pop-line{font-size:var(--t-14);cursor:pointer}
-.pop.is-compact .pop-line::after{content:" Tap to ask Camille.";font-weight:700;color:var(--color-brand)}
+.pop.is-compact .pop-line::after{content:" Tap to ask at the counter.";font-weight:700;color:var(--color-brand)}
 
-/* ---------- Camille's living pill ---------- */
+/* ---------- the counter's living pill ---------- */
 .dock-pill,.float-pill{display:inline-flex;align-items:center;gap:var(--sp-2);min-height:48px;min-width:0;padding:0 var(--sp-4) 0 var(--sp-1);border-radius:var(--radius-pill);border:1px solid var(--color-line);background:var(--ivory);color:var(--color-brand);font:700 var(--t-14)/1.2 var(--font-text);cursor:pointer;text-align:left}
 .dock-pill .ctr-av,.float-pill .ctr-av{width:40px;height:40px}
 .dock-pill .ctr-av::after,.float-pill .ctr-av::after{content:"";position:absolute;inset:-4px;border-radius:50%;box-shadow:0 0 0 4px oklch(0.281 0.14 277.7 / .12);opacity:0;animation:lum-breathe var(--breathe) var(--ease-move) 6 alternate}
@@ -657,14 +666,14 @@ button.add.is-sold,.add.is-sold{background:transparent;color:var(--color-muted);
 .stg-slide[data-fit="contain"] picture,.stg-slide[data-fit="contain"] img,.stg-slide[data-fit="contain"] video{object-fit:contain;object-position:50% 50%;box-sizing:border-box}
 .stg-slide[data-fit="contain"] img{padding:var(--sp-3) var(--sp-3) 124px}
 @media (min-width:900px){.stg-slide[data-fit="contain"] img,.stg-slide[data-fit="contain"] video{object-position:50% 50%;padding:var(--sp-6) var(--sp-6) 124px}}
-/* Camille on phones: a bottom-sheet peek (top strip on the first screen), full width less 8 px gutters */
+/* The counter on phones: a bottom-sheet peek (top strip on the first screen), full width less 8 px gutters */
 .pop.is-peek{left:8px;right:auto;max-height:34vh;overflow:auto;z-index:60;border-radius:var(--radius-lg,20px);transform-origin:50% 100%}
 .pop.is-peek.is-top{transform-origin:50% 0}
 .pop.is-peek.is-yield{transform:translateY(24px)}
 .pop.is-peek.is-top.is-yield{transform:translateY(-24px)}
 .pop.is-peek .pop-acts{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
 .pop.is-peek .pop-act{flex:none;white-space:nowrap;padding:0 var(--sp-3)}
-.pop-mute{justify-self:start;min-height:32px;padding:0;border:0;background:none;color:var(--color-muted);font:600 var(--t-14)/1 var(--font-text);text-decoration:underline;cursor:pointer}
+.pop-mute{justify-self:start;min-height:44px;padding:0 var(--sp-2) !important;margin-left:calc(-1 * var(--sp-2));padding:0;border:0;background:none;color:var(--color-muted);font:600 var(--t-14)/1 var(--font-text);text-decoration:underline;cursor:pointer}
 .pop.is-peek{padding:var(--sp-2) var(--sp-3);gap:var(--sp-1)}
 .pop.is-peek .pop-line{font-size:var(--t-14);line-height:1.35}
 .pop.is-peek .pop-head .ctr-av{width:32px;height:32px}

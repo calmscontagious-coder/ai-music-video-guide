@@ -6,10 +6,13 @@
 <meta name="robots" content="noindex, nofollow">
 <script>/* Open at the top: no scroll restoration (a refresh never lands mid-menu), top on load and on bfcache restore; a #hash the visitor arrived with from outside still works; chapter taps scroll without writing a #hash. */
 (function(){try{history.scrollRestoration='manual'}catch(e){}
-var ext=location.hash&&location.hash.length>1;
-function top(){if(!ext)window.scrollTo(0,0)}
-top();addEventListener('load',function(){top();setTimeout(top,60)});
-addEventListener('pageshow',function(e){if(e.persisted){ext=false;window.scrollTo(0,0)}});
+var ext=location.hash&&location.hash.length>1,userHasInteracted=false;
+function top(){if(ext||userHasInteracted||(window.scrollY||document.documentElement.scrollTop||0)<=0)return;window.scrollTo(0,0)}
+function settle(){requestAnimationFrame(function(){setTimeout(top,300)})}
+['wheel','touchstart','keydown','pointerdown','click'].forEach(function(t){addEventListener(t,function(){userHasInteracted=true},{passive:true,capture:true,once:true})});
+top();document.addEventListener('DOMContentLoaded',top);
+addEventListener('load',function(){top();settle()});
+addEventListener('pageshow',function(e){if(e.persisted){ext=false;userHasInteracted=false;top();settle()}});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey)return;
 var id=a.getAttribute('href').slice(1);if(!id)return;var t=document.getElementById(id);if(!t)return;e.preventDefault();
 var r=matchMedia('(prefers-reduced-motion: reduce)').matches;t.scrollIntoView({behavior:r?'auto':'smooth',block:'start'});
@@ -177,12 +180,12 @@ html[data-season="paques"] .stage .stg-dot.is-season-dot{display:block}
 html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-season[data-for="paques"]{opacity:1;visibility:visible;z-index:1}
 html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season){display:none}
 </style>
-<link rel="stylesheet" href="lumiere.css?v=20261105e" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="lumiere.css?v=20261105e"></noscript>
-<script src="hours-core.js?v=20261105e" defer></script>
-<script src="lumiere.js?v=20261105e" defer></script>
+<link rel="stylesheet" href="lumiere.css?v=20261105j" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="lumiere.css?v=20261105j"></noscript>
+<script src="hours-core.js?v=20261105j" defer></script>
+<script src="lumiere.js?v=20261105j" defer></script>
 <script src="../../assets/app.js" defer></script>
-<script src="../../assets/stage.js?v=20261105e" defer></script>
+<script src="../../assets/stage.js?v=20261105j" defer></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Bakery","@id":"https://www.id-eclair.com/#bakery","name":"iD Éclair","description":"A 100% plant-based French pâtisserie and salon de thé on West Green Street in Old Pasadena, led by chef-owner Romuald Guiot.","url":"https://www.id-eclair.com/","image":"https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2085.jpg?v=1740687892","telephone":"+1-626-365-1161","address":{"@type":"PostalAddress","streetAddress":"169 W Green St","addressLocality":"Pasadena","addressRegion":"CA","postalCode":"91105","addressCountry":"US"},"servesCuisine":["French","Vegan"],"hasMenu":{"@id":"https://www.id-eclair.com/#menu"},"founder":{"@type":"Person","name":"Romuald Guiot","jobTitle":"Chef-owner"},"sameAs":["https://www.instagram.com/ideclairlosangeles/","https://www.tiktok.com/@ideclairlosangeles"]},
@@ -232,7 +235,7 @@ html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season)
 <nav class="sub" aria-label="Chapters">
   <div class="sub-in" data-sub>
     <a href="#eclairs" aria-current="true">Éclairs</a><a href="#macarons">Macarons</a><a href="#box">Your box</a><a href="#pickup">Pickup</a><a href="#cakes">Cakes</a><a href="#class">The class</a><a href="#la-cave">La Cave</a>
-    <button class="sub-hello" type="button" data-bonjour hidden aria-label="Ask Camille at the counter"><img src="counter-mark.png" width="192" height="192" alt="" role="presentation" loading="lazy">Ask Camille</button>
+    <button class="sub-hello" type="button" data-bonjour hidden aria-label="Ask at the counter"><img src="counter-mark.png" width="192" height="192" alt="" role="presentation" loading="lazy">At the counter</button>
     <button class="sub-bag" type="button" data-cart-open aria-label="Your bag"><span>Bag</span><span class="badge" data-cart-count>0</span><b data-cart-total></b></button>
   </div>
   <div class="srch" data-search role="search">
@@ -444,7 +447,7 @@ html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season)
       <div><dt>Checkout</dt><dd>Live-store items check out on id-eclair.com with your pickup time attached. Counter items wait for the new checkout; today they are paid at the counter or on the menu app.</dd></div>
       <div><dt>Delivery</dt><dd>On <a href="https://www.ubereats.com/store/id-eclair-169-west-green-street/DZBavqIJUAuR3qdYMA7QNQ" target="_blank" rel="noopener">Uber Eats</a>, <a href="https://www.doordash.com/en/store/id-eclair-pasadena-32543221/" target="_blank" rel="noopener">DoorDash</a> and <a href="https://www.grubhub.com/restaurant/id-eclair-169-w-green-st-pasadena/10198432" target="_blank" rel="noopener">Grubhub</a>, at those apps’ prices.</dd></div>
     </dl>
-    <button class="ask-link" type="button" data-ask-open data-ask="Can I pick up tomorrow?" hidden>Ask Camille about pickup</button>
+    <button class="ask-link" type="button" data-ask-open data-ask="Can I pick up tomorrow?" hidden>Ask at the counter about pickup</button>
   </div>
 </section>
 
@@ -475,7 +478,7 @@ html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season)
         <span class="pr">$15.00</span>
         <button class="add" type="button" data-add data-handle="mousse-cake" data-title="Mousse cake" data-price="15" data-glyph="M" aria-label="Add a mousse cake, $15.00">Add</button>
       </div>
-      <button class="ask-link" type="button" data-ask-open data-ask="A birthday cake for 12" hidden>Ask Camille about a cake</button>
+      <button class="ask-link" type="button" data-ask-open data-ask="A birthday cake for 12" hidden>Ask at the counter about a cake</button>
     </div>
   </div>
 </section>
@@ -655,10 +658,10 @@ html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season)
   <p class="wrap foot-fine">Concept preview, direction 12, Lumière. Not the live store. Prices read 21 and 22 October 2026.</p>
 </footer>
 
-<button class="float-pill" type="button" data-pill hidden aria-label="Ask Camille at the counter"><span class="ctr-av"><img src="counter-mark.png" width="192" height="192" alt="" role="presentation" loading="lazy"><i class="live" aria-hidden="true"></i></span><span class="pill-txt" aria-hidden="true">Bonjour</span></button>
+<button class="float-pill" type="button" data-pill hidden aria-label="Ask at the counter"><span class="ctr-av"><img src="counter-mark.png" width="192" height="192" alt="" role="presentation" loading="lazy"><i class="live" aria-hidden="true"></i></span><span class="pill-txt" aria-hidden="true">Bonjour</span></button>
 <div class="dock is-early" data-dock role="region" aria-label="Pickup and bag">
   <a class="dock-pick" href="#pickup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Pickup</small><b data-dock-when>Earliest slot</b></span></a>
-  <button class="dock-pill" type="button" data-pill hidden aria-label="Ask Camille at the counter"><span class="ctr-av"><img src="counter-mark.png" width="192" height="192" alt="" role="presentation" loading="lazy"><i class="live" aria-hidden="true"></i></span><span class="pill-txt" aria-hidden="true">Bonjour</span></button>
+  <button class="dock-pill" type="button" data-pill hidden aria-label="Ask at the counter"><span class="ctr-av"><img src="counter-mark.png" width="192" height="192" alt="" role="presentation" loading="lazy"><i class="live" aria-hidden="true"></i></span><span class="pill-txt" aria-hidden="true">Bonjour</span></button>
   <button class="dock-bag" type="button" data-cart-open aria-label="Your bag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span>Bag</span><span class="badge" data-cart-count>0</span><b data-cart-total></b></button>
 </div>
 </body>
