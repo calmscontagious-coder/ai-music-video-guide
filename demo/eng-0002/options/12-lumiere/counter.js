@@ -390,7 +390,7 @@
   }
 
   /* ---------- boot ---------- */
-  Promise.all([fetch('counter-facts.json').then(function (r) { return r.json(); }), fetch(BASE + 'assets/menu.json').then(function (r) { return r.json(); })])
+  Promise.all([fetch('counter-facts.json?v=20261105a').then(function (r) { return r.json(); }), fetch(BASE + 'assets/menu.json').then(function (r) { return r.json(); })])
     .then(function (d) {
       F = d[0]; S = F.strings; S.handoff = F.handoff;
       (d[1].items || []).forEach(function (i) { RAW[i.handle] = i; });

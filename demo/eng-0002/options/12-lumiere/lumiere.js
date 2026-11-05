@@ -152,7 +152,7 @@
 
   /* 8. the pastry counter, after first paint and an idle moment */
   function load(src, then) { var sc = document.createElement('script'); sc.src = src; sc.async = true; sc.onload = then; document.head.appendChild(sc); }
-  function counter() { load('counter-core.js', function () { load('counter.js'); }); }
+  function counter() { load('counter-core.js?v=20261105a', function () { load('counter.js?v=20261105a'); }); }
   function idle() { if ('requestIdleCallback' in window) requestIdleCallback(counter, { timeout: 2000 }); else setTimeout(counter, 600); }
   if (document.readyState === 'complete') idle(); else addEventListener('load', idle, { once: true });
 
