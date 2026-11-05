@@ -341,3 +341,31 @@ p { margin: 0 0 var(--spacing-4); max-width: var(--measure-body); }
 }
 
 .fit-note[hidden], .gbp-next[hidden] { display: none; }
+
+/* ── footer newsletter: native MailerLite form, enhanced by /forms.js ── */
+.foot-news { margin: var(--spacing-12) 0 0; padding-top: var(--spacing-8); border-top: 1px solid var(--color-line-soft); display: grid; gap: var(--spacing-3); max-width: 64rem; }
+.foot-news-lede { margin: 0; max-width: var(--measure-body); }
+.mlf-line { display: grid; gap: var(--spacing-4); align-items: end; }
+@media (min-width: 900px) { .mlf-line { grid-template-columns: minmax(0, 1.2fr) auto auto; } }
+.mlf-row { display: grid; gap: var(--spacing-1); }
+.mlf label, .mlf legend { font-family: var(--font-mono); font-size: var(--text-label); letter-spacing: var(--tracking-mono); color: var(--color-faint); }
+.mlf input[type="email"] {
+  font: inherit; font-size: var(--text-base); color: var(--color-ink); background: var(--color-surface);
+  border: 1px solid var(--color-line); border-radius: var(--radius-control); padding: var(--spacing-3); min-height: 48px; width: 100%;
+}
+.mlf input:focus-visible { border-color: var(--color-accent); }
+.mlf input[aria-invalid="true"], .mlf textarea[aria-invalid="true"] { border-color: var(--color-minus); }
+.mlf-seg { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--spacing-1) var(--spacing-4); }
+.mlf-seg legend { padding: 0; margin-bottom: var(--spacing-1); }
+.mlf-seg label { display: inline-flex; align-items: center; gap: var(--spacing-2); min-height: 44px; font-family: var(--font-text); font-size: var(--text-sm); letter-spacing: normal; color: var(--color-muted); cursor: pointer; }
+.mlf-seg input { width: 18px; height: 18px; accent-color: var(--color-accent); }
+.mlf .mlf-err { margin: 0; font-size: var(--text-sm); color: var(--color-minus); }
+.mlf .mlf-status { margin: 0; min-height: 1.45em; font-size: var(--text-sm); }
+.mlf-done:focus { outline: none; }
+.mlf-done-title { font-weight: 650; color: var(--color-ink); }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+/* cross-page View Transitions (the home and site pages opt in too) */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 260ms; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }

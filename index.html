@@ -26,9 +26,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
-<link rel="stylesheet" href="/tokens.css?v=ebf5853d">
-<link rel="stylesheet" href="/home.css?v=a74a0bf8">
-<script src="/home.js?v=6ba604b9" defer></script>
+<link rel="stylesheet" href="/tokens.css?v=7c697f78">
+<link rel="stylesheet" href="/home.css?v=9a103912">
+<script src="/home.js?v=69274837" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">
 {
@@ -387,12 +387,12 @@
 <h3 id="d1">Write your business’s structured data</h3>
 <form class="schema-form" data-schema>
 <div class="sf-grid">
-<div class="field-row sf-wide"><label for="sf-name">Business name</label><input id="sf-name" name="name" type="text" maxlength="80" value="Bright Line Plumbing" data-track="home_lab_schema_edit"></div>
+<div class="field-row sf-wide"><label for="sf-name">Business name</label><input id="sf-name" name="name" type="text" maxlength="80" value="Copper Kettle Plumbing" data-track="home_lab_schema_edit"></div>
 <div class="field-row"><label for="sf-type">Type</label><select id="sf-type" name="type" data-track="home_lab_schema_type"><option value="Plumber">Plumber</option><option value="HairSalon">Hair salon</option><option value="Dentist">Dental clinic</option><option value="ExerciseGym">Gym</option><option value="AutoRepair">Auto repair</option><option value="Restaurant">Restaurant</option><option value="CafeOrCoffeeShop">Café</option><option value="Store">Shop</option><option value="LocalBusiness">Other local business</option></select></div>
 <div class="field-row"><label for="sf-url">Website</label><input id="sf-url" name="url" type="text" inputmode="url" maxlength="120" value="https://example.com"></div>
 <div class="field-row sf-wide"><label for="sf-street">Street address</label><input id="sf-street" name="street" type="text" maxlength="120" placeholder="street and number"></div>
-<div class="field-row"><label for="sf-town">Town</label><input id="sf-town" name="town" type="text" maxlength="60" value="Springfield"></div>
-<div class="field-row"><label for="sf-region">State</label><input id="sf-region" name="region" type="text" maxlength="40" value="IL"></div>
+<div class="field-row"><label for="sf-town">Town</label><input id="sf-town" name="town" type="text" maxlength="60" value="Bozeman"></div>
+<div class="field-row"><label for="sf-region">State</label><input id="sf-region" name="region" type="text" maxlength="40" value="MT"></div>
 <div class="field-row"><label for="sf-zip">ZIP code</label><input id="sf-zip" name="zip" type="text" maxlength="12" placeholder="optional"></div>
 <div class="field-row"><label for="sf-phone">Phone</label><input id="sf-phone" name="phone" type="tel" maxlength="24" placeholder="optional"></div>
 <div class="field-row"><label for="sf-days">Open</label><select id="sf-days" name="days" data-track="home_lab_schema_days"><option value="wk">Monday to Friday</option><option value="ws" selected>Monday to Saturday</option><option value="all">Every day</option></select></div>
@@ -413,7 +413,7 @@
 <h3 id="d2">Ask AI about your business</h3>
 <form class="aeo-form" data-aeo>
 <div class="field-row"><label for="aeo-type">You run a</label><select id="aeo-type" name="type" data-track="home_lab_aeo_type"><option value="dental clinic">dental clinic</option><option value="hair salon">hair salon</option><option value="plumber">plumber</option><option value="gym">gym</option><option value="auto repair shop">auto repair shop</option><option value="restaurant">restaurant</option><option value="café">café</option><option value="shop">shop</option></select></div>
-<div class="field-row"><label for="aeo-town">in</label><input id="aeo-town" name="town" type="text" autocomplete="off" maxlength="40" value="Springfield"></div>
+<div class="field-row"><label for="aeo-town">in</label><input id="aeo-town" name="town" type="text" autocomplete="off" maxlength="40" value="Bozeman, MT"></div>
 <button type="submit" class="button small-btn" data-track="home_lab_aeo_build">Write my questions</button>
 </form>
 <ol class="aeo-list" data-aeo-list></ol>
@@ -519,6 +519,7 @@
 <div class="inst-actions">
 <button type="button" class="button small-btn" data-gbp-copy data-track="home_lab_gbp_copy">Copy the fix list</button>
 <button type="button" class="chip-reset" data-gbp-reset data-track="home_lab_gbp_reset">Start over</button>
+<button type="button" class="chip-reset" data-gbp-example data-track="home_lab_gbp_example">Another example</button>
 </div>
 </article>
 
@@ -563,10 +564,9 @@
 </div>
 </div>
 
-<!-- MailerLite, account 2504111, no MailerLite script on this page (the site-wide pop-up stays off the home).
-     Operator: replace {{MAILERLITE_FORM_ACTION}} with the action URL from MailerLite > Forms > Embedded forms > the "Free check" form > HTML code
-     (the <form action="..."> value). Create the custom fields "website" and "marketing_consent" first. See PUBLISH_NOTES.md. -->
-<form class="lead" data-lead action="{{MAILERLITE_FORM_ACTION}}" method="post" novalidate>
+<!-- MailerLite embedded form "Free AI-visibility check" (account 2504111, group Studio leads, double opt-in on), wired 2026-11-05.
+     Plain POST, no MailerLite script on this page; home.js validates and posts it with fetch. -->
+<form class="lead" data-lead action="https://assets.mailerlite.com/jsonp/2504111/forms/203284976868787904/subscribe" method="post" novalidate>
 <p class="lead-title"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Send me the free check</p>
 <div class="lf">
 <label for="lf-name">Business name</label>

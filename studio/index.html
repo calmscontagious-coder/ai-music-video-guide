@@ -25,8 +25,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/studio/tokens.css?v=51dcc46b">
-<link rel="stylesheet" href="/studio/studio.css?v=bbf94794">
+<link rel="stylesheet" href="/studio/studio.css?v=1308b237">
 <script src="/studio/studio.js?v=88a6f458" defer></script>
+<script src="/forms.js?v=de670aa8" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">
 {
@@ -509,6 +510,33 @@
 </ul>
 </div>
 </div>
+<!-- MailerLite "Weekly newsletter" embedded form (account 2504111, double opt-in on). Everyone joins the group Weekly newsletter;
+     the segment choice adds Business owner, Creator or Musician. Plain POST, no MailerLite script; /forms.js enhances it. -->
+<form class="foot-news mlf" data-ml action="https://assets.mailerlite.com/jsonp/2504111/forms/203285238809364478/subscribe" method="post" novalidate aria-labelledby="news-title">
+<h2 id="news-title">The weekly note</h2>
+<p class="foot-news-lede">One short email a week: what changed in Google, AI answers and local marketing, and one thing to try. Unsubscribe in one click.</p>
+<div class="mlf-line">
+<div class="mlf-row">
+<label for="nl-email">Email</label>
+<input id="nl-email" name="fields[email]" type="email" autocomplete="email" required maxlength="160" data-ml-check="nl-email-err" aria-describedby="nl-email-err">
+</div>
+<fieldset class="mlf-seg">
+<legend>I am a</legend>
+<label><input type="radio" name="groups[]" value="203284924347713180" required data-ml-check="nl-seg-err"> business owner</label>
+<label><input type="radio" name="groups[]" value="203284926715397513"> creator</label>
+<label><input type="radio" name="groups[]" value="203284929036945287"> musician</label>
+</fieldset>
+<button type="submit" class="button" data-track="studio_foot_newsletter_submit">Sign me up</button>
+</div>
+<p class="mlf-err" id="nl-email-err" hidden>Add an email address like name@yourbusiness.com.</p>
+<p class="mlf-err" id="nl-seg-err" hidden>Pick the one that fits you best.</p>
+<input type="hidden" name="groups[]" value="203285259315316668">
+<div class="hp" aria-hidden="true"><label for="nl-hp">Leave this field empty</label><input id="nl-hp" name="hp_check" type="text" tabindex="-1" autocomplete="off" data-ml-hp></div>
+<input type="hidden" name="ml-submit" value="1">
+<input type="hidden" name="anticsrf" value="true">
+<p class="mlf-status" role="status" aria-live="polite" data-ml-status></p>
+<div class="mlf-done" data-ml-done tabindex="-1" hidden><p class="mlf-done-title">Thank you. Check your inbox.</p><p>Tap the confirmation link MailerLite just sent; the first note arrives the week after you confirm.</p></div>
+</form>
 <p class="fineprint">© <span class="num">2026</span> Purpose with Presence. Purpose with Presence is operated by an individual sole proprietor. Prices on this page are current as of <span class="num">5</span> November <span class="num">2026</span> and leave out your own software, card fees and ad spend. This page carries no affiliate links.</p>
 </div>
 </footer>

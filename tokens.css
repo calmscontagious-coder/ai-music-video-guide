@@ -15,6 +15,7 @@
   --color-focus: oklch(0.82 0.16 75);
   --color-plus: oklch(0.8 0.13 155);
   --color-minus: oklch(0.74 0.14 28);
+  --color-sky: oklch(0.8 0.1 230);
   --color-paper: oklch(0.985 0.003 255);
   --color-paper-ink: oklch(0.2 0.012 255);
   --color-paper-muted: oklch(0.42 0.012 255);

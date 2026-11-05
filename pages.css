@@ -153,3 +153,25 @@ p { margin: 0 0 var(--spacing-4); max-width: var(--measure-body); }
   .button { transition: none; }
   .button:hover, .button:active { transform: none; }
 }
+
+/* ── native MailerLite forms (contact; /forms.js enhances them) ── */
+.mlf { display: grid; gap: var(--spacing-4); max-width: 36rem; margin: var(--spacing-6) 0 var(--spacing-12); }
+.mlf-row { display: grid; gap: var(--spacing-1); }
+.mlf label { font-family: var(--font-mono); font-size: var(--text-label); letter-spacing: var(--tracking-mono); color: var(--color-faint); }
+.mlf input[type="text"], .mlf input[type="email"], .mlf textarea {
+  font: inherit; font-size: var(--text-base); color: var(--color-ink); background: var(--color-surface);
+  border: 1px solid var(--color-line); border-radius: var(--radius-control); padding: var(--spacing-3); min-height: 48px; width: 100%;
+}
+.mlf textarea { resize: vertical; }
+.mlf input:focus-visible, .mlf textarea:focus-visible { border-color: var(--color-accent); }
+.mlf input[aria-invalid="true"], .mlf textarea[aria-invalid="true"] { border-color: var(--color-minus); }
+.mlf .mlf-err { margin: 0; font-size: var(--text-sm); color: var(--color-minus); }
+.mlf .mlf-status { margin: 0; min-height: 1.45em; font-size: var(--text-sm); color: var(--color-muted); }
+.mlf-done:focus { outline: none; }
+.mlf-done-title { font-weight: 650; color: var(--color-ink); }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+/* cross-page View Transitions (the home and studio opt in too) */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 260ms; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
