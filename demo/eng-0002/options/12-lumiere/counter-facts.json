@@ -3,36 +3,50 @@
  "written": "2026-11-04",
  "about": "What the pastry counter may say, in the shop’s voice. One entry per house note; the wording is the shop’s, the facts are unchanged. Notes still being settled are left blank, so the counter does not mention them.",
  "strings": {
-  "title": "The pastry counter",
+  "name": "Camille",
+  "title": "Camille at the counter",
   "sub": "iD Éclair · 169 W Green St",
   "greeting": "Bonjour, can I help you with your order?",
-  "disclosure": "Our online counter answers from the menu and our house notes. It isn’t a person; the team is a call away.",
-  "dont_know": "That one I’d rather not guess. The team can tell you: call 626-365-1161 or write to contact@id-eclair.com.",
-  "person": "This is iD Éclair’s online counter. It answers from our menu and house notes, and it isn’t a person. To speak with the team, call 626-365-1161 or write to contact@id-eclair.com.",
+  "disclosure": "Camille is our online counter: answers come from our menu and house notes. The team is a call away.",
+  "dont_know": "That one is outside my counter, I’m afraid. I can help with the case, a cake, pickup or the class.",
+  "person": "I’m Camille, iD Éclair’s online counter, not a person. I answer from our menu and house notes. To speak with the team: 626-365-1161 or contact@id-eclair.com.",
+  "complaint": "I’m so sorry. That’s not the experience we want for you. Please call 626-365-1161 or write to contact@id-eclair.com with your name and order; the team will follow up with you directly.",
+  "rude": "I’m sorry I haven’t helped yet. Tell me what you’d like, or the team is at 626-365-1161.",
+  "rules": "I can only help with our menu, orders and pickup, and I have nothing behind the counter to share. Shall I show you today’s case?",
+  "error": "Let me get the team for that: 626-365-1161 or contact@id-eclair.com.",
+  "offline": "I can’t reach the menu just now. Let me get the team: 626-365-1161 or contact@id-eclair.com.",
+  "allergy_tail": "Please ask the team before ordering for an allergy: 626-365-1161.",
   "placeholder": "Ask about the case, a cake, pickup…",
+  "after_add": "Merci, it’s in your bag. Pickup {slot}?",
+  "bag_line": "Anything else for the box before I hold your pickup?",
+  "bag_waiting": "Your bag is ready: {n}, pickup {slot}. Shall I hold it for you?",
+  "closed_pre": "We’re closed now. Order for pickup from {next}.",
+  "closed_off": "We’re closed now and open again {next}. I can still answer questions.",
   "signoff": [
-   "Merci. It’s in your bag.",
+   "Merci, it’s in your bag.",
    "C’est noté. It’s in your bag.",
-   "Merci, see you at the counter."
+   "Avec plaisir. Bonne journée."
   ]
  },
  "starters": [
-  "What’s best today?",
-  "Build a gift box",
-  "Pickup times"
+  "Fill my box",
+  "Today’s best",
+  "Gift ideas",
+  "Pickup times",
+  "Cakes"
  ],
  "chips": [
   "Is everything plant-based?",
   "A birthday cake",
   "The macaron class",
   "Gluten-free?",
-  "When is La Cave open?"
+  "Are you open?"
  ],
  "suggest": [
   "Is everything plant-based?",
   "Do you have nut-free options?",
   "Is it gluten-free?",
-  "What are your hours?",
+  "Are you open?",
   "Can I pick up tomorrow?",
   "A birthday cake for 12",
   "When is the macaron class?",
@@ -48,6 +62,67 @@
   "Do you take Apple Pay?",
   "Is there parking?"
  ],
+ "popup": {
+  "variant": "a",
+  "delay_ms": 4000,
+  "idle_empty_ms": 25000,
+  "idle_bag_ms": 60000,
+  "max_per_view": 1,
+  "max_per_visit": 2,
+  "cooldown_after_close_ms": 10000,
+  "typing_quiet_ms": 2000,
+  "fast_scroll_px_s": 1800,
+  "back_up_px_s": 1500,
+  "shimmer_ms": 600,
+  "openers": {
+   "hello": {
+    "line": "Bonjour, can I help you with your order?",
+    "actions": [
+     "best",
+     "box",
+     "pickup"
+    ]
+   },
+   "eclairs": {
+    "line": "The pistachio éclair, glazed and finished with gold leaf, is $6.50. Shall I add one for your pickup?",
+    "actions": [
+     "add:pistachio-eclair",
+     "best"
+    ]
+   },
+   "box": {
+    "line": "Shall I fill a box of six for you? $15.00, and you can swap any macaron.",
+    "actions": [
+     "fillbox",
+     "choosebox"
+    ]
+   },
+   "cakes": {
+    "line": "Celebrating something? I can start a cake request in a minute.",
+    "actions": [
+     "cake",
+     "add:mousse-cake"
+    ]
+   },
+   "choose": {
+    "line": "Need a hand choosing? Tell me who it’s for.",
+    "actions": [
+     "forme",
+     "gift",
+     "table"
+    ]
+   }
+  },
+  "sections": {
+   "eclairs": "eclairs",
+   "macarons": "box",
+   "box": "box",
+   "compare": "box",
+   "cakes": "cakes"
+  },
+  "pill_every_ms": 8000,
+  "pill_max_turns": 6
+ },
  "handoff": {
   "call": {
    "label": "Call 626-365-1161",

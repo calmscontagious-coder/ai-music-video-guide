@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "written": "2026-11-05",
+ "timezone": "America/Los_Angeles",
+ "assumed": "about_page",
+ "assumed_note": "The shop publishes more than one set of hours. This file uses the About page set until the shop confirms one.",
+ "alternatives": {
+  "about_page": "Monday closed; Tuesday 6 am to 3 pm; Wednesday to Sunday 6 am to 8 pm",
+  "yelp_and_footer": "As the About page, but Sunday until 7 pm",
+  "contact_page": "Tuesday 9 am to 3 pm; Wednesday to Sunday 6 am to 3 pm"
+ },
+ "week": {
+  "mon": null,
+  "tue": ["06:00", "15:00"],
+  "wed": ["06:00", "20:00"],
+  "thu": ["06:00", "20:00"],
+  "fri": ["06:00", "20:00"],
+  "sat": ["06:00", "20:00"],
+  "sun": ["06:00", "20:00"]
+ },
+ "cutoff_min": 30,
+ "lead_min": 30,
+ "closures": [],
+ "when_closed": "closed-preorder",
+ "modes": {
+  "open": "Ordering as normal; pickup slots inside hours and before the cutoff.",
+  "closed-preorder": "Closed now: ordering continues as a pre-order for the next open slot, labelled as such.",
+  "closed-off": "Closed now: Add buttons are disabled with a calm notice and the next opening; the counter still answers."
+ }
+}
