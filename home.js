@@ -58,12 +58,12 @@
   }
   function rgba(c, a) { return "rgba(" + c[0] + "," + c[1] + "," + c[2] + "," + a + ")"; }
 
-  /* ── hero field: nearby searches travel the street grid to a lit shop ── */
+  /* ── hero field: everyday wins travel the street grid to a lit business ── */
   var canvas = $("[data-field]");
   if (canvas && canvas.getContext) (function () {
     var ctx = canvas.getContext("2d");
     var C = { line: tokenRGB("--color-line"), soft: tokenRGB("--color-line-soft"), dot: tokenRGB("--color-muted"), faint: tokenRGB("--color-faint"), accent: tokenRGB("--color-accent") };
-    var QUERIES = ["bakery near me", "open now", "vegan birthday cake", "coffee and a pastry", "gift box to order", "catering for 20", "gluten-free bread", "pickup before 8"];
+    var QUERIES = ["Book more appointments", "Get found on Google Maps", "Answer customers at 2 a.m.", "Fill slow Tuesdays", "Turn reviews into regulars", "Show up in AI answers", "Keep your hours right everywhere", "Win back last year’s customers", "Let people book from their phone", "See which posts bring people in"];
     var w = 0, h = 0, dpr = 1, G = 44, shop = { x: 0, y: 0 }, walkers = [], rings = [], running = false, visible = true, last = 0;
     var labelMin = 0, labelMaxY = 1e9, pointer = { x: 0, y: 0, tx: 0, ty: 0 }, scrollK = 1, qi = 0, mapLayer = null, font = "12px ui-monospace, monospace";
 
@@ -141,12 +141,12 @@
         if (tr.length > 3) { ctx.strokeStyle = rgba(k.label ? C.accent : C.dot, 0.35); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(tr[0], tr[1]); for (var p = 2; p < tr.length; p += 2) ctx.lineTo(tr[p], tr[p + 1]); ctx.lineTo(k.x, k.y); ctx.stroke(); }
         ctx.fillStyle = rgba(k.label ? C.accent : C.dot, k.label ? 1 : 0.8);
         ctx.fillRect(k.x - 2, k.y - 2, 4, 4);
-        if (k.label && k.x > labelMin && k.x < w - 150 && k.y < labelMaxY && k.y > 24) { ctx.font = font; ctx.fillStyle = rgba(C.dot, 0.95); ctx.fillText("“" + k.label + "”", k.x + 8, k.y - 8); }
+        if (k.label && k.x > labelMin && k.y < labelMaxY && k.y > 24 && Math.abs(k.x - shop.x) + Math.abs(k.y - shop.y) > 64) { ctx.font = font; if (k.x + 16 + ctx.measureText(k.label).width < w) { ctx.fillStyle = rgba(C.dot, 0.95); ctx.fillText(k.label, k.x + 8, k.y - 8); } }
       }
       for (var j = 0; j < rings.length; j++) { var t = rings[j] / 1.4; ctx.strokeStyle = rgba(C.accent, (1 - t) * 0.8); ctx.lineWidth = 1.5; ctx.strokeRect(shop.x - 8 - t * 34, shop.y - 8 - t * 34, 16 + t * 68, 16 + t * 68); }
       ctx.fillStyle = rgba(C.accent, 1); ctx.fillRect(shop.x - 7, shop.y - 7, 14, 14);
       ctx.strokeStyle = rgba(C.accent, 0.9); ctx.lineWidth = 1; ctx.strokeRect(shop.x - 12.5, shop.y - 12.5, 25, 25);
-      ctx.font = font; ctx.fillStyle = rgba(C.dot, 1); ctx.fillText("your shop", shop.x + 18, shop.y + 4);
+      ctx.font = font; ctx.fillStyle = rgba(C.dot, 1); ctx.fillText("your business", shop.x + 18, shop.y + 4);
     }
     function frame(now) {
       if (!running) return;
@@ -196,9 +196,9 @@
   var matrix = $("[data-matrix]");
   if (matrix) (function () {
     var PLANS = {
-      1: { name: "Essentials", m: "$950", f3: "$5,350", setup: "$2,500", hours: "3", why: "For a shop that wants its site, customer list and Google presence run properly." },
-      2: { name: "Growth", m: "$1,750", f3: "$10,450", setup: "$5,200", hours: "6.5", why: "For a shop ready to grow repeat visits and be found." },
-      3: { name: "Signature", m: "$2,450", f3: "$13,850", setup: "$6,500", hours: "12", why: "For a shop that wants every channel, paid ads and outreach." }
+      1: { name: "Essentials", m: "$950", f3: "$5,350", setup: "$2,500", hours: "3", why: "For a business that wants its site, customer list and Google presence run properly." },
+      2: { name: "Growth", m: "$1,750", f3: "$10,450", setup: "$5,200", hours: "6.5", why: "For a business ready to win repeat visits and be found." },
+      3: { name: "Signature", m: "$2,450", f3: "$13,850", setup: "$6,500", hours: "12", why: "For a business that wants every channel, paid ads and outreach." }
     };
     var chips = $$("[data-chips] .chip"), segs = $$(".seg[data-view]"), reset = $("[data-reset]"), out = $("[data-pick-out]");
     var view = "monthly";
@@ -265,7 +265,7 @@
       });
       slots.forEach(function (s, i) { s.setAttribute("class", i < picks.length ? "t" + rows[picks[i]].getAttribute("data-tone") : ""); });
       bag.disabled = picks.length !== MAX;
-      status.textContent = msg || (picks.length === MAX ? "Box full: 6 of 6. Total " + fmt(total) + "." : (picks.length ? picks.length + " of 6 picked. " + (MAX - picks.length) + " to go. So far " + fmt(total) + "." : "Pick six. 0 of 6 so far."));
+      status.textContent = msg || (picks.length === MAX ? "Pass full: 6 of 6. Total " + fmt(total) + "." : (picks.length ? picks.length + " of 6 picked. " + (MAX - picks.length) + " to go. So far " + fmt(total) + "." : "Pick six. 0 of 6 so far."));
     }
     rows.forEach(function (li, i) {
       $$(".step-btn", li).forEach(function (b) {
@@ -280,8 +280,8 @@
     bag.addEventListener("click", function () {
       var c = counts(), lines = [], total = 0;
       rows.forEach(function (li, k) { if (c[k]) { lines.push(c[k] + " x " + li.querySelector(".bi-name").textContent); total += c[k] * parseFloat(li.getAttribute("data-price")); } });
-      var text = "Box of six: " + lines.join(", ") + ". Total " + fmt(total) + ".";
-      copyText(text).then(function () { render("Copied to your clipboard: " + text); }, function () { render("Your browser blocked copying. The order: " + text); });
+      var text = "Six-class pass: " + lines.join(", ") + ". Total " + fmt(total) + ".";
+      copyText(text).then(function () { render("Copied to your clipboard: " + text); }, function () { render("Your browser blocked copying. The pass: " + text); });
     });
     resetB.addEventListener("click", function () { picks = []; render(); });
     render();
@@ -311,7 +311,7 @@
   var aeo = $("[data-aeo]");
   if (aeo) (function () {
     var list = $("[data-aeo-list]"), status = $("[data-aeo-status]"), marks = {};
-    var EXTRA = { "bakery": "where to order a birthday cake", "café": "quiet café to work from", "restaurant": "restaurant open late", "shop": "where to buy a local gift" };
+    var EXTRA = { "dental clinic": ["dentist taking new patients", "emergency dentist open Saturday"], "hair salon": ["hair salon that takes walk-ins", "where to get a haircut today"], "plumber": ["plumber for an emergency leak", "plumber with upfront prices"], "gym": ["gym with a free first class", "gym open early before work"], "auto repair shop": ["same-day car repair", "honest mechanic for a check engine light"], "restaurant": ["restaurant open late", "restaurant for a group dinner"], "café": ["quiet café to work from", "café with outdoor seating"], "shop": ["where to buy a local gift", "shop with same-day pickup"] };
     var ENGINES = [["ChatGPT", "https://chatgpt.com/?q="], ["Perplexity", "https://www.perplexity.ai/search?q="], ["Google", "https://www.google.com/search?q="]];
     var LABELS = [["yes", "named"], ["part", "wrong details"], ["no", "not named"]];
     function clean(v) { return v.replace(/[<>]/g, "").replace(/\s+/g, " ").trim().slice(0, 40); }
@@ -322,7 +322,8 @@
     }
     function build(announce) {
       var type = aeo.elements.namedItem("type").value, town = clean(aeo.elements.namedItem("town").value) || "my town";
-      var qs = ["best " + type + " in " + town, type + " open now in " + town, EXTRA[type] + " in " + town, type + " with vegan options in " + town, type + " in " + town + " that takes preorders"];
+      var ex = EXTRA[type] || ["best-reviewed " + type, type + " that books online"];
+      var qs = ["best " + type + " in " + town, type + " open now in " + town, ex[0] + " in " + town, ex[1] + " in " + town, type + " near " + town + " with good reviews"];
       list.textContent = ""; marks = {};
       qs.forEach(function (q, i) {
         var li = doc.createElement("li"), qp = doc.createElement("p"), links = doc.createElement("p"), grp = doc.createElement("div");

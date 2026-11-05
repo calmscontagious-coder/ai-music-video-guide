@@ -581,3 +581,12 @@ p { margin: 0 0 var(--spacing-4); max-width: var(--measure-body); }
   .button:hover, .button:active, .chip:active, .seg:active, .step-btn:active { transform: none; }
   .aeo-table .mk.is-pre { opacity: 1; transform: none; }
 }
+
+/* ── plans: the service, stated boldly (2026-11-05, every line maps to the packages canon) ── */
+.svc { list-style: none; margin: 0 0 var(--spacing-12); padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); border-top: 1px solid var(--color-line); }
+.svc li { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--spacing-3); row-gap: var(--spacing-1); align-items: baseline; align-content: start; padding: var(--spacing-4, 16px) 0; border-bottom: 1px solid var(--color-line); }
+.svc-n { grid-row: span 2; font-family: var(--font-mono); font-size: var(--text-label); color: var(--color-accent); letter-spacing: var(--tracking-mono); }
+.svc-t { font-family: var(--font-display); font-weight: 720; font-size: var(--text-lead); line-height: var(--leading-tight); font-variation-settings: "opsz" 72, "wdth" 84; letter-spacing: var(--tracking-display); color: var(--color-ink); }
+.svc-d { font-size: var(--text-sm); color: var(--color-muted); }
+@media (min-width: 700px) { .svc { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--spacing-8); } }
+@media (min-width: 1024px) { .svc { grid-template-columns: repeat(3, minmax(0, 1fr)); } .svc-t { font-size: var(--text-h3); } }
