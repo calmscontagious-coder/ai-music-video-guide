@@ -19,6 +19,8 @@ var r=matchMedia('(prefers-reduced-motion: reduce)').matches;t.scrollIntoView({b
 try{history.replaceState(null,'',location.pathname+location.search)}catch(x){}
 if(!t.hasAttribute('tabindex'))t.setAttribute('tabindex','-1');try{t.focus({preventScroll:true})}catch(x){}});})();</script>
 
+<script>/* Order mode (pickup, local, ship), chosen before first paint so shipped-only pages never flash fresh pastry. */
+(function(){var m="pickup";try{var q=/[?&]mode=(pickup|local|ship)/.exec(location.search);m=q?q[1]:(localStorage.getItem("lumiere.mode.v1")||"pickup")}catch(e){}if(!/^(pickup|local|ship)$/.test(m))m="pickup";document.documentElement.setAttribute("data-mode",m)})();</script>
 <meta name="theme-color" content="#faf7f2">
 <title>French pastry made entirely from plants, 169 W Green St, Old Pasadena. iD Éclair concept, Lumière.</title>
 <meta name="description" content="A 100% plant-based French pâtisserie in Old Pasadena, from Chef Romy. Éclairs from $5.50, a box of six macarons for $15.00, celebration cakes on a week’s notice, the Tuesday masterclass and La Cave next door. Pickup at the time you choose.">
@@ -180,12 +182,12 @@ html[data-season="paques"] .stage .stg-dot.is-season-dot{display:block}
 html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-season[data-for="paques"]{opacity:1;visibility:visible;z-index:1}
 html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season){display:none}
 </style>
-<link rel="stylesheet" href="lumiere.css?v=20261105j" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="lumiere.css?v=20261105j"></noscript>
-<script src="hours-core.js?v=20261105j" defer></script>
-<script src="lumiere.js?v=20261105j" defer></script>
+<link rel="stylesheet" href="lumiere.css?v=20261105k" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="lumiere.css?v=20261105k"></noscript>
+<script src="hours-core.js?v=20261105k" defer></script>
+<script src="lumiere.js?v=20261105k" defer></script>
 <script src="../../assets/app.js" defer></script>
-<script src="../../assets/stage.js?v=20261105j" defer></script>
+<script src="../../assets/stage.js?v=20261105k" defer></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Bakery","@id":"https://www.id-eclair.com/#bakery","name":"iD Éclair","description":"A 100% plant-based French pâtisserie and salon de thé on West Green Street in Old Pasadena, led by chef-owner Romuald Guiot.","url":"https://www.id-eclair.com/","image":"https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2085.jpg?v=1740687892","telephone":"+1-626-365-1161","address":{"@type":"PostalAddress","streetAddress":"169 W Green St","addressLocality":"Pasadena","addressRegion":"CA","postalCode":"91105","addressCountry":"US"},"servesCuisine":["French","Vegan"],"hasMenu":{"@id":"https://www.id-eclair.com/#menu"},"founder":{"@type":"Person","name":"Romuald Guiot","jobTitle":"Chef-owner"},"sameAs":["https://www.instagram.com/ideclairlosangeles/","https://www.tiktok.com/@ideclairlosangeles"]},
@@ -228,13 +230,12 @@ html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season)
   <nav class="nav" aria-label="Pages">
     <a href="../../menu.html">Menu</a><a href="../../cakes.html">Cakes</a><a href="../../classes.html">Classes</a><a href="../../merch.html">Shop</a><a href="../../la-cave.html">La Cave</a><a href="../../story.html">Chef Romy</a>
   </nav>
-  <span class="top-r"><button class="srchbtn" type="button" data-search-open aria-label="Search the menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
-  <a class="cartbtn" href="#pickup" data-cart-open aria-label="Your bag, 0 items"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="badge" data-cart-count>0</span></a></span>
+  <span class="top-r"><a class="cartbtn" href="#pickup" data-cart-open aria-label="Your bag, 0 items"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="badge" data-cart-count>0</span></a></span>
 </header>
 
 <nav class="sub" aria-label="Chapters">
   <div class="sub-in" data-sub>
-    <a href="#eclairs" aria-current="true">Éclairs</a><a href="#macarons">Macarons</a><a href="#box">Your box</a><a href="#pickup">Pickup</a><a href="#cakes">Cakes</a><a href="#class">The class</a><a href="#la-cave">La Cave</a>
+    <a href="#ship" data-ship-tab>Ships nationwide</a><a href="#eclairs" aria-current="true">Éclairs</a><a href="#macarons">Macarons</a><a href="#box">Your box</a><a href="#pickup">Pickup</a><a href="#cakes">Cakes</a><a href="#class">The class</a><a href="#la-cave">La Cave</a>
     <button class="sub-hello" type="button" data-bonjour hidden aria-label="Ask at the counter"><img src="counter-mark.png" width="192" height="192" alt="" role="presentation" loading="lazy">At the counter</button>
     <button class="sub-bag" type="button" data-cart-open aria-label="Your bag"><span>Bag</span><span class="badge" data-cart-count>0</span><b data-cart-total></b></button>
   </div>
@@ -258,6 +259,15 @@ html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season)
     <div class="hero-head">
       <p class="kick">iD Éclair<svg class="kick-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>169 W Green St, Old Pasadena</p>
       <h1 id="h1">French pastry, made entirely from plants.</h1>
+      <div class="mode" data-mode-pick>
+        <p class="mode-q" id="mode-q">How would you like it?</p>
+        <div class="mode-seg" role="radiogroup" aria-labelledby="mode-q">
+          <button type="button" role="radio" aria-checked="true" data-mode="pickup">Pickup</button>
+          <button type="button" role="radio" aria-checked="false" data-mode="local">Local delivery</button>
+          <button type="button" role="radio" aria-checked="false" data-mode="ship">Ships nationwide</button>
+        </div>
+        <p class="mode-note" data-mode-note role="status">Pickup at 169 W Green St, Old Pasadena, at the time you choose.</p>
+      </div>
     </div>
 <div class="stage has-season" data-stage data-interval="3600000" data-grid-break>
   <div class="stg-slides" aria-roledescription="carousel" aria-label="From the shop’s own photographs">
@@ -302,6 +312,14 @@ html[data-season="paques"] .stage:not(.stg-run) .stg-slide.is-on:not(.is-season)
         <li data-card><span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Paris-Brest</b><small>Praline cream in a choux ring</small></span><span class="pr">$6.75</span><button class="add" type="button" data-add data-handle="paris-brest" data-title="Paris-Brest" data-price="6.75" data-glyph="P" aria-label="Add Paris-Brest, $6.75">Add</button></li>
       </ul>
       <p class="fine">Same day from the case. Counter items: today they’re paid at the counter or on the menu app, and the bag says so.</p>
+  </div>
+</section>
+
+<section class="band ship-band" id="ship" aria-labelledby="h-ship" data-ship-band>
+  <div class="wrap">
+    <h2 id="h-ship">Ships nationwide</h2>
+    <p class="lead">Only what keeps travels: chocolate, cookies, jams and gift baskets, packed at the shop and sealed before they leave. Éclairs, macarons and cakes stay fresh in Pasadena for pickup and local delivery.</p>
+    <ul class="ship-grid" role="list" data-ship-list><li class="ship-wait">Loading what ships…</li></ul>
   </div>
 </section>
 

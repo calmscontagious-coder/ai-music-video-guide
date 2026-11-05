@@ -30,18 +30,17 @@
   ]
  },
  "starters": [
-  "Fill my box",
-  "Today’s best",
-  "Gift ideas",
   "Pickup times",
-  "Cakes"
- ],
- "chips": [
+  "Do you deliver?",
   "Is everything plant-based?",
-  "A birthday cake",
-  "The macaron class",
   "Gluten-free?",
   "Are you open?"
+ ],
+ "chips": [
+  "A birthday cake",
+  "The macaron class",
+  "Today’s best",
+  "Gift ideas"
  ],
  "suggest": [
   "Is everything plant-based?",
@@ -65,53 +64,40 @@
  ],
  "popup": {
   "variant": "a",
-  "delay_ms": 4000,
+  "delay_ms": 20000,
   "idle_empty_ms": 45000,
   "idle_bag_ms": 60000,
-  "max_per_view": 2,
-  "max_per_visit": 99,
-  "cooldown_after_close_ms": 10000,
+  "max_per_view": 1,
+  "max_per_visit": 1,
+  "cooldown_after_close_ms": 600000,
   "typing_quiet_ms": 2000,
   "fast_scroll_px_s": 1800,
   "back_up_px_s": 1500,
   "shimmer_ms": 600,
   "openers": {
    "hello": {
-    "line": "Bonjour.",
+    "line": "Bonjour. Questions about pickup, delivery or ingredients? I’m here.",
     "actions": [
-     "best",
-     "box",
      "pickup"
     ]
    },
    "eclairs": {
-    "line": "The pistachio éclair, glazed and finished with gold leaf, is $6.50. Shall I add one for your pickup?",
-    "actions": [
-     "add:pistachio-eclair",
-     "best"
-    ]
+    "line": "Every éclair is made from plants. Ask me about ingredients or allergens.",
+    "actions": []
    },
    "box": {
-    "line": "Shall I fill a box of six for you? $15.00, and you can swap any macaron.",
-    "actions": [
-     "fillbox",
-     "choosebox"
-    ]
+    "line": "Building a box? I can tell you what is in each flavour.",
+    "actions": []
    },
    "cakes": {
-    "line": "Celebrating something? I can start a cake request in a minute.",
+    "line": "Cakes need a week’s notice. I can start the request when you’re ready.",
     "actions": [
-     "cake",
-     "add:mousse-cake"
+     "cake"
     ]
    },
    "choose": {
-    "line": "Need a hand choosing? Tell me who it’s for.",
-    "actions": [
-     "forme",
-     "gift",
-     "table"
-    ]
+    "line": "Questions? Ask me anything about the menu.",
+    "actions": []
    }
   },
   "sections": {
@@ -122,7 +108,10 @@
    "cakes": "cakes"
   },
   "pill_every_ms": 8000,
-  "pill_max_turns": 6
+  "pill_max_turns": 3,
+  "idle_openers": false,
+  "pairings": false,
+  "pill_products": false
  },
  "handoff": {
   "call": {
@@ -313,7 +302,7 @@
    "from": "facts.json:payment"
   },
   "delivery": {
-   "text": "Today we deliver through Uber Eats, DoorDash and Grubhub, and pickup is at 169 W Green St.",
+   "text": "Three ways: pickup at 169 W Green St, local delivery from the shop, and nationwide shipping for what keeps (chocolate, cookies, jams and gift baskets, packed at the shop). Fresh pastry is pickup or local only. We are also on Uber Eats, DoorDash and Grubhub.",
    "status": "published",
    "from": "facts.json:delivery"
   },

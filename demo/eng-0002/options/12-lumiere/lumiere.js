@@ -153,7 +153,7 @@
   window.LumiereFly = function (from, img) { try { if (!reduce && from) fly(from, img ? '../../' + img : null); } catch (e) { /* decoration only */ } };
 
   /* 8. the pastry counter, after first paint and an idle moment; the counter loads even if its engine does not */
-  var VER = '?v=20261105j';
+  var VER = '?v=20261105k';
   function load(src, then) { var sc = document.createElement('script'); sc.src = src; sc.async = true; sc.onload = then; sc.onerror = then; document.head.appendChild(sc); }
   function counter() { load('counter-core.js' + VER, function () { load('counter.js' + VER); }); }
   function idle() { if ('requestIdleCallback' in window) requestIdleCallback(counter, { timeout: 2000 }); else setTimeout(counter, 600); }
@@ -200,7 +200,7 @@
     });
   }
   var DATA = (function () {
-    var q = '?v=20261105j', live = true;
+    var q = '?v=20261105k', live = true;
     function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
     setTimeout(function () { live = false; }, 5000);
     var p = Promise.all([get('../../assets/stock.json' + q).catch(function () { return null; }), get('../../assets/menu.json' + q).catch(function () { return null; })])
@@ -508,4 +508,61 @@
   fetch('hours.json' + VER).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (cfg) { if (hoursDone) return; hoursDone = true; clearTimeout(hoursTO); initHours(cfg); })
     .catch(function () { clearTimeout(hoursTO); hoursFallback(); });
+  /* 11. how you'd like it (chef, 2026-11-05): pickup, local delivery or ships nationwide. The choice is inline under
+     the headline, remembered on this device, and set on <html data-mode> before first paint (the head script), so
+     the CSS can take the fresh chapters out of ship mode. Ship mode lists only what keeps: the gift, jam and cookie
+     categories of menu.json. In the live build the pickup and local choices hand off to the shop's own ordering
+     (Toast + Curate) and the shipped items check out on their own cart. */
+  (function () {
+    var KEY = 'lumiere.mode.v1', SHIP = { gift: 1, jam: 1, cookie: 1 };
+    var NOTE = {
+      pickup: 'Pickup at 169 W Green St, Old Pasadena, at the time you choose.',
+      local: 'Delivered fresh from the shop to nearby addresses. Everything on the menu can come.',
+      ship: 'Ships nationwide: chocolate, cookies, jams and gift baskets, packed and sealed at the shop.'
+    };
+    var root = document.documentElement, pick = $('[data-mode-pick]'); if (!pick) return;
+    var note = $('[data-mode-note]', pick), built = false;
+    function esc(t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    /* the shop's own menu (assets/curate_menu.json, tools/sync_curate_menu.py): what ships is the Pre-Packaged and Jam
+       categories, in stock right now at the POS. Falls back to menu.json if the file is missing. */
+    var curP = null;
+    function curate() {
+      if (!curP) curP = fetch('../../assets/curate_menu.json?v=20261105k').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (c) { var age = Date.now() - Date.parse(c && c.updated_at); return c && c.items && age < 7 * 24 * 3600 * 1000 ? c : null; }).catch(function () { return null; });
+      return curP;
+    }
+    function build(menu) {
+      var ul = $('[data-ship-list]'); if (!ul || built) return;
+      var fromCurate = !!(menu && menu.source && /curate/.test(menu.source));
+      var items = ((menu && menu.items) || []).filter(function (i) {
+        return fromCurate ? i.ship && i.available && typeof i.price === 'number' : SHIP[i.category] && !i.hidden && i.variantId && i.available !== false;
+      }).map(function (i) { return fromCurate ? { handle: i.handle, title: i.title, price: i.price, image: i.local_image || null, desc: '' } : i; });
+      if (!items.length) { ul.innerHTML = '<li class="ship-wait">The shipped range is being updated. Call the shop: 626-365-1161.</li>'; return; }
+      built = true;
+      ul.innerHTML = items.map(function (i) {
+        var title = i.title || i.handle;
+        return '<li class="ship-card" data-card>' + (i.image ? '<img src="' + esc(i.image) + '" alt="" width="400" height="400" loading="lazy" decoding="async">' : '<span class="ship-ph" aria-hidden="true"><img src="counter-mark.png" alt="" width="192" height="192" loading="lazy"></span>') +
+          '<h3>' + esc(title) + '</h3>' + (i.desc ? '<p>' + esc(i.desc) + '</p>' : '') +
+          '<div class="row"><span class="pr">' + money(i.price) + '</span><button class="add" type="button" data-add data-handle="' + esc(i.handle) + '" data-title="' + esc(title) +
+          '" data-price="' + Number(i.price) + '"' + (i.variantId ? ' data-variant="' + esc(i.variantId) + '"' : '') + (i.image ? ' data-image="' + esc(i.image) + '"' : '') +
+          ' aria-label="Add ' + esc(title) + ', ' + money(i.price) + '">Add</button></div></li>';
+      }).join('');
+    }
+    function set(m, user) {
+      if (!NOTE[m]) m = 'pickup';
+      root.setAttribute('data-mode', m);
+      try { localStorage.setItem(KEY, m); } catch (e) { /* storage blocked: the choice holds for this page */ }
+      $$('[data-mode]', pick).forEach(function (b) { var on = b.getAttribute('data-mode') === m; b.setAttribute('aria-checked', on ? 'true' : 'false'); b.tabIndex = on ? 0 : -1; });
+      if (note) note.textContent = NOTE[m];
+      if (m === 'ship') curate().then(function (c) { if (c) build(c); else return DATA.then(function (d) { build(d.menu); }); }).catch(function () { build(null); });
+      if (user && m === 'ship') { var t = $('#ship'); if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }
+    }
+    pick.addEventListener('click', function (e) { var b = e.target.closest('[data-mode]'); if (b) set(b.getAttribute('data-mode'), true); });
+    pick.addEventListener('keydown', function (e) {   /* radio group: arrows move and choose */
+      var bs = $$('[data-mode]', pick), i = bs.indexOf(document.activeElement); if (i < 0) return;
+      var d = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0; if (!d) return;
+      e.preventDefault(); var n = bs[(i + d + bs.length) % bs.length]; n.focus(); set(n.getAttribute('data-mode'), false);
+    });
+    set(root.getAttribute('data-mode') || 'pickup', false);
+  })();
 })();

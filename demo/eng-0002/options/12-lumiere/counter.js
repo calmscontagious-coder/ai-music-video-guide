@@ -4,16 +4,16 @@
    the optional event names (no message text) when the page sets window.LUMIERE_TRACK_URL.
      - the counter sheet: answers as cards (photo, price, Add), the pickup picker inline, the cake request card,
        one next step at the end of every answer, the team's real contact when it cannot help;
-     - the pop-up: one context-aware opener per page view (two per visit at most), never over a headline, a price
+     - the pop-up: one quiet, service-first opener per visit (chef 2026-11-05: helpful, not pushy), never over a headline, a price
        or an Add button, never while typing or scrolling fast, never within ten seconds of being closed;
-     - after an add: a confirmation with the pickup time and one pairing, once per pairing;
+     - after an add: a confirmation with the pickup time (pairings off unless popup.pairings);
      - in the bag: one line from the counter, one pairing, the members line;
      - the gift finder, your last box on this device, the Bonjour pill.
    If a file cannot be read the counter still answers from the copy built in below, and any error shows the team's
    contact instead of a dead screen. */
 (function () {
   'use strict';
-  var V = '?v=20261105j', BASE = '../../', reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var V = '?v=20261105k', BASE = '../../', reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var HIST = 'lumiere.counter.v2', HELLO = 'lumiere.hello.v1', LAST = 'lumiere.lastbox.v1', PAIRS = 'lumiere.pairs.v1', POP = 'lumiere.pop.v1', ACTED = 'lumiere.acted.v1';
   var PIC = {"canele":"img/caneles-1-800.jpg","macaron":"img/macarons-1-800.jpg","macaron-box-6":"img/macarons-2-800.jpg","thanksgiving-box-for-2":"img/thanksgiving-box-for-2-800.jpg","golden-ticket":"img/golden-ticket-800.jpg","cheese-board":"img/cheese-board-1-800.jpg","dubai-chocolate-vegan":"img/dubai-chocolate-vegan-800.jpg","dark-truffles-wholesale":"img/dark-truffles-wholesale-800.jpg","white-chocolate-truffles":"img/white-chocolate-truffles-800.jpg","dark-chocolate-truffles":"img/dark-chocolate-truffles-800.jpg","kushyflakes":"img/kushyflakes-800.jpg","gift-basket-small":"img/gift-basket-small-800.jpg","gift-basket-large":"img/gift-basket-large-800.jpg","pineapple-vanilla-jam":"img/pineapple-vanilla-jam-800.jpg","caneles":"img/caneles-1-800.jpg","macarons":"img/macarons-2-800.jpg","chocolate-fingers-sables-poches":"img/chocolate-fingers-sables-poches-800.jpg","diamants-biscuit-by-6":"img/diamants-biscuit-by-6-800.jpg","cookie-spoon":"img/cookie-spoon-800.jpg","douceur-tropicale":"img/douceur-tropicale-800.jpg","noisette-toujours":"img/noisette-toujours-800.jpg","tropical-jam":"img/tropical-jam-800.jpg","raspberry-jam":"img/raspberry-jam-800.jpg","4-desserts-in-jar":"img/4-desserts-in-jar-2-800.jpg","caramel-je-taime":"img/caramel-je-taime-800.jpg","chocolat-mon-amour":"img/chocolat-mon-amour-800.jpg","framboise-cherie":"img/framboise-cherie-800.jpg","citron-ma-passion":"img/citron-ma-passion-800.jpg"};
   var FR = { Raspberry: 'Framboise', Pistachio: 'Pistache', Chocolate: 'Chocolat', Coffee: 'Café', Coconut: 'Coco' };
@@ -36,7 +36,7 @@
       closed_pre: 'We’re closed now. Order for pickup from {next}.', closed_off: 'We’re closed now and open again {next}. I can still answer questions.',
       signoff: ['Merci, it’s in your bag.', 'C’est noté. It’s in your bag.', 'Avec plaisir. Bonne journée.'] },
     starters: ['Fill my box', 'Today’s best', 'Gift ideas', 'Pickup times', 'Cakes'], chips: ['Is everything plant-based?', 'A birthday cake', 'Are you open?'], suggest: ['Is everything plant-based?', 'Are you open?', 'A birthday cake for 12'],
-    popup: { variant: 'fallback', delay_ms: 4000, idle_empty_ms: 45000, idle_bag_ms: 60000, max_per_view: 2, max_per_visit: 99, cooldown_after_close_ms: 10000, typing_quiet_ms: 2000, fast_scroll_px_s: 1800, back_up_px_s: 1500, shimmer_ms: 600,
+    popup: { variant: 'fallback', delay_ms: 20000, idle_empty_ms: 45000, idle_bag_ms: 60000, max_per_view: 1, max_per_visit: 1, cooldown_after_close_ms: 600000, idle_openers: false, pairings: false, pill_products: false, typing_quiet_ms: 2000, fast_scroll_px_s: 1800, back_up_px_s: 1500, shimmer_ms: 600,
       openers: { hello: { line: 'Bonjour.', actions: ['best', 'box', 'pickup'] }, choose: { line: 'Need a hand choosing? Tell me who it’s for.', actions: ['forme', 'gift', 'table'] } }, sections: {} },
     handoff: { call: { label: 'Call 626-365-1161', href: 'tel:+16263651161' }, email: { label: 'Write to us', href: 'mailto:contact@id-eclair.com' }, directions: { label: 'Directions', href: 'https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105' } },
     facts: { plant_based: { text: 'Everything we make is plant-based: no butter, milk or eggs.' } }
@@ -473,10 +473,11 @@
   var pillTurns = 0, pillTimer = null, pillHeld = false, pillNext = null;
   function lines() {
     var out = [], s = hours(), slot = (slotLabel() || '').replace(/^Today/, 'today');
+    if (document.documentElement.getAttribute('data-mode') === 'ship') return [{ t: 'Ships nationwide: chocolate, cookies, jams', ask: 'Do you deliver?' }, { t: '100% plant-based, every piece', ask: 'Is everything plant-based?' }];
     if (pillNext) out.push(pillNext);
     if (s && !s.open) out.push({ t: 'Closed now · order for ' + (slot || (s.next ? s.next.label : 'later')), ask: 'Pickup times' });
-    out.push({ t: 'Box of six, $15.00', ask: 'Fill my box' });
-    if (engine) engine.today(engine.laToday ? engine.laToday() : null).forEach(function (h) { var i = engine.item(h); if (i && !soldOut(h)) out.push({ t: i.title + ', ' + money(i.price), ask: 'Today’s best' }); });
+    if (P.pill_products !== false) out.push({ t: 'Box of six, $15.00', ask: 'Fill my box' });
+    if (engine && P.pill_products !== false) engine.today(engine.laToday ? engine.laToday() : null).forEach(function (h) { var i = engine.item(h); if (i && !soldOut(h)) out.push({ t: i.title + ', ' + money(i.price), ask: 'Today’s best' }); });
     if (slot && (!s || s.open)) out.push({ t: 'Pickup ' + slot + ' is open', ask: 'Pickup times' });
     out.push({ t: 'Celebrating? Cakes on a week’s notice', ask: 'Cakes' });
     out.push({ t: '100% plant-based, every piece', ask: 'Is everything plant-based?' });
@@ -526,7 +527,7 @@
   function visit() { return get('sessionStorage', POP, { n: 0, closed: 0 }); }
   function canAuto() {
     var v = visit(), now = Date.now();
-    return !pop && !dismissedView && !muted() && shownThisView < P.max_per_view && now - Math.max(v.closed || 0, lastClose) > P.cooldown_after_close_ms &&
+    return !pop && !dismissedView && !muted() && shownThisView < P.max_per_view && (v.n || 0) < (P.max_per_visit || 99) && now - Math.max(v.closed || 0, lastClose) > P.cooldown_after_close_ms &&
       now - lastType > P.typing_quiet_ms && !searchActive() && now - lastFast > 700 && root && root.hidden && !$('.drawer.open');
   }
   function context() {
@@ -612,9 +613,9 @@
   /* after an add: the pickup time and one pairing, once per pairing */
   function afterAdd(h, fromPop) {
     if (closedOff()) return;
-    var pr = engine && pairRule();
+    var pr = P.pairings !== false && engine && pairRule();
     if (pr && pr.h) { var pi = engine.item(pr.h); if (pi) { pillNext = { t: (pr.id === 'coffee' ? 'A coffee with that? ' : 'Goes well with it: ') + pi.title + ', ' + money(pi.price), ask: 'Add a ' + pi.title }; pillTurns = 0; turnPill(); } }
-    var r = pairRule(), shown = get('sessionStorage', PAIRS, []), first = !get('sessionStorage', 'lumiere.confirmed.v1', false);
+    var r = P.pairings !== false ? pairRule() : null, shown = get('sessionStorage', PAIRS, []), first = !get('sessionStorage', 'lumiere.confirmed.v1', false);
     var extra = '<p class="pop-slot"><button type="button" class="pop-chip" data-change-slot>' + esc(slotLabel() || 'Choose a pickup time') + '</button></p>';
     if (r && shown.indexOf(r.id) < 0) {
       shown.push(r.id); put('sessionStorage', PAIRS, shown);
@@ -674,6 +675,7 @@
   function tryAuto(kind) { if (canAuto()) showPop(kind || context()); }
   function resetIdle() {
     clearTimeout(idleT);
+    if (P.idle_openers === false) return;
     idleT = setTimeout(function () {
       if (count()) { if (!bagIdleDone) { bagIdleDone = true; if (canAuto()) showPop('waiting', { line: fill(S.bag_waiting, { n: count() + (count() === 1 ? ' item' : ' items'), slot: (slotLabel() || 'soon').replace(/^Today/, 'today') }), actions: ['bag'], keep: true }); } }
       else tryAuto('choose');
@@ -725,7 +727,7 @@
     var items = bag(), h = '';
     if (items.length) {
       h += '<div class="bag-counter"><span class="cm-av" aria-hidden="true">' + MARK + '</span><p>' + esc(S.bag_line) + '</p></div>';
-      var r = engine ? pairRule() : null, shown = get('sessionStorage', PAIRS, []);
+      var r = engine && P.pairings !== false ? pairRule() : null, shown = get('sessionStorage', PAIRS, []);
       if (r && (shown.indexOf(r.id) < 0 || $('#bag [data-pair="' + r.id + '"]'))) {
         if (shown.indexOf(r.id) < 0) { shown.push(r.id); put('sessionStorage', PAIRS, shown); }
         if (r.note) h += '<div class="pair" data-pair="note"><p class="pair-k">Goes well with</p><p class="pair-t">Giving the box? Write a line for the gift note.</p><a class="tbtn" href="#gift" data-cart-close>Write the note</a></div>';

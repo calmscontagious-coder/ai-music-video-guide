@@ -719,3 +719,34 @@ button.add.is-sold,.add.is-sold{background:transparent;color:var(--color-muted);
   .srch-chips{margin-right:0;flex-wrap:wrap;overflow:visible}
 }
 @media (max-width:420px){.srch-it{grid-template-columns:minmax(0,1fr) auto}.srch-it .pr{grid-column:1;grid-row:2}.srch-it .add{grid-column:2;grid-row:1 / span 2}}
+
+/* ---------- 11. how you'd like it: pickup, local delivery, ships nationwide (chef, 2026-11-05) ----------
+   One inline choice under the headline, never a pop-up. Ship mode shows only what keeps (gift, jam, cookie
+   categories in menu.json); the fresh chapters step out of the page and the chapter bar. */
+.mode{display:grid;gap:var(--sp-2);margin-top:var(--sp-4);justify-items:start}
+.mode-q{margin:0;font:800 var(--t-14)/1.2 var(--font-text);letter-spacing:.08em;text-transform:uppercase;color:var(--color-muted)}
+.mode-seg{display:grid;grid-template-columns:repeat(3,auto);gap:4px;padding:4px;border:1px solid var(--color-line);border-radius:var(--radius-pill);background:var(--paper);max-width:100%}
+.mode-seg button{min-height:44px;padding:0 var(--sp-4);border:0;border-radius:var(--radius-pill);background:transparent;color:var(--color-ink);font:700 var(--t-14)/1.15 var(--font-text);cursor:pointer;transition:background-color var(--dur-fast) var(--ease-move),color var(--dur-fast) var(--ease-move)}
+.mode-seg button:hover{color:var(--color-brand)}
+.mode-seg button[aria-checked="true"]{background:var(--color-brand);color:var(--color-on-brand)}
+.mode-seg button:focus-visible{outline:2px solid var(--color-focus);outline-offset:2px}
+.mode-note{margin:0;font-size:var(--t-14);line-height:1.45;color:var(--color-muted);max-width:46ch}
+@media (max-width:480px){
+  .mode,.mode-seg{width:100%}
+  .mode-seg{grid-template-columns:repeat(3,minmax(0,1fr));border-radius:16px}
+  .mode-seg button{padding:6px 6px;border-radius:12px;white-space:normal}
+}
+html:not([data-mode="ship"]) [data-ship-band],html:not([data-mode="ship"]) [data-ship-tab]{display:none}
+html[data-mode="ship"] :is(#macarons,#box,#compare,#pickup,#cakes,#class,#la-cave),
+html[data-mode="ship"] .hero :is(.stage,.hero-cta,.hero-lead,.hero-more){display:none}
+html[data-mode="ship"] .sub a:is([href="#eclairs"],[href="#macarons"],[href="#box"],[href="#pickup"],[href="#cakes"],[href="#class"],[href="#la-cave"]){display:none}
+.ship-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:var(--sp-4);margin:var(--sp-6) 0 0;padding:0;list-style:none}
+.ship-card{display:grid;gap:var(--sp-2);align-content:start;min-width:0;background:var(--paper);border:1px solid var(--color-line);border-radius:var(--radius-md);padding:var(--sp-3)}
+.ship-card img{display:block;width:100%;max-width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius-sm);background:var(--ivory-2)}
+.ship-card h3{margin:0;font-size:var(--t-16)}
+.ship-card p{margin:0;font-size:var(--t-14);line-height:1.4;color:var(--color-muted)}
+.ship-card .row{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-2);margin-top:auto}
+.ship-card .pr{font-weight:800;color:var(--color-ink)}
+.ship-wait{color:var(--color-muted);font-size:var(--t-14)}
+.ship-ph{display:grid;place-items:center;aspect-ratio:1;border-radius:var(--radius-sm);background:var(--ivory-2)}
+.ship-ph img{width:34%;aspect-ratio:1;opacity:.55;background:none}
