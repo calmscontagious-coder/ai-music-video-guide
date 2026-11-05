@@ -73,8 +73,8 @@
   --c-focus:var(--c-gold-bright);
   --flav-raspberry:#9e2235;--flav-pistachio:#9fbf8c;--flav-chocolate:#5b3a2e;--flav-coffee:#a47551;--flav-coconut:#f4f0e8;
 
-  --font-display:"Newsreader","Iowan Old Style",Georgia,serif;
-  --font-text:"Newsreader","Iowan Old Style",Georgia,serif;
+  --font-display:"Fraunces",Georgia,serif;
+  --font-text:"Nunito Sans",Arial,sans-serif;
   --font-ui:"DM Mono",ui-monospace,"SF Mono",Menlo,monospace;
   --t-caption:.8125rem;--t-ui:.9375rem;--t-body:1.125rem;--t-lead:1.375rem;--t-h3:1.875rem;--t-h2:2.75rem;
   --t-display:clamp(2.625rem,4.9vw,4.375rem);

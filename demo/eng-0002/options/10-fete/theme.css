@@ -47,7 +47,7 @@
   --hairline: #a8833f;
   --display-wght: 600;
   --motif: linear-gradient(transparent, transparent);
-  --motif-fill: var(--heart);
+  --motif-fill: var(--hairline);
   --rule-image: linear-gradient(var(--hairline), var(--hairline));
   --rule-size: 100% 1px;
   --rule-repeat: no-repeat;
@@ -532,3 +532,15 @@ body :not(h1) { font-variant-numeric: lining-nums tabular-nums !important; }
 .foot-meta { display: flex; flex-wrap: wrap; gap: 0 16px; margin: 8px 0 0; padding: 0; list-style: none; }
 .foot-meta li { margin: 0; }
 .foot-meta a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* Gemini v4 grade fixes (2026-11-05, LQ-045): heart red means "buy" once per first
+   screen (the default skin's motif moved to the gold hairline; every skin's heart and
+   on-heart pair is 4.5:1 or better); French italics reach headings and legends; on
+   phones the rule under the hero is gone and the hero starts 4 px higher, so the moment
+   card sits above the fold. */
+.mo-buy .add { background: var(--heart); border-color: var(--heart); color: var(--on-heart); }
+@media (hover: hover) { .mo-buy .add:hover { background: var(--brand); border-color: var(--brand); color: var(--on-brand); } }
+:is(h1, h2, h3, legend, p, li, dd, figcaption, label) > span[lang="fr"] { font-family: var(--font-display); font-style: italic; }
+@media (max-width: 759px) {
+  .hero { padding-top: var(--s-3); }
+}
