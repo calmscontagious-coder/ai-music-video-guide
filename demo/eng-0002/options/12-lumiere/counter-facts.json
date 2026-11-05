@@ -1,0 +1,265 @@
+{
+ "version": 1,
+ "written": "2026-11-04",
+ "about": "What the pastry counter may say, in the shop’s voice. One entry per house note; the wording is the shop’s, the facts are unchanged. Notes still being settled are left blank, so the counter does not mention them.",
+ "strings": {
+  "title": "The pastry counter",
+  "sub": "iD Éclair · 169 W Green St",
+  "greeting": "Bonjour, can I help you with your order?",
+  "disclosure": "Our online counter answers from the menu and our house notes. It isn’t a person; the team is a call away.",
+  "dont_know": "That one I’d rather not guess. The team can tell you: call 626-365-1161 or write to contact@id-eclair.com.",
+  "person": "This is iD Éclair’s online counter. It answers from our menu and house notes, and it isn’t a person. To speak with the team, call 626-365-1161 or write to contact@id-eclair.com.",
+  "placeholder": "Ask about the case, a cake, pickup…",
+  "signoff": [
+   "Merci. It’s in your bag.",
+   "C’est noté. It’s in your bag.",
+   "Merci, see you at the counter."
+  ]
+ },
+ "starters": [
+  "What’s best today?",
+  "Build a gift box",
+  "Pickup times"
+ ],
+ "chips": [
+  "Is everything plant-based?",
+  "A birthday cake",
+  "The macaron class",
+  "Gluten-free?",
+  "When is La Cave open?"
+ ],
+ "suggest": [
+  "Is everything plant-based?",
+  "Do you have nut-free options?",
+  "Is it gluten-free?",
+  "What are your hours?",
+  "Can I pick up tomorrow?",
+  "A birthday cake for 12",
+  "When is the macaron class?",
+  "Add two chocolate éclairs",
+  "A box of six with pistachio",
+  "How much is the Paris-Brest?",
+  "Where are you?",
+  "Do you deliver?",
+  "Do you have rewards?",
+  "A gift under $40",
+  "When is La Cave open?",
+  "Tea party for two",
+  "Do you take Apple Pay?",
+  "Is there parking?"
+ ],
+ "handoff": {
+  "call": {
+   "label": "Call 626-365-1161",
+   "href": "tel:+16263651161"
+  },
+  "email": {
+   "label": "Write to us",
+   "href": "mailto:contact@id-eclair.com"
+  },
+  "directions": {
+   "label": "Directions",
+   "href": "https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105"
+  }
+ },
+ "facts": {
+  "address": {
+   "text": "169 W Green St, Old Pasadena, CA 91105.",
+   "status": "published",
+   "from": "facts.json:address"
+  },
+  "plant_based": {
+   "text": "Everything we make is plant-based: no butter, milk or eggs. La Cave next door is a vegan wine bar.",
+   "status": "published",
+   "from": "facts.json:plant_based"
+  },
+  "hours_bakery": {
+   "text": "Our hours are being confirmed, since the public listings disagree, so please call 626-365-1161 before you come. We are closed on Mondays.",
+   "status": "disputed",
+   "from": "facts.json:hours_bakery"
+  },
+  "closed_mondays": {
+   "text": "We are closed on Mondays.",
+   "status": "published",
+   "from": "facts.json:closed_mondays"
+  },
+  "la_cave": {
+   "text": "La Cave is our vegan wine bar next door at 163 W Green St: French, organic, biodynamic and vegan wines, small plates, Rebel Cheese boards and plated desserts paired with a glass. Open Wednesday to Sunday, 3 to 9 pm.",
+   "status": "published",
+   "from": "facts.json:la_cave"
+  },
+  "masterclass": {
+   "text": "The Macaron Masterclass is hands-on, Tuesdays 3:30 to 5:30 pm, $125 a seat, with 20 to 30 macarons to take home. Seats are very limited; today we book them by DM or in person.",
+   "status": "published",
+   "from": "facts.json:masterclass"
+  },
+  "class_cutoff": {
+   "text": "",
+   "status": "proposed",
+   "from": "facts.json:class_cutoff"
+  },
+  "golden_ticket": {
+   "text": "The Golden Ticket is a class pass with an organic chocolate tablet, $140 on our online store; whoever receives it picks the date with us.",
+   "status": "published",
+   "from": "facts.json:golden_ticket"
+  },
+  "custom_cake_notice": {
+   "text": "Custom cakes need one week’s notice. Tell the chef the occasion, the guests and the flavour, and he replies with a sketch and a price before anything is baked.",
+   "status": "published",
+   "from": "facts.json:custom_cake_notice"
+  },
+  "menu_cake_notice": {
+   "text": "",
+   "status": "proposed",
+   "from": "facts.json:menu_cake_notice"
+  },
+  "wedding_cake_notice": {
+   "text": "For a wedding, ask early: the chef answers with the dates he can take.",
+   "status": "proposed",
+   "from": "facts.json:wedding_cake_notice"
+  },
+  "bespoke_consult": {
+   "text": "",
+   "status": "proposed",
+   "from": "facts.json:bespoke_consult"
+  },
+  "cake_addons": {
+   "text": "",
+   "status": "proposed",
+   "from": "facts.json:cake_addons"
+  },
+  "cake_estimate_rule": {
+   "text": "",
+   "status": "example",
+   "from": "facts.json:cake_estimate_rule",
+   "per_guest": 15
+  },
+  "cake_sizes": {
+   "text": "",
+   "status": "example",
+   "from": "facts.json:cake_sizes",
+   "sizes": [
+    {
+     "id": "6",
+     "label": "6-inch",
+     "tiers": 1,
+     "min": 4,
+     "max": 6
+    },
+    {
+     "id": "8",
+     "label": "8-inch",
+     "tiers": 1,
+     "min": 7,
+     "max": 12
+    },
+    {
+     "id": "10",
+     "label": "10-inch",
+     "tiers": 1,
+     "min": 13,
+     "max": 20
+    },
+    {
+     "id": "2t",
+     "label": "Two tiers",
+     "tiers": 2,
+     "min": 21,
+     "max": 40
+    },
+    {
+     "id": "3t",
+     "label": "Three tiers",
+     "tiers": 3,
+     "min": 41,
+     "max": 80
+    }
+   ]
+  },
+  "pickup_lead": {
+   "text": "Choose a day and a time and we box your order for then. Orders on our online store are usually ready in 24 hours.",
+   "status": "proposed",
+   "from": "facts.json:pickup_lead"
+  },
+  "box_of_six": {
+   "text": "Six macarons are $15 at the counter, and you choose the six. The assorted box on our online store is $18. The flavours are raspberry, pistachio, chocolate, coffee and coconut; the morning bake decides what is in the case.",
+   "status": "published",
+   "from": "facts.json:box_of_six"
+  },
+  "afternoon_tea": {
+   "text": "Tea party for two is $80 in the salon, with the chef’s selection of sweets and savouries; each extra guest is $40, while supplies last. Please book it ahead.",
+   "status": "published",
+   "from": "facts.json:afternoon_tea"
+  },
+  "gluten_board": {
+   "text": "The counter board marks the soup du jour as gluten-free, and the endive and grandmother beet salades as gluten-free without their crostini.",
+   "status": "published",
+   "from": "facts.json:gluten_board"
+  },
+  "gluten_store": {
+   "text": "Our online store labels these gluten-free in the product title or tag.",
+   "status": "published",
+   "from": "facts.json:gluten_store",
+   "handles": [
+    "macarons",
+    "caneles",
+    "chocolat-mon-amour",
+    "framboise-cherie",
+    "citron-ma-passion",
+    "caramel-je-taime",
+    "4-desserts-in-jar",
+    "chocolate-fingers-sables-poches",
+    "cookie-spoon",
+    "dark-chocolate-truffles",
+    "white-chocolate-truffles",
+    "kushyflakes",
+    "gift-basket-large"
+   ]
+  },
+  "gluten_caution": {
+   "text": "Gluten-free on a label means under 20 parts per million. We also bake croissants and baguettes, so if it is for coeliac disease, please ask the counter first.",
+   "status": "published",
+   "from": "facts.json:gluten_caution"
+  },
+  "allergens": {
+   "text": "We have not published an allergen chart yet. Almond is in Framboise chérie, Citron ma passion and Caramel je t’aime, hazelnut in Noisette toujours, pistachio in the pistachio éclair and the Dubai bar (which also has tahini, made from sesame), and coconut in Douceur tropicale. Please tell the counter about any allergy before you order.",
+   "status": "published",
+   "from": "facts.json:allergens"
+  },
+  "fees": {
+   "text": "The price on the menu is the price you pay; a tip at checkout is optional.",
+   "status": "proposed",
+   "from": "facts.json:fees"
+  },
+  "payment": {
+   "text": "We accept most major credit cards, as well as Google Pay and Apple Pay.",
+   "status": "published",
+   "from": "facts.json:payment"
+  },
+  "delivery": {
+   "text": "Today we deliver through Uber Eats, DoorDash and Grubhub, and pickup is at 169 W Green St.",
+   "status": "published",
+   "from": "facts.json:delivery"
+  },
+  "gift_cards": {
+   "text": "To give a seat at the bench, the Golden Ticket is $140 on our online store.",
+   "status": "proposed",
+   "from": "facts.json:gift_cards"
+  },
+  "gift_note": {
+   "text": "Write your line in the gift note at checkout.",
+   "status": "proposed",
+   "from": "facts.json:gift_note"
+  },
+  "carnet": {
+   "text": "Members earn points on orders in our ordering app, where the daily menu is ordered for pickup; the current perks are in the app.",
+   "status": "proposed",
+   "from": "facts.json:carnet"
+  },
+  "parking": {
+   "text": "Street parking around Green Street is paid. There are tables outside, and dogs are welcome.",
+   "status": "published",
+   "from": "facts.json:parking"
+  }
+ }
+}

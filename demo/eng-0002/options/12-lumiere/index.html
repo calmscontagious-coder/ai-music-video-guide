@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#faf7f2">
+<title>The éclair, made from plants, at 169 W Green St. iD Éclair concept, Lumière.</title>
+<meta name="description" content="Plant-based French pâtisserie in Old Pasadena from a chef trained in a three-Michelin-star kitchen. Éclairs from $5.50, a box of six macarons for $15.00, celebration cakes on a week’s notice, the Tuesday masterclass and La Cave next door. Pickup at the time you choose.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="iD Éclair">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="The éclair, made entirely from plants">
+<meta property="og:description" content="Five éclairs, a box of six you fill yourself, cakes on a week’s notice and a Tuesday class, at 169 W Green St, Old Pasadena.">
+<meta property="og:image" content="../../img/shop/eclairs-slate-1200.jpg">
+<meta property="og:image:alt" content="A spread of éclairs with different glazes and decorations on a dark slate">
+<link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/fraunces-roman-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../assets/fonts/nunito-sans-roman-latin.woff2">
+<link rel="preload" as="image" type="image/avif" media="(max-width:899px)" imagesrcset="../../img/shop/eclairs-slate-480.avif 480w, ../../img/shop/eclairs-slate-800.avif 800w, ../../img/shop/eclairs-slate-1200.avif 1200w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width:900px)" imagesrcset="../../img/shop/eclairs-slate-800.avif 800w, ../../img/shop/eclairs-slate-1200.avif 1200w, ../../img/shop/eclairs-slate-1600.avif 1600w" imagesizes="75vw" fetchpriority="high">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+/* Lumière, critical layer: tokens, base, header, chapter bar, the first chapter and the dock's hidden state.
+   Everything below the first screen is in lumiere.css. Colours in OKLCH: the logo's indigo and heart,
+   and the shop's ivory. */
+:root{
+  --ivory:oklch(0.977 0.007 80);--ivory-2:oklch(0.952 0.012 78);--paper:oklch(0.997 0.002 80);
+  --color-brand:oklch(0.281 0.14 277.7);--color-brand-deep:oklch(0.2 0.14 277.7);
+  --color-ink:oklch(0.227 0.082 284.9);--color-muted:oklch(0.45 0.07 278);--color-line:oklch(0.885 0.014 80);
+  --color-accent:oklch(0.582 0.221 24.5);--color-focus:oklch(0.582 0.221 24.5);--color-on-brand:oklch(0.977 0.007 80);
+  --font-display:"Fraunces",Georgia,serif;--font-text:"Nunito Sans",Arial,sans-serif;
+  --t-14:.875rem;--t-16:1rem;--t-19:1.1875rem;--t-25:1.5625rem;--t-34:2.125rem;--t-45:2.8125rem;--t-60:3.75rem;--t-92:5.75rem;
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-6:24px;--sp-8:32px;--sp-12:48px;--sp-16:64px;--sp-24:96px;
+  --radius-sm:12px;--radius-md:24px;--radius-pill:999px;
+  --shadow-e2:0 2px 6px oklch(0.3 0.02 277.7 / .08);--shadow-e4:0 12px 32px oklch(0.3 0.02 277.7 / .12);
+  --dur-fast:150ms;--dur-base:250ms;--ease-enter:cubic-bezier(.2,0,0,1);--ease-exit:cubic-bezier(.4,0,1,1);--ease-move:cubic-bezier(.3,0,0,1);
+  --measure-body:62ch;--sub-h:48px;--gutter:16px
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--sub-h) + 16px);scroll-padding-bottom:96px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:var(--ivory);color:var(--color-ink);font:400 var(--t-19)/1.45 var(--font-text);-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--color-focus);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:var(--sp-4);top:-64px;z-index:90;background:var(--color-brand);color:var(--color-on-brand);padding:var(--sp-3) var(--sp-4);border-radius:var(--radius-sm)}
+.skip:focus{top:var(--sp-2)}
+[lang="fr"]{font-family:var(--font-display);font-style:italic}
+.notice{background:var(--ivory-2);color:var(--color-muted);font-size:var(--t-14);line-height:1.4;padding:var(--sp-2) var(--gutter)}
+.notice p{max-width:1200px;margin-inline:auto}
+.notice b{color:var(--color-ink)}
+.notice .more{display:none}
+.top{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-4);max-width:1360px;margin-inline:auto;padding:var(--sp-2) var(--gutter);min-height:64px}
+.logo img{width:76px;height:auto}
+.nav{display:none}
+.cartbtn{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:var(--color-brand);text-decoration:none}
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.badge{position:absolute;top:0;right:0;min-width:20px;height:20px;border-radius:10px;padding:0 var(--sp-1);background:var(--color-accent);color:var(--paper);font:800 .75rem/20px var(--font-text);text-align:center;font-variant-numeric:tabular-nums;display:none}
+.badge.on{display:block}
+.sub{position:sticky;top:0;z-index:30;background:var(--ivory);border-bottom:1px solid var(--color-line)}
+.sub-in{display:flex;align-items:center;gap:var(--sp-1);max-width:1360px;margin-inline:auto;padding:0 var(--sp-2);height:var(--sub-h);overflow-x:auto;scrollbar-width:none}
+.sub-in::-webkit-scrollbar{display:none}
+.sub-in a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 var(--sp-3);font:700 var(--t-14)/1 var(--font-text);color:var(--color-muted);text-decoration:none;white-space:nowrap;position:relative}
+.sub-in a[aria-current="true"]{color:var(--color-brand)}
+.sub-in a[aria-current="true"]::after{content:"";position:absolute;left:var(--sp-3);right:var(--sp-3);bottom:6px;height:2px;border-radius:2px;background:var(--color-brand)}
+.sub-bag{display:none}
+.sub-prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--color-brand);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+h1,.ch-t{font-family:var(--font-display);font-weight:600;font-size:var(--t-45);line-height:1.04;letter-spacing:-.015em;color:var(--color-brand);text-wrap:balance}
+.kick{font:700 var(--t-14)/1.4 var(--font-text);color:var(--color-muted);margin-bottom:var(--sp-3);letter-spacing:.01em}
+.lead{max-width:var(--measure-body)}
+.ch-head{padding:var(--sp-8) var(--gutter) var(--sp-6)}
+.ch-fig{position:sticky;top:var(--sub-h);z-index:0;overflow:hidden;margin:0}
+.ch-fig img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.hero .ch-fig img{aspect-ratio:3/2}
+.ch-copy{position:relative;z-index:1;background:var(--ch-bg,var(--ivory));border-radius:var(--radius-md) var(--radius-md) 0 0;margin-top:calc(var(--sp-6) * -1);padding:var(--sp-8) var(--gutter) var(--sp-16);box-shadow:0 -12px 24px oklch(0.3 0.02 277.7 / .08)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);min-height:52px;padding:0 var(--sp-8);border-radius:var(--radius-pill);border:0;background:var(--color-brand);color:var(--color-on-brand);font:700 var(--t-16)/1.2 var(--font-text);text-decoration:none;cursor:pointer;transition:transform var(--dur-fast) var(--ease-move),background-color var(--dur-fast) var(--ease-move)}
+.btn:active{transform:scale(.98)}
+.btn[disabled]{background:var(--ivory-2);color:var(--color-muted);cursor:not-allowed}
+[hidden]{display:none !important}
+.btn svg{width:16px;height:16px;flex:none;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round}
+.hero .ch-copy{display:flex;flex-direction:column;gap:var(--sp-6)}
+.hero .ch-copy > *{margin:0}
+.hero .cta{order:-1}
+.btn-wide{width:100%;max-width:400px}
+.dock{position:fixed;left:var(--sp-3);right:var(--sp-3);bottom:calc(var(--sp-3) + env(safe-area-inset-bottom));z-index:40;transform:translateY(calc(100% + 32px));transition:transform var(--dur-base) var(--ease-exit)}
+.drawer{position:fixed;inset:0;z-index:60;visibility:hidden;pointer-events:none}
+@media (min-width:720px){.notice .more{display:inline}}
+@media (min-width:900px){
+  :root{--gutter:48px;--sub-h:56px}
+  .top{min-height:72px}
+  .logo img{width:88px}
+  .nav{display:flex;gap:var(--sp-1)}
+  .nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 var(--sp-3);font:700 var(--t-14)/1 var(--font-text);color:var(--color-ink);text-decoration:none}
+  .top .cartbtn{display:none}
+  .sub-in{padding:0 var(--gutter)}
+  .sub-bag{display:inline-flex;align-items:center;gap:var(--sp-2);margin-left:auto;min-height:40px;padding:0 var(--sp-4);border-radius:var(--radius-pill);border:0;background:var(--color-brand);color:var(--color-on-brand);font:700 var(--t-14)/1 var(--font-text);cursor:pointer;position:relative}
+  .sub-bag .badge{position:static}
+  h1,.ch-t{font-size:var(--t-92);line-height:1}
+  .ch{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:var(--sp-16);max-width:1360px;margin-inline:auto;padding:var(--sp-24) var(--gutter)}
+  .ch-fig{grid-column:1;grid-row:1 / span 2;top:calc(var(--sub-h) + var(--sp-8));align-self:start;height:calc(100svh - var(--sub-h) - var(--sp-16));min-height:480px;max-height:880px;border-radius:var(--radius-md)}
+  .ch-fig picture,.ch-fig img,.hero .ch-fig img{width:100%;height:100%;aspect-ratio:auto}
+  .ch-head{grid-column:2;padding:12svh 0 var(--sp-6)}
+  .ch-copy{grid-column:2;margin:0;padding:0 0 12svh;background:none;box-shadow:none;border-radius:0}
+  .flip .ch-fig{grid-column:2}
+  .flip .ch-head,.flip .ch-copy{grid-column:1}
+  .hero.ch{padding-top:var(--sp-8)}
+  .hero .ch-head{padding-top:2svh}
+  .hero .cta{order:0}
+  .hero .ch-copy{gap:var(--sp-8)}
+  .dock{display:none}
+}
+@media (min-width:900px) and (max-height:820px){.hero h1{font-size:var(--t-60)}.hero .ch-head{padding-top:0}}
+</style>
+<link rel="stylesheet" href="lumiere.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="lumiere.css"></noscript>
+<script src="lumiere.js" defer></script>
+<script src="../../assets/app.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Bakery","@id":"https://www.id-eclair.com/#bakery","name":"iD Éclair","description":"A 100% plant-based French pâtisserie and salon de thé on West Green Street in Old Pasadena, led by chef-owner Romuald Guiot.","url":"https://www.id-eclair.com/","image":"https://cdn.shopify.com/s/files/1/0617/7937/8364/files/GG_2085.jpg?v=1740687892","telephone":"+1-626-365-1161","address":{"@type":"PostalAddress","streetAddress":"169 W Green St","addressLocality":"Pasadena","addressRegion":"CA","postalCode":"91105","addressCountry":"US"},"servesCuisine":["French","Vegan"],"hasMenu":{"@id":"https://www.id-eclair.com/#menu"},"founder":{"@type":"Person","name":"Romuald Guiot","jobTitle":"Chef-owner"},"sameAs":["https://www.instagram.com/ideclairlosangeles/","https://www.tiktok.com/@ideclairlosangeles"]},
+{"@type":"Menu","@id":"https://www.id-eclair.com/#menu","name":"Counter menu","inLanguage":"en","description":"Prices from the shop’s menu app, read 21 October 2026, and its online store, read 22 October 2026.","hasMenuSection":[
+ {"@type":"MenuSection","name":"Éclairs","hasMenuItem":[
+  {"@type":"MenuItem","name":"Chocolate éclair","description":"Glossy chocolate glaze, gold leaf","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"6.50","priceCurrency":"USD"}},
+  {"@type":"MenuItem","name":"Pistachio éclair","description":"Pistachio glaze, gold leaf","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"6.50","priceCurrency":"USD"}},
+  {"@type":"MenuItem","name":"Espresso éclair","description":"Espresso glaze, gold leaf","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"5.50","priceCurrency":"USD"}},
+  {"@type":"MenuItem","name":"Chef’s special éclair","description":"The chef’s éclair of the moment","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"9.00","priceCurrency":"USD"}},
+  {"@type":"MenuItem","name":"Paris-Brest","description":"Praline cream in a choux ring","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"6.75","priceCurrency":"USD"}}]},
+ {"@type":"MenuSection","name":"Macarons","hasMenuItem":[
+  {"@type":"MenuItem","name":"Macaron","description":"One, or six for $15","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"3.00","priceCurrency":"USD"}},
+  {"@type":"MenuItem","name":"Box of six macarons","description":"You choose the six","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"15.00","priceCurrency":"USD"}},
+  {"@type":"MenuItem","name":"Assorted macaron box","description":"Raspberry, pistachio, chocolate, coffee, coconut","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"18.00","priceCurrency":"USD","url":"https://www.id-eclair.com/products/macarons"}},
+  {"@type":"MenuItem","name":"Four desserts in a jar","description":"The discovery box: all four love-note jars","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"30.00","priceCurrency":"USD","url":"https://www.id-eclair.com/products/4-desserts-in-jar"}}]},
+ {"@type":"MenuSection","name":"Cakes, class and La Cave","hasMenuItem":[
+  {"@type":"MenuItem","name":"Mousse cake","description":"Individual entremets, with a message plaque of up to 35 characters","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"15.00","priceCurrency":"USD"}},
+  {"@type":"MenuItem","name":"Macaron Masterclass","description":"Two hands-on hours, Tuesdays 3:30 to 5:30 pm; 20 to 30 macarons to take home","offers":{"@type":"Offer","price":"125.00","priceCurrency":"USD"}},
+  {"@type":"MenuItem","name":"Golden Ticket","description":"A pass to an upcoming macaron class, with an organic chocolate tablet","offers":{"@type":"Offer","price":"140.00","priceCurrency":"USD","url":"https://www.id-eclair.com/products/golden-ticket"}},
+  {"@type":"MenuItem","name":"Cheese board","description":"Rebel Cheese, baguette, dried fruit and nuts; serves 10","suitableForDiet":"https://schema.org/VeganDiet","offers":{"@type":"Offer","price":"100.00","priceCurrency":"USD","url":"https://www.id-eclair.com/products/cheese-board"}}]}]},
+{"@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"Is everything plant-based?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything in the case is made from plants, with no eggs and no dairy. The croissants are laminated with plant butter."}},
+ {"@type":"Question","name":"What about allergies?","acceptedAnswer":{"@type":"Answer","text":"Many pieces carry nuts or coconut, such as the almond streusel in the jars, and wheat appears in many recipes. Tell the counter about any allergy before you order."}},
+ {"@type":"Question","name":"How far ahead should I order a celebration cake?","acceptedAnswer":{"@type":"Answer","text":"A week. The shop asks for a week’s notice on custom cakes, and the chef replies with a sketch and a price before anything is baked."}},
+ {"@type":"Question","name":"When is the Macaron Masterclass?","acceptedAnswer":{"@type":"Answer","text":"Tuesdays, 3:30 to 5:30 pm, at $125.00 a seat, with 20 to 30 macarons to take home. Seats are very limited. Today they’re booked by DM or in person."}},
+ {"@type":"Question","name":"What is La Cave?","acceptedAnswer":{"@type":"Answer","text":"The vegan wine bar one door down, at 163 W Green St: organic, biodynamic and vegan wines, Rebel Cheese boards and plated desserts from the pâtisserie. Its published hours are Wednesday to Sunday, 3 to 9 pm, for guests 21 and over."}}]},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"iD Éclair","item":"https://www.id-eclair.com/"},{"@type":"ListItem","position":2,"name":"Lumière, design 12"}]}
+]}
+</script>
+</head>
+<body data-home="index.html">
+<a class="skip" href="#main">Skip to the éclairs</a>
+
+<aside class="notice" aria-label="Concept preview">
+  <p><b>Concept preview.</b> Prices checked 21–22 Oct 2026; slots are examples.<span class="more"> Direction 12, Lumière. Live-store items check out on id-eclair.com; counter items, class seats and the box builder run on example data.</span></p>
+</aside>
+
+<header class="top">
+  <a class="logo" href="index.html" aria-label="iD Éclair, home"><img src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="88px" width="904" height="658" alt="iD Éclair, Pâtisserie Française by Romuald Guiot"></a>
+  <nav class="nav" aria-label="Pages">
+    <a href="../../menu.html">Menu</a><a href="../../cakes.html">Cakes</a><a href="../../classes.html">Classes</a><a href="../../merch.html">Shop</a><a href="../../la-cave.html">La Cave</a><a href="../../story.html">Chef Romy</a>
+  </nav>
+  <a class="cartbtn" href="#pickup" data-cart-open aria-label="Your bag, 0 items"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="badge" data-cart-count>0</span></a>
+</header>
+
+<nav class="sub" aria-label="Chapters">
+  <div class="sub-in" data-sub>
+    <a href="#eclairs" aria-current="true">Éclairs</a><a href="#macarons">Macarons</a><a href="#box">Your box</a><a href="#pickup">Pickup</a><a href="#cakes">Cakes</a><a href="#class">The class</a><a href="#la-cave">La Cave</a>
+    <button class="sub-hello" type="button" data-bonjour hidden aria-label="Bonjour. Ask the pastry counter"><img src="counter-mark.png" width="192" height="192" alt="" role="presentation" loading="lazy">Bonjour</button>
+    <button class="sub-bag" type="button" data-cart-open aria-label="Your bag"><span>Bag</span><span class="badge" data-cart-count>0</span><b data-cart-total></b></button>
+  </div>
+  <span class="sub-prog" aria-hidden="true" data-prog></span>
+</nav>
+
+<main id="main">
+<div id="menu">
+
+<section class="chapter hero" id="eclairs" aria-labelledby="h1">
+  <div class="ch">
+    <div class="ch-head">
+      <p class="kick">iD Éclair · 169 W Green St, Old Pasadena</p>
+      <h1 id="h1">The éclair, made entirely from plants.</h1>
+    </div>
+    <figure class="ch-fig" data-grid-break>
+      <picture>
+<source type="image/avif" srcset="../../img/shop/eclairs-slate-480.avif 480w, ../../img/shop/eclairs-slate-800.avif 800w, ../../img/shop/eclairs-slate-1200.avif 1200w, ../../img/shop/eclairs-slate-1600.avif 1600w" sizes="(min-width:900px) 75vw, 100vw">
+<source type="image/webp" srcset="../../img/shop/eclairs-slate-480.webp 480w, ../../img/shop/eclairs-slate-800.webp 800w, ../../img/shop/eclairs-slate-1200.webp 1200w, ../../img/shop/eclairs-slate-1600.webp 1600w" sizes="(min-width:900px) 75vw, 100vw">
+<img src="../../img/shop/eclairs-slate-1200.jpg" width="2400" height="1600" alt="A spread of éclairs with different glazes and decorations on a dark slate" fetchpriority="high" decoding="async">
+</picture>
+    </figure>
+    <div class="ch-copy">
+      <p class="lead">Chocolate glaze and gold leaf, $6.50. Made by a chef trained in a three-Michelin-star kitchen and a finalist on Food Network’s Spring Baking Championship.</p>
+      <div class="cta" data-card>
+        <button class="btn btn-wide" type="button" data-add data-handle="chocolate-eclair" data-title="Chocolate éclair" data-price="6.5" data-glyph="é" aria-label="Add a chocolate éclair, $6.50">Add a chocolate éclair · $6.50</button>
+        <p class="when"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-next-slot>Next pickup today</span><small>example</small></p>
+      </div>
+      <p class="why">His favourite pastry, he told Eater LA in September 2024, for how well it travels and how many ways it can go.</p>
+      <h2 class="list-t">Five in the case</h2>
+      <ul class="rows" role="list">
+        <li data-card><span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Chocolate éclair</b><small>Glossy chocolate glaze, gold leaf</small></span><span class="pr">$6.50</span><button class="add" type="button" data-add data-handle="chocolate-eclair" data-title="Chocolate éclair" data-price="6.5" data-glyph="é" aria-label="Add Chocolate éclair, $6.50">Add</button></li>
+        <li data-card><span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Pistachio éclair</b><small>Pistachio glaze, gold leaf</small></span><span class="pr">$6.50</span><button class="add" type="button" data-add data-handle="pistachio-eclair" data-title="Pistachio éclair" data-price="6.5" data-glyph="é" aria-label="Add Pistachio éclair, $6.50">Add</button></li>
+        <li data-card><span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Espresso éclair</b><small>Espresso glaze, gold leaf</small></span><span class="pr">$5.50</span><button class="add" type="button" data-add data-handle="espresso-eclair" data-title="Espresso éclair" data-price="5.5" data-glyph="é" aria-label="Add Espresso éclair, $5.50">Add</button></li>
+        <li data-card><span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Chef’s special éclair</b><small>The chef’s éclair of the moment</small></span><span class="pr">$9.00</span><button class="add" type="button" data-add data-handle="chefs-special-eclair" data-title="Chef’s special éclair" data-price="9" data-glyph="é" aria-label="Add the Chef’s special éclair, $9.00">Add</button></li>
+        <li data-card><span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Paris-Brest</b><small>Praline cream in a choux ring</small></span><span class="pr">$6.75</span><button class="add" type="button" data-add data-handle="paris-brest" data-title="Paris-Brest" data-price="6.75" data-glyph="P" aria-label="Add Paris-Brest, $6.75">Add</button></li>
+      </ul>
+      <p class="fine">Same day from the case. Counter items: today they’re paid at the counter or on the menu app, and the bag says so.</p>
+      <button class="ask" type="button" data-ask-open data-ask="Is everything plant-based?" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-4 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg>Ask the pastry counter</button>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="macarons" aria-labelledby="h-macarons">
+  <div class="ch flip">
+    <div class="ch-head">
+      <h2 class="ch-t" id="h-macarons">Macarons.</h2>
+    </div>
+    <figure class="ch-fig">
+      <picture>
+<source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/macarons-plate-480.avif 480w, ../../img/shop/macarons-plate-800.avif 800w, ../../img/shop/macarons-plate-1200.avif 1200w, ../../img/shop/macarons-plate-1600.avif 1600w" sizes="(min-width:900px) 52vw">
+<source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/macarons-plate-480.webp 480w, ../../img/shop/macarons-plate-800.webp 800w, ../../img/shop/macarons-plate-1200.webp 1200w, ../../img/shop/macarons-plate-1600.webp 1600w" sizes="(min-width:900px) 52vw">
+<source type="image/avif" srcset="../../img/shop/macarons-plate-sq-480.avif 480w, ../../img/shop/macarons-plate-sq-800.avif 800w" sizes="100vw">
+<source type="image/webp" srcset="../../img/shop/macarons-plate-sq-480.webp 480w, ../../img/shop/macarons-plate-sq-800.webp 800w" sizes="100vw">
+<img src="../../img/shop/macarons-plate-sq-800.jpg" width="800" height="800" alt="Six macarons on a blue glazed plate" loading="lazy" decoding="async">
+</picture>
+    </figure>
+    <div class="ch-copy">
+      <p class="lead">Five flavours from the shop’s own box: raspberry, pistachio, chocolate, coffee and coconut. $3.00 each, or six for $15.00, and you choose the six.</p>
+      <ul class="specs" role="list">
+        <li><b>5</b><span>flavours, from the shop’s assorted-box listing</span></li>
+        <li><b>$3.00</b><span>for one at the counter</span></li>
+        <li><b>$15.00</b><span>for a box of six you fill</span></li>
+      </ul>
+      <a class="btn btn-wide" href="#box">Fill a box of six</a>
+      <p class="fine">The live store lists its assorted box as gluten-free. The morning bake decides what is in the case.</p>
+      <button class="ask" type="button" data-ask-open data-ask="Are the macarons gluten-free?" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-4 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg>Ask the pastry counter</button>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<section class="band" id="box" aria-labelledby="h-box">
+  <div class="wrap bx">
+    <div class="bx-head">
+      <h2 id="h-box">Six macarons. You choose. $15.00.</h2>
+      <div class="lastbox" data-lastbox hidden></div>
+      <p class="lead">Tap a flavour to drop it in, tap a macaron to take it back out. On their own they’re $3.00 each, so the box saves $3.00 on six.</p>
+    </div>
+    <div class="bx-build" data-box data-price="15" data-title="Box of six macarons" data-image="img/macarons-2-800.jpg">
+      <div class="tray" data-tray>
+        <div class="tray-top"><p class="tray-n"><b data-box-n>0</b> of 6</p><p class="tray-pr">$15.00 <small>for the six</small></p></div>
+        <div class="wells" data-box-slots role="group" aria-live="polite" aria-label="Your box"></div>
+        <div class="meter" aria-hidden="true"><span></span></div>
+        <p class="tray-gap" data-box-gap aria-live="polite">Six wells, $15.00 for the box.</p>
+      </div>
+      <div class="flavours" role="group" aria-label="Flavours">
+        <button type="button" data-f="Framboise" data-short="Fram"><i class="f-raspberry"></i><span><span lang="fr">Framboise</span><small>raspberry</small></span></button>
+        <button type="button" data-f="Pistache" data-short="Pist"><i class="f-pistachio"></i><span><span lang="fr">Pistache</span><small>pistachio</small></span></button>
+        <button type="button" data-f="Chocolat" data-short="Choc"><i class="f-chocolate"></i><span><span lang="fr">Chocolat</span><small>chocolate</small></span></button>
+        <button type="button" data-f="Café" data-short="Café"><i class="f-coffee"></i><span><span lang="fr">Café</span><small>coffee</small></span></button>
+        <button type="button" data-f="Coco" data-short="Coco"><i class="f-coconut"></i><span><span lang="fr">Coco</span><small>coconut</small></span></button>
+      </div>
+      <div class="bx-foot">
+        <button class="btn btn-wide" type="button" data-box-add disabled>Fill the box first</button>
+        <div class="bx-more"><button class="tbtn" type="button" data-box-surprise>Surprise me</button><button class="tbtn" type="button" data-box-clear>Start over</button></div>
+        <p class="fine">Flavours from the shop’s assorted-box listing; the morning bake decides what is in the case. Counter item, paid at the counter or on the menu app today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-alt" id="compare" aria-labelledby="h-compare">
+  <div class="wrap">
+    <h2 id="h-compare">Which box is right for you?</h2>
+    <div class="cmp" role="list">
+      <article class="cmp-col" role="listitem" data-card>
+        <picture>
+<source type="image/avif" srcset="../../img/shop/macarons-plate-sq-480.avif 480w, ../../img/shop/macarons-plate-sq-800.avif 800w" sizes="(min-width:900px) 360px, 30vw">
+<source type="image/webp" srcset="../../img/shop/macarons-plate-sq-480.webp 480w, ../../img/shop/macarons-plate-sq-800.webp 800w" sizes="(min-width:900px) 360px, 30vw">
+<img src="../../img/shop/macarons-plate-sq-800.jpg" width="800" height="800" alt="Six macarons on a blue glazed plate" loading="lazy" decoding="async">
+</picture>
+        <h3>Your six</h3>
+        <p class="cmp-pr">$15.00</p>
+        <dl>
+          <div><dt>Inside</dt><dd>Six you choose from five flavours</dd></div>
+          <div><dt>Ready</dt><dd>At your pickup time, same day</dd></div>
+          <div><dt>Checkout</dt><dd>Counter item</dd></div>
+          <div><dt>Best for</dt><dd>Choosing every flavour</dd></div>
+        </dl>
+        <a class="add" href="#box">Build it</a>
+      </article>
+      <article class="cmp-col" role="listitem" data-card>
+        <img src="../../img/macarons-2-800.jpg" srcset="../../img/macarons-2-800.jpg 800w, ../../img/macarons-2.webp 1600w" sizes="(min-width:900px) 360px, 30vw" width="800" height="800" alt="Six macarons lined up in a white iD Éclair box" loading="lazy" decoding="async">
+        <h3>The assorted box</h3>
+        <p class="cmp-pr">$18.00</p>
+        <dl>
+          <div><dt>Inside</dt><dd>Raspberry, pistachio, chocolate, coffee, coconut</dd></div>
+          <div><dt>Ready</dt><dd>Usually in 24 hours</dd></div>
+          <div><dt>Checkout</dt><dd>On id-eclair.com today</dd></div>
+          <div><dt>Best for</dt><dd>A box ready to hand over</dd></div>
+        </dl>
+        <button class="add" type="button" data-add data-handle="macarons" data-title="Assorted macaron box" data-price="18" data-variant="42881210810556" data-image="img/macarons-2-800.jpg" aria-label="Add the assorted macaron box, $18.00">Add</button>
+      </article>
+      <article class="cmp-col" role="listitem" data-card>
+        <img src="../../img/4-desserts-in-jar-2-800.jpg" srcset="../../img/4-desserts-in-jar-2-800.jpg 800w, ../../img/4-desserts-in-jar-2.webp 1600w" sizes="(min-width:900px) 360px, 30vw" width="800" height="800" alt="Love-note dessert jars with biscuit spoons in clear sleeves, Framboise chérie and Chocolat mon amour in front" loading="lazy" decoding="async">
+        <h3>The four jars</h3>
+        <p class="cmp-pr">$30.00</p>
+        <dl>
+          <div><dt>Inside</dt><dd>All four love-note jars</dd></div>
+          <div><dt>Ready</dt><dd>Usually in 24 hours</dd></div>
+          <div><dt>Checkout</dt><dd>On id-eclair.com today</dd></div>
+          <div><dt>Best for</dt><dd>A table, or a very good week</dd></div>
+        </dl>
+        <button class="add" type="button" data-add data-handle="4-desserts-in-jar" data-title="Four desserts in a jar" data-price="30" data-variant="41826161557692" data-image="img/4-desserts-in-jar-2-800.jpg" aria-label="Add Four desserts in a jar, $30.00">Add</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pickup" aria-labelledby="h-pickup">
+  <div class="wrap pk">
+    <div class="pk-head">
+      <h2 id="h-pickup">Pickup in two taps.</h2>
+      <p class="ready">Ready <span data-ready>today</span>.</p>
+      <p class="lead">The earliest slot is already chosen. Keep it, or pick another day and time, and your name goes on the box at 169 W Green St.</p>
+    </div>
+    <div class="slot" role="group" data-slot-picker aria-label="Pickup time picker, example">
+      <div class="slot-head"><h3>Pickup time</h3><span class="ex">Example</span></div>
+      <div class="days" role="group" aria-label="Day" data-days>
+        <button class="chip" type="button" aria-pressed="true"><b>Today</b>&nbsp;</button>
+        <button class="chip" type="button" aria-pressed="false"><b>Next</b>&nbsp;</button>
+        <button class="chip" type="button" aria-pressed="false"><b>Then</b>&nbsp;</button>
+        <button class="chip" type="button" aria-pressed="false"><b>After</b>&nbsp;</button>
+      </div>
+      <div class="times" role="group" aria-label="Time" data-times>
+        <button class="chip" type="button" aria-pressed="false">10:00</button>
+        <button class="chip" type="button" aria-pressed="false">11:00</button>
+        <button class="chip" type="button" aria-pressed="false">12:30</button>
+        <button class="chip" type="button" aria-pressed="true">1:30</button>
+        <button class="chip" type="button" aria-pressed="false">2:30</button>
+        <button class="chip" type="button" aria-pressed="false">3:30</button>
+        <button class="chip" type="button" aria-pressed="false">4:30</button>
+        <button class="chip" type="button" aria-pressed="false">5:30</button>
+      </div>
+      <div class="slot-foot"><span data-slot-note>Slots close themselves when the kitchen is full</span><b data-slot-out>Choose a time</b></div>
+      <div data-review><button class="btn btn-wide" type="button" data-cart-open>Review your bag · <span data-cart-total>$0.00</span></button></div>
+      <p class="fine">Example slots. The kitchen sets the real hours, slot length and caps per slot.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>100% plant-based</dt><dd>No eggs and no dairy in anything in the case. The croissants are laminated with plant butter.</dd></div>
+      <div><dt>Allergies</dt><dd>Many pieces carry nuts or coconut, and wheat appears in many recipes. Tell the counter before you order.</dd></div>
+      <div><dt>Checkout</dt><dd>Live-store items check out on id-eclair.com with your pickup time attached. Counter items wait for the new checkout; today they are paid at the counter or on the menu app.</dd></div>
+      <div><dt>Delivery</dt><dd>On <a href="https://www.ubereats.com/store/id-eclair-169-west-green-street/DZBavqIJUAuR3qdYMA7QNQ" target="_blank" rel="noopener">Uber Eats</a>, <a href="https://www.doordash.com/en/store/id-eclair-pasadena-32543221/" target="_blank" rel="noopener">DoorDash</a> and <a href="https://www.grubhub.com/restaurant/id-eclair-169-w-green-st-pasadena/10198432" target="_blank" rel="noopener">Grubhub</a>, at those apps’ prices.</dd></div>
+    </dl>
+    <button class="ask" type="button" data-ask-open data-ask="Can I pick up tomorrow?" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-4 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg>Ask the pastry counter about pickup</button>
+  </div>
+</section>
+
+<section class="chapter" id="cakes" aria-labelledby="h-cakes">
+  <div class="ch">
+    <div class="ch-head">
+      <h2 class="ch-t" id="h-cakes">Celebration cakes.</h2>
+    </div>
+    <figure class="ch-fig">
+      <picture>
+<source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/chef-competition-480.avif 480w, ../../img/shop/chef-competition-800.avif 800w, ../../img/shop/chef-competition-1200.avif 1200w" sizes="(min-width:900px) 75vw">
+<source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/chef-competition-480.webp 480w, ../../img/shop/chef-competition-800.webp 800w, ../../img/shop/chef-competition-1200.webp 1200w" sizes="(min-width:900px) 75vw">
+<source type="image/avif" srcset="../../img/shop/chef-competition-sq-480.avif 480w, ../../img/shop/chef-competition-sq-800.avif 800w" sizes="100vw">
+<source type="image/webp" srcset="../../img/shop/chef-competition-sq-480.webp 480w, ../../img/shop/chef-competition-sq-800.webp 800w" sizes="100vw">
+<img src="../../img/shop/chef-competition-sq-800.jpg" width="800" height="800" alt="The chef at the 28th US Pastry Competition, finishing a chocolate showpiece" loading="lazy" decoding="async">
+</picture>
+    </figure>
+    <div class="ch-copy">
+      <p class="lead">Give the chef a week. Tell him the occasion, the guests and the flavour, and he sends back a sketch and a price before anything is baked.</p>
+      <ol class="steps" role="list">
+        <li><b>One week’s notice.</b> The shop asks for it on every custom cake.</li>
+        <li><b>A sketch, then a price.</b> Start from a flavour in the case, such as <span lang="fr">Chocolat mon amour</span> or <span lang="fr">Framboise chérie</span>; the chef confirms which work as a whole cake.</li>
+        <li><b>A deposit holds your date.</b> Paid on a Shopify invoice; the balance comes before pickup at 169 W Green St.</li>
+      </ol>
+      <a class="btn btn-wide" href="../../cakes.html">Start your cake</a>
+      <div class="row-one" data-card>
+        <span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Sooner: a mousse cake</b><small>The counter’s entremets, with a message plaque of up to 35 characters</small></span>
+        <span class="pr">$15.00</span>
+        <button class="add" type="button" data-add data-handle="mousse-cake" data-title="Mousse cake" data-price="15" data-glyph="M" aria-label="Add a mousse cake, $15.00">Add</button>
+      </div>
+      <button class="ask" type="button" data-ask-open data-ask="A birthday cake for 12" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-4 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg>Ask the pastry counter</button>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="class" aria-labelledby="h-class">
+  <div class="ch flip">
+    <div class="ch-head">
+      <h2 class="ch-t" id="h-class">The class.</h2>
+    </div>
+    <figure class="ch-fig">
+      <picture>
+<source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/class-group-480.avif 480w, ../../img/shop/class-group-800.avif 800w, ../../img/shop/class-group-1200.avif 1200w, ../../img/shop/class-group-1600.avif 1600w" sizes="(min-width:900px) 52vw">
+<source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/class-group-480.webp 480w, ../../img/shop/class-group-800.webp 800w, ../../img/shop/class-group-1200.webp 1200w, ../../img/shop/class-group-1600.webp 1600w" sizes="(min-width:900px) 52vw">
+<source type="image/avif" srcset="../../img/shop/class-group-sq-480.avif 480w, ../../img/shop/class-group-sq-800.avif 800w" sizes="100vw">
+<source type="image/webp" srcset="../../img/shop/class-group-sq-480.webp 480w, ../../img/shop/class-group-sq-800.webp 800w" sizes="100vw">
+<img src="../../img/shop/class-group-sq-800.jpg" width="800" height="800" alt="A class group holding iD Éclair bags after the masterclass" loading="lazy" decoding="async">
+</picture>
+    </figure>
+    <div class="ch-copy">
+      <p class="lead">Two hands-on hours at the bench with Chef Romy, Tuesdays 3:30 to 5:30 pm. You pipe the shells, fill them and box 20 to 30 macarons to take home.</p>
+      <ul class="specs" role="list">
+        <li><b>$125.00</b><span>a seat</span></li>
+        <li><b>2 hours</b><span>3:30 to 5:30 pm</span></li>
+        <li><b>20 to 30</b><span>macarons to take home</span></li>
+      </ul>
+      <h3 class="list-t">The next three Tuesdays <small>Example seat counts</small></h3>
+      <ul class="rows" role="list">
+        <li data-card><span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Tue 10 Nov</b><small>5 of 8 seats left</small></span><span class="pr">$125.00</span><button class="add" type="button" data-add data-handle="macaron-masterclass-2026-11-10" data-title="Macaron Masterclass, Tue 10 Nov" data-price="125" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat" aria-label="Reserve a seat on Tue 10 Nov, $125.00">Reserve</button></li>
+        <li data-card><span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Tue 17 Nov</b><small>3 of 8 seats left</small></span><span class="pr">$125.00</span><button class="add" type="button" data-add data-handle="macaron-masterclass-2026-11-17" data-title="Macaron Masterclass, Tue 17 Nov" data-price="125" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat" aria-label="Reserve a seat on Tue 17 Nov, $125.00">Reserve</button></li>
+        <li data-card><span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Tue 24 Nov</b><small>1 of 8 seats left</small></span><span class="pr">$125.00</span><button class="add" type="button" data-add data-handle="macaron-masterclass-2026-11-24" data-title="Macaron Masterclass, Tue 24 Nov" data-price="125" data-glyph="M" data-meta="3:30 to 5:30 pm, one seat" aria-label="Reserve a seat on Tue 24 Nov, $125.00">Reserve</button></li>
+      </ul>
+      <p class="fine">Seats are very limited, which keeps the bench small. Today the shop books by DM or in person; Reserve shows how a seat joins the same bag as your éclairs. <a href="../../classes.html">Every Tuesday and private sessions</a></p>
+      <button class="ask" type="button" data-ask-open data-ask="When is the macaron class?" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-4 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg>Ask the pastry counter</button>
+    </div>
+  </div>
+</section>
+
+<section class="chapter night" id="la-cave" aria-labelledby="h-cave">
+  <div class="ch">
+    <div class="ch-head">
+      <p class="kick" lang="fr">Un verre, un éclair.</p>
+      <h2 class="ch-t" id="h-cave">La Cave.</h2>
+    </div>
+    <figure class="ch-fig">
+      <picture>
+<source media="(min-width:900px)" type="image/avif" srcset="../../img/shop/cheese-board-480.avif 480w, ../../img/shop/cheese-board-800.avif 800w, ../../img/shop/cheese-board-1200.avif 1200w, ../../img/shop/cheese-board-1600.avif 1600w" sizes="(min-width:900px) 75vw">
+<source media="(min-width:900px)" type="image/webp" srcset="../../img/shop/cheese-board-480.webp 480w, ../../img/shop/cheese-board-800.webp 800w, ../../img/shop/cheese-board-1200.webp 1200w, ../../img/shop/cheese-board-1600.webp 1600w" sizes="(min-width:900px) 75vw">
+<source type="image/avif" srcset="../../img/shop/cheese-board-sq-480.avif 480w, ../../img/shop/cheese-board-sq-800.avif 800w" sizes="100vw">
+<source type="image/webp" srcset="../../img/shop/cheese-board-sq-480.webp 480w, ../../img/shop/cheese-board-sq-800.webp 800w" sizes="100vw">
+<img src="../../img/shop/cheese-board-sq-800.jpg" width="800" height="800" alt="The cheese board: Rebel Cheese, fruit, crackers and bread" loading="lazy" decoding="async">
+</picture>
+    </figure>
+    <div class="ch-copy">
+      <p class="lead">One door down at 163 W Green St: organic, biodynamic and vegan wines, Rebel Cheese boards, and plated desserts from the kitchen next door. Wednesday to Sunday, 3 to 9 pm, as published, for guests 21 and over.</p>
+      <div class="row-one" data-card>
+        <span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>The cheese board, for ten</b><small>Rebel Cheese, baguette, dried fruit and nuts. On the live store, pickup only.</small></span>
+        <span class="pr">$100.00</span>
+        <button class="add" type="button" data-add data-handle="cheese-board" data-title="Cheese board" data-price="100" data-variant="45433279971516" data-image="img/cheese-board-1-800.jpg" aria-label="Add the cheese board for ten, $100.00">Add</button>
+      </div>
+      <a class="tlink" href="../../la-cave.html#reserve">Reserve a table at La Cave</a>
+      <button class="ask" type="button" data-ask-open data-ask="When is La Cave open?" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-4 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg>Ask the pastry counter</button>
+    </div>
+  </div>
+</section>
+
+<section class="band band-alt" id="chef" aria-labelledby="h-chef">
+  <div class="wrap chef">
+    <figure class="chef-fig">
+      <picture>
+<source type="image/avif" srcset="../../img/shop/chef-piping-480.avif 480w" sizes="(min-width:900px) 320px, 200px">
+<source type="image/webp" srcset="../../img/shop/chef-piping-480.webp 480w" sizes="(min-width:900px) 320px, 200px">
+<img src="../../img/shop/chef-piping-480.jpg" width="480" height="720" alt="Black-and-white photograph of hands piping at the bench" loading="lazy" decoding="async">
+</picture>
+    </figure>
+    <div class="chef-copy">
+      <h2 id="h-chef">Romy Guiot, fourth generation.</h2>
+      <p class="lead">He trained at <span lang="fr">La Maison de Marc Veyrat</span>, three Michelin stars, opened La Mirabelle in New York in 2015 and reached the final of Food Network’s Spring Baking Championship. At 169 W Green St he makes French <span lang="fr">pâtisserie</span> from plants, and guests are often surprised to learn it.</p>
+      <dl class="proof">
+        <div><dt>3 stars</dt><dd>Michelin, at <span lang="fr">La Maison de Marc Veyrat</span></dd></div>
+        <div><dt>Season 8</dt><dd>Spring Baking Championship finalist</dd></div>
+        <div><dt>2017</dt><dd>US Pastry Competition finalist</dd></div>
+        <div><dt>4.7</dt><dd>on Yelp, from about 280 reviews (read 21 Oct 2026)</dd></div>
+      </dl>
+      <p class="fine">The day’s leftovers go to Friends In Deed in Pasadena, a habit that began after the Eaton Fire. <a href="../../story.html">His story, from the family kitchen</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band members" id="members" aria-labelledby="h-members">
+  <div class="wrap mb">
+    <div class="pass" aria-hidden="true">
+      <div class="pass-top"><img src="../../img/logo-wordmark-ivory.png" width="904" height="658" alt="" role="presentation" loading="lazy" decoding="async"><span class="pass-k">Members</span></div>
+      <div class="pass-mid"><span class="pass-l">Points</span><span class="pass-v">On every order in our app</span></div>
+      <div class="pass-row"><div><span class="pass-l">Member</span><span class="pass-v2">Your name</span></div><div><span class="pass-l">Pickup</span><span class="pass-v2">169 W Green St</span></div></div>
+      <svg class="pass-code" viewBox="0 0 200 40" preserveAspectRatio="none"><path d="M4 0v40M10 0v40M13 0v40M20 0v40M26 0v40M29 0v40M35 0v40M42 0v40M45 0v40M52 0v40M58 0v40M61 0v40M68 0v40M74 0v40M77 0v40M84 0v40M90 0v40M93 0v40M100 0v40M106 0v40M109 0v40M116 0v40M122 0v40M125 0v40M132 0v40M138 0v40M141 0v40M148 0v40M154 0v40M157 0v40M164 0v40M170 0v40M173 0v40M180 0v40M186 0v40M189 0v40M196 0v40"/></svg>
+    </div>
+    <div class="mb-copy">
+      <h2 id="h-members">Members earn points on every order in our app.</h2>
+      <p class="lead">Rewards live in the shop’s ordering app, the one that takes the daily menu for pickup and delivery. Joining is free.</p>
+      <ol class="steps" role="list">
+        <li><b>Open our ordering app.</b> On an iPhone it opens as an App Clip, with nothing to install.</li>
+        <li><b>Create your account.</b> Your orders and points stay with it.</li>
+        <li><b>Order as usual.</b> Pickup or delivery, now or scheduled; points add up on every order.</li>
+      </ol>
+      <a class="btn btn-wide" href="https://id-eclair.curated.menu/restaurant-locator/6a34661c2d34bb209e3d6780" target="_blank" rel="noopener">Join free in the ordering app</a>
+      <p class="fine">Points and perks are set in the app; ask at the counter for the current ones. Orders on the online store, id-eclair.com, are separate from the app.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="gift" aria-labelledby="h-gift">
+  <div class="wrap gift">
+    <figure class="gift-fig">
+      <picture>
+<source type="image/avif" srcset="../../img/shop/ticket-hands-sq-480.avif 480w, ../../img/shop/ticket-hands-sq-800.avif 800w" sizes="(min-width:900px) 480px, 100vw">
+<source type="image/webp" srcset="../../img/shop/ticket-hands-sq-480.webp 480w, ../../img/shop/ticket-hands-sq-800.webp 800w" sizes="(min-width:900px) 480px, 100vw">
+<img src="../../img/shop/ticket-hands-sq-800.jpg" width="800" height="800" alt="Two hands holding the Golden Ticket over a table" loading="lazy" decoding="async">
+</picture>
+    </figure>
+    <div class="gift-copy">
+      <h2 id="h-gift">Give them a seat at the bench.</h2>
+      <p class="lead">The Golden Ticket: a place at an upcoming macaron masterclass and an organic chocolate tablet, $140.00 on the live store. They choose the Tuesday with the shop.</p>
+      <div class="note" data-note>
+        <div class="note-fields">
+          <label for="nt-to">For</label>
+          <input id="nt-to" type="text" maxlength="40" autocomplete="off" placeholder="Their name">
+          <label for="nt-line">A line from you</label>
+          <input id="nt-line" type="text" maxlength="90" autocomplete="off" placeholder="Pour toi, un éclair par jour.">
+        </div>
+        <div class="note-card" aria-live="polite">
+          <p class="note-to">For <span data-note-to>someone who loves macarons</span></p>
+          <p class="note-line" data-note-line lang="fr">Pour toi, un éclair par jour.</p>
+          <p class="note-foot">Golden Ticket · Macaron Masterclass with Chef Romy</p>
+        </div>
+      </div>
+      <div class="row-one" data-card>
+        <span class="nm"><b><svg class="inbag" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg>Golden Ticket</b><small>Dark chocolate 60% tablet. Write your line in the gift note at checkout.</small></span>
+        <span class="pr">$140.00</span>
+        <button class="add" type="button" data-add data-handle="golden-ticket" data-title="Golden Ticket (dark chocolate 60%)" data-price="140" data-variant="45561722503356" data-image="img/golden-ticket-800.jpg" aria-label="Add the Golden Ticket, $140.00">Add</button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="gf" id="gift-finder" data-gf hidden>
+      <h3>Find the right box in three taps</h3>
+      <div class="gf-step" data-step="who" role="group" aria-labelledby="gf-who"><p class="gf-q" id="gf-who">Who is it for?</p><div class="gf-opts"><button type="button" data-k="who" data-v="host" aria-pressed="false">A host</button><button type="button" data-k="who" data-v="colleague" aria-pressed="false">A colleague</button><button type="button" data-k="who" data-v="family" aria-pressed="false">Family</button><button type="button" data-k="who" data-v="sweetheart" aria-pressed="false">Someone special</button></div></div>
+      <div class="gf-step" data-step="occ" role="group" aria-labelledby="gf-occ"><p class="gf-q" id="gf-occ">The occasion?</p><div class="gf-opts"><button type="button" data-k="occ" data-v="birthday" aria-pressed="false">A birthday</button><button type="button" data-k="occ" data-v="thanks" aria-pressed="false">A thank-you</button><button type="button" data-k="occ" data-v="holidays" aria-pressed="false">The holidays</button><button type="button" data-k="occ" data-v="because" aria-pressed="false">Just because</button></div></div>
+      <div class="gf-step" data-step="budget" role="group" aria-labelledby="gf-budget"><p class="gf-q" id="gf-budget">Your budget?</p><div class="gf-opts"><button type="button" data-k="budget" data-v="20" aria-pressed="false">Up to $20</button><button type="button" data-k="budget" data-v="40" aria-pressed="false">Up to $40</button><button type="button" data-k="budget" data-v="60" aria-pressed="false">Up to $60</button><button type="button" data-k="budget" data-v="150" aria-pressed="false">Up to $150</button></div></div>
+      <div class="gf-out" data-gf-out aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-alt" id="faq" aria-labelledby="h-faq">
+  <div class="wrap faq">
+    <h2 id="h-faq">Before you order.</h2>
+    <div class="qa"><h3>Is everything plant-based?</h3><p>Yes. Everything in the case is made from plants, with no eggs and no dairy. The croissants are laminated with plant butter.</p></div>
+    <div class="qa"><h3>What about allergies?</h3><p>Many pieces carry nuts or coconut, such as the almond streusel in the jars, and wheat appears in many recipes. Tell the counter about any allergy before you order.</p></div>
+    <div class="qa"><h3>How far ahead should I order a celebration cake?</h3><p>A week. The shop asks for a week’s notice on custom cakes, and the chef replies with a sketch and a price before anything is baked.</p></div>
+    <div class="qa"><h3>When is the Macaron Masterclass?</h3><p>Tuesdays, 3:30 to 5:30 pm, at $125.00 a seat, with 20 to 30 macarons to take home. Seats are very limited. Today they’re booked by DM or in person.</p></div>
+    <div class="qa"><h3>What is La Cave?</h3><p>The vegan wine bar one door down, at 163 W Green St: organic, biodynamic and vegan wines, Rebel Cheese boards and plated desserts from the pâtisserie. Its published hours are Wednesday to Sunday, 3 to 9 pm, for guests 21 and over.</p></div>
+    <div class="qa qa-ask"><h3>Something else?</h3><p>The pastry counter answers from our menu and house notes, and hands you to the team when it can’t.</p><button class="ask" type="button" data-ask-open data-ask="" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-4 4v-4H6.5A2.5 2.5 0 0 1 4 13.5z"/></svg>Ask the pastry counter</button></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="addr">
+      <img class="foot-logo" src="../../img/logo-wordmark.png" srcset="../../img/logo-wordmark-200.webp 200w, ../../img/logo-wordmark-400.webp 400w, ../../img/logo-wordmark.png 904w" sizes="88px" width="904" height="658" alt="iD Éclair" loading="lazy">
+      <p><b>iD Éclair, <span lang="fr">pâtisserie</span> and <span lang="fr">salon de thé</span></b><br><a href="https://maps.apple.com/?q=169+W+Green+St,+Pasadena,+CA+91105" target="_blank" rel="noopener">169 W Green St, Pasadena, CA 91105</a>. Hours are being confirmed, since the public listings disagree.</p>
+      <p><b>La Cave, vegan wine bar</b><br>163 W Green St, next door. Wednesday to Sunday, 3 to 9 pm, as published.</p>
+      <ul class="foot-meta" role="list"><li><a href="tel:+16263651161">626-365-1161</a></li><li><a href="https://www.id-eclair.com/pages/contact" target="_blank" rel="noopener">Hours and contact</a></li><li><a href="https://www.id-eclair.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy</a></li><li><a href="https://www.id-eclair.com" target="_blank" rel="noopener">The live store</a></li></ul>
+    </div>
+    <nav aria-label="More pages">
+      <ul role="list"><li><a href="../../menu.html">The whole menu</a></li><li><a href="../../cakes.html">Cakes</a></li><li><a href="../../classes.html">Classes</a></li><li><a href="../../la-cave.html">La Cave</a></li><li><a href="../../story.html">Chef Romy</a></li><li><a href="../../merch.html">Merchandise</a></li></ul>
+    </nav>
+  </div>
+  <p class="wrap foot-fine">Concept preview, direction 12, Lumière. Not the live store. Prices read 21 and 22 October 2026.</p>
+</footer>
+
+<div class="dock is-early" data-dock role="region" aria-label="Pickup and bag">
+  <a class="dock-pick" href="#pickup"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small>Pickup</small><b data-dock-when>Earliest slot</b></span></a>
+  <button class="dock-hello" type="button" data-bonjour hidden aria-label="Bonjour. Ask the pastry counter"><img src="counter-mark.png" width="192" height="192" alt="" role="presentation" loading="lazy">Bonjour</button>
+  <button class="dock-bag" type="button" data-cart-open aria-label="Your bag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span>Bag</span><span class="badge" data-cart-count>0</span><b data-cart-total></b></button>
+</div>
+</body>
+</html>
