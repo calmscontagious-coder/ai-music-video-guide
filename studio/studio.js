@@ -1,29 +1,9 @@
-/* Purpose with Presence Studio: the plans assemble once on first view, and the "what do you need?" picker
-   marks the plan that covers every need tapped. No dependencies, no network calls, no storage.
+/* Purpose with Presence Studio: the "what do you need?" picker lights the plan that covers every need
+   tapped (instrument-panel state, no motion beyond a 200 ms state change). No dependencies, no network calls, no storage.
    Tracking: elements carry data-track="studio_cta_*"; the site's event Worker can count them later. */
 (function () {
   var root = document.documentElement;
   root.classList.add("js");
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  /* Plans assemble once when they first come into view. */
-  var tiers = document.querySelector("[data-tiers]");
-  if (tiers) {
-    var settle = function () {
-      tiers.classList.add("is-in");
-      window.setTimeout(function () { tiers.classList.add("is-settled"); }, 450);
-    };
-    if (reduce.matches || !("IntersectionObserver" in window)) {
-      settle();
-    } else {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) { settle(); io.disconnect(); }
-        });
-      }, { rootMargin: "0px 0px -10% 0px" });
-      io.observe(tiers);
-    }
-  }
 
   /* Picker: the highest plan any tapped need requires is the plan that covers them all. */
   var picker = document.querySelector("[data-picker]");
@@ -59,6 +39,9 @@
       card.setAttribute("data-fit", n === need ? "yes" : "no");
       if (note) note.hidden = n !== need;
     });
+    var tiersEl = document.querySelector("[data-tiers]");
+    if (tiersEl) tiersEl.classList.toggle("has-fit", !!need);
+    picker.classList.toggle("has-pick", !!count);
     reset.hidden = !count;
     out.textContent = "";
     if (!need) return;

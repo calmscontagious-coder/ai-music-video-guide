@@ -1,45 +1,45 @@
-/* Generated from the pwp-flagship design tokens (@theme renamed :root, web-font names added). Do not hand-edit. */
+/* Purpose with Presence studio page tokens: a copy of home-v2/tokens.css ("the workshop bench", see home-v2/DIRECTION.md), so the studio and the home are one identity. Edit home-v2/tokens.css first, then copy. */
 :root {
+  --color-canvas: oklch(0.155 0.012 255);
+  --color-surface: oklch(0.195 0.014 255);
+  --color-raised: oklch(0.235 0.016 255);
+  --color-line: oklch(0.32 0.014 255);
+  --color-line-soft: oklch(0.255 0.012 255);
+  --color-ink: oklch(0.96 0.004 255);
+  --color-muted: oklch(0.78 0.01 255);
+  --color-faint: oklch(0.68 0.012 255);
   --color-brand: oklch(0.292 0.035 252.3);
-  --color-brand-soft: oklch(0.592 0.012 252.3);
-  --color-brand-deep: oklch(0.2 0.035 252.3);
-  --color-accent: oklch(0.764 0.142 72.2);
-  --color-ink: oklch(0.22 0.016 256.8);
-  --color-muted: oklch(0.48 0.012 252.3);
-  --color-canvas: oklch(0.985 0.004 252.3);
-  --color-surface: oklch(0.995 0.003 252.3);
-  --color-line: oklch(0.9 0.008 252.3);
-  --color-focus: oklch(0.764 0.142 72.2);
-  --color-on-accent: oklch(0.22 0.016 256.8);
-  --color-success: oklch(0.62 0.12 150);
-  --color-warning: oklch(0.78 0.14 80);
-  --color-danger: oklch(0.58 0.17 25);
-  --color-neutral-50: oklch(0.985 0.004 252.3);
-  --color-neutral-100: oklch(0.965 0.004 252.3);
-  --color-neutral-200: oklch(0.93 0.005 252.3);
-  --color-neutral-300: oklch(0.88 0.005 252.3);
-  --color-neutral-400: oklch(0.8 0.006 252.3);
-  --color-neutral-500: oklch(0.68 0.007 252.3);
-  --color-neutral-600: oklch(0.55 0.009 252.3);
-  --color-neutral-700: oklch(0.42 0.01 252.3);
-  --color-neutral-800: oklch(0.3 0.011 252.3);
-  --color-neutral-900: oklch(0.22 0.012 252.3);
-  --font-display: "Fraunces Variable", "Fraunces", serif;
-  --font-text: "Figtree Variable", "Figtree", sans-serif;
-  --text-sm: 0.875rem;
+  --color-accent: oklch(0.82 0.16 75);
+  --color-accent-dim: oklch(0.82 0.16 75 / 0.16);
+  --color-on-accent: oklch(0.18 0.02 75);
+  --color-focus: oklch(0.82 0.16 75);
+  --color-plus: oklch(0.8 0.13 155);
+  --color-minus: oklch(0.74 0.14 28);
+  --color-paper: oklch(0.985 0.003 255);
+  --color-paper-ink: oklch(0.2 0.012 255);
+  --color-paper-muted: oklch(0.42 0.012 255);
+  --color-paper-line: oklch(0.86 0.006 255);
+
+  --font-display: "Bricolage Grotesque", "Bricolage Fallback", sans-serif;
+  --font-text: "Bricolage Grotesque", "Bricolage Fallback", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --text-label: 0.8125rem;
+  --text-sm: 1rem;
   --text-base: 1.125rem;
-  --text-lg: 1.375rem;
-  --text-xl: 1.75rem;
-  --text-2xl: 2.1875rem;
-  --text-3xl: 2.75rem;
-  --text-display: 3.8125rem;
-  --leading-display: 1.05;
-  --leading-tight: 1.2;
+  --text-lead: 1.375rem;
+  --text-h3: 1.875rem;
+  --text-h2: 2.75rem;
+  --text-h1: 4rem;
+  --text-hero: 6rem;
+  --leading-display: 0.98;
+  --leading-tight: 1.15;
   --leading-body: 1.45;
-  --tracking-caps: 0.08em;
-  --tracking-display: -0.015em;
+  --tracking-display: -0.025em;
+  --tracking-mono: 0.02em;
   --measure-body: 62ch;
-  --measure-wide: 78ch;
+  --measure-wide: 76ch;
+
   --spacing-1: 4px;
   --spacing-2: 8px;
   --spacing-3: 12px;
@@ -49,22 +49,14 @@
   --spacing-12: 48px;
   --spacing-16: 64px;
   --spacing-24: 96px;
-  --spacing-label: 8px;
-  --spacing-block: 24px;
-  --spacing-section: 96px;
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 24px;
-  --radius-pill: 999px;
-  --shadow-e1: 0px 1px 2px 0px oklch(0.3 0.02 252.3 / 0.06);
-  --shadow-e2: 0px 2px 6px 0px oklch(0.3 0.02 252.3 / 0.08);
-  --shadow-e3: 0px 6px 16px 0px oklch(0.3 0.02 252.3 / 0.1);
-  --shadow-e4: 0px 12px 32px 0px oklch(0.3 0.02 252.3 / 0.12);
-  --shadow-e5: 0px 24px 56px 0px oklch(0.3 0.02 252.3 / 0.14);
-  --duration-fast: 150ms;
-  --duration-base: 250ms;
-  --duration-slow: 400ms;
+  --spacing-section: 144px;
+
+  --radius-panel: 2px;
+  --radius-control: 4px;
+
+  --duration-press: 120ms;
+  --duration-state: 200ms;
+  --duration-enter: 280ms;
   --ease-enter: cubic-bezier(0.2, 0, 0, 1);
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
-  --ease-move: cubic-bezier(0.3, 0, 0, 1);
 }

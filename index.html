@@ -26,9 +26,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
-<link rel="stylesheet" href="/tokens.css">
-<link rel="stylesheet" href="/home.css?v=20261105g">
-<script src="/home.js?v=20261105g" defer></script>
+<link rel="stylesheet" href="/tokens.css?v=ebf5853d">
+<link rel="stylesheet" href="/home.css?v=a74a0bf8">
+<script src="/home.js?v=6ba604b9" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">
 {
@@ -189,6 +189,7 @@
 </div>
 <div class="hero-field" aria-hidden="true">
 <canvas class="field" data-field width="1" height="1"></canvas>
+<div class="wins" data-wins></div>
 <div class="media-slot" data-media-slot="hero-loop" hidden></div>
 </div>
 <div class="wrap">
@@ -494,23 +495,30 @@
 <button type="button" class="chip-reset" data-dial-run data-track="home_lab_dial_run">Measure again</button>
 </article>
 
-<article class="inst inst-box" aria-labelledby="d5" data-inst>
-<div class="inst-head"><span class="led" aria-hidden="true"></span><span class="inst-id">05 pass-builder</span><span class="inst-tag">component · sample classes and prices</span></div>
-<h3 id="d5">Build a six-class pass</h3>
-<div class="box-wrap">
-<svg class="box-art" viewBox="0 0 180 124" aria-hidden="true" focusable="false"><rect class="box-base" x="2" y="2" width="176" height="120" rx="2"/><g data-box-slots><rect x="14" y="14" width="44" height="44" rx="2"/><rect x="68" y="14" width="44" height="44" rx="2"/><rect x="122" y="14" width="44" height="44" rx="2"/><rect x="14" y="66" width="44" height="44" rx="2"/><rect x="68" y="66" width="44" height="44" rx="2"/><rect x="122" y="66" width="44" height="44" rx="2"/></g></svg>
-<ul class="box-items" data-box>
-<li data-price="18.00" data-tone="1"><span class="bi-swatch t1" aria-hidden="true"></span><span class="bi-name">Morning yoga</span><span class="bi-price num">$18.00</span><span class="stepper"><button type="button" class="step-btn" data-op="-1" aria-label="Remove one morning yoga class" data-track="home_lab_box_remove" disabled><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-dash"/></svg></button><span class="bi-count num" aria-hidden="true">0</span><button type="button" class="step-btn" data-op="1" aria-label="Add one morning yoga class" data-track="home_lab_box_add"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></span></li>
-<li data-price="22.00" data-tone="2"><span class="bi-swatch t2" aria-hidden="true"></span><span class="bi-name">Spin class</span><span class="bi-price num">$22.00</span><span class="stepper"><button type="button" class="step-btn" data-op="-1" aria-label="Remove one spin class" data-track="home_lab_box_remove" disabled><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-dash"/></svg></button><span class="bi-count num" aria-hidden="true">0</span><button type="button" class="step-btn" data-op="1" aria-label="Add one spin class" data-track="home_lab_box_add"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></span></li>
-<li data-price="20.00" data-tone="3"><span class="bi-swatch t3" aria-hidden="true"></span><span class="bi-name">Pilates mat</span><span class="bi-price num">$20.00</span><span class="stepper"><button type="button" class="step-btn" data-op="-1" aria-label="Remove one Pilates mat class" data-track="home_lab_box_remove" disabled><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-dash"/></svg></button><span class="bi-count num" aria-hidden="true">0</span><button type="button" class="step-btn" data-op="1" aria-label="Add one Pilates mat class" data-track="home_lab_box_add"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></span></li>
-<li data-price="19.00" data-tone="4"><span class="bi-swatch t4" aria-hidden="true"></span><span class="bi-name">Strength circuit</span><span class="bi-price num">$19.00</span><span class="stepper"><button type="button" class="step-btn" data-op="-1" aria-label="Remove one strength circuit class" data-track="home_lab_box_remove" disabled><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-dash"/></svg></button><span class="bi-count num" aria-hidden="true">0</span><button type="button" class="step-btn" data-op="1" aria-label="Add one strength circuit class" data-track="home_lab_box_add"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></span></li>
-<li data-price="12.00" data-tone="5"><span class="bi-swatch t5" aria-hidden="true"></span><span class="bi-name">Open gym hour</span><span class="bi-price num">$12.00</span><span class="stepper"><button type="button" class="step-btn" data-op="-1" aria-label="Remove one open gym hour" data-track="home_lab_box_remove" disabled><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-dash"/></svg></button><span class="bi-count num" aria-hidden="true">0</span><button type="button" class="step-btn" data-op="1" aria-label="Add one open gym hour" data-track="home_lab_box_add"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></button></span></li>
+<article class="inst inst-gbp" aria-labelledby="d5" data-inst>
+<div class="inst-head"><span class="led" aria-hidden="true"></span><span class="inst-id">05 profile-check</span><span class="inst-tag">tool · runs in your browser, nothing is sent</span></div>
+<h3 id="d5">Is your Google profile complete?</h3>
+<p class="inst-lede">Open your Business Profile in another tab and tick what is already true. The items that matter most for being picked from the map count for more.</p>
+<ul class="gbp-list" data-gbp>
+<li><input type="checkbox" id="gbp-cat" data-w="3"><label for="gbp-cat">Primary category matches what you mostly sell or do</label></li>
+<li><input type="checkbox" id="gbp-hours" data-w="3"><label for="gbp-hours">Regular hours set, and holiday hours for the next 60 days</label></li>
+<li><input type="checkbox" id="gbp-phone" data-w="2"><label for="gbp-phone">Phone number and website link both work</label></li>
+<li><input type="checkbox" id="gbp-book" data-w="3"><label for="gbp-book">Booking, order or quote link added</label></li>
+<li><input type="checkbox" id="gbp-desc" data-w="2"><label for="gbp-desc">Description filled in: what you do, for whom, where</label></li>
+<li><input type="checkbox" id="gbp-svc" data-w="2"><label for="gbp-svc">Services or products listed, with prices where you can</label></li>
+<li><input type="checkbox" id="gbp-photos" data-w="2"><label for="gbp-photos">At least 10 real photos from the last 6 months</label></li>
+<li><input type="checkbox" id="gbp-post" data-w="1"><label for="gbp-post">A profile post in the last 7 days</label></li>
+<li><input type="checkbox" id="gbp-reply" data-w="3"><label for="gbp-reply">Every review from the last 30 days has a reply</label></li>
+<li><input type="checkbox" id="gbp-qa" data-w="1"><label for="gbp-qa">Common questions answered in your own words</label></li>
+<li><input type="checkbox" id="gbp-attr" data-w="1"><label for="gbp-attr">Attributes set (accessibility, payments, parking)</label></li>
+<li><input type="checkbox" id="gbp-match" data-w="2"><label for="gbp-match">Name, address and phone identical on Apple, Bing and your site</label></li>
 </ul>
-</div>
-<p class="readout" role="status" aria-live="polite" data-box-status>Pick six. <span class="num">0</span> of <span class="num">6</span> so far.</p>
+<div class="gbp-meter" aria-hidden="true"><span class="gbp-fill" data-gbp-fill></span></div>
+<p class="readout" role="status" aria-live="polite" data-gbp-status>Score <span class="num">0</span> of <span class="num">100</span>. Tick what your profile already has.</p>
+<div class="gbp-next" data-gbp-next hidden><p class="idx">fix next</p><ol data-gbp-todo></ol></div>
 <div class="inst-actions">
-<button type="button" class="button small-btn" data-box-bag data-track="home_lab_box_copy" disabled>Copy the pass</button>
-<button type="button" class="chip-reset" data-box-reset data-track="home_lab_box_reset">Start over</button>
+<button type="button" class="button small-btn" data-gbp-copy data-track="home_lab_gbp_copy">Copy the fix list</button>
+<button type="button" class="chip-reset" data-gbp-reset data-track="home_lab_gbp_reset">Start over</button>
 </div>
 </article>
 
