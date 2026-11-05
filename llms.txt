@@ -1,14 +1,18 @@
-# AI Music Video Guide (purposewithpresence.com)
+# Purpose with Presence (purposewithpresence.com)
 
-> Independent, citation-first guides for musicians turning finished songs into AI music videos: Seedance 2.0, Kling 3.0, Veo 3.1 workflows, honest pricing math, monetization rules, and troubleshooting. Every article carries primary-source citations and FAQ schema. Facts are dated ("as of" markers) and updated on change.
+> A creative studio: web design, marketing, tools and art. The home page sells three monthly plans for local shops, cafés and bakeries (Essentials $950, Growth $1,750, Signature $2,450 a month, exact prices as of 2026-11-04) and a free AI-visibility and local-search check. The site also carries the AI Music Video Guide (citation-first guides for musicians: Seedance, Kling, Veo workflows, pricing math, monetization rules) and a fitness section; every article carries primary-source citations and FAQ schema, with dated facts.
 
 ## Studio services
+- [Purpose with Presence home](https://purposewithpresence.com/): the three plans as a configurator, what you get compared with typical agency service, a free AI-visibility and local-search check (written, within 3 business days), and in-page tools.
 - [Purpose with Presence Studio](https://purposewithpresence.com/studio/): monthly website, Google Business Profile, email, local search and AI-answer visibility plans for local shops, cafés and bakeries. Essentials $950 a month + $2,500 setup (about 3 director hours a month); Growth $1,750 a month + $5,200 setup (about 6.5 hours; adds text perks, rewards, local SEO and AEO, social, events booking); Signature $2,450 a month + $6,500 setup (about 12 hours; adds paid local ads, catering and corporate outreach, merch, monthly photo days). 3-month minimum, then month to month. Clients own every account; no guaranteed results. Prices as of 2026-11-04.
 
 ## Tools
+- [Structured-data snippet writer](https://purposewithpresence.com/#lab): builds valid LocalBusiness JSON-LD (name, type, address, phone, opening hours) in the browser.
+- [AI-visibility self-check](https://purposewithpresence.com/#lab): writes five local questions for a business type and town, opens each in ChatGPT, Perplexity or Google, and tallies what they said.
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ## Guides
+- [AI Music Video Guide hub](https://purposewithpresence.com/seedance-guide/): the Seedance and AI music video hub, the free Director's Guide sign-up, and links to every guide (moved from the site root on the publish date).
 - [AI Voice Cloning for Musicians: Narration and Intros](https://purposewithpresence.com/blog/ai-voice-cloning-for-musicians-narration-intros.html): Clone your own voice for narration, intros and dubs: instant vs professional cloning, plan prices, credits per minute, and when YouTube needs an AI label.
 - [Fan Email List for Musicians: Platforms Compared](https://purposewithpresence.com/blog/fan-email-list-newsletter-platforms-for-musicians.html): Four newsletter platforms compared for musicians who want an owned fan list: free-tier caps, which free plans include automations, entry prices, legal floor.
 - [Edit AI Clips Into a Music Video: Beat-Synced Cuts](https://purposewithpresence.com/blog/edit-ai-clips-into-a-music-video-beat-synced-cuts.html): Turn a folder of AI clips and a finished song into a music video: sort by section, beat-sync the cuts in a phone or desktop editor, and disclose AI music.

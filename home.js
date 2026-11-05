@@ -431,7 +431,7 @@
   /* ── free-check form: plain HTML POST to MailerLite (no MailerLite script), enhanced with fetch ── */
   var lead = $("[data-lead]");
   if (lead) (function () {
-    var status = $("[data-lead-status]"), btn = $(".lead-btn", lead), done = $("[data-lead-done]"), hp = $("#lf-hp", lead), THANKS = "/preview-home/free-check/thanks/";
+    var status = $("[data-lead-status]"), btn = $(".lead-btn", lead), done = $("[data-lead-done]"), hp = $("#lf-hp", lead), THANKS = "/free-check/thanks/";
     var checks = [
       { el: $("#lf-name", lead), err: $("#lf-name-err", lead), ok: function (el) { return el.value.trim().length > 1; } },
       { el: $("#lf-city", lead), err: $("#lf-city-err", lead), ok: function (el) { return el.value.trim().length > 1; } },

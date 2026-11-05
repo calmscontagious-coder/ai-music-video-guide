@@ -1,5 +1,12 @@
-# AI Music Video Guide — full content (purposewithpresence.com)
+# Purpose with Presence — full content (purposewithpresence.com)
 # One-file corpus for AI assistants. Each section: title, URL, article text.
+
+
+## Purpose with Presence: home
+URL: https://purposewithpresence.com/
+Summary: A creative studio's home: the Studio plans, a free AI-visibility check, and working tools.
+
+Purpose with Presence is a small creative studio of designers, builders and artists. For local shops, cafés and bakeries it runs the website, Google profile, emails and AI-answer visibility every month; the owner approves the week's work in one message, and every account stays in the owner's name. Three plans: Essentials $950 a month plus $2,500 setup, Growth $1,750 a month plus $5,200 setup (recommended), Signature $2,450 a month plus $6,500 setup; each has a 3-month minimum, then runs month to month, and each is priced under the market low for the same lines (Growth against a $3,400 market low). Free AI-visibility and local-search check: a written check by email within 3 business days covering the Google Business Profile, five local questions in ChatGPT, Gemini, Perplexity and Google's AI answers, the home page on a phone, five listings, and the first three fixes. No results are guaranteed. The AI Music Video Guide moved to https://purposewithpresence.com/seedance-guide/.
 
 ## Purpose with Presence Studio: plans for local businesses
 URL: https://purposewithpresence.com/studio/
