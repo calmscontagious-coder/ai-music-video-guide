@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-05T17:54:42.113329+00:00",
+ "updated_at": "2026-11-05T18:30:45.609156+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -13,7 +13,8 @@
    "toast_id": "b26f4f91-1e74-4552-9b7d-0a0f1ffab094",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/b0bf95c9-d28d-42ec-bb71-61f6aa73daf7.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/fleur-de-geisha.jpg"
   },
   {
    "handle": "7-citrus-russian",
@@ -40,7 +41,8 @@
    "toast_id": "0d96a725-06b1-469e-a34b-839f520787ba",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/b080ccb7-7d73-43a3-a32c-e08a5bb4fc95.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/montagne-bleue.jpg"
   },
   {
    "handle": "tropical-garden",
@@ -53,7 +55,8 @@
    "toast_id": "e73a7e19-0985-438b-b1d0-9de17c5010bf",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f26165f9-ae22-4560-aa88-855028453c89.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/tropical-garden.jpg"
   },
   {
    "handle": "french-garden",
@@ -66,7 +69,8 @@
    "toast_id": "365a30b1-3c50-4a27-9e5d-fc7c4235086c",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/2f979883-85a0-4664-a2dc-5680602d2122.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/french-garden.jpg"
   },
   {
    "handle": "milky-oolong",
@@ -79,7 +83,8 @@
    "toast_id": "971dd372-af34-4722-878b-b96bf3777bb5",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/6f9e712c-c154-4d0d-a06a-b2345ec038af.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/milky-oolong.jpg"
   },
   {
    "handle": "chai-imperial",
@@ -92,7 +97,8 @@
    "toast_id": "67f734d5-da51-40b5-a66b-74e06cb4609c",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/a4669a04-bd17-4977-8b41-0756c51448aa.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/chai-imperial.jpg"
   },
   {
    "handle": "the-du-louvre",
@@ -105,7 +111,8 @@
    "toast_id": "1cfda86e-d613-45d9-b840-5abd60e520df",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/d227ce2f-e98e-4c1d-bc3c-1334cc4f6b19.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/the-du-louvre.jpg"
   },
   {
    "handle": "detox-south-africa",
@@ -118,7 +125,8 @@
    "toast_id": "646c448d-e5c4-4262-8bf4-5cac7bda6a19",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/78154928-a06a-4e35-ab9b-8f1132891119.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/detox-south-africa.jpg"
   },
   {
    "handle": "chai-tea-latte",
@@ -144,7 +152,8 @@
    "toast_id": "87d571a2-c50c-407c-a11f-21aa08c2a7df",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f428a2d5-e401-40a8-88de-5d3981dfa6f7.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/herboriste-46-relaxation.jpg"
   },
   {
    "handle": "herboriste-52-digestion",
@@ -157,7 +166,8 @@
    "toast_id": "c04b4456-74f7-43de-8e4a-9f75f68eec3c",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/660cdd5d-192f-48f5-9924-9ca4c09e1c60.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/herboriste-52-digestion.jpg"
   },
   {
    "handle": "herboriste-63-immune",
@@ -170,7 +180,8 @@
    "toast_id": "41bdc550-1b4e-4a86-b54c-4e9c88e9b109",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/030c0752-c108-46e9-a8e7-5c4d4e194819.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/herboriste-63-immune.jpg"
   },
   {
    "handle": "iced-tea",
@@ -288,7 +299,8 @@
    "toast_id": "e527c810-16ef-478e-a990-4f7120fcca1d",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/960426ce-efcb-47e5-9a31-96bbcb33e434.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/ristretto.jpg"
   },
   {
    "handle": "doppio",
@@ -301,7 +313,8 @@
    "toast_id": "ad22d0cc-e2b8-4ed5-9eea-b4ffd3262147",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/46a1c2b3-ec99-4822-b273-b594440b5be4.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/doppio.jpg"
   },
   {
    "handle": "lungo",
@@ -327,7 +340,8 @@
    "toast_id": "4322ad12-3e58-45fd-9eee-fd263a07cc3a",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/ebc97e0d-eec4-4ec9-974c-609b2d731532.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/americano.jpg"
   },
   {
    "handle": "americano-lrg",
@@ -354,7 +368,8 @@
    "toast_id": "52e322c2-9543-4fc3-afc7-80d3ac4b055f",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/db4d5a75-4204-4599-9fb0-39cfbf68cbe5.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/latte.jpg"
   },
   {
    "handle": "cappuccino",
@@ -367,7 +382,8 @@
    "toast_id": "94fbd81a-23d1-44d8-a151-75d2069479aa",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/56c6e577-6081-4d8a-a940-539c78bd596a.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/cappuccino.jpg"
   },
   {
    "handle": "cortadito",
@@ -380,7 +396,8 @@
    "toast_id": "dd7b554e-5619-4975-bcb8-4997589c9f53",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/ea808aba-217d-4179-9200-467e8f3a5b16.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/cortadito.jpg"
   },
   {
    "handle": "romys-hot-chocolate",
@@ -393,7 +410,8 @@
    "toast_id": "0807336a-25ae-40a2-aac5-192d077a7e12",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/5142edf1-612a-4a39-b212-45c6d36ef62b.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/romys-hot-chocolate.jpg"
   },
   {
    "handle": "mocha",
@@ -406,7 +424,8 @@
    "toast_id": "1186c947-6d46-4b89-aa00-5d387245029a",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/6b972684-7a7f-4531-b786-596223c47820.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/mocha.jpg"
   },
   {
    "handle": "matcha",
@@ -419,7 +438,8 @@
    "toast_id": "9c91304a-2246-40f6-b88d-a9122509000a",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/3789fb95-832d-4f47-b4ef-7810ccb98b3f.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/matcha.jpg"
   },
   {
    "handle": "chai-tea-latte-coffee-tea",
@@ -445,7 +465,8 @@
    "toast_id": "c08b9eb9-9b4a-4b0f-8ed1-95c5706b389a",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/2a7793d3-9285-47d7-a233-83313bd23535.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/cold-brew.jpg"
   },
   {
    "handle": "v-v-cold-brew",
@@ -498,7 +519,8 @@
    "toast_id": "787c12e3-5bc7-468a-828f-4265eef91502",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/ab43e811-8710-4669-b298-6b789600dc86.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/baguette.jpg"
   },
   {
    "handle": "seeded-baguette",
@@ -622,7 +644,8 @@
    "toast_id": "22b35c02-1bcf-43d1-a560-54261b1bf48a",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/4131136b-d35d-4bfa-b00c-61b6491b7da3.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/butter-croissant.jpg"
   },
   {
    "handle": "chocolate-croissant",
@@ -649,7 +672,8 @@
    "toast_id": "4b7a9f4e-0470-4fb0-8de0-f2c665cc1194",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/b64316ac-eccb-4100-aa17-fe1b8b871de8.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/suisse.jpg"
   },
   {
    "handle": "cruffin-du-jour",
@@ -662,7 +686,8 @@
    "toast_id": "803838aa-9958-4923-8f16-023b35faeab6",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/b8ec7fe9-8fc6-49a8-bedb-2ff9db47189a.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/cruffin-du-jour.jpg"
   },
   {
    "handle": "focaccia-slice",
@@ -851,7 +876,8 @@
    "toast_id": "3e40b1f1-6543-4fdf-8046-df5772b60a90",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/e701b951-877d-435c-b534-7280e7949ff8.png",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/chefs-special-eclair.jpg"
   },
   {
    "handle": "chocolate-eclair",
@@ -864,7 +890,8 @@
    "toast_id": "587fbbba-a382-4fdd-8fc9-4681182b36f9",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/0033ca4c-860e-49df-bc1f-03e3fc4c46d5.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/chocolate-eclair.jpg"
   },
   {
    "handle": "espresso-eclair",
@@ -877,7 +904,8 @@
    "toast_id": "36fd5266-680d-43ad-9d5a-cfcea6b712ba",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/e2727a53-5e08-49e8-9dbc-bfaea658e94c.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/espresso-eclair.jpg"
   },
   {
    "handle": "pistachio-eclair",
@@ -890,7 +918,8 @@
    "toast_id": "5582bc15-f7e0-49a8-a722-8c880a5a59ce",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/994c69dc-53e2-4328-85aa-4ec782c3573b.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/pistachio-eclair.jpg"
   },
   {
    "handle": "paris-brest",
@@ -903,7 +932,8 @@
    "toast_id": "7c5929aa-c066-48f7-aa54-bd891de4ce1a",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/9e7ed1fc-0401-41bd-bccb-ca18b9b9c8b7.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/paris-brest.jpg"
   },
   {
    "handle": "mille-feuille",
@@ -916,7 +946,8 @@
    "toast_id": "e3b207a6-f765-440d-b980-e1afc7bf4669",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/2875487e-529e-4907-a255-f9550a0707ee.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/mille-feuille.jpg"
   },
   {
    "handle": "fruit-tart",
@@ -929,7 +960,8 @@
    "toast_id": "f997b832-0a9a-44e5-94f7-674683dae3a7",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/1a7dad13-b926-41b4-b2a5-9935eef3a1f0.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/fruit-tart.jpg"
   },
   {
    "handle": "chocolate-tart",
@@ -1036,7 +1068,8 @@
    "toast_id": "31803368-78bb-482c-886c-f69519bbfa77",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/55ef6049-ba9f-4db5-b40c-1cc2141f796c.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/french-breakfast.jpg"
   },
   {
    "handle": "avocado-toast",
@@ -1049,7 +1082,8 @@
    "toast_id": "5be61f56-3410-4b16-80bb-d0592db09849",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f6bd7ffd-2ee5-48dc-97bc-e0b4a46bbedd.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/avocado-toast.jpg"
   },
   {
    "handle": "grilled-cheese",
@@ -1062,7 +1096,8 @@
    "toast_id": "f98f31f7-4125-4247-9797-9cdb7c01e5b8",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/78c0be00-f618-499b-804d-7b9c0a81b881.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/grilled-cheese.jpg"
   },
   {
    "handle": "soup",
@@ -1075,7 +1110,8 @@
    "toast_id": "a29d59dc-0ec6-4eb8-aad1-2f494d2b7631",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/cc20f301-81b8-4fa8-81e2-d569035b2708.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/soup.jpg"
   },
   {
    "handle": "sandwich-of-the-day",
@@ -1088,7 +1124,8 @@
    "toast_id": "bf23d97e-cf88-44f3-873f-84cf6f703fc0",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/cf20c799-2e5e-4c11-b1df-5d9c63b85572.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/sandwich-of-the-day.jpg"
   },
   {
    "handle": "endive-salade",
@@ -1101,7 +1138,8 @@
    "toast_id": "37238128-9a70-4b47-9250-a190321a0cc7",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/e2d489d2-8e06-4b55-a133-5f6cb077dc7c.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/endive-salade.jpg"
   },
   {
    "handle": "garden-salade",
@@ -1114,7 +1152,8 @@
    "toast_id": "d9e54336-6263-4bbc-a091-7e1cf80c02ec",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/0b505007-95b1-4213-94b9-26ca4f454579.png",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/garden-salade.jpg"
   },
   {
    "handle": "grandmother-beet-salade",
@@ -1127,7 +1166,8 @@
    "toast_id": "a94636d4-258e-403f-9a37-73ad5cb99541",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/48f6371e-2b15-4056-80ab-d5f41112a530.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "local_image": "img/curate/grandmother-beet-salade.jpg"
   },
   {
    "handle": "tomato-salade-foccacia",
@@ -1838,6 +1878,19 @@
    "on_site": false,
    "hidden": false,
    "local_image": "img/curate/cold-brew-2-go.jpg"
+  },
+  {
+   "handle": "thanksgiving-to-go",
+   "title": "Thanksgiving To Go",
+   "price": 19.0,
+   "category": "Grab N Go",
+   "ship": false,
+   "available": true,
+   "quantity": null,
+   "toast_id": "1ef4c72a-d17f-4dff-a5c3-9bb3fdfc6505",
+   "image": null,
+   "on_site": false,
+   "hidden": false
   }
  ]
 }
