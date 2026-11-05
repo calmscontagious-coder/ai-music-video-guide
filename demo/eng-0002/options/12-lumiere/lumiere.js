@@ -153,7 +153,7 @@
   window.LumiereFly = function (from, img) { try { if (!reduce && from) fly(from, img ? '../../' + img : null); } catch (e) { /* decoration only */ } };
 
   /* 8. the pastry counter, after first paint and an idle moment; the counter loads even if its engine does not */
-  var VER = '?v=20261105k';
+  var VER = '?v=20261105l';
   function load(src, then) { var sc = document.createElement('script'); sc.src = src; sc.async = true; sc.onload = then; sc.onerror = then; document.head.appendChild(sc); }
   function counter() { load('counter-core.js' + VER, function () { load('counter.js' + VER); }); }
   function idle() { if ('requestIdleCallback' in window) requestIdleCallback(counter, { timeout: 2000 }); else setTimeout(counter, 600); }
@@ -200,7 +200,7 @@
     });
   }
   var DATA = (function () {
-    var q = '?v=20261105k', live = true;
+    var q = '?v=20261105l', live = true;
     function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
     setTimeout(function () { live = false; }, 5000);
     var p = Promise.all([get('../../assets/stock.json' + q).catch(function () { return null; }), get('../../assets/menu.json' + q).catch(function () { return null; })])
@@ -527,7 +527,7 @@
        categories, in stock right now at the POS. Falls back to menu.json if the file is missing. */
     var curP = null;
     function curate() {
-      if (!curP) curP = fetch('../../assets/curate_menu.json?v=20261105k').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      if (!curP) curP = fetch('../../assets/curate_menu.json?v=20261105l').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function (c) { var age = Date.now() - Date.parse(c && c.updated_at); return c && c.items && age < 7 * 24 * 3600 * 1000 ? c : null; }).catch(function () { return null; });
       return curP;
     }
