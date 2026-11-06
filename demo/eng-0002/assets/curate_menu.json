@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T02:32:18.470254+00:00",
+ "updated_at": "2026-11-06T08:19:20.906879+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -14,7 +14,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/b0bf95c9-d28d-42ec-bb71-61f6aa73daf7.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/fleur-de-geisha.jpg"
+   "local_image": "img/curate/fleur-de-geisha.jpg",
+   "photo": "img/curate/fleur-de-geisha.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Fleur de Geisha"
   },
   {
    "handle": "7-citrus-russian",
@@ -28,7 +31,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/ea4977bd-1513-4b76-80a5-2dd7de68eb92.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/7-citrus-russian.jpg"
+   "local_image": "img/curate/7-citrus-russian.jpg",
+   "photo": "img/curate/7-citrus-russian.jpg",
+   "photo_kind": "own",
+   "photo_alt": "7 Citrus Russian"
   },
   {
    "handle": "montagne-bleue",
@@ -42,7 +48,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/b080ccb7-7d73-43a3-a32c-e08a5bb4fc95.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/montagne-bleue.jpg"
+   "local_image": "img/curate/montagne-bleue.jpg",
+   "photo": "img/curate/montagne-bleue.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Montagne Bleue"
   },
   {
    "handle": "tropical-garden",
@@ -56,7 +65,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f26165f9-ae22-4560-aa88-855028453c89.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/tropical-garden.jpg"
+   "local_image": "img/curate/tropical-garden.jpg",
+   "photo": "img/curate/tropical-garden.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Tropical Garden"
   },
   {
    "handle": "french-garden",
@@ -70,7 +82,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/2f979883-85a0-4664-a2dc-5680602d2122.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/french-garden.jpg"
+   "local_image": "img/curate/french-garden.jpg",
+   "photo": "img/curate/french-garden.jpg",
+   "photo_kind": "own",
+   "photo_alt": "French Garden"
   },
   {
    "handle": "milky-oolong",
@@ -84,7 +99,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/6f9e712c-c154-4d0d-a06a-b2345ec038af.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/milky-oolong.jpg"
+   "local_image": "img/curate/milky-oolong.jpg",
+   "photo": "img/curate/milky-oolong.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Milky Oolong"
   },
   {
    "handle": "chai-imperial",
@@ -98,7 +116,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/a4669a04-bd17-4977-8b41-0756c51448aa.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/chai-imperial.jpg"
+   "local_image": "img/curate/chai-imperial.jpg",
+   "photo": "img/curate/chai-imperial.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Chai Impérial"
   },
   {
    "handle": "the-du-louvre",
@@ -112,7 +133,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/d227ce2f-e98e-4c1d-bc3c-1334cc4f6b19.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/the-du-louvre.jpg"
+   "local_image": "img/curate/the-du-louvre.jpg",
+   "photo": "img/curate/the-du-louvre.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Thé du Louvre, Garden"
   },
   {
    "handle": "detox-south-africa",
@@ -126,7 +150,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/78154928-a06a-4e35-ab9b-8f1132891119.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/detox-south-africa.jpg"
+   "local_image": "img/curate/detox-south-africa.jpg",
+   "photo": "img/curate/detox-south-africa.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Detox South Africa"
   },
   {
    "handle": "chai-tea-latte",
@@ -139,7 +166,10 @@
    "toast_id": "24c5bbc8-7b79-477c-b262-b02016111433",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/teapot.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a teapot"
   },
   {
    "handle": "herboriste-46-relaxation",
@@ -153,7 +183,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f428a2d5-e401-40a8-88de-5d3981dfa6f7.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/herboriste-46-relaxation.jpg"
+   "local_image": "img/curate/herboriste-46-relaxation.jpg",
+   "photo": "img/curate/herboriste-46-relaxation.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Herboriste N°46, Relaxation"
   },
   {
    "handle": "herboriste-52-digestion",
@@ -167,7 +200,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/660cdd5d-192f-48f5-9924-9ca4c09e1c60.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/herboriste-52-digestion.jpg"
+   "local_image": "img/curate/herboriste-52-digestion.jpg",
+   "photo": "img/curate/herboriste-52-digestion.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Herboriste N°52, Digestion"
   },
   {
    "handle": "herboriste-63-immune",
@@ -181,7 +217,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/030c0752-c108-46e9-a8e7-5c4d4e194819.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/herboriste-63-immune.jpg"
+   "local_image": "img/curate/herboriste-63-immune.jpg",
+   "photo": "img/curate/herboriste-63-immune.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Herboriste N°63, Immune Support"
   },
   {
    "handle": "iced-tea",
@@ -195,7 +234,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/2beb0357-c8c6-440e-b50b-79f028724b92.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/iced-tea.jpg"
+   "local_image": "img/curate/iced-tea.jpg",
+   "photo": "img/curate/iced-tea.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Iced Tea"
   },
   {
    "handle": "w-holiday-n25",
@@ -208,7 +250,10 @@
    "toast_id": "12daf0d1-2b1a-4f14-89d8-a1a9473d21cc",
    "image": null,
    "on_site": false,
-   "hidden": true
+   "hidden": true,
+   "photo": "img/tiles/teapot.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a teapot"
   },
   {
    "handle": "w-le-the-merveileux",
@@ -221,7 +266,10 @@
    "toast_id": "bc986842-a1df-41a8-9860-f91497e82f1a",
    "image": null,
    "on_site": false,
-   "hidden": true
+   "hidden": true,
+   "photo": "img/tiles/teapot.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a teapot"
   },
   {
    "handle": "w-le-the-feerique",
@@ -234,7 +282,10 @@
    "toast_id": "e2c57256-ea77-4493-9853-e7e1c01426c2",
    "image": null,
    "on_site": false,
-   "hidden": true
+   "hidden": true,
+   "photo": "img/tiles/teapot.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a teapot"
   },
   {
    "handle": "s-paris-for-you-by-day",
@@ -247,7 +298,10 @@
    "toast_id": "fd6844ab-6525-492c-824f-407ef66120e7",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/teapot.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a teapot"
   },
   {
    "handle": "s-icy-mint",
@@ -260,7 +314,10 @@
    "toast_id": "cd1ea859-a8e4-43dc-9e92-332f5ced62bd",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/teapot.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a teapot"
   },
   {
    "handle": "s-water-garden",
@@ -273,7 +330,10 @@
    "toast_id": "e902c8d9-d4fa-4255-ba74-760290f6cb05",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/teapot.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a teapot"
   },
   {
    "handle": "s-brazilian-detox-tea",
@@ -286,7 +346,10 @@
    "toast_id": "5892d8eb-a1dc-4431-bc1f-9cc87ff40545",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/teapot.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a teapot"
   },
   {
    "handle": "ristretto",
@@ -300,7 +363,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/960426ce-efcb-47e5-9a31-96bbcb33e434.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/ristretto.jpg"
+   "local_image": "img/curate/ristretto.jpg",
+   "photo": "img/curate/ristretto.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Ristretto"
   },
   {
    "handle": "doppio",
@@ -314,7 +380,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/46a1c2b3-ec99-4822-b273-b594440b5be4.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/doppio.jpg"
+   "local_image": "img/curate/doppio.jpg",
+   "photo": "img/curate/doppio.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Doppio"
   },
   {
    "handle": "lungo",
@@ -327,7 +396,10 @@
    "toast_id": "1d1fadf7-f123-4244-98e2-1fc0978674ce",
    "image": null,
    "on_site": false,
-   "hidden": true
+   "hidden": true,
+   "photo": "img/tiles/cup.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a cup"
   },
   {
    "handle": "americano",
@@ -341,7 +413,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/ebc97e0d-eec4-4ec9-974c-609b2d731532.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/americano.jpg"
+   "local_image": "img/curate/americano.jpg",
+   "photo": "img/curate/americano.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Americano"
   },
   {
    "handle": "americano-lrg",
@@ -355,7 +430,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/4f46b526-6d30-48de-9589-f850c9b06027.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/americano-lrg.jpg"
+   "local_image": "img/curate/americano-lrg.jpg",
+   "photo": "img/curate/americano-lrg.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Americano LRG"
   },
   {
    "handle": "latte",
@@ -369,7 +447,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/db4d5a75-4204-4599-9fb0-39cfbf68cbe5.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/latte.jpg"
+   "local_image": "img/curate/latte.jpg",
+   "photo": "img/curate/latte.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Latte"
   },
   {
    "handle": "cappuccino",
@@ -383,7 +464,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/56c6e577-6081-4d8a-a940-539c78bd596a.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/cappuccino.jpg"
+   "local_image": "img/curate/cappuccino.jpg",
+   "photo": "img/curate/cappuccino.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cappuccino"
   },
   {
    "handle": "cortadito",
@@ -397,7 +481,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/ea808aba-217d-4179-9200-467e8f3a5b16.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/cortadito.jpg"
+   "local_image": "img/curate/cortadito.jpg",
+   "photo": "img/curate/cortadito.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cortadito"
   },
   {
    "handle": "romys-hot-chocolate",
@@ -411,7 +498,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/5142edf1-612a-4a39-b212-45c6d36ef62b.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/romys-hot-chocolate.jpg"
+   "local_image": "img/curate/romys-hot-chocolate.jpg",
+   "photo": "img/curate/romys-hot-chocolate.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Romy’s hot chocolate"
   },
   {
    "handle": "mocha",
@@ -425,7 +515,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/6b972684-7a7f-4531-b786-596223c47820.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/mocha.jpg"
+   "local_image": "img/curate/mocha.jpg",
+   "photo": "img/curate/mocha.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Mocha"
   },
   {
    "handle": "matcha",
@@ -439,7 +532,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/3789fb95-832d-4f47-b4ef-7810ccb98b3f.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/matcha.jpg"
+   "local_image": "img/curate/matcha.jpg",
+   "photo": "img/curate/matcha.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Matcha"
   },
   {
    "handle": "chai-tea-latte-coffee-tea",
@@ -452,7 +548,10 @@
    "toast_id": "3613e26b-904a-47e4-878a-fdb6a8fe467c",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/cup.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a cup"
   },
   {
    "handle": "cold-brew",
@@ -466,7 +565,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/2a7793d3-9285-47d7-a233-83313bd23535.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/cold-brew.jpg"
+   "local_image": "img/curate/cold-brew.jpg",
+   "photo": "img/curate/cold-brew.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cold brew"
   },
   {
    "handle": "v-v-cold-brew",
@@ -480,7 +582,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/c5f49333-e721-4d1a-82da-d3d3802c941f.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/v-v-cold-brew.jpg"
+   "local_image": "img/curate/v-v-cold-brew.jpg",
+   "photo": "img/curate/v-v-cold-brew.jpg",
+   "photo_kind": "own",
+   "photo_alt": "V.V. Cold Brew"
   },
   {
    "handle": "iced-pumpkin-pie-latte",
@@ -493,7 +598,10 @@
    "toast_id": "a109b8a8-8669-45d5-9192-94a1d12f9ada",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/glass.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a tall glass"
   },
   {
    "handle": "magic-pumpkin",
@@ -506,7 +614,10 @@
    "toast_id": "a6598d64-26a2-4193-ba09-3358516135e0",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/cup.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a cup"
   },
   {
    "handle": "baguette",
@@ -520,7 +631,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/ab43e811-8710-4669-b298-6b789600dc86.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/baguette.jpg"
+   "local_image": "img/curate/baguette.jpg",
+   "photo": "img/curate/baguette.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Baguette"
   },
   {
    "handle": "seeded-baguette",
@@ -534,7 +648,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/41ae9b59-2127-4c15-a6a6-7179a9a82674.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/seeded-baguette.jpg"
+   "local_image": "img/curate/seeded-baguette.jpg",
+   "photo": "img/curate/seeded-baguette.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Seeded Baguette"
   },
   {
    "handle": "beet-loaf",
@@ -548,7 +665,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/1245338e-209a-4f92-a925-a5352831498d.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/beet-loaf.jpg"
+   "local_image": "img/curate/beet-loaf.jpg",
+   "photo": "img/curate/beet-loaf.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Beet Loaf"
   },
   {
    "handle": "charcoal-loaf",
@@ -562,7 +682,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f84c2373-9193-4860-8330-b0eddb71ce69.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/charcoal-loaf.jpg"
+   "local_image": "img/curate/charcoal-loaf.jpg",
+   "photo": "img/curate/charcoal-loaf.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Charcoal Loaf"
   },
   {
    "handle": "lemon-pepper-loaf",
@@ -576,7 +699,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/d4c772c2-8bbe-4453-93d5-dac4706879d2.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/lemon-pepper-loaf.jpg"
+   "local_image": "img/curate/lemon-pepper-loaf.jpg",
+   "photo": "img/curate/lemon-pepper-loaf.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Lemon Pepper Loaf"
   },
   {
    "handle": "pan-de-mie-loaf",
@@ -590,7 +716,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/dddf10f9-6e37-4e41-b58f-c6ba41827541.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/pan-de-mie-loaf.jpg"
+   "local_image": "img/curate/pan-de-mie-loaf.jpg",
+   "photo": "img/curate/pan-de-mie-loaf.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Pan de Mie Loaf"
   },
   {
    "handle": "country-bread",
@@ -604,7 +733,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/1e8607c7-9f59-4dad-bf40-46f345077516.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/country-bread.jpg"
+   "local_image": "img/curate/country-bread.jpg",
+   "photo": "img/curate/country-bread.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Country Bread"
   },
   {
    "handle": "matcha-loaf",
@@ -617,7 +749,10 @@
    "toast_id": "c76f8ae4-f88b-4b32-a655-2b53aa6cbfce",
    "image": null,
    "on_site": false,
-   "hidden": true
+   "hidden": true,
+   "photo": "img/tiles/bread.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a loaf"
   },
   {
    "handle": "gluten-free-loaf",
@@ -631,7 +766,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/85ca3fd3-12b5-48d4-a7e5-49150f13246a.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/gluten-free-loaf.jpg"
+   "local_image": "img/curate/gluten-free-loaf.jpg",
+   "photo": "img/curate/gluten-free-loaf.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Gluten-Free Loaf"
   },
   {
    "handle": "butter-croissant",
@@ -645,7 +783,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/4131136b-d35d-4bfa-b00c-61b6491b7da3.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/butter-croissant.jpg"
+   "local_image": "img/curate/butter-croissant.jpg",
+   "photo": "img/curate/butter-croissant.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Butter croissant"
   },
   {
    "handle": "chocolate-croissant",
@@ -659,7 +800,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/3ca5f856-38f9-4e8e-9ec3-c39384a1384c.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/chocolate-croissant.jpg"
+   "local_image": "img/curate/chocolate-croissant.jpg",
+   "photo": "img/curate/chocolate-croissant.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Chocolate Croissant"
   },
   {
    "handle": "suisse",
@@ -673,7 +817,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/b64316ac-eccb-4100-aa17-fe1b8b871de8.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/suisse.jpg"
+   "local_image": "img/curate/suisse.jpg",
+   "photo": "img/curate/suisse.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Suisse"
   },
   {
    "handle": "cruffin-du-jour",
@@ -687,7 +834,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/b8ec7fe9-8fc6-49a8-bedb-2ff9db47189a.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/cruffin-du-jour.jpg"
+   "local_image": "img/curate/cruffin-du-jour.jpg",
+   "photo": "img/curate/cruffin-du-jour.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cruffin du jour"
   },
   {
    "handle": "focaccia-slice",
@@ -701,7 +851,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/6832551e-deec-4d12-a1f4-44b79962006f.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/focaccia-slice.jpg"
+   "local_image": "img/curate/focaccia-slice.jpg",
+   "photo": "img/curate/focaccia-slice.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Focaccia Slice"
   },
   {
    "handle": "savory-danish-du-jour",
@@ -715,7 +868,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/5fbbc783-8743-4d31-b7f6-1fc172c4a060.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/savory-danish-du-jour.jpg"
+   "local_image": "img/curate/savory-danish-du-jour.jpg",
+   "photo": "img/curate/savory-danish-du-jour.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Savory Danish Du Jour"
   },
   {
    "handle": "quiche-du-jour",
@@ -729,7 +885,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/c7d98b76-3822-4dcb-a48f-3c2ac18770c5.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/quiche-du-jour.jpg"
+   "local_image": "img/curate/quiche-du-jour.jpg",
+   "photo": "img/curate/quiche-du-jour.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Quiche Du Jour"
   },
   {
    "handle": "canele",
@@ -742,7 +901,10 @@
    "toast_id": "efc3adc2-e9da-4a97-9601-b94ddd29e133",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/87ef76d6-1770-4b45-8478-9af46248daed.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/caneles-1-800.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cannelé"
   },
   {
    "handle": "caneles",
@@ -755,7 +917,10 @@
    "toast_id": "5adf1e46-97ef-40d9-89f3-7966e54a1e5d",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/545ccd0e-b9c8-45ad-b93e-694826f6b572.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/shop/caneles-tray-sq-800.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cannelés, by 3"
   },
   {
    "handle": "pizza-focaccia",
@@ -769,7 +934,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/095390b4-b846-4ac2-8c07-0918b7aa3762.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/pizza-focaccia.jpg"
+   "local_image": "img/curate/pizza-focaccia.jpg",
+   "photo": "img/curate/pizza-focaccia.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Pizza Focaccia"
   },
   {
    "handle": "7-chefs-creation",
@@ -783,7 +951,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/150e0467-cc70-4f60-a1e3-32dea7472286.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/7-chefs-creation.jpg"
+   "local_image": "img/curate/7-chefs-creation.jpg",
+   "photo": "img/curate/7-chefs-creation.jpg",
+   "photo_kind": "own",
+   "photo_alt": "$7 Chef's Creation"
   },
   {
    "handle": "9-chefs-creation",
@@ -797,7 +968,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/7d4b5f3a-cb8f-498c-8e57-3c0f44760398.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/9-chefs-creation.jpg"
+   "local_image": "img/curate/9-chefs-creation.jpg",
+   "photo": "img/curate/9-chefs-creation.jpg",
+   "photo_kind": "own",
+   "photo_alt": "$9 Chef's Creation"
   },
   {
    "handle": "chocolate-chip-cookie",
@@ -811,7 +985,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/bbc64b7d-0a10-4cea-a25f-832971969bfc.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/chocolate-chip-cookie.jpg"
+   "local_image": "img/curate/chocolate-chip-cookie.jpg",
+   "photo": "img/curate/chocolate-chip-cookie.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Chocolate Chip Cookie"
   },
   {
    "handle": "3-mini-croiss",
@@ -824,7 +1001,10 @@
    "toast_id": "0b366e08-c39d-426c-9fe8-8c98de8d14b5",
    "image": null,
    "on_site": false,
-   "hidden": true
+   "hidden": true,
+   "photo": "img/tiles/croissant.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a croissant"
   },
   {
    "handle": "mini-danish",
@@ -837,7 +1017,10 @@
    "toast_id": "15f8dade-ddaa-471e-bcfd-cdb4f4f273aa",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/croissant.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a croissant"
   },
   {
    "handle": "parisian-king-cake",
@@ -850,7 +1033,10 @@
    "toast_id": "08416ad7-338b-4329-9f0d-660c2a3da382",
    "image": null,
    "on_site": false,
-   "hidden": true
+   "hidden": true,
+   "photo": "img/tiles/croissant.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a croissant"
   },
   {
    "handle": "mini-box",
@@ -863,7 +1049,10 @@
    "toast_id": "7287657e-450f-47a3-9c69-1c27a053e2b6",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/box.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a pastry box"
   },
   {
    "handle": "chefs-special-eclair",
@@ -877,7 +1066,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/e701b951-877d-435c-b534-7280e7949ff8.png",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/chefs-special-eclair.jpg"
+   "local_image": "img/curate/chefs-special-eclair.jpg",
+   "photo": "img/curate/chefs-special-eclair.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Chef’s special éclair"
   },
   {
    "handle": "chocolate-eclair",
@@ -891,7 +1083,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/0033ca4c-860e-49df-bc1f-03e3fc4c46d5.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/chocolate-eclair.jpg"
+   "local_image": "img/curate/chocolate-eclair.jpg",
+   "photo": "img/curate/chocolate-eclair.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Chocolate éclair"
   },
   {
    "handle": "espresso-eclair",
@@ -905,7 +1100,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/e2727a53-5e08-49e8-9dbc-bfaea658e94c.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/espresso-eclair.jpg"
+   "local_image": "img/curate/espresso-eclair.jpg",
+   "photo": "img/curate/espresso-eclair.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Espresso éclair"
   },
   {
    "handle": "pistachio-eclair",
@@ -919,7 +1117,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/994c69dc-53e2-4328-85aa-4ec782c3573b.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/pistachio-eclair.jpg"
+   "local_image": "img/curate/pistachio-eclair.jpg",
+   "photo": "img/curate/pistachio-eclair.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Pistachio éclair"
   },
   {
    "handle": "paris-brest",
@@ -933,7 +1134,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/9e7ed1fc-0401-41bd-bccb-ca18b9b9c8b7.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/paris-brest.jpg"
+   "local_image": "img/curate/paris-brest.jpg",
+   "photo": "img/curate/paris-brest.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Paris-Brest"
   },
   {
    "handle": "mille-feuille",
@@ -947,7 +1151,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/2875487e-529e-4907-a255-f9550a0707ee.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/mille-feuille.jpg"
+   "local_image": "img/curate/mille-feuille.jpg",
+   "photo": "img/curate/mille-feuille.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Mille-feuille"
   },
   {
    "handle": "fruit-tart",
@@ -961,7 +1168,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/1a7dad13-b926-41b4-b2a5-9935eef3a1f0.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/fruit-tart.jpg"
+   "local_image": "img/curate/fruit-tart.jpg",
+   "photo": "img/curate/fruit-tart.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Fruit tart"
   },
   {
    "handle": "chocolate-tart",
@@ -975,7 +1185,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/855c6e89-e9aa-4ca7-84eb-ef990219e4d8.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/chocolate-tart.jpg"
+   "local_image": "img/curate/chocolate-tart.jpg",
+   "photo": "img/curate/chocolate-tart.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Chocolate Tart"
   },
   {
    "handle": "macaron",
@@ -988,7 +1201,10 @@
    "toast_id": "0db6dab2-ac53-4a43-9816-17f09d783b08",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f764f651-e856-4103-97ec-3ff6617fe54d.jpg",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/macarons-1-800.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Macaron"
   },
   {
    "handle": "macaron-box-6",
@@ -1001,7 +1217,10 @@
    "toast_id": "8e00f541-5807-499d-bb9c-518e3277aa2b",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/c39e0078-661b-4b3c-8b6c-ea5486c99f60.png",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/shop/macarons-box-sq-800.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Box of six macarons"
   },
   {
    "handle": "mango-mousse",
@@ -1015,7 +1234,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/6667e55a-d69a-4f1a-bb33-6f7ae38304cc.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/mango-mousse.jpg"
+   "local_image": "img/curate/mango-mousse.jpg",
+   "photo": "img/curate/mango-mousse.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Mango Mousse"
   },
   {
    "handle": "coconut-mousse",
@@ -1029,7 +1251,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/e38c8b63-0200-423d-830e-ea0bed6cccc3.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/coconut-mousse.jpg"
+   "local_image": "img/curate/coconut-mousse.jpg",
+   "photo": "img/curate/coconut-mousse.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Coconut Mousse"
   },
   {
    "handle": "halloween-mousse",
@@ -1042,7 +1267,10 @@
    "toast_id": "58fa2e5f-fa0f-4bfb-ae30-e65006e22037",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/jar.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a dessert jar"
   },
   {
    "handle": "pumpkin-tart",
@@ -1055,7 +1283,10 @@
    "toast_id": "a747630c-a296-4d4b-9da2-01f4c4d76bd3",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/tart.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a tart"
   },
   {
    "handle": "french-breakfast",
@@ -1069,7 +1300,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/55ef6049-ba9f-4db5-b40c-1cc2141f796c.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/french-breakfast.jpg"
+   "local_image": "img/curate/french-breakfast.jpg",
+   "photo": "img/curate/french-breakfast.jpg",
+   "photo_kind": "own",
+   "photo_alt": "French breakfast"
   },
   {
    "handle": "avocado-toast",
@@ -1083,7 +1317,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f6bd7ffd-2ee5-48dc-97bc-e0b4a46bbedd.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/avocado-toast.jpg"
+   "local_image": "img/curate/avocado-toast.jpg",
+   "photo": "img/curate/avocado-toast.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Avocado toast"
   },
   {
    "handle": "grilled-cheese",
@@ -1097,7 +1334,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/78c0be00-f618-499b-804d-7b9c0a81b881.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/grilled-cheese.jpg"
+   "local_image": "img/curate/grilled-cheese.jpg",
+   "photo": "img/curate/grilled-cheese.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Grilled cheese"
   },
   {
    "handle": "soup",
@@ -1111,7 +1351,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/cc20f301-81b8-4fa8-81e2-d569035b2708.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/soup.jpg"
+   "local_image": "img/curate/soup.jpg",
+   "photo": "img/curate/soup.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Soup du jour"
   },
   {
    "handle": "sandwich-of-the-day",
@@ -1125,7 +1368,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/cf20c799-2e5e-4c11-b1df-5d9c63b85572.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/sandwich-of-the-day.jpg"
+   "local_image": "img/curate/sandwich-of-the-day.jpg",
+   "photo": "img/curate/sandwich-of-the-day.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Sandwich du jour"
   },
   {
    "handle": "endive-salade",
@@ -1139,7 +1385,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/e2d489d2-8e06-4b55-a133-5f6cb077dc7c.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/endive-salade.jpg"
+   "local_image": "img/curate/endive-salade.jpg",
+   "photo": "img/curate/endive-salade.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Endive salade"
   },
   {
    "handle": "garden-salade",
@@ -1153,7 +1402,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/0b505007-95b1-4213-94b9-26ca4f454579.png",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/garden-salade.jpg"
+   "local_image": "img/curate/garden-salade.jpg",
+   "photo": "img/curate/garden-salade.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Garden salade"
   },
   {
    "handle": "grandmother-beet-salade",
@@ -1167,7 +1419,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/48f6371e-2b15-4056-80ab-d5f41112a530.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/grandmother-beet-salade.jpg"
+   "local_image": "img/curate/grandmother-beet-salade.jpg",
+   "photo": "img/curate/grandmother-beet-salade.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Grandmother beet salade"
   },
   {
    "handle": "tomato-salade-foccacia",
@@ -1181,117 +1436,144 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/5c8569c4-89dc-4b84-a4eb-bef7233c5359.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/tomato-salade-foccacia.jpg"
+   "local_image": "img/curate/tomato-salade-foccacia.jpg",
+   "photo": "img/curate/tomato-salade-foccacia.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Tomato Salade & Foccacia"
   },
   {
    "handle": "raspberry-jam",
    "title": "Raspberry Jam",
    "price": 6.0,
    "category": "Jam",
-   "ship": true,
+   "ship": false,
    "available": true,
    "quantity": null,
    "toast_id": "c7f54e22-426e-495b-a16a-c1401fa5b0cf",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/11ad76ea-bfc9-4bf3-8180-c779a581a4c2.png",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/raspberry-jam.jpg"
+   "local_image": "img/curate/raspberry-jam.jpg",
+   "photo": "img/curate/raspberry-jam.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Raspberry jam"
   },
   {
    "handle": "peach-rosemary-jam",
    "title": "Peach Rosemary Jam",
    "price": 6.0,
    "category": "Jam",
-   "ship": true,
+   "ship": false,
    "available": true,
    "quantity": null,
    "toast_id": "3344d8b4-2e1f-47e4-a642-6910bd122e8c",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/a9a33c55-1e81-46a5-961b-f86206e35577.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/peach-rosemary-jam.jpg"
+   "local_image": "img/curate/peach-rosemary-jam.jpg",
+   "photo": "img/curate/peach-rosemary-jam.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Peach Rosemary Jam"
   },
   {
    "handle": "tropical-jam",
    "title": "Tropical Jam",
    "price": 6.0,
    "category": "Jam",
-   "ship": true,
+   "ship": false,
    "available": false,
    "quantity": 0,
    "toast_id": "16904f1a-2161-4fbc-bd1f-a6176b4315ce",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/c13461a4-b728-459f-80b4-5fa62c035140.png",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/tropical-jam.jpg"
+   "local_image": "img/curate/tropical-jam.jpg",
+   "photo": "img/curate/tropical-jam.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Tropical jam"
   },
   {
    "handle": "strawberry-jam",
    "title": "Strawberry Jam",
    "price": 6.0,
    "category": "Jam",
-   "ship": true,
+   "ship": false,
    "available": true,
    "quantity": null,
    "toast_id": "adc1a41a-8734-4a53-8add-7e559b5200b2",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/9f6f34f0-0c89-43ea-9f88-41d30265d8a4.png",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/strawberry-jam.jpg"
+   "local_image": "img/curate/strawberry-jam.jpg",
+   "photo": "img/curate/strawberry-jam.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Strawberry Jam"
   },
   {
    "handle": "pineapple-vanilla-jam",
    "title": "Pineapple Vanilla Jam",
    "price": 6.0,
    "category": "Jam",
-   "ship": true,
+   "ship": false,
    "available": true,
    "quantity": null,
    "toast_id": "bb710d6e-6bb4-4a70-a64e-1f62995aef02",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/751cf93d-2dbf-4529-92e0-7ac7ffb40341.png",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/pineapple-vanilla-jam.jpg"
+   "local_image": "img/curate/pineapple-vanilla-jam.jpg",
+   "photo": "img/curate/pineapple-vanilla-jam.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Pineapple vanilla jam"
   },
   {
    "handle": "blueberry-jam",
    "title": "Blueberry Jam",
    "price": 6.0,
    "category": "Jam",
-   "ship": true,
+   "ship": false,
    "available": false,
    "quantity": 0,
    "toast_id": "590008b9-dfec-4153-887d-21234157005f",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/shop/jam-shelf-sq-800.jpg",
+   "photo_kind": "family",
+   "photo_alt": "Tropical jam in front of a row of iD Éclair jars"
   },
   {
    "handle": "winter-cranberry-jam",
    "title": "Winter Cranberry Jam",
    "price": 6.0,
    "category": "Jam",
-   "ship": true,
+   "ship": false,
    "available": false,
    "quantity": 0,
    "toast_id": "1a954bcb-c892-415d-8ff7-d6c91ba2125f",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/shop/jam-shelf-sq-800.jpg",
+   "photo_kind": "family",
+   "photo_alt": "Tropical jam in front of a row of iD Éclair jars"
   },
   {
    "handle": "salted-caramel-jam",
    "title": "Salted Caramel Jam",
    "price": 10.0,
    "category": "Jam",
-   "ship": true,
+   "ship": false,
    "available": true,
    "quantity": null,
    "toast_id": "18ceeeb5-b7fd-4c32-ba99-092fb0e9bdec",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/e0dee4dc-0a63-4464-ba45-b68d223e2f03.png",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/salted-caramel-jam.jpg"
+   "local_image": "img/curate/salted-caramel-jam.jpg",
+   "photo": "img/curate/salted-caramel-jam.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Salted Caramel Jam"
   },
   {
    "handle": "framboise-cherie",
@@ -1304,7 +1586,10 @@
    "toast_id": "2112a6c8-5f7c-4153-ac66-fc9d45e21f44",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/8142fd4e-40a8-4688-8c8a-e308f8313087.png",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/cake-framboise.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Framboise chérie"
   },
   {
    "handle": "chocolat-mon-amour",
@@ -1317,7 +1602,10 @@
    "toast_id": "30c776b6-c359-40b1-ba7d-59357a2e5669",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/b6246993-d026-4649-88be-facb236eaac0.png",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/cake-chocolat.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Chocolat mon amour"
   },
   {
    "handle": "citron-ma-passion",
@@ -1330,7 +1618,10 @@
    "toast_id": "9455b2f3-dc16-4170-a2c3-2e37b34879fa",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/81c21a53-307b-4cfe-b36b-7884e753db1a.png",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/cake-citron.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Citron ma passion"
   },
   {
    "handle": "noisette-toujours",
@@ -1343,7 +1634,10 @@
    "toast_id": "16150293-3e9c-45c4-93a2-52e8ff4c18ee",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/5be105b3-9cb3-4360-a77e-9abd5bbac362.png",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/noisette-toujours-800.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Noisette toujours"
   },
   {
    "handle": "douceur-tropicale",
@@ -1356,7 +1650,10 @@
    "toast_id": "58a8e6f6-ff37-42b0-bd17-4a3d9e686536",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/8a6b7f5b-60f5-4455-a280-c89f342fd401.png",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/douceur-tropicale-800.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Douceur tropicale"
   },
   {
    "handle": "caramel-je-taime",
@@ -1369,7 +1666,10 @@
    "toast_id": "b945c186-a0bc-4810-b972-a37c06add82a",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/d954a6d2-b1d6-4de8-a0c2-31eff8025fe7.png",
    "on_site": true,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/cake-caramel.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Caramel je t’aime"
   },
   {
    "handle": "cookie-spoon",
@@ -1383,7 +1683,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/0e9e5dfc-2679-4876-827a-2131b803bebc.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/cookie-spoon.jpg"
+   "local_image": "img/curate/cookie-spoon.jpg",
+   "photo": "img/curate/cookie-spoon.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cookie spoons"
   },
   {
    "handle": "palmito-cookie",
@@ -1397,7 +1700,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/25fefa83-0154-417b-a49b-e0c5344c6559.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/palmito-cookie.jpg"
+   "local_image": "img/curate/palmito-cookie.jpg",
+   "photo": "img/curate/palmito-cookie.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Palmito Cookie"
   },
   {
    "handle": "diamants-biscuit-by-6",
@@ -1411,7 +1717,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f3b0f032-1258-4111-a361-718326c23bd4.png",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/diamants-biscuit-by-6.jpg"
+   "local_image": "img/curate/diamants-biscuit-by-6.jpg",
+   "photo": "img/curate/diamants-biscuit-by-6.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Diamants biscuits, by 5"
   },
   {
    "handle": "dino-cookies",
@@ -1425,7 +1734,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/a73d8f9a-5c39-446a-b6dc-a45410d56f53.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/dino-cookies.jpg"
+   "local_image": "img/curate/dino-cookies.jpg",
+   "photo": "img/curate/dino-cookies.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Dino Cookies"
   },
   {
    "handle": "coucou-biscuits",
@@ -1439,7 +1751,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/5964ee99-eacf-4549-b3be-26a96da44f8f.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/coucou-biscuits.jpg"
+   "local_image": "img/curate/coucou-biscuits.jpg",
+   "photo": "img/curate/coucou-biscuits.jpg",
+   "photo_kind": "own",
+   "photo_alt": "CouCou Biscuits"
   },
   {
    "handle": "teddy-bear-biscuits",
@@ -1453,7 +1768,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f115f188-9eb7-44ee-8ba3-da88b6b4db80.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/teddy-bear-biscuits.jpg"
+   "local_image": "img/curate/teddy-bear-biscuits.jpg",
+   "photo": "img/curate/teddy-bear-biscuits.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Teddy Bear Biscuits"
   },
   {
    "handle": "chocolate-fingers-sables-poches",
@@ -1467,7 +1785,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/c6c8642a-9810-41ed-a334-b5c2c454426a.jpg",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/chocolate-fingers-sables-poches.jpg"
+   "local_image": "img/curate/chocolate-fingers-sables-poches.jpg",
+   "photo": "img/curate/chocolate-fingers-sables-poches.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Chocolate fingers, sablés pochés"
   },
   {
    "handle": "cherry-poches",
@@ -1481,7 +1802,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/8911d6f2-5641-4c11-b498-20618ee127a0.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/cherry-poches.jpg"
+   "local_image": "img/curate/cherry-poches.jpg",
+   "photo": "img/curate/cherry-poches.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cherry Poches"
   },
   {
    "handle": "truffles",
@@ -1495,7 +1819,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/a7d5a0fa-15c8-4e4e-99d5-a051a0c0f730.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/truffles.jpg"
+   "local_image": "img/curate/truffles.jpg",
+   "photo": "img/curate/truffles.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Truffles"
   },
   {
    "handle": "gf-biscuits",
@@ -1508,7 +1835,10 @@
    "toast_id": "c636e1fe-8688-449c-a7a1-0c8c59189881",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/cookie.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a biscuit"
   },
   {
    "handle": "sesame-brittle",
@@ -1522,7 +1852,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/c7097a36-3e87-4d7b-82db-7a9514c5f50a.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/sesame-brittle.jpg"
+   "local_image": "img/curate/sesame-brittle.jpg",
+   "photo": "img/curate/sesame-brittle.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Sesame Brittle"
   },
   {
    "handle": "almond-brittle",
@@ -1536,7 +1869,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/bbf2281f-131c-4d01-8cc7-7d59446d9cb7.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/almond-brittle.jpg"
+   "local_image": "img/curate/almond-brittle.jpg",
+   "photo": "img/curate/almond-brittle.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Almond Brittle"
   },
   {
    "handle": "meringues-gf",
@@ -1550,7 +1886,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/06284562-c3d5-43c0-9eea-e2385d592401.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/meringues-gf.jpg"
+   "local_image": "img/curate/meringues-gf.jpg",
+   "photo": "img/curate/meringues-gf.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Meringues (gf)"
   },
   {
    "handle": "eclairons",
@@ -1563,7 +1902,10 @@
    "toast_id": "cfaad999-59c5-440d-8fd4-fae1d47bb7e3",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/shop/eclairs-slate-sq-800.jpg",
+   "photo_kind": "family",
+   "photo_alt": "A spread of éclairs with different glazes and decorations on a dark slate"
   },
   {
    "handle": "loose-tea-leaves",
@@ -1577,7 +1919,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/item-1300000000908514956_1762372740.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/loose-tea-leaves.jpg"
+   "local_image": "img/curate/loose-tea-leaves.jpg",
+   "photo": "img/curate/loose-tea-leaves.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Loose Tea Leaves"
   },
   {
    "handle": "kushyflakes",
@@ -1591,7 +1936,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/5659a5a4-b96b-41b9-b7e2-1b4ca6124700.png",
    "on_site": true,
    "hidden": false,
-   "local_image": "img/curate/kushyflakes.jpg"
+   "local_image": "img/curate/kushyflakes.jpg",
+   "photo": "img/curate/kushyflakes.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Kushyflakes"
   },
   {
    "handle": "housemade-croutons",
@@ -1604,7 +1952,10 @@
    "toast_id": "245aa2cd-f74f-4c05-bdbb-05acf69cd390",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/bread.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a loaf"
   },
   {
    "handle": "spritz",
@@ -1617,7 +1968,10 @@
    "toast_id": "b687e74c-63c7-4d25-8b5b-876d2a38d077",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/cookie.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a biscuit"
   },
   {
    "handle": "lemon-crinkle",
@@ -1631,10 +1985,13 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/4d6fbb23-9aa5-4c83-892d-e79eb4c6c970.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/lemon-crinkle.jpg"
+   "local_image": "img/curate/lemon-crinkle.jpg",
+   "photo": "img/curate/lemon-crinkle.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Lemon Crinkle"
   },
   {
-   "handle": "red-velvet-cookie-vegan-gluten-free-wholesale-by-24",
+   "handle": "red-velvet-cookies",
    "title": "Red Velvet Cookies",
    "price": 9.0,
    "category": "Pre-Packaged",
@@ -1643,9 +2000,12 @@
    "quantity": 0,
    "toast_id": "fadc4a85-15a8-47b9-97cd-a2df3f9b2744",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/6bf06081-4fef-4fe8-9993-b3c59e529466.jpg",
-   "on_site": true,
+   "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/red-velvet-cookie-vegan-gluten-free-wholesale-by-24.jpg"
+   "local_image": "img/curate/red-velvet-cookies.jpg",
+   "photo": "img/curate/red-velvet-cookies-800.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Red Velvet Cookies"
   },
   {
    "handle": "love-cookies",
@@ -1658,7 +2018,10 @@
    "toast_id": "ad0d190d-82cf-4364-b17e-992230ff17d3",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/cookie.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a biscuit"
   },
   {
    "handle": "lrg-halloween-cookies",
@@ -1671,7 +2034,10 @@
    "toast_id": "c33edf6e-2102-4be3-877e-ccbbfa304b81",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/cookie.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a biscuit"
   },
   {
    "handle": "sm-halloween-cookie",
@@ -1684,7 +2050,10 @@
    "toast_id": "d28e5963-8435-43f5-8737-2cde46e58eb1",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/cookie.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a biscuit"
   },
   {
    "handle": "halloween-biscuits",
@@ -1697,7 +2066,10 @@
    "toast_id": "6747115b-d6bc-4b7f-baba-fe7f4276f7f6",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/cookie.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a biscuit"
   },
   {
    "handle": "rebel-cheese",
@@ -1711,7 +2083,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/d178b0b6-a85f-4ac3-b834-7e4dca4e0d56.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/rebel-cheese.jpg"
+   "local_image": "img/curate/rebel-cheese.jpg",
+   "photo": "img/curate/rebel-cheese.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Rebel Cheese"
   },
   {
    "handle": "coke",
@@ -1725,7 +2100,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/41b3947a-2888-4233-acd1-3b4eedf1bd03.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/coke.jpg"
+   "local_image": "img/curate/coke.jpg",
+   "photo": "img/curate/coke.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Coke"
   },
   {
    "handle": "diet-coke",
@@ -1739,7 +2117,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/a0918be3-6cc9-4b16-8455-20d04bf088f8.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/diet-coke.jpg"
+   "local_image": "img/curate/diet-coke.jpg",
+   "photo": "img/curate/diet-coke.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Diet Coke"
   },
   {
    "handle": "ginger-beer",
@@ -1752,7 +2133,10 @@
    "toast_id": "fb502385-4d9c-4470-bb31-6520258196ab",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": false,
+   "photo": "img/tiles/bottle.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a bottle"
   },
   {
    "handle": "poppi",
@@ -1766,7 +2150,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/aae39258-1132-479e-92d5-8a9051f3581b.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/poppi.jpg"
+   "local_image": "img/curate/poppi.jpg",
+   "photo": "img/curate/poppi.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Poppi"
   },
   {
    "handle": "fresh-squeezed-oj",
@@ -1780,7 +2167,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/31afd59c-dc51-459a-bf48-d6722b1b9105.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/fresh-squeezed-oj.jpg"
+   "local_image": "img/curate/fresh-squeezed-oj.jpg",
+   "photo": "img/curate/fresh-squeezed-oj.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Fresh Squeezed OJ"
   },
   {
    "handle": "boxed-water",
@@ -1794,7 +2184,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/a2ce8e8b-63c3-447f-acd6-07f252d81460.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/boxed-water.jpg"
+   "local_image": "img/curate/boxed-water.jpg",
+   "photo": "img/curate/boxed-water.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Boxed Water"
   },
   {
    "handle": "orangina",
@@ -1808,7 +2201,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/9af7b143-7165-45c2-afce-8c25ebd190e7.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/orangina.jpg"
+   "local_image": "img/curate/orangina.jpg",
+   "photo": "img/curate/orangina.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Orangina"
   },
   {
    "handle": "san-pellegrino",
@@ -1822,7 +2218,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f6321009-398e-4cb4-a289-cbadfc4246ae.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/san-pellegrino.jpg"
+   "local_image": "img/curate/san-pellegrino.jpg",
+   "photo": "img/curate/san-pellegrino.jpg",
+   "photo_kind": "own",
+   "photo_alt": "San Pellegrino"
   },
   {
    "handle": "sparkling-lemonade",
@@ -1836,7 +2235,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f184baa2-4807-49ac-8fc7-a235111c3c1d.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/sparkling-lemonade.jpg"
+   "local_image": "img/curate/sparkling-lemonade.jpg",
+   "photo": "img/curate/sparkling-lemonade.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Sparkling Lemonade"
   },
   {
    "handle": "alain-millat",
@@ -1850,10 +2252,13 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/cbd3e4e5-ee89-4268-8044-b01b780981cd.png",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/alain-millat.jpg"
+   "local_image": "img/curate/alain-millat.jpg",
+   "photo": "img/curate/alain-millat.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Alain Millat"
   },
   {
-   "handle": "cheese-board",
+   "handle": "cheese-board-2-go",
    "title": "Cheese Board 2 Go!",
    "price": 19.5,
    "category": "Grab N Go",
@@ -1862,8 +2267,12 @@
    "quantity": null,
    "toast_id": "6e58fea3-3b0d-4d6c-a66d-e80a5fb20396",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/81329486-4e47-432f-911e-b7251e45654f.jpg",
-   "on_site": true,
-   "hidden": false
+   "on_site": false,
+   "hidden": false,
+   "local_image": "img/curate/cheese-board-2-go.jpg",
+   "photo": "img/curate/cheese-board-2-go-800.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cheese Board 2 Go!"
   },
   {
    "handle": "cold-brew-2-go",
@@ -1877,7 +2286,10 @@
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/2c9f1592-9b26-4ee4-bbc7-885c94dcea98.jpg",
    "on_site": false,
    "hidden": false,
-   "local_image": "img/curate/cold-brew-2-go.jpg"
+   "local_image": "img/curate/cold-brew-2-go.jpg",
+   "photo": "img/curate/cold-brew-2-go.jpg",
+   "photo_kind": "own",
+   "photo_alt": "Cold Brew 2 Go"
   },
   {
    "handle": "thanksgiving-to-go",
@@ -1890,7 +2302,10 @@
    "toast_id": "1ef4c72a-d17f-4dff-a5c3-9bb3fdfc6505",
    "image": null,
    "on_site": false,
-   "hidden": true
+   "hidden": true,
+   "photo": "img/shop/tg-box-sq-800.jpg",
+   "photo_kind": "family",
+   "photo_alt": "The Thanksgiving box for two, open, with wine, sides and baguette"
   }
  ]
 }

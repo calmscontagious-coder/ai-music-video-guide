@@ -365,7 +365,7 @@
    "price": 7.95
   },
   "red-velvet-cookie-vegan-gluten-free-wholesale-by-24": {
-   "available": false,
+   "available": true,
    "price": 24.0
   },
   "store-pickup-app": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-06T02:32:18.581210+00:00"
+ "updated_at": "2026-11-06T08:19:20.915694+00:00"
 }
