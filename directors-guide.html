@@ -1,77 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Seedance Director's Guide</title>
-<style>
-  :root{--ink:#0b0a0e;--cream:#f6f1e7;--pink:#ff2e88;--gold:#ffd23f;--teal:#17c37b}
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--ink);color:var(--cream);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.7}
-  .wrap{max-width:760px;margin:0 auto;padding:70px 24px 120px}
-  .tape{display:inline-block;background:var(--gold);color:var(--ink);font-weight:800;letter-spacing:.14em;font-size:.72rem;padding:6px 18px;transform:rotate(-1.6deg)}
-  h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.1;margin:20px 0 10px}
-  .byline{opacity:.7;margin-bottom:46px}
-  h2{font-size:1.5rem;font-weight:900;color:var(--gold);margin:52px 0 14px;padding-top:26px;border-top:1px solid rgba(246,241,231,.12)}
-  h3{font-size:1.1rem;color:var(--pink);margin:26px 0 8px}
-  p{margin-bottom:16px;opacity:.92}
-  ul,ol{margin:0 0 18px 24px}
-  li{margin-bottom:8px;opacity:.92}
-  code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em}
-  pre{background:rgba(246,241,231,.06);border:1px solid rgba(246,241,231,.14);border-radius:10px;padding:20px;overflow-x:auto;margin-bottom:20px;white-space:pre-wrap}
-  .tip{border-left:4px solid var(--teal);padding:10px 0 10px 20px;margin:22px 0;background:rgba(23,195,123,.06)}
-  .warn{border-left:4px solid var(--pink);padding:10px 0 10px 20px;margin:22px 0;background:rgba(255,46,136,.06)}
-  .btn{display:inline-block;background:var(--pink);color:#fff;font-weight:800;padding:14px 34px;border-radius:10px;text-decoration:none;margin-top:8px}
-  .fine{font-size:.8rem;opacity:.6;margin-top:60px;border-top:1px solid rgba(246,241,231,.12);padding-top:20px}
-
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Seedance Director&#x27;s Guide: Prompts for AI Music Videos</title>
+<meta name="description" content="A free playbook for directing AI music videos: test cheaply before a full render, the five-part scene template, camera words the engines follow, and a pre-render checklist.">
+<link rel="canonical" href="https://purposewithpresence.com/directors-guide.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Purpose with Presence">
+<meta property="og:title" content="The Seedance Director&#x27;s Guide: Prompts for AI Music Videos">
+<meta property="og:description" content="A free playbook for directing AI music videos: test cheaply before a full render, the five-part scene template, camera words the engines follow, and a pre-render checklist.">
+<meta property="og:url" content="https://purposewithpresence.com/directors-guide.html">
 <meta property="og:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
+<meta name="theme-color" content="oklch(0.2 0.035 252.3)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<style>
-/* premium patch v2 */
-body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
-.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
-article h2,.page h2{position:relative;padding-left:18px}
-article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
-article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
-article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
-blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
-.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
-nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
-@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-::selection{background:#ff2e88;color:#fff}
-</style>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <link rel="alternate" type="application/atom+xml" title="AI Music Video Guide" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/pages.css">
+<style>
+.guide { --line: var(--color-line); --dim: var(--color-muted); }
+.guide code, .guide pre { font-family: var(--font-mono); font-size: 0.9em; }
+.guide pre { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius-control); padding: var(--spacing-4); margin: 0 0 var(--spacing-6); white-space: pre-wrap; overflow-wrap: anywhere; color: var(--color-ink); max-width: var(--measure-body); }
+.guide .tip, .guide .warn { border-left: 3px solid var(--color-accent); padding: var(--spacing-3) var(--spacing-4); margin: var(--spacing-6) 0; background: var(--color-surface); color: var(--color-muted); max-width: var(--measure-body); border-radius: 0 var(--radius-control) var(--radius-control) 0; }
+.guide .warn { border-left-color: var(--color-minus); }
+.guide .paid { font-weight: 500; font-size: 0.85em; opacity: 0.8; margin-left: 0.4em; white-space: nowrap; }
+.guide .fine { margin-top: var(--spacing-12); padding-top: var(--spacing-6); border-top: 1px solid var(--color-line-soft); }
+.guide p, .guide li { overflow-wrap: anywhere; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Seedance Director's Guide", "description": "A free playbook for directing AI music videos: test cheaply before a full render, the five-part scene template, camera words the engines follow, and a pre-render checklist.", "author": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-07-11", "dateModified": "2026-11-06", "image": "https://purposewithpresence.com/assets/og/home.jpg", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/directors-guide.html"}}</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+<div class="wrap head-row">
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg><span class="brand-name">Purpose with Presence</span></a>
+<nav class="nav" aria-label="Main"><ul><li><a href="/studio/">Studio</a></li><li><a href="/#plans">Plans</a></li><li><a href="/#work">Work</a></li><li><a href="/contact.html">Contact</a></li><li><a class="nav-free" href="/#free-check">Free check</a></li></ul></nav>
+</div>
+</header>
+<main id="main" class="doc">
 <div class="wrap">
-<span class="tape">FREE DIRECTOR'S GUIDE · v1</span>
+<article class="prose guide">
+<p class="idx">Free director’s guide · v1</p>
 <h1>The Seedance Director's Guide</h1>
-<p class="byline">Field notes from real renders of a real music catalog — a working playbook, not theory.</p>
+<p class="lede">Field notes from real renders of a real music catalog — a working playbook, not theory.</p>
 
 <p>AI video tools don't reward better wishes; they reward better <b>direction</b>. The difference between generic output and something people rewatch is a scene description that behaves like a shot-listed brief. This guide is the exact system used on a real release catalog.</p>
 
@@ -154,11 +135,10 @@ or typography, no extra limbs, no close-up realistic hands, no style drift.</pre
 </ol>
 
 <p style="margin-top:44px">That's the whole system. It costs about one probe's worth of credits to learn and it compounds on every song you ever render.</p>
-<a class="btn" href="/go/seedance" rel="sponsored noopener">Open Seedance & Direct Your First Render →</a>
+<p><a class="button" href="/go/seedance" rel="sponsored noopener" target="_blank">Open Seedance and direct your first render<span class="paid">· affiliate link</span></a></p>
 
-<p class="fine">© 2026 AI Music Video Guide. Free to share with attribution. Affiliate disclosure: Seedance links in this guide are affiliate links — subscribing through them supports free resources like this at no extra cost to you. We belong to seeddance.video's referral program and are not owned or run by seeddance.video or any AI model maker.</p>
-</div>
-<div style="max-width:760px;margin:0 auto;padding:0 20px"><!-- emailcap:start -->
+<p class="fine small quiet">© 2026 Purpose with Presence. Free to share with attribution. Affiliate disclosure: Seedance links in this guide are affiliate links — subscribing through them supports free resources like this at no extra cost to you. We belong to seeddance.video's referral program and are not owned or run by seeddance.video or any AI model maker.</p>
+<!-- emailcap:start -->
 <div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
 <p style="margin:0 0 6px;font-weight:700;font-size:1.05rem">Want the updated version + monthly prompt packs by email?</p>
 <p style="margin:0 0 12px;font-size:.92rem;color:var(--dim)">The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
@@ -171,6 +151,41 @@ n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
 (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
 ml('account', '2504111');
 </script>
-<!-- emailcap:end --></div>
+<!-- emailcap:end -->
+</article>
+</div>
+</main>
+<footer class="site-foot">
+<div class="wrap">
+<div class="foot-grid">
+<div>
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg><span class="brand-name">Purpose with Presence</span></a>
+<p>Websites, Google profiles, booking, email, reviews and AI-answer visibility for local businesses of every kind.</p>
+</div>
+<div>
+<h2>Find your way</h2>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/studio/">Studio</a></li>
+<li><a href="/#free-check">Free check</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/fitness/">Fitness</a></li>
+<li><a href="/seedance-guide/">AI video guide</a></li>
+<li><a href="/about.html">About</a></li>
+<li><a href="/contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h2>The fine print</h2>
+<ul>
+<li><a href="/privacy.html">Privacy</a></li>
+<li><a href="/terms.html">Terms</a></li>
+<li><a href="/disclosure.html">Affiliate disclosure</a></li>
+</ul>
+</div>
+</div>
+<p class="fineprint">© <span class="num">2026</span> Purpose with Presence. Purpose with Presence is operated by an individual sole proprietor.</p>
+</div>
+</footer>
 </body>
 </html>

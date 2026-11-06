@@ -43,7 +43,7 @@ p { margin: 0 0 var(--spacing-3); max-width: var(--measure-body); }
 .next-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-ink); font-weight: 600; }
 .next-links a:first-child { padding: 0 var(--spacing-4); background: var(--color-accent); color: var(--color-on-accent); border-radius: var(--radius-control); text-decoration: none; }
 .doc-foot { border-top: 1px solid var(--color-paper-line); padding: var(--spacing-8) 0 var(--spacing-12); font-size: var(--text-label); color: var(--color-paper-muted); }
-.doc-foot a { display: inline-block; padding: var(--spacing-1) 0; }
+.doc-foot a { display: inline-flex; align-items: center; min-height: 44px; }
 @media print {
   @page { size: auto; margin: 16mm 14mm; }
   body { font-size: 11pt; background: var(--color-paper); }
