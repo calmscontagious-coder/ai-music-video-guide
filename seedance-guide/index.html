@@ -223,6 +223,23 @@ main{padding:36px 0 120px}
 article h1,.page h1{font-size:1.75rem;line-height:1.2}
 article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
 }
+
+/* nav fit + hero clearance (2026-11-06): one-line brand, shorter label on phones,
+   and the hero keeps room under the fixed nav (the patch's .wrap padding reset it to 0) */
+.brand{white-space:nowrap}
+.core .ico{color:var(--cream)}
+.feat .big-ico{color:var(--pink);line-height:0}
+@media(max-width:380px){.feat .ftxt{min-width:0}.core{padding:24px}}
+.brand .bs{display:none}
+.hero.wrap{padding-top:150px}
+@media(max-width:860px){.hero.wrap{padding-top:124px}}
+@media(max-width:520px){
+nav{gap:10px;padding:6px 8px 6px 16px;max-width:calc(100vw - 24px)}
+.burger{width:44px;height:44px}
+.brand .bl{display:none}.brand .bs{display:inline}
+.nav-cta{flex-direction:column;line-height:1.15;padding:5px 14px;font-size:.95rem}
+.nav-cta .paid{font-size:.75rem!important;margin:1px 0 0}
+}
 </style>
 <!-- MailerLite Universal -->
 <script>
@@ -257,7 +274,7 @@ ml('account', '2504111');
 <div class="grain"></div>
 
 <nav id="nav">
-  <a class="brand" href="/"><span class="dot"></span>AI Music Video Guide</a>
+  <a class="brand" href="/" aria-label="AI Music Video Guide, home"><span class="dot"></span><span class="bl">AI Music Video Guide</span><span class="bs" aria-hidden="true">AI Video Guide</span></a>
   <div class="nlinks">
     <a href="#features">Features</a>
     <a href="#make">Make</a>
@@ -286,8 +303,8 @@ ml('account', '2504111');
     <a class="btn big ghost" href="#how">See how it works<span class="ic">↓</span></a>
   </div>
   <div class="trust rv d4">
-    <span><span class="chk">✓</span> 1 free credit a day</span>
-    <span><span class="chk">✓</span> Rendering takes paid credits</span>
+    <span><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span> 1 free credit a day</span>
+    <span><span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span> Rendering takes paid credits</span>
   </div>
   <div class="scrollcue"><span>Scroll</span><span class="bar"></span></div>
 </header>
@@ -301,18 +318,18 @@ ml('account', '2504111');
   <div class="bento">
     <div class="shell feat rv">
       <div class="core">
-        <div class="big-ico">🎤</div>
+        <div class="big-ico"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4M8 22h8"/></svg></div>
         <div class="ftxt">
           <h3>Real lip sync, from your real vocal</h3>
           <p>The engine analyzes the vocal track itself — sung words land on the performer's mouth, verse after verse, with zero manual keyframing. This is the difference between a music video and a slideshow.</p>
         </div>
       </div>
     </div>
-    <div class="shell wide rv"><div class="core"><div class="ico">🥁</div><h3>Cuts on the count</h3><p>Scene changes, camera moves, and pacing lock to your track's rhythm and energy. The visuals hit exactly where the music hits.</p></div></div>
-    <div class="shell wide rv d1"><div class="core"><div class="ico">⏱️</div><h3>Full-song renders</h3><p>Five seconds to ten full minutes — the video matches your audio second-for-second. Whole songs, DJ sets, complete performances.</p></div></div>
-    <div class="shell rv"><div class="core"><div class="ico">🧬</div><h3>One performer, every scene</h3><p>Up to three reference photos keep the same artist recognizable start to finish.</p></div></div>
-    <div class="shell rv d1"><div class="core"><div class="ico">🎬</div><h3>Camera motion transfer</h3><p>Feed it a reference reel; it replicates the dolly, whip-pan, and cut rhythm on your subject.</p></div></div>
-    <div class="shell rv d2"><div class="core"><div class="ico">💸</div><h3>Zero-risk renders</h3><p>The exact cost shows before you generate, and failed renders refund automatically.</p></div></div>
+    <div class="shell wide rv"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 14v-4M8 18V6M12 15V9M16 20V4M20 14v-4"/></svg></div><h3>Cuts on the count</h3><p>Scene changes, camera moves, and pacing lock to your track's rhythm and energy. The visuals hit exactly where the music hits.</p></div></div>
+    <div class="shell wide rv d1"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="14" r="8"/><path d="M12 10v4l2.5 2M10 2h4M12 2v4"/></svg></div><h3>Full-song renders</h3><p>Five seconds to ten full minutes — the video matches your audio second-for-second. Whole songs, DJ sets, complete performances.</p></div></div>
+    <div class="shell rv"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div><h3>One performer, every scene</h3><p>Up to three reference photos keep the same artist recognizable start to finish.</p></div></div>
+    <div class="shell rv d1"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/></svg></div><h3>Camera motion transfer</h3><p>Feed it a reference reel; it replicates the dolly, whip-pan, and cut rhythm on your subject.</p></div></div>
+    <div class="shell rv d2"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Zero-risk renders</h3><p>The exact cost shows before you generate, and failed renders refund automatically.</p></div></div>
   </div>
 </section>
 
@@ -323,11 +340,11 @@ ml('account', '2504111');
     <p class="lead rv d2">The music-video mode is the headline. The platform is a whole creative studio.</p>
   </div>
   <div class="bento">
-    <div class="shell wide rv"><div class="core"><div class="ico">🎵</div><h3>Music videos</h3><p>Full-length, lip-synced, beat-cut performance videos for your releases — YouTube-ready in an afternoon.</p></div></div>
-    <div class="shell wide rv d1"><div class="core"><div class="ico">📱</div><h3>TikToks, Reels & Shorts</h3><p>Vertical clips cut to the drop. Loop-friendly hooks that ride trending audio frame-accurately.</p></div></div>
-    <div class="shell rv"><div class="core"><div class="ico">📢</div><h3>Ads & promos</h3><p>Template a winning spot, swap the product, ship variants in under an hour — audio baked in.</p></div></div>
-    <div class="shell rv d1"><div class="core"><div class="ico">⛩️</div><h3>Anime & short films</h3><p>Multi-shot storyboards with locked characters via Seedance 2.5 and Veo 3 — same credit pool.</p></div></div>
-    <div class="shell rv d2"><div class="core"><div class="ico">💥</div><h3>VFX & motion</h3><p>Motion control, effects, style transfer, seamless transitions — the whole effects bay.</p></div></div>
+    <div class="shell wide rv"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><h3>Music videos</h3><p>Full-length, lip-synced, beat-cut performance videos for your releases — YouTube-ready in an afternoon.</p></div></div>
+    <div class="shell wide rv d1"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>TikToks, Reels & Shorts</h3><p>Vertical clips cut to the drop. Loop-friendly hooks that ride trending audio frame-accurately.</p></div></div>
+    <div class="shell rv"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 5V5L7 10H4a1 1 0 0 0-1 1z"/><path d="M17 8a5 5 0 0 1 0 8"/></svg></div><h3>Ads & promos</h3><p>Template a winning spot, swap the product, ship variants in under an hour — audio baked in.</p></div></div>
+    <div class="shell rv d1"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4M3 12h18"/></svg></div><h3>Anime & short films</h3><p>Multi-shot storyboards with locked characters via Seedance 2.5 and Veo 3 — same credit pool.</p></div></div>
+    <div class="shell rv d2"><div class="core"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div><h3>VFX & motion</h3><p>Motion control, effects, style transfer, seamless transitions — the whole effects bay.</p></div></div>
   </div>
 </section>
 
