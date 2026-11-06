@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T01:47:08.210185+00:00",
+ "updated_at": "2026-11-06T02:32:18.470254+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -625,8 +625,8 @@
    "price": 7.0,
    "category": "Bread",
    "ship": false,
-   "available": false,
-   "quantity": 0,
+   "available": true,
+   "quantity": null,
    "toast_id": "4b36d1c3-7e6f-4ecc-a21c-15ad799c4977",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/85ca3fd3-12b5-48d4-a7e5-49150f13246a.jpg",
    "on_site": false,
@@ -1023,8 +1023,8 @@
    "price": 15.0,
    "category": "Cold Pastries",
    "ship": false,
-   "available": false,
-   "quantity": 0,
+   "available": true,
+   "quantity": null,
    "toast_id": "550c3da2-66d9-46ab-8a1b-5ef3c9d10441",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/e38c8b63-0200-423d-830e-ea0bed6cccc3.jpg",
    "on_site": false,
