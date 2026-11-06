@@ -108,8 +108,17 @@ main{padding:36px 0 120px}
 article h1,.page h1{font-size:1.75rem;line-height:1.2}
 article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
 }
+/* blog fixes 2026-11-06 */
+article p,article li{overflow-wrap:anywhere}
+article td{overflow-wrap:break-word}
+.foot-links{gap:0 6px}.foot-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
+.eyebrow{font-size:.75rem}
+.studio-note{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
+.studio-note p{margin:0;color:var(--dim);font-size:1rem}
+.studio-note a{color:var(--cyan)}
+/* end blog fixes */
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI Video Character Consistency: Keep the Same Face in Every Shot (2026 Guide)", "description": "Character drift is AI video's holy-grail problem. How Kling 3.0 Elements, Seedance 2.0 references and Veo 3.1 handle it, plus a workflow for every model.", "wordCount": 545, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-07-30", "dateModified": "2026-08-29", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/ai-video-character-consistency.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI Video Character Consistency: Keep the Same Face in Every Shot (2026 Guide)", "description": "Character drift is AI video's holy-grail problem. How Kling 3.0 Elements, Seedance 2.0 references and Veo 3.1 handle it, plus a workflow for every model.", "wordCount": 545, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-07-30", "dateModified": "2026-08-29", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/ai-video-character-consistency.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does my AI character look different in every clip?", "acceptedAnswer": {"@type": "Answer", "text": "AI video models have no memory between generations \u2014 each clip re-invents the character from your text unless you anchor it with reference images. Small prompt wording changes, lighting shifts, or camera-distance changes compound the drift. Lock 2\u20134 reference images and one exact descriptor line, and reuse both in every generation."}}, {"@type": "Question", "name": "Which AI video generator has the best character consistency in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Kling 3.0's Elements system (1\u20134 tagged references plus Character ID face-locking) is the most complete toolkit, and Seedance 2.0's reference system reports around 95% cross-shot consistency. Veo 3.1 supports up to three reference images. All three are workable \u2014 the shared requirement is disciplined reference reuse on your side."}}, {"@type": "Question", "name": "How many reference images should I use for a consistent character?", "acceptedAnswer": {"@type": "Answer", "text": "Two to four, showing the same character from different angles (front, three-quarter, profile). Cross-model testing shows multiple angles measurably beat a single image for multi-scene videos, because the model has evidence for how the face reads in whatever pose the shot needs."}}, {"@type": "Question", "name": "Can I keep the same character across different AI video tools?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 that's the point of the reference-sheet workflow. Reference images and a fixed descriptor line are portable: upload the same sheet to Kling, Seedance, or Veo and you'll get a recognizably consistent character everywhere, letting you route each shot to whichever model handles it best."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "AI Video Character Consistency: Keep the Same Face in Every Shot (2026 Guide)", "item": "https://purposewithpresence.com/blog/ai-video-character-consistency.html"}]}</script>
 <link rel="alternate" type="application/atom+xml" title="AI Music Video Guide" href="/feed.xml">
@@ -157,11 +166,11 @@ article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .
 <div class="ml-embedded" data-form="gDc4Ah"></div>
 </div>
 <script>
-(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-ml('account', '2504111');
+(function(w,d){w.ml=w.ml||function(){(w.ml.q=w.ml.q||[]).push(arguments)};ml('account','2504111');
+var on=0;function load(){if(on)return;on=1;w.removeEventListener('scroll',chk);var s=d.createElement('script');s.async=1;s.src='https://assets.mailerlite.com/js/universal.js';d.head.appendChild(s)}
+function chk(){var e=d.documentElement;if((w.scrollY+w.innerHeight)/e.scrollHeight>=.5)load()}
+w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
+})(window,document);
 </script>
 <!-- emailcap:end -->
 <!-- related:start -->
@@ -169,8 +178,9 @@ ml('account', '2504111');
 <!-- related:end -->
 <h2>Frequently asked questions</h2>
 <div class="faq"><details><summary>Why does my AI character look different in every clip?<span class="plus" style="float:right">+</span></summary><p>AI video models have no memory between generations — each clip re-invents the character from your text unless you anchor it with reference images. Small prompt wording changes, lighting shifts, or camera-distance changes compound the drift. Lock 2–4 reference images and one exact descriptor line, and reuse both in every generation.</p></details><details><summary>Which AI video generator has the best character consistency in 2026?<span class="plus" style="float:right">+</span></summary><p>Kling 3.0&#x27;s Elements system (1–4 tagged references plus Character ID face-locking) is the most complete toolkit, and Seedance 2.0&#x27;s reference system reports around 95% cross-shot consistency. Veo 3.1 supports up to three reference images. All three are workable — the shared requirement is disciplined reference reuse on your side.</p></details><details><summary>How many reference images should I use for a consistent character?<span class="plus" style="float:right">+</span></summary><p>Two to four, showing the same character from different angles (front, three-quarter, profile). Cross-model testing shows multiple angles measurably beat a single image for multi-scene videos, because the model has evidence for how the face reads in whatever pose the shot needs.</p></details><details><summary>Can I keep the same character across different AI video tools?<span class="plus" style="float:right">+</span></summary><p>Yes — that&#x27;s the point of the reference-sheet workflow. Reference images and a fixed descriptor line are portable: upload the same sheet to Kling, Seedance, or Veo and you&#x27;ll get a recognizably consistent character everywhere, letting you route each shot to whichever model handles it best.</p></details></div>
-</article></main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
+</article><aside class="studio-note"><p>Run a local business? <a href="/studio/">See how we get businesses found on Google and in AI answers</a></p></aside>
+</main><footer><div class="wrap">
+<div class="foot-links"><a href="/">Home</a><a href="/studio/">Studio</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
@@ -196,7 +206,7 @@ ml('account', '2504111');
   if(!el) return;
   function seen(){try{return localStorage.getItem(KEY)}catch(e){return '1'}}
   function mark(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}}
-  function show(){ if(seen())return; el.style.display='flex'; mark(); }
+  function show(){ if(seen())return; if(window.pwpLoadML)window.pwpLoadML(); el.style.display='flex'; mark(); }
   function hide(){ el.style.display='none'; }
   document.getElementById('pwp-cap-x').addEventListener('click',hide);
   el.addEventListener('click',function(e){ if(e.target===el) hide(); });

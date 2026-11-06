@@ -108,8 +108,17 @@ main{padding:36px 0 120px}
 article h1,.page h1{font-size:1.75rem;line-height:1.2}
 article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
 }
+/* blog fixes 2026-11-06 */
+article p,article li{overflow-wrap:anywhere}
+article td{overflow-wrap:break-word}
+.foot-links{gap:0 6px}.foot-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
+.eyebrow{font-size:.75rem}
+.studio-note{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
+.studio-note p{margin:0;color:var(--dim);font-size:1rem}
+.studio-note a{color:var(--cyan)}
+/* end blog fixes */
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make AI Videos Longer Than 10 Seconds (the Full-Song Method)", "description": "How to make AI videos longer than 10 seconds: the newest models render 30-second clips, older ones stop at 8 to 15, and creators chain clips into 3-minute cuts.", "wordCount": 529, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "AI Music Video Guide"}, "datePublished": "2026-07-30", "dateModified": "2026-10-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/how-to-make-ai-videos-longer-than-10-seconds.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Make AI Videos Longer Than 10 Seconds (the Full-Song Method)", "description": "How to make AI videos longer than 10 seconds: the newest models render 30-second clips, older ones stop at 8 to 15, and creators chain clips into 3-minute cuts.", "wordCount": 529, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-07-30", "dateModified": "2026-10-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/how-to-make-ai-videos-longer-than-10-seconds.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can any AI model generate a full 3-minute video in one go?", "acceptedAnswer": {"@type": "Answer", "text": "No. As of October 2026 the longest single generations are 30 seconds (Seedance 2.5 and Kling 4.0); older models cap lower (Seedance 2.0 and Kling 3.0 at 15 seconds, Veo 3.1 at 8). Anything longer is built by extending clips from their last frame or by cutting multiple short generations together in an editor."}}, {"@type": "Question", "name": "What is the longest AI video you can make in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Via chained extensions: Kling 3.0 supports extending a clip to roughly 3 minutes total, and Veo 3.1 reaches about 148 seconds through 7-second incremental extensions. Seedance 2.0 chains 4\u201315 second segments with its Video Extension feature, and Seedance 2.5 supports multiple rounds of extension on 30-second clips. With the edit-and-stitch method, length is unlimited \u2014 that's how full music videos are made."}}, {"@type": "Question", "name": "Why do extended AI videos get worse the longer they run?", "acceptedAnswer": {"@type": "Answer", "text": "Each extension only sees the last frame of the previous clip, not your original prompt or references. Small errors compound: faces drift, lighting shifts, motion loses purpose. That's why experienced creators extend within a scene once or twice at most, then cut to a fresh generation instead of chaining deep."}}, {"@type": "Question", "name": "What's the best AI video model for a full-length music video?", "acceptedAnswer": {"@type": "Answer", "text": "For music specifically, Seedance accepts excerpts of your song as reference audio (15 seconds combined on 2.0, 30 on 2.5), which keeps generations synced to the track; that matters more over 30+ shots than raw clip length. For non-music long-form, Kling 3.0's ~3-minute extension ceiling is the deepest."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "How to Make AI Videos Longer Than 10 Seconds (the Full-Song Method)", "item": "https://purposewithpresence.com/blog/how-to-make-ai-videos-longer-than-10-seconds.html"}]}</script>
 <link rel="alternate" type="application/atom+xml" title="AI Music Video Guide" href="/feed.xml">
@@ -160,11 +169,11 @@ article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .
 <div class="ml-embedded" data-form="gDc4Ah"></div>
 </div>
 <script>
-(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-ml('account', '2504111');
+(function(w,d){w.ml=w.ml||function(){(w.ml.q=w.ml.q||[]).push(arguments)};ml('account','2504111');
+var on=0;function load(){if(on)return;on=1;w.removeEventListener('scroll',chk);var s=d.createElement('script');s.async=1;s.src='https://assets.mailerlite.com/js/universal.js';d.head.appendChild(s)}
+function chk(){var e=d.documentElement;if((w.scrollY+w.innerHeight)/e.scrollHeight>=.5)load()}
+w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
+})(window,document);
 </script>
 <!-- emailcap:end -->
 <!-- related:start -->
@@ -172,8 +181,9 @@ ml('account', '2504111');
 <!-- related:end -->
 <h2>Frequently asked questions</h2>
 <div class="faq"><details><summary>Can any AI model generate a full 3-minute video in one go?<span class="plus" style="float:right">+</span></summary><p>No. As of October 2026 the longest single generations are 30 seconds (Seedance 2.5 and Kling 4.0); older models cap lower (Seedance 2.0 and Kling 3.0 at 15 seconds, Veo 3.1 at 8). Anything longer is built by extending clips from their last frame or by cutting multiple short generations together in an editor.</p></details><details><summary>What is the longest AI video you can make in 2026?<span class="plus" style="float:right">+</span></summary><p>Via chained extensions: Kling 3.0 supports extending a clip to roughly 3 minutes total, and Veo 3.1 reaches about 148 seconds through 7-second incremental extensions. Seedance 2.0 chains 4–15 second segments with its Video Extension feature, and Seedance 2.5 supports multiple rounds of extension on 30-second clips. With the edit-and-stitch method, length is unlimited — that&#x27;s how full music videos are made.</p></details><details><summary>Why do extended AI videos get worse the longer they run?<span class="plus" style="float:right">+</span></summary><p>Each extension only sees the last frame of the previous clip, not your original prompt or references. Small errors compound: faces drift, lighting shifts, motion loses purpose. That&#x27;s why experienced creators extend within a scene once or twice at most, then cut to a fresh generation instead of chaining deep.</p></details><details><summary>What&#x27;s the best AI video model for a full-length music video?<span class="plus" style="float:right">+</span></summary><p>For music specifically, Seedance accepts excerpts of your song as reference audio (15 seconds combined on 2.0, 30 on 2.5), which keeps generations synced to the track; that matters more over 30+ shots than raw clip length. For non-music long-form, Kling 3.0&#x27;s ~3-minute extension ceiling is the deepest.</p></details></div>
-</article></main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
+</article><aside class="studio-note"><p>Run a local business? <a href="/studio/">See how we get businesses found on Google and in AI answers</a></p></aside>
+</main><footer><div class="wrap">
+<div class="foot-links"><a href="/">Home</a><a href="/studio/">Studio</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
 <div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
 <p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
 <!-- ctabar:start -->
@@ -199,7 +209,7 @@ ml('account', '2504111');
   if(!el) return;
   function seen(){try{return localStorage.getItem(KEY)}catch(e){return '1'}}
   function mark(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}}
-  function show(){ if(seen())return; el.style.display='flex'; mark(); }
+  function show(){ if(seen())return; if(window.pwpLoadML)window.pwpLoadML(); el.style.display='flex'; mark(); }
   function hide(){ el.style.display='none'; }
   document.getElementById('pwp-cap-x').addEventListener('click',hide);
   el.addEventListener('click',function(e){ if(e.target===el) hide(); });
