@@ -1,11 +1,25 @@
-# AI Music Video Guide (purposewithpresence.com)
+# Purpose with Presence
 
-> Independent, citation-first guides for musicians turning finished songs into AI music videos: Seedance 2.0, Kling 3.0, Veo 3.1 workflows, honest pricing math, monetization rules, and troubleshooting. Every article carries primary-source citations and FAQ schema. Facts are dated ("as of" markers) and updated on change.
+> Purpose with Presence is a studio that runs the online side of local businesses of every kind: website, Google Business Profile, booking, email, reviews and visibility in AI answers, on monthly plans (Essentials $950, Growth $1,750, Signature $2,450). Every account stays in the owner's name, and a person signs off every piece of work. The same site hosts an independent guide to making AI music videos and a set of evidence-based fitness guides, listed below.
 
-## Tools
+## Studio
+- [Home](https://purposewithpresence.com/): what the studio does, the plans and the free check
+- [Studio: plans, services and prices](https://purposewithpresence.com/studio/): every line of every monthly plan
+- [12-point local business website checklist](https://purposewithpresence.com/checklist/): twelve checks any owner can run on their own site
+
+## Studio guides
+- [Studio guides for local business owners](https://purposewithpresence.com/studio/guides/): Plain answers on website costs, Google Maps visibility and our monthly plans, every price dated and sourced.
+- [What a $950 to $2,450 monthly website package includes](https://purposewithpresence.com/studio/guides/monthly-website-package-hour-by-hour/): Essentials, Growth and Signature line by line: setup fees, director hours, and what each delivers every week, month, quarter and year.
+- [How much does a restaurant website cost? Four routes, real totals](https://purposewithpresence.com/studio/guides/restaurant-website-cost/): Squarespace and Wix, Owner.com, Popmenu, BentoBox and Toast, freelancer rates and a studio retainer, from vendor pages read 6 November 2026.
+- [Why isn't my business on Google Maps? A 10-minute checklist](https://purposewithpresence.com/studio/guides/business-not-on-google-maps/): Ten checks from Google's Business Profile help pages: verification, duplicates, suspensions, address and service area, categories, closures, pending edits.
+
+## AI music video guide
+Independent, citation-first guides for musicians turning finished songs into AI music videos: Seedance 2.0, Kling 3.0, Veo 3.1 workflows, honest pricing math, monetization rules, and troubleshooting. Every article carries primary-source citations and FAQ schema. Facts are dated ("as of" markers) and updated on change.
+
+### Tools
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
-## Guides
+### Guides
 - [AI Video Credits That Expire: Rollover Rules](https://purposewithpresence.com/blog/ai-video-credits-expire-rollover-rules.html): Which AI video and music credits roll over and which vanish at the end of the month, plan by plan, plus habits that stop you wasting the credits you pay for.
 - [AI Voice Cloning for Musicians: Narration and Intros](https://purposewithpresence.com/blog/ai-voice-cloning-for-musicians-narration-intros.html): Clone your own voice for narration, intros and dubs: instant vs professional cloning, plan prices, credits per minute, and when YouTube needs an AI label.
 - [Fan Email List for Musicians: Platforms Compared](https://purposewithpresence.com/blog/fan-email-list-newsletter-platforms-for-musicians.html): Four newsletter platforms compared for musicians who want an owned fan list: free-tier caps, which free plans include automations, entry prices, legal floor.
