@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T00:16:47.693174+00:00",
+ "updated_at": "2026-11-06T01:32:02.375756+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -1885,12 +1885,12 @@
    "price": 19.0,
    "category": "Grab N Go",
    "ship": false,
-   "available": true,
+   "available": false,
    "quantity": null,
    "toast_id": "1ef4c72a-d17f-4dff-a5c3-9bb3fdfc6505",
    "image": null,
    "on_site": false,
-   "hidden": false
+   "hidden": true
   }
  ]
 }
