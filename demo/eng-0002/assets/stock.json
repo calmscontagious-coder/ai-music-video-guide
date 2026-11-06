@@ -529,7 +529,7 @@
    "price": 8.0
   },
   "avocado-toast": {
-   "available": false,
+   "available": true,
    "price": 13.5
   },
   "grilled-cheese": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-06T21:58:31.777961+00:00"
+ "updated_at": "2026-11-06T22:13:46.487418+00:00"
 }

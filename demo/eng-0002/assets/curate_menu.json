@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06T21:58:29.472162+00:00",
+ "updated_at": "2026-11-06T22:13:45.897276+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -1311,8 +1311,8 @@
    "price": 13.5,
    "category": "Petits Plats",
    "ship": false,
-   "available": false,
-   "quantity": 0,
+   "available": true,
+   "quantity": null,
    "toast_id": "5be61f56-3410-4b16-80bb-d0592db09849",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/f6bd7ffd-2ee5-48dc-97bc-e0b4a46bbedd.jpg",
    "on_site": true,
