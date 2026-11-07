@@ -1,0 +1,64 @@
+/* Purpose with Presence: header + footer of the article system, for pages that keep their own body
+   stylesheet (studio guides use guides.css). Same rules as pwp-article.css, scoped to .site-head and
+   .site-foot so they win over the page's older header/footer rules. LQ-139, 2026-11-07. */
+:root{
+  --canvas:oklch(0.155 0.012 255);--surface:oklch(0.195 0.014 255);--raised:oklch(0.235 0.016 255);
+  --line:oklch(0.32 0.014 255);--line-soft:oklch(0.255 0.012 255);
+  --ink:oklch(0.96 0.004 255);--muted:oklch(0.78 0.01 255);--faint:oklch(0.68 0.012 255);
+  --lantern:oklch(0.82 0.16 75);
+  --f-text:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --t1:120ms;--t2:200ms;--t3:280ms;--ease:cubic-bezier(.2,.7,.2,1);
+  --gut:32px;--colgap:24px;--r-panel:2px;--r-ctl:4px;
+}
+.site-head .wrap,.site-foot .wrap{width:100%;max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
+.site-head{position:sticky;top:0;z-index:30;background:var(--canvas);border-bottom:1px solid var(--line);font-family:var(--f-text)}
+.site-head nav{display:flex;align-items:center;gap:24px;min-height:64px}
+.site-head .brand,.site-foot .brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:var(--ink);text-decoration:none;font-size:20px;line-height:1;font-weight:720;font-variation-settings:"opsz" 96,"wdth" 82;letter-spacing:-0.01em;margin-right:auto}
+.site-head .brand svg.mark,.site-foot .brand svg.mark{width:16px;height:23px;flex:none;color:var(--ink)}
+.site-head .brand svg.mark .flame,.site-foot .brand svg.mark .flame{fill:var(--lantern)}
+.site-head .nlinks{display:flex;align-items:center;gap:0;list-style:none;margin:0;padding:0}
+.site-head .nlinks a{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;color:var(--muted);text-decoration:none;font-family:var(--f-text);font-size:16px;letter-spacing:0}
+.site-head .nlinks a:hover,.site-head .nlinks a[aria-current]{color:var(--ink)}
+.site-head .nlinks a[aria-current]::before{content:"";width:5px;height:5px;background:var(--lantern);border-radius:1px}
+.site-head .nav-cta{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:var(--r-ctl);color:var(--ink);text-decoration:none;font-family:var(--f-mono);font-size:13px;white-space:nowrap}
+.site-head .nav-cta::before{content:"";width:6px;height:6px;border-radius:1px;background:var(--lantern)}
+.site-head .nav-cta:hover{background:var(--raised);border-color:var(--faint)}
+.site-head .menu-btn{display:none;align-items:center;gap:10px;min-height:44px;min-width:44px;padding:0 12px;margin-right:-12px;background:none;border:0;color:var(--ink);font-family:var(--f-mono);font-size:13px;cursor:pointer;border-radius:var(--r-ctl)}
+.site-head .menu-btn .bars{position:relative;width:16px;height:10px}
+.site-head .menu-btn .bars::before,.site-head .menu-btn .bars::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform var(--t2) var(--ease)}
+.site-head .menu-btn .bars::before{top:0}.site-head .menu-btn .bars::after{bottom:0}
+.site-head nav[data-open="true"] .menu-btn .bars::before{transform:translateY(4.25px) rotate(45deg)}
+.site-head nav[data-open="true"] .menu-btn .bars::after{transform:translateY(-4.25px) rotate(-45deg)}
+.site-head .progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--lantern);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+.site-foot{border-top:1px solid var(--line);padding:56px 0 24px;font-size:16px;font-family:var(--f-text)}
+.site-foot .ft{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--colgap);row-gap:32px}
+.site-foot .brand{grid-column:1/4;align-self:start}
+.site-foot .foot-links{grid-column:4/13;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--colgap);list-style:none;margin:0;padding:0}
+.site-foot .foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--muted);text-decoration:none}
+.site-foot .foot-links a:hover{color:var(--ink)}
+.site-foot .full-disc{grid-column:4/12;margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:none}
+.site-foot .full-disc b{display:block;margin-bottom:8px;font-family:var(--f-mono);font-size:13px;font-weight:400;color:var(--faint)}
+.site-foot .full-disc a{color:var(--ink)}
+.site-foot .copy{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin:0;padding-top:20px;border-top:1px solid var(--line-soft);font-family:var(--f-mono);font-size:13px;color:var(--faint)}
+@keyframes pwp-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media (max-width:1080px){.site-head nav{gap:12px}.site-head .nlinks a{padding:0 9px}}
+@media (max-width:900px){
+  .site-head .menu-btn{display:inline-flex;order:2}
+  .site-head nav{flex-wrap:wrap;gap:0}
+  .site-head .nlinks{display:none;order:3;flex-basis:100%;flex-direction:column;align-items:stretch;padding:8px 0;border-top:1px solid var(--line-soft)}
+  .site-head .nlinks a{padding:0;font-size:18px;min-height:48px}
+  .site-head .nav-cta{display:none;order:4;margin:0 0 16px;justify-content:center;flex-basis:100%}
+  .site-head nav[data-open="true"] .nlinks{display:flex;animation:pwp-in var(--t2) var(--ease)}
+  .site-head nav[data-open="true"] .nav-cta{display:inline-flex;animation:pwp-in var(--t2) var(--ease)}
+  html:not(.js) .site-head .menu-btn{display:none}
+  html:not(.js) .site-head .nlinks{display:flex;flex-direction:row;flex-wrap:wrap;border-top:0;padding:0 0 8px}
+  html:not(.js) .site-head .nlinks a{font-size:16px;padding:0 14px 0 0}
+  .site-foot .brand,.site-foot .foot-links,.site-foot .full-disc{grid-column:1/-1}
+}
+@media (max-width:640px){
+  :root{--gut:16px;--colgap:16px}
+  .site-foot .foot-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:400px){.site-head .brand{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.site-head *,.site-head *::before,.site-head *::after{animation-duration:1ms!important;transition-duration:1ms!important}}
