@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T15:31:15.733195+00:00",
+ "updated_at": "2026-11-07T16:04:59.242231+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -928,8 +928,8 @@
    "price": 7.0,
    "category": "Morning Pastries",
    "ship": false,
-   "available": false,
-   "quantity": 0,
+   "available": true,
+   "quantity": null,
    "toast_id": "5f44a92a-aff6-4dff-9a2d-1807245b7bb7",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/095390b4-b846-4ac2-8c07-0918b7aa3762.jpg",
    "on_site": false,
