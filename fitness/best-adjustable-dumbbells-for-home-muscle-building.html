@@ -12,142 +12,44 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<meta name="theme-color" content="oklch(0.155 0.012 255)">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
-  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
-  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
-  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--pink);color:#fff}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
-.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
-.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
-.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
-  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
-  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
-.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
-.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
-.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
-.nav-cta:hover{text-decoration:none}
-main{padding:60px 0 40px}
-.eyebrow{display:inline-block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
-  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
-article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
-.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
-article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
-article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
-article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
-article p,.page p{margin-bottom:18px}
-article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
-article li,.page li{margin-bottom:9px}
-article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
-article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
-article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
-article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
-article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
-.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
-  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
-.cta:hover{text-decoration:none;transform:translateY(-2px)}
-.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
-.card:hover{transform:translateY(-4px);border-color:var(--line2)}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
-.faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq details p{padding:0 0 20px;color:var(--dim)}
-footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
-.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
-.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
-@media(max-width:640px){.nlinks{display:none}}
-
-/* premium patch v2 */
-body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
-.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
-article h2,.page h2{position:relative;padding-left:18px}
-article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
-article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
-article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
-blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
-.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
-nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
-@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-::selection{background:#ff2e88;color:#fff}
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0;display:table;overflow:visible;min-width:100%}div[style*="overflow-x:auto"]>table{display:table;overflow:visible;min-width:100%}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-/* blog fixes 2026-11-06 */
-article p,article li{overflow-wrap:anywhere}
-article td{overflow-wrap:break-word}
-.foot-links{gap:0 6px}.foot-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
-.eyebrow{font-size:.75rem}
-.studio-note{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
-.studio-note p{margin:0;color:var(--dim);font-size:1rem}
-.studio-note a{color:var(--cyan)}
-/* end blog fixes */
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/tokens.css?v=7c697f78">
+<link rel="stylesheet" href="/assets/pwp-article.css?v=ea24ee91">
+<script src="/assets/pwp-article.js?v=612e33bf" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Best Adjustable Dumbbells for a Home Muscle-Building Plan (2026)", "description": "Which adjustable dumbbells fit which home lifter? We compare range, increments, mechanism, size and warranty from makers and owner reports. We tested nothing.", "wordCount": 2397, "author": {"@type": "Organization", "name": "Purpose with Presence Fitness", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence Fitness"}, "datePublished": "2026-11-06", "dateModified": "2026-11-06", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/fitness/best-adjustable-dumbbells-for-home-muscle-building.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do adjustable dumbbells build muscle as well as other free weights?", "acceptedAnswer": {"@type": "Answer", "text": "We found no study comparing adjustable with fixed dumbbells. A 2023 meta-analysis of 13 studies and 1016 participants (hypertrophy in 5) found no differences in muscle hypertrophy between free-weight and machine training. What you can lift, and how often you progress, matters more than the mechanism."}}, {"@type": "Question", "name": "How much weight range do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Enough to keep your main lifts in a 6 to 15 RM range as you get stronger, per a 2021 narrative review. A set capped at 50 lbs each suits a true beginner. If you expect to outgrow it, look at sets reaching 90 lbs or more."}}, {"@type": "Question", "name": "Can I drop adjustable dumbbells?", "acceptedAnswer": {"@type": "Answer", "text": "None of them is safe to drop. Reviewers say N\u00dcOBELL is not built to be dropped, and Bowflex 552 owners warn against slamming them. REP's warranty excludes abusive use such as consistent drops. Ironmaster describes steel handles and cast iron plates with no plastic, but makes no drop claim."}}, {"@type": "Question", "name": "Is the Bowflex 552 recall still a concern?", "acceptedAnswer": {"@type": "Answer", "text": "Owner comments mention a recall of older 552 units, and we have no details beyond that. The maker's FAQ says units currently available for purchase are not involved in any recalls. Check the model and date of any used set before you buy."}}, {"@type": "Question", "name": "How many days a week should I train with them?", "acceptedAnswer": {"@type": "Answer", "text": "A 2016 meta-analysis found twice a week beat once a week for hypertrophy on a volume-equated basis. A 2019 meta-analysis of 25 studies found no significant difference between frequencies on a volume-equated basis. The reviews do not agree; a 2021 review says weekly volume matters more. Two sessions with enough sets is reasonable."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Fitness", "item": "https://purposewithpresence.com/fitness/"}, {"@type": "ListItem", "position": 3, "name": "Best Adjustable Dumbbells for a Home Muscle-Building Plan (2026)", "item": "https://purposewithpresence.com/fitness/best-adjustable-dumbbells-for-home-muscle-building.html"}]}</script>
 </head><body>
-<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
-<nav><a class="brand" href="/fitness/"><span class="dot"></span>Purpose with Presence Fitness</a>
-<div class="nlinks"><a href="/fitness/">Guides</a><a href="/fitness/bfr-training-for-beginners.html">BFR</a><a href="/fitness/which-training-program-fits-you-quiz.html">Program quiz</a><a href="/fitness/tdee-calorie-deficit-calculator.html">Tools</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="/go/drgains" rel="sponsored noopener" target="_blank">See programs<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
-<main class="wrap"><article>
-<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/fitness/" style="color:var(--dim)">Fitness</a> › best adjustable dumbbells for home</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap"><nav aria-label="Primary" data-open="false"><a class="brand" href="/fitness/" aria-label="Purpose with Presence Fitness, section home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence<span class="brand-sec">Fitness</span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-links"><span>Menu</span><span class="bars" aria-hidden="true"></span></button><ul class="nlinks" id="site-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/" aria-current="page">Fitness</a></li><li><a href="/tools/credit-calculator.html">Tools</a></li><li><a href="/about.html">About</a></li></ul><a class="nav-cta" href="/free-check/">Book a free check</a></nav></div><span class="progress" aria-hidden="true"></span></header>
+<main id="main" class="wrap art">
+<aside class="toc" aria-label="On this page"><p class="toc-h">on this page</p><ol><li><a href="#why-does-weight-range-matter-for-a-muscle-building-plan">Why does weight range matter for a muscle-building plan?</a></li><li><a href="#what-do-increment-size-mechanism-and-changeover-time-change">What do increment size, mechanism and changeover time change?</a></li><li><a href="#how-much-drop-tolerance-handle-length-and-footprint-do-you-n">How much drop tolerance, handle length and footprint do you need?</a></li><li><a href="#how-do-the-adjustable-dumbbells-compare-side-by-side">How do the adjustable dumbbells compare side by side?</a></li><li><a href="#what-do-owners-report-and-where-does-that-come-from">What do owners report, and where does that come from?</a></li><li><a href="#which-adjustable-dumbbells-suit-which-buyer">Which adjustable dumbbells suit which buyer?</a></li><li><a href="#how-do-these-fit-a-2-day-dumbbell-plan">How do these fit a 2-day dumbbell plan?</a></li><li><a href="#primary-sources">Primary sources</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ol></aside>
+<article>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/fitness/">Fitness</a></li><li><span aria-current="page">best adjustable dumbbells for home</span></li></ol></nav>
 <h1>Best Adjustable Dumbbells for a Home Muscle-Building Plan (2026)</h1>
-<p class="byline">By the Purpose with Presence Fitness team · Updated November 6, 2026 · 11 min read</p>
-<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
-<p><strong>Quick answer:</strong> For long-term progression, look at Ironmaster Quick-Lock or PowerBlock Elite USA 90; owners report 7 to 12+ years and over a decade, though some Bowflex 552 owners report 10 to 17. Only Ironmaster has a measured change time; other speeds are maker claims. Core or Yes4All suit a beginner, with thin evidence.</p>
+<p class="byline"><span><b>By</b> the Purpose with Presence Fitness team</span><span><b>Updated</b> November 6, 2026</span><span>11 min read</span></p>
+<aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
+<p class="short-answer"><strong>Quick answer:</strong> For long-term progression, look at Ironmaster Quick-Lock or PowerBlock Elite USA 90; owners report 7 to 12+ years and over a decade, though some Bowflex 552 owners report 10 to 17. Only Ironmaster has a measured change time; other speeds are maker claims. Core or Yes4All suit a beginner, with thin evidence.</p>
 <p>We did not test these dumbbells ourselves. This guide combines the makers' own specifications, long-term owner reports and independent reviews, all linked. As an Amazon Associate I earn from qualifying purchases. We are also an independent affiliate of the training program linked further down and earn a commission if you buy it, at no extra cost to you. This article is not medical advice; talk to a clinician before starting if you have a medical condition or an injury.</p>
 <p>As an Amazon Associate I earn from qualifying purchases. <strong>Quick picks</strong>, by what you need (table and caveats below):</p><ul><li>A first set at entry tier: <a href="https://www.amazon.com/s?k=Core%20Home%20Fitness%20Adjustable%20Dumbbell%20Set&tag=hlove7-20" rel="sponsored nofollow noopener" target="_blank">Core Home Fitness Adjustable Dumbbell Set</a> (paid link)</li><li>Room to progress to 90 lbs: <a href="https://www.amazon.com/s?k=PowerBlock%20Elite%20USA%2090&tag=hlove7-20" rel="sponsored nofollow noopener" target="_blank">PowerBlock Elite USA 90</a> (paid link) or <a href="https://www.amazon.com/s?k=Bowflex%20SelectTech%201090&tag=hlove7-20" rel="sponsored nofollow noopener" target="_blank">Bowflex SelectTech 1090</a> (paid link)</li></ul>
-<h2>Why does weight range matter for a muscle-building plan?</h2>
+<h2 id="why-does-weight-range-matter-for-a-muscle-building-plan">Why does weight range matter for a muscle-building plan?</h2>
 <p>Muscle growth needs progression, so the top weight of a set decides how long it lasts you. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8449772/">Iversen and colleagues (2021)</a>, a narrative review, recommend a minimum of 4 weekly sets per muscle group using a 6 to 15 RM loading range, and say exercises can use machines or free weights based on goals, availability and personal preference.</p>
 <p>Free weights are a sound choice for this. <a href="https://pubmed.ncbi.nlm.nih.gov/37582807/">Haugen and colleagues (2023)</a> pooled 13 studies with 1016 participants (hypertrophy in 5 of them). Strength in free-weight tests rose significantly more with free-weight training than with machines, while the direct comparison found no differences in strength, jump performance and muscle hypertrophy. We found no study comparing adjustable with fixed dumbbells, so we make no claim about that.</p>
 <p>The ranges differ a lot. A Bowflex SelectTech 552 runs 5 to 52.5 lbs per dumbbell. The Bowflex 1090 runs 10 to 90 lbs. PowerBlock Elite USA 90 starts lifting at 5 to 50 lbs and grows to 90 lbs with 20 lb expansion kits. Ironmaster lists 5 to 75 lbs standard, with a 120 lb kit and a custom 165 lb add-on kit. A Core Home Fitness set stops at 50 lbs each.</p>
-<h2>What do increment size, mechanism and changeover time change?</h2>
+<h2 id="what-do-increment-size-mechanism-and-changeover-time-change">What do increment size, mechanism and changeover time change?</h2>
 <p>Bowflex says its sets change in 2.5 lb or 5 lb increments, and the 1090 lists 5 lb steps. PowerBlock micro-adjusts by 2.5 or 5 pounds. Core adjusts in 5 lb increments.</p>
 <p>The mechanism shapes how you switch, but only Ironmaster has a measured change time in our sources. The other speeds below are maker claims, not timings. Bowflex says you change weight with a quick twist of the dials. REP says you change weight in 10lb increments with the flip of a switch, with 2.5lb micro-adjustment plates for finer steps. PowerBlock uses a magnetic pin plus a dial lock lever. Ironmaster has you turn a locking screw, stack plates and lock it again; Garage-Gyms.com, in a review from 2020 that does not state its test duration in the text we read, says it still takes about 10 to 15 seconds per handle even when you get good at it.</p>
-<h2>How much drop tolerance, handle length and footprint do you need?</h2>
+<h2 id="how-much-drop-tolerance-handle-length-and-footprint-do-you-n">How much drop tolerance, handle length and footprint do you need?</h2>
 <p>Drop tolerance matters if you train tired, and we would not call any of these sets safe to drop. Home Gym Advice says that like every twist-mechanism dumbbell the NÜOBELL is not built to be dropped, and that the people who report trouble are almost always the ones who twisted the handle while the dumbbell was half-lifted, or set it down hard off-square. Garage Gym Lab says it confirmed that with its own drop testing, and also says NÜOBELLs have more plastic components. Owner comments gathered by GYIBB say Bowflex 552 owners must never drop or slam them because of the plastic construction. Bowflex says its steel plates are coated in polypropylene and that premium, durable metal components attach the plates to the handle. REP's warranty excludes "Any damage to any part resulting from abnormal/abusive use (consistent drops)". Ironmaster describes chrome-plated steel handles and solid cast iron plates with no plastic or breakable parts; it makes no drop claim.</p>
 <p>Handle length decides your pressing and curling range. GYIBB says Bowflex 552 owners find it frustrating that the dumbbells are as long at light weights as at heavy ones. LiftQube reports that NÜO lists a 32 mm handle diameter and a short 105 mm handle length, so a 10 lb NÜOBELL is the same length as an 80 lb one. The Core set starts at 9.3 in long at 5 lbs and grows with the load, and the Ironmaster measured 9.5 in at 25 lbs in the 2020 review, growing to 14.5 in at 75 lbs.</p>
 <p>Footprint matters in an apartment. PowerBlock's compare table lists 16.25 in x 6 in x 6 in for the Elite USA 90. The Bowflex 552 is 16.9 in L x 8.3 in W x 9 in H per dumbbell, and the 1090 is 17.5 in L x 9.5 in W x 10 in H. Bowflex says a stand is optional but recommended.</p>
 <p>Bowflex lists 2 years on parts for the 552 and 3 years for the 1090. PowerBlock lists a 5 year residential warranty, not valid for commercial use. Ironmaster and REP list lifetime warranties. Core lists 2 years on parts.</p>
-<h2>How do the adjustable dumbbells compare side by side?</h2>
+<h2 id="how-do-the-adjustable-dumbbells-compare-side-by-side">How do the adjustable dumbbells compare side by side?</h2>
 <p>Every figure is from the page linked in the Source column. "None in our notes" means we recorded no complaint, not that none exists. Amazon links are search links. As an Amazon Associate I earn from qualifying purchases.</p>
 <div style="overflow-x:auto"><table>
 <thead><tr><th>Product</th><th>Range</th><th>Increments</th><th>Mechanism</th><th>Size</th><th>Warranty</th><th>Complaint noted in our sources</th><th>Source</th></tr></thead>
@@ -162,7 +64,7 @@ article td{overflow-wrap:break-word}
 <tr><td><a href="https://www.amazon.com/s?k=Yes4All%20adjustable%20dumbbells&tag=hlove7-20" rel="sponsored nofollow noopener" target="_blank">Yes4All adjustable dumbbells</a> (paid link)</td><td>Sets of 40, 50, 52.5, 60, 105 and 200 lbs</td><td>Plate loaded</td><td>Spin-lock star collars</td><td>14 or 16 inch handle</td><td>5 year on plates and parts; 60 day return</td><td>None in our notes</td><td><a href="https://www.cproducts.com/product/yes4all-adjustable-dumbbells-40-50-52-5-60-105-to-200-lbs">Retailer page</a></td></tr>
 </tbody></table></div>
 <p>NÜOBELL figures come from a review, not the maker. Yes4All figures come from a retailer page, with no maker page found. The Core page states no handle length and no add-on kit.</p>
-<h2>What do owners report, and where does that come from?</h2>
+<h2 id="what-do-owners-report-and-where-does-that-come-from">What do owners report, and where does that come from?</h2>
 <p>Reddit blocked our scripted access, so Reddit comments below reach us through aggregator sites, and we cannot check the original threads.</p>
 <p>By aggregator or review site:</p>
 <ul>
@@ -179,16 +81,16 @@ article td{overflow-wrap:break-word}
 <li>Garage-Gyms.com (Ironmaster) and Garage Gym Lab (REP) do not state a duration in the text we read.</li>
 </ul>
 <p>Owner comments mention a Bowflex 552 recall; we have no details beyond that. The Bowflex FAQ answers: "No. BowFlex&reg; SelectTech&reg; dumbbells currently available for purchase are not involved in any recalls." Check the date and model of any used 552 you consider.</p>
-<h2>Which adjustable dumbbells suit which buyer?</h2>
+<h2 id="which-adjustable-dumbbells-suit-which-buyer">Which adjustable dumbbells suit which buyer?</h2>
 <p><strong>Best for a first set at entry tier.</strong> The Core set (5 to 50 lbs, 5 lb steps, twist handle) and the Yes4All spin-lock sets are the entry-tier options by features. Our evidence is thin: one maker page for Core, one retailer page for Yes4All, no owner reports.</p>
 <p><strong>Best for long-term progression.</strong> Ironmaster lists the widest range in our table, from 5 to 75 lbs standard to a custom 165 lb add-on kit, and GYIBB reports owners keeping them 7 to 12+ years. PowerBlock Elite USA 90 and the Bowflex 1090 both reach 90 lbs; PowerBlock owners quoted by Horton Barbell and GummySearch report over a decade and over 15 years, and GYIBB quotes some Bowflex 552 owners at 10 to 17 years.</p>
 <p><strong>Best for changing weights often.</strong> Ironmaster is the only set with a measured time in our sources, 10 to 15 seconds per handle (Garage-Gyms, 2020). Bowflex and REP describe their dials and switch as quick, but we have no timing for them or the NÜOBELL twist handle, so we do not rank them. REP's trade-off is the 10lb step unless you add micro plates. Bowflex's trade-off is the durability reports above.</p>
 <p><strong>Best for a metal-built set.</strong> Ironmaster describes steel handles, cast iron plates and a lifetime warranty, and PowerBlock lists a 5 year residential warranty. Long-term reports exist for several brands, from 7 to 12+ years for Ironmaster and over a decade for PowerBlock to 8 to 17 years for some Bowflex 552 owners, and failures are reported too.</p>
 <p><strong>Best for a small space.</strong> PowerBlock Elite USA 90 is one of the more compact at 90 lb capacity, at 16.25 in x 6 in x 6 in. The NÜOBELL stays about 17 in long at every weight. The Core starts at 9.3 in at 5 lbs. Ironmaster is 9.5 in at 25 lbs and 14.5 in at 75 lbs.</p>
-<h2>How do these fit a 2-day dumbbell plan?</h2>
+<h2 id="how-do-these-fit-a-2-day-dumbbell-plan">How do these fit a 2-day dumbbell plan?</h2>
 <p>A dumbbell set is only half of the plan. <a href="https://pubmed.ncbi.nlm.nih.gov/27102172/">Schoenfeld and colleagues (2016)</a>, a meta-analysis of ten studies, concluded that training a muscle group twice a week promotes superior hypertrophic outcomes to once a week, on a volume-equated basis. A later meta-analysis by <a href="https://pubmed.ncbi.nlm.nih.gov/30558493/">Schoenfeld, Grgic and Krieger (2019)</a>, covering 25 studies, found no significant difference between higher and lower frequency on a volume-equated basis. The two reviews do not agree, and Iversen and colleagues say weekly volume is more important than training frequency. So a 2-day plan is reasonable if its weekly sets are adequate, and the set you buy has to cover 2 sessions a week for the length of that plan.</p>
 <p>If you want to see the shape of such a week before buying anything, read <a href="/fitness/dumbbell-only-full-body-workout-2-days-a-week.html">our free sample week</a>. If you would rather follow a structured program, we recommend the 2-day dumbbell program: 8 weeks, two sessions a week, dumbbells and a bench, with 158 lessons. <a href="/go/drgains-dumbbell-2x-week" rel="sponsored noopener" target="_blank">See the 2-day dumbbell program</a>. We earn a commission if you buy it. Our comparison, <a href="/fitness/free-workout-plan-vs-paid-program.html">free workout plan vs paid program</a>, covers when the free route is enough, and more are on <a href="/fitness/">our fitness guides</a>.</p>
-<h2>Primary sources</h2>
+<h2 id="primary-sources">Primary sources</h2>
 <ul>
 <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8449772/">Iversen et al. 2021, time-efficient training review</a></li>
 <li><a href="https://pubmed.ncbi.nlm.nih.gov/37582807/">Haugen et al. 2023, free weights vs machines</a></li>
@@ -221,24 +123,26 @@ article td{overflow-wrap:break-word}
 <li><a href="https://ironhomefit.com/nuobell-adjustable-dumbbells-review/">Iron Home Fitness, NÜOBELL</a></li>
 <li><a href="https://gymradar.com/equipment/nuobell-adjustable-dumbbell-set">Gym Radar, NüoBell</a></li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/drgains-dumbbell-2x-week" rel="sponsored noopener" target="_blank">See the 2-day dumbbell program<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
+<div class="cta-row"><a class="cta primary" href="/go/drgains-dumbbell-2x-week" rel="sponsored noopener" target="_blank">See the 2-day dumbbell program<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
 
 
 <!-- related:start -->
 <aside class="related" style="margin:48px 0 8px;padding:24px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:14px"><h2 style="margin:0 0 14px;font-size:1.15rem">Related guides</h2><ul style="margin:0;padding-left:20px;line-height:1.9"><li><a href="/fitness/dumbbell-only-full-body-workout-2-days-a-week.html">Dumbbell-Only Hypertrophy Plan: 2 Days a Week, Free Sample Week (2026)</a></li><li><a href="/fitness/dumbbell-only-beginner-program-comparison.html">Dumbbell Only Beginner Program: 2-Day vs 5-Day Compared (2026)</a></li><li><a href="/fitness/which-training-program-fits-you-quiz.html">Which Muscle-Building Program Fits You? A 5-Question Quiz</a></li></ul></aside>
 <!-- related:end -->
-<h2>Frequently asked questions</h2>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <div class="faq"><details><summary>Do adjustable dumbbells build muscle as well as other free weights?<span class="plus" style="float:right">+</span></summary><p>We found no study comparing adjustable with fixed dumbbells. A 2023 meta-analysis of 13 studies and 1016 participants (hypertrophy in 5) found no differences in muscle hypertrophy between free-weight and machine training. What you can lift, and how often you progress, matters more than the mechanism.</p></details><details><summary>How much weight range do I need?<span class="plus" style="float:right">+</span></summary><p>Enough to keep your main lifts in a 6 to 15 RM range as you get stronger, per a 2021 narrative review. A set capped at 50 lbs each suits a true beginner. If you expect to outgrow it, look at sets reaching 90 lbs or more.</p></details><details><summary>Can I drop adjustable dumbbells?<span class="plus" style="float:right">+</span></summary><p>None of them is safe to drop. Reviewers say NÜOBELL is not built to be dropped, and Bowflex 552 owners warn against slamming them. REP&#x27;s warranty excludes abusive use such as consistent drops. Ironmaster describes steel handles and cast iron plates with no plastic, but makes no drop claim.</p></details><details><summary>Is the Bowflex 552 recall still a concern?<span class="plus" style="float:right">+</span></summary><p>Owner comments mention a recall of older 552 units, and we have no details beyond that. The maker&#x27;s FAQ says units currently available for purchase are not involved in any recalls. Check the model and date of any used set before you buy.</p></details><details><summary>How many days a week should I train with them?<span class="plus" style="float:right">+</span></summary><p>A 2016 meta-analysis found twice a week beat once a week for hypertrophy on a volume-equated basis. A 2019 meta-analysis of 25 studies found no significant difference between frequencies on a volume-equated basis. The reviews do not agree; a 2021 review says weekly volume matters more. Two sessions with enough sets is reasonable.</p></details></div>
-</article></main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/fitness/">Fitness guides</a><a href="/fitness/bfr-training-for-beginners.html">BFR beginner guide</a><a href="/fitness/which-training-program-fits-you-quiz.html">Program quiz</a><a href="/fitness/tdee-calorie-deficit-calculator.html">Calorie calculator</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
-<div class="disclosure"><b>Affiliate disclosure:</b> Purpose with Presence Fitness is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We are an independent affiliate of the online training programs linked from our fitness guides and earn a commission on purchases made through those links. As an Amazon Associate I earn from qualifying purchases. Nothing on this site is medical advice. No vendor reviews our articles before they go live.</div>
-<p style="margin-top:18px;opacity:.6">© 2026 Purpose with Presence Fitness · purposewithpresence.com</p></div></footer>
+</article></main><footer class="site-foot"><div class="wrap ft">
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a>
+<ul class="foot-links"><li><a href="/">Home</a></li><li><a href="/fitness/">Fitness guides</a></li><li><a href="/fitness/bfr-training-for-beginners.html">BFR beginner guide</a></li><li><a href="/fitness/which-training-program-fits-you-quiz.html">Program quiz</a></li><li><a href="/fitness/tdee-calorie-deficit-calculator.html">Calorie calculator</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/disclosure.html">Affiliate Disclosure</a></li><li><a href="/terms.html">Terms</a></li></ul>
+<p class="full-disc" id="full-disclosure"><b>Affiliate disclosure</b>Purpose with Presence Fitness is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We are an independent affiliate of the online training programs linked from our fitness guides and earn a commission on purchases made through those links. As an Amazon Associate I earn from qualifying purchases. Nothing on this site is medical advice. No vendor reviews our articles before they go live. <a href="/disclosure.html">Full disclosure</a></p>
+<p class="copy"><span>© 2026 Purpose with Presence</span><span>purposewithpresence.com</span></p>
+</div></footer>
 <!-- ctabar:start -->
-<div id="ctab" data-program="drgains" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
-<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Training programs, 4 to 8 weeks.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
-<a href="/go/drgains" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See programs <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
+<div id="ctab" data-program="drgains" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .32s cubic-bezier(.2,.7,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div class="ctab-in" style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 12px 12px;padding:8px 8px 8px 16px;background:oklch(0.235 0.016 255);border:1px solid oklch(0.32 0.014 255);border-radius:4px;box-shadow:0 16px 40px oklch(0.1 0.01 255 / .55);width:min(calc(100vw - 24px),640px)">
+<span style="color:oklch(0.96 0.004 255);font-size:1rem;line-height:1.35;flex:1;min-width:0"><b style="font-weight:620">Training programs, 4 to 8 weeks.</b> <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:oklch(0.68 0.012 255);white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:inherit">disclosure</a></span></span>
+<a href="/go/drgains" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;background:oklch(0.82 0.16 75);color:oklch(0.155 0.012 255);font-weight:650;border-radius:4px;text-decoration:none;font-size:1rem">See programs <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="flex:none;width:48px;height:48px;padding:0;background:none;border:1px solid oklch(0.32 0.014 255);border-radius:4px;color:oklch(0.78 0.01 255);cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
 </div></div>
 <script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>

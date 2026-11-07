@@ -12,122 +12,33 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<meta name="theme-color" content="oklch(0.155 0.012 255)">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
-  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
-  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
-  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--pink);color:#fff}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
-.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
-.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
-.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
-  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
-  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
-.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
-.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
-.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
-.nav-cta:hover{text-decoration:none}
-main{padding:60px 0 40px}
-.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
-  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
-article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
-.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
-article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
-article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
-article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
-article p,.page p{margin-bottom:18px}
-article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
-article li,.page li{margin-bottom:9px}
-article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
-article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
-article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
-article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
-article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
-.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
-  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
-.cta:hover{text-decoration:none;transform:translateY(-2px)}
-.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
-.card:hover{transform:translateY(-4px);border-color:var(--line2)}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
-.faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq details p{padding:0 0 20px;color:var(--dim)}
-footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
-.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
-.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
-@media(max-width:640px){.nlinks{display:none}}
-
-/* premium patch v2 */
-body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
-.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
-article h2,.page h2{position:relative;padding-left:18px}
-article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
-article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
-article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
-blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
-.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
-nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
-@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-::selection{background:#ff2e88;color:#fff}
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0;display:table;overflow:visible;min-width:100%}div[style*="overflow-x:auto"]>table{display:table;overflow:visible;min-width:100%}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/tokens.css?v=7c697f78">
+<link rel="stylesheet" href="/assets/pwp-article.css?v=ea24ee91">
+<script src="/assets/pwp-article.js?v=612e33bf" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "15 Minute Total Body Program Review: Worth $279? (2026)", "description": "A 15 minute total body program review: printed prices, the 8-week circuit schedule, 434 lessons, the superset research and who should pick the two-day plan", "wordCount": 2233, "author": {"@type": "Organization", "name": "Purpose with Presence Fitness", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence Fitness"}, "datePublished": "2026-11-03", "dateModified": "2026-11-06", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/fitness/15-minute-total-body-program-review.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long are the workouts in the 15-minute total body program?", "acceptedAnswer": {"@type": "Answer", "text": "The product page states no session length beyond the words 15-Minute in the title and a lesson called Workout Timing (15-Minute Breakdown). The content of that lesson is not visible before purchase. Each strength day lists a warm-up, exercises labelled 2A through 2F and finishers, but no set, rep or rest figures are printed on the page."}}, {"@type": "Question", "name": "Can a 15-minute superset session really build muscle?", "acceptedAnswer": {"@type": "Answer", "text": "The evidence says it can when weekly volume is met. A 2025 meta-analysis of 19 studies and 313 participants found similar hypertrophy and strength outcomes to traditional training (no significant difference), with considerable variance in some outcomes, and shorter sessions. A 2021 review calls 15-minute micro-dosing a possible alternative, with thin direct evidence, and sets a floor of 4 weekly sets per muscle group."}}, {"@type": "Question", "name": "What equipment does the 15-minute total body program need?", "acceptedAnswer": {"@type": "Answer", "text": "The page has no single equipment list; each exercise title names its own kit. Week 1 alone names a pull-up bar, cables, a bench, dumbbells, a Swiss bar, a hex bar, a barbell with plates, a preacher bar, a stability ball, a Bosu ball, a sled, a jump rope and a resistance band. Plan on a commercial gym, not a home setup."}}, {"@type": "Question", "name": "Is the three-payment option cheaper than paying once?", "acceptedAnswer": {"@type": "Answer", "text": "No. As shown on the product page on November 3, 2026, the options are $279.00 or 3 x $93.00, and 3 x $93.00 = $279.00. The split spreads the cost over three payments without reducing it. The page shows no currency code, no discount and no refund policy, so compare the single price with the membership options before you choose."}}, {"@type": "Question", "name": "Who should pick the two-day dumbbell plan instead?", "acceptedAnswer": {"@type": "Answer", "text": "Anyone training at home with dumbbells only, anyone who can give 2 days a week rather than 5 strength days plus cardio, and anyone new to lifting. The two-day plan is labelled Beginner Friendly, runs 8 weeks on Wednesday and Saturday, lists 158 lessons and 1.5 hours of video, and sells at $149.00 as shown on November 3, 2026."}}, {"@type": "Question", "name": "Is the all-access membership better value than buying this program?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on how many programs you will use. The membership lists $79.00 / month, $198.00 / 3 months and $660.00 / year, and its bundle page lists 30 items. The 8-week program fits inside the 3-month option, which costs less than $279.00. Buying one program is cheaper only if you will never open a second one."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Fitness", "item": "https://purposewithpresence.com/fitness/"}, {"@type": "ListItem", "position": 3, "name": "15 Minute Total Body Program Review: Worth $279? (2026)", "item": "https://purposewithpresence.com/fitness/15-minute-total-body-program-review.html"}]}</script>
 </head><body>
-<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
-<nav><a class="brand" href="/fitness/"><span class="dot"></span>Purpose with Presence Fitness</a>
-<div class="nlinks"><a href="/fitness/">Guides</a><a href="/fitness/bfr-training-for-beginners.html">BFR</a><a href="/fitness/which-training-program-fits-you-quiz.html">Program quiz</a><a href="/fitness/tdee-calorie-deficit-calculator.html">Tools</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="/go/drgains" rel="sponsored noopener" target="_blank">See programs<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
-<main class="wrap"><article>
-<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/fitness/" style="color:var(--dim)">Fitness</a> › 15 minute total body program review</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap"><nav aria-label="Primary" data-open="false"><a class="brand" href="/fitness/" aria-label="Purpose with Presence Fitness, section home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence<span class="brand-sec">Fitness</span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-links"><span>Menu</span><span class="bars" aria-hidden="true"></span></button><ul class="nlinks" id="site-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/" aria-current="page">Fitness</a></li><li><a href="/tools/credit-calculator.html">Tools</a></li><li><a href="/about.html">About</a></li></ul><a class="nav-cta" href="/free-check/">Book a free check</a></nav></div><span class="progress" aria-hidden="true"></span></header>
+<main id="main" class="wrap art">
+<aside class="toc" aria-label="On this page"><p class="toc-h">on this page</p><ol><li><a href="#what-do-you-get">What do you get?</a></li><li><a href="#does-the-method-hold-up">Does the method hold up?</a></li><li><a href="#who-is-it-for-and-who-should-skip-it">Who is it for, and who should skip it?</a></li><li><a href="#is-it-worth-the-price">Is it worth the price?</a></li><li><a href="#which-link">Which link?</a></li><li><a href="#primary-sources">Primary sources</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ol></aside>
+<article>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/fitness/">Fitness</a></li><li><span aria-current="page">15 minute total body program review</span></li></ol></nav>
 <h1>15 Minute Total Body Program Review: Worth $279? (2026)</h1>
-<p class="byline">By the Purpose with Presence Fitness team · Updated November 6, 2026 · 10 min read</p>
-<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
-<p><strong>Quick answer:</strong> Worth $279.00 if this is the only program you will run this year, you have full gym access and you want five short sessions a week. If a second program is likely, the membership's 3-month option, $198.00 or $189.00 as shown on November 6, 2026, covers this 8-week program for less. Home dumbbell lifters should pick the two-day plan.</p>
+<p class="byline"><span><b>By</b> the Purpose with Presence Fitness team</span><span><b>Updated</b> November 6, 2026</span><span>10 min read</span></p>
+<aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
+<p class="short-answer"><strong>Quick answer:</strong> Worth $279.00 if this is the only program you will run this year, you have full gym access and you want five short sessions a week. If a second program is likely, the membership's 3-month option, $198.00 or $189.00 as shown on November 6, 2026, covers this 8-week program for less. Home dumbbell lifters should pick the two-day plan.</p>
 <p>We are an independent affiliate of the training programs linked on this page and earn a commission if you buy through our links, at no extra cost to you. This article is not medical advice; consult a qualified professional before starting any training program, and before blood flow restriction training in particular.</p>
 <p><a href="/go/drgains-15-minute" rel="sponsored noopener" target="_blank">15-Minute Series, Total Body Program (Antagonist Splits)</a> is sold as a single course on the Dr. Gains program site. This 15 minute total body program review covers what the page shows, what the research says about short superset sessions, who it fits, and what the page leaves unstated: no refund terms, no session length beyond the "15-Minute" wording, no public equipment list. For the full line-up, see <a href="/fitness/">our fitness program comparison</a>.</p>
 
-<h2>What do you get?</h2>
+<h2 id="what-do-you-get">What do you get?</h2>
 <p>Everything in this section is as shown on the product page on November 3, 2026. The "Select a pricing option" block lists $279.00 or 3 x $93.00. The "About this course" block states 434 lessons and 8.5 hours of video content. The headline reads "Maximum Hypertrophy in just 15-Minute Workouts!". We do not endorse that claim; the studies below support "similar" results from short superset sessions, not "maximum".</p>
 <h3>How is the 8-week schedule laid out?</h3>
 <p>The curriculum runs from Week 1 to Week 8. Every week lists Monday through Saturday, then a Sunday "(Rest Day)" entry. Each strength day is a body-part circuit under one of four labels: "Chest &amp; Back", "Core &amp; Spine", "Biceps, Triceps &amp; Forearms", and "Legs &amp; Shoulders". One day each week is "Cardio", holding a single lesson, "Cardio Instructions, Recommendations &amp; Important Notes". That is 5 strength sessions plus 1 cardio session a week. Week 1 as printed:</p>
@@ -153,7 +64,7 @@ article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .
 <h3>What does the page not state?</h3>
 <p>No refund policy appears on this page. No session length is printed beyond the "15-Minute" wording in the title, the headline and the timing lesson title. We do not name the coach. All three stay unknown until you are inside the course.</p>
 
-<h2>Does the method hold up?</h2>
+<h2 id="does-the-method-hold-up">Does the method hold up?</h2>
 <p>The <a href="/go/drgains-15-minute" rel="sponsored noopener" target="_blank">15-Minute Series, Total Body Program (Antagonist Splits)</a> is marketed on two ideas: antagonist supersets save time without costing muscle, and 15-minute sessions are enough. The page's title says "Antagonist Splits" and its lessons describe circuits of six lettered exercises; it does not say how the exercises are paired or sequenced. If they are run as agonist-antagonist supersets, the Zhang et al. evidence below applies; if they are run as a six-exercise circuit, it applies only loosely. The research gives numbers on the first idea and a caveat on the second.</p>
 <h3>Do supersets match straight sets?</h3>
 <p>The <a href="https://pubmed.ncbi.nlm.nih.gov/39903375/">Zhang et al. 2025 meta-analysis</a> pooled "Nineteen studies involving 313 participants" comparing superset and traditional prescriptions. Supersets produced "a similar total number of repetitions [standardized mean differences (SMD) = - 0.03; p = 0.92] and volume load (SMD = 0.05; p = 0.86) with a shorter session duration and increased training efficiency (SMD = 1.74; p = 0.01)". Chronic results were also level: "similar chronic adaptations in maximal strength (SMD = 0.10; p = 0.36), strength endurance (SMD = 0.07; p = 0.81), and muscle hypertrophy (SMD = - 0.05; p = 0.87)". The cost was a "higher rating of perceived exertion (SMD = 0.77; p = 0.02)". The abstract's results show similar creatine kinase after sessions (SMD = 0.22; p = 0.36), while its conclusions say supersets generally induce "more severe muscle damage" and may need "extended recovery times between sessions". The authors add that "agonist-antagonist supersets are more suitable for maintaining training volume, while similar biomechanical supersets concentrate stimulation on the same muscle group, compromising volume load". Agonist-antagonist pairing is the arrangement the evidence favours.</p>
@@ -164,7 +75,7 @@ article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .
 <h3>Does volume still matter in a short session?</h3>
 <p>Yes. The <a href="https://pubmed.ncbi.nlm.nih.gov/27433992/">Schoenfeld et al. 2017 dose-response meta-analysis</a>, covering "34 treatment groups from 15 studies", found that "Each additional set was associated with an increase in effect size (ES) of 0.023 corresponding to an increase in the percentage gain by 0.37%". The three-level split (<5, 5-9 and 10+ weekly sets per muscle) "showed a trend for an effect of weekly sets (P = 0.074)", which did not reach significance. For this product, the lettered exercises and finishers on each day are the whole dose; whether they add up to the minimum of 4 weekly sets per muscle group depends on set counts inside the lessons, which the page does not print.</p>
 
-<h2>Who is it for, and who should skip it?</h2>
+<h2 id="who-is-it-for-and-who-should-skip-it">Who is it for, and who should skip it?</h2>
 <p>Buy it if all of the following are true: you train in a gym with cables, a sled, a hex bar and a preacher bar; you can show up 5 days a week plus a cardio day; you want sessions that fit a lunch break; and you accept that supersets feel harder per minute, as the <a href="https://pubmed.ncbi.nlm.nih.gov/39903375/">Zhang et al. 2025</a> perceived exertion result shows. Our <a href="/fitness/15-minute-full-body-workout-plan.html">15 minute full body workout plan guide</a> covers the method in more depth.</p>
 <p>Skip it, or pick a different program, in these cases.</p>
 <ul>
@@ -177,7 +88,7 @@ article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .
 </ul>
 <p>For anyone who wants this program and others without paying $279.00 for one course, the All-Access Premium Membership lists $79.00 / month, $660.00 / year and $198.00 / 3 months among its options, and its bundle page lists 30 items including every Hypertrophy, BFR, Dumbbell and 15-Minute program plus both [NEW] libraries, as shown on the product page on November 3, 2026. We break the membership down in <a href="/fitness/all-access-fitness-program-membership-worth-it.html">our all-access membership review</a>.</p>
 
-<h2>Is it worth the price?</h2>
+<h2 id="is-it-worth-the-price">Is it worth the price?</h2>
 <p>Here is the arithmetic the printed prices allow.</p>
 <ul>
 <li>The split plan is not a discount: 3 x $93.00 = $279.00, the same as the single price.</li>
@@ -187,11 +98,11 @@ article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .
 </ul>
 <p>The content count is high for the price: 434 lessons and 8.5 hours of video content for $279.00, against 393 lessons and 8 h in the Dumbbell Series at the same price. The value case rests on three things: a full gym, 5 training days a week, and wanting the timing done for you. If one is false, the two-day plan at $149.00 or the $198.00 / 3 months membership is the better spend.</p>
 
-<h2>Which link?</h2>
+<h2 id="which-link">Which link?</h2>
 <p>If the gym, the schedule and the superset format all fit, buy <a href="/go/drgains-15-minute" rel="sponsored noopener" target="_blank">15-Minute Series, Total Body Program (Antagonist Splits)</a> through that link. The $279.00 single payment and the 3 x $93.00 split total the same. If you expect to run two or more courses this year, read the membership review first. If you train at home with dumbbells, or want 2 days a week, buy the two-day plan instead.</p>
 <p>One last check: the research on supersets is strong, the research on 15-minute sessions is a narrative "could be", and the page shows no set counts, session timing or refund terms. Buy it for the structure, run the printed 8 weeks, and judge it on whether you cleared the 4 weekly sets per muscle group the evidence asks for.</p>
 
-<h2>Primary sources</h2>
+<h2 id="primary-sources">Primary sources</h2>
 <ul>
 <li><a href="https://pubmed.ncbi.nlm.nih.gov/39903375/">Zhang X, Weakley J, Li H, Li Z, García-Ramos A (2025). Superset Versus Traditional Resistance Training Prescriptions: A Systematic Review and Meta-analysis Exploring Acute and Chronic Effects on Mechanical, Metabolic, and Perceptual Variables. Sports Medicine.</a></li>
 <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8449772/">Iversen VM, Norum M, Schoenfeld BJ, Fimland MS (2021). No Time to Lift? Designing Time-Efficient Training Programs for Strength and Hypertrophy: A Narrative Review. Sports Medicine.</a></li>
@@ -202,24 +113,26 @@ article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .
 <li>https://programs.dr-gains.com/courses/dumbbell-total-body</li>
 <li>https://programs.dr-gains.com/bundles/all-access-premium-membership</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/drgains-15-minute" rel="sponsored noopener" target="_blank">See the 15-minute total body program<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
+<div class="cta-row"><a class="cta primary" href="/go/drgains-15-minute" rel="sponsored noopener" target="_blank">See the 15-minute total body program<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
 
 
 <!-- related:start -->
 <aside class="related" style="margin:48px 0 8px;padding:24px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:14px"><h2 style="margin:0 0 14px;font-size:1.15rem">Related guides</h2><ul style="margin:0;padding-left:20px;line-height:1.9"><li><a href="/fitness/15-minute-full-body-workout-plan.html">15 Minute Full Body Workout Plan: What the Evidence Supports (2026)</a></li><li><a href="/fitness/all-access-fitness-program-membership-worth-it.html">Is an All-Access Fitness Program Membership Worth It? (2026)</a></li><li><a href="/fitness/weekly-fat-loss-pace-planner.html">Weekly Fat-Loss Pace Planner: 0.5 to 1 Percent of Bodyweight</a></li></ul></aside>
 <!-- related:end -->
-<h2>Frequently asked questions</h2>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <div class="faq"><details><summary>How long are the workouts in the 15-minute total body program?<span class="plus" style="float:right">+</span></summary><p>The product page states no session length beyond the words 15-Minute in the title and a lesson called Workout Timing (15-Minute Breakdown). The content of that lesson is not visible before purchase. Each strength day lists a warm-up, exercises labelled 2A through 2F and finishers, but no set, rep or rest figures are printed on the page.</p></details><details><summary>Can a 15-minute superset session really build muscle?<span class="plus" style="float:right">+</span></summary><p>The evidence says it can when weekly volume is met. A 2025 meta-analysis of 19 studies and 313 participants found similar hypertrophy and strength outcomes to traditional training (no significant difference), with considerable variance in some outcomes, and shorter sessions. A 2021 review calls 15-minute micro-dosing a possible alternative, with thin direct evidence, and sets a floor of 4 weekly sets per muscle group.</p></details><details><summary>What equipment does the 15-minute total body program need?<span class="plus" style="float:right">+</span></summary><p>The page has no single equipment list; each exercise title names its own kit. Week 1 alone names a pull-up bar, cables, a bench, dumbbells, a Swiss bar, a hex bar, a barbell with plates, a preacher bar, a stability ball, a Bosu ball, a sled, a jump rope and a resistance band. Plan on a commercial gym, not a home setup.</p></details><details><summary>Is the three-payment option cheaper than paying once?<span class="plus" style="float:right">+</span></summary><p>No. As shown on the product page on November 3, 2026, the options are $279.00 or 3 x $93.00, and 3 x $93.00 = $279.00. The split spreads the cost over three payments without reducing it. The page shows no currency code, no discount and no refund policy, so compare the single price with the membership options before you choose.</p></details><details><summary>Who should pick the two-day dumbbell plan instead?<span class="plus" style="float:right">+</span></summary><p>Anyone training at home with dumbbells only, anyone who can give 2 days a week rather than 5 strength days plus cardio, and anyone new to lifting. The two-day plan is labelled Beginner Friendly, runs 8 weeks on Wednesday and Saturday, lists 158 lessons and 1.5 hours of video, and sells at $149.00 as shown on November 3, 2026.</p></details><details><summary>Is the all-access membership better value than buying this program?<span class="plus" style="float:right">+</span></summary><p>It depends on how many programs you will use. The membership lists $79.00 / month, $198.00 / 3 months and $660.00 / year, and its bundle page lists 30 items. The 8-week program fits inside the 3-month option, which costs less than $279.00. Buying one program is cheaper only if you will never open a second one.</p></details></div>
-</article></main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/fitness/">Fitness guides</a><a href="/fitness/bfr-training-for-beginners.html">BFR beginner guide</a><a href="/fitness/which-training-program-fits-you-quiz.html">Program quiz</a><a href="/fitness/tdee-calorie-deficit-calculator.html">Calorie calculator</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
-<div class="disclosure"><b>Affiliate disclosure:</b> Purpose with Presence Fitness is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We are an independent affiliate of the online training programs linked from our fitness guides and earn a commission on purchases made through those links. As an Amazon Associate I earn from qualifying purchases. Nothing on this site is medical advice. No vendor reviews our articles before they go live.</div>
-<p style="margin-top:18px;opacity:.6">© 2026 Purpose with Presence Fitness · purposewithpresence.com</p></div></footer>
+</article></main><footer class="site-foot"><div class="wrap ft">
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a>
+<ul class="foot-links"><li><a href="/">Home</a></li><li><a href="/fitness/">Fitness guides</a></li><li><a href="/fitness/bfr-training-for-beginners.html">BFR beginner guide</a></li><li><a href="/fitness/which-training-program-fits-you-quiz.html">Program quiz</a></li><li><a href="/fitness/tdee-calorie-deficit-calculator.html">Calorie calculator</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/disclosure.html">Affiliate Disclosure</a></li><li><a href="/terms.html">Terms</a></li></ul>
+<p class="full-disc" id="full-disclosure"><b>Affiliate disclosure</b>Purpose with Presence Fitness is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We are an independent affiliate of the online training programs linked from our fitness guides and earn a commission on purchases made through those links. As an Amazon Associate I earn from qualifying purchases. Nothing on this site is medical advice. No vendor reviews our articles before they go live. <a href="/disclosure.html">Full disclosure</a></p>
+<p class="copy"><span>© 2026 Purpose with Presence</span><span>purposewithpresence.com</span></p>
+</div></footer>
 <!-- ctabar:start -->
-<div id="ctab" data-program="drgains" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
-<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Training programs, 4 to 8 weeks.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
-<a href="/go/drgains" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See programs <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
+<div id="ctab" data-program="drgains" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .32s cubic-bezier(.2,.7,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div class="ctab-in" style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 12px 12px;padding:8px 8px 8px 16px;background:oklch(0.235 0.016 255);border:1px solid oklch(0.32 0.014 255);border-radius:4px;box-shadow:0 16px 40px oklch(0.1 0.01 255 / .55);width:min(calc(100vw - 24px),640px)">
+<span style="color:oklch(0.96 0.004 255);font-size:1rem;line-height:1.35;flex:1;min-width:0"><b style="font-weight:620">Training programs, 4 to 8 weeks.</b> <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:oklch(0.68 0.012 255);white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:inherit">disclosure</a></span></span>
+<a href="/go/drgains" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;background:oklch(0.82 0.16 75);color:oklch(0.155 0.012 255);font-weight:650;border-radius:4px;text-decoration:none;font-size:1rem">See programs <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="flex:none;width:48px;height:48px;padding:0;background:none;border:1px solid oklch(0.32 0.014 255);border-radius:4px;color:oklch(0.78 0.01 255);cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
 </div></div>
 <script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
