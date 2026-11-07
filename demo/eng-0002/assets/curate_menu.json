@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-07T16:04:59.242231+00:00",
+ "updated_at": "2026-11-07T16:35:30.509578+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -1111,8 +1111,8 @@
    "price": 6.5,
    "category": "Cold Pastries",
    "ship": false,
-   "available": false,
-   "quantity": 0,
+   "available": true,
+   "quantity": null,
    "toast_id": "5582bc15-f7e0-49a8-a722-8c880a5a59ce",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/994c69dc-53e2-4328-85aa-4ec782c3573b.jpg",
    "on_site": true,
