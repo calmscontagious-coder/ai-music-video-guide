@@ -12,163 +12,66 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<meta name="theme-color" content="oklch(0.155 0.012 255)">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
-  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
-  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
-  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--pink);color:#fff}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
-.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
-.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
-.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
-  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
-  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
-.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
-.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
-.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
-.nav-cta:hover{text-decoration:none}
-main{padding:60px 0 40px}
-.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
-  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
-article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
-.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
-article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
-article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
-article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
-article p,.page p{margin-bottom:18px}
-article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
-article li,.page li{margin-bottom:9px}
-article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
-article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
-article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
-article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
-article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
-.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
-  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
-.cta:hover{text-decoration:none;transform:translateY(-2px)}
-.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
-.card:hover{transform:translateY(-4px);border-color:var(--line2)}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
-.faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq details p{padding:0 0 20px;color:var(--dim)}
-footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
-.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
-.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
-@media(max-width:640px){.nlinks{display:none}}
-
-/* premium patch v2 */
-body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
-.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
-article h2,.page h2{position:relative;padding-left:18px}
-article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
-article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
-article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
-blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
-.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
-nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
-@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-::selection{background:#ff2e88;color:#fff}
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0;display:table;overflow:visible;min-width:100%}div[style*="overflow-x:auto"]>table{display:table;overflow:visible;min-width:100%}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-/* blog fixes 2026-11-06 */
-article p,article li{overflow-wrap:anywhere}
-article td{overflow-wrap:break-word}
-.foot-links{gap:0 6px}.foot-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
-.eyebrow{font-size:.75rem}
-.studio-note{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
-.studio-note p{margin:0;color:var(--dim);font-size:1rem}
-.studio-note a{color:var(--cyan)}
-/* end blog fixes */
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/tokens.css?v=7c697f78">
+<link rel="stylesheet" href="/assets/pwp-article.css?v=ea24ee91">
+<script src="/assets/pwp-article.js?v=612e33bf" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI Karaoke Video Maker Compared: MyKaraoke Video vs Youka vs LyricMV (2026)", "description": "MyKaraoke Video, Youka, LyricMV, Canva and Adobe Express compared for karaoke: vocal removal, word-by-word timing, free credits, export caps and watermarks.", "wordCount": 1590, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-10-26", "dateModified": "2026-10-26", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/ai-karaoke-video-maker.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need stems to make an AI karaoke video?", "acceptedAnswer": {"@type": "Answer", "text": "No. MyKaraoke Video says one finished song is enough, with no stems and nothing to install; its AI separates the vocal from the mix. If you already have an isolated vocal track, it can auto-sync the lyrics to it. If you only have an instrumental, you sync the lyrics by hand in its editor instead."}}, {"@type": "Question", "name": "How many credits does one karaoke video use on MyKaraoke Video?", "acceptedAnswer": {"@type": "Answer", "text": "The vendor says a typical video uses about 8 to 12 credits, depending on song length and whether you upload a file or paste a YouTube link. The 30 signup credits therefore cover two or three videos. Pay-as-you-go credits cost $0.10 each, and Standard gives 300 credits a month for $7.99."}}, {"@type": "Question", "name": "Can I export a karaoke file for KJ software, not just an MP4?", "acceptedAnswer": {"@type": "Answer", "text": "On MyKaraoke Video, yes, but only on Premium at $14.99 a month, which adds MP3+G export alongside transparent video. Instrumental downloads never use credits on any tier. Youka, LyricMV, Canva and Adobe Express do not mention MP3+G on the pages we read, so assume MP4 only from those."}}, {"@type": "Question", "name": "Does Youka remove the vocal or keep it?", "acceptedAnswer": {"@type": "Answer", "text": "Both, on different pages. Youka's lyric video maker keeps the original vocal for a traditional lyric video, while its Karaoke Video Maker removes the lead vocal for a sing-along. Either path shares the same editor, 15 free credits for new accounts, and MP4 export up to 4K from the browser."}}, {"@type": "Question", "name": "Is LyricMV usable for karaoke?", "acceptedAnswer": {"@type": "Answer", "text": "Partly. Its Deep Shadow template highlights words one at a time from Whisper timestamps, which gives the karaoke look, but the page never mentions removing vocals, so the singer is still in the mix. Templates are portrait 9:16, and a full render costs 10 credits per minute of audio after a free 480p preview."}}, {"@type": "Question", "name": "What is the difference between a karaoke video and a lyric video?", "acceptedAnswer": {"@type": "Answer", "text": "A lyric video keeps the artist's vocal and shows the words, usually a line at a time, to promote a release. A karaoke video strips the lead vocal and lights each word as it should be sung so someone else can perform it. Most tools here do the first; only MyKaraoke Video and Youka advertise the second."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "AI Karaoke Video Maker Compared: MyKaraoke Video vs Youka vs LyricMV (2026)", "item": "https://purposewithpresence.com/blog/ai-karaoke-video-maker.html"}]}</script>
 </head><body>
-<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
-<nav><a class="brand" href="/seedance-guide/"><span class="dot"></span>AI Music Video Guide</a>
-<div class="nlinks"><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">Try Free<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
-<main class="wrap"><article>
-<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › AI karaoke video maker</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap"><nav aria-label="Primary" data-open="false"><a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-links"><span>Menu</span><span class="bars" aria-hidden="true"></span></button><ul class="nlinks" id="site-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/" aria-current="page">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Tools</a></li><li><a href="/about.html">About</a></li></ul><a class="nav-cta" href="/free-check/">Book a free check</a></nav></div><span class="progress" aria-hidden="true"></span></header>
+<main id="main" class="wrap art">
+<aside class="toc" aria-label="On this page"><p class="toc-h">on this page</p><ol><li><a href="#which-ai-karaoke-video-maker-should-you-pick">Which AI karaoke video maker should you pick?</a></li><li><a href="#how-do-these-tools-remove-vocals-and-time-each-word">How do these tools remove vocals and time each word?</a></li><li><a href="#what-does-a-karaoke-video-cost-on-each-tool">What does a karaoke video cost on each tool?</a></li><li><a href="#what-are-the-export-limits-and-watermark-rules">What are the export limits and watermark rules?</a></li><li><a href="#can-canva-or-adobe-express-make-a-karaoke-video">Can Canva or Adobe Express make a karaoke video?</a></li><li><a href="#where-does-an-ai-generated-background-fit">Where does an AI-generated background fit?</a></li><li><a href="#primary-sources">Primary sources</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ol></aside>
+<article>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">AI karaoke video maker</span></li></ol></nav>
 <h1>AI Karaoke Video Maker Compared: MyKaraoke Video vs Youka vs LyricMV (2026)</h1>
-<p class="byline">By the AI Music Video Guide team · Updated October 26, 2026 · 7 min read</p>
-<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
-<p><strong>Quick answer:</strong> For a real karaoke video, vocal removed and each word filling in as it is sung, MyKaraoke Video is the most complete tool here: 30 free credits, then $7.99 a month. Youka does the same job and exports up to 4K. LyricMV highlights words but does not advertise vocal removal. Canva and Adobe Express time lines by hand.</p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> October 26, 2026</span><span>7 min read</span></p>
+<aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
+<p class="short-answer"><strong>Quick answer:</strong> For a real karaoke video, vocal removed and each word filling in as it is sung, MyKaraoke Video is the most complete tool here: 30 free credits, then $7.99 a month. Youka does the same job and exports up to 4K. LyricMV highlights words but does not advertise vocal removal. Canva and Adobe Express time lines by hand.</p>
 <p>A karaoke video is a lyric video with the lead vocal taken out and the words lit one at a time so a singer can follow. That differs from our <a href="/blog/lyric-video-ai-generator-guide.html">AI lyric video generator guide</a>, where the vocal stays in and line timing is enough. This page compares the browser tools that do the karaoke job, using only what each vendor publishes.</p>
 <p>It is for singers who want a track that does not exist as karaoke, KJs who need MP3+G files, and artists who want a sing-along version of their own song. If you only want words over your own vocal, start with <a href="/blog/how-to-make-a-lyric-video-with-ai.html">our step-by-step lyric video tutorial</a> instead.</p>
-<h2>Which AI karaoke video maker should you pick?</h2>
+<h2 id="which-ai-karaoke-video-maker-should-you-pick">Which AI karaoke video maker should you pick?</h2>
 <p>Pick MyKaraoke Video if you want vocal removal, word fill and a published price list in one tab. Pick Youka if you need 4K export or a desktop app, and LyricMV if your song keeps its vocal and you want a vertical template fast. Skip Canva and Adobe Express for karaoke; neither removes vocals or times words automatically.</p>
 <div class="tscroll"><table><thead><tr><th>Tool</th><th>Vocal removal</th><th>Word-level highlight</th><th>Free tier</th><th>Paid entry</th><th>Export</th><th>Watermark</th></tr></thead><tbody><tr><td>MyKaraoke Video</td><td>Yes, from the finished song</td><td>Yes, word fill, 10 ms nudge</td><td>30 credits, valid 365 days</td><td>$0.10 per credit, or $7.99 a month for 300</td><td>1080p MP4; MP3+G on Premium ($14.99)</td><td>On free exports; paid removes it</td></tr><tr><td>Youka Online</td><td>Yes, in its Karaoke Video Maker</td><td>Word or line timing, editable</td><td>15 credits</td><td>Credits; price not on the page we read</td><td>MP4 up to 4K</td><td>Not stated</td></tr><tr><td>LyricMV</td><td>Not mentioned</td><td>Yes, Whisper word timestamps</td><td>480p, 30-second preview</td><td>10 credits per minute of audio</td><td>1080p+ MP4, 9:16 only</td><td>None, per vendor</td></tr><tr><td>SunoMV</td><td>Not mentioned</td><td>Yes, automatic from a Suno link</td><td>Not stated</td><td>Not stated</td><td>Vertical or widescreen</td><td>Not stated</td></tr><tr><td>Canva lyric templates</td><td>No</td><td>No; clip length set by hand</td><td>Free templates, many Pro</td><td>Canva Pro, price not shown</td><td>Free download</td><td>Not stated</td></tr><tr><td>Adobe Express</td><td>No</td><td>No; speed clips to match lines</td><td>Free plan</td><td>Premium, price not shown</td><td>Not stated</td><td>Not stated</td></tr></tbody></table></div>
 <p>Every row is a vendor claim from the page linked in Primary sources, read October 25, 2026. Where a page says nothing, we wrote "not stated" rather than guess.</p>
-<h2>How do these tools remove vocals and time each word?</h2>
+<h2 id="how-do-these-tools-remove-vocals-and-time-each-word">How do these tools remove vocals and time each word?</h2>
 <p>MyKaraoke Video and Youka both separate the vocal from a finished mix with AI, then align your pasted lyrics to the singing. LyricMV and SunoMV transcribe and time words but do not advertise vocal removal. Canva and Adobe Express do neither; you place each line on a page and stretch clips until they match.</p>
 <p>MyKaraoke Video's pitch is "Upload a song and paste the lyrics. We take the vocals out and sync every word," with a sing-along video "in about two minutes" (<a href="https://www.mykaraoke.video">mykaraoke.video</a>, read October 25, 2026). If the AI lands close but not exact, you drag any word's edge in the sync editor and nudge it in 10 ms steps. Five layouts cover two-line fill with a countdown, one big centred line, a scroll, duet colours and a bilingual line.</p>
 <p>Youka splits the job into two pages: the lyric video maker keeps the original vocal, and its Karaoke Video Maker removes it (<a href="https://www.youka.io/lyric-video-maker">youka.io lyric video maker</a>, read October 25, 2026). Both share one editor for word or line timing, line breaks and a colour per singer. Youka's own advice is to paste clean lyrics with every repeated chorus written out in full.</p>
 <p>LyricMV runs OpenAI Whisper for word-level timestamps and says transcription takes under 2 minutes in 99+ languages (<a href="https://lyricmv.com">lyricmv.com</a>, read October 25, 2026). Its Deep Shadow template gives the karaoke look, but the page never mentions taking vocals out. SunoMV's guide puts the standard plainly: "word-by-word sync means each word lights up only at the moment it’s sung, instead of a whole line appearing at once" (SunoMV Team, <a href="https://suno.bi/en/blog/word-by-word-synced-lyric-video-sunomv-2026-guide">SunoMV word-by-word guide</a>, read October 25, 2026). It reads a Suno share link and leaves instrumental breaks blank.</p>
-<h2>What does a karaoke video cost on each tool?</h2>
+<h2 id="what-does-a-karaoke-video-cost-on-each-tool">What does a karaoke video cost on each tool?</h2>
 <p>MyKaraoke Video publishes the clearest numbers: $0.10 a credit pay as you go, about $1.20 to $1.60 per video by its own estimate, or $7.99 a month for 300 credits. LyricMV charges 10 credits per minute of audio and says that lands near $3 per video. Youka, SunoMV, Canva and Adobe Express keep prices on separate pages we did not source here.</p>
 <p>MyKaraoke Video says a typical video uses about 8 to 12 credits, depending on the song's length and whether you upload it or paste a YouTube link (<a href="https://www.mykaraoke.video">MyKaraoke Video FAQ</a>, read October 25, 2026). The 30 signup credits therefore cover two or three videos. Premium at $14.99 gives 600 credits that last 60 days, about 50 to 75 videos by the vendor's count. Subscribers export free through a queue; instrumental downloads never use credits.</p>
 <p>On LyricMV a 3-minute song is 30 credits for a full render, the 480p preview is free, and full renders take 5 to 15 minutes, per the vendor. Youka gives 15 credits to new accounts and is honest about what they are: "It is a free trial, not unlimited free exports" (<a href="https://www.youka.io/lyric-video-maker">Youka</a>, read October 25, 2026). Its weakness is that the lyric page never shows a credit price, so you cannot cost a batch before signing up.</p>
-<h2>What are the export limits and watermark rules?</h2>
+<h2 id="what-are-the-export-limits-and-watermark-rules">What are the export limits and watermark rules?</h2>
 <p>MyKaraoke Video exports 1080p MP4 and watermarks free exports, with a paid plan removing the mark; Youka exports MP4 up to 4K and its lyric page does not mention a watermark at all. LyricMV's free output is a 480p, 30-second preview without a watermark, and its paid 1080p renders are also clean. Canva's and Adobe Express's lyric pages say nothing about watermarks.</p>
 <p>MyKaraoke Video's limits are about throughput: 1 concurrent export free, 2 on Standard, 5 on Premium. MP3+G files for KJ software and transparent ProRes exports are Premium only. Inputs are MP3, WAV, FLAC, AAC and MP4 music videos, with over 1,500 fonts.</p>
 <p>LyricMV shows two upload caps on one page, 50 MB in the uploader and 500MB in its steps and FAQ; plan for the smaller. All of its templates are portrait 9:16, mostly 1080x1920, which suits Shorts and Reels and fails a widescreen YouTube karaoke channel. Youka's Desktop app for Windows and macOS lists "Free export" and offline playback.</p>
-<h2>Can Canva or Adobe Express make a karaoke video?</h2>
+<h2 id="can-canva-or-adobe-express-make-a-karaoke-video">Can Canva or Adobe Express make a karaoke video?</h2>
 <p>Not in the karaoke sense: Canva's lyric templates, 57 of them, have you type lyrics page by page, then "Adjust the clip lengths to match each line of the song"; Beat Sync in Pro aligns clips to the music, not words to the vocal. Adobe Express has you speed clips up or slow them down to sync lyrics. Neither page mentions vocal removal.</p>
 <p>They still have a place. Canva lets you download the finished video free and sync manually with beat markers at no cost (<a href="https://www.canva.com/video-editor/templates/lyric">Canva lyric video templates</a>, read October 25, 2026). Adobe Express adds brand kits on Premium and lets you translate the lyrics inside the editor (<a href="https://www.adobe.com/express/create/video/lyric">Adobe Express lyric video maker</a>, read October 25, 2026). For a worship slide or a classroom sing-along where line timing is enough, either works.</p>
 <p>For a bar or a KJ rig they fail on both things that define karaoke: the vocal stays and the words do not fill in. Our <a href="/blog/lyric-video-vs-visualizer-vs-music-video.html">lyric video, visualizer and music video comparison</a> explains where a plain lyric video fits; a karaoke version is a fourth asset.</p>
-<h2>Where does an AI-generated background fit?</h2>
+<h2 id="where-does-an-ai-generated-background-fit">Where does an AI-generated background fit?</h2>
 <p>Behind the words, and only after the timing is locked: MyKaraoke Video and Youka both accept your own video as the background, so a short generated clip can stand in for stock footage. One option is Seedance through <a href="/go/seedance" rel="sponsored noopener">seeddance.video</a>. Our /go/seedance links go to seeddance.video, an independent site that resells Seedance; we earn a commission if you subscribe.</p>
 <p>Keep the clip calm. Youka's page says readability matters more than decoration: high contrast, short lines, a simple background. A fast-cutting generated scene fights the word fill, so make one slow, loopable shot and preview with the vocal on before you spend an export credit.</p>
 <p>Two limits. The clip is a separate purchase on a separate credit balance; see <a href="/blog/seedance-2-5-pricing-credits-explained.html">how seeddance.video credits are priced</a> and our <a href="/blog/seedance-credit-cost-per-video.html">credit cost per video</a> estimate before you plan a batch. And no background rescues bad timing.</p>
 <p>Next step: sign up for MyKaraoke Video's 30 free credits, upload one finished song with its lyrics, and check the first chorus line in the sync editor. If the word fill lands, export once at 1080p and judge the watermark yourself before paying $7.99. Need 4K? Repeat on Youka's 15 credits. For generated motion, make one loop at <a href="/go/seedance" rel="sponsored noopener">seeddance.video</a> and set it as the background last.</p>
-<h2>Primary sources</h2>
+<h2 id="primary-sources">Primary sources</h2>
 <ul><li><a href="https://www.mykaraoke.video">MyKaraoke Video homepage, pricing and FAQ</a>, read October 25, 2026</li><li><a href="https://www.youka.io/lyric-video-maker">Youka Lyric Video Maker</a>, read October 25, 2026</li><li><a href="https://lyricmv.com">LyricMV AI Lyric Video Maker</a>, read October 25, 2026</li><li><a href="https://suno.bi/en/blog/word-by-word-synced-lyric-video-sunomv-2026-guide">SunoMV: Word-by-Word Synced Lyric Videos (2026)</a>, no publication date shown, read October 25, 2026</li><li><a href="https://www.canva.com/video-editor/templates/lyric">Canva lyric video templates</a>, read October 25, 2026</li><li><a href="https://www.adobe.com/express/create/video/lyric">Adobe Express lyric video maker</a>, read October 25, 2026</li></ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
-<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<div class="cta-row"><a class="cta primary" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
+<p class="cta-note">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
-<div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
-<p style="margin:0 0 6px;font-weight:700;font-size:1.05rem">Get the Director&rsquo;s Guide + monthly prompt packs</p>
-<p style="margin:0 0 12px;font-size:.92rem;color:var(--dim)">The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
+<div class="emailcap">
+<p class="ec-h">newsletter</p>
+<h3>Get the Director&rsquo;s Guide + monthly prompt packs</h3>
+<p>The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
 <div class="ml-embedded" data-form="gDc4Ah"></div>
 </div>
 <script>
@@ -179,19 +82,22 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
 })(window,document);
 </script>
 <!-- emailcap:end -->
-<h2>Frequently asked questions</h2>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <div class="faq"><details><summary>Do I need stems to make an AI karaoke video?<span class="plus" style="float:right">+</span></summary><p>No. MyKaraoke Video says one finished song is enough, with no stems and nothing to install; its AI separates the vocal from the mix. If you already have an isolated vocal track, it can auto-sync the lyrics to it. If you only have an instrumental, you sync the lyrics by hand in its editor instead.</p></details><details><summary>How many credits does one karaoke video use on MyKaraoke Video?<span class="plus" style="float:right">+</span></summary><p>The vendor says a typical video uses about 8 to 12 credits, depending on song length and whether you upload a file or paste a YouTube link. The 30 signup credits therefore cover two or three videos. Pay-as-you-go credits cost $0.10 each, and Standard gives 300 credits a month for $7.99.</p></details><details><summary>Can I export a karaoke file for KJ software, not just an MP4?<span class="plus" style="float:right">+</span></summary><p>On MyKaraoke Video, yes, but only on Premium at $14.99 a month, which adds MP3+G export alongside transparent video. Instrumental downloads never use credits on any tier. Youka, LyricMV, Canva and Adobe Express do not mention MP3+G on the pages we read, so assume MP4 only from those.</p></details><details><summary>Does Youka remove the vocal or keep it?<span class="plus" style="float:right">+</span></summary><p>Both, on different pages. Youka&#x27;s lyric video maker keeps the original vocal for a traditional lyric video, while its Karaoke Video Maker removes the lead vocal for a sing-along. Either path shares the same editor, 15 free credits for new accounts, and MP4 export up to 4K from the browser.</p></details><details><summary>Is LyricMV usable for karaoke?<span class="plus" style="float:right">+</span></summary><p>Partly. Its Deep Shadow template highlights words one at a time from Whisper timestamps, which gives the karaoke look, but the page never mentions removing vocals, so the singer is still in the mix. Templates are portrait 9:16, and a full render costs 10 credits per minute of audio after a free 480p preview.</p></details><details><summary>What is the difference between a karaoke video and a lyric video?<span class="plus" style="float:right">+</span></summary><p>A lyric video keeps the artist&#x27;s vocal and shows the words, usually a line at a time, to promote a release. A karaoke video strips the lead vocal and lights each word as it should be sung so someone else can perform it. Most tools here do the first; only MyKaraoke Video and Youka advertise the second.</p></details></div>
-</article><aside class="studio-note"><p>Run a local business? <a href="/studio/">See how we get businesses found on Google and in AI answers</a></p></aside>
-</main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/studio/">Studio</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
-<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
-<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+</article><aside class="studio-note" data-sticky="false" aria-labelledby="sn-studio"><p class="sn-label">from the studio</p><div class="sn-main"><h3 id="sn-studio">Run a local business?</h3><p>See how we get businesses found on Google and in AI answers: website, Google profile, booking and reviews, run for you every month.</p></div><div class="sn-act"><a class="cta" href="/studio/">See the studio<span class="ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div></aside>
+</main><footer class="site-foot"><div class="wrap ft">
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a>
+<ul class="foot-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Credit calculator</a></li><li><a href="/directors-guide.html">Director's guide</a></li><li><a href="/about.html">About</a></li><li><a href="/free-check/">Book a free check</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/disclosure.html">Affiliate disclosure</a></li><li><a href="/terms.html">Terms</a></li></ul>
+<p class="full-disc" id="full-disclosure"><b>Affiliate disclosure</b>AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live. <a href="/disclosure.html">Full disclosure</a></p>
+<p class="copy"><span>© 2026 Purpose with Presence</span><span>purposewithpresence.com</span></p>
+</div></footer>
 <!-- ctabar:start -->
-<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
-<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
-<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .32s cubic-bezier(.2,.7,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div class="ctab-in" style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 12px 12px;padding:8px 8px 8px 16px;background:oklch(0.235 0.016 255);border:1px solid oklch(0.32 0.014 255);border-radius:4px;box-shadow:0 16px 40px oklch(0.1 0.01 255 / .55);width:min(calc(100vw - 24px),640px)">
+<span style="color:oklch(0.96 0.004 255);font-size:1rem;line-height:1.35;flex:1;min-width:0"><b style="font-weight:620">Seedance: 1 free credit a day.</b> <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:oklch(0.68 0.012 255);white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:inherit">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;background:oklch(0.82 0.16 75);color:oklch(0.155 0.012 255);font-weight:650;border-radius:4px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="flex:none;width:48px;height:48px;padding:0;background:none;border:1px solid oklch(0.32 0.014 255);border-radius:4px;color:oklch(0.78 0.01 255);cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
 </div></div>
+<script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

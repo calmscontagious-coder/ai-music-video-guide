@@ -12,131 +12,33 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<meta name="theme-color" content="oklch(0.155 0.012 255)">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
-  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
-  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
-  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--pink);color:#fff}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
-.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
-.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
-.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
-  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
-  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
-.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
-.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
-.nav-cta{font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:100px;background:var(--cream);color:#0a0a0f}
-.nav-cta:hover{text-decoration:none}
-main{padding:60px 0 40px}
-.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
-  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
-article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
-.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
-article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
-article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
-article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
-article p,.page p{margin-bottom:18px}
-article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
-article li,.page li{margin-bottom:9px}
-article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
-article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
-article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
-article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
-article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
-.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
-  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
-.cta:hover{text-decoration:none;transform:translateY(-2px)}
-.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
-.card:hover{transform:translateY(-4px);border-color:var(--line2)}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
-.faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq details p{padding:0 0 20px;color:var(--dim)}
-footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
-.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
-.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
-@media(max-width:640px){.nlinks{display:none}}
-
-/* premium patch v2 */
-body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
-.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
-article h2,.page h2{position:relative;padding-left:18px}
-article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
-article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
-article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
-blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
-.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
-nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
-@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-::selection{background:#ff2e88;color:#fff}
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0;display:table;overflow:visible;min-width:100%}div[style*="overflow-x:auto"]>table{display:table;overflow:visible;min-width:100%}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-/* blog fixes 2026-11-06 */
-article p,article li{overflow-wrap:anywhere}
-article td{overflow-wrap:break-word}
-.foot-links{gap:0 6px}.foot-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
-.eyebrow{font-size:.75rem}
-.studio-note{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
-.studio-note p{margin:0;color:var(--dim);font-size:1rem}
-.studio-note a{color:var(--cyan)}
-/* end blog fixes */
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/tokens.css?v=7c697f78">
+<link rel="stylesheet" href="/assets/pwp-article.css?v=ea24ee91">
+<script src="/assets/pwp-article.js?v=612e33bf" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI Video Generator Pricing Compared: October 2026 Credits and Value", "description": "Veo 3.1 Lite, Fast and Standard per second, Kling 4.0 plans, Seedance 2.5, Runway and Pika credits. Every price dated October 2026.", "wordCount": 2542, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/ai-video-generator-pricing-compared.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the cheapest AI video generator in October 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Google AI Plus at $4.99 a month is the lowest paid entry, with 200 Flow credits a month (about two Quality Veo 3.1 clips) plus 50 a day. Pika Starter is $8 a month billed yearly but lacks a commercial license. The cheapest commercial license is Kling Standard at $8.80 after the first month, then the reseller's Basic plan at $9.90 a month billed yearly. Prices read October 21, 2026."}}, {"@type": "Question", "name": "How much does Veo 3.1 cost per second?", "acceptedAnswer": {"@type": "Answer", "text": "On the Gemini API, read October 21, 2026, Veo 3.1 Lite is $0.05 per second at 720p and $0.08 at 1080p, Fast is $0.10, $0.12 and $0.30 at 720p, 1080p and 4K, and Standard is $0.40 at 720p and 1080p and $0.60 at 4K. Audio is included and Lite has no 4K. An eight-second 1080p clip costs $0.64, $0.96 or $3.20 by tier."}}, {"@type": "Question", "name": "Is Kling 4.0 more expensive than Kling 3.0?", "acceptedAnswer": {"@type": "Answer", "text": "Kling has not published a per-clip credit rate for 4.0 as of October 19, 2026, so nobody can say for certain. It runs on the same plans: Standard $8.80 after the first month for 660 credits, Pro $32.56 for 3,000. Kling 3.0 cost about 20 credits per 720p clip and 30 credits per second at 4K. Render one 4.0 test clip and read the deduction before budgeting a batch."}}, {"@type": "Question", "name": "Did Seedance 2.5 get a price drop?", "acceptedAnswer": {"@type": "Answer", "text": "Not at the API base rate, which CellCog found unchanged at $0.2312 per second for 720p on October 6, 2026. The drop was on the consumer side: Dreamina ran a 90 percent off first month from September 23 to October 9 at $0.035 per second, and Pika now sells a five-second 720p clip for 122 credits, about $1.43 on Starter. fal.ai still charges $0.4730 per second."}}, {"@type": "Question", "name": "Do AI video credits roll over if I do not use them?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. Runway Standard and Pro credits reset within 24 hours of the billing date, Kling subscription credits last one month, Pika plan credits do not roll over, and Google Flow credits expire daily and monthly. The exceptions: Runway top-ups never expire, Kling purchased credits last two years, Pika top-ups last 365 days, Runway Max rolls over one month, and the reseller's subscription credits roll forward while you stay subscribed."}}, {"@type": "Question", "name": "Can I still pay for Sora 2?", "acceptedAnswer": {"@type": "Answer", "text": "No. OpenAI's help center states the Sora web and app ended on April 26, 2026, and the Sora API ended on September 24, 2026. There is no subscription, no API and no legitimate reseller route. Any platform still listing Sora 2 among its engines is showing a stale menu. For long takes with native audio, Kling 4.0 and Seedance 2.5 are the working alternatives; for realism, Veo 3.1 Standard."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "AI Video Generator Pricing Compared: October 2026 Credits and Value", "item": "https://purposewithpresence.com/blog/ai-video-generator-pricing-compared.html"}]}</script>
 </head><body>
-<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
-<nav><a class="brand" href="/seedance-guide/"><span class="dot"></span>AI Music Video Guide</a>
-<div class="nlinks"><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
-<main class="wrap"><article>
-<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › ai video generator pricing</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap"><nav aria-label="Primary" data-open="false"><a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-links"><span>Menu</span><span class="bars" aria-hidden="true"></span></button><ul class="nlinks" id="site-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/" aria-current="page">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Tools</a></li><li><a href="/about.html">About</a></li></ul><a class="nav-cta" href="/free-check/">Book a free check</a></nav></div><span class="progress" aria-hidden="true"></span></header>
+<main id="main" class="wrap art">
+<aside class="toc" aria-label="On this page"><p class="toc-h">on this page</p><ol><li><a href="#what-does-an-ai-video-generator-cost-per-month-in-october-20">What does an AI video generator cost per month in October 2026?</a></li><li><a href="#how-much-does-veo-3-1-cost-per-second-on-lite-fast-and-stand">How much does Veo 3.1 cost per second on Lite, Fast and Standard?</a></li><li><a href="#what-does-kling-4-0-cost">What does Kling 4.0 cost?</a></li><li><a href="#did-seedance-2-5-get-cheaper">Did Seedance 2.5 get cheaper?</a></li><li><a href="#what-do-runway-and-pika-cost-now">What do Runway and Pika cost now?</a></li><li><a href="#why-do-credits-run-out-faster-than-the-plan-price-suggests">Why do credits run out faster than the plan price suggests?</a></li><li><a href="#which-plan-is-the-best-value-for-a-music-video">Which plan is the best value for a music video?</a></li><li><a href="#what-happened-to-sora-pricing">What happened to Sora pricing?</a></li><li><a href="#primary-sources">Primary sources</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ol></aside>
+<article>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">ai video generator pricing</span></li></ol></nav>
 <h1>AI Video Generator Pricing Compared: October 2026 Credits and Value</h1>
-<p class="byline">By the AI Music Video Guide team · Updated October 21, 2026 · 12 min read</p>
-<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
-<p><strong>Quick answer:</strong> The cheapest paid AI video plans in October 2026 are Google AI Plus at $4.99, Pika Starter at $8 a month billed yearly, Kling Standard at $8.80 after month one, Seeddance Basic at $9.90 a month billed yearly and Runway Standard at $12. Developers pay per second: Veo 3.1 Lite $0.05, Fast $0.10, Standard $0.40 at 720p.</p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> October 21, 2026</span><span>12 min read</span></p>
+<aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
+<p class="short-answer"><strong>Quick answer:</strong> The cheapest paid AI video plans in October 2026 are Google AI Plus at $4.99, Pika Starter at $8 a month billed yearly, Kling Standard at $8.80 after month one, Seeddance Basic at $9.90 a month billed yearly and Runway Standard at $12. Developers pay per second: Veo 3.1 Lite $0.05, Fast $0.10, Standard $0.40 at 720p.</p>
 
 <p>We re-read every pricing page in this guide on October 21, 2026. Sora is gone, so its rows are out. Google published per-second rates for three Veo 3.1 tiers, Kling shipped 4.0, and Seedance 2.5 got cheaper on the consumer side.</p>
 
-<h2>What does an AI video generator cost per month in October 2026?</h2>
+<h2 id="what-does-an-ai-video-generator-cost-per-month-in-october-20">What does an AI video generator cost per month in October 2026?</h2>
 <p>Paid entry plans run from $4.99 to $12 a month. Google AI Plus is $4.99, Pika Starter is $8 billed yearly, Kling Standard renews at $8.80, Seeddance Basic is $9.90 billed yearly and Runway Standard is $12 billed yearly. All prices were read on October 21, 2026, from each company's own page.</p>
 <p>The sticker price is the least useful number in any AI video generator pricing comparison. What matters is how many finished clips the plan produces, whether you may sell them, and whether unused credits die at month end. The table lines those up.</p>
 <div class="tscroll"><table>
@@ -152,7 +54,7 @@ article td{overflow-wrap:break-word}
 </table></div>
 <p>Sources for the table: <a href="https://runwayml.com/pricing">Runway pricing</a>, <a href="https://pika.art/pricing">Pika pricing</a>, <a href="https://kling.ai/docs/point-policy">Kling credits policy</a>, <a href="https://support.google.com/flow/answer/16526234?hl=en">Google Flow credits</a>, <a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing</a> and the <a href="https://seeddance.video/pricing">Seeddance pricing page</a>, all read October 21, 2026.</p>
 
-<h2>How much does Veo 3.1 cost per second on Lite, Fast and Standard?</h2>
+<h2 id="how-much-does-veo-3-1-cost-per-second-on-lite-fast-and-stand">How much does Veo 3.1 cost per second on Lite, Fast and Standard?</h2>
 <p>On the Gemini API, Veo 3.1 Lite is $0.05 per second at 720p and $0.08 at 1080p. Veo 3.1 Fast is $0.10 at 720p, $0.12 at 1080p and $0.30 at 4K. Veo 3.1 Standard is $0.40 at 720p and 1080p and $0.60 at 4K, audio included.</p>
 <p>Google's <a href="https://ai.google.dev/gemini-api/docs/pricing">pricing page</a> listed these rates on October 21, 2026, and none of the three is available on the free API tier. Lite does not output 4K at all, so a 4K master means Fast ($2.40 for eight seconds) or Standard ($4.80).</p>
 <div class="tscroll"><table>
@@ -166,13 +68,13 @@ article td{overflow-wrap:break-word}
 <p>Most musicians will use Veo through Google Flow, where the same tiers are priced in Flow credits. Google's <a href="https://support.google.com/flow/answer/16526234?hl=en">Flow help page</a> (read October 21, 2026) lists Veo 3.1 Lite at 10 credits per generation, Fast at 20 and Quality at 100 for an eight-second clip. Ultra subscribers pay half on Lite and Fast. Everyone gets 50 Flow credits a day. AI Plus adds 200 a month, AI Pro adds 1,000, the $100 Ultra plan adds 10,000 and the $200 Ultra plan adds 25,000.</p>
 <p>Run that math on AI Pro at $19.99 a month: 1,000 credits is ten Quality clips, or fifty Fast clips, before you count the daily 50. AI Plus at $4.99 (Google cut it from $7.99 on June 8, 2026, per <a href="https://www.engadget.com/2190039/google-cuts-the-price-of-its-ai-plus-plan-and-doubles-the-storage">Engadget</a>) buys two Quality clips a month plus the daily allowance. If the daily cap is your bottleneck, our <a href="/blog/veo-3-daily-limit-google-ai-pro-alternatives.html">Veo daily limit guide</a> covers the workarounds.</p>
 
-<h2>What does Kling 4.0 cost?</h2>
+<h2 id="what-does-kling-4-0-cost">What does Kling 4.0 cost?</h2>
 <p>Kling 4.0 runs inside Kling's existing credit plans, and Kling has not published how many credits a 4.0 clip burns. As of October 19, 2026, Standard was $6.99 for the first month and $8.80 after that for 660 credits, Pro was $25.99 then $32.56 for 3,000 credits, and the lineup now tops out at Ultra+ with 57,000 credits for $544.99 a month after a $402 first month.</p>
 <p>Kling's <a href="https://kling.ai/release-note/release-notes/Kling_4">release note</a> says 4.0 became available to all users on October 15, 2026, with 3 to 30 second clips at 720p, 1080p or 4K, two-channel stereo audio, up to 10 keyframes and up to 15 reference assets in one request. A 30-second take at 4K was not possible on Kling 3.0.</p>
 <p>What is missing is the per-clip cost. <a href="https://www.wireflow.ai/blog/kling-4-0-pricing">Wireflow's October 19, 2026 read of the plans page</a> found no published credit rate for 4.0 or 4.0 Flash, and yearly pricing of $79.20 for Standard and $293.04 for Pro. Kling's own <a href="https://kling.ai/blog/kling-video-3-0-credit-cost-guide">July 28, 2026 credit guide</a> gives the 3.0 baseline: 660 Standard credits bought roughly 33 clips at 720p, and native 4K cost 30 credits per second. Run one 4.0 test clip before you plan a batch.</p>
 <p>Three Kling rules shape the real bill, all from the <a href="https://kling.ai/docs/point-policy">credits policy</a> we read October 21, 2026. Subscription credits are valid one month from issue. Purchased credits ($1 buys 66) are valid two years. Failed generations are refunded. The free Basic tier has no monthly allowance and its output is not for commercial use.</p>
 
-<h2>Did Seedance 2.5 get cheaper?</h2>
+<h2 id="did-seedance-2-5-get-cheaper">Did Seedance 2.5 get cheaper?</h2>
 <p>Partly. The official API base rate did not move: on October 6, 2026, <a href="https://cellcog.ai/blog/seedance-2-5-pricing">CellCog's re-check</a> found Replicate and BytePlus still at $0.1028 per second for 480p and $0.2312 for 720p, the launch rate. The price drop happened on the consumer side, where ByteDance's own Dreamina app ran a 90 percent off first month from September 23 to October 9, 2026, at an effective $0.035 per second.</p>
 <p>Pika and Runway now bundle Seedance 2.5 into subscription credits, priced below. On the API side, the gap between routes is wide. On <a href="https://fal.ai/models/bytedance/seedance-2.5/text-to-video">fal.ai</a> (read October 21, 2026) Seedance 2.5 costs $0.2205 per second at 480p, $0.4730 at 720p and $1.164 at 1080p, so a 30-second 720p clip is about $13.87 there. The same 30 seconds costs $6.94 at the BytePlus launch rate, which is not sold in the US, Canada, UK, Australia or New Zealand according to CellCog. Our <a href="/blog/seedance-credit-cost-per-video.html">Seedance credit cost guide</a> walks through the per-video math.</p>
 <p>Dreamina's own <a href="https://dreamina.capcut.com/seedance/seedance-2-5-pricing-2026">pricing post</a> (September 28, 2026) says the $0.035 figure is a first-month offer with a $1.50 US introductory payment, that the annual Super plan works out to $0.047 per second in year one, and that renewal prices differ.</p>
@@ -180,29 +82,29 @@ article td{overflow-wrap:break-word}
 <p class="affiliate-disclosure">We earn a commission if you sign up or buy through some links on this page, at no extra cost to you.</p><p>Then there is the <a href="/go/seedance" rel="sponsored noopener">Seeddance aggregator</a> we send readers to. Its <a href="https://seeddance.video/pricing">pricing page</a> on October 21, 2026, showed Basic at $9.90 a month billed yearly for 150 credits, Pro at $19.90 for 350, Max at $34.90 for 750 and Pro Max at $59.90 for 1,500. Every paid plan includes a commercial license and watermark-free exports, and the free tier is one credit every 24 hours.</p>
 <p>Three caveats. A price increase coming soon banner means the $9.90 may not hold. Its <a href="https://seeddance.video/ai-video/seedance2-5">Seedance 2.5 page</a> (read October 21, 2026) allows 4 to 30 second clips at 480p, 720p or 1080p, but charges 12 credits per second at 480p, 23 at 720p and 48 at 1080p. That makes Basic's 150 monthly credits about six seconds of 720p Seedance 2.5, roughly $1.52 per second at the yearly $0.066 per credit, several times the Pika, fal or Replicate rate. And the engine list still names Sora 2 and Sora 2 Pro, though OpenAI shut the Sora API on September 24, 2026. Buy it for a commercial license on the entry plan and one credit pool across Seedance 2.0, Seedance 2.5 and Veo 3. Do not buy it for Sora, or for the lowest per-second Seedance price.</p>
 
-<h2>What do Runway and Pika cost now?</h2>
+<h2 id="what-do-runway-and-pika-cost-now">What do Runway and Pika cost now?</h2>
 <p>Runway Standard is $12 a month billed yearly ($15 monthly) for 625 credits, Pro is $28 ($35 monthly) for 2,250 and Max is $76 ($95 monthly) for 9,500, per <a href="https://runwayml.com/pricing">Runway's pricing page</a> on October 21, 2026. Pika Starter is $8 billed yearly ($10 monthly) for 900 credits, Creator is $28 billed yearly ($35 monthly) for 3,150 and Fancy is $76 ($95 monthly) for 8,550, per <a href="https://pika.art/pricing">Pika's page</a> the same day.</p>
 <p>Runway's own conversion makes Standard concrete: 625 credits is 52 seconds of Gen-4.5 a month, because Gen-4.5 costs 12 credits per second. Standard and Pro credits reset within 24 hours of the billing date with no rollover. Max rolls unused credits over for one month. Purchased top-up credits never expire, with a 1,000-credit minimum. The free plan is a one-time 125 credits that do not expire, and watermark removal is listed as a paid feature.</p>
 <p>Pika changed two things our summer guide got wrong. The free plan now has zero monthly credits and no watermark; Pika gates the commercial license instead. Starter has no commercial license; you need Creator at $28 a month billed yearly to sell or monetize the output. Top-up packs are 60 credits per dollar on every plan, including Free, and they last 365 days from purchase. Plan credits do not roll over. For a musician who posts a few clips a month, a $25 pack (1,500 credits, about 12 Seedance 2.5 clips) with no subscription is the better value, but only if you are not monetizing.</p>
 
-<h2>Why do credits run out faster than the plan price suggests?</h2>
+<h2 id="why-do-credits-run-out-faster-than-the-plan-price-suggests">Why do credits run out faster than the plan price suggests?</h2>
 <p>Because AI video generator pricing is quoted in credits, and one clip costs anywhere from 4 Flow credits to several hundred (a 10-second Kling 3.0 clip at native 4K is 300), and most subscriptions here delete unused credits on a timer. A $10 plan is seven Seedance 2.5 clips on Pika, 52 seconds of Gen-4.5 on Runway, or roughly 33 Kling 3.0 clips at 720p.</p>
 <p>Four multipliers drive the burn. Resolution: Veo 3.1 Fast is $0.10 per second at 720p and $0.30 at 4K. Duration: a 30-second Seedance 2.5 clip costs six times a five-second one. Model tier: Veo 3.1 Standard is eight times Lite at 720p for the same seconds. Mode: 4K upscaling and video editing stack extra charges.</p>
 <p>Expiry is the one people miss: Runway Standard resets within 24 hours of billing, Kling subscription credits last one month, Pika plan credits do not roll over, Google Flow credits expire daily and monthly. If you make videos in bursts, pick credits that keep: Pika top-ups (365 days), Kling purchased credits (two years), Runway top-ups (never expire), or Seeddance aggregator credits, which roll forward while you stay subscribed. If you want to skip subscriptions entirely, our <a href="/blog/ai-video-no-subscription-pay-per-use.html">pay-per-use guide</a> compares the per-second routes.</p>
 <p>Commercial rights are part of the price too. Pika Starter and Kling Basic withhold the commercial license, and Runway Free output is watermarked. The first plan that lets you monetize is Kling Standard ($8.80 after month one), Seeddance Basic ($9.90 a month billed yearly), Runway Standard ($12 a month billed yearly) or Pika Creator ($28 a month billed yearly). Add that step before you call a tool cheap.</p>
 
-<h2>Which plan is the best value for a music video?</h2>
+<h2 id="which-plan-is-the-best-value-for-a-music-video">Which plan is the best value for a music video?</h2>
 <p>For a three-minute music video built from 15 to 20 clips, the cheapest honest paths are Google AI Pro at $19.99 (ten Quality clips plus daily Fast clips), Kling Standard at $8.80 (33 clips at 720p on 3.0 rates), or Pika Creator at $28 a month billed yearly (about 25 five-second Seedance 2.5 clips at 720p, with a commercial license). Which wins depends on whether you need 4K, 30-second takes, or multi-engine access.</p>
 <p>Hobbyists should start free. Google Flow gives everyone 50 credits a day, enough for two Fast Veo 3.1 clips; Runway's 125 one-time credits work on a selection of models only, since Gen-4.5 and watermark-free output start at Standard; Seeddance's one credit a day is a taste. None of the free tiers produce a commercially usable video, so free is for picking a tool, not shipping.</p>
 <p>Musicians releasing one video a month want a commercial license on day one and credits that outlast the edit. Seeddance Basic is the cheapest commercial license on Seedance 2.5 output among the plans compared here, and its credits roll forward while you stay subscribed. At 23 credits per second at 720p, though, 150 credits is one short shot, and a three-minute 720p video is about 4,140 credits, so treat it as a test bench, not a production plan. Kling Standard is the cheapest license on a single first-party model, and 4.0's 30-second 4K takes are a real step up if the credit cost lands reasonably, though at Kling 3.0's 30 credits per second one 30-second 4K take would be 900 credits, more than Standard's 660 a month. Pika Creator at $28 a month billed yearly is the pick for Seedance 2.5 in 30-second takes with a license.</p>
 <p>Volume shops should think in credits per finished minute. Runway Max at $76 a month billed yearly with 9,500 credits and one-month rollover is 791 seconds of Gen-4.5 a month. Kling Ultra+ at $544.99 after month one buys 57,000 credits, about $0.96 per hundred. Bursty teams are better off on packs than plans.</p>
 <p>Developers are the one group for whom per-second pricing wins outright. Veo 3.1 Lite at $0.05 per second is the cheapest first-party rate on this page, and Seedance 2.5 at $0.2312 per second at 720p through Replicate is the cheapest route to a 30-second native take. Kling's API is Kling 3.0 only until the 4.0 API ships, per its <a href="https://klingai.com/dev/pricing">API package page</a> (read October 21, 2026).</p>
 
-<h2>What happened to Sora pricing?</h2>
+<h2 id="what-happened-to-sora-pricing">What happened to Sora pricing?</h2>
 <p>Sora has no price because Sora no longer exists as a product. OpenAI's <a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation">help center</a> states the web and app experiences ended April 26, 2026, and the API ended September 24, 2026. Any site selling Sora 2 access today is selling something it cannot deliver.</p>
 <p>A subscription to a single lab is a bet on that lab's roadmap, and this year the Sora bet lost. Multi-engine credit pools, or per-second API routes you can switch, are the hedge.</p>
 
-<h2>Primary sources</h2>
+<h2 id="primary-sources">Primary sources</h2>
 <ul>
 <li><a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing: Veo 3.1 per-second rates</a> (Google, read October 21, 2026)</li>
 <li><a href="https://support.google.com/flow/answer/16526234?hl=en">Google Flow credits: allowances and cost per generation</a> (Google, read October 21, 2026)</li>
@@ -213,12 +115,13 @@ article td{overflow-wrap:break-word}
 <li><a href="https://fal.ai/models/bytedance/seedance-2.5/text-to-video">Seedance 2.5 per-second pricing</a> (fal.ai, read October 21, 2026)</li>
 <li><a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation">What to know about the Sora discontinuation</a> (OpenAI Help Center, read October 21, 2026)</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
-<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<div class="cta-row"><a class="cta primary" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
+<p class="cta-note">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
-<div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
-<p style="margin:0 0 6px;font-weight:700;font-size:1.05rem">Get the Director&rsquo;s Guide + monthly prompt packs</p>
-<p style="margin:0 0 12px;font-size:.92rem;color:var(--dim)">The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
+<div class="emailcap">
+<p class="ec-h">newsletter</p>
+<h3>Get the Director&rsquo;s Guide + monthly prompt packs</h3>
+<p>The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
 <div class="ml-embedded" data-form="gDc4Ah"></div>
 </div>
 <script>
@@ -229,19 +132,22 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
 })(window,document);
 </script>
 <!-- emailcap:end -->
-<h2>Frequently asked questions</h2>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <div class="faq"><details><summary>What is the cheapest AI video generator in October 2026?<span class="plus" style="float:right">+</span></summary><p>Google AI Plus at $4.99 a month is the lowest paid entry, with 200 Flow credits a month (about two Quality Veo 3.1 clips) plus 50 a day. Pika Starter is $8 a month billed yearly but lacks a commercial license. The cheapest commercial license is Kling Standard at $8.80 after the first month, then the reseller&#x27;s Basic plan at $9.90 a month billed yearly. Prices read October 21, 2026.</p></details><details><summary>How much does Veo 3.1 cost per second?<span class="plus" style="float:right">+</span></summary><p>On the Gemini API, read October 21, 2026, Veo 3.1 Lite is $0.05 per second at 720p and $0.08 at 1080p, Fast is $0.10, $0.12 and $0.30 at 720p, 1080p and 4K, and Standard is $0.40 at 720p and 1080p and $0.60 at 4K. Audio is included and Lite has no 4K. An eight-second 1080p clip costs $0.64, $0.96 or $3.20 by tier.</p></details><details><summary>Is Kling 4.0 more expensive than Kling 3.0?<span class="plus" style="float:right">+</span></summary><p>Kling has not published a per-clip credit rate for 4.0 as of October 19, 2026, so nobody can say for certain. It runs on the same plans: Standard $8.80 after the first month for 660 credits, Pro $32.56 for 3,000. Kling 3.0 cost about 20 credits per 720p clip and 30 credits per second at 4K. Render one 4.0 test clip and read the deduction before budgeting a batch.</p></details><details><summary>Did Seedance 2.5 get a price drop?<span class="plus" style="float:right">+</span></summary><p>Not at the API base rate, which CellCog found unchanged at $0.2312 per second for 720p on October 6, 2026. The drop was on the consumer side: Dreamina ran a 90 percent off first month from September 23 to October 9 at $0.035 per second, and Pika now sells a five-second 720p clip for 122 credits, about $1.43 on Starter. fal.ai still charges $0.4730 per second.</p></details><details><summary>Do AI video credits roll over if I do not use them?<span class="plus" style="float:right">+</span></summary><p>Usually not. Runway Standard and Pro credits reset within 24 hours of the billing date, Kling subscription credits last one month, Pika plan credits do not roll over, and Google Flow credits expire daily and monthly. The exceptions: Runway top-ups never expire, Kling purchased credits last two years, Pika top-ups last 365 days, Runway Max rolls over one month, and the reseller&#x27;s subscription credits roll forward while you stay subscribed.</p></details><details><summary>Can I still pay for Sora 2?<span class="plus" style="float:right">+</span></summary><p>No. OpenAI&#x27;s help center states the Sora web and app ended on April 26, 2026, and the Sora API ended on September 24, 2026. There is no subscription, no API and no legitimate reseller route. Any platform still listing Sora 2 among its engines is showing a stale menu. For long takes with native audio, Kling 4.0 and Seedance 2.5 are the working alternatives; for realism, Veo 3.1 Standard.</p></details></div>
-</article><aside class="studio-note"><p>Run a local business? <a href="/studio/">See how we get businesses found on Google and in AI answers</a></p></aside>
-</main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/studio/">Studio</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
-<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
-<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+</article><aside class="studio-note" data-sticky="false" aria-labelledby="sn-studio"><p class="sn-label">from the studio</p><div class="sn-main"><h3 id="sn-studio">Run a local business?</h3><p>See how we get businesses found on Google and in AI answers: website, Google profile, booking and reviews, run for you every month.</p></div><div class="sn-act"><a class="cta" href="/studio/">See the studio<span class="ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div></aside>
+</main><footer class="site-foot"><div class="wrap ft">
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a>
+<ul class="foot-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Credit calculator</a></li><li><a href="/directors-guide.html">Director's guide</a></li><li><a href="/about.html">About</a></li><li><a href="/free-check/">Book a free check</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/disclosure.html">Affiliate disclosure</a></li><li><a href="/terms.html">Terms</a></li></ul>
+<p class="full-disc" id="full-disclosure"><b>Affiliate disclosure</b>AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live. <a href="/disclosure.html">Full disclosure</a></p>
+<p class="copy"><span>© 2026 Purpose with Presence</span><span>purposewithpresence.com</span></p>
+</div></footer>
 <!-- ctabar:start -->
-<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
-<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
-<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .32s cubic-bezier(.2,.7,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div class="ctab-in" style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 12px 12px;padding:8px 8px 8px 16px;background:oklch(0.235 0.016 255);border:1px solid oklch(0.32 0.014 255);border-radius:4px;box-shadow:0 16px 40px oklch(0.1 0.01 255 / .55);width:min(calc(100vw - 24px),640px)">
+<span style="color:oklch(0.96 0.004 255);font-size:1rem;line-height:1.35;flex:1;min-width:0"><b style="font-weight:620">Seedance: 1 free credit a day.</b> <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:oklch(0.68 0.012 255);white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:inherit">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;background:oklch(0.82 0.16 75);color:oklch(0.155 0.012 255);font-weight:650;border-radius:4px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="flex:none;width:48px;height:48px;padding:0;background:none;border:1px solid oklch(0.32 0.014 255);border-radius:4px;color:oklch(0.78 0.01 255);cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
 </div></div>
+<script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

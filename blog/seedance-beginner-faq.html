@@ -12,131 +12,33 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<meta name="theme-color" content="oklch(0.155 0.012 255)">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
-  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
-  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
-  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--pink);color:#fff}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
-.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
-.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
-.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
-  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
-  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
-.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
-.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
-.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
-.nav-cta:hover{text-decoration:none}
-main{padding:60px 0 40px}
-.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
-  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
-article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
-.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
-article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
-article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
-article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
-article p,.page p{margin-bottom:18px}
-article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
-article li,.page li{margin-bottom:9px}
-article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
-article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
-article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
-article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
-article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
-.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
-  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
-.cta:hover{text-decoration:none;transform:translateY(-2px)}
-.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
-.card:hover{transform:translateY(-4px);border-color:var(--line2)}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
-.faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq details p{padding:0 0 20px;color:var(--dim)}
-footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
-.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
-.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
-@media(max-width:640px){.nlinks{display:none}}
-
-/* premium patch v2 */
-body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
-.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
-article h2,.page h2{position:relative;padding-left:18px}
-article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
-article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
-article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
-blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
-.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
-nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
-@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-::selection{background:#ff2e88;color:#fff}
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0;display:table;overflow:visible;min-width:100%}div[style*="overflow-x:auto"]>table{display:table;overflow:visible;min-width:100%}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-/* blog fixes 2026-11-06 */
-article p,article li{overflow-wrap:anywhere}
-article td{overflow-wrap:break-word}
-.foot-links{gap:0 6px}.foot-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
-.eyebrow{font-size:.75rem}
-.studio-note{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
-.studio-note p{margin:0;color:var(--dim);font-size:1rem}
-.studio-note a{color:var(--cyan)}
-/* end blog fixes */
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/tokens.css?v=7c697f78">
+<link rel="stylesheet" href="/assets/pwp-article.css?v=ea24ee91">
+<script src="/assets/pwp-article.js?v=612e33bf" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Seedance for Beginners: First-Render Questions Answered (2026)", "description": "First-time Seedance questions answered from dated 2.0 and 2.5 guides: accepted inputs, 4 to 30 second clip limits, how references work, first-render fixes.", "wordCount": 1587, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-11-02", "dateModified": "2026-11-02", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/seedance-beginner-faq.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I make a Seedance video from a text prompt alone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Text-to-video is one of the two modes Flick lists for Seedance 2.5, and Morphic's 2.0 guide says every job needs text while images, video and audio are optional additions. The one combination that fails is audio with no picture: an audio clip only works beside an image or video reference, per Morphic's July 2026 guide."}}, {"@type": "Question", "name": "Does Seedance 2.0 accept a whole song as an audio reference?", "acceptedAnswer": {"@type": "Answer", "text": "No. Morphic's July 2026 guide lists audio references as MP3 or WAV files of 2 to 15 seconds each, up to three files, with a combined cap of 15 seconds. Choose the section of the song that matches the shot you are rendering and upload that excerpt, then repeat with a different excerpt for the next clip."}}, {"@type": "Question", "name": "Why does my Seedance character show up twice in one frame?", "acceptedAnswer": {"@type": "Answer", "text": "Morphic calls this the twins bug and ties it to multi-view character sheets. When you upload front, side and back views, Seedance 2.0 can read them as several different people and render duplicates. The guide's fix is two images with separate jobs, a face-only headshot and a full-body shot, plus a line in the prompt naming what must stay stable."}}, {"@type": "Question", "name": "Is a tutorial written for Seedance 2.0 still useful for Seedance 2.5?", "acceptedAnswer": {"@type": "Answer", "text": "The reference logic carries over, the numbers do not. Assigning each reference a job, keeping character images to one or two, and sequencing shots all still apply. Clip length moves from 15 to 30 seconds, the reference ceiling moves from a few assets per type to 50 role-tagged assets, and audio is generated in the same pass, per Flick's July 2026 guide."}}, {"@type": "Question", "name": "How long does a Seedance render take?", "acceptedAnswer": {"@type": "Answer", "text": "The guides give snapshots, not a rate. TheAIGRID's video from February 11, 2026 shows a BytePlus job estimated at 15 to 20 minutes during launch-week demand, while a vendor press release a week later claimed 3 to 5 minutes depending on resolution. Expect the wait to vary by platform and load, and plan a session around several short clips rather than one long render."}}, {"@type": "Question", "name": "Which aspect ratios can a beginner pick in Seedance 2.0?", "acceptedAnswer": {"@type": "Answer", "text": "Morphic's spec table for Seedance 2.0 lists 21:9, 16:9, 4:3, 1:1, 3:4 and 9:16, plus an adaptive setting that matches the ratio of your reference image. There is no 2.35:1 option, so Morphic suggests 21:9 for a widescreen film look. Matching the output ratio to your reference also prevents the stretched or jumping image that Morphic lists as a common first-render fault."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Seedance for Beginners: First-Render Questions Answered (2026)", "item": "https://purposewithpresence.com/blog/seedance-beginner-faq.html"}]}</script>
 </head><body>
-<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
-<nav><a class="brand" href="/seedance-guide/"><span class="dot"></span>AI Music Video Guide</a>
-<div class="nlinks"><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">Try Free<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
-<main class="wrap"><article>
-<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › seedance for beginners</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap"><nav aria-label="Primary" data-open="false"><a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-links"><span>Menu</span><span class="bars" aria-hidden="true"></span></button><ul class="nlinks" id="site-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/" aria-current="page">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Tools</a></li><li><a href="/about.html">About</a></li></ul><a class="nav-cta" href="/free-check/">Book a free check</a></nav></div><span class="progress" aria-hidden="true"></span></header>
+<main id="main" class="wrap art">
+<aside class="toc" aria-label="On this page"><p class="toc-h">on this page</p><ol><li><a href="#which-seedance-version-is-each-beginner-guide-about">Which Seedance version is each beginner guide about?</a></li><li><a href="#what-inputs-does-seedance-take">What inputs does Seedance take?</a></li><li><a href="#how-long-can-one-seedance-clip-be-and-at-what-resolution">How long can one Seedance clip be, and at what resolution?</a></li><li><a href="#how-do-references-work-and-how-many-should-a-first-render-us">How do references work, and how many should a first render use?</a></li><li><a href="#how-should-a-beginner-write-the-first-prompt">How should a beginner write the first prompt?</a></li><li><a href="#what-goes-wrong-on-a-first-render-and-how-do-you-fix-it">What goes wrong on a first render, and how do you fix it?</a></li><li><a href="#where-should-a-beginner-run-seedance-and-what-comes-next">Where should a beginner run Seedance, and what comes next?</a></li><li><a href="#primary-sources">Primary sources</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ol></aside>
+<article>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">seedance for beginners</span></li></ol></nav>
 <h1>Seedance for Beginners: First-Render Questions Answered (2026)</h1>
-<p class="byline">By the AI Music Video Guide team · Updated November 2, 2026 · 7 min read</p>
-<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
-<p><strong>Quick answer:</strong> Seedance takes a text prompt plus image, video and audio references. Seedance 2.0 renders 4 to 15 second clips from up to 9 images, 3 video clips and 3 audio clips; Seedance 2.5 renders up to 30 seconds from up to 50 references. Most first-render failures come from too many references and vague instructions, not from the model.</p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> November 2, 2026</span><span>7 min read</span></p>
+<aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
+<p class="short-answer"><strong>Quick answer:</strong> Seedance takes a text prompt plus image, video and audio references. Seedance 2.0 renders 4 to 15 second clips from up to 9 images, 3 video clips and 3 audio clips; Seedance 2.5 renders up to 30 seconds from up to 50 references. Most first-render failures come from too many references and vague instructions, not from the model.</p>
 
 <p>This is Seedance for beginners: the questions a first-time user asks before the first render, answered from four written guides and two video tutorials. We state the Seedance version and date of each source, because advice written for 2.0 in February 2026 does not always hold for 2.5.</p>
 
-<h2>Which Seedance version is each beginner guide about?</h2>
+<h2 id="which-seedance-version-is-each-beginner-guide-about">Which Seedance version is each beginner guide about?</h2>
 <p>Five of the six sources cover Seedance 2.0 and one covers Seedance 2.5. A February 18, 2026 press release dates the 2.0 release to February 12, 2026, and Flick dates the 2.5 announcement to June 23, 2026. Check the version line before you copy a limit out of any tutorial.</p>
 <div class="tscroll"><table>
 <thead><tr><th>Guide</th><th>Version</th><th>Date</th><th>Platform shown</th></tr></thead>
@@ -151,25 +53,25 @@ article td{overflow-wrap:break-word}
 </table></div>
 <p>The version matters because the limits moved. Flick's table puts Seedance 2.0 at about 15 seconds and about 12 references, and 2.5 at up to 30 seconds with up to 50 role-tagged references (<a href="https://flick.art/blog/seedance-2-5-guide">Flick, July 2026</a>); Morphic counts the 2.0 ceilings per type instead (<a href="https://morphic.com/resources/how-to/seedance-2-guide">Morphic, July 2026</a>). When guides disagree on a number, the version and date usually explain it.</p>
 
-<h2>What inputs does Seedance take?</h2>
+<h2 id="what-inputs-does-seedance-take">What inputs does Seedance take?</h2>
 <p>Text, images, video clips and audio clips, used together. On Seedance 2.0 every job needs a text prompt, and Morphic notes that audio alone, or text plus audio with no picture, will not generate, so an audio clip always rides beside a visual reference. Seedance 2.5 adds role tags, so each reference is labeled for the job it does.</p>
 <p>The Higgsfield tutorial states the 2.0 ceiling as nine images, three video clips and three audio clips per generation (<a href="https://www.youtube.com/watch?v=tfs8U3CbAOs">video, April 10, 2026</a>). Morphic adds the fine print: reference video runs 2 to 15 seconds per clip at 24 to 60 fps, reference audio is MP3 or WAV at 2 to 15 seconds per file, and each type caps at 15 seconds combined (<a href="https://morphic.com/resources/how-to/seedance-2-guide">Morphic, July 2026</a>). That audio cap is the one musicians trip over: you feed a short excerpt of the song, never the whole track.</p>
 <p>On Seedance 2.5 the pack grows to 50 assets, each tagged for a role such as identity, camera motion or pacing, with audio generated in the same pass as the picture (<a href="https://flick.art/blog/seedance-2-5-guide">Flick, July 2026</a>).</p>
 
-<h2>How long can one Seedance clip be, and at what resolution?</h2>
+<h2 id="how-long-can-one-seedance-clip-be-and-at-what-resolution">How long can one Seedance clip be, and at what resolution?</h2>
 <p>Seedance 2.0 generates 4 to 15 seconds per clip; Seedance 2.5 generates 4 to 30 seconds in one pass. Resolution depends on where you run it. Morphic lists 480p to 4K for full 2.0 on its platform, the Higgsfield tutorial shows 480p and 720p options, and Flick runs 2.5 at up to 1080p on its canvas.</p>
 <p>The Higgsfield presenter's length slider runs from 4 to 15 seconds, and the session stays at 11 to 13 (<a href="https://www.youtube.com/watch?v=tfs8U3CbAOs">video, April 10, 2026</a>). Morphic gives the same range and notes that the Fast and Mini variants top out at 720p (<a href="https://morphic.com/resources/how-to/seedance-2-guide">Morphic, July 2026</a>). Flick lists native 4K as ByteDance's announced 2.5 spec but renders at up to 1080p on its canvas (<a href="https://flick.art/blog/seedance-2-5-guide">Flick, July 2026</a>), so the pixel count you get is the platform's choice; our <a href="/blog/seedance-2-5-access.html">Seedance 2.5 access guide</a> tracks which platform outputs what.</p>
 
-<h2>How do references work, and how many should a first render use?</h2>
+<h2 id="how-do-references-work-and-how-many-should-a-first-render-us">How do references work, and how many should a first render use?</h2>
 <p>Each reference teaches the model one thing, and you say which thing in the prompt. ChatCut's rule is to tell Seedance whether a clip supplies motion, rhythm, atmosphere or content (<a href="https://chatcut.io/blog/how-to-use-seedance-2">ChatCut, read October 25, 2026</a>). Morphic recommends 4 to 5 assets in total, far below the ceiling, because a full load makes the model unsure which features take priority.</p>
 <p>Character images are where beginners overload. Morphic's rule is blunt: "Use a headshot plus a full-body shot. Nothing more." It says a front, side and back turnaround is often read as several different people and is a leading cause of the twins bug, where two copies of one character appear in a frame (<a href="https://morphic.com/resources/how-to/seedance-2-guide">Morphic, July 2026</a>). TheAIGRID's video gives the same ceiling of one to two character images (<a href="https://www.youtube.com/watch?v=UH8Fq-_1eA0">February 11, 2026</a>).</p>
 <p>Morphic's recommended 2.0 brief is one or two character images, one scene image, one camera-movement clip and one audio clip. Flick's 2.5 advice scales the idea to 50 slots: group references into identity, wardrobe, look, motion and audio blocks, and give every asset a role (<a href="https://flick.art/blog/seedance-2-5-guide">Flick, July 2026</a>). Our <a href="/blog/ai-video-character-consistency.html">character consistency guide</a> shows the pack we build for a performer, and our note on <a href="/blog/seedance-reference-audio-not-working.html">Seedance reference audio not working</a> covers the audio side.</p>
 
-<h2>How should a beginner write the first prompt?</h2>
+<h2 id="how-should-a-beginner-write-the-first-prompt">How should a beginner write the first prompt?</h2>
 <p>Describe four things: what the viewer sees, what changes, when it changes, and how the camera behaves. That is ChatCut's starting list, and it says specificity beats poetic language (<a href="https://chatcut.io/blog/how-to-use-seedance-2">ChatCut, read October 25, 2026</a>). Keep the first prompt to one shot, one subject and one camera move, then add instructions only where the result missed.</p>
 <p>The guides disagree on timestamps, and the dates explain why. TheAIGRID's February 2026 video tells you to state durations explicitly, and ChatCut's examples use second markers. Morphic's July 2026 revision says 2.0's support for precise timing is unstable, that forcing exact durations can break a generation, and that you should number shots in order and let the model set the pace (<a href="https://morphic.com/resources/how-to/seedance-2-guide">Morphic, July 2026</a>). We follow the later guide: sequence the shots, treat timecodes as hints.</p>
 
-<h2>What goes wrong on a first render, and how do you fix it?</h2>
+<h2 id="what-goes-wrong-on-a-first-render-and-how-do-you-fix-it">What goes wrong on a first render, and how do you fix it?</h2>
 <p>The usual faults are a result that looks nothing like the idea, a character who changes between shots, unwanted cuts, and a job that refuses to run. ChatCut's method is to diagnose the broken part, subject, camera, pacing or mood, and fix only that, instead of rewriting the whole prompt (<a href="https://chatcut.io/blog/how-to-use-seedance-2">ChatCut, read October 25, 2026</a>).</p>
 <div class="tscroll"><table>
 <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix (source)</th></tr></thead>
@@ -184,12 +86,12 @@ article td{overflow-wrap:break-word}
 </table></div>
 <p>Extension is the fix for a clip that ends too soon. ChatCut says to set the extension length to the added seconds, not the final runtime: a 9-second clip that needs 6 more is a 6-second extension. Morphic warns that joins can jump a frame and that chaining extensions degrades the image, so keep each to 5 to 8 seconds (<a href="https://morphic.com/resources/how-to/seedance-2-guide">Morphic, July 2026</a>). Every rerun spends credits again, as the Higgsfield presenter notes (<a href="https://www.youtube.com/watch?v=tfs8U3CbAOs">April 10, 2026</a>), which is why diagnose-then-fix beats regenerate-and-hope; for longer plans, read <a href="/blog/how-to-make-ai-videos-longer-than-10-seconds.html">how to make AI videos longer than 10 seconds</a>.</p>
 
-<h2>Where should a beginner run Seedance, and what comes next?</h2>
+<h2 id="where-should-a-beginner-run-seedance-and-what-comes-next">Where should a beginner run Seedance, and what comes next?</h2>
 <p>Pick the platform whose guide you are following, because limits, pickers and prices are set per platform. The guides above run Seedance on Higgsfield, Morphic, Flick, ChatCut and the BytePlus console; <a href="/go/seedance" rel="sponsored noopener">Seeddance (seeddance.video)</a> is another option. Our /go/seedance links go to seeddance.video, an independent site that resells Seedance; we earn a commission if you subscribe.</p>
 <p>Access mechanics differ: the BytePlus console asked TheAIGRID's presenter for a verified phone number and a payment card before a job would run (<a href="https://www.youtube.com/watch?v=UH8Fq-_1eA0">February 11, 2026</a>), and Higgsfield is desktop-browser only (<a href="https://www.youtube.com/watch?v=tfs8U3CbAOs">April 10, 2026</a>). Free allowances on these platforms will not finish a video; read our <a href="/blog/seedance-free-vs-paid-worth-it.html">Seedance free versus paid comparison</a> and our <a href="/blog/seedance-2-5-pricing-credits-explained.html">Seedance 2.5 pricing and credits guide</a> before you budget one, and confirm whether the picker says 2.0 or 2.5 first.</p>
 <p>Next step: open our <a href="/blog/seedance-music-video-tutorial.html">Seedance music video walkthrough</a>, which turns these inputs into a shot list, feeds the song in short audio slices and budgets the clips. Bring one headshot, one full-body image and one audio excerpt of 15 seconds or less, and your first render starts from the right place.</p>
 
-<h2>Primary sources</h2>
+<h2 id="primary-sources">Primary sources</h2>
 <ul>
 <li><a href="https://chatcut.io/blog/how-to-use-seedance-2">ChatCut: How to Use Seedance 2.0, Beginner FAQ</a> (undated, read October 25, 2026)</li>
 <li><a href="https://morphic.com/resources/how-to/seedance-2-guide">Morphic: Seedance 2.0 Complete Guide</a> (information accurate as of July 2026, per the page)</li>
@@ -198,12 +100,13 @@ article td{overflow-wrap:break-word}
 <li><a href="https://www.youtube.com/watch?v=tfs8U3CbAOs">YouTube: The Complete Seedance 2.0 Tutorial for Beginners</a> (posted April 10, 2026, sponsored by Higgsfield)</li>
 <li><a href="https://finance.yahoo.com/news/seedance-2-0-platform-debuts-182000319.html">ACCESS Newswire via Yahoo Finance: New Seedance 2.0 Platform Debuts</a> (paid press release by Seedance2ai.online, February 18, 2026)</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
-<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<div class="cta-row"><a class="cta primary" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
+<p class="cta-note">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
-<div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
-<p style="margin:0 0 6px;font-weight:700;font-size:1.05rem">Get the Director&rsquo;s Guide + monthly prompt packs</p>
-<p style="margin:0 0 12px;font-size:.92rem;color:var(--dim)">The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
+<div class="emailcap">
+<p class="ec-h">newsletter</p>
+<h3>Get the Director&rsquo;s Guide + monthly prompt packs</h3>
+<p>The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
 <div class="ml-embedded" data-form="gDc4Ah"></div>
 </div>
 <script>
@@ -214,19 +117,22 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
 })(window,document);
 </script>
 <!-- emailcap:end -->
-<h2>Frequently asked questions</h2>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <div class="faq"><details><summary>Can I make a Seedance video from a text prompt alone?<span class="plus" style="float:right">+</span></summary><p>Yes. Text-to-video is one of the two modes Flick lists for Seedance 2.5, and Morphic&#x27;s 2.0 guide says every job needs text while images, video and audio are optional additions. The one combination that fails is audio with no picture: an audio clip only works beside an image or video reference, per Morphic&#x27;s July 2026 guide.</p></details><details><summary>Does Seedance 2.0 accept a whole song as an audio reference?<span class="plus" style="float:right">+</span></summary><p>No. Morphic&#x27;s July 2026 guide lists audio references as MP3 or WAV files of 2 to 15 seconds each, up to three files, with a combined cap of 15 seconds. Choose the section of the song that matches the shot you are rendering and upload that excerpt, then repeat with a different excerpt for the next clip.</p></details><details><summary>Why does my Seedance character show up twice in one frame?<span class="plus" style="float:right">+</span></summary><p>Morphic calls this the twins bug and ties it to multi-view character sheets. When you upload front, side and back views, Seedance 2.0 can read them as several different people and render duplicates. The guide&#x27;s fix is two images with separate jobs, a face-only headshot and a full-body shot, plus a line in the prompt naming what must stay stable.</p></details><details><summary>Is a tutorial written for Seedance 2.0 still useful for Seedance 2.5?<span class="plus" style="float:right">+</span></summary><p>The reference logic carries over, the numbers do not. Assigning each reference a job, keeping character images to one or two, and sequencing shots all still apply. Clip length moves from 15 to 30 seconds, the reference ceiling moves from a few assets per type to 50 role-tagged assets, and audio is generated in the same pass, per Flick&#x27;s July 2026 guide.</p></details><details><summary>How long does a Seedance render take?<span class="plus" style="float:right">+</span></summary><p>The guides give snapshots, not a rate. TheAIGRID&#x27;s video from February 11, 2026 shows a BytePlus job estimated at 15 to 20 minutes during launch-week demand, while a vendor press release a week later claimed 3 to 5 minutes depending on resolution. Expect the wait to vary by platform and load, and plan a session around several short clips rather than one long render.</p></details><details><summary>Which aspect ratios can a beginner pick in Seedance 2.0?<span class="plus" style="float:right">+</span></summary><p>Morphic&#x27;s spec table for Seedance 2.0 lists 21:9, 16:9, 4:3, 1:1, 3:4 and 9:16, plus an adaptive setting that matches the ratio of your reference image. There is no 2.35:1 option, so Morphic suggests 21:9 for a widescreen film look. Matching the output ratio to your reference also prevents the stretched or jumping image that Morphic lists as a common first-render fault.</p></details></div>
-</article><aside class="studio-note"><p>Run a local business? <a href="/studio/">See how we get businesses found on Google and in AI answers</a></p></aside>
-</main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/studio/">Studio</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
-<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
-<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+</article><aside class="studio-note" data-sticky="false" aria-labelledby="sn-studio"><p class="sn-label">from the studio</p><div class="sn-main"><h3 id="sn-studio">Run a local business?</h3><p>See how we get businesses found on Google and in AI answers: website, Google profile, booking and reviews, run for you every month.</p></div><div class="sn-act"><a class="cta" href="/studio/">See the studio<span class="ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div></aside>
+</main><footer class="site-foot"><div class="wrap ft">
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a>
+<ul class="foot-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Credit calculator</a></li><li><a href="/directors-guide.html">Director's guide</a></li><li><a href="/about.html">About</a></li><li><a href="/free-check/">Book a free check</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/disclosure.html">Affiliate disclosure</a></li><li><a href="/terms.html">Terms</a></li></ul>
+<p class="full-disc" id="full-disclosure"><b>Affiliate disclosure</b>AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live. <a href="/disclosure.html">Full disclosure</a></p>
+<p class="copy"><span>© 2026 Purpose with Presence</span><span>purposewithpresence.com</span></p>
+</div></footer>
 <!-- ctabar:start -->
-<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
-<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
-<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .32s cubic-bezier(.2,.7,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div class="ctab-in" style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 12px 12px;padding:8px 8px 8px 16px;background:oklch(0.235 0.016 255);border:1px solid oklch(0.32 0.014 255);border-radius:4px;box-shadow:0 16px 40px oklch(0.1 0.01 255 / .55);width:min(calc(100vw - 24px),640px)">
+<span style="color:oklch(0.96 0.004 255);font-size:1rem;line-height:1.35;flex:1;min-width:0"><b style="font-weight:620">Seedance: 1 free credit a day.</b> <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:oklch(0.68 0.012 255);white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:inherit">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;background:oklch(0.82 0.16 75);color:oklch(0.155 0.012 255);font-weight:650;border-radius:4px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="flex:none;width:48px;height:48px;padding:0;background:none;border:1px solid oklch(0.32 0.014 255);border-radius:4px;color:oklch(0.78 0.01 255);cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
 </div></div>
+<script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

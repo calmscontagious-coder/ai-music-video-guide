@@ -12,136 +12,38 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<meta name="theme-color" content="oklch(0.155 0.012 255)">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
-  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
-  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
-  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--pink);color:#fff}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
-.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
-.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
-.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
-  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
-  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
-.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
-.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
-.nav-cta{font-size:.86rem;font-weight:600;padding:8px 16px;border-radius:100px;background:var(--cream);color:#0a0a0f}
-.nav-cta:hover{text-decoration:none}
-main{padding:60px 0 40px}
-.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
-  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
-article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
-.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
-article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
-article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
-article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
-article p,.page p{margin-bottom:18px}
-article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
-article li,.page li{margin-bottom:9px}
-article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
-article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
-article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
-article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
-article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
-.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
-  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
-.cta:hover{text-decoration:none;transform:translateY(-2px)}
-.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
-.card:hover{transform:translateY(-4px);border-color:var(--line2)}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
-.faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq details p{padding:0 0 20px;color:var(--dim)}
-footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
-.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
-.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
-@media(max-width:640px){.nlinks{display:none}}
-
-/* premium patch v2 */
-body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
-.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
-article h2,.page h2{position:relative;padding-left:18px}
-article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
-article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
-article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
-blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
-.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
-nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
-@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-::selection{background:#ff2e88;color:#fff}
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0;display:table;overflow:visible;min-width:100%}div[style*="overflow-x:auto"]>table{display:table;overflow:visible;min-width:100%}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-/* blog fixes 2026-11-06 */
-article p,article li{overflow-wrap:anywhere}
-article td{overflow-wrap:break-word}
-.foot-links{gap:0 6px}.foot-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
-.eyebrow{font-size:.75rem}
-.studio-note{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
-.studio-note p{margin:0;color:var(--dim);font-size:1rem}
-.studio-note a{color:var(--cyan)}
-/* end blog fixes */
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/tokens.css?v=7c697f78">
+<link rel="stylesheet" href="/assets/pwp-article.css?v=ea24ee91">
+<script src="/assets/pwp-article.js?v=612e33bf" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Video Marketing Statistics for Musicians: 2026 Figures With Sources", "description": "The 2026 video marketing statistics an independent musician can use, with source, year and sample: ROI, best clip length, music video viewing, per-video spend.", "wordCount": 1590, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-11-02", "dateModified": "2026-11-02", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/video-marketing-statistics-for-musicians.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are these video marketing statistics about musicians?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every survey here polls businesses or general internet users, not artists or fans. Wyzowl's 2026 edition surveyed 266 marketers and consumers, Wistia polled more than 900 professionals, and Statista's weekly viewing data covers internet users worldwide. The one music-specific figure is Statista's 48.2% weekly music video audience. Read the rest as context for budgeting, not as proof about music."}}, {"@type": "Question", "name": "Why do some pages say 93% of marketers get good ROI and others say 82%?", "acceptedAnswer": {"@type": "Answer", "text": "Both numbers come from Wyzowl, from different editions. The 2025 edition reported 93%, an all-time high for that series; the 2026 edition, built on late-2025 fieldwork, reports 82%. Aggregator pages such as Loopex Digital's report updated in May 2026 still carry the older figure. When a statistic has no year attached, assume it is a previous edition until you check the publisher's page."}}, {"@type": "Question", "name": "What video length do marketers rate best in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Thirty to sixty seconds, chosen by 51% of video marketers in Wyzowl's 2026 survey, with 71% picking somewhere between 30 seconds and two minutes. Only 4% rate three minutes or more as most effective. That favors teasers and clips cut from a music video as the asset you push on social platforms, with the full cut living on YouTube."}}, {"@type": "Question", "name": "How much do most companies spend on video production in a year?", "acceptedAnswer": {"@type": "Answer", "text": "Wistia's 2026 State of Video survey, cited by Wix and Digital Applied, found almost 40% of companies spent under $5,000 producing video in the previous year and just over 30% spent more; the rest did not track it separately. A separate Statista study cited by Market.us has 25% of marketers spending $1,000 to $5,000 on an average video. Neither figure is specific to music videos."}}, {"@type": "Question", "name": "Has AI made video cheaper, according to the surveys?", "acceptedAnswer": {"@type": "Answer", "text": "Not for most marketing teams. In Wyzowl's 2026 edition 63% of video marketers have used AI tools, up from 51%, yet 38% say video has become more expensive against 30% who say cheaper. Digital Applied could find no source for the claim that AI cut costs 40% per minute. AI lowers the entry price for a musician working alone; it has not cut what crews charge."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Video Marketing Statistics for Musicians: 2026 Figures With Sources", "item": "https://purposewithpresence.com/blog/video-marketing-statistics-for-musicians.html"}]}</script>
 </head><body>
-<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
-<nav><a class="brand" href="/seedance-guide/"><span class="dot"></span>AI Music Video Guide</a>
-<div class="nlinks"><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">Try Free<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
-<main class="wrap"><article>
-<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › video marketing statistics</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap"><nav aria-label="Primary" data-open="false"><a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-links"><span>Menu</span><span class="bars" aria-hidden="true"></span></button><ul class="nlinks" id="site-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/" aria-current="page">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Tools</a></li><li><a href="/about.html">About</a></li></ul><a class="nav-cta" href="/free-check/">Book a free check</a></nav></div><span class="progress" aria-hidden="true"></span></header>
+<main id="main" class="wrap art">
+<aside class="toc" aria-label="On this page"><p class="toc-h">on this page</p><ol><li><a href="#which-2026-video-marketing-statistics-can-a-musician-trust">Which 2026 video marketing statistics can a musician trust?</a></li><li><a href="#what-do-wyzowl-s-2026-numbers-say-about-video-roi">What do Wyzowl's 2026 numbers say about video ROI?</a></li><li><a href="#do-people-actually-watch-music-videos-online">Do people actually watch music videos online?</a></li><li><a href="#short-form-or-long-form-what-do-the-surveys-say-about-length">Short-form or long-form: what do the surveys say about length?</a></li><li><a href="#how-much-do-marketers-spend-per-video-and-what-does-that-imp">How much do marketers spend per video, and what does that imply for a music video?</a></li><li><a href="#where-does-ai-video-fit-in-these-statistics">Where does AI video fit in these statistics?</a></li><li><a href="#what-should-an-independent-musician-do-with-these-numbers">What should an independent musician do with these numbers?</a></li><li><a href="#primary-sources">Primary sources</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ol></aside>
+<article>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">video marketing statistics</span></li></ol></nav>
 <h1>Video Marketing Statistics for Musicians: 2026 Figures With Sources</h1>
-<p class="byline">By the AI Music Video Guide team · Updated November 2, 2026 · 7 min read</p>
-<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
-<p><strong>Quick answer:</strong> The 2026 figures worth a musician's attention are Wyzowl's 82% of video marketers reporting good ROI (down from 93%), its 51% naming 30 to 60 seconds the best length, Statista's 48.2% of internet users watching music videos weekly, and Wistia's finding that almost 40% of companies spent under $5,000 on video in a year. None of these surveys is music-specific.</p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> November 2, 2026</span><span>7 min read</span></p>
+<aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
+<p class="short-answer"><strong>Quick answer:</strong> The 2026 figures worth a musician's attention are Wyzowl's 82% of video marketers reporting good ROI (down from 93%), its 51% naming 30 to 60 seconds the best length, Statista's 48.2% of internet users watching music videos weekly, and Wistia's finding that almost 40% of companies spent under $5,000 on video in a year. None of these surveys is music-specific.</p>
 
 <p>Marketing statistics get copied from blog to blog until the year, the sample and the wording fall off. We went back to the publishing pages, pulled the figures an independent artist can act on, and kept each tied to its source, year and sample. Two cautions apply throughout: these are general surveys of businesses and internet users, not of musicians or fans, and several come from vendors that sell video production, hosting or websites.</p>
 
-<h2>Which 2026 video marketing statistics can a musician trust?</h2>
+<h2 id="which-2026-video-marketing-statistics-can-a-musician-trust">Which 2026 video marketing statistics can a musician trust?</h2>
 <p>Trust the figures that name a sample and a year. Wyzowl's State of Video Marketing 2026 surveyed 266 marketers and consumers in late 2025, which is small but documented; Wistia polled more than 900 professionals; Statista's audience data runs to Q4 2024. Aggregator pages that repeat these numbers often still carry the previous year's figure.</p>
 <p>Digital Applied, a marketing agency that re-read 108 figures at their publishers' pages in October 2026, puts it plainly: "many of the video statistics in circulation are old, misdated or impossible to trace" (<a href="https://www.digitalapplied.com/blog/video-marketing-statistics-2026-data-points">Digital Applied, updated October 21, 2026</a>). Its checks table traces the often-quoted "93% of marketers say video gives a positive ROI" to Wyzowl's 2025 edition. The 2026 edition says 82%.</p>
 <p>Vendor status matters too. Wyzowl produces explainer videos, Wistia hosts video, Wix sells websites, Loopex Digital and Digital Applied are agencies, Market.us sells reports and Cramer is a production company. None of them will ask whether you need video at all.</p>
 
-<h2>What do Wyzowl's 2026 numbers say about video ROI?</h2>
+<h2 id="what-do-wyzowl-s-2026-numbers-say-about-video-roi">What do Wyzowl's 2026 numbers say about video ROI?</h2>
 <p>Wyzowl's 2026 edition reports that 91% of businesses use video for marketing, 82% of video marketers say it gives a good ROI, and 92% plan to spend the same or more on video in 2026. The ROI figure fell 11 points from 93% in the 2025 edition, its lowest reading since 2018 (<a href="https://wyzowl.com/video-marketing-statistics">Wyzowl, 2026 edition, read October 25, 2026</a>).</p>
 <p>The same survey shows how marketers judge success. Views are the most common measure (67%), then engagement (63%) and leads and clicks (52%); only 32% track bottom-line sales. For a musician the equivalent trap is counting views on a video and never checking saves, follows or ticket sales.</p>
 <p>On cost, respondents split three ways: 38% say video has become more expensive, 32% see no change and 30% say it is cheaper. Among businesses that do not use video, "too expensive" and "don't feel it's needed" tie as the top reason at 24% each.</p>
@@ -158,32 +60,32 @@ article td{overflow-wrap:break-word}
 </tbody>
 </table></div>
 
-<h2>Do people actually watch music videos online?</h2>
+<h2 id="do-people-actually-watch-music-videos-online">Do people actually watch music videos online?</h2>
 <p>Yes, more than any other kind of video. Statista data cited by Wix found 48.2% of internet users worldwide watched music videos online every week in Q4 2024, more than 13 points ahead of comedy and meme clips at 35%. DataReportal's Digital 2026 report puts online video reach at 94.6% of online adults over the past 30 days (<a href="https://www.wix.com/blog/video-marketing-statistics">Wix, read October 25, 2026</a>).</p>
 <p>That is the one statistic here that speaks directly to musicians, and it measures audience behavior rather than marketer opinion. It cuts both ways: the category is crowded because it is popular. Live streams (27.7%) and tutorials (25.8%) trail far behind in the same table.</p>
 <p>In Wyzowl's 2026 survey YouTube is both the most used channel (82%) and the one most often rated effective (69%); TikTok is used by 40% and rated effective by 29%. Those are business marketers rating their own campaigns, not a measure of music discovery.</p>
 
-<h2>Short-form or long-form: what do the surveys say about length?</h2>
+<h2 id="short-form-or-long-form-what-do-the-surveys-say-about-length">Short-form or long-form: what do the surveys say about length?</h2>
 <p>Short wins on every survey here. In Wyzowl's 2026 edition 51% of video marketers say 30 to 60 seconds works best, 71% pick somewhere between 30 seconds and two minutes, and only 4% choose three minutes or more. HubSpot's 2026 State of Marketing has 48.6% naming short-form the format with the biggest return against 28.6% for long-form, as reported by Digital Applied.</p>
 <p>Wistia's 2026 report, cited by Wix, finds videos under a minute average a 52% engagement rate, meaning viewers watch about half the runtime. Loopex Digital repeats a claim that short-form earns 2.5 times the engagement of long-form, but it credits a secondary blog rather than a study, so we leave that multiplier out of the table (<a href="https://www.loopexdigital.com/blog/video-marketing-statistics">Loopex Digital, updated May 13, 2026</a>).</p>
 <p>A three-minute music video sits outside the length every marketer survey rates best. The full video is the asset you cut into the 30 to 60 second pieces these surveys reward, which is the method in our guide to <a href="/blog/one-song-twenty-videos-repurposing.html">turning one song into twenty videos</a>.</p>
 
-<h2>How much do marketers spend per video, and what does that imply for a music video?</h2>
+<h2 id="how-much-do-marketers-spend-per-video-and-what-does-that-imp">How much do marketers spend per video, and what does that imply for a music video?</h2>
 <p>Less than production-company blogs suggest. Wistia's 2026 survey found almost 40% of companies spent under $5,000 on video production in the previous year, and a Statista study cited by Market.us has 25% of marketers spending $1,000 to $5,000 on an average video, with 4% above $20,000. Both describe business budgets, not music video quotes.</p>
 <p>Market.us also states that 42% of video marketers spend $0 to $500 on an average video and that companies allocate between $100 and $1,000 for production, but the page gives no survey name, year or sample for either figure, so treat both as unverified (<a href="https://market.us/statistics/digital-marketing/video">Market.us, undated, read October 25, 2026</a>). Wyzowl's 46% of video marketers putting a third or less of their marketing budget into video is better documented.</p>
 <p>Cost perception is where sources disagree. Wyzowl's 2026 edition reports 38% rising, 32% unchanged and 30% falling. Loopex Digital and Market.us both quote 49% rising, 29% falling and 21% unchanged, an older set that Loopex prints beside the 2026 numbers on the same page. We use the 2026 edition.</p>
 <p>Cramer, a corporate production company, publishes no dollar figures. Its budgeting guide lists drivers instead: crew day rates, equipment and location, shoot days, editing and color, music licensing, talent fees and rush timelines, with a simple shoot wrapping in two to three weeks including editing and cinematic projects taking six to eight weeks or longer (<a href="https://www.cramer.com/insights/how-much-does-video-production-cost">Cramer, undated, read October 25, 2026</a>). For music video tiers and line items, see our <a href="/blog/music-video-cost-independent-artist.html">music video cost guide for independent artists</a>.</p>
 
-<h2>Where does AI video fit in these statistics?</h2>
+<h2 id="where-does-ai-video-fit-in-these-statistics">Where does AI video fit in these statistics?</h2>
 <p>AI is the fastest-moving number in the set, not the cheapest. Wyzowl's 2026 edition finds 63% of video marketers have used AI to create or edit video, up from 51% a year earlier, the largest single-year rise of any measure in its report. Yet more of those same marketers say video got more expensive (38%) than cheaper (30%).</p>
 <p>Digital Applied checked the widely shared claim that AI cut production costs by 40%, from $4,200 to $2,500 a minute, and found no source for it. AI changes who can afford a video, not what a crew charges, and a generated video is a different product: it cannot film you performing.</p>
 <p>That is the lane where our affiliate partner sits. <a href="/go/seedance" rel="sponsored noopener">Seeddance (seeddance.video)</a> resells ByteDance's Seedance models and suits the short-clip-first plan these surveys point to, not a cinematic shoot. Our /go/seedance links go to seeddance.video, an independent site that resells Seedance; we earn a commission if you subscribe. For what a video costs there, read our <a href="/blog/ai-music-video-cost.html">AI music video cost breakdown</a> and the <a href="/blog/seedance-credit-cost-per-video.html">Seedance credit cost per video</a> guide.</p>
 
-<h2>What should an independent musician do with these numbers?</h2>
+<h2 id="what-should-an-independent-musician-do-with-these-numbers">What should an independent musician do with these numbers?</h2>
 <p>Budget for short clips first, one long cut second, and measure something other than views. The surveys reward 30 to 60 second video, show marketers spending modest sums per video, and show ROI confidence slipping where teams count views alone. A release plan built on that evidence looks different from one built on a production company's price list.</p>
 <p>Start with the decision in our guide on <a href="/blog/do-you-need-a-music-video.html">whether every release needs a music video</a>, then price the tier you land on. If the answer is a full video, put a line-item quote and a generated alternative side by side and pick the one you can still afford to promote.</p>
 
-<h2>Primary sources</h2>
+<h2 id="primary-sources">Primary sources</h2>
 <ul>
 <li><a href="https://wyzowl.com/video-marketing-statistics">Wyzowl, Video Marketing Statistics 2026 (266 respondents, fieldwork late 2025)</a>, read October 25, 2026</li>
 <li><a href="https://www.digitalapplied.com/blog/video-marketing-statistics-2026-data-points">Digital Applied, Video Marketing Statistics 2026: 100+ Sourced Data Points</a>, updated October 21, 2026</li>
@@ -192,12 +94,13 @@ article td{overflow-wrap:break-word}
 <li><a href="https://market.us/statistics/digital-marketing/video">Market.us, Video Marketing Statistics and Facts</a>, undated, read October 25, 2026</li>
 <li><a href="https://www.cramer.com/insights/how-much-does-video-production-cost">Cramer, How to Budget for Your Video Production and Maximize Your ROI</a>, undated, read October 25, 2026</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
-<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<div class="cta-row"><a class="cta primary" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
+<p class="cta-note">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
-<div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
-<p style="margin:0 0 6px;font-weight:700;font-size:1.05rem">Get the Director&rsquo;s Guide + monthly prompt packs</p>
-<p style="margin:0 0 12px;font-size:.92rem;color:var(--dim)">The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
+<div class="emailcap">
+<p class="ec-h">newsletter</p>
+<h3>Get the Director&rsquo;s Guide + monthly prompt packs</h3>
+<p>The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
 <div class="ml-embedded" data-form="gDc4Ah"></div>
 </div>
 <script>
@@ -208,19 +111,22 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
 })(window,document);
 </script>
 <!-- emailcap:end -->
-<h2>Frequently asked questions</h2>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <div class="faq"><details><summary>Are these video marketing statistics about musicians?<span class="plus" style="float:right">+</span></summary><p>No. Every survey here polls businesses or general internet users, not artists or fans. Wyzowl&#x27;s 2026 edition surveyed 266 marketers and consumers, Wistia polled more than 900 professionals, and Statista&#x27;s weekly viewing data covers internet users worldwide. The one music-specific figure is Statista&#x27;s 48.2% weekly music video audience. Read the rest as context for budgeting, not as proof about music.</p></details><details><summary>Why do some pages say 93% of marketers get good ROI and others say 82%?<span class="plus" style="float:right">+</span></summary><p>Both numbers come from Wyzowl, from different editions. The 2025 edition reported 93%, an all-time high for that series; the 2026 edition, built on late-2025 fieldwork, reports 82%. Aggregator pages such as Loopex Digital&#x27;s report updated in May 2026 still carry the older figure. When a statistic has no year attached, assume it is a previous edition until you check the publisher&#x27;s page.</p></details><details><summary>What video length do marketers rate best in 2026?<span class="plus" style="float:right">+</span></summary><p>Thirty to sixty seconds, chosen by 51% of video marketers in Wyzowl&#x27;s 2026 survey, with 71% picking somewhere between 30 seconds and two minutes. Only 4% rate three minutes or more as most effective. That favors teasers and clips cut from a music video as the asset you push on social platforms, with the full cut living on YouTube.</p></details><details><summary>How much do most companies spend on video production in a year?<span class="plus" style="float:right">+</span></summary><p>Wistia&#x27;s 2026 State of Video survey, cited by Wix and Digital Applied, found almost 40% of companies spent under $5,000 producing video in the previous year and just over 30% spent more; the rest did not track it separately. A separate Statista study cited by Market.us has 25% of marketers spending $1,000 to $5,000 on an average video. Neither figure is specific to music videos.</p></details><details><summary>Has AI made video cheaper, according to the surveys?<span class="plus" style="float:right">+</span></summary><p>Not for most marketing teams. In Wyzowl&#x27;s 2026 edition 63% of video marketers have used AI tools, up from 51%, yet 38% say video has become more expensive against 30% who say cheaper. Digital Applied could find no source for the claim that AI cut costs 40% per minute. AI lowers the entry price for a musician working alone; it has not cut what crews charge.</p></details></div>
-</article><aside class="studio-note"><p>Run a local business? <a href="/studio/">See how we get businesses found on Google and in AI answers</a></p></aside>
-</main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/studio/">Studio</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
-<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
-<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+</article><aside class="studio-note" data-sticky="false" aria-labelledby="sn-studio"><p class="sn-label">from the studio</p><div class="sn-main"><h3 id="sn-studio">Run a local business?</h3><p>See how we get businesses found on Google and in AI answers: website, Google profile, booking and reviews, run for you every month.</p></div><div class="sn-act"><a class="cta" href="/studio/">See the studio<span class="ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div></aside>
+</main><footer class="site-foot"><div class="wrap ft">
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a>
+<ul class="foot-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Credit calculator</a></li><li><a href="/directors-guide.html">Director's guide</a></li><li><a href="/about.html">About</a></li><li><a href="/free-check/">Book a free check</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/disclosure.html">Affiliate disclosure</a></li><li><a href="/terms.html">Terms</a></li></ul>
+<p class="full-disc" id="full-disclosure"><b>Affiliate disclosure</b>AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live. <a href="/disclosure.html">Full disclosure</a></p>
+<p class="copy"><span>© 2026 Purpose with Presence</span><span>purposewithpresence.com</span></p>
+</div></footer>
 <!-- ctabar:start -->
-<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
-<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
-<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .32s cubic-bezier(.2,.7,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div class="ctab-in" style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 12px 12px;padding:8px 8px 8px 16px;background:oklch(0.235 0.016 255);border:1px solid oklch(0.32 0.014 255);border-radius:4px;box-shadow:0 16px 40px oklch(0.1 0.01 255 / .55);width:min(calc(100vw - 24px),640px)">
+<span style="color:oklch(0.96 0.004 255);font-size:1rem;line-height:1.35;flex:1;min-width:0"><b style="font-weight:620">Seedance: 1 free credit a day.</b> <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:oklch(0.68 0.012 255);white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:inherit">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;background:oklch(0.82 0.16 75);color:oklch(0.155 0.012 255);font-weight:650;border-radius:4px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="flex:none;width:48px;height:48px;padding:0;background:none;border:1px solid oklch(0.32 0.014 255);border-radius:4px;color:oklch(0.78 0.01 255);cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
 </div></div>
+<script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>

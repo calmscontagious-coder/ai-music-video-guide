@@ -12,138 +12,40 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<meta name="theme-color" content="oklch(0.155 0.012 255)">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
-  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
-  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
-  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--pink);color:#fff}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
-.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
-.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
-.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
-  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
-  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
-.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
-.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
-.nav-cta{font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:100px;background:var(--cream);color:#0a0a0f}
-.nav-cta:hover{text-decoration:none}
-main{padding:60px 0 40px}
-.eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
-  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
-article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
-.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
-article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
-article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
-article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
-article p,.page p{margin-bottom:18px}
-article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
-article li,.page li{margin-bottom:9px}
-article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
-article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
-article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
-article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
-article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
-.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
-  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
-.cta:hover{text-decoration:none;transform:translateY(-2px)}
-.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
-.card:hover{transform:translateY(-4px);border-color:var(--line2)}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
-.faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq details p{padding:0 0 20px;color:var(--dim)}
-footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
-.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
-.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
-@media(max-width:640px){.nlinks{display:none}}
-
-/* premium patch v2 */
-body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
-.card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
-article h2,.page h2{position:relative;padding-left:18px}
-article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
-article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
-article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
-blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
-.cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
-nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
-@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-::selection{background:#ff2e88;color:#fff}
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0;display:table;overflow:visible;min-width:100%}div[style*="overflow-x:auto"]>table{display:table;overflow:visible;min-width:100%}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-/* blog fixes 2026-11-06 */
-article p,article li{overflow-wrap:anywhere}
-article td{overflow-wrap:break-word}
-.foot-links{gap:0 6px}.foot-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
-.eyebrow{font-size:.75rem}
-.studio-note{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
-.studio-note p{margin:0;color:var(--dim);font-size:1rem}
-.studio-note a{color:var(--cyan)}
-/* end blog fixes */
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/tokens.css?v=7c697f78">
+<link rel="stylesheet" href="/assets/pwp-article.css?v=ea24ee91">
+<script src="/assets/pwp-article.js?v=612e33bf" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Kling 4.0 vs Veo 3.1 vs Seedance: What Does a Second Cost in 2026?", "description": "Kling 4.0, Veo 3.1 and Seedance priced per second from official rate cards read October 21, 2026, plus clip length, audio input and where each one runs.", "wordCount": 2589, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/sora-2-vs-veo-3-vs-seedance.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Kling 4.0 cheaper than Veo 3.1 per second?", "acceptedAnswer": {"@type": "Answer", "text": "At 1080p, probably yes. Testers report 15 credits per second, which is about $0.16 on Kling's Pro plan against $0.40 for Veo 3.1 Standard on Google's API. Veo 3.1 Fast at $0.12 and Lite at $0.08 are cheaper than Kling, though, and Kling hasn't published an official rate as of October 21, 2026, so treat the Kling figure as an estimate."}}, {"@type": "Question", "name": "Does Kling 4.0 have an API yet?", "acceptedAnswer": {"@type": "Answer", "text": "No. Kling's October 16, 2026 launch announcement says API access for developers and enterprise customers is coming soon, and on October 21 fal.ai still listed Kling 4.0 as early access behind a contact form. Today you use Kling 4.0 in Kling's own app, or through its MCP and CLI connectors. Kling 3.0 remains available by API at about $0.084 to $0.168 per second on fal."}}, {"@type": "Question", "name": "Can Veo 3.1 sync a video to my song?", "acceptedAnswer": {"@type": "Answer", "text": "Not directly. Veo 3.1 has no audio input; it generates its own dialogue, effects and ambience, which you mute before editing. Sync to your track happens in your video editor, shot by shot. Seedance is the model in this comparison that accepts audio references, up to 3 clips on Seedance 2.0 and 10 on Seedance 2.5, so it can cut to the beat of the slice you upload."}}, {"@type": "Question", "name": "What is the price difference between Seedance 2.0 and Seedance 2.5?", "acceptedAnswer": {"@type": "Answer", "text": "On BytePlus's rate card updated October 19, 2026, Seedance 2.0 costs $0.15 per second at 720p and $0.37 at 1080p, while Seedance 2.5 costs $0.231 and $0.569. You pay roughly 50 percent more for 2.5 and get native 30-second takes and up to 50 references instead of 15 seconds and 12 references. Seedance 2.0 also offers 4K at $0.78 per second; 2.5 doesn't on BytePlus."}}, {"@type": "Question", "name": "Is Sora 2 still available anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "Not from OpenAI. Its help center lists April 26, 2026 as the end of the Sora apps and September 24, 2026 as the end of the Sora API, with an export page for old content. Some reseller sites still showed Sora 2 in their model menus on October 21, 2026. Check that a listing actually renders before paying, and see our Sora 2 alternatives guide for where creators moved."}}, {"@type": "Question", "name": "How many Veo 3.1 clips does Google AI Pro include each month?", "acceptedAnswer": {"@type": "Answer", "text": "Google AI Pro at $19.99 a month carries 1,000 Flow credits, and Google's Flow help page prices a Veo 3.1 Quality generation at 100 credits, Fast at 20 and Lite at 10. That's ten Quality clips, fifty Fast clips or a hundred Lite clips a month, plus 50 free credits a day for anyone. Each clip runs 8 seconds, or 4 to 8 on Fast and Lite."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Kling 4.0 vs Veo 3.1 vs Seedance: What Does a Second Cost in 2026?", "item": "https://purposewithpresence.com/blog/sora-2-vs-veo-3-vs-seedance.html"}]}</script>
 </head><body>
-<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
-<nav><a class="brand" href="/seedance-guide/"><span class="dot"></span>AI Music Video Guide</a>
-<div class="nlinks"><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
-<main class="wrap"><article>
-<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › kling 4.0 vs veo 3.1 vs seedance</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap"><nav aria-label="Primary" data-open="false"><a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-links"><span>Menu</span><span class="bars" aria-hidden="true"></span></button><ul class="nlinks" id="site-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/" aria-current="page">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Tools</a></li><li><a href="/about.html">About</a></li></ul><a class="nav-cta" href="/free-check/">Book a free check</a></nav></div><span class="progress" aria-hidden="true"></span></header>
+<main id="main" class="wrap art">
+<aside class="toc" aria-label="On this page"><p class="toc-h">on this page</p><ol><li><a href="#why-is-kling-4-0-in-this-comparison-instead-of-sora-2">Why is Kling 4.0 in this comparison instead of Sora 2?</a></li><li><a href="#what-does-each-model-cost-per-second-of-video">What does each model cost per second of video?</a></li><li><a href="#what-does-30-seconds-of-finished-1080p-video-cost-on-each">What does 30 seconds of finished 1080p video cost on each?</a></li><li><a href="#how-long-can-a-single-clip-run-on-kling-4-0-veo-3-1-and-seed">How long can a single clip run on Kling 4.0, Veo 3.1 and Seedance?</a></li><li><a href="#which-model-can-actually-hear-your-song">Which model can actually hear your song?</a></li><li><a href="#which-model-gives-you-the-most-control-over-the-shot">Which model gives you the most control over the shot?</a></li><li><a href="#where-can-you-run-each-model-today-and-what-are-the-catches">Where can you run each model today, and what are the catches?</a></li><li><a href="#which-should-a-musician-pick-for-a-music-video-on-a-budget">Which should a musician pick for a music video on a budget?</a></li><li><a href="#primary-sources">Primary sources</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ol></aside>
+<article>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">kling 4.0 vs veo 3.1 vs seedance</span></li></ol></nav>
 <h1>Kling 4.0 vs Veo 3.1 vs Seedance: What Does a Second Cost in 2026?</h1>
-<p class="byline">By the AI Music Video Guide team · Updated October 21, 2026 · 12 min read</p>
-<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
-<p><strong>Quick answer:</strong> Per second of 1080p video, as of October 21, 2026, Kling 4.0 works out to about $0.16 on its Pro plan (a tester-reported credit rate, not an official one), Veo 3.1 costs $0.40 on Google's API, and Seedance 2.0 costs $0.37 on ByteDance's API, with Seedance 2.5 at $0.57. Only Seedance accepts your song as an input.</p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> October 21, 2026</span><span>12 min read</span></p>
+<aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
+<p class="short-answer"><strong>Quick answer:</strong> Per second of 1080p video, as of October 21, 2026, Kling 4.0 works out to about $0.16 on its Pro plan (a tester-reported credit rate, not an official one), Veo 3.1 costs $0.40 on Google's API, and Seedance 2.0 costs $0.37 on ByteDance's API, with Seedance 2.5 at $0.57. Only Seedance accepts your song as an input.</p>
 
 <p>This page used to compare Sora 2 with Veo 3 and Seedance. Sora is gone, so we rebuilt it at the same address, and OpenAI's column now belongs to Kling 4.0, which opened to everyone on October 15, 2026. Every price below is per second of output, because that's how two of the three vendors bill and it's the only unit that compares a 30-second Kling take with four 8-second Veo clips.</p>
 
 <p>We make music videos with these tools, so the kling 4.0 vs veo 3.1 vs seedance question comes down to three things: the cost of a finished minute after rerolls, the number of seams a three-minute song needs, and whether the model can hear the track.</p>
 
-<h2>Why is Kling 4.0 in this comparison instead of Sora 2?</h2>
+<h2 id="why-is-kling-4-0-in-this-comparison-instead-of-sora-2">Why is Kling 4.0 in this comparison instead of Sora 2?</h2>
 <p>Because Sora can no longer be bought. OpenAI's help center lists April 26, 2026 as the end of the Sora web and mobile apps and September 24, 2026 as the end of the Sora API. Kling 4.0 is the newest model competing on the same ground: long single takes, native audio and 4K output.</p>
 <p>Kling AI's release notes say the full Kling 4.0 became available to everyone on October 15, 2026, after a Flash variant went to a small group on September 28. The spec sheet: 3 to 30 seconds per generation, 720p, 1080p or 4K, two-channel stereo audio, up to 10 keyframe images, up to 15 reference items (10 images, 5 videos totalling 30 seconds, voice references and 7 saved elements), prompts up to 8,000 tokens, and 21:9 alongside 16:9, 1:1 and 9:16. Kling 4.0 Flash is the faster tier: 720p only, 3 to 20 seconds, no keyframes yet.</p>
 <p>Two things in the launch material are still promises. The October 16, 2026 press release lists 10-bit HDR at 1080p and 4K, and developer API access, as coming soon. On October 21 fal.ai still showed Kling 4.0 as early access behind a contact form, so if you build pipelines rather than click buttons, it isn't yours yet.</p>
 
-<h2>What does each model cost per second of video?</h2>
+<h2 id="what-does-each-model-cost-per-second-of-video">What does each model cost per second of video?</h2>
 <p>At 1080p, Seedance 2.5 is the most expensive at $0.57 per second on BytePlus, followed by Veo 3.1 Standard at $0.40 on Google's API and Seedance 2.0 at $0.37, while Kling 4.0 lands near $0.16 on the Pro plan if the tester-reported 15 credits per second holds. At 720p Veo 3.1 Lite is the cheapest at $0.05, and Veo 3.1 Fast at $0.10 is undercut only by Seedance 2.0 Mini at $0.08. The table carries a source and date for every cell.</p>
 <div class="tscroll"><table>
 <thead><tr><th>Per second of output</th><th>Kling 4.0</th><th>Veo 3.1</th><th>Seedance 2.0</th><th>Seedance 2.5</th></tr></thead>
@@ -159,7 +61,7 @@ article td{overflow-wrap:break-word}
 <p>Veo's numbers are the cleanest because <a href="https://ai.google.dev/gemini-api/docs/pricing">Google's Gemini API page</a> states them per second in dollars, audio included, with the 4K tier at $0.60 on Standard and $0.30 on Fast and no 4K on Lite.</p>
 <p>Seedance bills by token, but <a href="https://docs.byteplus.com/en/docs/ModelArk/1544106">BytePlus publishes per-second examples</a> for a 5-second 16:9 clip with no video input, and we quote those. One more Seedance honesty note: the same model costs about double through resellers. <a href="https://fal.ai/models/bytedance/seedance-2.0/text-to-video">fal.ai's Seedance 2.0 page</a>, read October 21, 2026, charges $0.3034 per second at 720p and $0.682 at 1080p, against BytePlus's $0.15 and $0.37. You're paying to skip BytePlus's token math and minimum balance; decide whether that's worth it at your volume.</p>
 
-<h2>What does 30 seconds of finished 1080p video cost on each?</h2>
+<h2 id="what-does-30-seconds-of-finished-1080p-video-cost-on-each">What does 30 seconds of finished 1080p video cost on each?</h2>
 <p>At list rates, 30 seconds of 1080p costs about $4.88 on Kling 4.0 (Pro plan, tester-reported rate), $12.00 on Veo 3.1 Standard, $3.60 on Veo 3.1 Fast, $11.10 on Seedance 2.0 and $17.07 on Seedance 2.5. Those are raw seconds before rerolls, and the number of clips you'd stitch differs sharply.</p>
 <div class="tscroll"><table>
 <thead><tr><th>30 seconds at 1080p</th><th>Clips needed</th><th>Raw cost at list rate</th><th>Notes</th></tr></thead>
@@ -173,34 +75,34 @@ article td{overflow-wrap:break-word}
 </table></div>
 <p>The seam count matters more than the sticker. Every join is a place where a face drifts or lighting jumps, and every drift means another generation. If a 30-second Kling take needs three attempts, the real cost is 1,350 credits, about $14.65 on Pro, close to Veo. Nobody has published reroll rates for Kling 4.0, and the full model has been public for six days, so we don't claim to know its hit rate. Our tracking of Seedance's rerolls is in <a href="/blog/seedance-credit-cost-per-video.html">our credit-cost breakdown</a>, where a finished minute landed far above the raw-seconds price.</p>
 
-<h2>How long can a single clip run on Kling 4.0, Veo 3.1 and Seedance?</h2>
+<h2 id="how-long-can-a-single-clip-run-on-kling-4-0-veo-3-1-and-seed">How long can a single clip run on Kling 4.0, Veo 3.1 and Seedance?</h2>
 <p>Kling 4.0 generates 3 to 30 seconds in one pass, Veo 3.1 generates 4, 6 or 8 seconds (Quality mode is 8 only) and then extends, Seedance 2.0 runs 4 to 15 seconds, and Seedance 2.5 runs 4 to 30 seconds with two extensions allowed. For a three-minute song, that's roughly 6 Kling or Seedance 2.5 clips, 12 Seedance 2.0 clips, or 23 Veo clips before extensions.</p>
 <p>Google's Flow help page, read October 21, 2026, lists Veo 3.1 Lite and Fast at 4, 6 or 8 seconds and Quality at 8, each with Extend. DeepMind describes extension as continuing from the last second of the previous shot. It works, but it's a chain of short links; our <a href="/blog/veo-3-1-music-video-tutorial.html">Veo 3.1 music video tutorial</a> covers the extension ceiling and the muting step.</p>
 <p>Kling's user guide dated October 14, 2026 gives a 10-second default and 1-second increments up to 30, with multi-shot splitting on by default. Two-minute extension of an uploaded video is still marked coming soon. ByteDance's Seedance 2.5 page promises up to 30 seconds in one generation with two extensions. On <a href="https://fal.ai/seedance-2.5">fal</a>, Seedance 2.5 tops out at 720p, so the 30-second take and the 1080p finish don't yet come from the same reseller.</p>
 
-<h2>Which model can actually hear your song?</h2>
+<h2 id="which-model-can-actually-hear-your-song">Which model can actually hear your song?</h2>
 <p>Only Seedance. Seedance 2.0 accepts up to 3 audio clips among its 12 references, and Seedance 2.5 accepts audio among its 50. Kling 4.0's release notes list its audio input as "voice reference only", so it can copy a voice but not cut to your beat. Veo 3.1 has no audio input at all; it generates its own dialogue and effects, which you mute.</p>
 <p>The limits matter. On fal, Seedance's audio references are capped at 15 MB each and 15 seconds combined, so you feed the slice of the song that belongs to that clip, not the whole track. Decide your edit points first, then give each clip its own slice.</p>
 <p>Kling 4.0 and Veo 3.1 both generate their own stereo soundtracks. Kling's notes claim better lip-sync and dialogue in nine or more languages. DeepMind's Veo page says natural, consistent spoken audio for short speech segments is still an area of active development, which matches what we hear. For a music video you'll mute both and sync in your editor, the workflow our <a href="/blog/kling-vs-seedance-music-videos.html">Kling vs Seedance test</a> covers shot by shot.</p>
 
-<h2>Which model gives you the most control over the shot?</h2>
+<h2 id="which-model-gives-you-the-most-control-over-the-shot">Which model gives you the most control over the shot?</h2>
 <p>On paper, Kling 4.0: 10 keyframes along the timeline, 15 references including 5 videos, a motion-reference mode that borrows camera work from a clip you upload, and in-place editing of existing footage. Veo 3.1 offers up to 3 reference images, first-and-last-frame, extension, object insertion and removal. Seedance 2.0 takes 12 references, Seedance 2.5 takes 50.</p>
 <p>Kling's keyframe system is the one new idea here. You pin an image to a timestamp ("the sky darkens at 5 seconds; it starts raining at 10 seconds", in the user guide's example) and describe the transitions between pins. For a lyric video where specific words need specific pictures, that's a real tool. The catch, per the same guide: the Keyframes entry point accepts no reference assets and can't be combined with Omni Reference in one generation, so you choose character consistency or timeline control, not both.</p>
 <p>Seedance's reference set is wide rather than timed: nine images, three videos and three audio clips on 2.0, up to 30 images, 10 videos and 10 audio clips on 2.5, all addressed by tag in the prompt, with no keyframe timeline. For one performer in one room cut to a beat, that's enough. For a story with turns, Kling's timeline is the better fit, and we say that even though Seedance is the tool we earn a commission on.</p>
 
-<h2>Where can you run each model today, and what are the catches?</h2>
+<h2 id="where-can-you-run-each-model-today-and-what-are-the-catches">Where can you run each model today, and what are the catches?</h2>
 <p>Kling 4.0 runs only inside Kling's own app (plus MCP and CLI), with the API still marked coming soon. Veo 3.1 runs in the Gemini app, Google Flow, the Gemini API and Vertex AI. Seedance runs through BytePlus's API, through resellers such as fal, and through pooled platforms that bundle it with Veo and Kling under one credit pool.</p>
 <p>At the reported 15 credits per second, Kling's $8.80 Standard plan buys 44 seconds of 1080p a month, one 30-second take and part of a reroll; the $32.56 Pro plan buys 200 seconds.</p>
 <p>Google sells Veo two ways: the pay-as-you-go API at the rates above, or a Google AI plan. <a href="https://one.google.com/about/google-ai-plans/">Google's plans page</a>, read October 21, 2026, lists AI Plus at $4.99, AI Pro at $19.99 and AI Ultra at $99.99 or $199.99 a month, and the Flow help page says those plans carry 200, 1,000, 10,000 or 25,000 Flow credits. The <a href="https://support.google.com/flow/answer/16526234?hl=en">Flow help page</a> prices a Veo 3.1 Quality generation at 100 credits, Fast at 20 and Lite at 10 (Fast and Lite are halved on Ultra; Quality stays at 100), plus 50 free credits a day for everyone. So AI Pro's 1,000 credits are ten Quality clips, 80 seconds of picture, a sample rather than a plan for a three-minute video. Fast at 20 credits is where Pro becomes usable: 50 clips, 400 seconds.</p>
 <p>Seedance's official routes are harder from the West. BytePlus is a developer console with token math and a minimum balance. ByteDance's consumer app, Dreamina, sells Seedance on subscription credits, but its published per-second rates belonged to a promotion that ended October 9, 2026. <span class="affiliate-disclosure">We earn a commission if you sign up or buy through some links on this page, at no extra cost to you.</span> The practical route for readers who don't want a developer console is a pooled platform, and you pay for that convenience per second. <a href="/go/seedance" rel="sponsored noopener">The one we use</a> listed, on October 21, 2026, plans from $9.90 to $59.90 a month billed annually, with the year's credits charged upfront, or $19.90 to $99.90 billed month to month. It also listed a free credit every 24 hours, rollover credits, watermark-free exports and a commercial license. Its Seedance 2.0 generator charged 8 credits per second at 480p on October 21, 2026 (32 credits for 4 seconds, 120 for 15). At the annual Basic rate of $0.066 a credit that is about $0.53 a second, or $0.32 on annual Pro Max at $0.040, several times BytePlus's $0.07 at 480p. Higher resolutions cost more credits, so read the credit counter before you render.</p>
 <p>Three catches, because this is the route we're paid for. It's an independent reseller, not ByteDance, and its footer says so. Credits scale with length, so the Basic plan's "up to 15 video renders" means short, low-resolution clips: 150 credits covers about 18 seconds of 480p Seedance 2.0. And on October 21 its menu still listed Sora 2 and Sora 2 Pro even though OpenAI's API closed on September 24, so check the live model list before you pay.</p>
 
-<h2>Which should a musician pick for a music video on a budget?</h2>
+<h2 id="which-should-a-musician-pick-for-a-music-video-on-a-budget">Which should a musician pick for a music video on a budget?</h2>
 <p>If the song already exists, pick Seedance, because it's the only model that takes the track as an input and its 720p rate is the lowest with audio-aware generation. If you need one unbroken 30-second take with dialogue or a 4K master, pick Kling 4.0. If you already pay for Google AI Pro, use Veo 3.1 Fast for drafts and keep Quality for two or three hero shots.</p>
 <p>Here's how we'd spend $30 on a three-minute video today. Storyboard twelve 15-second shots. Draft them on Veo 3.1 Fast at 720p through the API: 180 seconds at $0.10 is $18, and you'll learn which shots hold up. Then render the four that carry the song on Seedance 2.0 at 720p with the matching 15-second slice of the track as a reference: 60 seconds at $0.15 is $9 on BytePlus. On the pooled platform the same minute takes at least 480 credits, more than its Basic or Pro monthly allowance, so for this step BytePlus is the cheaper route. That leaves $3 for one reroll. Leave Kling 4.0 for the one shot where a character has to walk through a scene change, and buy its Standard plan only for the month you need it.</p>
 <p>We'll rerun this page when Kling publishes a real rate card or ships its API, whichever comes first.</p>
 
-<h2>Primary sources</h2>
+<h2 id="primary-sources">Primary sources</h2>
 <ul>
 <li><a href="https://kling.ai/release-note/release-notes/Kling_4">Kling AI, "Meet All-New Kling 4.0" release notes</a> (October 15, 2026)</li>
 <li><a href="https://kling.ai/quickstart/kling-4-model-user-guide">Kling AI, Kling 4.0 User Guide</a> (October 14, 2026)</li>
@@ -211,12 +113,13 @@ article td{overflow-wrap:break-word}
 <li><a href="https://deepmind.google/models/veo/">Google DeepMind, Veo model page</a> (read October 21, 2026)</li>
 <li><a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation">OpenAI Help Center, "What to know about the Sora discontinuation"</a> (read October 21, 2026)</li>
 </ul>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
-<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<div class="cta-row"><a class="cta primary" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
+<p class="cta-note">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
-<div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
-<p style="margin:0 0 6px;font-weight:700;font-size:1.05rem">Get the Director&rsquo;s Guide + monthly prompt packs</p>
-<p style="margin:0 0 12px;font-size:.92rem;color:var(--dim)">The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
+<div class="emailcap">
+<p class="ec-h">newsletter</p>
+<h3>Get the Director&rsquo;s Guide + monthly prompt packs</h3>
+<p>The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
 <div class="ml-embedded" data-form="gDc4Ah"></div>
 </div>
 <script>
@@ -227,19 +130,22 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
 })(window,document);
 </script>
 <!-- emailcap:end -->
-<h2>Frequently asked questions</h2>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <div class="faq"><details><summary>Is Kling 4.0 cheaper than Veo 3.1 per second?<span class="plus" style="float:right">+</span></summary><p>At 1080p, probably yes. Testers report 15 credits per second, which is about $0.16 on Kling&#x27;s Pro plan against $0.40 for Veo 3.1 Standard on Google&#x27;s API. Veo 3.1 Fast at $0.12 and Lite at $0.08 are cheaper than Kling, though, and Kling hasn&#x27;t published an official rate as of October 21, 2026, so treat the Kling figure as an estimate.</p></details><details><summary>Does Kling 4.0 have an API yet?<span class="plus" style="float:right">+</span></summary><p>No. Kling&#x27;s October 16, 2026 launch announcement says API access for developers and enterprise customers is coming soon, and on October 21 fal.ai still listed Kling 4.0 as early access behind a contact form. Today you use Kling 4.0 in Kling&#x27;s own app, or through its MCP and CLI connectors. Kling 3.0 remains available by API at about $0.084 to $0.168 per second on fal.</p></details><details><summary>Can Veo 3.1 sync a video to my song?<span class="plus" style="float:right">+</span></summary><p>Not directly. Veo 3.1 has no audio input; it generates its own dialogue, effects and ambience, which you mute before editing. Sync to your track happens in your video editor, shot by shot. Seedance is the model in this comparison that accepts audio references, up to 3 clips on Seedance 2.0 and 10 on Seedance 2.5, so it can cut to the beat of the slice you upload.</p></details><details><summary>What is the price difference between Seedance 2.0 and Seedance 2.5?<span class="plus" style="float:right">+</span></summary><p>On BytePlus&#x27;s rate card updated October 19, 2026, Seedance 2.0 costs $0.15 per second at 720p and $0.37 at 1080p, while Seedance 2.5 costs $0.231 and $0.569. You pay roughly 50 percent more for 2.5 and get native 30-second takes and up to 50 references instead of 15 seconds and 12 references. Seedance 2.0 also offers 4K at $0.78 per second; 2.5 doesn&#x27;t on BytePlus.</p></details><details><summary>Is Sora 2 still available anywhere?<span class="plus" style="float:right">+</span></summary><p>Not from OpenAI. Its help center lists April 26, 2026 as the end of the Sora apps and September 24, 2026 as the end of the Sora API, with an export page for old content. Some reseller sites still showed Sora 2 in their model menus on October 21, 2026. Check that a listing actually renders before paying, and see our Sora 2 alternatives guide for where creators moved.</p></details><details><summary>How many Veo 3.1 clips does Google AI Pro include each month?<span class="plus" style="float:right">+</span></summary><p>Google AI Pro at $19.99 a month carries 1,000 Flow credits, and Google&#x27;s Flow help page prices a Veo 3.1 Quality generation at 100 credits, Fast at 20 and Lite at 10. That&#x27;s ten Quality clips, fifty Fast clips or a hundred Lite clips a month, plus 50 free credits a day for anyone. Each clip runs 8 seconds, or 4 to 8 on Fast and Lite.</p></details></div>
-</article><aside class="studio-note"><p>Run a local business? <a href="/studio/">See how we get businesses found on Google and in AI answers</a></p></aside>
-</main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/studio/">Studio</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
-<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
-<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+</article><aside class="studio-note" data-sticky="false" aria-labelledby="sn-studio"><p class="sn-label">from the studio</p><div class="sn-main"><h3 id="sn-studio">Run a local business?</h3><p>See how we get businesses found on Google and in AI answers: website, Google profile, booking and reviews, run for you every month.</p></div><div class="sn-act"><a class="cta" href="/studio/">See the studio<span class="ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div></aside>
+</main><footer class="site-foot"><div class="wrap ft">
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a>
+<ul class="foot-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Credit calculator</a></li><li><a href="/directors-guide.html">Director's guide</a></li><li><a href="/about.html">About</a></li><li><a href="/free-check/">Book a free check</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/disclosure.html">Affiliate disclosure</a></li><li><a href="/terms.html">Terms</a></li></ul>
+<p class="full-disc" id="full-disclosure"><b>Affiliate disclosure</b>AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live. <a href="/disclosure.html">Full disclosure</a></p>
+<p class="copy"><span>© 2026 Purpose with Presence</span><span>purposewithpresence.com</span></p>
+</div></footer>
 <!-- ctabar:start -->
-<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
-<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
-<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .32s cubic-bezier(.2,.7,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div class="ctab-in" style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 12px 12px;padding:8px 8px 8px 16px;background:oklch(0.235 0.016 255);border:1px solid oklch(0.32 0.014 255);border-radius:4px;box-shadow:0 16px 40px oklch(0.1 0.01 255 / .55);width:min(calc(100vw - 24px),640px)">
+<span style="color:oklch(0.96 0.004 255);font-size:1rem;line-height:1.35;flex:1;min-width:0"><b style="font-weight:620">Seedance: 1 free credit a day.</b> <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:oklch(0.68 0.012 255);white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:inherit">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;background:oklch(0.82 0.16 75);color:oklch(0.155 0.012 255);font-weight:650;border-radius:4px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="flex:none;width:48px;height:48px;padding:0;background:none;border:1px solid oklch(0.32 0.014 255);border-radius:4px;color:oklch(0.78 0.01 255);cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
 </div></div>
+<script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --></body></html>
