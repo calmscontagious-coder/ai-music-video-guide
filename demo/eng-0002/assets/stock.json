@@ -465,7 +465,7 @@
    "price": 8.0
   },
   "cold-brew": {
-   "available": true,
+   "available": false,
    "price": 6.0
   },
   "baguette": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-07T19:10:27.345000+00:00"
+ "updated_at": "2026-11-07T19:56:11.100668+00:00"
 }
