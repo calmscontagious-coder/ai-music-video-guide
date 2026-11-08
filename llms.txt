@@ -20,6 +20,7 @@ Independent, citation-first guides for musicians turning finished songs into AI 
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ### Guides
+- [Budget Podcast and Voiceover Setup: Mic, Arm, Headphones](https://purposewithpresence.com/blog/budget-podcast-voiceover-setup.html): A budget podcast and voiceover setup for an untreated room: a dynamic mic with both USB and XLR, closed-back headphones, a boom arm and household room fixes, with maker specs and independent reviewer picks linked.
 - [Black Friday 2026: Creator and Home-Studio Gear to Watch](https://purposewithpresence.com/blog/black-friday-creator-home-studio-gear.html): Headphones, mics, cards, drives, computers and monitors from our creator guides worth watching on Black Friday (Nov 27) and Cyber Monday (Nov 30), 2026.
 - [Gifts for Musicians and Producers 2026: Studio Picks by Tier](https://purposewithpresence.com/blog/gifts-for-musicians-and-producers.html): Headphones, mics, an interface and a studio computer for musicians and producers, picked from independent reviews and owner reports, with the common complaint for each.
 - [Gifts for Video Creators 2026: Mics, Cards, Drives, Monitors](https://purposewithpresence.com/blog/gifts-for-video-creators.html): Wireless mics, a phone gimbal, memory cards, rugged SSDs and editing monitors for people who make video, picked from independent reviews and owner reports.
