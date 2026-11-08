@@ -11,133 +11,50 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://purposewithpresence.com/assets/og/home.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
+<meta name="theme-color" content="oklch(0.155 0.012 255)">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/assets/pwp-article.css">
+<script src="/assets/pwp-article.js" defer></script>
 <style>
-:root{
-  --bg:#060609; --cream:#f4f2ee; --dim:#a4a2b0; --pink:#ff2e88; --violet:#a855f7;
-  --cyan:#37d6ff; --gold:#ffd23f; --emerald:#19e08a;
-  --line:rgba(244,242,238,.09); --line2:rgba(244,242,238,.14);
-  --e:cubic-bezier(.16,1,.3,1); --maxw:920px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-::selection{background:var(--pink);color:#fff}
-a{color:var(--cyan);text-decoration:none}
-a:hover{text-decoration:underline}
-h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.15}
-.mesh{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.32}
-.orb.a{width:40vw;height:40vw;background:radial-gradient(circle,var(--pink),transparent 68%);top:-14vw;left:-10vw}
-.orb.b{width:36vw;height:36vw;background:radial-gradient(circle,var(--violet),transparent 68%);top:30vw;right:-12vw}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-nav{position:sticky;top:16px;z-index:40;max-width:var(--maxw);margin:16px auto 0;display:flex;align-items:center;gap:22px;
-  padding:11px 12px 11px 22px;border-radius:100px;background:rgba(12,12,20,.6);backdrop-filter:blur(20px);
-  border:1px solid var(--line2);box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.brand{font-family:'Space Grotesk';font-weight:600;display:flex;align-items:center;gap:8px;color:var(--cream)}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--gold));box-shadow:0 0 12px var(--pink)}
-.nlinks{display:flex;gap:20px;margin-left:auto;font-size:.92rem}
-.nlinks a{color:var(--dim)}.nlinks a:hover{color:var(--cream);text-decoration:none}
-.nav-cta{font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:100px;background:var(--cream);color:#0a0a0f}
-.nav-cta:hover{text-decoration:none}
-main{padding:60px 0 40px}
+/* page-specific rules kept by the LQ-139 migration */
 .eyebrow{display:inline-block;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--dim);
-  padding:7px 15px;border-radius:100px;background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
-article h1,.page h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin-bottom:14px}
-.lede{color:var(--dim);font-size:1.15rem;margin-bottom:36px}
-article h2,.page h2{font-size:1.6rem;font-weight:600;margin:44px 0 14px;padding-top:8px}
-article h3,.page h3{font-size:1.2rem;font-weight:600;color:var(--gold);margin:30px 0 10px}
-article p,.page p,article li,.page li{color:#cfcdd7;font-size:1.05rem}
-article p,.page p{margin-bottom:18px}
-article ul,article ol,.page ul,.page ol{margin:0 0 20px 22px}
-article li,.page li{margin-bottom:9px}
-article a,.page a{color:var(--cyan);border-bottom:1px solid rgba(55,214,255,.3)}
-article blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;margin:24px 0;color:var(--cream);font-style:italic}
-article table,.page table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.96rem;display:block;overflow-x:auto}
-article th,article td,.page th,.page td{border:1px solid var(--line2);padding:11px 14px;text-align:left}
-article th,.page th{background:rgba(244,242,238,.05);font-family:'Space Grotesk';font-weight:600;color:var(--cream)}
-.cta{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:1.05rem;padding:15px 16px 15px 28px;border-radius:100px;
-  background:linear-gradient(100deg,var(--pink),#ff5ea3);color:#fff!important;box-shadow:0 8px 28px rgba(255,46,136,.4);margin:10px 0;border:0}
-.cta:hover{text-decoration:none;transform:translateY(-2px)}
-.cta .ic{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.card{background:rgba(244,242,238,.03);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .3s var(--e),border-color .3s var(--e)}
-.card:hover{transform:translateY(-4px);border-color:var(--line2)}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.byline{color:var(--dim);font-size:.9rem;margin-bottom:30px}
-.faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:500;font-size:1.08rem;padding:18px 0;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq details p{padding:0 0 20px;color:var(--dim)}
-footer{border-top:1px solid var(--line);margin-top:60px;padding:44px 0 60px;color:var(--dim);font-size:.9rem}
-.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px}
-.foot-links a{color:var(--dim)}.foot-links a:hover{color:var(--cream)}
-.disclosure{font-size:.8rem;opacity:.75;line-height:1.7;max-width:760px}
-@media(max-width:640px){.nlinks{display:none}}
-
-/* premium patch v2 */
-body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-article h1,.page h1{background:linear-gradient(120deg,#f4f2ee 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
+  padding:7px 15px;border-radius:var(--r-ctl);background:rgba(244,242,238,.04);border:1px solid var(--line);margin-bottom:22px}
+article h1,.page h1{background:linear-gradient(120deg,var(--ink) 30%,#c9c4e8 70%,#8fd8f0);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
 .card{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.card:hover{border-color:rgba(255,46,136,.45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px rgba(255,46,136,.12)}
+.card:hover{border-color:oklch(0.82 0.16 75 / .45);box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 0 1px oklch(0.82 0.16 75 / .12)}
 article h2,.page h2{position:relative;padding-left:18px}
 article h2::before,.page h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--pink),var(--gold))}
-article table,.page table{border-radius:14px;overflow:hidden;border:1px solid var(--line2)}
-article th{background:linear-gradient(180deg,rgba(255,46,136,.14),rgba(244,242,238,.04))!important}
-blockquote{background:rgba(168,85,247,.07);border-radius:0 14px 14px 0}
+article table,.page table{border-radius:var(--r-panel);overflow:hidden;border:1px solid var(--line2)}
+article th{background:linear-gradient(180deg,oklch(0.82 0.16 75 / .14),rgba(244,242,238,.04))!important}
+blockquote{background:oklch(0.82 0.16 75 / .07);border-radius:0 14px 14px 0}
 .cta{transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,46,136,.55)}
-nav{animation:navin .8s cubic-bezier(.16,1,.3,1)}
-@keyframes navin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-::selection{background:#ff2e88;color:#fff}
-
-/* mobile patch v3.1 */
-.nav-cta,.cta,.brand,#ctab a,#ctab button{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
-#ctab button{min-width:48px}
-.foot-links a{display:inline-block;padding:12px 10px;margin:0 2px}
-.faq summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0}.tscroll table{margin:0;display:table;overflow:visible;min-width:100%}div[style*="overflow-x:auto"]>table{display:table;overflow:visible;min-width:100%}
-@media(max-width:640px){
-html{-webkit-text-size-adjust:100%}
-body,article p,.page p,article li,.page li,.byline,.disclosure,.faq details p,article td,article th,.page td,.page th,.related li,footer,.card p,article small,article table,.page table{font-size:1rem}
-.nav-cta{padding:12px 16px;font-size:1rem}
-.cta{width:100%;justify-content:center;padding:14px 20px;font-size:1.05rem}
-.wrap{padding:0 16px}
-main{padding:36px 0 120px}
-article h1,.page h1{font-size:1.75rem;line-height:1.2}
-article p[style],article div[style] p,.nav-cta span,#ctab span,#ctab a,article .related li{font-size:1rem!important}
-}
-/* blog fixes 2026-11-06 */
-article p,article li{overflow-wrap:anywhere}
-article td{overflow-wrap:break-word}
-.foot-links{gap:0 6px}.foot-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
-.eyebrow{font-size:.75rem}
-.studio-note{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--line)}
-.studio-note p{margin:0;color:var(--dim);font-size:1rem}
-.studio-note a{color:var(--cyan)}
-/* end blog fixes */
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px oklch(0.82 0.16 75 / .55)}
 </style>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Is Seedance Legit or a Scam? The Official Model vs the Clone Domains (2026)", "description": "Is Seedance legit? The AI model is real ByteDance tech, but clone domains aren't. How to spot the official product and what to check before you pay.", "wordCount": 1247, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-07-13", "dateModified": "2026-10-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/is-seedance-legit.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Seedance legit or a scam?", "acceptedAnswer": {"@type": "Answer", "text": "The video model is legitimate ByteDance technology, launched in 2025 and updated through 2026. The scam risk isn't the model \u2014 it's look-alike websites trading on the name. Some clone domains carry very low trust scores and user complaints about billing. So judge the specific site, not the technology: the model is real, but any given \"Seedance\" domain has to prove itself."}}, {"@type": "Question", "name": "Which Seedance website is the official one?", "acceptedAnswer": {"@type": "Answer", "text": "ByteDance never staked out one obvious storefront, so the domain name alone proves nothing. The model's first-party routes are ByteDance's own Jimeng AI and Doubao Pro, its Dreamina and CapCut products, and the BytePlus ModelArk API (ByteDance Seed, July 31, 2026). Resellers set their own prices. Dreamina has publicly warned that seedance2.ai, seedance2.app and seedance.tv are not official ByteDance sites. Verify a site by its own disclosures rather than the word \"seedance\" in the URL."}}, {"@type": "Question", "name": "Is seedance2.ai a scam?", "acceptedAnswer": {"@type": "Answer", "text": "We can't label any operator a criminal, but the public data is poor. Scamadviser gives seedance2.ai a trust score of 0, citing hidden WHOIS, invalid contact emails, a very young domain and failed support attempts. Trustpilot reviewers report billing and login problems. Treat those as documented warning signs and run the pre-purchase checklist before paying."}}, {"@type": "Question", "name": "Who made Seedance, and is it really ByteDance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Seedance is built by ByteDance's Seed research team. Version 2.0 shipped February 12, 2026, and version 2.5 with 30-second one-shot generation was announced June 23, 2026 and launched July 31, 2026. Independent blind testing placed it at the top of the AI-video field at a lower price. Even the Disney and Paramount legal complaints confirm a working model, not a fake one."}}, {"@type": "Question", "name": "Does Seedance have a free trial, and is it watermark-free?", "acceptedAnswer": {"@type": "Answer", "text": "On the platform aggregator, the free tier is 1 credit every 24 hours, which won't render a clip: the shortest Seedance 2.5 render costs 48 credits. It carries no commercial license. Watermark-free MP4/PNG export and the commercial license come with the paid plans, which start at $9.90 a month billed annually or $19.90 billed monthly (pricing page, read October 25, 2026). Always confirm these terms on the plan you're buying."}}, {"@type": "Question", "name": "What should I check before paying for a Seedance site?", "acceptedAnswer": {"@type": "Answer", "text": "Confirm you can open a real login and cancellation page before purchase; check that the per-render credit cost is shown before you commit; verify watermark-free export and commercial license are stated in the paid plan; and be wary of very young domains with hidden WHOIS and dead support links. Use a card you can dispute, and test the cancel flow if you can."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://purposewithpresence.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://purposewithpresence.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Is Seedance Legit or a Scam? The Official Model vs the Clone Domains (2026)", "item": "https://purposewithpresence.com/blog/is-seedance-legit.html"}]}</script>
 <link rel="alternate" type="application/atom+xml" title="AI Music Video Guide" href="/feed.xml">
 </head><body>
-<div class="mesh"><div class="orb a"></div><div class="orb b"></div></div>
-<nav><a class="brand" href="/seedance-guide/"><span class="dot"></span>AI Music Video Guide</a>
-<div class="nlinks"><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Tools</a><a href="/directors-guide.html">Guide</a><a href="/about.html">About</a></div>
-<a class="nav-cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See&nbsp;plans<span style="font-size:.72em;font-weight:500;opacity:.72;margin-left:.45em;white-space:nowrap">· affiliate link</span></a></nav>
-<main class="wrap"><article>
-<p class="byline"><a href="/" style="color:var(--dim)">Home</a> › <a href="/blog/" style="color:var(--dim)">Blog</a> › is seedance legit</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap"><nav aria-label="Primary" data-open="false"><a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-links"><span>Menu</span><span class="bars" aria-hidden="true"></span></button><ul class="nlinks" id="site-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/" aria-current="page">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Tools</a></li><li><a href="/about.html">About</a></li></ul><a class="nav-cta" href="/free-check/">Book a free check</a></nav></div><span class="progress" aria-hidden="true"></span></header>
+<main id="main" class="wrap art">
+<aside class="toc" aria-label="On this page"><p class="toc-h">on this page</p><ol><li><a href="#is-seedance-legit-the-model-is-real-bytedance-tech">Is Seedance legit? The model is real ByteDance tech</a></li><li><a href="#which-seedance-website-is-the-official-one">Which Seedance website is the official one?</a></li><li><a href="#is-seedance2-ai-a-scam-what-the-trust-signals-say">Is seedance2.ai a scam? What the trust signals say</a></li><li><a href="#how-to-spot-a-legit-surface-before-you-pay">How to spot a legit surface before you pay</a></li><li><a href="#a-safe-way-to-try-seedance-without-a-domain-gamble">A safe way to try Seedance without a domain gamble</a></li><li><a href="#frequently-asked-questions">Frequently asked questions</a></li></ol></aside>
+<article>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">is seedance legit</span></li></ol></nav>
 <h1>Is Seedance Legit or a Scam? The Official Model vs the Clone Domains (2026)</h1>
-<p class="byline">By the AI Music Video Guide team · Updated October 25, 2026 · 6 min read</p>
-<p style="font-size:.85rem;color:var(--dim);margin:-6px 0 26px;padding:10px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:10px">This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p>
-<p><strong>Quick answer:</strong> The model is real — Seedance is genuine ByteDance technology whose 2.0 release shipped February 12, 2026, and whose 2.5 update generates clips up to 30 seconds in one shot. The scam risk sits in the look-alike websites: ByteDance's own Dreamina team has publicly named three clone domains as unofficial, and one widely promoted clone carries a trust score of 0 on Scamadviser. Judge the specific site, not the technology — verify pricing, cancellation and support before you pay.</p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> October 25, 2026</span><span>6 min read</span></p>
+<aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
+<p class="short-answer"><strong>Quick answer:</strong> The model is real — Seedance is genuine ByteDance technology whose 2.0 release shipped February 12, 2026, and whose 2.5 update generates clips up to 30 seconds in one shot. The scam risk sits in the look-alike websites: ByteDance's own Dreamina team has publicly named three clone domains as unofficial, and one widely promoted clone carries a trust score of 0 on Scamadviser. Judge the specific site, not the technology — verify pricing, cancellation and support before you pay.</p>
 <p>The video <em>model</em> is real, and the question "is Seedance legit" has two different answers depending on which site you land on. The underlying AI is genuine ByteDance technology. But because that model is good and cheap, a swarm of look-alike domains has grown up around the name, and some of them behave like classic subscription traps. So: the technology is legit; a specific website carrying the name might not be. This guide separates the two.</p>
 
 <p>We'll map the real product versus the clone-and-resale domains, show the red flags that actually matter, and give you a checklist to run before you type in a card number.</p>
 
-<h2>Is Seedance legit? The model is real ByteDance tech</h2>
+<h2 id="is-seedance-legit-the-model-is-real-bytedance-tech">Is Seedance legit? The model is real ByteDance tech</h2>
 
 <p>Seedance is a text-to-video AI model built by ByteDance's Seed research team. It first launched in June 2025, version 2.0 was released on February 12, 2026, and version 2.5 — capable of native 30-second one-shot generation without stitching clips together — was announced at Volcano Engine 2026 on June 23, 2026 and officially launched on July 31, 2026 (Source: <a href="https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5" rel="noopener" target="_blank">ByteDance Seed</a>, July 31, 2026; <a href="https://en.wikipedia.org/wiki/Seedance_2.0" rel="noopener" target="_blank">Wikipedia</a>; <a href="https://www.techtimes.com/articles/318975/20260624/bytedance-seedance-25-native-30-second-ai-video-no-stitching-required.htm" rel="noopener" target="_blank">TechTimes</a>). This is not vaporware.</p>
 
@@ -145,7 +62,7 @@ article td{overflow-wrap:break-word}
 
 <p>One more signal that the tech is real rather than fake: the controversy around it is a <em>legal</em> fight, not a "the-model-doesn't-work" complaint. On February 13, 2026, Disney sent ByteDance a cease-and-desist letter alleging the model was trained on Disney works without compensation — a "virtual smash-and-grab" — and Paramount followed with its own pushback (Source: <a href="https://techcrunch.com/2026/02/15/hollywood-isnt-happy-about-the-new-seedance-2-0-video-generator/" rel="noopener" target="_blank">TechCrunch</a>; <a href="https://www.eweek.com/news/seedance-2-0-10-things-to-know-bytedance-ai-video/" rel="noopener" target="_blank">eWeek</a>). Studios don't sue over software that doesn't exist. That's a rights dispute over a genuinely capable model, and it's separate from the clone-site question.</p>
 
-<h2>Which Seedance website is the official one?</h2>
+<h2 id="which-seedance-website-is-the-official-one">Which Seedance website is the official one?</h2>
 
 <p>The catch: the model is first-party ByteDance, but "Seedance" by itself in a domain name tells you nothing. Reference material for the model lives at seed.bytedance.com, and ByteDance's own surfaces for Seedance 2.5 are Jimeng AI and Doubao Pro, with API access through BytePlus ModelArk (Source: <a href="https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5" rel="noopener" target="_blank">ByteDance Seed</a>, July 31, 2026); internationally, its Dreamina and CapCut products carry the model, and third-party API hosts such as fal.ai added 2.0 on April 9, 2026 (Source: <a href="https://fal.ai/seedance-2.0" rel="noopener" target="_blank">fal.ai</a>; <a href="https://blog.laozhang.ai/en/posts/seedance-2-how-to-use" rel="noopener" target="_blank">laozhang.ai</a>). ByteDance did not stake out one obvious "seedance.com" storefront, which left the name wide open.</p>
 
@@ -153,7 +70,7 @@ article td{overflow-wrap:break-word}
 
 <p>So the practical answer to "which site is official" is: verify the site's own disclosures, not the domain string. The safest first-party routes are ByteDance's Jimeng AI, Doubao Pro, Dreamina and CapCut, the BytePlus API, or a reputable integrator that openly says it's a third party using the official model. Any random "seedance-2" domain has to earn your trust the hard way.</p>
 
-<h2>Is seedance2.ai a scam? What the trust signals say</h2>
+<h2 id="is-seedance2-ai-a-scam-what-the-trust-signals-say">Is seedance2.ai a scam? What the trust signals say</h2>
 
 <p>We won't declare any single operator a criminal — that's a legal conclusion, not ours to make. But the public trust data on seedance2.ai is poor, and the <em>patterns</em> around it are worth describing plainly.</p>
 
@@ -163,7 +80,7 @@ article td{overflow-wrap:break-word}
 
 <p>On the review side, user reports on Trustpilot describe recurring complaints: reviewers allege one lookalike site promised Seedance 2 but generated with the cheaper, older WAN model instead; that unsubscribe buttons reportedly didn't work; that card details were said to be saved and couldn't be removed; and that after subscribing, some users couldn't log in at all (Source: <a href="https://www.trustpilot.com/review/seedance2.ai" rel="noopener" target="_blank">Trustpilot</a>; <a href="https://www.trustpilot.com/review/seedance.ai" rel="noopener" target="_blank">Trustpilot</a>). Treat these as user-reported patterns to watch for, not proven facts about a named company — but they're exactly the failure modes a checklist should screen out.</p>
 
-<h2>How to spot a legit surface before you pay</h2>
+<h2 id="how-to-spot-a-legit-surface-before-you-pay">How to spot a legit surface before you pay</h2>
 
 <p>You don't need to guess. A legit AI-video product looks and behaves consistently; clones cut corners in predictable places. Guidance from teardown write-ups and Dreamina's own how-to lines up here: look for coherent, consistent design from landing page through login to the generation console; a crisp logo that isn't distorted or swapped between pages; specific technical disclosure (version, max duration, supported inputs, resolution tiers); and, for third-party integrators, an open statement that they're a third party using the official API. Clone sites often advertise multimodal support in banners but only offer basic text input once you're in the editor (Source: <a href="https://animateai.pro/blog/from-seedanc-to-seedance-how-to-find-the-official-ai-video-platform-and-avoid-fake-entrances/" rel="noopener" target="_blank">AnimateAI</a>; <a href="https://blog.laozhang.ai/en/posts/seedance-2-how-to-use" rel="noopener" target="_blank">laozhang.ai</a>).</p>
 
@@ -181,19 +98,21 @@ article td{overflow-wrap:break-word}
 <p>If you're evaluating tools generally, our rundown of <a href="/blog/best-ai-video-generators-for-musicians.html">the best AI video generators</a> and the head-to-head on <a href="/blog/sora-2-vs-veo-3-vs-seedance.html">Sora 2 vs Veo 3 vs Seedance</a> cover how these engines actually compare on output, not just marketing.</p>
 
 <p>A quick price-fingerprint check catches most clones without any scam-checker at all. One caution on that check: there is no single official Seedance price. ByteDance sells access through its own apps and the BytePlus API, and every reseller sets its own ladder. The seeddance.video aggregator this site links to, for example, sells Basic, Pro, Max and Pro Max at $19.90, $39.90, $69.90 and $99.90 billed monthly (200, 500, 1,050 and 2,100 credits), or $9.90, $19.90, $34.90 and $59.90 a month billed annually (Source: <a href="https://seeddance.video/pricing" rel="noopener" target="_blank">seeddance.video/pricing</a>, read October 25, 2026); those are its prices, not ByteDance's. Lookalike sites checked in August 2026 quote completely different sheets: one lists $336/$672/$1,344 per year, another $29.99/$79.99/$199.99 a month under a countdown timer. A price sheet that matches a reseller's own pricing page tells you that you are on that reseller's site, not that you are on ByteDance's product. And do not lean on automated trust scores alone: on the same day, two well-known scam checkers rated the same lookalike domain &ldquo;likely safe&rdquo; and &ldquo;suspicious&rdquo; respectively &mdash; those tools measure domain hygiene, not how a site bills you.</p>
-<h2>A safe way to try Seedance without a domain gamble</h2>
+<h2 id="a-safe-way-to-try-seedance-without-a-domain-gamble">A safe way to try Seedance without a domain gamble</h2>
 
+<aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>The Seedance link below is an affiliate link — if you sign up through it we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>).</p></aside>
 <p>If you want to run the engine without vetting a mystery domain, one option is a third-party aggregator that's open about being a third party. <a href="/go/seedance" rel="sponsored noopener" target="_blank">Seedance</a> (at seeddance.video — note the double "d," distinct from the ByteDance model spelling) bundles what it calls 30+ engines behind one credit pool, including Seedance 2.0 and 2.5, Veo 3, image models such as Nano Banana, and Suno for music (Source: <a href="https://seeddance.video/pricing" rel="noopener" target="_blank">seeddance.video/pricing</a>, read October 25, 2026). Its footer still lists Sora 2, but OpenAI discontinued the Sora web app and mobile app on April 26, 2026 and the Sora API on September 24, 2026 (Source: <a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" rel="noopener" target="_blank">OpenAI Help Center</a>, read October 25, 2026). It is not a ByteDance property; it's an integrator.</p>
 
 <p>What matters for the trust question is that its terms are stated plainly. The free tier is 1 credit every 24 hours, which is not enough to render a clip (the shortest Seedance 2.5 render, 4 seconds at 480p, costs 48 credits), and it does not carry a commercial license. Watermark-free MP4/PNG export and the commercial license attach to the paid plans, which start at $9.90 a month billed annually or $19.90 billed monthly, and run on a single unified credit pool (Source: <a href="https://seeddance.video/" rel="noopener" target="_blank">seeddance.video</a>). Credits are spent per second of video and scale with resolution; the exact cost is shown before you commit a render, and failed renders refund the credits (Source: <a href="https://seeddance.video/pricing" rel="noopener" target="_blank">seeddance.video/pricing</a>). It can also beat-lock visuals to an uploaded audio track — useful if you're turning a song into video. The scam sites hide cost until after you pay and keep your money on a failed render. This shows the cost first and refunds the credits.</p>
 
 <p>Whichever route you pick, verify the plan's terms yourself before paying, and prefer a card you can easily dispute. For budgeting, our <a href="/tools/credit-calculator.html">credit calculator</a> helps you estimate real cost per clip before you commit.</p>
-<div style="text-align:center;margin:44px 0 10px"><a class="cta" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
-<p style="text-align:center;font-size:.9rem;color:var(--dim)">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
+<div class="cta-row"><a class="cta primary" href="/go/seedance" rel="sponsored noopener" target="_blank">See Seedance plans and the free tier<span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div>
+<p class="cta-note">Estimate your render cost with our free <a href="/tools/credit-calculator.html">credit calculator</a>.</p>
 <!-- emailcap:start -->
-<div style="margin:40px 0 8px;padding:22px 22px 14px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:16px">
-<p style="margin:0 0 6px;font-weight:700;font-size:1.05rem">Get the Director&rsquo;s Guide + monthly prompt packs</p>
-<p style="margin:0 0 12px;font-size:.92rem;color:var(--dim)">The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
+<div class="emailcap">
+<p class="ec-h">newsletter</p>
+<h3>Get the Director&rsquo;s Guide + monthly prompt packs</h3>
+<p>The five-part scene template, camera vocabulary the engines obey, and tool-pricing updates when they change. One email a month, no spam, unsubscribe anytime.</p>
 <div class="ml-embedded" data-form="gDc4Ah"></div>
 </div>
 <script>
@@ -207,20 +126,23 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
 <!-- related:start -->
 <aside class="related" style="margin:48px 0 8px;padding:24px;background:rgba(244,242,238,.04);border:1px solid var(--line);border-radius:14px"><h2 style="margin:0 0 14px;font-size:1.15rem">Related guides</h2><ul style="margin:0;padding-left:20px;line-height:1.9"><li><a href="/blog/seedance-free-vs-paid-worth-it.html">Seedance Free vs Paid: Is Upgrading Worth It for Your Music Video?</a></li><li><a href="/blog/seedance-promo-codes-tested.html">Seedance Promo Codes in 2026: What Actually Works (We Tested Them)</a></li><li><a href="/blog/cancel-seedance-subscription.html">How to Cancel Your Seedance Subscription (and When You Actually Should)</a></li></ul></aside>
 <!-- related:end -->
-<h2>Frequently asked questions</h2>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
 <div class="faq"><details><summary>Is Seedance legit or a scam?<span class="plus" style="float:right">+</span></summary><p>The video model is legitimate ByteDance technology, launched in 2025 and updated through 2026. The scam risk isn&#x27;t the model — it&#x27;s look-alike websites trading on the name. Some clone domains carry very low trust scores and user complaints about billing. So judge the specific site, not the technology: the model is real, but any given &quot;Seedance&quot; domain has to prove itself.</p></details><details><summary>Which Seedance website is the official one?<span class="plus" style="float:right">+</span></summary><p>ByteDance never staked out one obvious storefront, so the domain name alone proves nothing. The model&#x27;s first-party routes are ByteDance&#x27;s own Jimeng AI and Doubao Pro, its Dreamina and CapCut products, and the BytePlus ModelArk API (ByteDance Seed, July 31, 2026). Resellers such as seeddance.video set their own prices. Dreamina has publicly warned that seedance2.ai, seedance2.app and seedance.tv are not official ByteDance sites. Verify a site by its own disclosures rather than the word &quot;seedance&quot; in the URL.</p></details><details><summary>Is seedance2.ai a scam?<span class="plus" style="float:right">+</span></summary><p>We can&#x27;t label any operator a criminal, but the public data is poor. Scamadviser gives seedance2.ai a trust score of 0, citing hidden WHOIS, invalid contact emails, a very young domain and failed support attempts. Trustpilot reviewers report billing and login problems. Treat those as documented warning signs and run the pre-purchase checklist before paying.</p></details><details><summary>Who made Seedance, and is it really ByteDance?<span class="plus" style="float:right">+</span></summary><p>Yes. Seedance is built by ByteDance&#x27;s Seed research team. Version 2.0 shipped February 12, 2026, and version 2.5 with 30-second one-shot generation was announced June 23, 2026 and launched July 31, 2026. Independent blind testing placed it at the top of the AI-video field at a lower price. Even the Disney and Paramount legal complaints confirm a working model, not a fake one.</p></details><details><summary>Does Seedance have a free trial, and is it watermark-free?<span class="plus" style="float:right">+</span></summary><p>On the seeddance.video aggregator, the free tier is 1 credit every 24 hours, which won&#x27;t render a clip: the shortest Seedance 2.5 render costs 48 credits. It carries no commercial license. Watermark-free MP4/PNG export and the commercial license come with the paid plans, which start at $9.90 a month billed annually or $19.90 billed monthly (pricing page, read October 25, 2026). Always confirm these terms on the plan you&#x27;re buying.</p></details><details><summary>What should I check before paying for a Seedance site?<span class="plus" style="float:right">+</span></summary><p>Confirm you can open a real login and cancellation page before purchase; check that the per-render credit cost is shown before you commit; verify watermark-free export and commercial license are stated in the paid plan; and be wary of very young domains with hidden WHOIS and dead support links. Use a card you can dispute, and test the cancel flow if you can.</p></details></div>
-</article><aside class="studio-note"><p>Run a local business? <a href="/studio/">See how we get businesses found on Google and in AI answers</a></p></aside>
-</main><footer><div class="wrap">
-<div class="foot-links"><a href="/">Home</a><a href="/studio/">Studio</a><a href="/blog/">Blog</a><a href="/fitness/">Fitness</a><a href="/tools/credit-calculator.html">Credit Calculator</a><a href="/directors-guide.html">Director's Guide</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/disclosure.html">Affiliate Disclosure</a><a href="/terms.html">Terms</a></div>
-<div class="disclosure"><b>Affiliate disclosure:</b> AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live.</div>
-<p style="margin-top:18px;opacity:.6">© 2026 AI Music Video Guide · purposewithpresence.com</p></div></footer>
+</article><aside class="studio-note" data-sticky="false" aria-labelledby="sn-studio"><p class="sn-label">from the studio</p><div class="sn-main"><h3 id="sn-studio">Run a local business?</h3><p>See how we get businesses found on Google and in AI answers: website, Google profile, booking and reviews, run for you every month.</p></div><div class="sn-act"><a class="cta" href="/studio/">See the studio<span class="ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a></div></aside>
+</main><footer class="site-foot"><div class="wrap ft">
+<a class="brand" href="/" aria-label="Purpose with Presence, home"><svg class="mark" viewBox="0 0 28 40" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="14" cy="4" r="2.6"/><path d="M9 10h10l-2-3.2h-6z"/><rect x="6" y="10" width="16" height="21" rx="3"/><path d="M10 31v2.5h8V31"/></g><path class="flame" d="M14 14.5c2.6 3 3.6 5.6 3.6 7.8a3.6 3.6 0 0 1-7.2 0c0-2.2 1-4.8 3.6-7.8z"/></svg>Purpose with Presence</a>
+<ul class="foot-links"><li><a href="/studio/">Studio</a></li><li><a href="/blog/">Guides</a></li><li><a href="/gear/">Gear</a></li><li><a href="/fitness/">Fitness</a></li><li><a href="/tools/credit-calculator.html">Credit calculator</a></li><li><a href="/directors-guide.html">Director's guide</a></li><li><a href="/about.html">About</a></li><li><a href="/free-check/">Book a free check</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/disclosure.html">Affiliate disclosure</a></li><li><a href="/terms.html">Terms</a></li></ul>
+<p class="full-disc" id="full-disclosure"><b>Affiliate disclosure</b>AI Music Video Guide is reader-supported. Some links are affiliate links — we may earn a commission at no extra cost to you. We only recommend tools we find genuinely useful. We belong to seeddance.video's referral program and earn a share of what referred customers spend. No vendor reviews our articles before they go live. <a href="/disclosure.html">Full disclosure</a></p>
+<p class="copy"><span>© 2026 Purpose with Presence</span><span>purposewithpresence.com</span></p>
+</div></footer>
 <!-- ctabar:start -->
-<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
-<div style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 10px 10px;padding:8px 8px 8px 16px;background:rgba(10,10,16,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(244,242,238,.14);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);width:min(96vw,640px)">
-<span style="color:#f4f2ee;font-size:1rem;line-height:1.35;flex:1;min-width:0"><b>Seedance: 1 free credit a day.</b> <span style="color:#a4a2b0;font-size:.85em;white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:#a4a2b0">disclosure</a></span></span>
-<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 18px;background:linear-gradient(135deg,#ff2d8a,#8b5cf6 55%,#37d6ff);color:#fff;font-weight:700;border-radius:12px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="min-width:48px;min-height:48px;background:none;border:none;color:#a4a2b0;font-size:1.4rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center">&#215;</button>
+<div id="ctab" data-program="seedance" role="complementary" aria-label="Recommended tool" style="position:fixed;left:0;right:0;bottom:-140px;z-index:60;display:flex;justify-content:center;transition:bottom .32s cubic-bezier(.2,.7,.2,1);pointer-events:none;padding-bottom:env(safe-area-inset-bottom)">
+<div class="ctab-in" style="pointer-events:auto;display:flex;align-items:center;gap:10px;margin:0 12px 12px;padding:8px 8px 8px 16px;background:oklch(0.235 0.016 255);border:1px solid oklch(0.32 0.014 255);border-radius:4px;box-shadow:0 16px 40px oklch(0.1 0.01 255 / .55);width:min(calc(100vw - 24px),640px)">
+<span style="color:oklch(0.96 0.004 255);font-size:1rem;line-height:1.35;flex:1;min-width:0"><b style="font-weight:620">Seedance: 1 free credit a day.</b> <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:oklch(0.68 0.012 255);white-space:nowrap">Paid link &#183; <a href="/disclosure.html" style="color:inherit">disclosure</a></span></span>
+<a href="/go/seedance" rel="sponsored noopener" target="_blank" style="white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;background:oklch(0.82 0.16 75);color:oklch(0.155 0.012 255);font-weight:650;border-radius:4px;text-decoration:none;font-size:1rem">See plans <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<button type="button" onclick="document.getElementById('ctab').style.bottom='-140px';try{localStorage.setItem('ctab_hide',Date.now())}catch(e){}" aria-label="Dismiss" style="flex:none;width:48px;height:48px;padding:0;background:none;border:1px solid oklch(0.32 0.014 255);border-radius:4px;color:oklch(0.78 0.01 255);cursor:pointer;display:inline-flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1L11 11M11 1L1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
 </div></div>
+<script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --><!-- geo:exit-modal:start -->
 <div id="pwp-cap" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(8,8,10,.72);align-items:center;justify-content:center;padding:20px">
