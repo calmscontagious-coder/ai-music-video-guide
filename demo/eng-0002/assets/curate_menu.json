@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T00:29:19.131389+00:00",
+ "updated_at": "2026-11-08T00:45:32.573461+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -896,8 +896,8 @@
    "price": 3.25,
    "category": "Morning Pastries",
    "ship": false,
-   "available": false,
-   "quantity": 0,
+   "available": true,
+   "quantity": null,
    "toast_id": "efc3adc2-e9da-4a97-9601-b94ddd29e133",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/87ef76d6-1770-4b45-8478-9af46248daed.jpg",
    "on_site": true,
@@ -1281,6 +1281,22 @@
    "available": true,
    "quantity": null,
    "toast_id": "a747630c-a296-4d4b-9da2-01f4c4d76bd3",
+   "image": null,
+   "on_site": false,
+   "hidden": false,
+   "photo": "img/tiles/tart.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a tart"
+  },
+  {
+   "handle": "dubai-mousse",
+   "title": "Dubai Mousse",
+   "price": 15.0,
+   "category": "Cold Pastries",
+   "ship": false,
+   "available": true,
+   "quantity": null,
+   "toast_id": "03bcca13-5fc0-4a8a-b4ac-0a0e49a88342",
    "image": null,
    "on_site": false,
    "hidden": false,

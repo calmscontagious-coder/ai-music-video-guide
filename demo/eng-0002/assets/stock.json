@@ -485,7 +485,7 @@
    "price": 9.0
   },
   "canele": {
-   "available": false,
+   "available": true,
    "price": 3.25
   },
   "chefs-special-eclair": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-08T00:29:24.288416+00:00"
+ "updated_at": "2026-11-08T00:45:36.422792+00:00"
 }
