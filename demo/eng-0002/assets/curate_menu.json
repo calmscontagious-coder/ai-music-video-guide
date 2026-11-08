@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T00:45:32.573461+00:00",
+ "updated_at": "2026-11-08T02:07:11.864161+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -1297,6 +1297,22 @@
    "available": true,
    "quantity": null,
    "toast_id": "03bcca13-5fc0-4a8a-b4ac-0a0e49a88342",
+   "image": null,
+   "on_site": false,
+   "hidden": false,
+   "photo": "img/tiles/tart.svg",
+   "photo_kind": "tile",
+   "photo_alt": "Drawing of a tart"
+  },
+  {
+   "handle": "mini-tart-eclair",
+   "title": "Mini Tart /Eclair",
+   "price": 3.0,
+   "category": "Cold Pastries",
+   "ship": false,
+   "available": true,
+   "quantity": null,
+   "toast_id": "767a856f-788a-46ca-8b25-539d6a92dfc7",
    "image": null,
    "on_site": false,
    "hidden": false,
