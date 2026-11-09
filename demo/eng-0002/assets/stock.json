@@ -489,7 +489,7 @@
    "price": 3.25
   },
   "chefs-special-eclair": {
-   "available": false,
+   "available": true,
    "price": 9.0
   },
   "chocolate-eclair": {
@@ -501,7 +501,7 @@
    "price": 5.5
   },
   "pistachio-eclair": {
-   "available": false,
+   "available": true,
    "price": 6.5
   },
   "paris-brest": {
@@ -509,7 +509,7 @@
    "price": 6.75
   },
   "mille-feuille": {
-   "available": false,
+   "available": true,
    "price": 6.75
   },
   "fruit-tart": {
@@ -549,14 +549,14 @@
    "price": 16.0
   },
   "garden-salade": {
-   "available": false,
+   "available": true,
    "price": 15.5
   },
   "grandmother-beet-salade": {
-   "available": false,
+   "available": true,
    "price": 15.0
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-09T01:33:48.923309+00:00"
+ "updated_at": "2026-11-09T03:50:59.708821+00:00"
 }
