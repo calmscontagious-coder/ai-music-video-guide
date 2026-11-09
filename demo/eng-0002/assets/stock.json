@@ -501,7 +501,7 @@
    "price": 5.5
   },
   "pistachio-eclair": {
-   "available": true,
+   "available": false,
    "price": 6.5
   },
   "paris-brest": {
@@ -509,7 +509,7 @@
    "price": 6.75
   },
   "mille-feuille": {
-   "available": true,
+   "available": false,
    "price": 6.75
   },
   "fruit-tart": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-08T23:45:33.444403+00:00"
+ "updated_at": "2026-11-09T01:02:47.647632+00:00"
 }
