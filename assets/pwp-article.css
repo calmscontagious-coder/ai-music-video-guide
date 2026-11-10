@@ -726,7 +726,7 @@ table.stack-sm tbody tr:first-child>th{border-top:0}
   table.stack-sm tbody tr{display:block;padding:18px 18px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel)}
   table.stack-sm tbody tr>*{display:block;position:static!important;padding:0!important;border:0!important;background:none!important;font-size:16px!important}
   table.stack-sm tbody th{margin:0 0 12px;font-size:19px!important;line-height:1.25}
-  table.stack-sm tbody th a{display:inline-block;padding-block:4px}
+  table.stack-sm tbody th a{display:inline-flex;align-items:center;min-height:44px}
   table.stack-sm tbody td{display:grid!important;grid-template-columns:minmax(0,9.5em) minmax(0,1fr);column-gap:12px;padding:8px 0!important;border-top:1px solid var(--line-soft)!important}
   table.stack-sm tbody td::before{content:attr(data-label);font-family:var(--f-mono);font-size:13px;line-height:1.7;color:var(--faint)}
 }
@@ -735,3 +735,4 @@ table.stack-sm tbody tr:first-child>th{border-top:0}
 #pwp-cap-x{min-width:44px;min-height:44px}
 .shelf a,.tool-links a{min-height:44px}
 @media (max-width:760px){article li>a:only-child,.page li>a:only-child{display:inline-flex;align-items:center;min-height:44px;padding-block:0}}
+.foot-links a{min-width:44px}
