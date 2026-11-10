@@ -622,9 +622,9 @@
   var matrix = $("[data-matrix]");
   if (matrix) (function () {
     var PLANS = {
-      1: { name: "Essentials", m: "$1,200", f3: "$6,100", setup: "$2,500", hours: "3", why: "For a business that wants its site, customer list and Google presence run properly." },
-      2: { name: "Growth", m: "$2,400", f3: "$12,400", setup: "$5,200", hours: "6.5", why: "For a business ready to win repeat visits and be found." },
-      3: { name: "Signature", m: "$3,300", f3: "$16,400", setup: "$6,500", hours: "12", why: "For a business that wants every channel, paid ads and outreach." }
+      1: { name: "Essentials", m: "$1,200", f3: "$6,100", setup: "$2,500", hours: "about 3", why: "For a business that wants its site, customer list and Google presence run properly." },
+      2: { name: "Growth", m: "$2,400", f3: "$12,400", setup: "$5,200", hours: "about 6.5", why: "For a business ready to win repeat visits and be found." },
+      3: { name: "Signature", m: "$3,300", f3: "$16,400", setup: "$6,500", hours: "up to 9.5", why: "For a business that wants every channel, paid ads and outreach." }
     };
     var chips = $$("[data-chips] .chip"), segs = $$(".seg[data-view]"), reset = $("[data-reset]"), out = $("[data-pick-out]");
     var view = "monthly";
@@ -638,7 +638,7 @@
       $("[data-pick-name]").textContent = p.name;
       roll($("[data-pick-price]"), view === "monthly" ? p.m : p.f3);
       $("[data-pick-per]").textContent = view === "monthly" ? "a month" : "for the first 3 months, setup included";
-      $("[data-pick-meta]").textContent = view === "monthly" ? "Setup " + p.setup + " · about " + p.hours + " director hours a month" : p.m + " a month after setup " + p.setup + " · 3-month minimum";
+      $("[data-pick-meta]").textContent = view === "monthly" ? "Setup " + p.setup + " · " + p.hours + " director hours a month" : p.m + " a month after setup " + p.setup + " · 3-month minimum";
       $("[data-pick-why]").textContent = p.why;
       var cta = $("[data-pick-cta]");
       cta.textContent = "Ask about " + p.name;
@@ -857,6 +857,7 @@
   /* ── free-check form: plain HTML POST to MailerLite (no MailerLite script), enhanced with fetch ── */
   var lead = $("[data-lead]");
   if (lead) (function () {
+    lead.noValidate = true; /* script shows written messages; without script the browser's own checks run */
     var status = $("[data-lead-status]"), btn = $(".lead-btn", lead), done = $("[data-lead-done]"), hp = $("#lf-hp", lead), THANKS = "/free-check/thanks/";
     var checks = [
       { el: $("#lf-name", lead), err: $("#lf-name-err", lead), ok: function (el) { return el.value.trim().length > 1; } },
