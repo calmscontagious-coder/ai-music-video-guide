@@ -11,7 +11,7 @@
 
 /* ---------- 2. ground and aurora ---------- */
 html { background: var(--color-canvas); color-scheme: dark; }
-body { background: transparent; isolation: isolate; position: relative; font-family: var(--font-text); font-variation-settings: normal; font-optical-sizing: auto; -webkit-font-smoothing: antialiased; }
+body { background: transparent; isolation: isolate; position: relative; font-family: var(--font-text, "DM Sans", ui-sans-serif, system-ui, sans-serif); font-variation-settings: normal; font-optical-sizing: auto; -webkit-font-smoothing: antialiased; }
 body::before, body::after { content: ""; position: fixed; z-index: -1; inset: -12vmax; pointer-events: none; will-change: transform; }
 body::before {
   background:
@@ -61,8 +61,17 @@ article h3, .page h3, .card h3, a.card h3 { font-family: var(--font-text); font-
 .sec h2, .hero .lead, .lede { letter-spacing: 0; }
 article h2::before, .page h2::before { display: none; }
 .site-foot { background: rgb(10 10 31 / 0.6); }
-/* studio plan cards and the old plan picker pick up the foil edge */
-.plan, .pick { border-radius: var(--radius-panel); border-color: var(--color-glass-edge); }
+/* studio: the three tiers are the same foil cards as the home (markup and facts untouched) */
+.tiers { border: 0; gap: 18px; perspective: 1100px; }
+.tier { --ck: #ffc93c; position: relative; overflow: hidden; border: 1px solid var(--color-glass-edge) !important; border-radius: 26px; background: linear-gradient(150deg, rgb(255 255 255 / 0.2), rgb(255 255 255 / 0.04)), rgb(22 18 52 / 0.72) !important; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); padding-top: 120px !important; transform: rotateX(calc(var(--ry, 0) * 1deg)) rotateY(calc(var(--rx, 0) * 1deg)); transition: transform 250ms ease-out, opacity var(--duration-state) var(--ease-enter); touch-action: pan-y; }
+.tier:nth-child(2) { --ck: #c6ff3a; } .tier:nth-child(3) { --ck: #5ee7ff; }
+.tier::before { content: "" !important; position: absolute !important; left: 10px !important; right: 10px !important; top: 10px !important; height: 92px !important; border-radius: 17px; background: repeating-linear-gradient(115deg, #ff5a5f 0, #ffc93c 6%, #c6ff3a 12%, #5ee7ff 18%, #8b5cf6 24%, #ff5a5f 30%) !important; background-size: 200% 200% !important; animation: ll-hue 10s linear infinite; opacity: 0.88; }
+.tier::after { content: ""; position: absolute; left: 10px; right: 10px; top: 10px; height: 92px; border-radius: 17px; pointer-events: none; background: radial-gradient(circle at calc(var(--gx, 50) * 1%) calc(var(--gy, 30) * 1%), rgb(255 255 255 / 0.8), rgb(255 255 255 / 0) 50%); mix-blend-mode: soft-light; }
+.tier .tier-id { position: absolute; z-index: 1; left: 22px; top: 22px; margin: 0; padding: 5px 12px; border-radius: var(--radius-pill); background: var(--color-on-accent); color: var(--color-ink) !important; font-weight: 700; }
+.tier .tier-id .led { background: var(--ck) !important; box-shadow: 0 0 10px var(--ck); border-radius: 50%; }
+.tier .amount { font-family: var(--font-display); letter-spacing: -0.03em; }
+.tier li svg, .tier li .ic { color: var(--ck); }
+.pick { border-radius: var(--radius-panel); border-color: var(--color-glass-edge); }
 
 /* ---------- 5. home components ---------- */
 .ll { font-size: 1.0625rem; line-height: var(--leading-body); color: var(--color-ink); overflow-x: clip; }
@@ -93,7 +102,7 @@ article h2::before, .page h2::before { display: none; }
 html:not(.js) .ll-menu-btn { display: none; }
 html:not(.js) .ll-nav { flex-wrap: wrap; border-radius: var(--radius-panel); padding-block: 6px; }
 html:not(.js) .ll-links { display: flex; flex-wrap: wrap; width: 100%; order: 3; }
-@media (max-width: 480px) { .ll-brand { white-space: normal; line-height: 1.12; font-size: 0.75rem; } .ll-brand span:last-child { max-width: 8.2em; } .ll-nav { padding-left: 14px; } }
+@media (max-width: 480px) { .ll-brand { white-space: normal; line-height: 1.15; font-size: 0.6875rem; } .ll-brand span:last-child { max-width: 11em; } .ll-navcta { padding: 0 13px; } .ll-nav { padding-left: 14px; } }
 @media (min-width: 940px) {
   .ll-links { display: flex !important; position: static !important; padding: 0 !important; background: none !important; border: 0 !important; }
   .ll-menu-btn { display: none; }
@@ -101,7 +110,8 @@ html:not(.js) .ll-links { display: flex; flex-wrap: wrap; width: 100%; order: 3;
 }
 
 /* hero */
-.ll-hero { position: relative; padding: 28px 0 56px; }
+.ll-hero { position: relative; padding: 28px 0 56px; overflow-x: clip; }
+.ll main { overflow-x: clip; }
 .ll-hero-grid { position: relative; display: grid; gap: 8px; }
 .ll-chip { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 9px; min-height: 34px; padding: 0 14px; border-radius: var(--radius-pill); background: rgb(22 18 52 / 0.6); border: 1px solid var(--color-line); font-size: 0.875rem; font-weight: 600; width: max-content; max-width: 100%; }
 .ll-chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--color-lime); box-shadow: 0 0 10px var(--color-lime); }
@@ -129,7 +139,7 @@ html:not(.js) .ll-links { display: flex; flex-wrap: wrap; width: 100%; order: 3;
 @media (min-width: 620px) { .ll-cta-row { flex-direction: row; max-width: none; } .ll-btn { min-width: 300px; } }
 
 /* the prism: a triangle of light that turns with the pointer (or the scroll, on a phone) */
-.ll-prism { position: absolute; right: -34px; top: 34px; width: 150px; height: 150px; pointer-events: none; animation: ll-float 6s ease-in-out infinite; }
+.ll-prism { position: absolute; right: -40px; top: 18px; width: 124px; height: 124px; pointer-events: none; animation: ll-float 6s ease-in-out infinite; }
 @keyframes ll-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 .ll-beam { position: absolute; right: 42%; top: 56%; width: 62%; height: 2px; background: linear-gradient(90deg, rgb(255 255 255 / 0), #fff); transform: rotate(-9deg); transform-origin: right center; box-shadow: 0 0 10px #fff; }
 .ll-fan { position: absolute; left: 58%; top: 40%; width: 140%; height: 44%; background: linear-gradient(180deg, var(--color-violet), var(--color-ice), var(--color-lime), var(--color-gold), var(--color-coral)); clip-path: polygon(0 46%, 100% 0, 100% 100%, 0 54%); transform-origin: left center; transform: rotate(calc(24deg + (var(--my, 0.5) - 0.5) * 36deg + var(--p, 0) * 14deg)); opacity: 0.72; filter: blur(1.5px); mix-blend-mode: screen; transition: transform 350ms ease-out; }
@@ -261,7 +271,8 @@ html:not(.js) .ll-links { display: flex; flex-wrap: wrap; width: 100%; order: 3;
 
 /* ---------- 6. stills: reduced motion, or the visitor pressed pause ---------- */
 @media (prefers-reduced-motion: reduce) {
-  body::before, body::after, .ll-glow, .ll-btn::before, .ll-prism, .ll-track, .ll-band::before { animation: none !important; }
+  body::before, body::after, .ll-glow, .ll-btn::before, .ll-prism, .ll-track, .ll-band::before, .tier::before { animation: none !important; }
+  .tier { transform: none !important; }
   .ll-h1, .ll-h1 span, .ll-fan, .ll-tri, .ll-foil, .ll-btn { transition: none !important; }
   .ll-h1 { font-weight: 700; }
   .ll-h1 span { transform: none !important; }
