@@ -9,7 +9,7 @@
   var picker = document.querySelector("[data-picker]");
   if (!picker) return;
   var NAMES = { 1: "Essentials", 2: "Growth", 3: "Signature" };
-  var PRICES = { 1: "$950", 2: "$1,750", 3: "$2,450" };
+  var PRICES = { 1: "$1,200", 2: "$2,400", 3: "$3,600" };
   var IDS = { 1: "tier-essentials", 2: "tier-growth", 3: "tier-signature" };
   var chips = picker.querySelectorAll(".chip");
   var out = picker.querySelector(".picker-out");

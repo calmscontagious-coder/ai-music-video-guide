@@ -622,9 +622,9 @@
   var matrix = $("[data-matrix]");
   if (matrix) (function () {
     var PLANS = {
-      1: { name: "Essentials", m: "$950", f3: "$5,350", setup: "$2,500", hours: "3", why: "For a business that wants its site, customer list and Google presence run properly." },
-      2: { name: "Growth", m: "$1,750", f3: "$10,450", setup: "$5,200", hours: "6.5", why: "For a business ready to win repeat visits and be found." },
-      3: { name: "Signature", m: "$2,450", f3: "$13,850", setup: "$6,500", hours: "12", why: "For a business that wants every channel, paid ads and outreach." }
+      1: { name: "Essentials", m: "$1,200", f3: "$6,100", setup: "$2,500", hours: "3", why: "For a business that wants its site, customer list and Google presence run properly." },
+      2: { name: "Growth", m: "$2,400", f3: "$12,400", setup: "$5,200", hours: "6.5", why: "For a business ready to win repeat visits and be found." },
+      3: { name: "Signature", m: "$3,600", f3: "$17,300", setup: "$6,500", hours: "12", why: "For a business that wants every channel, paid ads and outreach." }
     };
     var chips = $$("[data-chips] .chip"), segs = $$(".seg[data-view]"), reset = $("[data-reset]"), out = $("[data-pick-out]");
     var view = "monthly";
