@@ -31,7 +31,7 @@
   var markScrollers = function () {
     scrollers.forEach(function (el) {
       if (el.scrollWidth > el.clientWidth + 1) {
-        if (!el.hasAttribute('tabindex')) { el.setAttribute('tabindex', '0'); el.setAttribute('role', 'region'); var t = nameFor(el); el.setAttribute('aria-label', (t ? 'Table: ' + t + '. ' : 'Table. ') + 'Scrolls sideways.'); }
+        if (!el.hasAttribute('tabindex')) { el.setAttribute('tabindex', '0'); el.setAttribute('role', 'region'); var t = nameFor(el); el.setAttribute('aria-label', (t ? 'Table: ' + t + (/[.?!]$/.test(t) ? ' ' : '. ') : 'Table. ') + 'Scrolls sideways.'); }
       } else if (el.getAttribute('role') === 'region') { el.removeAttribute('tabindex'); el.removeAttribute('role'); el.removeAttribute('aria-label'); }
     });
   };

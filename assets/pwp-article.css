@@ -731,3 +731,7 @@ table.stack-sm tbody tr:first-child>th{border-top:0}
   table.stack-sm tbody td::before{content:attr(data-label);font-family:var(--f-mono);font-size:13px;line-height:1.7;color:var(--faint)}
 }
 @media (max-width:420px){table.stack-sm tbody td{grid-template-columns:minmax(0,1fr)}table.stack-sm tbody td::before{line-height:1.3}}
+.crumbs a{min-width:44px}
+#pwp-cap-x{min-width:44px;min-height:44px}
+.shelf a,.tool-links a{min-height:44px}
+@media (max-width:760px){article li>a:only-child,.page li>a:only-child{display:inline-flex;align-items:center;min-height:44px;padding-block:0}}

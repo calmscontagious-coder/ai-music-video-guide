@@ -56,3 +56,5 @@ p { margin: 0 0 var(--spacing-3); max-width: var(--measure-body); }
   a { text-decoration: none; }
 }
 @media (prefers-reduced-motion: reduce) { .print-btn { transition: none; } .print-btn:active { transform: none; } }
+/* tap target: the label is the control, 44 px tall even on a one-line point (2026-11-09 check) */
+.p-head label { min-height: 44px; display: inline-block; }

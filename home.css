@@ -557,7 +557,7 @@ p { margin: 0 0 var(--spacing-4); max-width: var(--measure-body); }
 @media (min-width: 768px) { .shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) { .shelf { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .shelf li { display: grid; gap: var(--spacing-1); padding: var(--spacing-3) 0; border-bottom: 1px solid var(--color-line-soft); }
-.shelf a { display: inline-flex; align-items: center; min-height: 32px; font-weight: 600; }
+.shelf a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
 .shelf span { font-size: var(--text-label); color: var(--color-faint); }
 
 /* ── 07 art ── */
