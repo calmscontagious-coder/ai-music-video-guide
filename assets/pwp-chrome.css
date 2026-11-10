@@ -2,13 +2,11 @@
    stylesheet (studio guides use guides.css). Same rules as pwp-article.css, scoped to .site-head and
    .site-foot so they win over the page's older header/footer rules. LQ-139, 2026-11-07. */
 :root{
-  --canvas:oklch(0.155 0.012 255);--surface:oklch(0.195 0.014 255);--raised:oklch(0.235 0.016 255);
-  --line:oklch(0.32 0.014 255);--line-soft:oklch(0.255 0.012 255);
-  --ink:oklch(0.96 0.004 255);--muted:oklch(0.78 0.01 255);--faint:oklch(0.68 0.012 255);
-  --lantern:oklch(0.82 0.16 75);
-  --f-text:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
-  --t1:120ms;--t2:200ms;--t3:280ms;--ease:cubic-bezier(.2,.7,.2,1);
+  /* colours come from /tokens.css (day sheet on :root, night plate on .night); these are fallbacks only */
+  --f-text:"Bricolage Grotesque","Bricolage Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-read:var(--font-read,"Newsreader",Georgia,serif);
+  --f-mono:var(--font-label);
+  --t1:120ms;--t2:200ms;--t3:280ms;--ease:cubic-bezier(.2,0,0,1);
   --gut:32px;--colgap:24px;--r-panel:2px;--r-ctl:4px;
 }
 .site-head .wrap,.site-foot .wrap{width:100%;max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
@@ -21,10 +19,10 @@
 .site-head .nlinks a{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;color:var(--muted);text-decoration:none;font-family:var(--f-text);font-size:16px;letter-spacing:0}
 .site-head .nlinks a:hover,.site-head .nlinks a[aria-current]{color:var(--ink)}
 .site-head .nlinks a[aria-current]::before{content:"";width:5px;height:5px;background:var(--lantern);border-radius:1px}
-.site-head .nav-cta{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:var(--r-ctl);color:var(--ink);text-decoration:none;font-family:var(--f-mono);font-size:13px;white-space:nowrap}
+.site-head .nav-cta{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:var(--r-ctl);color:var(--ink);text-decoration:none;font-family: var(--font-label); font-variation-settings: var(--label-cut); font-weight: var(--label-weight);font-size:13px;white-space:nowrap}
 .site-head .nav-cta::before{content:"";width:6px;height:6px;border-radius:1px;background:var(--lantern)}
 .site-head .nav-cta:hover{background:var(--raised);border-color:var(--faint)}
-.site-head .menu-btn{display:none;align-items:center;gap:10px;min-height:44px;min-width:44px;padding:0 12px;margin-right:-12px;background:none;border:0;color:var(--ink);font-family:var(--f-mono);font-size:13px;cursor:pointer;border-radius:var(--r-ctl)}
+.site-head .menu-btn{display:none;align-items:center;gap:10px;min-height:44px;min-width:44px;padding:0 12px;margin-right:-12px;background:none;border:0;color:var(--ink);font-family: var(--font-label); font-variation-settings: var(--label-cut); font-weight: var(--label-weight);font-size:13px;cursor:pointer;border-radius:var(--r-ctl)}
 .site-head .menu-btn .bars{position:relative;width:16px;height:10px}
 .site-head .menu-btn .bars::before,.site-head .menu-btn .bars::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform var(--t2) var(--ease)}
 .site-head .menu-btn .bars::before{top:0}.site-head .menu-btn .bars::after{bottom:0}
@@ -38,9 +36,9 @@
 .site-foot .foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--muted);text-decoration:none}
 .site-foot .foot-links a:hover{color:var(--ink)}
 .site-foot .full-disc{grid-column:4/12;margin:0;font-size:16px;line-height:1.6;color:var(--muted);max-width:none}
-.site-foot .full-disc b{display:block;margin-bottom:8px;font-family:var(--f-mono);font-size:13px;font-weight:400;color:var(--faint)}
+.site-foot .full-disc b{display:block;margin-bottom:8px;font-family: var(--font-label); font-variation-settings: var(--label-cut); font-weight: var(--label-weight);font-size:13px;color:var(--faint)}
 .site-foot .full-disc a{color:var(--ink)}
-.site-foot .copy{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin:0;padding-top:20px;border-top:1px solid var(--line-soft);font-family:var(--f-mono);font-size:13px;color:var(--faint)}
+.site-foot .copy{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin:0;padding-top:20px;border-top:1px solid var(--line-soft);font-family: var(--font-label); font-variation-settings: var(--label-cut); font-weight: var(--label-weight);font-size:13px;color:var(--faint)}
 @keyframes pwp-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @media (max-width:1080px){.site-head nav{gap:12px}.site-head .nlinks a{padding:0 9px}}
 @media (max-width:900px){

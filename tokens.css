@@ -1,33 +1,46 @@
-/* Purpose with Presence home v2 tokens ("the workshop bench", see DIRECTION.md). Every colour, size and duration on the home resolves here. */
+/* Purpose with Presence tokens: "Day sheet, night plate" (see DIRECTION.md). The only source of colour, type, space,
+   radius and motion for every page. /studio/tokens.css is a byte copy; /assets/pwp-article.css reads the short aliases
+   at the end of each block. Day sheet on :root; .night re-declares the same names for a night plate. */
 :root {
-  --color-canvas: oklch(0.155 0.012 255);
-  --color-surface: oklch(0.195 0.014 255);
-  --color-raised: oklch(0.235 0.016 255);
-  --color-line: oklch(0.32 0.014 255);
-  --color-line-soft: oklch(0.255 0.012 255);
-  --color-ink: oklch(0.96 0.004 255);
-  --color-muted: oklch(0.78 0.01 255);
-  --color-faint: oklch(0.68 0.012 255);
+  color-scheme: light;
+  --color-canvas: oklch(0.968 0.006 250);
+  --color-surface: oklch(0.992 0.003 250);
+  --color-raised: oklch(0.94 0.009 250);
+  --color-line: oklch(0.80 0.014 250);
+  --color-line-soft: oklch(0.885 0.01 250);
+  --color-line-strong: oklch(0.56 0.02 250);
+  --color-ink: oklch(0.21 0.035 255);
+  --color-muted: oklch(0.36 0.028 255);
+  --color-faint: oklch(0.47 0.022 255);
   --color-brand: oklch(0.292 0.035 252.3);
-  --color-accent: oklch(0.82 0.16 75);
-  --color-accent-dim: oklch(0.82 0.16 75 / 0.16);
-  --color-on-accent: oklch(0.18 0.02 75);
-  --color-focus: oklch(0.82 0.16 75);
-  --color-plus: oklch(0.8 0.13 155);
-  --color-minus: oklch(0.74 0.14 28);
-  --color-sky: oklch(0.8 0.1 230);
-  --color-paper: oklch(0.985 0.003 255);
-  --color-paper-ink: oklch(0.2 0.012 255);
-  --color-paper-muted: oklch(0.42 0.012 255);
-  --color-paper-line: oklch(0.86 0.006 255);
+  --color-accent: oklch(0.80 0.16 72);
+  --color-accent-ink: oklch(0.49 0.115 62);
+  --color-accent-dim: oklch(0.80 0.16 72 / 0.2);
+  --color-on-accent: oklch(0.19 0.03 75);
+  --color-focus: oklch(0.21 0.035 255);
+  --color-plus: oklch(0.45 0.11 155);
+  --color-minus: oklch(0.49 0.17 28);
+  --color-sky: oklch(0.47 0.11 240);
+  --color-night: oklch(0.155 0.012 255);
+  --color-night-ink: oklch(0.96 0.004 255);
+  --color-paper: oklch(0.992 0.003 250);
+  --color-paper-ink: oklch(0.21 0.035 255);
+  --color-paper-muted: oklch(0.36 0.028 255);
+  --color-paper-line: oklch(0.80 0.014 250);
+  --grid-ink: oklch(0.21 0.035 255 / 0.07);
 
-  --font-display: "Bricolage Grotesque", "Bricolage Fallback", sans-serif;
-  --font-text: "Bricolage Grotesque", "Bricolage Fallback", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: "Bricolage Grotesque", "Bricolage Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-text: "Bricolage Grotesque", "Bricolage Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Bricolage Grotesque", "Bricolage Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-read: "Newsreader", "Newsreader Fallback", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-mono: var(--font-label); /* retired name, kept so an old rule never falls back to a real monospace */
+  --label-cut: "opsz" 14, "wdth" 78;
+  --label-weight: 560;
 
-  --text-label: 0.8125rem;
+  --text-label: 0.875rem;
   --text-sm: 1rem;
   --text-base: 1.125rem;
+  --text-read: 1.25rem;
   --text-lead: 1.375rem;
   --text-h3: 1.875rem;
   --text-h2: 2.75rem;
@@ -36,10 +49,13 @@
   --leading-display: 0.98;
   --leading-tight: 1.15;
   --leading-body: 1.45;
+  --leading-read: 1.6;
   --tracking-display: -0.025em;
-  --tracking-mono: 0.02em;
+  --tracking-mono: 0.005em;
+  --tracking-label: 0.005em;
   --measure-body: 62ch;
   --measure-wide: 76ch;
+  --measure-read: 66ch;
 
   --spacing-1: 4px;
   --spacing-2: 8px;
@@ -60,4 +76,41 @@
   --duration-enter: 280ms;
   --ease-enter: cubic-bezier(0.2, 0, 0, 1);
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* short aliases read by /assets/pwp-article.css */
+  --canvas: var(--color-canvas); --surface: var(--color-surface); --raised: var(--color-raised);
+  --line: var(--color-line); --line-soft: var(--color-line-soft); --line-strong: var(--color-line-strong);
+  --ink: var(--color-ink); --muted: var(--color-muted); --faint: var(--color-faint);
+  --lantern: var(--color-accent); --lantern-ink: var(--color-accent-ink); --on-lantern: var(--color-on-accent);
+  --plus: var(--color-plus); --minus: var(--color-minus);
+}
+
+/* A night plate: the same street after dark. Only for things that run (the hero field, live instruments,
+   calculators, dialogs, the sticky offer bar) and for the footer. */
+.night {
+  color-scheme: dark;
+  --color-canvas: oklch(0.155 0.012 255);
+  --color-surface: oklch(0.195 0.014 255);
+  --color-raised: oklch(0.235 0.016 255);
+  --color-line: oklch(0.32 0.014 255);
+  --color-line-soft: oklch(0.255 0.012 255);
+  --color-line-strong: oklch(0.5 0.014 255);
+  --color-ink: oklch(0.96 0.004 255);
+  --color-muted: oklch(0.78 0.01 255);
+  --color-faint: oklch(0.68 0.012 255);
+  --color-accent: oklch(0.82 0.16 75);
+  --color-accent-ink: oklch(0.82 0.16 75);
+  --color-accent-dim: oklch(0.82 0.16 75 / 0.16);
+  --color-focus: oklch(0.82 0.16 75);
+  --color-plus: oklch(0.8 0.13 155);
+  --color-minus: oklch(0.74 0.14 28);
+  --color-sky: oklch(0.8 0.1 230);
+  --grid-ink: oklch(0.96 0.004 255 / 0.06);
+  --canvas: var(--color-canvas); --surface: var(--color-surface); --raised: var(--color-raised);
+  --line: var(--color-line); --line-soft: var(--color-line-soft); --line-strong: var(--color-line-strong);
+  --ink: var(--color-ink); --muted: var(--color-muted); --faint: var(--color-faint);
+  --lantern: var(--color-accent); --lantern-ink: var(--color-accent-ink); --on-lantern: var(--color-on-accent);
+  --plus: var(--color-plus); --minus: var(--color-minus);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
 }
