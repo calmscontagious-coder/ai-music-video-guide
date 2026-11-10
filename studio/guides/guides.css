@@ -117,7 +117,7 @@ p { margin: 0 0 var(--spacing-4); max-width: var(--measure-body); }
 .crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0 var(--spacing-2); margin: 0 0 var(--spacing-6); padding: 0; font-family: var(--font-mono); font-size: var(--text-label); letter-spacing: var(--tracking-mono); color: var(--color-faint); }
 .crumbs li { display: inline-flex; align-items: center; gap: var(--spacing-2); min-width: 0; }
 .crumbs li + li::before { content: "/"; color: var(--color-line); }
-.crumbs a { display: inline-flex; align-items: center; min-height: 32px; color: var(--color-muted); text-decoration: none; }
+.crumbs a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; color: var(--color-muted); text-decoration: none; }
 .crumbs a:hover { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-accent); }
 .crumbs [aria-current] { color: var(--color-faint); overflow-wrap: anywhere; }
 

@@ -22,6 +22,20 @@
     addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(upd); }, { passive: true });
     upd();
   }
+  /* tables that scroll sideways: reachable by keyboard and named after the heading above them (WCAG 2.1.1, 4.1.2) */
+  var scrollers = [].slice.call(d.querySelectorAll('.tscroll, main div[style*="overflow-x:auto"]'));
+  var nameFor = function (el) {
+    for (var n = el.previousElementSibling; n; n = n.previousElementSibling) { if (/^H[2-4]$/.test(n.tagName)) return n.textContent.replace(/\s+/g, ' ').trim(); }
+    return '';
+  };
+  var markScrollers = function () {
+    scrollers.forEach(function (el) {
+      if (el.scrollWidth > el.clientWidth + 1) {
+        if (!el.hasAttribute('tabindex')) { el.setAttribute('tabindex', '0'); el.setAttribute('role', 'region'); var t = nameFor(el); el.setAttribute('aria-label', (t ? 'Table: ' + t + (/[.?!]$/.test(t) ? ' ' : '. ') : 'Table. ') + 'Scrolls sideways.'); }
+      } else if (el.getAttribute('role') === 'region') { el.removeAttribute('tabindex'); el.removeAttribute('role'); el.removeAttribute('aria-label'); }
+    });
+  };
+  if (scrollers.length) { markScrollers(); addEventListener('resize', markScrollers, { passive: true }); }
   var links = [].slice.call(d.querySelectorAll('.toc a[href^="#"]'));
   if (links.length) {
     var heads = links.map(function (a) { return d.getElementById(decodeURIComponent(a.getAttribute('href').slice(1))); });

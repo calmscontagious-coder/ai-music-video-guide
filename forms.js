@@ -10,6 +10,7 @@
   Array.prototype.forEach.call(document.querySelectorAll("form[data-ml]"), function (form) {
     var status = form.querySelector("[data-ml-status]"), done = form.querySelector("[data-ml-done]"), btn = form.querySelector("button[type=submit]");
     var label = btn ? btn.textContent : "";
+    form.noValidate = true; /* written messages below replace the browser bubbles; without script the browser's own checks still run */
     function fields() { return Array.prototype.slice.call(form.querySelectorAll("[data-ml-check]")); }
     function ok(el) {
       if (el.type === "email") return EMAIL.test(el.value.trim());

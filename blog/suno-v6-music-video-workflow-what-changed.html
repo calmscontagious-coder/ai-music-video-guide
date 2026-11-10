@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/tokens.css?v=7c697f78">
-<link rel="stylesheet" href="/assets/pwp-article.css?v=ea24ee91">
-<script src="/assets/pwp-article.js?v=612e33bf" defer></script>
+<link rel="stylesheet" href="/assets/pwp-article.css?v=e433b575">
+<script src="/assets/pwp-article.js?v=54676305" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Suno v6 and Your Music Video Workflow: What Actually Changed", "description": "Suno v6 retired every older model on September 9, 2026. What that changes when you turn a Suno song into a music video, with dated prices and sources.", "wordCount": 2573, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/suno-v6-music-video-workflow-what-changed.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Suno v6 cost more credits than v5.5 did?", "acceptedAnswer": {"@type": "Answer", "text": "No. Suno's v6 FAQ says a generation still produces two songs for 10 credits, the same as before. Two things raise the price: feeding the prompt many images or video clips, and turning on Max Mode, which Suno recommends for songs over two minutes and for covers that must stay close to the source."}}, {"@type": "Question", "name": "Can I still use a song I made on Suno v4.5 or v5?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Songs made on retired models stay in your library and you can still play, share, remaster and cover them, and download them against your monthly cap. What you can't do is generate a new take on the old model. Any new iteration runs on v6, so the downloaded file is the only copy of that older sound you'll have."}}, {"@type": "Question", "name": "Does Suno v6 generate music videos?", "acceptedAnswer": {"@type": "Answer", "text": "No. v6 can take a video, an image or a voice memo as an input and write a song to match, but it outputs audio only. Neither the launch post nor the v6 FAQ mentions video output. You still need a separate video generator such as Seedance and an editor to cut the shots to the track."}}, {"@type": "Question", "name": "How many downloads do I get on Suno Pro after September 3, 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Twenty per month on Pro, sixty per month on Premier, and up to seven lifetime trial downloads on Free accounts opened before that date, while newer Free accounts only get occasional trials. The caps apply to every download from September 3, 2026 onward, including older songs. Premier subscribers working inside Suno Studio aren't limited, and extra downloads can be bought once you pass your allowance."}}, {"@type": "Question", "name": "Is Seedance the only video tool that works with a Suno song?", "acceptedAnswer": {"@type": "Answer", "text": "No. Any generator that accepts an audio reference or lets you cut to a track will work, and plenty of people pair Suno with Kling, Veo or Runway. We use Seedance because its multi-shot output and synchronized sound suit music videos, but it doesn't always follow reference audio and sung lip-sync is inconsistent."}}, {"@type": "Question", "name": "Will DistroKid reject a Suno v6 song?", "acceptedAnswer": {"@type": "Answer", "text": "Not for being AI-made. DistroKid accepts AI music if you own all the rights, don't impersonate anyone, don't spam uploads and don't infringe. You'll need a permitted download from a paid Suno plan, and you'll fill in DistroKid's AI credits form at upload. DistroKid and streaming services can still remove releases; DistroKid pulled a small number after Universal sued it in September 2026."}}]}</script>
@@ -32,7 +32,7 @@
 <article>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">suno v6</span></li></ol></nav>
 <h1>Suno v6 and Your Music Video Workflow: What Actually Changed</h1>
-<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> October 21, 2026</span><span>12 min read</span></p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide</span><span><b>Updated</b> October 21, 2026</span><span>12 min read</span></p>
 <aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
 <p class="short-answer"><strong>Quick answer:</strong> Suno v6 changes how you make the song, not how you make the video. v6 accepts video as an input reference but outputs audio only, so the video step still lives in a tool like Seedance. What did change: every older Suno model was retired on September 9, 2026, and downloads are now capped.</p>
 
@@ -78,9 +78,9 @@
 
 <p>Here is the plan picture as Suno's pricing page showed it when we read it on October 21, 2026.</p>
 
-<div class="tscroll"><table>
+<div class="tscroll"><table><caption class="vh">Table: Why do the new download limits matter more than the model?</caption>
 <thead>
-<tr><th>Plan</th><th>Price (monthly / yearly billing)</th><th>Credits</th><th>Downloads</th><th>Commercial rights</th><th>Models</th></tr>
+<tr><th scope="col">Plan</th><th scope="col">Price (monthly / yearly billing)</th><th scope="col">Credits</th><th scope="col">Downloads</th><th scope="col">Commercial rights</th><th scope="col">Models</th></tr>
 </thead>
 <tbody>
 <tr><td>Free</td><td>$0</td><td>50 per day</td><td>Up to 7 lifetime trial downloads if the account predates Sept 3, 2026; occasional trials after</td><td>No</td><td>v6-mini</td></tr>
@@ -138,9 +138,9 @@
 
 <p>Seedance pricing depends on where you buy it. The per-second API rates come from a <a href="https://camclo3d.com/blog/seedance-pricing">pricing roundup</a> dated September 29, 2026 that checked each vendor's own page; the DistroKid, Suno and Seeddance figures are from those companies' pricing pages as we read them on October 21, 2026.</p>
 
-<div class="tscroll"><table>
+<div class="tscroll"><table><caption class="vh">Table: What does the whole stack cost in October 2026?</caption>
 <thead>
-<tr><th>Tool</th><th>Price</th><th>What you get</th><th>Note</th></tr>
+<tr><th scope="col">Tool</th><th scope="col">Price</th><th scope="col">What you get</th><th scope="col">Note</th></tr>
 </thead>
 <tbody>
 <tr><td>Suno Pro</td><td>$10 per month, or $8 billed yearly</td><td>2,500 credits, 20 downloads, commercial rights, v6 and v6-wild</td><td>Enough for most monthly release schedules</td></tr>

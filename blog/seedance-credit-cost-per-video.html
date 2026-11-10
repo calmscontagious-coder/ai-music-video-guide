@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/tokens.css?v=7c697f78">
-<link rel="stylesheet" href="/assets/pwp-article.css?v=ea24ee91">
-<script src="/assets/pwp-article.js?v=612e33bf" defer></script>
+<link rel="stylesheet" href="/assets/pwp-article.css?v=e433b575">
+<script src="/assets/pwp-article.js?v=54676305" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c423c3d6462e4058a5b61a980215f080"}'></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Seedance Credit Cost Per Video: What a Finished Minute Actually Costs", "description": "Verified 2026 per-second rates, the token formula behind them, and what a finished minute of Seedance video really costs once you count the retakes.", "wordCount": 1866, "author": {"@type": "Organization", "name": "AI Music Video Guide", "url": "https://purposewithpresence.com/about.html"}, "publisher": {"@type": "Organization", "name": "Purpose with Presence", "url": "https://purposewithpresence.com/"}, "datePublished": "2026-08-29", "dateModified": "2026-08-29", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://purposewithpresence.com/blog/seedance-credit-cost-per-video.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many credits does one Seedance video cost?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single answer, because credits are a per-platform currency. The same 8-second 720p clip has been measured drawing 52 credits on one service and 3,520 on another, landing about a dollar apart in real money. Convert to dollars per second before comparing anything, and check the quote your interface shows before each render."}}, {"@type": "Question", "name": "Is Seedance cheaper than Veo or Runway for music videos?", "acceptedAnswer": {"@type": "Answer", "text": "Not on raw price. Veo 3.1's Lite tier runs $0.05 per second with audio at 720p, against $0.3034 for Seedance 2.0 standard. Seedance earns its rate through native synchronised audio, multi-shot cuts, and up to 9 image, 3 video and 3 audio references per generation. If your project needs none of that, cheaper models will do the job."}}, {"@type": "Question", "name": "Does turning off audio reduce the Seedance credit cost?", "acceptedAnswer": {"@type": "Answer", "text": "No. Seedance 2.0 generates picture and sound in a single pass and bills the same rate whether the generate_audio parameter is on or off. There is no saving available, so leave it enabled and take the soundtrack. The settings that genuinely move the bill are resolution first, then duration, then speed tier."}}, {"@type": "Question", "name": "What is the cheapest way to make a full minute of Seedance video?", "acceptedAnswer": {"@type": "Answer", "text": "Draft at 480p, finish at 720p. Two 480p drafts plus one 720p final costs $4.68 for an 8-second shot, against $7.28 for three 720p takes. Across the 7.5 shots in a minute that is $35.08 versus $54.61, a 36% saving for a workflow change rather than a platform change."}}, {"@type": "Question", "name": "How long can a single Seedance clip be?", "acceptedAnswer": {"@type": "Answer", "text": "Seedance 2.0 renders 4 to 15 seconds per generation, with an auto setting that picks a length to suit the content. Seedance 2.5 doubles the ceiling to 30 seconds in a single pass and accepts far more reference inputs. Anything longer than the ceiling has to be stitched from multiple renders."}}]}</script>
@@ -32,7 +32,7 @@
 <article>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">seedance credit cost</span></li></ol></nav>
 <h1>Seedance Credit Cost Per Video: What a Finished Minute Actually Costs</h1>
-<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> August 29, 2026</span><span>8 min read</span></p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide</span><span><b>Updated</b> August 29, 2026</span><span>8 min read</span></p>
 <aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
 <p class="short-answer"><strong>Quick answer:</strong> On fal's public API, Seedance 2.0 runs $0.3034 per second at 720p standard, $0.2419 on the fast tier, and roughly $0.14 at 480p. That makes 60 raw seconds cost $14.51 to $18.20 &mdash; but a finished minute, after the takes you throw away, lands nearer $35 to $55.</p>
 
@@ -46,7 +46,7 @@
 
 <p>Here is the published rate card on <a href="https://fal.ai/models/bytedance/seedance-2.0/text-to-video">fal's Seedance 2.0 endpoint</a>, alongside the newer 2.5 model:</p>
 
-<div class="tscroll"><table>
+<div class="tscroll"><table><caption class="vh">Table: What does one second of Seedance video actually cost?</caption>
 <tr><th>Model and tier</th><th>480p</th><th>720p</th><th>Max clip length</th></tr>
 <tr><td>Seedance 2.0 standard (text to video)</td><td>~$0.141/s</td><td>$0.3034/s</td><td>15s</td></tr>
 <tr><td>Seedance 2.0 fast (all endpoints)</td><td>&mdash;</td><td>$0.2419/s</td><td>15s</td></tr>
@@ -74,7 +74,7 @@
 
 <p>Raw minute costs are easy: multiply the per-second rate by 60. The honest number needs a second multiplier, the take ratio, and three attempts per keeper is a conservative figure for anything with a specific creative brief. Two is optimistic. Five is normal when you are chasing a particular camera move or holding a character's face steady across shots.</p>
 
-<div class="tscroll"><table>
+<div class="tscroll"><table><caption class="vh">Table: The take ratio nobody budgets for</caption>
 <tr><th>Route</th><th>60 raw seconds</th><th>Finished minute at 3 takes per keeper</th></tr>
 <tr><td>Seedance 2.0, 480p standard</td><td>$8.44</td><td>$25.31</td></tr>
 <tr><td>Seedance 2.0, 720p fast</td><td>$14.51</td><td>$43.54</td></tr>
@@ -93,7 +93,7 @@
 
 <p>That comparison comes from a vendor blog, so read the ranking with appropriate suspicion &mdash; the platform that published it comes out on top. The credit counts themselves are checkable, and they make the structural point better than any neutral source we found:</p>
 
-<div class="tscroll"><table>
+<div class="tscroll"><table><caption class="vh">Table: Why does the same clip cost different credits on different platforms?</caption>
 <tr><th>Platform</th><th>Cheapest qualifying plan</th><th>Credits in plan</th><th>Credits per 8s 720p clip</th><th>Cost per clip</th></tr>
 <tr><td>Dreamina</td><td>$19</td><td>1,575</td><td>296</td><td>$3.57</td></tr>
 <tr><td>Higgsfield</td><td>$49</td><td>1,000</td><td>52</td><td>$2.55</td></tr>
