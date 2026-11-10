@@ -47,14 +47,14 @@ blockquote{background:oklch(0.82 0.16 75 / .07);border-radius:0 14px 14px 0}
 <article>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">AI video character consistency</span></li></ol></nav>
 <h1>AI Video Character Consistency: Keep the Same Face in Every Shot (2026 Guide)</h1>
-<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> August 29, 2026</span><span>4 min read</span></p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide</span><span><b>Updated</b> August 29, 2026</span><span>4 min read</span></p>
 <aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
 <p class="short-answer"><strong>Quick answer:</strong> AI video models don't remember your character between generations — every clip is a fresh roll of the dice unless you anchor it. The fix that works on every model: lock 2–4 reference images of your character, reuse the exact same descriptor line in every prompt, and keep lighting and camera distance consistent between shots. The 2026 model generation finally made this reliable — here's what each one offers.</p>
 <h2 id="why-does-your-ai-character-look-different-in-every-clip">Why does your AI character look different in every clip?</h2>
 <p>The community calls it <em>character drift</em>: even with an identical prompt, models subtly change facial features, hair, and proportions between generations — and it compounds as clips get longer or scenes change. <a href="https://magichour.ai/blog/how-to-keep-characters-consistent-in-ai-video" rel="noopener" target="_blank">Magic Hour's cross-model consistency study</a> documents the effect across Seedance, Kling, Veo, Runway, Pika, and Luma — it's not a bug in your prompting, it's how diffusion models work without an identity anchor.</p>
 <h2 id="which-ai-video-model-keeps-characters-most-consistent-in-202">Which AI video model keeps characters most consistent in 2026?</h2>
 <p>Kling 3.0 has the most complete consistency toolkit: its Elements system accepts 1–4 tagged reference images, and Character ID locks the face across shots. Seedance 2.0's reference system reports roughly 95% cross-shot consistency when the same references are reused, and Veo 3.1 accepts up to three reference images. All three are workable — the deciding factor is disciplined reference reuse on your side.</p>
-<div style="overflow-x:auto"><table>
+<div style="overflow-x:auto"><table><caption class="vh">Table: Which AI video model keeps characters most consistent in 2026?</caption>
 <tr><th>Model</th><th>Consistency system</th><th>How it works</th></tr>
 <tr><td>Kling 3.0</td><td>Elements + Character ID</td><td>Upload 1–4 reference images, tag each as character / object / scene; Character ID locks the face across shots, AI Multi-Shot generates multiple angles of the same character in one pass</td></tr>
 <tr><td>Seedance 2.0</td><td>Reference-image system</td><td>Dedicated character reference input; reported ~95% cross-shot consistency when the same references are reused</td></tr>
@@ -114,10 +114,10 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
 <script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --><!-- geo:exit-modal:start -->
-<div id="pwp-cap" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(8,8,10,.72);align-items:center;justify-content:center;padding:20px">
+<div id="pwp-cap" role="dialog" aria-modal="true" aria-labelledby="pwp-cap-t" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(8,8,10,.72);align-items:center;justify-content:center;padding:20px">
   <div style="max-width:460px;width:100%;background:#14141a;border:1px solid rgba(244,242,238,.14);border-radius:18px;padding:26px 24px 18px;position:relative">
     <button id="pwp-cap-x" aria-label="Close" style="position:absolute;top:10px;right:12px;background:none;border:0;color:#8b8b95;font-size:26px;line-height:1;cursor:pointer">&times;</button>
-    <p style="margin:0 0 6px;font-weight:700;font-size:1.12rem;color:#f4f2ee">Before you go &mdash; the Director&rsquo;s Guide</p>
+    <p id="pwp-cap-t" style="margin:0 0 6px;font-weight:700;font-size:1.12rem;color:#f4f2ee">Before you go &mdash; the Director&rsquo;s Guide</p>
     <p style="margin:0 0 14px;font-size:.93rem;color:#a9a9b3">The five-part scene template, the camera vocabulary the engines actually obey, and a note whenever tool pricing changes. One email a month. Unsubscribe anytime.</p>
     <div class="ml-embedded" data-form="gDc4Ah"></div>
   </div>
@@ -128,8 +128,9 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
   if(!el) return;
   function seen(){try{return localStorage.getItem(KEY)}catch(e){return '1'}}
   function mark(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}}
-  function show(){ if(seen())return; if(window.pwpLoadML)window.pwpLoadML(); el.style.display='flex'; mark(); }
-  function hide(){ el.style.display='none'; }
+  var back=null;
+  function show(){ if(seen())return; if(window.pwpLoadML)window.pwpLoadML(); back=document.activeElement; el.style.display='flex'; mark(); var x=document.getElementById('pwp-cap-x'); if(x)x.focus(); }
+  function hide(){ if(el.style.display==='none')return; el.style.display='none'; if(back&&back.focus)back.focus(); }
   document.getElementById('pwp-cap-x').addEventListener('click',hide);
   el.addEventListener('click',function(e){ if(e.target===el) hide(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });

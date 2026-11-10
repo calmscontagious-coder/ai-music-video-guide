@@ -688,3 +688,46 @@ aside.related li{margin:0;padding:12px 0;border-top:1px solid var(--line-soft);f
 }
 @media print{.site-head,.toc,#ctab,.studio-note{display:none}}
 /* end site bridge */
+
+/* ===== 2026-11-09 check: tap targets and keyboard reach (no visual direction here) ===== */
+#ctab a[href="/disclosure.html"]{display:inline-flex;align-items:center;min-height:24px;text-decoration:underline}
+aside.related li a,.next-reads a{display:inline-flex;align-items:center;min-height:44px}
+aside.related li{padding:0}
+article li>a:only-child,.page li>a:only-child{display:inline-block;padding-block:3px}
+.ml-embedded input.form-control,.ml-embedded button.primary,.ml-embedded button[type="submit"]{min-height:44px!important}
+.tscroll:focus-visible,div[style*="overflow-x:auto"]:focus-visible{outline:2px solid var(--lantern);outline-offset:2px}
+
+/* ===== 2026-11-09: section hub structure (fitness). Existing tokens and components only. ===== */
+/* jump links under the disclosure */
+.jump{margin:0 0 40px}
+.jump ul{display:flex;flex-wrap:wrap;gap:0 24px;list-style:none;margin:0;padding:0;border-block:1px solid var(--line-soft)}
+.jump li{margin:0}
+.jump a{display:inline-flex;align-items:center;min-height:48px;font-family:var(--f-mono);font-size:13px;color:var(--muted);text-decoration:none}
+.jump a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--lantern)}
+.page h2[id]{scroll-margin-top:96px}
+/* notes around a table */
+p.paid-note{margin:0 0 12px;max-width:68ch}
+p.tnote{margin:-12px 0 32px;font-size:15px;line-height:1.55;color:var(--faint);max-width:68ch}
+/* guides grouped by topic; the first, empty grid is where the publish step drops new cards */
+.topic,.latest{margin:40px 0 0}
+.page .topic>h3,.page .latest>h3{margin:0 0 8px;font-size:26px;line-height:1.15}
+.topic-blurb{margin:0 0 20px;max-width:62ch;font-size:16px;line-height:1.55;color:var(--muted)}
+.topic .grid,.latest .grid,.grid[data-kind]{margin:0 0 8px}
+.latest:not(:has(.card)){display:none}
+.card .label{order:-1}
+/* a table that becomes one card per row on a phone (the cells carry data-label; roles keep it a table for screen readers) */
+table.stack-sm tbody th{font-weight:620;color:var(--ink);text-align:left;padding:14px 16px;vertical-align:top;border-top:1px solid var(--line-soft)}
+table.stack-sm tbody tr:first-child>th{border-top:0}
+@media (max-width:760px){
+  .tscroll:has(>table.stack-sm){overflow:visible;border:0}
+  :is(.tscroll,div) table.stack-sm{display:block;min-width:0!important}
+  table.stack-sm thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  table.stack-sm tbody{display:grid;gap:12px}
+  table.stack-sm tbody tr{display:block;padding:18px 18px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-panel)}
+  table.stack-sm tbody tr>*{display:block;position:static!important;padding:0!important;border:0!important;background:none!important;font-size:16px!important}
+  table.stack-sm tbody th{margin:0 0 12px;font-size:19px!important;line-height:1.25}
+  table.stack-sm tbody th a{display:inline-block;padding-block:4px}
+  table.stack-sm tbody td{display:grid!important;grid-template-columns:minmax(0,9.5em) minmax(0,1fr);column-gap:12px;padding:8px 0!important;border-top:1px solid var(--line-soft)!important}
+  table.stack-sm tbody td::before{content:attr(data-label);font-family:var(--f-mono);font-size:13px;line-height:1.7;color:var(--faint)}
+}
+@media (max-width:420px){table.stack-sm tbody td{grid-template-columns:minmax(0,1fr)}table.stack-sm tbody td::before{line-height:1.3}}

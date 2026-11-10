@@ -32,7 +32,7 @@
 <article>
 <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">AI video art style prompts</span></li></ol></nav>
 <h1>AI Video Art Style Prompts: 22 Copy-Paste Looks for Music Videos</h1>
-<p class="byline"><span><b>By</b> the AI Music Video Guide team</span><span><b>Updated</b> August 29, 2026</span><span>7 min read</span></p>
+<p class="byline"><span><b>By</b> the AI Music Video Guide</span><span><b>Updated</b> August 29, 2026</span><span>7 min read</span></p>
 <aside class="disclosure" aria-label="Disclosure"><p class="dl-label">how this page earns</p><p>This post contains affiliate links — if you sign up through them we may earn a commission at no extra cost to you (<a href="/disclosure.html">disclosure</a>). Researched and edited for accuracy with AI assistance.</p></aside>
 <p class="short-answer"><strong>Quick answer:</strong> A style prompt is the short block of aesthetic language — film stock, animation medium, art movement, or digital-era texture — appended to every shot prompt in an AI music video. Pick ONE style universe per video, describe it in concrete terms, and repeat the same block in every generation so the look doesn't drift. Below: 22 copy-paste blocks across four families, plus notes on how Seedance, Kling, and Veo interpret them.</p>
 
@@ -102,7 +102,7 @@
 
 <p>The blocks work across models; each engine has a different strongest lever.</p>
 
-<div style="overflow-x:auto"><table>
+<div style="overflow-x:auto"><table><caption class="vh">Table: How do Seedance, Kling, and Veo each handle style prompts?</caption>
 <tr><th>Model</th><th>How style is controlled</th><th>Practical tip</th></tr>
 <tr><td>Seedance 2.0</td><td>Text style block plus reference files (images, clips, audio) called out with @tags in the prompt</td><td>Feed it a still image already IN your target style; image-to-video inherits the look</td></tr>
 <tr><td>Kling</td><td>Text keywords plus a reusable style reference image</td><td>Repeat identical style keywords in every prompt; reuse one style reference across the sequence</td></tr>
@@ -161,10 +161,10 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
 <script>(function(){var q=new URLSearchParams(location.search),u=[];q.forEach(function(v,k){if(/^utm_(source|medium|campaign|content)$/.test(k))u.push([k,v.slice(0,60)])});if(!u.length)return;document.querySelectorAll('a[href^="/go/"]').forEach(function(a){var x=new URL(a.getAttribute('href'),location.origin);u.forEach(function(p){x.searchParams.set(p[0],p[1])});a.setAttribute('href',x.pathname+x.search)})})()</script>
 <script>(function(){try{var h=localStorage.getItem('ctab_hide');if(h&&Date.now()-h<6048e5)return}catch(e){}var s=!1;addEventListener('scroll',function(){if(s)return;var d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight);if(p>.25){s=!0;document.getElementById('ctab').style.bottom='0px'}},{passive:!0})})()</script>
 <!-- ctabar:end --><!-- geo:exit-modal:start -->
-<div id="pwp-cap" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(8,8,10,.72);align-items:center;justify-content:center;padding:20px">
+<div id="pwp-cap" role="dialog" aria-modal="true" aria-labelledby="pwp-cap-t" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(8,8,10,.72);align-items:center;justify-content:center;padding:20px">
   <div style="max-width:460px;width:100%;background:#14141a;border:1px solid rgba(244,242,238,.14);border-radius:18px;padding:26px 24px 18px;position:relative">
     <button id="pwp-cap-x" aria-label="Close" style="position:absolute;top:10px;right:12px;background:none;border:0;color:#8b8b95;font-size:26px;line-height:1;cursor:pointer">&times;</button>
-    <p style="margin:0 0 6px;font-weight:700;font-size:1.12rem;color:#f4f2ee">Before you go &mdash; the Director&rsquo;s Guide</p>
+    <p id="pwp-cap-t" style="margin:0 0 6px;font-weight:700;font-size:1.12rem;color:#f4f2ee">Before you go &mdash; the Director&rsquo;s Guide</p>
     <p style="margin:0 0 14px;font-size:.93rem;color:#a9a9b3">The five-part scene template, the camera vocabulary the engines actually obey, and a note whenever tool pricing changes. One email a month. Unsubscribe anytime.</p>
     <div class="ml-embedded" data-form="gDc4Ah"></div>
   </div>
@@ -175,8 +175,9 @@ w.pwpLoadML=load;w.addEventListener('scroll',chk,{passive:true});
   if(!el) return;
   function seen(){try{return localStorage.getItem(KEY)}catch(e){return '1'}}
   function mark(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}}
-  function show(){ if(seen())return; if(window.pwpLoadML)window.pwpLoadML(); el.style.display='flex'; mark(); }
-  function hide(){ el.style.display='none'; }
+  var back=null;
+  function show(){ if(seen())return; if(window.pwpLoadML)window.pwpLoadML(); back=document.activeElement; el.style.display='flex'; mark(); var x=document.getElementById('pwp-cap-x'); if(x)x.focus(); }
+  function hide(){ if(el.style.display==='none')return; el.style.display='none'; if(back&&back.focus)back.focus(); }
   document.getElementById('pwp-cap-x').addEventListener('click',hide);
   el.addEventListener('click',function(e){ if(e.target===el) hide(); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });

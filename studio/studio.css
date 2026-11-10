@@ -371,3 +371,6 @@ p { margin: 0 0 var(--spacing-4); max-width: var(--measure-body); }
 @view-transition { navigation: auto; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 260ms; }
 @media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+/* tap targets: 44 px in both directions for the short nav and footer words (2026-11-09 check) */
+.nav a, .site-foot ul a { min-width: 44px; }
