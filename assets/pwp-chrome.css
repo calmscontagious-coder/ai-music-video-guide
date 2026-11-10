@@ -2,14 +2,15 @@
    stylesheet (studio guides use guides.css). Same rules as pwp-article.css, scoped to .site-head and
    .site-foot so they win over the page's older header/footer rules. LQ-139, 2026-11-07. */
 :root{
-  --canvas:oklch(0.155 0.012 255);--surface:oklch(0.195 0.014 255);--raised:oklch(0.235 0.016 255);
-  --line:oklch(0.32 0.014 255);--line-soft:oklch(0.255 0.012 255);
-  --ink:oklch(0.96 0.004 255);--muted:oklch(0.78 0.01 255);--faint:oklch(0.68 0.012 255);
-  --lantern:oklch(0.82 0.16 75);
-  --f-text:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  /* colours come from /tokens.css (Living Light); the values here are fallbacks for a page that has not loaded it */
+  --canvas:#0a0a1f;--surface:rgb(22 18 52 / .68);--raised:rgb(48 40 100 / .74);
+  --line:rgb(255 255 255 / .24);--line-soft:rgb(255 255 255 / .13);
+  --ink:#fff8f0;--muted:#ece6f5;--faint:#dbd3ec;
+  --lantern:#c6ff3a;--plus:#c6ff3a;--minus:#ffc2be;
+  --f-text:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"DM Sans",ui-sans-serif,system-ui,sans-serif;
   --t1:120ms;--t2:200ms;--t3:280ms;--ease:cubic-bezier(.2,.7,.2,1);
-  --gut:32px;--colgap:24px;--r-panel:2px;--r-ctl:4px;
+  --gut:32px;--colgap:24px;--r-panel:22px;--r-ctl:14px;
 }
 .site-head .wrap,.site-foot .wrap{width:100%;max-width:1240px;margin:0 auto;padding-inline:var(--gut)}
 .site-head{position:sticky;top:0;z-index:30;background:var(--canvas);border-bottom:1px solid var(--line);font-family:var(--f-text)}

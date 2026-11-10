@@ -1,43 +1,55 @@
-/* Purpose with Presence home v2 tokens ("the workshop bench", see DIRECTION.md). Every colour, size and duration on the home resolves here. */
+/* Purpose with Presence tokens: direction A, "Living Light" (2026-11-10). Deep ink ground, slow aurora in violet,
+   coral, lime and gold, dark glass panels, Unbounded for display and DM Sans for everything read. The only source of
+   colour, type, space, radius and motion; /studio/tokens.css is a byte copy. Components live in /assets/pwp-light.css.
+   Contrast rule: the aurora never lifts the ground above relative luminance 0.10, so ink, muted and faint all hold
+   4.5:1 over the moving colour; panels are dark glass, which only lowers it. */
 :root {
-  --color-canvas: oklch(0.155 0.012 255);
-  --color-surface: oklch(0.195 0.014 255);
-  --color-raised: oklch(0.235 0.016 255);
-  --color-line: oklch(0.32 0.014 255);
-  --color-line-soft: oklch(0.255 0.012 255);
-  --color-ink: oklch(0.96 0.004 255);
-  --color-muted: oklch(0.78 0.01 255);
-  --color-faint: oklch(0.68 0.012 255);
-  --color-brand: oklch(0.292 0.035 252.3);
-  --color-accent: oklch(0.82 0.16 75);
-  --color-accent-dim: oklch(0.82 0.16 75 / 0.16);
-  --color-on-accent: oklch(0.18 0.02 75);
-  --color-focus: oklch(0.82 0.16 75);
-  --color-plus: oklch(0.8 0.13 155);
-  --color-minus: oklch(0.74 0.14 28);
-  --color-sky: oklch(0.8 0.1 230);
+  color-scheme: dark;
+  --color-canvas: #0a0a1f;
+  --color-surface: rgb(22 18 52 / 0.68);
+  --color-raised: rgb(48 40 100 / 0.74);
+  --color-line: rgb(255 255 255 / 0.24);
+  --color-line-soft: rgb(255 255 255 / 0.13);
+  --color-ink: #fff8f0;
+  --color-muted: #ece6f5;
+  --color-faint: #dbd3ec;
+  --color-brand: #8b5cf6;
+  --color-accent: #c6ff3a;
+  --color-accent-dim: rgb(198 255 58 / 0.16);
+  --color-on-accent: #0b0820;
+  --color-focus: #c6ff3a;
+  --color-plus: #c6ff3a;
+  --color-minus: #ffc2be;
+  --color-sky: #9fe8ff;
+  --color-violet: #8b5cf6;
+  --color-coral: #ff5a5f;
+  --color-lime: #c6ff3a;
+  --color-gold: #ffc93c;
+  --color-ice: #5ee7ff;
+  --color-glass-edge: rgb(255 255 255 / 0.26);
+  --spectrum: #ff9a94, #ffc93c, #c6ff3a, #7fecff, #b9a2ff;
   --color-paper: oklch(0.985 0.003 255);
   --color-paper-ink: oklch(0.2 0.012 255);
   --color-paper-muted: oklch(0.42 0.012 255);
   --color-paper-line: oklch(0.86 0.006 255);
 
-  --font-display: "Bricolage Grotesque", "Bricolage Fallback", sans-serif;
-  --font-text: "Bricolage Grotesque", "Bricolage Fallback", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: "Unbounded", "Unbounded Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-text: "DM Sans", "DM Sans Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "DM Sans", "DM Sans Fallback", ui-sans-serif, system-ui, sans-serif; /* old name: labels are set in the text face, never a monospace */
 
-  --text-label: 0.8125rem;
+  --text-label: 0.875rem;
   --text-sm: 1rem;
   --text-base: 1.125rem;
-  --text-lead: 1.375rem;
-  --text-h3: 1.875rem;
-  --text-h2: 2.75rem;
-  --text-h1: 4rem;
-  --text-hero: 6rem;
-  --leading-display: 0.98;
-  --leading-tight: 1.15;
-  --leading-body: 1.45;
-  --tracking-display: -0.025em;
-  --tracking-mono: 0.02em;
+  --text-lead: 1.25rem;
+  --text-h3: 1.375rem;
+  --text-h2: 2.125rem;
+  --text-h1: 3rem;
+  --text-hero: 4.75rem;
+  --leading-display: 1;
+  --leading-tight: 1.12;
+  --leading-body: 1.55;
+  --tracking-display: -0.035em;
+  --tracking-mono: 0;
   --measure-body: 62ch;
   --measure-wide: 76ch;
 
@@ -50,14 +62,21 @@
   --spacing-12: 48px;
   --spacing-16: 64px;
   --spacing-24: 96px;
-  --spacing-section: 144px;
+  --spacing-section: 128px;
 
-  --radius-panel: 2px;
-  --radius-control: 4px;
+  --radius-panel: 22px;
+  --radius-control: 14px;
+  --radius-pill: 999px;
 
   --duration-press: 120ms;
   --duration-state: 200ms;
   --duration-enter: 280ms;
   --ease-enter: cubic-bezier(0.2, 0, 0, 1);
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* short names read by /assets/pwp-article.css and /assets/pwp-chrome.css */
+  --canvas: var(--color-canvas); --surface: var(--color-surface); --raised: var(--color-raised);
+  --line: var(--color-line); --line-soft: var(--color-line-soft);
+  --ink: var(--color-ink); --muted: var(--color-muted); --faint: var(--color-faint);
+  --lantern: var(--color-accent); --plus: var(--color-plus); --minus: var(--color-minus);
 }
