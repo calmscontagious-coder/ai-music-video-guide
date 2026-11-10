@@ -20,6 +20,7 @@ Independent, citation-first guides for musicians turning finished songs into AI 
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ### Guides
+- [AI Singing Voice Generators: Vocals, Licensing, Cost](https://purposewithpresence.com/blog/ai-singing-voice-generator-original-songs.html): Three ways to put sung vocals on an original song: full-song generators, voice conversion and voice cloning, with licensing tiers, prices and disclosure rules.
 - [Phone Filmmaking Kit for Music Videos: Buy in This Order](https://purposewithpresence.com/blog/phone-filmmaking-kit-for-music-videos.html): A phone filmmaking kit for music videos in buying order: mic, tripod, light, gimbal, ND filter, cage and SSD, with what each changes and the iPhone vs Android fit.
 - [Best MIDI Keyboard for Beginners Making AI Music (2026)](https://purposewithpresence.com/blog/best-midi-keyboard-for-ai-music.html): 25 or 49 keys, mini or full-size, pads and knobs for beats, bundled software and iPad use: the controllers reviewers rate, every spec linked to its maker page.
 - [Best Headphones for Mixing Music at Home (2026 Guide)](https://purposewithpresence.com/blog/best-headphones-for-mixing-ai-music.html): Closed-back or open-back, whether you need an audio interface, and which studio headphones owners still trust after years, with maker specs and independent reviews linked.
