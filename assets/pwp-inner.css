@@ -1,0 +1,50 @@
+/* Purpose with Presence, "Living Light" inner pages (2026-11-10): about, contact, the legal pages, the director's guide,
+   thanks and 404 wear the home page's hero (chip, kinetic headline, one glowing word, lede) and read inside a glass panel.
+   Tokens and components come from tokens.css and pwp-light.css; this file only adds the inner layout. */
+.ll-inner { display: block; }
+.ll-hero-in { padding: 28px 0 8px; }
+@media (min-width: 940px) { .ll-hero-in { padding: 64px 0 20px; } }
+.ll-h1-in { font-size: clamp(2.35rem, 9.5vw, 4.6rem); }
+.ll-h1-in span { width: auto; }
+.ll-legal .ll-h1-in { font-size: clamp(2.1rem, 7.5vw, 3.6rem); }
+.ll-byline { position: relative; z-index: 1; margin: 14px 0 0; color: var(--color-muted); font-size: 0.9375rem; }
+
+.ll-sec-in { padding: 20px 0 72px; }
+@media (min-width: 940px) { .ll-sec-in { padding: 28px 0 var(--spacing-section); } }
+.ll-panel { position: relative; max-width: 54rem; margin: 0; padding: 26px 20px; }
+@media (min-width: 700px) { .ll-panel { padding: 44px 48px; } }
+.ll-panel > :first-child { margin-top: 0; }
+.ll-panel > :last-child { margin-bottom: 0; }
+.ll-panel.guide { max-width: 60rem; }
+.ll-panel h2 { margin-top: 2.2em; }
+.ll-panel h2:first-child { margin-top: 0; }
+.ll-panel hr { border: 0; border-top: 1px solid var(--color-line-soft); margin: 2em 0; }
+
+/* tiles: a list or a fact list laid out as small cards inside the panel */
+.ll-panel .ll-tiles { list-style: none; padding: 0; margin: 20px 0 28px; display: grid; gap: 12px; max-width: none; }
+@media (min-width: 700px) { .ll-panel .ll-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 700px) { .ll-panel .ll-tiles.ll-tiles-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.ll-panel .ll-tiles > li, .ll-panel .ll-tiles > div {
+  margin: 0; padding: 18px 18px 16px; border-radius: 18px; background: rgb(255 255 255 / 0.035);
+  border: 1px solid var(--color-line-soft); color: var(--color-muted);
+}
+.ll-panel .ll-tiles > li::marker { content: none; }
+.ll-panel .ll-tiles strong { display: block; margin-bottom: 6px; font-family: var(--font-display); font-size: 1.125rem; letter-spacing: -0.01em; color: var(--color-ink); }
+.ll-panel .ll-tiles dt { margin: 0 0 6px; font-size: 0.8125rem; font-weight: 700; color: var(--color-lime); }
+.ll-panel .ll-tiles dd { margin: 0; color: var(--color-ink); font-size: 1.0625rem; overflow-wrap: anywhere; }
+.ll-panel .ll-tiles > li > a:only-child { display: flex; align-items: center; min-height: 44px; color: var(--color-ink); font-weight: 600; text-decoration: none; }
+.ll-panel .ll-tiles > li > a:only-child::after { content: "\2192"; margin-left: auto; padding-left: 12px; color: var(--color-lime); }
+.ll-panel .ll-tiles > li:has(> a:only-child):hover { border-color: var(--color-line); background: rgb(255 255 255 / 0.06); }
+
+.ll-panel .ll-btn { margin-top: 8px; text-decoration: none; }
+.ll-btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
+
+/* the pause control for the moving light lives at the foot of inner pages */
+.ll-foot-still { margin: 18px 0 0; }
+.ll-foot-still .ll-still-btn { margin: 0; }
+
+/* the old prose rules draw a line above each section; inside a panel the first one has nothing to divide */
+.ll-panel > h2:first-child, .ll-panel > .ll-tiles:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+.ll-panel .facts.ll-tiles { border-top: 0; }
+.ll-panel .facts.ll-tiles > div { display: block; border-bottom: 1px solid var(--color-line-soft); }
+.ll-panel .facts.ll-tiles dt { font-family: inherit; letter-spacing: 0; }
