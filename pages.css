@@ -181,3 +181,4 @@ p { margin: 0 0 var(--spacing-4); max-width: var(--measure-body); }
 /* tap targets: 44 px in both directions for the short nav and footer words (2026-11-09 check) */
 .nav a, .site-foot ul a { min-width: 44px; }
 .facts dd a { display: inline-flex; align-items: center; min-height: 44px; }
+.prose li > a:only-child { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }

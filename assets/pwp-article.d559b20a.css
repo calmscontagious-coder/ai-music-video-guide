@@ -5,14 +5,15 @@
    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=JetBrains+Mono:wght@400;500&display=swap"> */
 
 :root{
-  --canvas:oklch(0.155 0.012 255);--surface:oklch(0.195 0.014 255);--raised:oklch(0.235 0.016 255);
-  --line:oklch(0.32 0.014 255);--line-soft:oklch(0.255 0.012 255);
-  --ink:oklch(0.96 0.004 255);--muted:oklch(0.78 0.01 255);--faint:oklch(0.68 0.012 255);
-  --lantern:oklch(0.82 0.16 75);--plus:oklch(0.8 0.13 155);--minus:oklch(0.74 0.14 28);
-  --f-text:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  /* colours come from /tokens.css (Living Light); the values here are fallbacks for a page that has not loaded it */
+  --canvas:#0a0a1f;--surface:rgb(22 18 52 / .68);--raised:rgb(48 40 100 / .74);
+  --line:rgb(255 255 255 / .24);--line-soft:rgb(255 255 255 / .13);
+  --ink:#fff8f0;--muted:#ece6f5;--faint:#dbd3ec;
+  --lantern:#c6ff3a;--plus:#c6ff3a;--minus:#ffc2be;
+  --f-text:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"DM Sans",ui-sans-serif,system-ui,sans-serif;
   --t1:120ms;--t2:200ms;--t3:280ms;--ease:cubic-bezier(.2,.7,.2,1);
-  --gut:32px;--colgap:24px;--r-panel:2px;--r-ctl:4px;
+  --gut:32px;--colgap:24px;--r-panel:22px;--r-ctl:14px;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:88px;color-scheme:dark}
@@ -390,7 +391,7 @@ body:has(.tray){padding-bottom:96px}
 
 /* compare dialog */
 .compare{width:min(1160px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);margin:auto;padding:0;background:var(--canvas);color:var(--muted);border:1px solid var(--line);border-radius:var(--r-panel);overflow:auto;overscroll-behavior:contain}
-.compare::backdrop{background:oklch(0.155 0.012 255 / 0.88)}
+.compare::backdrop{background:rgb(10 10 31 / .88)}
 .compare-head{position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 12px 12px 24px;background:var(--surface);border-bottom:1px solid var(--line)}
 .compare-head .kicker{margin:0 0 2px}
 .compare-head h2{font-size:30px}
