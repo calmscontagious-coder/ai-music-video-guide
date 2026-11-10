@@ -11,7 +11,7 @@
     btn.addEventListener('click', function () { setOpen(nav.getAttribute('data-open') !== 'true'); });
     d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.getAttribute('data-open') === 'true') { setOpen(false); btn.focus(); } });
   }
-  var bar = d.querySelector('.site-head .progress'), art = d.querySelector('main article, main .page');
+  var bar = d.querySelector('.ll-head .progress, .site-head .progress'), art = d.querySelector('main article, main .page');
   if (bar && art) {
     var raf = 0;
     var upd = function () {

@@ -737,3 +737,15 @@ table.stack-sm tbody tr:first-child>th{border-top:0}
 .shelf a,.tool-links a{min-height:44px}
 @media (max-width:760px){article li>a:only-child,.page li>a:only-child{display:inline-flex;align-items:center;min-height:44px;padding-block:0}}
 .foot-links a{min-width:44px}
+
+/* Living Light header and footer on article pages (2026-11-10): the markup comes from vael_campaign_ops site_header /
+   site_footer and is styled by pwp-light.css; these rules carry the article-only parts (section label, reading
+   progress, disclosure, the link list) into it. */
+.ll-head .progress{bottom:-2px;left:20px;right:20px;border-radius:2px;background:var(--color-lime,var(--lantern))}
+.ll-brand .brand-sec{margin-left:2px;padding:4px 8px;border:1px solid var(--color-line);border-radius:999px;font-family:var(--font-text,inherit);font-size:11px;font-weight:600;line-height:1;letter-spacing:0;color:var(--color-muted)}
+@media (max-width:480px){.ll-brand .brand-sec{display:none}.ll-brand > span:nth-child(2){max-width:11em}}
+.ll-foot .full-disc{margin:14px 0 0;max-width:40em;font-size:.9375rem;line-height:1.6;color:var(--color-muted)}
+.ll-foot .full-disc b{display:block;margin-bottom:6px;font-size:.8125rem;font-weight:700;color:var(--color-faint)}
+.ll-foot .foot-links{grid-column:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+@media (min-width:900px){.ll-foot .ll-foot-links{grid-column:span 2}.ll-foot .foot-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ll-foot-still{margin:18px 0 0}.ll-foot-still .ll-still-btn{margin:0}
