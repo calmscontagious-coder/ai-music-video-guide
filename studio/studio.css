@@ -374,3 +374,11 @@ p { margin: 0 0 var(--spacing-4); max-width: var(--measure-body); }
 
 /* tap targets: 44 px in both directions for the short nav and footer words (2026-11-09 check) */
 .nav a, .site-foot ul a { min-width: 44px; }
+
+/* ── Custom plan card: the fourth card spans the full row, two columns inside from 1024 px ── */
+.tier-custom { grid-column: 1 / -1; --ck: #ff9a94; }
+.tier-custom .custom-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--spacing-6); }
+@media (min-width: 1024px) { .tier-custom .custom-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); column-gap: var(--spacing-12); align-items: start; } }
+.custom-when { margin: var(--spacing-4) 0 0; font-size: var(--text-sm); color: var(--color-muted); }
+.tier-custom .text-link { align-self: flex-start; }
+@media (min-width: 1024px) { .tier-custom .button { align-self: flex-start; min-width: 20rem; } }
