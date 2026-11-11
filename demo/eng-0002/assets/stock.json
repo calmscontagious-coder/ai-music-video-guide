@@ -461,7 +461,7 @@
    "price": 8.0
   },
   "matcha": {
-   "available": true,
+   "available": false,
    "price": 8.0
   },
   "cold-brew": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-11T20:46:31.934335+00:00"
+ "updated_at": "2026-11-11T21:52:12.103255+00:00"
 }
