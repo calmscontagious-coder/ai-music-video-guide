@@ -1,0 +1,5 @@
+# Added 2026-11-11 (security-2026-11): GitHub Pages runs Jekyll, which skips dot-folders; this publishes /.well-known/ (security.txt) only.
+include:
+  - .well-known
+exclude:
+  - brain_state

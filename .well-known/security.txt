@@ -1,0 +1,5 @@
+Contact: mailto:hello@purposewithpresence.com
+Expires: 2027-05-11T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://purposewithpresence.com/.well-known/security.txt
+Policy: https://purposewithpresence.com/privacy
