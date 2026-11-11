@@ -5,7 +5,7 @@
 .ll-hero-in { padding: 28px 0 8px; }
 @media (min-width: 940px) { .ll-hero-in { padding: 64px 0 20px; } }
 .ll-h1-in { font-size: clamp(2.35rem, 9.5vw, 4.6rem); }
-.ll-h1-in span { width: auto; }
+.ll-h1-in span { width: auto; white-space: normal; text-wrap: balance; }
 .ll-legal .ll-h1-in { font-size: clamp(2.1rem, 7.5vw, 3.6rem); }
 .ll-byline { position: relative; z-index: 1; margin: 14px 0 0; color: var(--color-muted); font-size: 0.9375rem; }
 
