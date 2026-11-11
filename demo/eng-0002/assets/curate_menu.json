@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-11T21:52:10.868959+00:00",
+ "updated_at": "2026-11-11T22:25:28.885743+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -1428,8 +1428,8 @@
    "price": 15.5,
    "category": "Salads",
    "ship": false,
-   "available": true,
-   "quantity": null,
+   "available": false,
+   "quantity": 0,
    "toast_id": "d9e54336-6263-4bbc-a091-7e1cf80c02ec",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/0b505007-95b1-4213-94b9-26ca4f454579.png",
    "on_site": true,

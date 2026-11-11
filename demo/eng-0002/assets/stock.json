@@ -549,7 +549,7 @@
    "price": 16.0
   },
   "garden-salade": {
-   "available": true,
+   "available": false,
    "price": 15.5
   },
   "grandmother-beet-salade": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-11T21:52:12.103255+00:00"
+ "updated_at": "2026-11-11T22:25:31.809654+00:00"
 }
