@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10162a">
+<title>Dit: Morse code, two letters a day</title>
+<meta name="description" content="A starter app for the streak lesson pattern. Two letters of Morse code a day, a streak that forgives a missed day, and a lesson that ends.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app" class="app">
+
+  <!-- HOME: where every visit starts. One thing to do, and the proof of what you already know. -->
+  <section id="home" class="screen" aria-labelledby="home-h">
+    <header class="top">
+      <h1 id="home-h" class="mark">Dit<span class="lamp" aria-hidden="true"></span></h1>
+      <button id="open-settings" class="quiet" type="button">Settings</button>
+    </header>
+    <p class="tagline">Morse code, 2 letters a day.</p>
+
+    <div class="streak" aria-live="polite">
+      <p class="streak-n"><span id="streak-n">0</span> <span id="streak-word">days</span></p>
+      <p id="streak-note" class="note"></p>
+    </div>
+
+    <div id="today" class="card">
+      <p id="today-kicker" class="kicker"></p>
+      <p id="today-letters" class="letters"></p>
+      <button id="start" class="go" type="button">Start today's lesson</button>
+      <p id="today-done" class="note" hidden>That is today's lesson. Come back tomorrow for two more.</p>
+      <button id="practice" class="quiet" type="button" hidden>Practise what you know (does not count)</button>
+    </div>
+
+    <h2 class="sub">Letters you know</h2>
+    <ol id="known" class="known" aria-label="Letters you know"></ol>
+    <p id="known-empty" class="note">None yet. The first lesson takes about two minutes.</p>
+  </section>
+
+  <!-- LESSON: one question at a time, a visible end. -->
+  <section id="lesson" class="screen" hidden aria-labelledby="q-h">
+    <header class="top">
+      <button id="quit" class="quiet" type="button">Leave lesson</button>
+      <p class="count"><span id="q-i">1</span> of <span id="q-n">1</span></p>
+    </header>
+    <div class="bar" aria-hidden="true"><span id="bar-fill"></span></div>
+
+    <h2 id="q-h" class="q"></h2>
+    <p id="q-code" class="code" aria-live="polite"></p>
+    <button id="hear" class="quiet" type="button">Play the sound</button>
+
+    <div id="choices" class="choices" hidden></div>
+
+    <div id="keyer" class="keyer" hidden>
+      <p id="typed" class="typed" aria-live="polite" aria-label="What you have keyed"></p>
+      <div class="keys">
+        <button id="key-dit" class="key" type="button" aria-label="dit, the short signal">&middot;</button>
+        <button id="key-dah" class="key long" type="button" aria-label="dah, the long signal">&ndash;</button>
+      </div>
+      <div class="row">
+        <button id="key-undo" class="quiet" type="button">Undo</button>
+        <button id="key-send" class="go small" type="button">Check</button>
+      </div>
+    </div>
+
+    <p id="feedback" class="feedback" role="status"></p>
+    <button id="next" class="go" type="button" hidden>Next</button>
+  </section>
+
+  <!-- DONE: the stopping point. No "one more" prompt. -->
+  <section id="done" class="screen" hidden aria-labelledby="done-h">
+    <h2 id="done-h" class="big">Lesson done.</h2>
+    <p id="done-line" class="lead"></p>
+    <p id="done-streak" class="note"></p>
+    <button id="home-btn" class="go" type="button">Back to the start</button>
+  </section>
+
+  <!-- SETTINGS: sound, your data out, your data gone. -->
+  <dialog id="settings" aria-labelledby="set-h">
+    <h2 id="set-h">Settings</h2>
+    <label class="check" for="sound"><input id="sound" type="checkbox"> Play sounds</label>
+    <p class="note">Dit keeps everything on this device. There is no account and nothing is sent anywhere.</p>
+    <p class="note">Rest days: <span id="rests">2</span> of 2. A rest day covers a day you miss, so one missed day does not end a streak. You earn one back every seven days.</p>
+    <div class="row">
+      <button id="export" class="quiet" type="button">Copy my data</button>
+      <button id="erase" class="quiet danger" type="button">Erase my data</button>
+    </div>
+    <p id="set-msg" class="note" role="status"></p>
+    <button id="close-settings" class="go small" type="button">Done</button>
+  </dialog>
+
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>

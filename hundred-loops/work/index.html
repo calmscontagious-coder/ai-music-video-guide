@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ten starter apps: case notes | Hundred Loops</title>
+<meta name="description" content="Case notes for the ten original starter apps in Hundred Loops: the brief, the design decisions, what each is made of and how it was tested.">
+<link rel="canonical" href="https://purposewithpresence.com/hundred-loops/work/">
+<meta property="og:title" content="Ten starter apps: case notes | Hundred Loops">
+<meta property="og:description" content="Case notes for the ten original starter apps in Hundred Loops: the brief, the design decisions, what each is made of and how it was tested.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://purposewithpresence.com/hundred-loops/work/">
+<meta property="og:image" content="https://purposewithpresence.com/hundred-loops/assets/share-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/guide.css">
+<link rel="stylesheet" href="../assets/sales.css">
+</head>
+<body class="sales"><a class="skip" href="#main">Skip to the page</a><header class="s-top"><a class="home" href="../index.html" aria-label="Hundred Loops, home"><span class="wm" translate="no">Hundred Loops</span></a><nav aria-label="Sections"><a href="../index.html">The guide</a><a href="../preview/index.html">Free chapter</a></nav></header><main id="main" class="work"><header class="work-head"><h1>Ten small apps, each its own world</h1><p class="hero-lede">These are the starter apps of Hundred Loops. Each one is a finished, original app built to show one habit-forming pattern in the version you would defend: a loop with an end, nothing that punishes a missed day, and your data on your own device. Plain HTML, CSS and JavaScript, no libraries.</p></header><article class="case" id="001-dit"><div class="mini"><img src="../assets/shots/001-dit.webp" alt="Dit on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">001</p><h2 class="r-name" translate="no">Dit</h2><p class="b-shelf">The streak lesson. Morse code, two letters a day, with a streak that forgives a missed day.</p><h3>The brief</h3>
+<p>Pattern 001, the streak lesson. It had to prove that a daily streak can hold someone&rsquo;s attention without threatening them: a lesson with an end, a missed day that costs nothing important, and no reminders.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The world is a signal lamp at night: navy, cream and one amber light, because Morse was sent by lamp and the subject should choose the palette.</li>
+<li>Two rest days cover a missed day, and one comes back every seven days, so a busy week does not erase a month.</li>
+<li>A long break restarts the count and keeps every letter learned, and the screen says so in those words.</li>
+<li>The streak rule is one function that never reads the clock, and the app accepts a day in its address, so every case (next day, missed day, long break) is tested in seconds.</li>
+</ul>
+<h3>What it is made of</h3>
+<p>Three files and no dependencies: <code>index.html</code> (95 lines), <code>style.css</code> (86 lines), <code>app.js</code> (235 lines). Sound is made with the Web Audio API, so there are no audio files. Data stays on the device, with copy and erase in Settings.</p>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 27 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p><p><a class="btn" href="../starters/001-dit/index.html">Run Dit</a></p></div></article><article class="case" id="002-tickfield"><div class="mini"><img src="../assets/shots/002-tickfield.webp" alt="Tickfield on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">002</p><h2 class="r-name" translate="no">Tickfield</h2><p class="b-shelf">The habit grid. A habit tracker drawn as an allotment plan, with weekly targets instead of an unbroken chain.</p><h3>The brief</h3>
+<p>Pattern 002 of Hundred Loops, the habit grid. It had to prove that a habit grid can keep the pull of a filling-in picture while dropping the all-or-nothing daily chain, so that a missed day or a holiday never reads as failure.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The palette comes from a land survey sheet: ruled cream paper, survey-ink green, one red boundary peg for today, because a habit is a plot you tend and a grid of plots reads at a glance.</li>
+<li>Each habit has a weekly target and the week is judged on its total, because that makes a missed day cost nothing while still giving the week a finish line.</li>
+<li>Paused days are hatched as fallow ground and the week&rsquo;s target shrinks to fit, because a holiday is rest, not a gap to be punished.</li>
+<li>The week arithmetic and the grid builder are pure functions over date strings, and a <code>?day=</code> switch moves &ldquo;today&rdquo;, so the test can walk through a holiday and a five-week absence in seconds.</li>
+</ul>
+<h3>What it is made of</h3>
+<p><code>index.html</code> (91 lines), <code>style.css</code> (91 lines), <code>app.js</code> (277 lines), <code>test.json</code> and a README. Plain HTML, CSS and JavaScript. No libraries, no build step, no network requests, no images: every plot is inline SVG.</p>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 36 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p></div></article><article class="case" id="011-ladderday"><div class="mini"><img src="../assets/shots/011-ladderday.webp" alt="Ladderday on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">011</p><h2 class="r-name" translate="no">Ladderday</h2><p class="b-shelf">The daily word puzzle. A daily word ladder: the same start and end word for everyone, one letter per rung, then it is over until tomorrow.</p><h3>The brief</h3>
+<p>Pattern 011 of Hundred Loops, the daily word puzzle. It had to prove that the daily-puzzle rhythm works with a different game from the coloured-tile guessing game most copies use, and that a shared puzzle can come from the date alone, with no server and no streak.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The palette is an orchard ladder at first light, peach sky, plum ink and timber rails, because the puzzle is a climb and the screen should draw one.</li>
+<li>The puzzle comes from a seeded generator and a breadth-first search over a 707-word list I typed for the app, because owning the word list is the legal line in this genre and the search makes par a true shortest length.</li>
+<li>One ladder a day, plain stats with no streak, and a two-tap give up that shows a shortest ladder, because the end of the puzzle is the point and a missed week should cost nothing.</li>
+<li>The app exposes the day&rsquo;s shortest ladder to the test, so the harness can solve the puzzle on any date and prove the result text, the stopping point and the next day.</li>
+</ul>
+<h3>What it is made of</h3>
+<p><code>index.html</code> (80 lines), <code>style.css</code> (79 lines), <code>app.js</code> (265 lines, 34 of them the word list), <code>test.json</code> and a README. Plain HTML, CSS and JavaScript. No libraries, no build step, no network requests.</p>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 28 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p></div></article><article class="case" id="021-potting-shed"><div class="mini"><img src="../assets/shots/021-potting-shed.webp" alt="Potting Shed on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">021</p><h2 class="r-name" translate="no">Potting Shed</h2><p class="b-shelf">The match-three with a restoration layer. A match-three game on a seed tray, with a run-down greenhouse you restore one bed at a time.</p><h3>The brief</h3>
+<p>Pattern 021, match-three with a restoration layer. It had to prove the genre&rsquo;s two loops still work when the usual money machine is taken out: no lives, no energy timer, no pay-to-continue, no boosters for sale, and a game that ends.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The palette is a potting shed in late afternoon (linen, soil, terracotta, sage), because the board should read as a seed tray, not a sweet shop or a jewel box.</li>
+<li>The five tokens differ in shape as well as colour (bean, sprout, bulb, pea pod, bloom), so a player who cannot tell two colours apart can still play.</li>
+<li>Losing costs nothing and a refused swap uses no move, because the honest version of this genre makes failure a retry, not a sales moment.</li>
+<li>Every level comes from a seeded generator and every tray starts with no line and at least one move, so a level is fair, repeatable, and testable by playing real hinted moves.</li>
+</ul>
+<h3>What it is made of</h3>
+<p><code>index.html</code> (82 lines), <code>style.css</code> (79 lines), <code>app.js</code> (313 lines), <code>test.json</code>, <code>README.md</code>. Plain HTML, CSS and JavaScript. No libraries, no build step, no network requests, no images: every token and bed is inline SVG.</p>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 32 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p></div></article><article class="case" id="031-tidemill"><div class="mini"><img src="../assets/shots/031-tidemill.webp" alt="Tidemill on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">031</p><h2 class="r-name" translate="no">Tidemill</h2><p class="b-shelf">The idle clicker. An idle clicker about a tide mill that grinds while you are away, for two hours at most, and then rests.</p><h3>The brief</h3>
+<p>Pattern 031, the idle clicker. It had to prove the genre works with a cap on offline earnings, an arc that ends, and nothing for sale: no timers to skip, no reward for watching anything, no offer on the return screen.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The palette is an estuary at dusk (deep teal water, oak, flour white, one lit window), because a tide mill only works when the water moves and the evening is when it rests.</li>
+<li>Offline earnings stop at two hours and the return screen says so in one plain sentence, because an uncapped mill rewards never closing the app.</li>
+<li>The season ends at the eighth milestone and production stops; a new season is offered with a tenth more speed, and the screen says you can stop here.</li>
+<li>Every read of the time goes through one now() function that honours ?skip, and the running mill credits elapsed time rather than counting ticks, so a test can jump two or thirteen hours and get an exact answer.</li>
+</ul>
+<h3>What it is made of</h3>
+<p><code>index.html</code> (94 lines), <code>style.css</code> (66 lines), <code>app.js</code> (227 lines), <code>test.json</code>, <code>README.md</code>. Plain HTML, CSS and JavaScript. No libraries, no build step, no network requests, no images: the mill is inline SVG.</p>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 28 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p></div></article><article class="case" id="036-mossling"><div class="mini"><img src="../assets/shots/036-mossling.webp" alt="Mossling on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">036</p><h2 class="r-name" translate="no">Mossling</h2><p class="b-shelf">The care pet. A small moss creature that grows from four real check-ins a day and sleeps, never suffers, when you are away.</p><h3>The brief</h3>
+<p>Pattern 036, the care pet. It had to prove that a creature people come back to can run without guilt: growth from the person&rsquo;s own real check-ins (water, moving, going outside, rest), five visibly different stages over about twenty check-ins, a clear end to each day, and nothing that shrinks, sickens or dies after time away.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The palette comes from a damp stone in a shady garden: lichen paper, fern ink, one moss green and one clay accent for the capsules, so the creature is the only bright thing on the screen.</li>
+<li>Growth is a count that only goes up and the stage is worked out from it every time, because a creature with no stored health has nothing that can decay.</li>
+<li>Time away has exactly one message, &ldquo;Mossling slept while you were away. Nothing was lost.&rdquo;, which keeps the absence rule in one small function a reader can check.</li>
+<li>The five drawings are built in code from one function with the stage and a sleep flag, so each stage can be tested by counting its parts and no image files are needed.</li>
+</ul>
+<h3>What it is made of</h3>
+<ul>
+<li><code>index.html</code> (68 lines), <code>style.css</code> (83 lines), <code>app.js</code> (267 lines), <code>test.json</code> (137 lines, 30 steps), <code>README.md</code> (22 lines).</li>
+<li>Plain HTML, CSS and JavaScript. No libraries, no build step, no network requests.</li>
+</ul>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 30 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p></div></article><article class="case" id="052-ten-past"><div class="mini"><img src="../assets/shots/052-ten-past.webp" alt="Ten Past on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">052</p><h2 class="r-name" translate="no">Ten Past</h2><p class="b-shelf">The finite daily feed. A daily feed of ten small things to notice or try, one card at a time, that ends with &ldquo;That is the lot. Ten more tomorrow.&rdquo;</p><h3>The brief</h3>
+<p>Pattern 052, the finite daily feed. It had to prove that a feed can be pleasant and still stop: ten cards a day from a pool I wrote myself, the same ten for everyone, one per screen, moved by a button, the keyboard or a vertical swipe, with the count always in view and a designed end.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The palette comes from a kitchen calendar on a sunny wall: warm paper, brown-black ink, one tomato red and five soft card tints that take turns, so each card feels like turning a page.</li>
+<li>The day&rsquo;s ten come from a shuffle seeded by the date alone, because a set that nobody can personalise has nothing to tune for time spent and nothing to refresh.</li>
+<li>Position ten is the end screen and the move function clamps to it, so &ldquo;no card eleven&rdquo; is one line a reader can check rather than a promise.</li>
+<li>The small clock in the header fills one tick per card, so you can see how much is left, and no progress bar is needed.</li>
+</ul>
+<h3>What it is made of</h3>
+<ul>
+<li><code>index.html</code> (73 lines), <code>style.css</code> (81 lines), <code>app.js</code> (268 lines), <code>test.json</code> (145 lines, 30 steps), <code>README.md</code> (22 lines).</li>
+<li>Plain HTML, CSS and JavaScript. No libraries, no build step, no network requests.</li>
+</ul>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 31 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p></div></article><article class="case" id="057-supper-deck"><div class="mini"><img src="../assets/shots/057-supper-deck.webp" alt="Supper Deck on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">057</p><h2 class="r-name" translate="no">Supper Deck</h2><p class="b-shelf">The swipe-to-decide deck. A finite deck of 24 vegetarian supper ideas: swipe right for could eat, left for not tonight, and three maybes end the deck with a shortlist and one pick.</p><h3>The brief</h3>
+<p>Pattern 057, the swipe-to-decide deck. It had to prove that the swipe gesture can serve a decision instead of an endless session: a deck that ends at the last card or at three maybes, the same order for everyone on a given day, tag filters before dealing, a plain &ldquo;Supper is&rdquo; end screen, and buttons and arrow keys that do everything the drag does.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The palette comes from a kitchen at dusk: deep herb green, recipe-card cream and one saffron yellow, so the card reads as paper on a table.</li>
+<li>The drag is judged only by distance on release, at 30% of the card width, because a rule a person can predict is fairer than one tuned on speed, and a fixed rule is easy to test.</li>
+<li>The screen is worked out from the saved run rather than stored, so a reload always lands on the deck, the shortlist or the end.</li>
+<li>Every dish is vegetarian with two plain tags, so nobody is left out by default and the filter chips stay short.</li>
+</ul>
+<h3>What it is made of</h3>
+<ul>
+<li><code>index.html</code> (86 lines), <code>style.css</code> (91 lines), <code>app.js</code> (260 lines), <code>test.json</code> (143 lines, 30 steps), <code>README.md</code> (24 lines).</li>
+<li>Plain HTML, CSS and JavaScript. No libraries, no build step, no network requests.</li>
+</ul>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 30 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p></div></article><article class="case" id="081-fivebox"><div class="mini"><img src="../assets/shots/081-fivebox.webp" alt="Fivebox on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">081</p><h2 class="r-name" translate="no">Fivebox</h2><p class="b-shelf">The spaced-repetition flashcards. Flashcards in five boxes: known cards move up and come back later, missed cards start again, and every session ends.</p><h3>The brief</h3>
+<p>Pattern 081 of Hundred Loops, spaced-repetition flashcards. It had to prove that a study app can show only what is due today, end the session with a date instead of a prompt to keep going, and treat a two-week break as nothing more than cards waiting in their boxes.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The palette comes from a card-index drawer on a desk, oak boxes and cream cards with one red header rule, because the boxes are the method and should look like objects you can count.</li>
+<li>The whole method is two small rules, a due date from the box (1, 2, 4, 8 or 16 days) and up-one-or-back-to-one grading, kept as pure functions so the guide can quote them and a learner can check them by hand.</li>
+<li>A session is fixed when it starts and each card is shown once, because a session that refills as you finish has no end, and the end screen names the next date instead.</li>
+<li>The starter deck arrives ten cards a day and <code>?day=</code> moves &ldquo;today&rdquo;, so the test can play two sessions, a break and an edit in seconds and check every box count.</li>
+</ul>
+<h3>What it is made of</h3>
+<p><code>index.html</code> (94 lines), <code>style.css</code> (82 lines), <code>app.js</code> (236 lines), <code>test.json</code> and a README. Plain HTML, CSS and JavaScript. No libraries, no build step, no network requests, no images.</p>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 41 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p></div></article><article class="case" id="088-stillpond"><div class="mini"><img src="../assets/shots/088-stillpond.webp" alt="Stillpond on a phone screen" width="260" height="507" loading="lazy"></div><div class="case-text"><p class="r-num" translate="no">088</p><h2 class="r-name" translate="no">Stillpond</h2><p class="b-shelf">The focus timer that grows something. A focus timer where each finished session opens a lily on today&rsquo;s pond, and four lilies mean it is time to rest.</p><h3>The brief</h3>
+<p>Pattern 088, the focus timer that grows something. It had to prove the pattern works without punishment: leaving pauses instead of killing, stopping early keeps the minutes, a day has a rest point, and nothing is sold to undo a loss.</p>
+<h3>Decisions</h3>
+<ul>
+<li>The palette is a pond at first light (mist, slate water, pad green, one pink lily), because the app should feel like the quiet start of a working day, not a scoreboard.</li>
+<li>Nothing in the pond can die, and coming back after leaving the tab shows &ldquo;Nothing was lost&rdquo; and waits for a tap, because a reward that withers when you check your phone turns focus into worry.</li>
+<li>The timer is computed from two timestamps rather than counted in ticks, so a hidden tab or a sleeping phone never makes it wrong.</li>
+<li>One now() function honours ?speed and ?day, so the test can finish a real ten-minute session in about a second and prove a session that crosses midnight counts on the day it started.</li>
+</ul>
+<h3>What it is made of</h3>
+<p><code>index.html</code> (77 lines), <code>style.css</code> (69 lines), <code>app.js</code> (225 lines), <code>test.json</code>, <code>README.md</code>. Plain HTML, CSS and JavaScript. No libraries, no build step, no network requests, no images: the pond, lilies and week view are inline SVG.</p>
+<h3>Tested</h3>
+<p>Harness result: PASS on 2026-11-10. 31 scripted steps in headless Chromium on a 390 px touch screen: no console errors, no failed or outside requests, no sideways scroll at 390, 360 or 1280 px, and nothing marked hidden left on screen. Not tested on real phones or in other browsers.</p></div></article></main><footer class="s-foot"><p>Hundred Loops is made by Purpose with Presence, an independent studio. Education, not legal advice.</p><p><a href="../index.html">The guide</a> · <a href="../preview/index.html">Free chapter</a> · <a href="../starters/001-dit/index.html">Free starter</a> · <a href="../work/index.html">The ten starters</a> · <a href="https://purposewithpresence.com/">Purpose with Presence</a></p></footer></body></html>
