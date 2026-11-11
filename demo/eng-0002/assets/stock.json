@@ -377,14 +377,186 @@
    "price": 160.0
   },
   "tropical-jam": {
-   "available": true,
+   "available": false,
    "price": 7.0
   },
   "white-chocolate-truffles": {
    "available": true,
    "price": 16.0
+  },
+  "fleur-de-geisha": {
+   "available": true,
+   "price": 6.5
+  },
+  "montagne-bleue": {
+   "available": true,
+   "price": 6.5
+  },
+  "tropical-garden": {
+   "available": true,
+   "price": 6.5
+  },
+  "french-garden": {
+   "available": true,
+   "price": 6.5
+  },
+  "milky-oolong": {
+   "available": true,
+   "price": 7.5
+  },
+  "chai-imperial": {
+   "available": true,
+   "price": 6.5
+  },
+  "the-du-louvre": {
+   "available": true,
+   "price": 6.5
+  },
+  "detox-south-africa": {
+   "available": true,
+   "price": 6.5
+  },
+  "herboriste-46-relaxation": {
+   "available": true,
+   "price": 6.5
+  },
+  "herboriste-52-digestion": {
+   "available": true,
+   "price": 6.5
+  },
+  "herboriste-63-immune": {
+   "available": true,
+   "price": 6.5
+  },
+  "ristretto": {
+   "available": true,
+   "price": 4.0
+  },
+  "doppio": {
+   "available": true,
+   "price": 5.3
+  },
+  "americano": {
+   "available": true,
+   "price": 5.5
+  },
+  "latte": {
+   "available": true,
+   "price": 7.5
+  },
+  "cappuccino": {
+   "available": true,
+   "price": 6.0
+  },
+  "cortadito": {
+   "available": true,
+   "price": 5.5
+  },
+  "romys-hot-chocolate": {
+   "available": true,
+   "price": 6.5
+  },
+  "mocha": {
+   "available": true,
+   "price": 8.0
+  },
+  "matcha": {
+   "available": true,
+   "price": 8.0
+  },
+  "cold-brew": {
+   "available": true,
+   "price": 6.0
+  },
+  "baguette": {
+   "available": true,
+   "price": 5.5
+  },
+  "butter-croissant": {
+   "available": true,
+   "price": 4.5
+  },
+  "suisse": {
+   "available": true,
+   "price": 5.5
+  },
+  "cruffin-du-jour": {
+   "available": true,
+   "price": 9.0
+  },
+  "canele": {
+   "available": true,
+   "price": 3.25
+  },
+  "chefs-special-eclair": {
+   "available": true,
+   "price": 9.0
+  },
+  "chocolate-eclair": {
+   "available": true,
+   "price": 6.5
+  },
+  "espresso-eclair": {
+   "available": true,
+   "price": 5.5
+  },
+  "pistachio-eclair": {
+   "available": true,
+   "price": 6.5
+  },
+  "paris-brest": {
+   "available": true,
+   "price": 6.75
+  },
+  "mille-feuille": {
+   "available": true,
+   "price": 6.75
+  },
+  "fruit-tart": {
+   "available": true,
+   "price": 6.5
+  },
+  "macaron": {
+   "available": true,
+   "price": 3.0
+  },
+  "macaron-box-6": {
+   "available": true,
+   "price": 15.0
+  },
+  "french-breakfast": {
+   "available": true,
+   "price": 8.0
+  },
+  "avocado-toast": {
+   "available": true,
+   "price": 13.5
+  },
+  "grilled-cheese": {
+   "available": true,
+   "price": 14.5
+  },
+  "soup": {
+   "available": true,
+   "price": 9.5
+  },
+  "sandwich-of-the-day": {
+   "available": true,
+   "price": 14.0
+  },
+  "endive-salade": {
+   "available": true,
+   "price": 16.0
+  },
+  "garden-salade": {
+   "available": true,
+   "price": 15.5
+  },
+  "grandmother-beet-salade": {
+   "available": true,
+   "price": 15.0
   }
  },
- "source": "products.json",
- "updated_at": "2026-11-11T13:58:08Z"
+ "source": "products.json + curate menu (Toast POS)",
+ "updated_at": "2026-11-11T14:34:12.987050+00:00"
 }
