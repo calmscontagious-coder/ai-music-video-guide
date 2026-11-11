@@ -382,3 +382,5 @@ p { margin: 0 0 var(--spacing-4); max-width: var(--measure-body); }
 .custom-when { margin: var(--spacing-4) 0 0; font-size: var(--text-sm); color: var(--color-muted); }
 .tier-custom .text-link { align-self: flex-start; }
 @media (min-width: 1024px) { .tier-custom .button { align-self: flex-start; min-width: 20rem; } }
+.not-open { margin: var(--spacing-6) 0; padding-left: var(--spacing-4); border-left: 3px solid var(--color-accent); font-size: var(--text-base); color: var(--color-ink); max-width: var(--measure-wide); }
+.not-open a { color: inherit; text-decoration: underline; }
