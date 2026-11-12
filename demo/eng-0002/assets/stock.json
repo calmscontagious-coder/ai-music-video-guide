@@ -473,7 +473,7 @@
    "price": 5.5
   },
   "butter-croissant": {
-   "available": true,
+   "available": false,
    "price": 4.5
   },
   "suisse": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-12T01:24:16.253039+00:00"
+ "updated_at": "2026-11-12T02:26:55.998670+00:00"
 }
