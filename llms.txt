@@ -20,6 +20,7 @@ Independent, citation-first guides for musicians turning finished songs into AI 
 - [Credit Calculator](https://purposewithpresence.com/tools/credit-calculator.html): estimate per-video render costs across plans
 
 ### Guides
+- [AI Voice-Over for Music Videos: Step-by-Step Guide](https://purposewithpresence.com/blog/ai-voice-over-for-music-videos-and-lyric-videos.html): Add a spoken intro, narrated bridge or trailer voice to a music video or lyric video: script, voice, model, export, and when YouTube wants an AI label.
 - [Dub a Music Video Into Five Languages With AI](https://purposewithpresence.com/blog/dub-a-music-video-into-five-languages.html): Dub a music video into other languages with AI: dub the spoken parts, caption the lyrics, check minutes per plan, then upload each dub as an extra audio track.
 - [AI Voice Generator Cost Per Minute: Credits Explained](https://purposewithpresence.com/blog/ai-voice-generator-cost-per-minute.html): What an AI voice generator really costs per minute: credits per character, per-feature rates, rollover limits, annual billing and a cost-per-video table.
 - [AI Vocal Demo Generator: Scratch Vocals, No Singer](https://purposewithpresence.com/blog/ai-vocal-demos-scratch-vocals-without-a-singer.html): Hear a lyric sung before you book a singer: what an AI music model does with vocals, section regeneration, the 5-minute cap, credits per demo and the license.
