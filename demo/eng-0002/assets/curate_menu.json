@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T15:58:42.692063+00:00",
+ "updated_at": "2026-11-13T17:34:52.892800+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -526,8 +526,8 @@
    "price": 8.0,
    "category": "Coffee & Tea",
    "ship": false,
-   "available": false,
-   "quantity": 0,
+   "available": true,
+   "quantity": null,
    "toast_id": "9c91304a-2246-40f6-b88d-a9122509000a",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/3789fb95-832d-4f47-b4ef-7810ccb98b3f.jpg",
    "on_site": true,
