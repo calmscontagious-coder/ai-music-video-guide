@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T19:28:55.799155+00:00",
+ "updated_at": "2026-11-13T22:43:42.336299+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -997,7 +997,7 @@
    "category": "Morning Pastries",
    "ship": false,
    "available": false,
-   "quantity": 0,
+   "quantity": null,
    "toast_id": "0b366e08-c39d-426c-9fe8-8c98de8d14b5",
    "image": null,
    "on_site": false,
