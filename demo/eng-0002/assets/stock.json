@@ -469,7 +469,7 @@
    "price": 6.0
   },
   "baguette": {
-   "available": false,
+   "available": true,
    "price": 5.5
   },
   "butter-croissant": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-14T16:22:07.232914+00:00"
+ "updated_at": "2026-11-14T17:41:54.616228+00:00"
 }

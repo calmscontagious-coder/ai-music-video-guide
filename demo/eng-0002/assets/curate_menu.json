@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-14T16:22:03.962504+00:00",
+ "updated_at": "2026-11-14T17:41:54.436830+00:00",
  "source": "curate menu (mirrors Toast POS)",
  "items": [
   {
@@ -625,8 +625,8 @@
    "price": 5.5,
    "category": "Bread",
    "ship": false,
-   "available": false,
-   "quantity": 0,
+   "available": true,
+   "quantity": null,
    "toast_id": "787c12e3-5bc7-468a-828f-4265eef91502",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/ab43e811-8710-4669-b298-6b789600dc86.jpg",
    "on_site": true,
@@ -642,8 +642,8 @@
    "price": 6.0,
    "category": "Bread",
    "ship": false,
-   "available": false,
-   "quantity": 0,
+   "available": true,
+   "quantity": null,
    "toast_id": "495c7c58-8eee-4b0d-8495-f71349dce16d",
    "image": "https://divvy-dev2.s3.us-west-1.amazonaws.com/restaurantGroup/6a34661c2d34bb209e3d6780/FOOD_IMAGE/41ae9b59-2127-4c15-a6a6-7179a9a82674.jpg",
    "on_site": false,
