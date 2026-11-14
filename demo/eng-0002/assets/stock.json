@@ -453,11 +453,11 @@
    "price": 5.5
   },
   "romys-hot-chocolate": {
-   "available": true,
+   "available": false,
    "price": 6.5
   },
   "mocha": {
-   "available": true,
+   "available": false,
    "price": 8.0
   },
   "matcha": {
@@ -558,5 +558,5 @@
   }
  },
  "source": "products.json + curate menu (Toast POS)",
- "updated_at": "2026-11-14T01:14:32.466507+00:00"
+ "updated_at": "2026-11-14T03:04:03.547155+00:00"
 }
